@@ -4,9 +4,9 @@
 
 Rails koristi key based cache - umjesto da expira value, on promijenjeni objekt dobije novi key. U slučaju da se memcached napuni, prvo će se odbaciti najdavnije korišteni - znači ovi pod starim keyevima.
 
-*MemoryStore* je najbrži, ali jede RAM i nemožeš ga dijeliti. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je *LRURedux*.
-*FileStore* je malo sporiji, i ne možeš ga dijeliti među serverima. Također ne radi na Herokuu. Koristi ga ako imaš mali request load, a veliku caching potrebu (> 100MB)
-*Memcache* je spor preko networka (računaj oko 20ms bar), ali je distribuiran. Koristi ga ako imaš više servera. Alternativa je *Redis* kojem možeš definirati drugačija pravila expiranja, i može se dumpati na disk pa ga je lakše restartirati.
+- **MemoryStore** je najbrži, ali jede RAM i nemožeš ga dijeliti. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je **LRURedux**.
+- **FileStore** je malo sporiji, i ne možeš ga dijeliti među serverima. Također ne radi na Herokuu. Koristi ga ako imaš mali request load, a veliku caching potrebu (> 100MB)
+- **Memcache** je spor preko networka (računaj oko 20ms bar), ali je distribuiran. Koristi ga ako imaš više servera. Alternativa je **Redis** kojem možeš definirati drugačija pravila expiranja, i može se dumpati na disk pa ga je lakše restartirati.
 
 
 ## Thread safety
