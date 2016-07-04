@@ -1,5 +1,18 @@
 # Ruby on Rails
 
+## Rails u produkciji
+http://www.akitaonrails.com/2016/03/22/is-your-rails-app-ready-for-production
+
+- **Deploy:** Heroku (ako želiš jeftinije tipa EC2 ili Digital Ocean, treba klijentima dati do znanja da s tim ne
+  dobijaju 24/7 security updates)
+- **Server:** Passenger ili Puma (Unicorn ima problem sa sporim klijentima)
+- **Metrics:** New Relic, Papertrail
+- **Rails Dependencies:** Rails 12 Factor, Rack-Cache middleware, Rack-Attack, Rack-Protection, Sprockets 3.3+
+- **DB:** Postgresql, male Redis instance uz Sidekiq (workere podesi da koriste readonly Follower bazu)
+- **CDN:** Koristi ih! AWS Cloudfront ili Fastly.
+- **Upload:** Attachinary gem (direktni upload iz klijenta na servis koji zaobilazi Rails app, samo dobiješ id)
+
+
 ## Cache
 
 Rails koristi key based cache - umjesto da expira value, on promijenjeni objekt dobije novi key. U slučaju da se memcached napuni, prvo će se odbaciti najdavnije korišteni - znači ovi pod starim keyevima.
@@ -15,7 +28,7 @@ https://bearmetal.eu/theden/how-do-i-know-whether-my-rails-app-is-thread-safe-or
 GIL ne dopušta da se dva threada istovremeno izvršavaju, ali to ne znači da je kod thread-safe. Thread se i dalje može pauzirati u bilo kojem trenutku, i drugi mu sjebat dijeljene podatke.
 
 Rails i njegovi dependenciji su thread-safe. Kriv je tvoj kod! Ili gemovi.
-Railsova arhitektura je takva da se po defaultu ništa ne dijeli između threadova, ali može se desiti da nešto slučajno podijelimo kroz: 
+Railsova arhitektura je takva da se po defaultu ništa ne dijeli između threadova, ali može se desiti da nešto slučajno podijelimo kroz:
 * globalne varijable
 * class varijable (koje su principu isto što i globalne)
 * class instance varijable (opet, klase se dijele, pa tako i njihove instance varijable)
@@ -33,7 +46,7 @@ Podržava custom typove i changed_in_place?
 
 ## Url escaping
 
-Url helperi escapaju parametre s `CGI.escape` (escapa točkuzarez, ampersand i sve), 
+Url helperi escapaju parametre s `CGI.escape` (escapa točkuzarez, ampersand i sve),
 a sve ostalo s `URI.escape` (ne escapa ove stvari koje se mogu pojaviti u uriju)
 
 
@@ -53,4 +66,20 @@ Najvjerojatnije ti app ne leaka memoriju, nego samo koristi puno. Vatrogasna rje
 `derailed exec perf:mem_over_time` - za traženje leakova, kopipejstaj rezulat u google spreadsheets za graf
 
 ## JSON API Schema
+
 Kako validirati JSON podatke koji dolaze u API? strong_params su meh - ne provjeravaju tip, kod se drži u controlleru. Loš data ne bi uopće trebao doću do app layera. Postoji format definiranja ulaznih (i izlaznih) podataka koji se zove JSON Schema. Todo: Pogledaj njegove integracije u railsu.
+
+## has_many i conditions
+http://ducktypelabs.com/four-ways-to-filter-has_many-associations/
+
+Ako želimo dohvatiti sve usere koji sudjeluju u projektu s nekim atributom
+`User.joins(:projects).where(projects: { zipcode: 30332 }).uniq` ili, ako imaš scope u Project:
+`User.joins(:projects).merge(Project.opened_recently).uniq`
+Ovaj `uniq` je potreban jer bi u suprotnom bilo duplih usera.
+
+Ako želimo eager-loadati koristimo includes
+`User.includes(:projects).where(projects: { zipcode: '30332' })`
+U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se navedu tablice koje treba
+joinati u istom queriju (a ne loadati odvojeno):
+`User.includes(:projects).where('projects.deleted_at IS NOT NULL').references(:projects)``
+Kad se koristi `includes`, `uniq` nije potreban.
