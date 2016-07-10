@@ -1,29 +1,34 @@
 # Ruby
 
-## Novo u 2.3
+## Postoji li parent method
+`if defined? super`
 
+
+## Varijable iz regexa
+```
+if /^(?<last>\w+),\s*(?<first>\w+)$/ =~ "Santic, Nikola"
+  p first, last
+end
+```
+
+## method_missing
+Kad definiraš `method_missing`, uvijek definiraj i `respond_to_missing?` jer će on, osim `respond_to`,
+riješiti da radi i dohvaćanje metode s `method`.
+
+
+## Novo u 2.3
 `user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali `try` ne baca exception ako metoda ne postoji.
 `{a: {b: 1}}.dig(:a, :b) # => 1` - nested pristup bez exceptiona
 `['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` - vraća one koji se ne slažu regexom
 
 
-## MRuby
-http://lucaguidi.com/2015/12/09/25000-requests-per-second-for-rack-json-api-with-mruby.html
-
-Postoji MRuby (minimal ruby) koji se može embeddat gdjegod podržava C. 
-Postoji i neki jako brzi novi server H2O.
-Zajedno ostvaruju 25.000+ req/s.
-
-
 ## ruby -n
-
 `-n` radi loop nad svakom linijom STDIN-a i stavlja ga u $_
 `ls | ruby -ne 'puts $_'`
 
 
 ## Ruby modules
 http://blog.honeybadger.io/avoid-these-traps-when-nesting-ruby-modules
-
 Kod nestanih modula, pristup konstantama ne određuje parent-child odnos objekata, nego struktura koda (Module.nesting)
 
 ```ruby
@@ -35,7 +40,7 @@ module A
 end
 ```
 
-Ali zato: 
+Ali zato:
 ```ruby
 module A::B
   Module.nesting # => [A::B], ne vidi C
@@ -43,11 +48,6 @@ end
 ```
 
 Međutim, Rails ima autoload system koji pomoću `Module.const_missing` detektira kad file s konstantom nije učitan, pa će ovo u Railsu raditi. Zaključak: izbjegavaj `A::B` definiciju modula.
-
-## How does bundler work, anyway?
-https://www.youtube.com/watch?v=4DqzaqeeMgY
-
-Problem s gem odlučivanjem koju verziju gema koristiti. Rješenje: ne radi tu odluku u runtimeu, nego pri instalaciji.
 
 
 ## &:protected_metoda
@@ -61,27 +61,15 @@ result = Hash.new do |hash, key|
 end
 ```
 
-## Ruby i HTTP/2
-
-HTTP/2 nije kompatibilan s Rakeom: request/response streaming bi trebao biti default, komunikacija dvosmjerna (server ili klijent mogu gurnuti više stvari bez odgovora)
-HTTP/2 je inače nešto kao websocketsi, ali za websocketse treba implementirati dosta stvari koje http nudi (redirection, REST, caching)
-Prednosti:
-- headeri se compressaju (uključujući cookije), uštedi se do 80% - **koristi HTTP/2 compatible proxy (nginx, h2o)**
-- mogućnost slanja više responsea u istoj konekciji, domain sharding više nije potreban - **koristi HTTP/2 compatible CDNove**
-- jedna konekcija znači jedan TLS handshake
-- klijenti mogu izraziti preferenciju koji request da se prvi ispuni (npr. CSS i JS prije imagea)
-- pošto je skidanje jednog velikog filea i puno malih sada isto, gubi se potreba za jednim velikim JS i CSS fileom i spriteovima
-
-
-## RubyConf 2014 - Isomorphic App Development with Ruby and Volt by Ryan Stout
-https://www.youtube.com/watch?v=7i6AL7Walc4
-
-Volt - Isomorphic framework (isti kod na serveru i klijentu) - Ruby se kompajlira u JS koristeći **Opal**
-
-
-## mime-types optimizacija
-https://github.com/mime-types/ruby-mime-types/issues/94
-
-mime-types je držao sve tipove u jednom velikom jsonu. Od tog hasha su se onda stvarali `Mime::Type` objekti koji su se čuvali u memoriji. Sve skupa gem je zauzimao 15 MB memorije, što je poprilično.
-
-Umjesto jsona, tipove su podijelili u fileove, po jedan file za svaki atribut, po jedan red za svaki tip. Pošto velika većina aplikacija ne treba sve tipove, `Mime::Type` objekti se lazy loadaju. To je malo usporilo loadanje, ali 10x smanjilo korištenu memoriju.
+## Debugging
+http://www.schneems.com/2016/01/25/ruby-debugging-magic-cheat-sheet.html
+https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html
+* `bundle open gem_name` - u editoru otvara verziju gema iz Gemfilea. `EDITOR=atom` za definiranje editora.
+* `gem pristine gem_name` - ako si prčkao po gemu i dodavao kod, ovo ga resetira.
+* `obj.method(:foo).source_location` - file i linija gdje je metoda definirana
+* `obj.method(:foo).super_method.source_location` - file i linija gdje je **super** definiran
+* `obj.method(:foo).parameters` - lista argumenata koje metoda prima
+* `caller` - unutar metode, vraća backtrace poziva
+* `ruby -d foo.rb` - ispisuje sve exception, čak i one rescuane. `bundle exec ruby -d script/rails runner foo.rb` za Rails.
+* `ObjectSpace.trace_object_allocations_start`, pa onda `ObjectSpace.allocation_sourcefile(obj)` i `ObjectSpace.allocation_sourceline(obj)` - gdje je objekt alociran
+* `trap(:INFO) { Thread.list.each {|t| p t, t.backtrace }}` - za otkrivanje deadlocka, na CTRL+T (`INFO`) svi threadovi ispisuju gdje se trenutno nalaze

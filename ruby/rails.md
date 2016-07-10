@@ -14,7 +14,6 @@ http://www.akitaonrails.com/2016/03/22/is-your-rails-app-ready-for-production
 
 
 ## Cache
-
 Rails koristi key based cache - umjesto da expira value, on promijenjeni objekt dobije novi key. U slučaju da se memcached napuni, prvo će se odbaciti najdavnije korišteni - znači ovi pod starim keyevima.
 
 - **MemoryStore** je najbrži, ali jede RAM i nemožeš ga dijeliti. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je **LRURedux**.
@@ -66,7 +65,6 @@ Najvjerojatnije ti app ne leaka memoriju, nego samo koristi puno. Vatrogasna rje
 `derailed exec perf:mem_over_time` - za traženje leakova, kopipejstaj rezulat u google spreadsheets za graf
 
 ## JSON API Schema
-
 Kako validirati JSON podatke koji dolaze u API? strong_params su meh - ne provjeravaju tip, kod se drži u controlleru. Loš data ne bi uopće trebao doću do app layera. Postoji format definiranja ulaznih (i izlaznih) podataka koji se zove JSON Schema. Todo: Pogledaj njegove integracije u railsu.
 
 ## has_many i conditions
@@ -83,3 +81,7 @@ U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se n
 joinati u istom queriju (a ne loadati odvojeno):
 `User.includes(:projects).where('projects.deleted_at IS NOT NULL').references(:projects)``
 Kad se koristi `includes`, `uniq` nije potreban.
+
+## Rails Console
+`app` - trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`
+`helper` - svi view helperi, npr. `helper.link_to` i `helper.truncate`
