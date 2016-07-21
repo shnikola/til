@@ -36,4 +36,4 @@ Umjesto jsona, tipove su podijelili u fileove, po jedan file za svaki atribut, p
 
 ## Micromachine
 https://github.com/soveran/micromachine
-Library od 50 linija koda, super.
+Mini state-machine library. Probao sam ga sam implementirati sam - i dosta dobro sam ga napisao. Bravo ja.

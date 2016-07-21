@@ -18,3 +18,10 @@ pa postavlja viewport width na 960px. I onda sve izgleda sitno i odzumirano.
 </details>
 ```
 Chrome, Safari i Android nativno prikažu exapandable "> More". Firefox i IE, još ne :/
+
+## Optimiziranje imagea
+http://blog.pamelafox.org/2014/01/improving-front-page-performance.html
+1. tinypng za optimiziranje veličine
+2. data-uri za manje slike koje se samo jednom pojavljuju
+3. Spriteovi/font za ikonice
+4. Delayed load za veće slike, videove i iframeove.

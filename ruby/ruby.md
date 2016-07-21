@@ -73,3 +73,9 @@ https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html
 * `ruby -d foo.rb` - ispisuje sve exception, čak i one rescuane. `bundle exec ruby -d script/rails runner foo.rb` za Rails.
 * `ObjectSpace.trace_object_allocations_start`, pa onda `ObjectSpace.allocation_sourcefile(obj)` i `ObjectSpace.allocation_sourceline(obj)` - gdje je objekt alociran
 * `trap(:INFO) { Thread.list.each {|t| p t, t.backtrace }}` - za otkrivanje deadlocka, na CTRL+T (`INFO`) svi threadovi ispisuju gdje se trenutno nalaze
+
+
+## Brže-bolje metode
+`reverse_each` je brži od `reverse.each`
+`str.sub` je brži od `str.gsub` (ako treba samo prva izmjena)
+`str.tr` je brži od `str.gsub` (ako se mijenja jedno slovo)

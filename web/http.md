@@ -1,26 +1,3 @@
-# What really happens when you navigate to a URL
-http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
-
-1. Unesemo url wikipedia.org/login u browser
-2. Browser traži IP adresu za "wikipedia.org". Browser cache -> OS cache -> Router cache
-   -> ISP DNS cache -> Root nameserver -> .org nameserver -> wikipedia.org nameserver
-3. Browser šalje request na IP: URL, tko sam (User-Agent), što želim (Accept, Accept-Encoding),
-   da održi TCP vezu (Connection), i stanje klijenta (Cookies)
-4. Server odgovara s `301 Moved Permanently`, `Location: https://www.wikipedia.org/`
-5. Browser šalje isti request na novu lokaciju.
-6. Server generira HTML i vrati ga nazad.
-7. Browser počinje renderirati HTML, radeći dodatne requestove pri nailasku na
-   objekte koje treba dohvatiti (images, css, js). Svaki od tih dodatnih requestova
-   prolazi kroz ovaj isti proces (uključujući i DNS). Ali statični fileovi se često
-   serviraju iz browser cachea, koristeći Expires (datum) i ETag (verzija) headere.
-
-Kako iza domene može stajati više IP-jeva:
- - Round-robin DNS - vraća jedan od nekoliko IP-jeva
- - GeoDNS - vraća IP ovisno o korisnikovoj lokaciji
- - Load Balancer - stroj koji prosljeđuje request ostalim serverima (npr. HAProxy)
- - Anycast je routing metoda u kojoj je IP mapiran na više fizičkih servera, ali se ne koristi s TCP-om.
-
-
 # HTTP 1.1
 http://www.jmarshall.com/easy/http/
 
@@ -130,7 +107,7 @@ TLDR: Enablaj ETagove na serveru, stvari koje možeš stavi na CDN. Za neplanira
 - `X-Forwarded-Host`(c): Host i port koji je klijent tražio od reverse proxija (npr. `en.wikipedia.org:80`)
 - `X-Forwarded-Proto`(c): Protokol koji je klijent tražio od reverse proxija (npr. `https`)
 - `Forwarded`(c): pokušaj standardiziranja gornja 3 headera. (npr. `for=192.0.2.60; proto=http; `). Ne koristi se baš.
-- `Via`(c, s): verzija protokola, hostname, i optional product version proxija kroz koje je poruka prošla (npr. `1.0 fred, 1.1 example.com (Apache/1.1)`). Uglavnom za debugiranje, a služi i za detektiranje proxy loopova. 
+- `Via`(c, s): verzija protokola, hostname, i optional product version proxija kroz koje je poruka prošla (npr. `1.0 fred, 1.1 example.com (Apache/1.1)`). Uglavnom za debugiranje, a služi i za detektiranje proxy loopova.
 
 **CORS:**
 Slanje advanced requestova (POST, PUT, DELETE) i custom headera iz AJAXa na resource s druge domene nije dopušteno. Time se sprječava zloupotreba cookija i autentifikacije sitea na drugoj domeni (npr. skripta na zlom siteu POSTa sliku kurca na tvoj facebook). To se zove **Same Origin Policy**.
