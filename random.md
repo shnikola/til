@@ -3,13 +3,10 @@
 ## Twillio
 Twillio je kul i turbo jednostavan api za telefonske pozive i SMS.
 
-## Regex ponavljanja
 
+## Regex ponavljanja
 Za detektirati ponavljanja u regexu koristi `(something)\1`
 
-## STUN
-
-Kad se koristi NAT, unutarnje računalo ne zna koja je njegova javna adresa. STUN je protokol da to sazna.
 
 ## Git workflows
 https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
