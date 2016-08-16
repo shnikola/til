@@ -87,11 +87,33 @@ Ali, avaj, ni to nije dovoljno za neke komplicirane NAT topologije. A i UDP zna 
 *TLDR:* Glavni feature UDP-a je da nema featurea, i zato je prikladan za izgradnju novog protokola nad njim. Ali nemoj to raditi pobogu, koristi nešto postojeće i zrelo (npr. WebRTC).
 
 
-
-
 # 4. Transport Layer Security (TLS)
 
 (TODO)
 
 
 # 5. Introduction to Wireless Networks
+
+Tipovi wireless mreža:
+* Personal Area Network (domet osobe, zamjena za kablove periferije): Bluetooth, ZigBee, NFC
+* Local Area Network (domet zgrade, produženje žičane mreže): 802.11 (WiFi)
+* Metropolitan Area Network (unutar grada, bežična povezanost između mreža): 802.15 (WiMAX)
+* Wide Area Network (worldwide, bežični pristup mreži): Cellular (UMTS, LTE, itd.)
+
+Kapacitet wireless kanala ovisi o *širini pojasa* (bandwith, u herzima) i *omjeru signala i šuma* (S/N ratio, u watima).
+Što je veća širina, veći je i kapacitet. Signali niske frekvencije putuju dalje i pokrivaju veća područja,
+ali zahtjevaju veće antene. Signali visoke frekvencije mogu prenijeti više podataka ali ne putuju daleko.
+Što je šum jači, to signal mora biti jači da bi se prenijela informacija. Šum dolazi iz svih drugih wireless uređaja i nemoguće ga je izbjeći. Rješenje je ili povećati snagu odašiljanja, ili smanjiti udaljenost do primatelja.
+
+Modulacija je prijevod digitalnih podataka u analogni signal. Odabir modulacijske abecede također utječe na kapacitet wireless kanala.
+
+Brzina koju tehnologije reklamiraju (802.11g = 54Mbit/s, 802.11n = 600Mbit/s) je ona dobivena u idealnim uvjetima. U stvarnom svijetu, na throughput utječu:
+* udaljenost,
+* pozadinski šum,
+* interferencija korisnika u istoj mreži (intra-cell),
+* interferencija korisnika u susjednim mrežama (inter-cell),
+* količina dostupne snage odašiljanja, te
+* količina procesorske snage i odabrana modulacijska shema
+
+
+# 6.

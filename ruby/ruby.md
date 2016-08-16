@@ -16,11 +16,6 @@ Kad definiraš `method_missing`, uvijek definiraj i `respond_to_missing?` jer ć
 riješiti da radi i dohvaćanje metode s `method`.
 
 
-## Novo u 2.3
-`user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali `try` ne baca exception ako metoda ne postoji.
-`{a: {b: 1}}.dig(:a, :b) # => 1` - nested pristup bez exceptiona
-`['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` - vraća one koji se ne slažu regexom
-
 
 ## ruby -n
 `-n` radi loop nad svakom linijom STDIN-a i stavlja ga u $_
@@ -79,3 +74,21 @@ https://tenderlovemaking.com/2016/02/05/i-am-a-puts-debuggerer.html
 `reverse_each` je brži od `reverse.each`
 `str.sub` je brži od `str.gsub` (ako treba samo prva izmjena)
 `str.tr` je brži od `str.gsub` (ako se mijenja jedno slovo)
+
+## Novo u 2.3
+`user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali `try` ne baca exception ako metoda ne postoji.
+`{a: {b: 1}}.dig(:a, :b) # => 1` - nested pristup bez exceptiona
+`['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` - vraća one koji se ne slažu regexom
+
+## Novo u 2.4
+`Regexp#match?` - vraća boolean i 3 puta je brži od `match` i `=~`
+`/(?<first_name>) (?<last_name>\w+)/.match("Nikola Santic").named_captures` - vraća hash named capturea
+`/(\d+)-(\d+)-(\d+)$/.match('2016-07-18').values_at(1, 3)` - vraća vrijednosti za 1. i 3. capture
+`[1, 2, 3].sum` - od sada i u Rubyiju
+`Dir.empty?("dir_name")`, `File.empty?("file_name")`
+`123.digits` - vraća znamenke (`[3, 2, 1]`), `digits(16)` radi u drugim bazama
+`Fixnum`, `Bignum` i `Integer` su svi sada `Integer` (implementacija je skrivena)
+`round`, `ceil`, `floor` primaju precision argument
+Unicode characteri se downcaseaju kako treba.
+`String.new` prima `:capacity` za memoriju koju treba predalocirati.
+`Thread.report_on_exception = true` ne prekida proces kao `abort_on_exception`, ali i dalje ispiše error.

@@ -26,7 +26,7 @@ Inicijalna linija za response: `HTTP/1.1 200 OK`
 - `Retry-After`(s): u slučaju 503 Service Unavailable, vrijeme nakon kojeg da klijent pokuša opet.
 - `Upgrade`(c,s): zahtjev klijentu/serveru da se pređe na drugi protokol (npr. HTTPS, HTTP2)
 
-**Methods::**
+**Methods:**
 `GET` dohvaća resource, bez side effecta.
 `HEAD` dohvaća samo headere, a ne i body. Korisni za saznati podatke o resourcu bez da ga skineš.
 `POST` šalje podatke vezane za resource.
