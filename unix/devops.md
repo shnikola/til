@@ -1,7 +1,7 @@
 # Devops
 
-provjera memorije: `free -h`
-ako nemaš rama a imaš diska, dodaj swap.
+TODO
+supervise
 
 remote_syslog - šalje logove na papertrail, konfiguracija: `/etc/log_files.yml`
 
@@ -9,10 +9,84 @@ Unicorn se kršio s:
 `Operation not permitted @ rb_file_chown - /home/jugosluh/shared/log/unicorn.log`
 U `unicorn.rb` user nije bio postavljen na "app" s kojim sam deployao iz mine (on je stvarao foldere i sve)
 
+
+## Security
+Prebaci `ssh` na neki visoki port - eliminira većinu port sniffera.
+Disablaj password login za `ssh`.
+`fail2ban`
+
+
+## System
+`uname` - podatci o OS-u. `-r` kernel release. `-a` za sve podatke.
+`hostname` - sistemsko ime u mreži
+`date` - trenutno vrijeme.
+`uptime` - koliko dugo već system radi, te load zadnjih 1min, 5min i 15min
+
+
+## Stats
+`history` - lista svih prethodnih naredbi.
+
+`top` - lista procesa koji najviše troše CPU.
+`lsof` - lista otvorenih fileova s procesima koji su ih otvorili
+`netstat -lnp` - lista procese koje imaju otvorene sockete.
+`free` - slobodna memorija. `-m` u megabytima.
+
+`watch <command>` - poziva naredbu svakih 2 sekunde (npr. `watch df -h`).
+  * `-n 5` za svakih 5 sekundi.
+  * `-d` za highlight promjena.
+
+
+## SSH
+`ssh <user>@<host>` otvara shell na remote stroju. Ali može i još mnogo drugih stvari!
+  * *Local port forwarding* (`-L <local>:<remote>`) šalje *lokalni* promet SSH tunelom do *remote* hosta. Korisno za spajanje na serverov DB.
+  Primjer: `-L 9000:localhost:5432` promet lokalnog porta `9000` šalje na SSH server koji ga prosljeđuje svom localhostu na port `5432` (gdje se nalazi DB).
+
+  * *Remote port forwarding* (`-R <remote>:<local>`) šalje promet s *remote* hosta SSH tunelom na *lokalni* stroj. Korisno za spajanje izvana na tvoj lokalni stroj dok developaš.
+  Primjer: `-R 9000:localhost:3000` promet `<host>:9000` prosljeđuje se tvom lokalnom računalu na port `3000`.
+
+  * *Dynamic port forwarding* (`-D <port>`) koristi lokalni port kao SOCKS proxy, pa *sav* promet možeš tunelirati preko SSH.
+  Primjer: `ssh -D 5555 server`, i u browseru ili curlu možeš podesiti proxy na `localhost:5555`.
+
+  * *Agent Forwarding* (`-A`) prosljeđuje tvoje lokalne private keyeve SSH serveru, pa možeš pullati s Githuba bez da dodaješ deployment keyeve. Moraš turbo vjerovati serveru da bi ovo koristio.
+
+  * *Command execution* (`ssh <user>@<host> <cmd>`) izvodi naredbu na remote stroju, a rezultat možeš normalni pipeati lokalno. U `.ssh/authorized_keys` mogu se dodati naredbe (`command=...`) koje se obavezno izvode prije otvaranja shella. Tako rade Github i Heroku protokoli, koji interno koriste SSH, ali whitelistaju samo dio naredbi, dok otvaranje shella ne dopuštaju.
+
+Neke kul opcije:
+  * `~C` dok si u shellu otvara SSH konzolu, gdje možeš dodati opcije kao `-L` i `-R`.
+  * `~?` za popis svih escape sekvenci.
+  * `-fNn` za tuneliranje bez da se otvori remote terminal.
+
+Passwordless authentifikaciju obavezno koristi:
+  * `ssh-keygen` generira private/public key pair. Koristi *passphrase* da se zaštitiš od sudoera.
+  * `ssh-copy-id <user>@<host>` za dodavanje svog public keya na remote machine (trebaš znati password).
+  * lokalni private key file mora biti `600`, `~/.ssh/authorized_keys` mora biti `644`.
+  * `ssh-agent` dozvoljava da samo jednom ukucaš passphrase (drži ga u memoriji tijekom login sessiona).
+  * `ssh-add` dodaje novi private key u `ssh-agent`.
+
+Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/config`. Neke postavke:
+  * `Port` definira custom port za spajanje
+  * `LocalForward` za definiranje tunela.
+  * `Compression yes` korisno za spore servere.
+  * `ServerAliveInterval 15`, `ServerAliveCountMax 6` šalji keep alive svakih 15 sekundi, do 6 puta. Ako server krepne, veza će se disconnectati nakon 15*6=90 sekundi.
+
+
+## rsync
+`rsync <src>/ <user>@<host>:<dest>` sinkronizira directorije između različitih sistema, plus je super brz.
+  * `-nv` ne kopira ništa nego ispisuje što bi se sve kopiralo. Odlično prije stvarnog poziva.
+  * `-a` radi rekurzivno i čuva sve permissione.
+  * `-P` daje progress bar i omogućava resume ako se veza prekine.
+  * `--delete` briše fileove u `<dest>` ako ih nema u `<src>`.
+
+
+## cronjob
+cronjob nije interaktivni shell pa ne učitava `.bash_profile` ni `.bashrc`. Možeš ih ručno pozvati s:
+`source /home/user/.bash_profile`
+
+
 ## nginx
 config: `/etc/nginx/sites-available`
-
 `listen 80 default_server` opcija hvata sve nematchane hostove (nemoj koristiti `server_name _;`)
+
 
 ## Automatska provjera https certifikata
 http://prefetch.net/code/ssl-cert-check
@@ -45,11 +119,11 @@ Opcije unutar programa:
 
 ## httpie
 Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
-`http example.org` - osnovni poziv
-`http X-API-Token:123` - custom header
-`http field=value` - data, po defaultu se šalje kao JSON, s `-f` kao forma
-`http field:=[1,2,3]` - raw JSON, ako value treba biti number, boolean ili array
-`http --session=logged-in` - čuva cookije i autorizaciju
+  * `http PUT example.org` - osnovni poziv
+  * `X-API-Token:123` - custom header
+  * `field=value` - data, po defaultu se šalje kao JSON, s `-f` kao forma
+  * `field:=[1,2,3]` - raw JSON, ako value treba biti number, boolean ili array
+  * `--session=logged-in` - čuva cookije i autorizaciju
 
 ## tcpdump
 http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/
@@ -61,10 +135,12 @@ Za capture TCP prometa.
 `src port 80 or dst port 80` - prima i boolean operatore
 Za dump na strojevima s velikim prometom, s `-c 10000` ograniči broj paketa koji će se capturati.
 
+
 ## ngrep
 Slično kao `tcpdump`, ali ima i podršku za regexe (kao grep).
 `ngrep -q -W byline "^(GET|POST) .*"` - hvata sve pakete koji imaju GET ili POST
 `ngrep -q -W byline "search" host www.google.com and port 80` - hvata sve pakete na google koji u sebi imaju riječ "search".
+
 
 ## siege
 Za load testing.

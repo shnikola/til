@@ -80,7 +80,7 @@ Ordered su, mogu više puta imati isti key. Koriste se uglavnom za argumente fun
 
 `%{:a => 1, 2 => b}` - Map, key value store (kao hash u Rubiju). Bilo što može biti key,
 nema orderinga
-`%{a: 1, b: 2}` - skraćena sinksa ako su keyevi atomi
+`%{a: 1, b: 2}` - skraćena sintaksa ako su keyevi atomi
 `map[:a]` - dohvaća vrijednost
 `Map.get(map, :a)` - isto
 `map.c` - isto

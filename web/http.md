@@ -90,7 +90,7 @@ Najbolji request je onaj koji ne mora doći do servera. Zato postoje browser cac
 - `Last-Modified`(s): Kad je zadnji put resource promijenjen.
 - `If-None-Match`(c): Šalje ETag. Ako je na serveru isti, vraća 304 Not Modified i resource se ne treba opet skidati.
 - `If-Modified-Since`(c): Isto kao i gore, samo šalje datum.
-- `If-Match`(c): Vrati error ako se resouce umeđuvremenu promijenio. Koristi se ako radimo PUT, a ne želimo pregaziti nečije promjene.
+- `If-Match`(c): Vraća error ako se resource promijenio. Korisno ako radiš PUT, a ne želiš pregaziti nečije promjene.
 - `If-Unmodified-Since`(c): Isto kao i gore, samo s datumom.
 - `Age`(s): koliko dugo je resource u proxy cacheu (u sekundama)
 
@@ -141,4 +141,7 @@ Nažalost, nema zakonskih ni tehnoloških obveza da server ispoštuje korisnikov
 
 
 ## HTTP 2
-http://http2-explained.haxx.se/content/en/
+http://http2-explained.haxx.se/content/en/ TODO
+multipleksira requeste preko istog socketa (konekcije). Čak i requeste iz različitih tabova!
+`chrome://net-internals#http2` za listu trenutnih konekcija u browseru
+svi headeri su lowercase

@@ -1,4 +1,4 @@
-# Technology
+# Science and Technology
 
 ## How Tesla Will Change The World
 http://waitbutwhy.com/2015/06/how-tesla-will-change-your-life.html
@@ -11,7 +11,7 @@ Vozila koja koriste električni motor:
   *hydrogen cars* koriste hidrogen kao gorivo, ali em se hidrogen dobiva iz plina, em je puno opasniji za handlanje od struje.
   *electrična vozila* su 100% električna s velikom baterijom.
 
-Prednosi električnog motora:
+Prednosti električnog motora:
   Ne moraš ići na crpku da napuniš gorivo - bateriju puniš kod kuće.
   Tri puta veća učinkovitost od motora s unutrašnjim izgaranjem.
   Održavanje je lakše (ima samo 10 dijelova, ne treba ulje mijenjati).

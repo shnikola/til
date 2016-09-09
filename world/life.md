@@ -1,5 +1,28 @@
 # Life
 
+## 8 Questions To Measure Your Life
+1. Are you happy?
+2. Do you like your daily routine?
+3. How much do you spend doing something you enjoy?
+4. Who are the good people in your life - and do you spend enough time with them?
+5. What do you need to change?
+6. Do you need to do any big decisions?
+7. What are you doing for others?
+8. What comes next?
+
+## 5 Minute Journal
+Ujutro:
+  * I am grateful for... (3)
+  * What would make today great? (3)
+  * Daily Affirmations. I am... (1)
+Navečer:
+  * 3 Amazing Things that happened today... (3)
+  * How could I have made today better (1)
+
+Ideja je da nas fokusiranje na pozitivne stvari čini sretnijima.
+Čini se ok, ali malo preljigavo. Probaj ga učiniti više svojim.
+
+
 ## Tolerancija
 http://degoes.net/articles/lambdaconf-inclusion
 http://hintjens.com/blog:114

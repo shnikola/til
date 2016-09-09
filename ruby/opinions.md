@@ -2,7 +2,6 @@
 
 ## O Railsu 5 i relevantnosti Railsa u današnje vrijeme
 https://www.amberbit.com/blog/2015/4/22/why-rails-5-turbolinks-3-action-cable-matter-and-why-dhh-was-right-all-along/
-
 Najveći problem je što frontend developeri ne žele raditi u rubiju (asset pipeline i sprocketsi) kad mogu raditi u jeziku koji poznaju (node.js, gulp). Railsu bi bilo najbolje da se ostavi forsiranja klijentske strane (js.erb, turbolinks) i fokusira se na APIje koje će klijent trošiti.
 
 **Zaključak:** Ne treba se fokusirati na framework nego na jezik - koristiti gemove za ruby a ne za Rails; proučiti ostale jezike poput Go-a, Clojura i Rusta.
@@ -10,7 +9,6 @@ Najveći problem je što frontend developeri ne žele raditi u rubiju (asset pip
 
 ## Smrt dependencijima
 http://www.mikeperham.com/2016/02/09/kill-your-dependencies
-
 Gemovi vuku druge gemove, i prije nego se okreneš imaš sranja koja ne koristiš a koriste ti masu memorije.
 
 Ako ti gem ne treba, briši ga. Ako njegovu funkcionalnost možeš trivijalno implementirati, učini to.
@@ -19,10 +17,10 @@ Ako si autor gema, uvijek za default koristi **stdlib**. `json` je od 1.9 u stdl
 
 Simplify, simplify, simplify.
 
-## Budućnost Rubija uz Rails
+
+## Budućnost Rubyja uz Rails
 http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html
 http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room
-
 Čovjeku je dosadio Rails i ne slaže se njegovom arhitekturom, pa ga je odlučio više ne koristiti.
 Problem je što Rails drži monopol u Ruby svijetu. Od svih gemova se očekuje da podržavaju Rails,
 makar ih to koštalo jednostavnosti. 99% poslova koji se nude vezani su za Rails. Postavlja pitanje
