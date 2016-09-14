@@ -1,15 +1,5 @@
 # HTML
 
-## Viewport meta tag
-Viewport je vidljivi dio dokumenta, odnosno browserov prozor (minus toolbari i sl).
-Kad mobile browser otvara stranicu, pretpostavlja da želimo vidjeti čitavu u desktop veličini,
-pa postavlja viewport width na `960px`. I onda sve izgleda sitno i odzumirano.
-  * `<meta name="viewport" content="width=320">` postavlja tu širinu na 320px.
-  * `<meta name="viewport" content="width=device-width">` još bolje, postavlja da prati širinu uređaja.
-  * `<meta name="viewport" content="initial-scale=1">` postavlja početni scale na 1:1 - nema zoomiranja.
-  * `<meta name="viewport" content="maximum-scale=1">` disabla zoom. Nemoj koristiti.
-
-
 ## <a>
 **Attributes:**
 `href` - link na resource. Može biti URL ili URL fragment (počinje s `#`). Specijalni fragment `#top` uvijek vraća na vrh stranice.
@@ -70,6 +60,9 @@ Ako nešto treba biti klikabilno, koristi `button`. Ozbiljno. Super je `button`.
 ```
 Chrome, Safari i Android nativno prikažu exapandable "> More". Firefox i IE, još ne :/
 
+## Favicon
+https://realfavicongenerator.net/
+Koristi ovaj link gore. Odličan alat.
 
 # Literatura:
   * Kul predavanja o elementima: https://vimeo.com/webconferences/videos

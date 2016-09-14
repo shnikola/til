@@ -21,3 +21,7 @@ Potencijalna obrana od ovog je da browseri uvedu *DNS pinning*, tj. da uvijek ko
 
 ## Timing Attacks
 Zaključivanje prema koliko dugo treba serveru da odgovori (npr. usporedba stringova, treba koristiti `Rack::Utils.secure_compare` koji uspoređuje uvijek u konstantom vremenu). Iako, zbog šuma u networku ovo je jako teško izvesti u praksi.
+
+
+## Password cracking
+http://hashcat.net/hashcat/ - alat za sve žive hasheve.

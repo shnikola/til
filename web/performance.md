@@ -22,10 +22,11 @@ Savjeti za izbjegavanje re-layouta i re-painta:
 
 ## Optimiziranje imagea
 http://blog.pamelafox.org/2014/01/improving-front-page-performance.html
-1. tinypng za optimiziranje veličine
+1. `tinypng` za optimiziranje PNGova, `SVGO` za SVG
 2. data-uri za manje slike koje se samo jednom pojavljuju
 3. Spriteovi/font za ikonice
-4. Delayed load za veće slike, videove i iframeove.
+4. Picturefill za retina/responzivne slike
+5. Delayed load za veće slike, videove i iframeove.
 
 
 # Stories

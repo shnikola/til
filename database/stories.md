@@ -39,4 +39,18 @@ Problem: handlanje 10K likeova po sekundi.
   * `pg_reorg` duplicira postojeću tablicu, ali unosi redove `ORDER BY` indeksom, pa će povezane stvari brže dohvaćati.
 5. **WAL-E**:
   * Arhivira sve Write-Ahead Logove na S3. Uz regularni backup i WAL-E, možeš restorati bazu na bilo koji željeni trenutak.
-6.
+
+
+## Making MySQL Better at GitHub (2013)
+https://github.com/blog/1880-making-mysql-better-at-github
+Prebacivali su bazu u novi cluster s boljim hardwareom. Pritom su se pripremili na sljedeći način:
+  * Pomoću `tcpdump` prikupili su `SELECT` querije s produkcije i replayali ih na novi cluster.
+  * Isprobavali su različite konfiguracije, mijenjajući ih jednu po jednu: `innodb_buffer_pool_size`, `innodb_thread_concurrency`, `innodb_io_capacity`, `innodb_buffer_pool_instances`. Svaku su testirali bar po 12 sati.
+  * Bilježili reponse time, zastoje u querijima, `SHOW ENGINE INNODB STATUS` i `SEMAPHORES` za concurrency.
+  * Prebacili velike tablice s povijesnim podatcima na zaseban cluster. Time se oslobodio disk i buffer pool za "hot" podatke.
+
+
+## Dropbox moves from Amazon (2016)
+https://blogs.dropbox.com/tech/2016/03/magic-pocket-infrastructure/
+Dosad su hostali fileove na S3, a metadatu kod sebe. Ali s preko 500 PB podataka, to je postalo preskupo.
+Odlučili su razviti in-house rješenje, jedan od svega nekoliko exobyte-scale storage sustava na svijetu.
