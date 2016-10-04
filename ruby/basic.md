@@ -10,6 +10,38 @@
   * `enum_for` koristi unutar `each` metode: `return enum_for(__method__) unless block_given?`. Na taj način možeš chainati enumeratore, npr. `each.with_index`
 
 
+## Modules
+Svaki `module` je instanca klase `Module`. Imaju nekoliko primjena:
+* *Namespacing*: ako razvijaš library, sve klase stavi unutar modula da bi izbjegao konflikte s klasama istog imena.
+* *Method Sharing*: s `include`, `extend` ili `prepend` bilo koja klasa dobija metode iz modula. Korisno ako imaš modul s dobro definiranim public interfaceom (npr `Enumerable`).
+* *Global methods*: stateless module s metodama kao `FileUtils`. Koristi `module_function` da sve instance metode kopiraš kao class i pretvoriš u private.
+
+Nemoj korisiti module da razbiješ veliku klasu u više fileova s `include` - samo ćeš si otežati kad ne budeš znao odakle dolazi neka metoda.
+
+
+## Nested modules
+http://blog.honeybadger.io/avoid-these-traps-when-nesting-ruby-modules
+Kod nestanih modula, pristup konstantama ne određuje parent-child odnos objekata, nego struktura koda (Module.nesting)
+
+```ruby
+module A
+  C = 1
+  module B
+    Module.nesting # => [A::B, A], vidi C
+  end
+end
+```
+
+Ali zato:
+```ruby
+module A::B
+  Module.nesting # => [A::B], ne vidi C
+end
+```
+
+Međutim, Rails ima autoload system koji pomoću `Module.const_missing` detektira kad file s konstantom nije učitan, pa će ovo u Railsu raditi. Zaključak: izbjegavaj `A::B` definiciju modula.
+
+
 ## Pozivanje vanjskih procesa
 ``ls`` ili `%x{ls}` forka novi proces i izvršava ga.
   * vraća `stdout` novog procesa kao string. Status možeš dohvatiti iz `$?.success?` (bleh)
@@ -55,29 +87,6 @@ riješiti da radi i dohvaćanje metode s `method`.
 ## ruby -n
 `-n` radi loop nad svakom linijom STDIN-a i stavlja ga u $_
 `ls | ruby -ne 'puts $_'`
-
-
-## Ruby modules
-http://blog.honeybadger.io/avoid-these-traps-when-nesting-ruby-modules
-Kod nestanih modula, pristup konstantama ne određuje parent-child odnos objekata, nego struktura koda (Module.nesting)
-
-```ruby
-module A
-  C = 1
-  module B
-    Module.nesting # => [A::B, A], vidi C
-  end
-end
-```
-
-Ali zato:
-```ruby
-module A::B
-  Module.nesting # => [A::B], ne vidi C
-end
-```
-
-Međutim, Rails ima autoload system koji pomoću `Module.const_missing` detektira kad file s konstantom nije učitan, pa će ovo u Railsu raditi. Zaključak: izbjegavaj `A::B` definiciju modula.
 
 
 ## &:protected_metoda

@@ -62,3 +62,9 @@ Ako je file remotely uploaded, ne želimo ga opet cijelog skidati na server za v
 `net/http` ima `response.read_body` za chunked download, ali mora se nalaziti unutar `http.request_get` bloka, koji zatvara konekciju pri izlasku. Zato se HTTP request poziva unutar `Fiber`a, a u `http.request_get` blok stavlja se `Fiber.yield` koji pauzira izvršavanje tog koda dok se opet ne pozove s `fiber.resume`. Brilliant!
 
 Inače, gem `HTTP.rb` je puno bolja implentacija http clienta i ima ovo out-of-the box, ali za library je uvijek bolje da koristi stdlib.
+
+
+## Ruby Deoptimization
+https://github.com/ruby/ruby/pull/1419
+Ruby je dijelom spor jer uopće ne pokušava optimizirati svoje izvršavanje.
+Problem je u njegovoj dinamičnosti: `1 + 2` ne mora vraćati `3`. U ovom pull requestu, predlaže se poboljšanje: Ruby će pretpostaviti da je rezultat `3`, pa će u većini slučajeva raditi brže, a za posebne slučajeve će imati minimalni overhead. Time se određene metode znatno ubrzavaju.

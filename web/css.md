@@ -24,16 +24,11 @@ Fantomsko stanje elementa koje se može targetirati CSSom.
 * `:only-of-type` - jedini elementi svog tipa u parentu.
 
 **Inputs:** _IE 9+_
-* `:disabled` - inputi s `disabled` atributom
-* `:enabled` - inputi bez `disabled`
-* `:required` - inputi s `required` atributom
-* `:optional` - inputi bez `required`
-* `:read-only` - inputi s `readonly` atributom
-* `:read-write` - inputi bez `readonly`. Uključuje i `contenteditable` elemente.
-* `:valid` - inputi s valueom ispravnog formata (npr. `type=email`)
-* `:invalid` - inputi s valueom neispravnog formata
-* `:in-range` - inputi s valueom unutar zadanog rangea (min i max atributi)
-* `:out-of-range` - inputi s valueom izvan zadanog rangea
+* `:disabled`, `:enabled` - inputi s i bez `disabled` atributa
+* `:required`, `:optional` - inputi s i bez `required` atributa
+* `:read-only`, `read-write` - inputi s i bez `readonly` atributa. Uključuje i `contenteditable` elemente.
+* `:valid`, `:invalid` - inputi s valueom ispravnog i neispravnog formata (npr. `type=email`)
+* `:in-range`, `:out-of-range` - inputi s valueom unutar i izvan zadanog rangea (min i max atributi)
 * `:checked` - radio buttoni, checkboxi ili select optioni koji su checked ili selected
 * `:indeterminate` - radio buttoni od kojih nijedan nije odabran, ili checkbox kojem je dano indeterminate stanje iz js
 
@@ -85,6 +80,18 @@ Pripazi da ne koristiš countere za bitan sadržaj - screen readeri ne čitaju g
 
 ## Cursor
 `cursor:` osim na standardni način, može biti zadan s `url(...), pointer` za custom grafiku (i fallback).
+Moguće je selektirati vrstu uređaja po pointeru: _Chrome, Edge_
+  * `@media (pointer: coarse)` neprecizno upravljanje (npr. touchscreen ili Kinect).
+  * `@media (pointer: fine)` precizni upravljanje (miš, touchpad, tablet stilus)
+
+
+## Tables
+`table-layout` kako se određuje širina stupaca: `auto` prema svim poljima ili `fixed` prema širini prvog retka.
+border-collapse
+border-spacing
+caption-side
+empty-cells
+vertical-align
 
 
 ## Feature queries
@@ -104,11 +111,106 @@ Pripazi da ne koristiš countere za bitan sadržaj - screen readeri ne čitaju g
 
 * `font-size: 12vw` za tekst koji će uvijek zauzimati istu širinu. Točnu vrijednost odrediš isprobavanjem.
 * `height: 100vh; width: 100vw` za hero image koji zauzima cijeli ekran.
-* `margin: 20vh 20vw; width: 60vw; height: 60vh;` za apsolutno centrirani div. 
+* `margin: 20vh 20vw; width: 60vw; height: 60vh;` za apsolutno centrirani div.
+
+
+## Colors
+`rgba(255, 125, 12, 0.2)` (ili `#ff880f`) - `rgb` u rasponu `0..255`, i alpha kanal između `0.0` i `1.0`.
+`hsla(150, 50%, 50%, 0.5)` - `hue` je kut od `0` do `360` (odabire boju), `saturation` (zasićenost) i `lightness` (svjetlina) su postotak. Ovaj format je malo lakši za vizualizirati na prvi pogled. _IE 9+_
+
+`currentColor` jednak je `color` propertiju elementa, korisno za npr. `border: 1px solid currentColor` _IE 9+_
+
+
+## Fonts
+`font-family:` lista fontova, odvojena zarezima. Imena s razmacima stavi u navodnike.
+  * Odabire se prvi font koji je dostupan. Međutim, ako se neki glyph ne nalazi u odabranom fontu, tražit će se u ostalima.  
+  * Generične obitelji su zadnji fallback: `serif`, `sans-serif`, `monospace`, `cursive` i `fantasy`(!!!).
+
+`font-weight`: 100, 200, 300, 400 (`normal`), 500, 600, 700 (`bold`), 800, 900. Fallback do 400 ide na tanje, od 500 na deblje.
+`font-style`: `normal`, `italic` ili `oblique` (ali njega nitko ne koristi)
+`font-stretch`: `condensed`, `normal`, `expanded`. _IE9+_
+
+Ukoliko zadani `font-syle` ili `font-weight` nisu pronađeni u odabranom fontu, browser će ih pokušati *simulirati*, što često ne izgleda baš najbolje. Postoji `font-synthesis` za disablanje toga ali je podržan samo u _FF_. Do tada, pazi da fontovi koje loadaš imaju stilove i weightove koje koristiš.
+
+`font-size`: visina slova. Koristi relativne vrijednosti `em` i `rem`, eventualno `px`.
+`line-height`: visina linije u odnosu na `font-size`. Najsigurnije koristiti unitless mjere, npr. `1.2`.
+
+`@font-face` definira novi font s atributima:
+  * `font-family` - ime novog fonta
+  * `src` - lista urlova odakle se može skinuti
+  * `font-weight`, `font-style` itd. definiraju tip fonta. Defaultno je sve `normal`.
+
+Browser neće prikazati tekst dok se font s `@font-face` ne loada, pa se pri otvaranju stranice događa *Flash of Invisible Text*.
+Ako želiš to izbjeći, koristi library kao `Font Face Observer`, ili `font-display: swap` unutar `@font-face`. _Chrome_
+
+Ako želiš detaljno definirati kako se određeni glyphovi fonta ponašaju, postoje `font-variant-caps`, `font-variant-ligatures`,
+`font-variant-numeric` (za brojeve), `font-variant-position` (za `<sub>` i `<sup>`). _FF_
+
+
+## Text
+`text-align`
+`text-decoration`
+`text-indent`
+`text-shadow`
+hyphens
+letter-spacing
+line-break
+tab-size
+text-align-last
+text-size-adjust
+text-transform
+white-space
+word-break
+word-spacing
+word-wrap
+
+
+## Background
+`background-color` boja pozadine, defaultno `transparent`.
+`background-image` jedna ili više slika, odvojene zarezima. Poziciju svake podesi s `background-position: 20px 0, 10px 0`
+
+`background-position` pozicija slike, izražena s `left/right/center`, u `px`, ili `%`.
+`background-clip` u kojem dijelu elementa se pozadina iscrtava. `background-origin` u kojem dijelu počinje. _IE 9+_
+  * `content-box` prikazuje se ispod contenta, do paddinga
+  * `padding-box` prikazuje se ispod paddinga, do bordera
+  * `border-box` prikazuje se i ispod bordera
+
+`background-size` _IE 9+_
+  * `100px 50px` za fiksnu veličinu
+  * `50%` skalira u odnosu na element
+  * `contain` raširi do rubova elementa održavajući aspect ratio. Rupe popuni s `background-color`
+  * `cover` raširi do rubova elementa održavajući aspect ratio. Viškove odreže.
+
+`background-repeat` kako se ponavlja:
+  * `no-repeat` iscrta samo jednom
+  * `repeat` ponavlja dok ne prekrije cijelu površinu, zadnji image se clipa ako ne stane.
+  * `repeat-x`, `repeat-y` ponavlja u samo jednom smjeru.
+  * `space` jednoliko ponavlja unutar elementa, bez clipanja, ostavljajući prostor između. _IE 9+_
+
+`background-attachment` kako se ponaša pri scrollanju:
+  * `scroll` fiksirana s elementom, ne scrolla (default)
+  * `fixed` fiksirano u odnosu na viewport, scrolla kad i prozor. Korisno za parallax scrolling
+  * `local` scrolla s elementom. (Trenutno ne radi na retina chromeu). _IE 9+_
+
+`background-blend-mode` kako se blendaju background images i background color. _Chrome, FF_
+  * `multiply`, `screen`, `overlay` i drugi photoshop modovi.
+
+
+## Filter
+Dodavanje efekata na slike i backgrounde, npr. `filter: blur(5px)` _Chrome, FF, Safari_
+* `grayscale(30%)` (crno-bijelo), `sepia(30%)` (žućkasto), `saturate(120%)` (pojačava boje)
+* `hue-rotate(90)` (rotira boje), `invert(50%)` (obrne boje)
+* `brightness(120%)` (posvjetljenje), `contrast(30%)` (razlika između tamnog i svijetlog)
+* `blur(5px)` (zamućenje)
+* `opacity(30%)` (prozirnost)
+* `drop-shadow(5px 5px 0)` (kao `box-shadow`, ali prati outline)
+
+Filteri se mogu i kombinirati (`filter: blur(2px) sepia(10%)`) i animirati.
 
 
 TODO:
+@media screen only
 transform
-filters https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 svg
 cubic-bezier()
+global values: inherit initial unset

@@ -3,6 +3,9 @@
 TODO:
 Git blame
 
+## reflog
+`git reflog` lista svega što se napravilo u gitu, s indexima. Restore na taj trenutak s `git reset HEAD@{index}`
+
 
 ## Git workflows
 https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
@@ -34,6 +37,7 @@ Svatko radi na vlastitom repozitoriju, i šalju pull-request adminu koji jedini 
 * `git commit --ammend`
 
 ## Commitao sam u krivi branch
-* `git reset HEAD~ --soft` undo commit, ostavlja promjene
 * `git checkout correct-branch`
-* `git commit -m`
+* `git cherry-pick master`
+* `git checkout master`
+* `git reset HEAD~ --hard` briše commit iz mastera

@@ -1,5 +1,14 @@
 # HTML
 
+## Isprika
+https://html.spec.whatwg.org/multipage/introduction.html#design-notes
+"It must be admitted that many aspects of HTML appear at first glance to be nonsensical and inconsistent.
+
+"HTML, its supporting DOM APIs, as well as many of its supporting technologies, have been developed over a period of several decades by a wide array of people with different priorities who, in many cases, did not know of each other's existence.
+
+"Features have thus arisen from many sources, and have not always been designed in especially consistent ways. Furthermore, because of the unique characteristics of the Web, implementation bugs have often become de-facto, and now de-jure, standards, as content is often unintentionally written in ways that rely on them before they can be fixed."
+
+
 ## <a>
 **Attributes:**
 `href` - link na resource. Može biti URL ili URL fragment (počinje s `#`). Specijalni fragment `#top` uvijek vraća na vrh stranice.
@@ -47,6 +56,17 @@ Otvaranje novog taba skoro uvijek treba prepustiti korisniku. Jedini scenariji k
 * *Clickjacking* je kad napadač na svojoj stranici stavi nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove.
 
 
+## <img>
+Nakon što je parsirao HTML, browser automatski skida sve `<img src>` slike, čak i one koje nisu vidljive korisniku. Ako želiš to izbjeći (jer imaš tisuću slika na stranici), koristi *lazy load* - js koji će postaviti `src` tek kad element uđe u viewport.
+
+Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. Browser će odlučiti koju da upotrijebi.
+* `srcset="normal.jpg 1x, retina.jpg 2x"` bira po device-pixel omjeru uređaja.
+* `srcset="medium.jpg 1000w, large.jpg 2000w"` zadane su širine slika, pa bira po širini viewporta.
+* `src` atribut koristi se kao fallback.
+
+`alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
+
+
 ## <button>
 Ako nešto treba biti klikabilno, koristi `button`. Ozbiljno. Super je `button`.
 
@@ -60,9 +80,10 @@ Ako nešto treba biti klikabilno, koristi `button`. Ozbiljno. Super je `button`.
 ```
 Chrome, Safari i Android nativno prikažu exapandable "> More". Firefox i IE, još ne :/
 
-## Favicon
-https://realfavicongenerator.net/
-Koristi ovaj link gore. Odličan alat.
+
+## favicon.ico
+Treba ih više nego što misliš. Koristi https://realfavicongenerator.net
+
 
 # Literatura:
   * Kul predavanja o elementima: https://vimeo.com/webconferences/videos

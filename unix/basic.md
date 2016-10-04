@@ -221,7 +221,7 @@ Swap se može držati u swap particiji (`fdisk <device>`) ili u swap fileu (`dd 
 `pwd` ispisuje trenutni path.
 `cd` mijenja trenutni path. `cd ..` za level up. `cd -` za prethodni directory.
 `ls -hal` ispisuje sve fileove u trenutnom direktoriju.
-`du -sh *` ispisuje koliko fileovi u trenutnom direktoriju zauzimaju na disku.
+`du -sh *` ispisuje koliko fileovi u trenutnom direktoriju zauzimaju na disku. `du -ch` za total na kraju.
 
 `mkdir <dir>` stvara novi directory. `-p` stvara i sve međudirektorije u danom pathu ako ne postoje.
 `touch <file>` ako ne postoji, stvara prazan file. Ako postoji, updatea access i modified timestamp.

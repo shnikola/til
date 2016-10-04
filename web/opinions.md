@@ -19,3 +19,10 @@ Let’s commit to the idea that as computers get faster, and as networks get fas
 Let’s not allow the panicked dinosaurs of online publishing to trample us as they stampede away from the meteor. Instead, let's hide in our holes and watch nature take its beautiful course.
 
 Most importantly, let’s break the back of the online surveillance establishment that threatens not just our livelihood, but our liberty. Not only here in Australia, but in America, Europe, the UK—in every free country where the idea of permanent, total surveillance sounded like bad science fiction even ten years ago.
+
+
+## Web development as a hack of hacks
+http://www.quirksmode.org/blog/archives/2016/09/web_development.html
+* Javascript nije loš jezik, samo nije jezik s kojim si naučio raditi.
+* Problem nije u milijun frameworka koji postoje, nego u pretpostavci da ti treba framework kako bi bilo što napravio. Nauči osnovni JS i CSS i lako ćeš raditi s bilo čime.
+* Front-end će uvijek biti složeniji od backenda, jer je environment u kojem radiš (browseri) izrazito promjenjiv. Zato ne podcjenjuj front-end development. Sve je to pravo programiranje.

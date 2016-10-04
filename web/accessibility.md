@@ -41,11 +41,19 @@ Uvijek dodaj `alt` atribut na `<img>`, `<svg>` i `<picture>`. Uvijek!
 
 
 ## Color Contrast
-Kontrast između glavnog teksta i pozadine mora biti minimalno `4.5 : 1`. Koristi online alate da provjeriš.
+Kontrast između glavnog teksta i pozadine mora biti minimalno `4.5 : 1`. Koristi online alate poput:
+http://accessible-colors.com
 
 
 ## Mobile
 * Nemoj disablati *Pinch to Zoom* s `maximum-scale=1.0`! Redizajniraj ako treba, ali nemoj oduzimati korisniku mogućnost da zooma.
+
+
+## Hiding
+https://allyjs.io/tutorials/hiding-elements.html
+* Za skrivanje vizualno i od screen readera: `display: none` i `visibility: hidden`
+* Za skrivanje samo od screen readera: atribut `aria-hidden`
+* Za skrivanje samo vizualno: `.visually-hidden` s gornjeg linka
 
 
 ## Testiranje
@@ -55,3 +63,4 @@ Kontrast između glavnog teksta i pozadine mora biti minimalno `4.5 : 1`. Korist
 
 # Literatura
 https://www.marcozehe.de/2015/12/14/the-web-accessibility-basics - pregled
+https://github.com/showcases/web-accessibility - alati

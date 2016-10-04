@@ -4,6 +4,11 @@
 Radi jednu po jednu stvar. Sve što ti padne na pamet dok radiš zapiši, i vrati se tome kad završiš.
 
 
+## Memory
+Bolje pamtiš ako učiš u vremenskim razmacima, nego sve odjednom (*Spacing Effect*)
+Što manje truda trebaš da se prisjetiš, to slabije pamtiš (npr. Duolingo ponuđeni odgovori). Odnosno, dobro je kad nije lako.
+
+
 ## The traits of a proficient programmer
 https://www.oreilly.com/ideas/the-traits-of-a-proficient-programmer
 Kompetentan programer zna kako nešto napraviti, proficient programer zna *zašto* i *kada* nešto napraviti.
@@ -40,6 +45,7 @@ Još par savjeta:
 http://austinkleon.com/2016/08/03/find-a-new-city/
 New York je romantiziran kao grad u koji dođeš bez ičega, upoznaš ljude, stvaraš umjetnost, teško ti je, ali uspiješ. Problem je što se ta priča dogodila prije 50 godina, kad si mogao raditi u knjižari i plaćati najam. Danas je to u New Yorku nemoguće.
 Ako se želiš baviti umjetnošću, stvoriti nešto svoje što se ne uklapa u postojeći model - idi negdje gdje je jeftino živjeti, stvaraj što želiš stvarati, i napravi svoju scenu. Kao što se dogodilo i u New Yorku.
+
 
 ## Open Source
 http://schneems.com/2016/05/31/saving-sprockets.html

@@ -1,4 +1,6 @@
 # Text Processing
+TODO
+newlines in osx
 
 ## Output
 `cat <files>` ispisuje sadržaj fileova.
@@ -59,9 +61,14 @@
 
 
 ## Stream Editing
+`tr <chars> <chars>` čita charactere i mijenja ih pa zadanoj shemi.
+  * `tr 'abc' 'def'` zamijeni `a` > `d`, `b` > `e`, `c` > `f`.
+  * `tr -d <chars>` briše sve matchane znakove.
+
 `sed` čita liniju po liniju i izvršava operacije nad njima. To znači da ne matcha tekst koji se nalazi u više linija.
   * `-i` radi in-place promjene na samom fileu.
   * `sed 's/<regex>/<text>/<options>'` radi substitution, npr. `s/do+g/cat/g`. Opcije `/g`: global substitute, `/I`: ignore case.
+  * `sed 's/<regex>/<text>&'/` za dodavanje ispred matcha (`&` predstavlja matchani string).
   * `sed 's/dog/cat/g; s/cat/elephant/g' file` za više izmjena.
   * `sed '/<regex>/d'` briše sve linije koje matchaju regex. `sed 1,5d` briše sve od 1. do 5. linije.
 

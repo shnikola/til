@@ -15,7 +15,7 @@ Zato lik predlaže:
 Prednost toga je:
   * controller više ne mora znati detalje kako se User createa.
   * create je sada lakše zasebno testirati
-Mislim da to ima smisla koristiti, ali sam za stvarno složene slučajeve.
+Mislim da to ima smisla koristiti, ali samo za stvarno složene slučajeve.
 
 
 ## Decorators
@@ -49,3 +49,10 @@ a sve ostalo s `URI.escape` (ne escapa ove stvari koje se mogu pojaviti u uriju)
 `count` uvijek radi count query.
 `size` je pametan i koristi jedno ili drugo ovisno jesu li recordi loadani.
 Koristi `size`! Jedino ako trebaš broj taman prije nego ćeš loadati sve recorde, koristi `length`.
+
+
+## ActiveRecord Callbacks
+http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/
+Ako želiš u callbacku gurati stvari u background job (zar ne bi trebao koristiti servise?),
+nemoj koristiti `after_save` nego `after_commit`. `after_save` se poziva prije nego se transakcija
+commitala, pa background job možda neće pronaći record u bazi.

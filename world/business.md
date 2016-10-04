@@ -20,3 +20,7 @@ http://www.michaelrwolfe.com/2012/01/16/dont-hire-by-keyword
 Ne inzistiraj da ti zaposlenici dolaze iz backgrounda u kojem je tvoj business.
 Fokusiraj se na to da imaju dobre komunikacijske vještine, da su timski igrači,
 i da se kulturalno slažu.
+
+
+## Old age
+Radi na tome da makneš predrasude prema starijim ljudima na radnom mjestu. Istraživanja su pokazala da mogu jednako brzo savladati nove vještine kao i mlađi, i da se bolje od njih snalaze u kriznim situacijama. Biraj osobe po kvaliteti karaktera, ne po dobi.

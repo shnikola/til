@@ -2,6 +2,12 @@
 
 TODO: paginacija http://www.xarg.org/2011/10/optimized-pagination-using-mysql/
 
+# Brzine pristupa
+* CPU cycle: `0.25 ns`
+* RAM read: `60 ns`
+* SSD read `20 μs` (`20,000 ns`)
+* Hard Disk read `11 ms` (`10,000,000 ns`)
+
 
 # The Log
 https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
