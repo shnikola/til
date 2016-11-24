@@ -11,11 +11,18 @@ http://www.akitaonrails.com/2016/03/22/is-your-rails-app-ready-for-production
 **Upload:** Attachinary gem (direktni upload iz klijenta na servis koji zaobilazi Rails app, samo dobiješ id)
 
 
-## Rack
-`Rack` je univerzalni adapter između servera (`unicorn`, `puma`) i frameworka (`rails`, `sinatra`).
-* Server parsira request.
-* Šalje ga racku kroz varijablu u `call(env)`
-* Rack vraća array `['200', {'Content-Type' => 'text/html'}, ['Response Body.']]` sa statusom, headerima i bodyjem.
+## Request/Response Cycle
+http://www.rubypigeon.com/posts/examining-internals-of-rails-request-response-cycle
+* Rack entry point definiran je u `config.ru`, gdje se poziva `Rails.application`, instanca tvoje aplikacije.
+* Rack poziva `call(env)` aplikacije koji radi `build_request(env)` (dodaje hrpu stvari u `env`) i prosljeđuje ga middleware stacku.
+* Request se prosljeđuje kroz svaki middleware, i svaki doda nešto u `env`, npr. deserijalizirane cookije ili logiranje.
+* Nakon middlewarea ide se u router. `env` se wrapa u `ActionDispatch::Request` objekt, a stvara se prazni `ActionDispatch::Response` objekt.
+* Odabire se controller i action te poziva `controller_class.dispatch(action, request, response)`
+* Svaki controller može imati vlastiti middleware stack, pa se i kroz njega prolazi.
+* Za svaki request controller se instancira i poziva se `dispatch` nad objektom, koji zapisuje `request` i `response`, te poziva kod u akciji koji si napisao.
+* `render` postavlja `response.body` i `Content-Type` header.
+* Vraća se u controller gdje `response.to_a` dobija rack array koji prosljeđuje routeru, pa nazad kroz sav middleware. Tu se postavlja `ETag`, serijaliziraju se cookiji itd.
+* Web Server serijalizira rack array u HTTP response string i šalje ga nazad klijentu.
 
 
 ## Basic Caching
@@ -48,19 +55,24 @@ Za ispravan odgovor na klijetnove `HTTP_IF_NONE_MATCH` i `HTTP_IF_MODIFIED_SINCE
 * s `strong_etag` koriste se *strong etagovi* koji garantiraju byte-za-byte ekvivalentnost (dobro za `Range` requestove na PDF i video, ili za CDNove koji podržavaju samo strong etagove).
 
 
+## Rails Autoloading
+Rails koristi autoloading iz dva razloga:
+* da izbjegneš duplikaciju pisanja `require` na početku svakog filea
+* da omogući reload promjenjenog koda koji se već requireao.
 
+Kada se u kodu koristi konstanta `Post` koji ne postoji, Rails će potražiti file `post.rb` među pathovima u `autoload_paths`. Po defaultu tamo su svi subdirectoriji u `app/`, čak i custom poput `app/services`. U slučaju da je konstanta `Post` unutar nestinga (`[Admin::BaseController, Admin]`), treba provjeriti sve kombinacije fileova (`admin/base_controller/post.rb`, `admin/post.rb` i `post.rb`) u svim pathovima.
 
-## Amazon Cloudfront
-Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi radi. S3 je ok, ali je napravljen za storage, a ne za delivery. Rješenje je cloudfront - daš mu origin domenu, i samo postaviš
-`config.action_controller.asset_host = "<YOUR DISTRIBUTION SUBDOMAIN>.cloudfront.net"`
-Prvi request na asset cloudfront će proslijediti na origin domenu (naš server), a svi ostali će biti cachirani. Samo pripazi da fileovi imaju hash u imenu kako ne bi bili stale.
+Za namespaceove koje nemaju definirani file (npr. `Admin::UsersController` bez `admin.rb`), Rails će stvoriti prazni module on-the-fly.
 
+Ako je `config.cache_classes = false` (development), Rails prati promjene u `autoload_paths`, `config/routes.rb`, `db/schema.rb` i `config/locales`. Ako se ijedan file promijeni, pomoću `remove_const` briše sve konstante kako bi se iznova autoloadale u idućem requestu.
 
-## Rails 5 Attribute API
-http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
-Za definiranje typa za neki column, umjesto da se koristi šugavi serialize.
-`attribute :column_name, :integer, array: true`
-Podržava custom typove i `changed_in_place?`
+U produkciji aplikacijski fileovi se eager loadaju, i autoloading je od Rails 5 disabled (između ostalog jer nije thread-safe). Zato sve posebne foldere dodaj u `eager_load_paths`, jer će automatski biti dodani i u `autoload_paths` - obratno ne vrijedi.
+
+Railsov autoload konstanti ne koristi `autoload` metodu iz Rubyja iz više razloga (npr. `autoload` nije thread safe, a usto i interno koristi `require`, pa se već učitani fileovi ne bi mogli reloadati). Umjesto toga, koristi `ActiveSupport::Dependencies` koji se veže na `const_missing` i ima vlastiti algoritam traženja filea.
+
+Savjeti:
+* Rails ne može znati je li neloadana konstanta bila relative (`module Admin; class UsersController`) ili qualified (`class Admin::UsersController`), pa se neće ponašati isto kao čisti Ruby. Da izbjegneš probleme, uvijek koristi *relative nesting*.
+* Nikad ne stavljaj `require` konstanti koje će se autoloadati - samo ćeš ga zbuniti. `require` 3rd party librarija je ok.
 
 
 ## has_many i conditions
@@ -78,11 +90,8 @@ joinati u istom queriju (a ne loadati odvojeno):
 Kad se koristi `includes`, `uniq` nije potreban.
 
 
-## Rails Console
-`app` - trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`
-`helper` - svi view helperi, npr. `helper.link_to` i `helper.truncate`
-
-
-## Turbolinks 5
-Turbolinks 5 je full rewrite, ajd prouči ga.
-**TODO**
+## Rails 5 Attribute API
+http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
+Za definiranje typa za neki column, umjesto da se koristi šugavi serialize.
+`attribute :column_name, :integer, array: true`
+Podržava custom typove i `changed_in_place?`

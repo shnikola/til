@@ -20,3 +20,10 @@ Za 500g prsa: isfiletiraj i posoli meso.
 Pomiješaj 80g brašna, 50g gustina (isprobaj samo s brašnom), začine (paprika, češnjak, čili, papar), 1 jaje i 2dl jogurta.
 Izmiješaj dobro da nema grudica i da bude relativno tekuće, pa stavi meso da se marinira u tome 30 min u frižideru.
 Kad je gotovo, uvaljaj u mrvice i priži u ulju. Meso će biti sočnije.
+
+
+# TODO
+* Meso
+* Brašno (griz, krupica etc)
+* Tijesta
+* Povrće

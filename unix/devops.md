@@ -1,39 +1,22 @@
-# Devops
+# DevOps
 
 TODO
 supervise
+chef i puppet za automatsku konfiguraciju servera
 
-remote_syslog - šalje logove na papertrail, konfiguracija: `/etc/log_files.yml`
-
-Unicorn se kršio s:
-`Operation not permitted @ rb_file_chown - /home/jugosluh/shared/log/unicorn.log`
-U `unicorn.rb` user nije bio postavljen na "app" s kojim sam deployao iz mine (on je stvarao foldere i sve)
-
+## Essential Security for Linux Servers
+https://plusbryan.com/my-first-5-minutes-on-a-server-or-essential-security-for-linux-servers
+Dovoljna su 2 accounta: `root` i `deploy`. Svi developeri se logiraju u `deploy` pomoću public keyeva. S `passwd` promijeni root password u nešto dugo i složeno. Ne trebaš pamtiti, samo ga spremi na sigurno, ako izgubiš `sudo` password `deploy` usera.
+* `apt-get update` + `apt-get upgrade`
+* `apt-get install fail2ban`, dobro iskonfiguriran out of the box.
+* `/etc/ssh/sshd_config` postavi `PermitRootLogin no` i `PasswordAuthentication no`. Ako želiš ograničiti na IP, `AllowUsers deploy@<ip>`. Na kraju, `service ssh restart`.
+* `ufw` za jednostavni firewall. `ufw allow 22` (dodaj `from <ip>` ako treba), `ufw allow 80`, `ufw allow 443`. Na kraju, `ufw enable`
+* `papertrail` za praćenje logova.
 
 ## Security
 Prebaci `ssh` na neki visoki port - eliminira većinu port sniffera.
 Disablaj password login za `ssh`.
 `fail2ban`
-
-
-## System
-`uname` - podatci o OS-u. `-r` kernel release. `-a` za sve podatke.
-`hostname` - sistemsko ime u mreži
-`date` - trenutno vrijeme.
-`uptime` - koliko dugo već system radi, te load zadnjih 1min, 5min i 15min
-
-
-## Stats
-`history` - lista svih prethodnih naredbi.
-
-`top` - lista procesa koji najviše troše CPU.
-`lsof` - lista otvorenih fileova s procesima koji su ih otvorili
-`netstat -lnp` - lista procese koje imaju otvorene sockete.
-`free` - slobodna memorija. `-m` u megabytima.
-
-`watch <command>` - poziva naredbu svakih 2 sekunde (npr. `watch df -h`).
-  * `-n 5` za svakih 5 sekundi.
-  * `-d` za highlight promjena.
 
 
 ## SSH
@@ -78,14 +61,8 @@ Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/confi
   * `--delete` briše fileove u `<dest>` ako ih nema u `<src>`.
 
 
-## cronjob
-cronjob nije interaktivni shell pa ne učitava `.bash_profile` ni `.bashrc`. Možeš ih ručno pozvati s:
-`source /home/user/.bash_profile`
-
-
-## nginx
-config: `/etc/nginx/sites-available`
-`listen 80 default_server` opcija hvata sve nematchane hostove (nemoj koristiti `server_name _;`)
+## Papertrail
+remote_syslog - šalje logove na papertrail, konfiguracija: `/etc/log_files.yml`
 
 
 ## Automatska provjera https certifikata
@@ -93,29 +70,15 @@ http://prefetch.net/code/ssl-cert-check
 `cd ssl/certs; for pem in *.pem; do ssl-cert-check -a -x 15 -e admin@yourdomain.com -q -c $pem; done`
 
 
-## top
-1. red: uptime, useri, load average
-2. red: ukupni broj procesa
-3. red: postotak vremena na što CPU troši (us: user ne-_niced_ procesi, sy: system, ni: user _niced_ procesi, id: idle, wa: I/O wait, hi: hardware interrupts, si: software interrupts, st: hypervisor VM-a)
-4. red: fizička memorija
-5. red: virtualna (swap) memorija
+## iproute2
+Skup alata za konfiguraciju i prikupljanje informacija o mreži.
+`ip link` prikazuje stanje svakog linka. `ip link show eth0` za prikaz jednog.
+`ip -s link` prikazuje statistiku paketa po linku.
+`ip addr` prikazuje adrese svakog linka (kao `ifconfig`)
+`ip route` prikazuje route prema vanjskom internetu.
 
-Tablica procesa:
-* PR/NI: priority (kernel postavlja) i nice value (user postavlja)
-* VIRT/RES/SHR: korištena ukupna virtualna, resident (neswapana) i shared memorija
-* S: status. `R`: running, `S`: sleeping, `D`: uninteruptable sleep, `T`: traced or stopped, `Z`: zombie
-* %CPU: udio CPU kojeg proces koristi (100% je jedan CPU, `shift+i` mijenja u ukupni udio)
-* %MEM: udio fizičke memorije koju proces koristi
-* TIME+: ukupno vrijeme procesora koje je proces koristio
-* COMMAND: naredba koje je pokrenula proces
+`ip link set eth1 multicast on` za konfiguraciju linka.
 
-Opcije unutar programa:
-`c` - prikaži puni path commanda
-`k` - kill process
-`d` - promijeni interval updatea
-`o` - promijeni ordering
-`u` - filtriraj za usera
-`w` - saveaj trenutnu konfiguraciju topa
 
 ## httpie
 Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
@@ -124,6 +87,7 @@ Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
   * `field=value` - data, po defaultu se šalje kao JSON, s `-f` kao forma
   * `field:=[1,2,3]` - raw JSON, ako value treba biti number, boolean ili array
   * `--session=logged-in` - čuva cookije i autorizaciju
+
 
 ## tcpdump
 http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/

@@ -1,6 +1,6 @@
 # Performance & Debugging
 
-# Measuring Ruby
+## Measuring Ruby
 https://www.youtube.com/watch?v=LWyEWUD-ztQ
 **Bitno**: Uvijek napravi benchmark skriptu! Nema optimizacije bez mjerenja.
 `rack-mini-profiler` u browseru daje breakdown vremena potrošenog na serveru. *Production safe.*
@@ -45,6 +45,12 @@ To može trajati i do `100ms`, što je prilično loše ako se dogodi tijekom han
 Ruby `2.2` uveo je *inkrementalni GC* koji dijeli GC u sitne procese. Umjesto jedne duge pauze, dogodit će se više kratkih pauza. Zahvaljujući tome performance je mnogo konzistentniji.
 
 
+## Ruby Deoptimization
+https://github.com/ruby/ruby/pull/1419
+Ruby je dijelom spor jer uopće ne pokušava optimizirati svoje izvršavanje.
+Problem je u njegovoj dinamičnosti: `1 + 2` ne mora vraćati `3`. U ovom pull requestu, predlaže se poboljšanje: Ruby će pretpostaviti da je rezultat `3`, pa će u većini slučajeva raditi brže, a za posebne slučajeve će imati minimalni overhead. Time se određene metode znatno ubrzavaju.
+
+
 ## Memory Leaks
 Objekti se mogu podijeliti u 3 grupe:
   * Statics: framework, svi gemovi, i aplikacijski kod. Jednom kad se učitaju ne oslobađaju se.
@@ -80,16 +86,6 @@ Ako leak nije u Ruby kodu, mora biti u C kodu. Detekcija je malo naporna:
   * hint: vjerojatno je neki gem.
 
 
-## Debugging memory usage on Heroku
-http://blog.codeship.com/debugging-a-memory-leak-on-heroku
-Najvjerojatnije ti app ne leaka memoriju, nego samo koristi puno.
-Vatrogasna rješenja: smanjiti broj workera u Pumi i dodati `puma_worker_killer`.
-Za analizu koristi `derailed` gem:
-  * `derailed bundle:mem` analizira Gemfile.
-  * `derailed exec perf:objects` koje linije alociraju najviše objekata, dodaj ALLOW_FILES za grep filter fileova.
-  * `derailed exec perf:mem_over_time` za traženje leakova, kopipejstaj rezulat u google spreadsheets za graf.
-
-
 ## Kako su ubrzali development env s jako puno asseta
 https://github.com/discourse/discourse/blob/master/lib/middleware/turbo_dev.rb
 Koristi ovaj middleware kao prvi u rack stacku, da prekine nepotrebno pozivanje svih ostalih middlewarea (učitavanje sessiona, dohvaćanje konekcije itd.)
@@ -102,6 +98,5 @@ https://github.com/mime-types/ruby-mime-types/issues/94
 Umjesto jsona, tipove su podijelili u fileove, po jedan file za svaki atribut, po jedan red za svaki tip. Pošto velika većina aplikacija ne treba sve tipove, `Mime::Type` objekti se lazy loadaju. To je malo usporilo loadanje, ali 10x smanjilo korištenu memoriju.
 
 
-## Kako se ubrzali Rails 4.2
-S flamegraphovima i `memory_profiler`, usporedili su `4.1` i `4.2`.
-To je rezultiralo s mnogo malih promjena duboko u frameworku: alociranje stringova, oslobađanje hasheva...
+## Moja iskustva
+Readcube dashboard reports trošili su previše memorije. S `memory_profiler` izmjerio sam da najviše alociraju `number_to_currency` iz ActiveSupporta koji sam includao, `Carmen` koji defaultno učitava sve zemlje na svim jezicima, i `CSV.generate_line` koji svaki put iznova radi `CSV.new`. Svaki pojedinačno nije puno trošio, ali kad se svaki zove 200.000 puta, svaka pretjerana alokacija se osjeti.

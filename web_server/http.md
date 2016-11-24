@@ -77,24 +77,14 @@ Trailer1: value1
 - `Cookie`(c): skup svih cookija postavljenih za trenutnu domenu
 
 **Cache:**
-https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=en
-Najbolji request je onaj koji ne mora doći do servera. Zato postoje browser cache, proxy caches (npr. od ISPova) i gateway caches (CDN)
 - `Cache-Control`(s): Tko može cachirati resource, pod kojim uvjetima, i koliko dugo.
-  - `no-cache`: Response se ne može koristiti za idući request bez da se provjeri sa serverom prvo preko ETagova.
-  - `no-store`: Zabranjuje browseru i proxijima da cachiraju response (za npr. privatne bankovne podatke)
-  - `public`: (default, ne treba se pisati) može biti normalno cachiran
-  - `private`: Browser smije cachirati, ali CDN ne (radi se o podatcima za određenog usera, pa ga CDN ne može dijeliti okolo)
-  - `max-age`: maksimalno vrijeme u sekundama koliko se može koristiti iz cachea
-
-- `ETag`(s): Entity tag, najčešće hash resourca.
 - `Last-Modified`(s): Kad je zadnji put resource promijenjen.
-- `If-None-Match`(c): Šalje ETag. Ako je na serveru isti, vraća 304 Not Modified i resource se ne treba opet skidati.
-- `If-Modified-Since`(c): Isto kao i gore, samo šalje datum.
-- `If-Match`(c): Vraća error ako se resource promijenio. Korisno ako radiš PUT, a ne želiš pregaziti nečije promjene.
-- `If-Unmodified-Since`(c): Isto kao i gore, samo s datumom.
+- `If-Modified-Since`(c): Zadnji datum promjene cachiranog resourca. Poruka serveru da vrati `304` ako se nije promijenio.
+- `If-Unmodified-Since`(c): Poruka serveru da vrati error ako se promijenio. Korisno ako radiš PUT, a ne želiš pregaziti nečije promjene.
+- `ETag`(s): Entity tag, najčešće hash resourca.
+- `If-None-Match`(c): ETag cachiranog resourca. Poruka serveru da vrati `304` ako se nije promijenio.
+- `If-Match`(c): Poruka serveru da vrati error ako se promijenio
 - `Age`(s): koliko dugo je resource u proxy cacheu (u sekundama)
-
-TLDR: Enablaj ETagove na serveru, stvari koje možeš stavi na CDN. Za neplanirano invalidiranje resourca najbolje je ubaciti fingerprint u ime filea, npr. `script.x234dff.js`.
 
 **Range**: Omogućava parcijalno dohvaćanje filea sa servera (npr. video od 2. minute). Server vraća 206 Partial Content.
 - `Accept-Ranges`(s): daje do znanja da podržava range requestove za resource
@@ -138,10 +128,3 @@ Browser će pritom odbaciti svaki response koji nema
  - `DNT`(c): Ako je 1, korisnik ne želi da ga se tracka. Ako je 0, pristaje na to. Ako je null, header se ne šalje.
  - `TSV`(s): Tracking status value, kako trenutno server tracka. (npr. `C` - tracking with consent)
 Nažalost, nema zakonskih ni tehnoloških obveza da server ispoštuje korisnikov izbor. Plus, još nije dio standarda.
-
-
-## HTTP 2
-http://http2-explained.haxx.se/content/en/ TODO
-multipleksira requeste preko istog socketa (konekcije). Čak i requeste iz različitih tabova!
-`chrome://net-internals#http2` za listu trenutnih konekcija u browseru
-svi headeri su lowercase

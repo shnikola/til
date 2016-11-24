@@ -4,6 +4,19 @@ session hijacking vs CSRF vs clickjacking
 dns hijacking
 dns spoofing
 
+## HTTPS
+`TLS` (i stara verzija, `SSL`) je protokol iznad `TCP`-a koji omogućava sigurnu konekciju. `HTTP` paket unutar njega je nepromijenjen. Napadač u mreži može vidjeti samo IP i port konekcije, otprilike koliko podataka šalješ, te koju enkripciju koristiš. Može i prekinuti konekciju, ali obje strane će znati da je treća strana to učinila.
+
+Protokol:
+* Nakon uspostave TCP konekcije, klijent započinje SSL handshake. Šalje verziju SSL-a, ciphersuite i compression koje želi koristiti. Server odabira najvišu verzije koje obojica podržavaju.
+* Server šalje svoj certifikat i klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat.
+* Klijent šalje ključ (kriptiran public-keyem servera) pomoću kojim će simetrično kriptirati komunikaciju.
+* Klijent šalje kriptiranu poruku, server je provjerava i šalje svoju.
+
+Kako bi provjerio identitet servera, moraš imati njegov public key. Ali ne želiš čuvati bazu public keyeva svih servera na klijentu. Zato svaki Browser dolazi s listom *Certified Authorities* kojima vjeruje. Kada server pošalje svoj certifikat, pisat će da ga je potpisao i CA, što možeš provjeriti.
+
+Za testiranje SSL-a na svom serveru, koristi https://www.ssllabs.com/ssltest
+
 
 ## DNS Rebinding
 http://bouk.co/blog/hacking-developers
@@ -37,3 +50,10 @@ Kod application (layer 7) napada, napadač jednostavno radi hrpu requestova na s
   * Ako dolaze s jednog IP-ja, dodaj rate limiting po IP-ju.
   * Ako dolaze s rezličitih, otkrij koji URL napadaju i cachiraj ga CDN-om. Za stranice koje se dinamički generiraju (npr. thread na forumu) cachiraj na 5 minuta za nelogirane korisnike. Nitko neće primjetiti. Čak se isplati i generirati statički html svaku sekundu ako dobijaš više od 1 req/s.
   * Stranice koje ne možeš cachati (search, login screen), promjeni URL ili dodaj CAPTCHu preko CDNa.
+
+## SQL injection metode
+https://www.troyhunt.com/everything-you-wanted-to-know-about-sql
+* `WHERE id = 1 OR 1=1` dohvaća sve podataka.
+* `WHERE id = 1 UNION ALL SELECT password FROM user` dohvaća iz druge tablice.
+* `WHERE id = 1 and select top 1 substring(name, 1, 1) from sysobjects ... = 'a'` pogađa prvo slovo imena tablica
+* `WHERE id = 1; SHUTDOWN` gasi server

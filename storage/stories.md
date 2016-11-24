@@ -1,6 +1,5 @@
 # Stories
 
-
 ## Why You Should Never Use MongoDB
 http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
 MongoDB je document-oriented database, gdje umjesto normaliziranih redova, entiteti su denormalizirani JSONi bez stroge strukture i sheme. Na primjeru TV serije sa Sezonama i Epizodama i Glumcima, gdje bi trebalo 4 joina da dohvatiš sve podatke koji su raspršeni posvuda, dok u Mongu sve podatke držiš u jednom dokumentu i dohvaćaš ih jednim queriem.
@@ -16,6 +15,13 @@ Reddit je imao problem s normaliziranom bazom: dodavanje stupaca je bilo sporo, 
 Umjesto relacijske baze, oni za svaki entitet (Users, Links, Comments), imaju dvije tablice: `comment_things` (id, ime, timestamps), i `comment_data` (thing_id, key, value). Koriste relacijsku bazu kao *key-value* store.
 
 Najveći problem s ovim je što se moraš sam brinuti za konzistentnost podataka, umjesto da koristiš mehanizme same baze usavršene za relacijski tip podataka. A problemi koje su naveli uopće nisu problemi: Postgres omogućuje gotovo besplatno dodavanje novih stupaca, a za MySql uvijek možeš dodati pomoćnu tablicu s novim stupcem, triggerima i UPDATEom prebaciti podatke u nju, i preimenovati je kad završiš.
+
+
+## Scaling Pinterest (2013)
+https://www.infoq.com/presentations/Pinterest
+* EC2, Shardani Mysql, Memcached i Redis
+* MySQL: req/res rate raste linearno, ne eksponencijalno
+* Zbog Shardanje nema joinova, sve se radi sa SELECT koji je dobro cachiran.
 
 
 ## Postgres tips from Instagram (2013)
@@ -54,3 +60,15 @@ Prebacivali su bazu u novi cluster s boljim hardwareom. Pritom su se pripremili 
 https://blogs.dropbox.com/tech/2016/03/magic-pocket-infrastructure/
 Dosad su hostali fileove na S3, a metadatu kod sebe. Ali s preko 500 PB podataka, to je postalo preskupo.
 Odlučili su razviti in-house rješenje, jedan od svega nekoliko exobyte-scale storage sustava na svijetu.
+
+
+## Why Uber Engineering Switched from Postgres to MySQL (2016)
+https://eng.uber.com/mysql-migration/
+Uber je počeo kao monolitna Python aplikacija na Postgresu, a danas je milijun mikroservisa na `Schemaless`, sharding layeru izgrađenom na Mysqlu. Razlozi zbog kojeg su odustali od Postgresa:
+* *Write amplification*: svaki update rowa u pozadini stvara novi row, te preusmjerava sve indekse na njega (čak i ako se indeksirani stupci nisu promijenili). Drugim riječima, promjena samo nekoliko bytova uzrokuju gomilu operacija na fizičkom layeru.
+* *Replication*: to se još više amplificira na replikama mastera, gdje se umjesto logičkih ("promijeni stupac u redu") šalju naredbe na razini diska ("stvori novi row, prebaci primary key na njega, prebaci indekse na njega"), što troši puno više bandwitha.
+* *Upgrade* je zeznut s replikama, ali postoji neki `pglogical` alat koji tome pomaže.
+
+Još neke prednosti Mysqla:
+* *Caching*: Postgres većinom prepušta cachiranje kernelovom page cacheu, koji je sporiji od Mysqlovog custom LRU cachea (InnoDB buffer pool).
+* *Connection Handling*: Postgres pokreće proces po konekciji, što je znatno skuplje nego MySqlov thread po konekciji. Mysql puno bolje handla velik broj konekcija.

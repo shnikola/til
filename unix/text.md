@@ -9,7 +9,9 @@ newlines in osx
 
 `head <file>` i `tail <file>` ispisuju 10 prvih/zadnjih linija.
   * `-n` broj linija.
-  * `-F` ispisuje linije kako se dodaju.
+  * `tail -n +2` skipa prvu liniju (tj. ispisuje sve od 2. linije)
+  * `tail -F` ispisuje linije kako se dodaju.
+
 
 `less <file>` omogućuje paginaciju kroz file.
   * `+F` ispisuje linije kako se dodaju.
@@ -92,6 +94,10 @@ newlines in osx
 
 `xargs` je malo zajeban jer očekuje input u nekom čudnom formatu, pa uvijek preferiraj `find -exec`. Ako ga baš moraš koristiti,
 koristi `find -print0` i `xargs -0`.
+
+
+## Regex
+* Za detektirati ponavljanja u regexu koristi `(something)\1`
 
 
 # Examples

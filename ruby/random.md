@@ -17,17 +17,6 @@ https://www.youtube.com/watch?v=4DqzaqeeMgY
 Problem s gem odlučivanjem koju verziju gema koristiti. Rješenje: ne radi tu odluku u runtimeu, nego pri instalaciji.
 
 
-## Ruby i HTTP/2
-HTTP/2 nije kompatibilan s Rackom: request/response streaming bi trebao biti default, komunikacija dvosmjerna (server ili klijent mogu gurnuti više stvari bez odgovora)
-HTTP/2 je inače nešto kao websocketsi, ali za websocketse treba implementirati dosta stvari koje http nudi (redirection, REST, caching)
-Prednosti:
-- headeri se compressaju (uključujući cookije), uštedi se do 80% - **koristi HTTP/2 compatible proxy (nginx, h2o)**
-- mogućnost slanja više responsea u istoj konekciji, domain sharding više nije potreban - **koristi HTTP/2 compatible CDNove**
-- jedna konekcija znači jedan TLS handshake
-- klijenti mogu izraziti preferenciju koji request da se prvi ispuni (npr. CSS i JS prije imagea)
-- pošto je skidanje jednog velikog filea i puno malih sada isto, gubi se potreba za jednim velikim JS i CSS fileom i spriteovima
-
-
 ## Rack::Events
 https://github.com/rack/rack/blob/master/lib/rack/events.rb
 Rack je malo šugav jer svaki middleware mora kopati po čitavom "rack stacku" da bi napravio nešto.
@@ -37,11 +26,6 @@ Ovo je prijedlog event-based pristupa gdje se middleware kojeg ne zanima respons
 ## Micromachine
 https://github.com/soveran/micromachine
 Mini state-machine library. Probao sam ga sam implementirati sam - i dosta dobro sam ga napisao. Bravo ja!
-
-
-## File Uploads with Shrine
-https://twin.github.io/shrine-2-0-released
-Izgleda jako kul, isprobaj!
 
 
 ## Popravljeni open-uri
@@ -64,7 +48,8 @@ Ako je file remotely uploaded, ne želimo ga opet cijelog skidati na server za v
 Inače, gem `HTTP.rb` je puno bolja implentacija http clienta i ima ovo out-of-the box, ali za library je uvijek bolje da koristi stdlib.
 
 
-## Ruby Deoptimization
-https://github.com/ruby/ruby/pull/1419
-Ruby je dijelom spor jer uopće ne pokušava optimizirati svoje izvršavanje.
-Problem je u njegovoj dinamičnosti: `1 + 2` ne mora vraćati `3`. U ovom pull requestu, predlaže se poboljšanje: Ruby će pretpostaviti da je rezultat `3`, pa će u većini slučajeva raditi brže, a za posebne slučajeve će imati minimalni overhead. Time se određene metode znatno ubrzavaju.
+## Rails ActionCable vs Phoenix Channels
+https://dockyard.com/blog/2016/08/09/phoenix-channels-vs-rails-action-cable
+ActionCable je nespreman za ozbiljnije zahtjeve u produkciji, već sa 7 kanala s po 200 klijenata počinje ozbiljno kasniti.
+Phoenix s druge strane bez problema handlea 275 kanala s 55,000 usera.
+Ako radiš aplikaciju s pravim real time zahtjevima, odaberi Phoenix.

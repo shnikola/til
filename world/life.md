@@ -10,6 +10,21 @@
 7. What are you doing for others?
 8. What comes next?
 
+
+## Ten Steps Towards Happiness
+http://hintjens.com/blog:99
+1. Osjeti teksturu života sa svim osjetilima. Kuhaj si ukusnu hranu, fotografiraj prizore koji su ti lijepi, sviraj glazbu koja ti se sviđa, nosi odjeću koja ti je udobna, hodaj noću po gradu.
+2. Radi stvari u kojima si loš. Učenje nas čini da se osjetimo živima.
+3. Uživaj u drugim ljudima. Razgovaraj s ljudima s kojima dijeliš prostor.
+4. Budi dio većih stvari. Od toga se osjećamo vrijednima.
+5. Dovrši svoje projekte. To stvara nadu i samopouzdanje. Svake godine updateaj listu svojih postignuća.
+6. Ukloni izvore nesreće iz svog života.
+7. Nauči prepoznavati svoje emocije i odakle dolaze. (grounding)
+8. Ne troši vrijeme na stvari koje ne voliš.
+9. Ne vezuj se za materijalne stvari. Živimo u svijetu obilja - to znači da možeš posjedovati manje, ne više.
+10. Ne želi ništa, i nećeš se razoračarati. Prihvati sve, i vidjet ćeš ljepotu u svakom trenutku.
+
+
 ## 5 Minute Journal
 Ujutro:
   * I am grateful for... (3)
@@ -52,3 +67,39 @@ https://www.quora.com/What-are-some-useful-skills-I-can-learn-in-minutes/answer/
 Strah utječe na moje ponašanje, na način na koji najčešće nisam svjestan.
 Neprimjereno gnjevna reakcija prema nekome najčešće proizlazi iz nekog mog unutarnjeg straha.
 Razgovor s partnerom/prijateljem/psihologom o strahu je najbolji način za riješiti ga se.
+
+## Opression
+https://en.wikiquote.org/wiki/Elie_Wiesel#Nobel_acceptance_speech_.281986.29
+"We must always take sides. Neutrality helps the oppressor, never the victim. Silence encourages the tormentor, never the tormented."
+
+## Anxiety Loves Company
+http://sethgodin.typepad.com/seths_blog/2016/09/anxiety-loves-company.html
+Nalazimo utjehu u tuđoj nervozi, zato je rado širimo. U današnjem svijetu u kojem svatko ima svoj mikrofon, širiti ju je lakše nego ikad, pogotovo ako ćeš zauzvrat dobiti pažnju ili glas.
+Nervoza/tjeskoba nemaju korelacije sa stvarnim svijetom. Uvijek se sjeti toga prije nego je počneš dijeliti s drugima.
+
+
+## Life Choices
+"I'm seeing a lot of people nervously defending their life choices, that aren't really under attack, except from other people who are themselves nervous and defensive. You're all doing fine. Wherever you are, apparently that's where you need to be right now.
+
+Here's the thing: there is no real life. There is no full, meaningful, "best life." There are, at best, more and less meaningful pursuits, from your perspective, based on your upbringing, imprinting, and your own specific cocktail of longings. It is natural for us to feel anxiety about how we spend our limited time. No matter how happy you convince yourself to be, you will sometimes feel the vague ache of other possible lives.
+
+Consider that the apartment in this city, the house in that city, are both just boxes to live in. You can only do so much in an evening, and of all the life that exists on the Earth, you will see only a tiny glimpse of it. Human beings are world-class yearners, so it's okay to feel melancholy about this. Accept the sadness, and happiness will creep in when you least expect it."
+
+
+## Wealth
+http://www.becomingminimalist.com/wealth/
+Ako zarađuješ više od $25.000 godišnje, nalaziš se u 3% najbogatijih ljudi na svijetu.
+Mi smo ti bogataši na koje sa zavišću gledamo. Ponašajmo se kako zahtjevamo od njih da se ponašaju.
+
+## How to Fend Off A Jerk
+http://www.davedelaney.me/blog/how-to-fend-off-a-jerk
+Kad se netko prema tebi ponaša kao seronja, pravi se sretan. Što su gori prema tebi, ti budi sretniji. To će ih jako isfrustrirati, a tebi će biti zabavno.
+
+## Find a New City
+http://austinkleon.com/2016/08/03/find-a-new-city/
+New York je romantiziran kao grad u koji dođeš bez ičega, upoznaš ljude, stvaraš umjetnost, teško ti je, ali uspiješ. Problem je što se ta priča dogodila prije 50 godina, kad si mogao raditi u knjižari i plaćati najam. Danas je to u New Yorku nemoguće.
+Ako se želiš baviti umjetnošću, stvoriti nešto svoje što se ne uklapa u postojeći model - idi negdje gdje je jeftino živjeti, stvaraj što želiš stvarati, i napravi svoju scenu. Kao što se dogodilo i u New Yorku.
+
+## 100:10:1 Method
+https://nickbentleygames.wordpress.com/2014/05/12/the-100-10-1-method-for-game-design/
+Napiši 100 random, makar glupavih ideja. Od njih, propagiraj 10 u idući krug gdje ih malo bolje razradi. Od njih, jednu dovedi do kraja.

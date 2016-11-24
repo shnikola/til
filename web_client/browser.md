@@ -71,24 +71,16 @@ Metode za traženje mogu se pozvati nad `document` (za sve) ili `el` (za djecu e
 `el.replaceChild(newChild, oldChild)` mijenja dijete s novim. Vraća uklonjeni node.
 `el.textContent=` briše svu djecu i zamjenjuje ih jednim text nodeom. _IE9+_
 `el.innerHTML=` briše svu djecu, parsira HTML i izgrađuje djecu iz njega. Oprez: podložno Cross Site Scriptingu.
+`el.insertAdjacentHTML(position, text)` parsira HTML i dodaje ih na određenu poziciju. `beforebegin`: neposredno prije elementa, `afterbegin`: na početak elementa, `beforeend`: na kraj elementa, `afterend`: nakon elementa.
 
 
-## DOM Events
-Kada se dogodi event (npr `click`) prvo se šalje od root elementa (*capturing*) do najdubljeg djeteta na kojem se dogodio (*target*), tamo se trigerira i onda šalje nazad prema rootu (*bubbling*). Najčešće stavljamo listenere na tu drugu fazu.
+## DOM Ready i Loaded
+Da bi manipulirao elementima, DOM stablo mora biti izgrađeno. To se da očitati iz `document.readyState` propertija.
+  * ako scriptu staviš na kraj `<body>` taga, DOM će u trenutku izvršavanja sigurno biti spreman.
+  * inače, za _IE9+_ koristi `if (document.readyState === "complete")` i `document.addEventListener("DOMContentLoaded")`.
+  * za starije browsere, koristi JQuery `$(function() {...})` (izbjegavaj `$(document).ready()` jer je deprecated).
 
-`el.addEventListener('click', callback)` dodaje callback na event koji će se izvršiti pri bubblingu.
-`el.addEventListener('click', callback, true)` dodaje callback koji će se izvršiti pri captureu. Korisno za evente koji ne bubblaju, npr. `focus` i `blur`.
-`el.removeEventListener('click', callback)` uklanja callback funkciju. Trebaš je imati spremljenu u varijabli. Ako želiš obrisati sve listenere, najlakše je klonirati element, jer se listeneri ne kloniraju.
-`el.dispatchEvent(event)` šalje event na element, gdje prolazi kroz normalni capturing i bubbling.
-
-Unutar callback funkcije:
-`event.target` najdublji element od kojeg je event počeo.
-`event.currentTarget` element na kojem smo trenutno u bubblanju. Na njega je ovaj listener dodan.
-`event.stopPropagation()` prekida propagaciju eventa (capturing i bubbling).
-`event.stopImmediatePropagation()` prekida izvršavanje ostalih listenera na elementu.
-`event.preventDefault()` spriječava izvršenje defaultne akcije (npr. da se tekst unese u input ili da se checkbox toggla), ali se propagacija nastavlja.
-
-Sve ovo navedeno je _IE9+_. Starije verzije _IE_ koriste sasvim drugi API, `attachEvent`, `event.srcElement` itd.
+Za provjeru da su stranica i svi njeni resursi (`img`, skripte, css) loadani, koristi `window.addEventListener("load")`.
 
 
 ## DOM Dimensions and Positioning
@@ -138,9 +130,34 @@ Propertiji uvijek dobivaju početnu vrijednost od atributa.
 Preferiraj koristiti propertije, pogotovo s boolean vrijednostima. Attributi za boolean moraju koristiti `setAttribute('disabled', false)` i `removeAttribute('disabled')`, a property samo `disabled = true` i `disabled = false`
 
 
+## DOM Events
+Kada se dogodi event (npr `click`) prvo se šalje od root elementa (*capturing*) do najdubljeg djeteta na kojem se dogodio (*target*), tamo se trigerira i onda šalje nazad prema rootu (*bubbling*). Najčešće stavljamo listenere na tu drugu fazu.
+
+`el.addEventListener('click', callback)` dodaje callback na event koji će se izvršiti pri bubblingu.
+`el.addEventListener('click', callback, true)` dodaje callback koji će se izvršiti pri captureu. Korisno za evente koji ne bubblaju, npr. `focus` i `blur`.
+`el.removeEventListener('click', callback)` uklanja callback funkciju. Trebaš je imati spremljenu u varijabli. Ako želiš obrisati sve listenere, najlakše je klonirati element, jer se listeneri ne kloniraju.
+`el.dispatchEvent(event)` šalje event na element, gdje prolazi kroz normalni capturing i bubbling.
+
+Unutar callback funkcije:
+`event.target` najdublji element od kojeg je event počeo.
+`event.currentTarget` element na kojem smo trenutno u bubblanju. Na njega je ovaj listener dodan.
+`event.stopPropagation()` prekida propagaciju eventa (capturing i bubbling).
+`event.stopImmediatePropagation()` prekida izvršavanje ostalih listenera na elementu.
+`event.preventDefault()` spriječava izvršenje defaultne akcije (npr. da se tekst unese u input ili da se checkbox toggla), ali se propagacija nastavlja.
+
+Sve ovo navedeno je _IE9+_. Starije verzije _IE_ koriste sasvim drugi API, `attachEvent`, `event.srcElement` itd.
+
+
+## Shadow DOM _Chrome, Safari_
+Shadow DOM je način za izoliranje DOM stabla određenog elementa. CSS unutar shadow DOM-a je neovisan od ostatka stranice, što je vrlo korisno u slučaju da želiš stvoriti custom web komponentu.
+* `shadowEl = el.attachShadow({mode: 'open'})` dodaje shadow DOM elementu. `shadowEl` nodeu možeš dodavati HTML pomoću `innerHTML` ili `appendChild`  
+* `<node name="x">` koristi se ako želiš omogućiti korisniku tvoje komponente da unese svoj HTML u Shadow DOM.
+* CSS u Shadowu definiraj unutar `<style>` tagova. Koristi `:host` za stiliziranje parent elementa, npr. `:host([disabled])`
+
 
 ## Stylesheets
 `document.styleSheets`
+
 
 ## window.location
 Svi propertiji u `window.location` se mogu promijeniti, što se odmah reflektira u browseru (npr. radi se novi request).
@@ -191,6 +208,59 @@ Ali ako frame i parent imaju različiti `origin` (protokol i domenu), moći će 
 `window.history.state` vraća trenutni `state` bez pozivanja eventa.
 
 `window.history.scrollRestoration` ponašanje scrolla. `auto` daje browseru da odluči, `manual` postavlja na vrh stranice. _Chrome i FF_
+
+
+## Mouse Events
+Mouse eventovi:
+* `mousedown` mouse button je pritisnut, `mouseup` mouse button je otpušten
+* `click` poziva se nakon `mousedown` i `mouseup`
+* `dblclick` poziva se nakon doubleclicka (što je doubleclick određuje OS). U isto vrijeme poziva i `click` dvaput.
+* `contextmenu` prije nego se context menu prikaže. Spriječi ga s `preventDefault`.
+* `mouseenter`, `mouseleave` pri ulasku i izlasku iz elementa.
+* `mouseover`, `mouseout` pri ulasku i izlasku iz elementa. Zove se posebno za svaki child elementa.
+* `mousemove` svaki put kad se miš pomakne, znači stalno. Throttlaj ga.
+
+Svaki mouse event ima propertije:
+* `e.pageX`, `e.pageY` koordinate unutar `<html>` elementa _IE9+_
+* `e.clientX`, `e.clientY` koordinate unutar viewporta.
+* `e.button` button koji se promijenio (pritisnut/otpušten) u ovom eventu. `0` left, `1` middle, `2` right
+* `e.buttons` buttoni koji su trenutno stisnuti.
+
+
+## Touch Events
+Touch eventovi:
+* `touchstart` prst je stavljen na element
+* `touchmove` prst se pomiče po elementu
+* `touchend` prst je podignut s elementa
+* `touchcancel` prst je pobjegao u browser UI ili je nekako drugačije cancelan
+
+Svaki touch event ima sljedeće propertije:
+* `touches` lista toucheva koji su trenutno na ekranu
+* `targetTouches` lista toucheva koji su na trenutnom elementu
+* `changedTouches` lista toucheva koji su se promijenili (podigli/spustili) u ovom eventu.
+
+Touch objekt sastoji se od propertija:
+* `t.identifier` id za prst
+* `t.pageX`, `t.pageY` koordinate unutar `<html>` elementa
+* `t.clientX`, `t.clientY` koordinate unutar viewporta.
+* `t.target` element na kojem je touch započeo
+
+Browser će u slučaju touch eventa emulirati i mouse eventove, i to ovim redom:
+* `touchstart`, `touchmove` (ako se kreće), `touchend`, `mousemove`, `mousedown`, `mouseup`, `click`
+* Ako želiš da se odvojeno handlaju samo touch eventovi, dodaj `e.preventDefault()` u `touchstart`.
+
+
+## Pointer Events _IE 11+, FF, Chrome prefixed_
+Pointer eventovi su unifikacija mouse i touch eventova:
+* `pointerdown` aktivni button ili kontakt, `pointerup` otpuštanje buttona ili kontakta
+* `pointerover`, `pointerout` pri ulasku i izlasku iz elementa. Na hover za pointere koji imaju hover, inače prije `pointerdown`, odnosno nakon `pointerup`.
+* `pointerenter`, `pointerleave` isto kao i gornji, samo ne gleda children.
+* `pointermove` promijenio poziciju
+* `pointercancel` dogodilo se nešto da pointer neće slati više eventova. Cancelaj sve in-progress akcije. Ovo također može značiti da je browser preuzeo kontrolu nad pointerom, npr. za pinch-zoom.
+
+Svaki pointer event ima `pointerType`: `mouse`, `touch`, `pen`, blank ako browser ne zna o čemu se radi.
+
+Može se dogoditi da korisnik klikne na element, ali pusti button izvan elementa, što neće triggerati `mouseup` na elementu. Pointer eventi dopuštaju `el.setPointerCapture(e.pointerId)`, što će na elementu triggerirati sve buduće evente tog pointera.
 
 
 ## Vibration API

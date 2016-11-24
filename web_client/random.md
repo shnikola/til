@@ -34,11 +34,6 @@ Browser gleda ovim redom:
 5. nasljeđivanje od parent contexta
 
 
-## Continuous Integration
-https://circleci.com/
-Kad pushash kod, on automatski povuče to na svoj server, i pokrene sve testove.
-Čak možeš podesiti da ga deploya na Heroku ako su svi testovi prošli. Jer si lijena guzica.
-
 
 ## Offline (TODO)
 Za URL addressable resurse, koristi `Cache API` (dio service workera)

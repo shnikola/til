@@ -14,7 +14,7 @@ Uvijek dodaj `alt` atribut na `<img>`, `<svg>` i `<picture>`. Uvijek!
 * Koristi `<label>`, bilo implicitni (s `<input>` unutar njega), bilo eksplicitni (s `for=input-id`).
 * Nikako nemoj koristiti `placeholder` umjesto `<label>`, jer se skriva na fokus.
 * Za `radio` buttone i njihovo zajednički label koristi `<fieldset>` i `<legend>`.
-* Za required inpute koristi `required` atribut, ili dodaj `*` u `label`. Nemoj koristiti jedino boju da ih označiš - screen readeri to ne razaznaju.
+* Za required inpute koristi `required` atribut, ili dodaj `*` u `label`. Nemoj koristiti samo boju da ih označiš - screen readeri to ne razaznaju.
 * Koristi ispravne inpute za `email`, `url` i `tel`. Mobilni useri će ti biti zahvalni, plus besplatna validacija.
 * Pobrini se da se `input` na `:focus` vizualno označi (npr. outlineom).
 
@@ -22,6 +22,7 @@ Uvijek dodaj `alt` atribut na `<img>`, `<svg>` i `<picture>`. Uvijek!
   * *Tab* će ga automatski selektirati. Inače moraš koristiti `tab-index=0` i `role=button`.
   * *Enter* ili *Space* dok je selektiran će triggerirati `click`. Na `div`u moraš loviti `keydown`.
 
+* Za custom checkbox, umjesto `display: none` koristi `position: absolute` i `opacity: 0`
 
 ## Document Structure
 * Koristi ispravno hijerarhiju headinga (`<h1>`, `<h2>`, itd). Screen readerima to jako pomaže.

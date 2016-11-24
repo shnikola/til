@@ -87,6 +87,11 @@ while <cmd>; do
 done
 ```
 
+
+## Options
+`<cmd> --` označava kraj opcija. Korisno ako treba proslijediti file koji počinje s `-`, npr. `rm -- -file.txt`
+
+
 ## Redirection
 Može biti bilo gdje unutar naredbe, ali redoslijed redirectiona je bitan. `0`: stdin, `1`: stdout, `2`: stderr.
   `echo foo >file` zapisuje *stdout* u file (`>` je isto kao i `1>`)
@@ -170,7 +175,7 @@ Posebne varijable u scripti:
 ## Device management
 Unix omogućuje jednaki način pristupa svim vrstama uređaja (*devices*). Svi uređaji koje OS prepozna imaju svoj file (*device node*) u `/dev` directoriju. Osim imena, device node ima major number (koji driver je zadužen za njega) i minor number (njegov id za taj driver). `ls -l` za više detalja. Device node može predstavljati:
   *block device* (dozvoljava random access, kao disk)
-  *character device* (pristupa mu se slijedno kao streamu)
+  *character device* (pristupa mu se slijedno kao streamu, npr. `/dev/fd/0` tj. `/dev/stdout`)
   *pseudo device* (npr. `/dev/null` ili `/dev/random`)
 
 Fizički device može se podijeliti na više logičkih cijelina (*partitions*). Svaka particija će imati svoj device node u `/dev` directoriju. Particije olakšavaju backup i povećavaju sigurnost. Čak i ako jedna ode kvragu (npr. ostane bez slobodnog mjesta), druge će nastaviti raditi.
@@ -253,7 +258,7 @@ Za izvršavanje naredbi kao *root*, koriste se `su` ili `sudo`. Osnovna razlika 
 
 `sudo <cmd>` izvršava naredbu kao root.
 `su` (`sudo -s`) otvara non-login shell. Trenutni directory i env varijable ostaju iste.
-`su -` (`sudo -i`) otvara login shell. Premješta se u rootov home directory i env varijable se postavljaju iz `~/.bash_profile` (kao da se root upravo ulogirao). Bolji način, jer osigurava da će sve raditi kako si je root postavio.
+`su -` (`sudo -i`) otvara login shell. Premješta se u rootov home directory i pokreće `~/.bash_profile` (kao da se root upravo ulogirao). Bolji način, jer osigurava da će sve raditi kako si je root postavio.
 
 `su <user>` i `sudo -u <user>` da se koristi `<user>` umjesto roota.
 
@@ -288,24 +293,25 @@ Inode podatci mogu se prikazati s `ls -i` (za directory) ili `df -i` (za cijeli 
 `which <cmd>` vraća path gdje je naredba definirana.
 
 
-## Procesi
-`ps` ispisuje procese tvog usera: pid, controlling terminal (tty), CPU time, i naredbu koja ih je pokrenula.
-  * `ps aux` ispisuje svačije procese (`a`), s userom (`u`), uključuje i procese koji nisu pokrenuti iz terminala (`x`).
-  * `ps -eo <fields>` ispisuje samo `<fieldovs>`, npr. `-eo pid,user,rss`.
-`pstree <pid ili user>` prikazuje stablo procesa. `-p` prikazuje pidove.
-`pgrep -f <ime>` vraća pidove s danim imenom (ili dijelom imena). Za ispis detalja napravi `ps wup $(pgrep -f <ime>)`.  
+## System
+`uname` - podatci o OS-u. `-r` kernel release. `-a` za sve podatke.
+`hostname` - sistemsko ime u mreži
+`date` - trenutno vrijeme.
+`uptime` - koliko dugo već system radi, te load zadnjih 1min, 5min i 15min
 
-`kill -<sig> <pid>` - šalje signal procesu s danim pidom.
-`pkill -<sig> <ime>` - šalje signal procesu s danim imenom (ili dijelom imena)
 
-Za prekidanje procesa:
-`kill <pid>` šalje `SIGTERM` (`15`) koji daje priliku procesu da počisti za sobom. Čekaj par sekundi. Ako ne uspije:
-`kill -2 <pid>` šalje `SIGINT` (`CRTL+C`). Čekaj par sekundi. Ako ne uspije:
-`kill -9 <pid>` šalje `SIGKILL` kojeg proces ne može uhvatiti ni ignorirati. Može izazvati corrupted data, pa ga koristi samo kao last resort.
+## Stats
+`history` - lista svih prethodnih naredbi.
 
-Za pauziranje procesa:
-`kill -TSTP <pid>` pauzira proces (`CTRL+Z`). Za razliku od `-STOP` daje priliku procesu da počisti za sobom.
-`kill -CONT <pid>` nastavlja izvršavanje.
+`top` - lista procesa koji najviše troše CPU.
+`lsof` - lista otvorenih fileova s procesima koji su ih otvorili
+`netstat -lnp` - lista procese koje imaju otvorene sockete.
+`free` - slobodna memorija. `-m` u megabytima.
+
+`watch <command>` - poziva naredbu svakih 2 sekunde (npr. `watch df -h`).
+  * `-n 5` za svakih 5 sekundi.
+  * `-d` za highlight promjena.
+
 
 
 ## Literatura

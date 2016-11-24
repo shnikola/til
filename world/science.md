@@ -23,5 +23,6 @@ Mitovi o električnim autima:
   Električna mreža to neće izdržati: netočno, mogao bi zamijeniti 70% automobila električnim bez opterećenja.
   Za dobivanje struje se koristi ugljen, pa si opet na istom: struja se dobiva i iz obnovljivih izvora, a čak su i termoelektrane  puno učinkovitije od motora s unutrašnjim izgranjem.
 
+
 ## How SpaceX Will Colonize Mars
 http://waitbutwhy.com/2015/08/how-and-why-spacex-will-colonize-mars.html

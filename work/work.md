@@ -1,22 +1,7 @@
 # Work
 
-## Focus
-Radi jednu po jednu stvar. Sve što ti padne na pamet dok radiš zapiši, i vrati se tome kad završiš.
-
-
-## Memory
-Bolje pamtiš ako učiš u vremenskim razmacima, nego sve odjednom (*Spacing Effect*)
-Što manje truda trebaš da se prisjetiš, to slabije pamtiš (npr. Duolingo ponuđeni odgovori). Odnosno, dobro je kad nije lako.
-
-
-## The traits of a proficient programmer
-https://www.oreilly.com/ideas/the-traits-of-a-proficient-programmer
-Kompetentan programer zna kako nešto napraviti, proficient programer zna *zašto* i *kada* nešto napraviti.
-Par savjeta kako ići u tom smjeru:
-  * Razmotri zašto nešto radiš na određeni način. Navedi prednosti i nedostatke tog pristupa u konkretnoj situaciji.
-  * Pitaj druge da ti objasne zašto rade stvari na određeni način. Najbolji način za učenje.
-  * Prouči primarne izvore umjesto prepričanih članaka. Inspiracija stiže od originalnih ideja.
-  * Odaberi nekoliko specifičnih skillova i postani kompetentan u njima do krajnjeg ekstrema. Prouči prednosti i nedostatke tako dubokog ali iznimno specifičnog znanja.
+## Old age
+Radi na tome da makneš predrasude prema starijim ljudima na radnom mjestu. Istraživanja su pokazala da mogu jednako brzo savladati nove vještine kao i mlađi, i da se bolje od njih snalaze u kriznim situacijama. Biraj osobe po kvaliteti karaktera, ne po dobi.
 
 
 ## What Great Listeners Actually Do
@@ -41,12 +26,6 @@ Još par savjeta:
   * Treba zvučati kao da je naspisano bez ikakve muke.
 
 
-## Find a New City
-http://austinkleon.com/2016/08/03/find-a-new-city/
-New York je romantiziran kao grad u koji dođeš bez ičega, upoznaš ljude, stvaraš umjetnost, teško ti je, ali uspiješ. Problem je što se ta priča dogodila prije 50 godina, kad si mogao raditi u knjižari i plaćati najam. Danas je to u New Yorku nemoguće.
-Ako se želiš baviti umjetnošću, stvoriti nešto svoje što se ne uklapa u postojeći model - idi negdje gdje je jeftino živjeti, stvaraj što želiš stvarati, i napravi svoju scenu. Kao što se dogodilo i u New Yorku.
-
-
 ## Open Source
 http://schneems.com/2016/05/31/saving-sprockets.html
 - open source je kul, i jako puno naučiš sudjelujući u njemu. Probaj jednom tjedno raditi na nekom open source projektu
@@ -60,6 +39,13 @@ Knjige i internet su dobri, ali open source je najbolji način za naučiti nešt
 Svaki dan prošetaj sat vremena s nekim, bez elektronike i razgovaraj o projektu.
 Prvo gledaj "big picture", onda radi na detaljima, ali svako malo se vrati na "big picture".
 Ne slušaj kritike Hacker Newsa, tamo su svi ultra negativni. Pričaj s pravim ljudima.
+
+
+## Don't go to art school
+https://medium.com/i-m-h-o/dont-go-to-art-school-138c5efd45e9
+Nemoj stvarati dug od $250.000 zbog diplome koju nitko neće tražiti.
+Za manje od $10.000 dolara koje uložiš u tečajeve i materijale (navedeni u članku) možeš imati jebeno obrazovanje.
+U konačnici, jedino bitno je tvoj rad.
 
 
 ## When Standup Can’t Be Standup
@@ -79,3 +65,23 @@ Pisanje tjednog statusa je muka živa, ali ovaj format ga čini mnogo lakšim za
 3. Taskovi za idući tjedan. Stavi samo 3 koja su visokog prioriteta.
 4. Rizici i blockeri - sve za što će trebati pomoći ili što bi moglo predstaviti problem (npr. nezgodan framework)
 5. Bilješke. Kratke, pravovremene i korisne.
+
+
+## Interview questions
+http://www.stefankendall.com/2013/11/10-questions-to-ask-your-potential.html
+1. What's the process like? How do you build software?
+2. How do designers work with developers?
+3. What's the state of automated testing? Continuous integration?
+4. What *exactly* will I be working on? What's the tech stack?
+5. How big are the teams? How big will my team be?
+6. Is there any allowance for remote work?
+7. Are there core business hours?
+8. Why are you hiring? Is this a new product? Scaling? Did someone recently quit?
+9. What's the coolest thing you've built here, personally?
+10. What do you wish you had known about the company before working here? What's the worst part of this job?
+
+Uz sve to, uzmi u obzir: "One of the things you'll learn as you progress is that superficial process issues are actually not at the core of effectiveness; talent, vision, and ability to execute are. You want to be careful that your questionnaires don't blind you to opportunities to work in radically different cultures/processes that will succeed for reasons you don't yet understand."
+
+
+# Literatura
+* http://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/

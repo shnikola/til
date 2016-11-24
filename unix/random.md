@@ -17,13 +17,13 @@ Umjesto njega koristi `printf`.
 ## Skraćeno kopiranje
 `cp really_long_filename{,.orig}`
 
-## --
-`<cmd> --` označava kraj opcija. Korisno ako treba proslijediti file koji počinje s `-`, npr. `rm -- -file.txt`
-
-## strings
+## hacky hacky
 `strings <files>` ispisuje printabilne stringove u binarnom fileu.
   * `-n 10` minimalna duljina stringa (defaultno `4`).
 
+`strace -o <file> <cmd>` ispisuje sve systemske pozive koje izvršena naredba radi.
+
+
 ## The Haiku Vector Icon Format
 http://blog.leahhanson.us/post/recursecenter2016/haiku_icons.html
-Haiku OS ima poseban format za vektorske ikone - HVIF - koji ima jako male veličine (500 byteove) pa smanjuje broj potrebnih čitanja s diska da se file prikaže u GUIju. 
+Haiku OS ima poseban format za vektorske ikone - HVIF - koji ima jako male veličine (500 byteove) pa smanjuje broj potrebnih čitanja s diska da se file prikaže u GUIju.

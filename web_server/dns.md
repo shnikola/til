@@ -27,7 +27,6 @@ Sadrži mappinge domena u IP adrese ili druge resource. Svaki mapping ima `name`
 
 ## What really happens when you navigate to a URL
 http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
-
 1. Unesemo url wikipedia.org/login u browser
 2. Browser traži IP adresu za "wikipedia.org". Browser cache -> OS cache -> Router cache
    -> ISP DNS cache -> Root nameserver -> .org nameserver -> wikipedia.org nameserver

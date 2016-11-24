@@ -2,8 +2,8 @@
 
 ## Basic measurement
 * https://www.webpagetest.org
+* https://developers.google.com/speed/pagespeed/insights/
 * YSlow extension
-* Google Page Speed
 
 
 ## How browsers work internally
@@ -25,7 +25,7 @@ http://blog.pamelafox.org/2014/01/improving-front-page-performance.html
 1. `tinypng` za optimiziranje PNGova, `SVGO` za SVG
 2. data-uri za manje slike koje se samo jednom pojavljuju
 3. Spriteovi/font za ikonice
-4. Picturefill za retina/responzivne slike
+4. `Picturefill` za retina/responzivne slike
 5. Delayed load za veće slike, videove i iframeove.
 
 
@@ -54,6 +54,30 @@ critical path - sve potrebno da browser napravi prvi paint. Želimo ga učiniti 
 critical css - minimalni css koji je potreban za prikazati
 
 
+## Web Fonts Performance
+https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization
+Ako želiš podržavati sve browsere, moraš servirati 4 font formata:
+* `WOFF 2.0` novijim browserima koji ga podržavaju
+* `WOFF` većini browsera
+* `TTF` za stare Android browsere
+* `EOT` za `< IE 9` browsere
+Pobrini se da koristiš gzip kompresiju za `TTF` i `EOT` formate. `WOFF` formati je imaju built-in.
+
+Kada koristiš `@font-face`:
+* unutar `src` koristi `format()` kao hint. U tom slučaju browser neće morati skinuti font da bi odredio podržava li ga.
+* u slučaju velikog broja glyphova (npr. azijskih jezika), podijeli font na subsetove i koristi `unicode-range`, pa će browser skinuti font samo za gliphove koji se nalaze na stranici.
+
+Fontovi se učitavaju tek kad se izgradi render tree (koji ovisi o DOM i CSSOM trees). Tek nakon što se loada CSS, počet će se loadati potrebni fontovi. Dok se font ne loada neki browseri (_Safari_) neće uopće prikazati tekst (*Flash Of Invisible Text*), a neki će čekati 3 sekunde prije nego prikažu fallback font (_Chrome, Firefox_).
+
+Kako bi to izbjegao:
+* `font-display: swap` instantno koristi fallback dok se font ne loada. _Chrome flag_
+* `font-display: optional` u slučaju da user ima limitirani bandwith, koristi fallback i uopće ne loadaj font. Koristi ovo svugdje jednom kad bude u browserima. _Chrome flag_
+* koristi `Font Loading API` (u razvoju) ili `Font Face Observer` da ručno loadaš i dodaš `.font-loaded` na body kad je spreman. Korisno u slučaju da ne upravljamo `@font-face`om, npr. dohvaćamo CSS s Google Fontsa.
+
+Da minimiziraš *Flash Of Unstyled Text* zbog fallback fonta, prilagodi `font-size` fallbacka da se tekst što manje miče.
+Za dodatnu optimizaciju, prvo loadaj samo `normal` weight (browser će simulirati ostale debljine), a tek onda ostale.
+
+
 ## Tim Kadlec: Once more, with feeling
 https://www.youtube.com/watch?v=S8B7oYsjBtM
 * Reakciju bržu od `100ms` mozak osjeća kao instantnu. Nakon `1s` korisnik gubi pažnju.
@@ -64,27 +88,34 @@ https://www.youtube.com/watch?v=S8B7oYsjBtM
 * S druge strane, za teške stvari za koje se mozak naučio da su teške (kao prijava poreza), dodaj delay da ne zbuniš korisnika.
 
 
+## Measure Performance With RAIL Model
+https://developers.google.com/web/fundamentals/performance/rail
+Fokusiraj se na korisnika. Cilj aplikacije nije da bude brza na određenom uređaju, nego da korisnici budu zadovoljni.
+* *Response:* odgovaraj na korisnikov input (button click, checkbox, animation start) u manje od `100ms`. Duže od toga i osjetit će se lag. Za akcije kojima treba duže od `500ms`, uvijek daj feedback.
+* *Animation:* Za 60fps, imaš `16ms` po frameu. Ali browser ima svog posla, pa računaj da tijekom animacije imaš `8ms` za svoj kod. Skupe izračune obavi prije početka animacije.
+* *Idle:* Koristi idle time za obavljanje odgođenog (deferred) posla, npr. preloadaj što manje podataka kako bi se aplikacija brzo loadala, a koristi idle time za loadanje ostatka. Odgođeni posao obavljaj u komadima od `50ms`, kako bi u slučaju da korisnik postane aktivan dovoljno brzo mogli biti responzivni.
+* *Load:* Loadaj site unutar `1 sekunde`. U suprotnom, gubiš korisnikovu pažnju.
+
+
+## Adapting to the Mobile Web Present (2016)
+https://www.youtube.com/watch?v=K1SFnrf4jZo
+Mobiteli neće nikad imati iste performanse kao i desktop:
+* moraju ograničavati CPU usage jer nemaju dobro hlađenje (lik je popravio benchmarke tako što je stavio mobitel na led)
+* čitanje iz flash memorije je zbog paralelizma ograničeno prostorom (brzinom usporedivo sa starim diskovima)
+* mobilne mreže su puno sporije (4G korisnici većinu vremena nemaju 4G brzinu).
+
+Prosječan mobitel u svijetu postaje sve sporiji: sve više ljudi može priuštiti mobitel, a uređaj koji kupe neće biti najnoviji iPhone.
+50% mobilnih korisnika će odustati ako se stranica učitava duže od 3 sekunde.
+Prosječno učitavanje stranice na mobilnom uređaju: 19 sekundi.
+
+Kako ispravno testirati stranice za mobilne uređaje:
+* Testiraj na uređajima jefitnijim od 200$ koje većina korisnika ima
+* Ne vjeruj laptopu, koristi `chrome://inspect`, `Lighthouse` extension i `webpagetest.org`
+* Koristi Service Workere za local cache.
+
 ## Infinite Scroller
 https://developers.google.com/web/updates/2016/07/infinite-scroller
 * *No Background*: Runway nema background pa browser ne mora spremati teksture s tisuće pixela visine.
 * *Dom recycling*: Držanje svih itema u DOMu je preveliko opterećenje za browser. Zato čuvamo samo dio vidljiv korisniku, a elemente koji odlaze iz vidljivog dijela recikliramo i koristimo kao nove iteme. Veličina i pozicija scrollbara se simulira sa *sentinelom*, elementom od 1px koji rasteže runway.
 * *Tombstones*: prilikom čekanja da se novi itemi loadaju, dodajemo fake elemente (tombstones) da ne bude naglog skoka na grupu s novim elementima.
 * *Layout*: Svaki item je apsolutno pozicioniran kako recycling ne bi zahtjevao ponovno računanje layouta.
-
-
-# Stories
-
-## 30K Page Views for $0.21: A Serverless Story
-https://fmlnerd.com/2016/08/16/30k-page-views-for-0-21-a-serverless-story
-Site je kalkulator za predviđenu zaradu filmova. Site je statičan i generira se na AWS-u.
-* CloudWatch cron job nekoliko puta dnevno trigerira dohvaćanje novih podataka. *Free tier*
-* Lambda na trigger dohvaća config s S3 i scrapea podatke, spremajući ih u JSON na S3. *Free tier <1M req/month*
-* Iduća Lambda na event kreiranja JSONa dohvaća JSON i stvara od njega JS file i HTML.
-* Sav trošak se svodi na S3 (oko *20 centi* mjesečno)
-
-
-## Reddit 2010 (270M Page Views A Month)
-http://highscalability.com/blog/2010/5/17/7-lessons-learned-while-building-reddit-to-270-million-page.html
-* `Memcachiraju` sve živo: DB data, session data, renderirani html, memoizirane metode, *rate limiting*, locking, *change password linkove* (ne drže ih u bazi).
-* Sve računaju unaprijed i cacheiraju, ništa on demand, npr. sortiranja hot, new, top, old su sva unaprijed izračunata.
-* Kada user upvotea, napravi se minimum odmah (u bazu se doda upvote), a ostatak procesiranja se stavi u queue (sortiranje linkova, prepoznavanje spama, računanje nagradi...). Nema potrebe da user čeka za išta od toga. Za queuing koriste `RabbitMQ`.

@@ -59,10 +59,7 @@ Otvaranje novog taba skoro uvijek treba prepustiti korisniku. Jedini scenariji k
 ## <img>
 Nakon što je parsirao HTML, browser automatski skida sve `<img src>` slike, čak i one koje nisu vidljive korisniku. Ako želiš to izbjeći (jer imaš tisuću slika na stranici), koristi *lazy load* - js koji će postaviti `src` tek kad element uđe u viewport.
 
-Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. Browser će odlučiti koju da upotrijebi.
-* `srcset="normal.jpg 1x, retina.jpg 2x"` bira po device-pixel omjeru uređaja.
-* `srcset="medium.jpg 1000w, large.jpg 2000w"` zadane su širine slika, pa bira po širini viewporta.
-* `src` atribut koristi se kao fallback.
+Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. Browser će odlučiti koju da upotrijebi. `src` atribut koristi se kao fallback.
 
 `alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
 
@@ -72,12 +69,10 @@ Ako nešto treba biti klikabilno, koristi `button`. Ozbiljno. Super je `button`.
 
 
 ## <details> i <summary>
-```
-<details>
+`<details>
   <summary> More </summary>
   Blah blah
-</details>
-```
+</details>`
 Chrome, Safari i Android nativno prikažu exapandable "> More". Firefox i IE, još ne :/
 
 
