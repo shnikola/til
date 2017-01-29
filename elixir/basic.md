@@ -1,10 +1,11 @@
 # Elixir
 
-## Liste i tupli:
+## Lists and Tuples
+
 `[1, 2, 3]` - lista, koristi za prependanje
 `hd(list)`, `tl(list)` - prvi element i ostatak
 
-`{1, 2, 3}` - tuple, koristi za brz pristup indexu
+`{1, 2, 3}` - tuple, koristi za brz pristup po indexu
 `elem(tuple, i)` - i-ti element tupla
 `put_elem(tuple, i, elem)` - vraća novi tuple, jer su svi data typovi immutable
 
@@ -21,6 +22,7 @@
 `==` i `===` se razlikuju u usporedbi intova i floatova (`2 === 2.0` je false)
 
 ## Pattern matching
+
 `{a, b, c} = {:hello, "world", 42}` binda vrijednosti u varijable
 `[head | tail] = [1, 2, 3]` - head = 1, tails = [2, 3]
 `x = 1` - rebinda vrijednost varijable
@@ -72,6 +74,7 @@ Charlist (s 'jednostrukim navodnicima') je **lista** codepointova (ne bytova), n
 `[104, 101, 322, 322, 111]` - svaki codepoint je jedno slovo (idu preko 256)
 
 ## Keywords and maps
+
 `[{:a, 1}, {:b, 2}, {:b, 3}]` - Keyword Lists, doslovno lista 2-članih tuplea.
 Ordered su, mogu više puta imati isti key. Koriste se uglavnom za argumente funkcije.
 `[a: 1, b: 2]` - skraćena sintaksa
@@ -89,6 +92,7 @@ nema orderinga
 `put_in` i `update_in` za dodavanje u nestanim strukturama
 
 ## Functions and Modules
+
 `def sum(a, b), do: x + y` - named function, poziva se s `sum(1, 2)`, nemaju closure
 `sum = fn x, y -> x + y end` - anonymous function, poziva se s `sum.(1, 2)`, imaju closure
 
@@ -114,6 +118,7 @@ end
 `def join(a, b, sep \\ " ")` - definira defaultnu vrijednost argumenta
 
 ## Enums and streams
+
 Funkcije za obradu lista nalaze se u `Enum` modulu.
 `Enum.filter([1, 2, 3], &(&1 > 5))` - filter
 `Enum.map([1, 2, 3], &(&1 * 2))` - map
@@ -127,6 +132,7 @@ Enums su eager load - za lazy load koristi se `Stream`
 `1..100_000 |> Stream.map(&(&1 * 3)) |> Stream.filter(odd?)`
 
 ## Processes
+
 Procesi u elixiru su lightweight, concurrent i isolated. Komuniciraju preko poruka.
 Za stvaranje novog procesa korsiti se `spawn`:
 `pid = spawn fn -> 1 + 2 end` - prima funkciju koju će proces izvršiti, vraća pid
@@ -151,6 +157,7 @@ error propagira i u parent proces, koristimo `spawn_link`.
 `Agent.start_link(fn -> %{} end)` - apstrakcija procesa koja drži globalno stanje
 
 ## IO
+
 Ispisivanje: `IO.puts "Hello"` ili `IO.puts :stderr, "Hello"`
 Učitavanje: `IO.gets "Unesi ime: "` - vraća cijelu liniju (s \n)
 
@@ -173,6 +180,7 @@ File.read!("hello.txt") # ako je neuspješno raisea se error
 ```
 
 ## Alias, require and import
+
 `alias Foo.Bar, as: Bar` - module `Foo.Bar` se može zvati s `Bar` u trenutnom scopeu
 `require Integer` - učitava modul pri kompilaciji, potrebno ako želimo koristiti macroe tog modula
 `use ExUnit.Case, option: :value` - requirea modul i poziva njegov `__using/1__` s options

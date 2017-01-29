@@ -1,61 +1,98 @@
 # Performance
 
 ## Basic measurement
+
 * https://www.webpagetest.org
 * https://developers.google.com/speed/pagespeed/insights/
 * YSlow extension
 
+## Critical Path Rendering
 
-## How browsers work internally
-http://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
-Svaki browser koristi rendering engine (Trident, Gecko, Webkit, Blink). Renderiranje stranice izvodi se u nekoliko koraka:
-  1. Parsiranje HTMLa i izgradnja DOM stabla (elementi i atributi)
-  2. Izgradnja Render stabla (vizualni elementi redom kojim će biti prikazani i izračunavanje stylea)
-  3. Layout (određivanje pozicija i veličina)
-  3. Painting (prolazak kroz render tree i iscrtavanje na UI)
+https://developers.google.com/web/fundamentals/performance/critical-rendering-path/
+
+Proces renderiranja:
+1. Browser čita byteove, prevodi ih u charactere (prema zadanom encodingu), razdvaja tekst u tokene (`<html>`, `<body>`, itd.), tokene pretvara u nodeove s propertijima i pravilima, te objekte povezuje u *stablo*
+2. *DOM* stablo izgrađuje se od HTMLa i definira odnose nodeova. *CSSOM* stablo izgrađuje se od CSS-a i definira izgled.
+3. *Render tree* se izgrađuje pomoću *DOM* i *CSSOM* stabala. On sadrži samo nodeove potrebne da se prikaže stranica. Preskaču se nodeovi poput `<script>` i `<head>` te elementi koji imaju `display: none;`.
+4. *Layout* (reflow) određuje poziciju i veličinu nodeova koristeći *render tree*.
+5. *Paint* (rasterize) pretvara sve nodeove u piksele na ekranu.
+
+Da bi se stranica iscrtala po prvi put, potrebni su *DOM* i *CSSOM*. Zato su HTML i CSS *render blocking* resources.
+
+Kada se HTML ili CSS promijene, cijeli proces se ponavlja kako bi se odredilo koje piksele treba iznova nacrtati.
+
+Cilj nam je smanjiti vrijeme provedeno u gornjim koracima kako bi se stranica što prije prikazala, i kako bi se animacije fluidnije izvodile.
+
+Svaki `<link href="style.css">` defaultno blokira prvi render kako bi se izbjegao *flash of unstyled content*. Za označiti CSS kao neblokirajući, dodaj `media` atribut (npr. `media="print"` za printanje ili `media="(min-width: 40em)"` - browser će ga skinuti, ali neće zbog njega čekati na render.
+
+Kada browser pri parsiranju HTMLa dođe do `<script>` elementa (bilo inline, bilo remote), pauzira izgradnju DOM stabla dok se skripta ne dohvati i izvrši. Pritom su skripti dostupni samo elementi definirani iznad nje, jer se ostatak DOM stabla još nije izgradio. Dodatno, samo izvršavanje skripte će čekati dok se *CSSOM* stablo ne izgradi, kako bi se izbjegli race conditioni pri definiranju stilova.
+
+Kako bi se izbjeglo blokiranje `<script>` napravi sljedeće:
+* Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Potencijalno sporo za velike dokumente.
+* `<script async>` ne blokira i izvodi skripte asinkrono kad se skinu. Pripazi, skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). _IE10+_
+* `<script defer>` ne blokira i izvodi skripte kad je cijeli HTML parsiran, prije `DOMContentLoaded`. _IE10+_
+
+Da bi se stranica iscrtala prvi put što prije, potrebno je smanjiti broj ovih kritičnih (render blocking) resursa, i brojem i veličinom.
+
+## Rendering performance
+
 Savjeti za izbjegavanje re-layouta i re-painta:
-  * Dohevaćanje stila elementa (npr. `.width`) natjerat će browser da flusha, nemoj to raditi često.
-  * Bolje je napraviti mnogo izmjena na nevidljivom elementu pa ga onda prikazati.
-  * Bolje je promijeniti `class` elementa nego puno inline styleova.
-  * Animiraj elemete koji su `absolute` ili `fixed`.
-
+* Dohvaćanje stila elementa (npr. `.width`) natjerat će browser da flusha, nemoj to raditi često.
+* Bolje je napraviti mnogo izmjena na nevidljivom elementu pa ga onda prikazati.
+* Bolje je promijeniti `class` elementa nego puno inline styleova.
+* Animiraj elemete koji su `absolute` ili `fixed`.
+* Nemoj se bindati na `scroll` event, već tretiraj dolazak do određene točke u scroll kao event koji se okine jednom.
 
 ## Optimiziranje imagea
+
 http://blog.pamelafox.org/2014/01/improving-front-page-performance.html
+
 1. `tinypng` za optimiziranje PNGova, `SVGO` za SVG
 2. data-uri za manje slike koje se samo jednom pojavljuju
 3. Spriteovi/font za ikonice
 4. `Picturefill` za retina/responzivne slike
 5. Delayed load za veće slike, videove i iframeove.
 
-
 ## Izbjegavaj document.write
+
 https://developers.google.com/web/updates/2016/08/removing-document-write
+
 Nemoj koristiti `document.write` jer blokira parsiranje HTML-a. Ako je DOM stablo već izgrađeno, morat će ga iznova graditi!
+
 Pogotovo nemoj koristiti `document.write` koji dodaje `<script>` element, jer onda browser mora i na njega čekati. Chrome od verzije `54` odbija loadanje takvih skripti.
+
 Ako baš moraš dinamično loadati skriptu, umjesto `document.write` koristi `document.createElement('script')`.
 
-
 ## Resource Hints
-* `<link rel="preconnect" href="//fonts.googleapis.com">` unaprijed odrađuje DNS lookup, TCP i SSL konekciju na dani host. Korisno ako imaš više blokirajućih resourca s različitih hostova, odradiš im sav connection overhead istovremeno. _FF, Chrome_
-* `<link rel="preload" href="image.png">` unaprijed učitava resource. Korisno za resource koji nisu automatski preloadani, npr. background-image u CSSu ili nešto iz skripte. Ako trebaš fontove, dodaj `crossorigin`. _Chrome_
-* `<link rel="prerender" href="//utorkom.com/2">` unaprijed učitava *cijelu stranicu* za koju mislimo da će korisnik ubrzo posjetiti. Budi *ultra oprezan* ako ovo koristiš, jer troši puno bandwitha, i stvara lažne posjete u analitici. _Chrome, IE11+_
 
+### Preconnect
 
-## <script>
-Kada browser dođe do `<script>`, prestaje s parsiranjem HTML-a dok se skripa ne učita i izvrši (zbog mogućeg `document.write`).
-Da izbjegneš to:
-* Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Potencijalno sporo za velike dokumente.
-* `<script async>` ne blokira i izvodi skripte asinkrono čim se skinu. _IE10+_
-* `<script defer>` ne blokira i izvodi skripte kad je cijeli HTML parsiran, prije `DOMContentLoaded`. _IE10+_
-* Pripazi: `async` ne izvodi skripte po redu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`).
+`<link rel="preconnect" href="//fonts.googleapis.com">` unaprijed odrađuje DNS lookup, TCP i SSL konekciju na dani host. Korisno ako imaš više blokirajućih resourca s različitih hostova, odradiš im sav connection overhead istovremeno, a oni se naknadno bez overheada skinu serijski. _FF, Chrome_
 
-critical path - sve potrebno da browser napravi prvi paint. Želimo ga učiniti što manjim.
-critical css - minimalni css koji je potreban za prikazati
+### Preload
 
+`<link rel="preload" href="image.png">` unaprijed učitava resource za trenutnu stranicu. Browser inače preloada sve resurse navedene u HTMLu (js, css, img), ali ovo je korisno za resource koji se učitavaju iz CSSa ili skripte. _Chrome_
+
+Pomoću `as` atributa u `preload` definiraš je li resource `script`, `style`, `image`, `media` ili `document`, pomoću čega će browser odrediti prioritet skidanja.
+
+Neki od korisnih primjena preloada su:
+* `<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>` preloada font bez da mora čekati da se stylesheet skine. Fontovi zahtjevaju `crossorigin` atribut čak i ako su na istom originu.
+* `<link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'">` asinkrono skidanje stylesheeta bez blokiranja rendera koristeći `onload`.
+
+### Prefetch
+
+`<link rel="dns-prefetch" href="http://www.spreadfirefox.com">` unaprijed dohvaća DNS podatke za domenu kako bi umanjio latenciju DNS resolutiona. Moderni browseri inače to rade automatski za linkove i resurse (js, css, img) prisutne na stranici. Dodaj ako želiš ručno prefetchati neku domenu koje nema na trenutnoj stranici, ali očekuješ da će biti na drugim stranicama. _Chrome, FF, IE10+_
+
+`<link rel="prefetch" href="image.png">` navodi resource koji će vjerojatno biti potreban u nekoj od sljedećih stranica. Browser će ga skinuti i cachirati s niskim prioritetom u backgroundu. _Chrome, FF, IE10+_
+
+### Prerender
+
+`<link rel="prerender" href="//utorkom.com/2">` unaprijed učitava *cijelu stranicu* za koju mislimo da će korisnik ubrzo posjetiti. Budi *ultra oprezan* ako ovo koristiš, jer troši puno bandwitha, i stvara lažne posjete u analitici. _Chrome, IE11+_
 
 ## Web Fonts Performance
+
 https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/webfont-optimization
+
 Ako želiš podržavati sve browsere, moraš servirati 4 font formata:
 * `WOFF 2.0` novijim browserima koji ga podržavaju
 * `WOFF` većini browsera
@@ -77,28 +114,34 @@ Kako bi to izbjegao:
 Da minimiziraš *Flash Of Unstyled Text* zbog fallback fonta, prilagodi `font-size` fallbacka da se tekst što manje miče.
 Za dodatnu optimizaciju, prvo loadaj samo `normal` weight (browser će simulirati ostale debljine), a tek onda ostale.
 
-
 ## Tim Kadlec: Once more, with feeling
-https://www.youtube.com/watch?v=S8B7oYsjBtM
-* Reakciju bržu od `100ms` mozak osjeća kao instantnu. Nakon `1s` korisnik gubi pažnju.
-* Zbog DNS, TCP, i SSLa, prvi request će trajati minimalno `500ms`. Zato probaj izbjegavati requeste gdje možeš, i pobrini se da sve što dohvaćaš ima neku vrijednost (jer svakako ima i cijenu).
-* Koristi resource hitnove (preload, prerender) i optimiziraj critical path loading.
-* Ali prije svega, fokusiraj se na korisnikov doživljaj situacije (npr. kako su dodali zrcala u liftove).
-* Umjesto spinnera, koristi animaciju prijelaza (kao safari new tab) ili skeleton screen (kao facebook) - bitno je korisniku dati feedback tijekom čekanja. Što neobičnije, to bolje, jer će mu skrenuti pozornost s čekanja.
-* S druge strane, za teške stvari za koje se mozak naučio da su teške (kao prijava poreza), dodaj delay da ne zbuniš korisnika.
 
+https://www.youtube.com/watch?v=S8B7oYsjBtM
+
+Reakciju bržu od `100ms` mozak osjeća kao instantnu. Nakon `1s` korisnik gubi pažnju.
+
+Zbog DNS, TCP, i SSLa, prvi request će trajati minimalno `500ms`. Zato probaj izbjegavati requeste gdje možeš, i pobrini se da sve što dohvaćaš ima neku vrijednost (jer svakako ima i cijenu).
+
+Koristi resource hitnove (preload, prerender) i optimiziraj critical path loading. Ali prije svega, fokusiraj se na korisnikov doživljaj situacije (npr. zato su dodali zrcala u liftove).
+
+Umjesto spinnera, koristi animaciju prijelaza (kao safari new tab) ili skeleton screen (kao facebook) - bitno je korisniku dati feedback tijekom čekanja. Što neobičnije, to bolje, jer će mu skrenuti pozornost s čekanja.
+
+S druge strane, za teške stvari za koje se mozak naučio da su teške (kao prijava poreza), dodaj delay da ne zbuniš korisnika.
 
 ## Measure Performance With RAIL Model
+
 https://developers.google.com/web/fundamentals/performance/rail
+
 Fokusiraj se na korisnika. Cilj aplikacije nije da bude brza na određenom uređaju, nego da korisnici budu zadovoljni.
 * *Response:* odgovaraj na korisnikov input (button click, checkbox, animation start) u manje od `100ms`. Duže od toga i osjetit će se lag. Za akcije kojima treba duže od `500ms`, uvijek daj feedback.
 * *Animation:* Za 60fps, imaš `16ms` po frameu. Ali browser ima svog posla, pa računaj da tijekom animacije imaš `8ms` za svoj kod. Skupe izračune obavi prije početka animacije.
 * *Idle:* Koristi idle time za obavljanje odgođenog (deferred) posla, npr. preloadaj što manje podataka kako bi se aplikacija brzo loadala, a koristi idle time za loadanje ostatka. Odgođeni posao obavljaj u komadima od `50ms`, kako bi u slučaju da korisnik postane aktivan dovoljno brzo mogli biti responzivni.
 * *Load:* Loadaj site unutar `1 sekunde`. U suprotnom, gubiš korisnikovu pažnju.
 
-
 ## Adapting to the Mobile Web Present (2016)
+
 https://www.youtube.com/watch?v=K1SFnrf4jZo
+
 Mobiteli neće nikad imati iste performanse kao i desktop:
 * moraju ograničavati CPU usage jer nemaju dobro hlađenje (lik je popravio benchmarke tako što je stavio mobitel na led)
 * čitanje iz flash memorije je zbog paralelizma ograničeno prostorom (brzinom usporedivo sa starim diskovima)
@@ -114,7 +157,9 @@ Kako ispravno testirati stranice za mobilne uređaje:
 * Koristi Service Workere za local cache.
 
 ## Infinite Scroller
+
 https://developers.google.com/web/updates/2016/07/infinite-scroller
+
 * *No Background*: Runway nema background pa browser ne mora spremati teksture s tisuće pixela visine.
 * *Dom recycling*: Držanje svih itema u DOMu je preveliko opterećenje za browser. Zato čuvamo samo dio vidljiv korisniku, a elemente koji odlaze iz vidljivog dijela recikliramo i koristimo kao nove iteme. Veličina i pozicija scrollbara se simulira sa *sentinelom*, elementom od 1px koji rasteže runway.
 * *Tombstones*: prilikom čekanja da se novi itemi loadaju, dodajemo fake elemente (tombstones) da ne bude naglog skoka na grupu s novim elementima.

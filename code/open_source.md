@@ -1,8 +1,11 @@
 # Open Source
 
 ## Readme
+
 https://github.com/noffle/art-of-readme
+
 Dokumentacija, a ne kod, definira što modul radi. Piši dokumentaciju tako da korisnik nikad ne mora gledati u tvoj kod.
+
 Preporučena struktura:
 1. Reci što je u jednoj rečenici
 2. Ako je potrebno, background context i ograničenja.

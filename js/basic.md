@@ -1,19 +1,35 @@
 # Javascript
 
-## optimize-js
-https://github.com/nolanlawson/optimize-js
-Moderni JS engini pretpostavljaju da se većina funkcija neće odmah izvoditi, pa rade samo pre-parse koji provjerava ispravnost sintakse. Ali za immediately invoked funkcije ovo će zapravo usporiti izvođenje, jer će se raditi pre-parse i onda puni parse.
-`optimize-js` pri buildanju dodaje zagrade na sve IIFE funkcije, kako bi se engineu dalo do znanja da prekoči pre-parse korak. Time se dobije speed boost i do 50%.
+## Array Functions
 
+Callback uvijek dobija argumente redom: item, index, list.
 
-## asm.js
-`emscripten` je alat koji kompajlira C/C++ kod u `asm.js`, podskup javascripta napravljen da se izvodi jako brzo. Neke od optimizacija su: koristi samo brojeve (nema stringova, booleana i objekata); svi podatci drže se u jednom velikom arrayu, heapu (nema globalnih varijabli, closurea i data structurea). `asm.js` se može izvršavati na svakom browseru, ali određeni browseri su toliko optimizirani da ga izvršavaju tek 2x sporije od nativnog C/C++ koda.
+`array.find(x => x > 0)` vraća prvi element koji ispunjava uvjet.
+`array.findIndex(x => x > 0)` vraća index prvog elementa koji ispunjava uvjet.
 
+`array.every(x => x > 0)` vraća `true` ako svi elementi koji ispunjavaju uvjet.
+`array.some(x => x > 0)` vraća `true` ako postoje elementi koji ispunjavaju uvjet.
 
-## Async Functions _Chrome, Edge (flag)_
-`async func() { ... }` omogućava da koristiš `await get(url);` unutar funkcije, što će pauzirati funkciju dok ne dobije odgovor, bez da je blokira. Asinkrone naredbe tako možeš pisati sekvencijalno, a ne se gnjaviti s promiseima.
+`array.filter(x => x > 0)` vraća subarray elemenata koji odgovaraju uvjetu.
+`array.map(x => x.name)` vraća array s rezultatima operacije.
+`array.sort((a, b) => a > b ? -1 : 1`) vraća sortirani array.
+`array.reduce((sum, current) => sum + current, 0)` agregira array u prvu vrijednost.
 
+`...array` je spread operator za rastavljanje arraya na argumente, kao ruby splash (`*`) operator, npr. `[...arr, 1, 2, 3]`.
+
+## Date
+
+`new Date()` vraća Date objekt s metodama za dohvaćanje dijelova datuma: `date.getFullYear`, `date.getMonth`, `date.getDate`, `date.getHours`, `date.getMinutes`, `date.getSeconds`.
+`Date.now()` vraća timestamp u milisekundama. _IE 9+_
+
+## Debounce i Throttle
+
+Na eventove koji se triggeriraju mnogo puta u sekundi (npr. `scroll` ili `mousemove`) nikad nemoj attachati funkciju direktno na njih. Umjesto toga, koristi:
+* `debounce(400)` dok god se event događa, funkcija neće biti izvršena, tek *nakon* `400ms` u kojima se event ne dogodi izvršit će funkciju. Korisno za prepoznati kad je korisnik prestao tipkati ili dovršio `resize`.
+* `throttle(400)` doke god se event događa, izvršavat će funkciju *maksimalno jednom* u `400ms`. Korisni za praćenje kontinuiranih eventova, npr. infinite scrolling.
+* `requestAnimationFrame` kao throttle, ali radi nativno i cilja na izvršavanje svakih `16ms` (za 60fps). Korisno za funkcije koje crtaju ili animiraju.
 
 # Literatura
+
 * https://github.com/airbnb/javascript style guide
 * http://bonsaiden.github.io/JavaScript-Garden quirks

@@ -2,20 +2,20 @@
 
 Web Cache stoji između servera i klijenta, pamti odgovore i koristi ih ako se request ponovi. Time se skraćuje put do servera, pa se *smanjuje latencija* i *smanjuje promet u mreži*.
 
-Vrste Web Cachea:
-  * *Browser Cache*: lokalno sprema response za jednog usera (*private cache*). Smanjuje potrošnju bandwitha za iste assete koji se pojavljuju na različitim stranicama.
-  * *Proxy Cache*: na mreži izmežu klijenta i servera, sprema response za mnoge usere (*shared cache*). Postavlja ih ISP kako bi smanjio latenciju i promet na mreži.
-  * *Gateway Cache* (reverse proxy cache): ispred servera, sprema response za mnoge usere. Postavlja ih vlasnik servera kako bi site bio brži i skalabilniji. CDN je distrubuirana mreža Gateway Cacheva (jer server upravlja onim što će se cachirati).
+*Browser Cache* lokalno sprema response za jednog usera (*private cache*). Smanjuje potrošnju bandwitha za iste assete koji se pojavljuju na različitim stranicama.
 
+*Proxy Cache* je na mreži izmežu klijenta i servera, sprema response za mnoge usere (*shared cache*). Postavlja ih ISP kako bi smanjio latenciju i promet na mreži.
+
+*Gateway Cache* (reverse proxy cache) je ispred servera, sprema response za mnoge usere. Postavlja ih vlasnik servera kako bi site bio brži i skalabilniji. CDN je distrubuirana mreža Gateway Cacheva (jer server upravlja onim što će se cachirati).
 
 ## Browser and Proxy Cache
 
 Kako Cache radi:
-  1. Ako header responsa kaže da ga se ne smije čuvati, cache ga ignorira.
-  2. Ako je request SSL ili Authenticated, shared cache ga ignorira.
-  3. Ako je cachirani podatak *fresh*, cache ga šalje klijentu bez da provjeri sa serverom. Podatak je *fresh* ako ima expiry koji još nije istekao (ili ako je cache očitao podatak nedavno i on nije izmijenjen duže vremena).
-  4. Ako je cachirani podatak *stale*, cache će pitati server da ga *validira*, tj. potvrdi je li ostao isti.
-  5. U posebnim slučajevima (npr. kad je odspojen od mreže) cache može servirati *stale* podatak.
+1. Ako header responsa kaže da ga se ne smije čuvati, cache ga ignorira.
+2. Ako je request SSL ili Authenticated, shared cache ga ignorira.
+3. Ako je cachirani podatak *fresh*, cache ga šalje klijentu bez da provjeri sa serverom. Podatak je *fresh* ako ima expiry koji još nije istekao (ili ako je cache očitao podatak nedavno i on nije izmijenjen duže vremena).
+4. Ako je cachirani podatak *stale*, cache će pitati server da ga *validira*, tj. potvrdi je li ostao isti.
+5. U posebnim slučajevima (npr. kad je odspojen od mreže) cache može servirati *stale* podatak.
 
 *Freshness* omogućava da se odgovor dobije instatno iz cachea, a *validation* da se cijeli odgovor ne mora nanovo skidati sa servera.
 
@@ -36,14 +36,15 @@ Ako klijent pošalje request s `Vary: User-Agent` headerom, cache smije odgovori
 
 Cache se ne može invalidirati dok ne istekne expiry. Jedini način za prisiliti cacheve da reloadaju resource je promijeniti URL - zato je korisno ubaciti fingerprint u ime filea, npr. `script.x234dff.js`.
 
-Checklist:
-  * za isti resource koristi jedan URL.
-  * enablaj ETagove na serveru.
-  * resource koje možeš cachiraj na CDNu.
-  * odvoji dio filea koji se često mijenja kako bi se ostatak mogao bolje cachirati.
+## Caching Checklist
 
+* za isti resource koristi jedan URL.
+* enablaj ETagove na serveru.
+* resource koje možeš cachiraj na CDNu.
+* odvoji dio filea koji se često mijenja kako bi se ostatak mogao bolje cachirati.
 
 ## nginx Reverse Proxy Cache
+
 `nginx` ima svoj vlastiti ugrađeni proxy cache - nema potrebe za odvojenim rješenjima poput Varnisha.
 
 U `nginx.conf` dodaj:
@@ -62,15 +63,15 @@ Ako imaš baš jako veliki traffic, može se dogoditi *cache stampede*. Više is
 
 Na aplikacijskom serveru vraćaj `Cache-Control: public` samo za stranice koje ne koriste cookije.
 
-
 ## CloudFlare Railgun
-* CloudFlare inače servira statične resource (slike, JS, CSS) direktno iz cachea svojih datacentara najbližih korisniku.
-* Ali pomoću Railguna može servirati i dinamične stranice koje se ne mogu cachirati, npr. Facebook timeline za određenog korisnika, ili naslovnica CNN-a.
-* Na server se instalira poseban "Listener" koji drži otvorenu konekciju s datacentrima.
-* Pošto dinamične stranice često mijenjaju samo mali dio stranice, šalje se samo promjena što uštedi i do 98% prometa.
-* Dostupno samo za Enterprise korisnike.
 
+CloudFlare inače servira statične resource (slike, JS, CSS) direktno iz cachea svojih datacentara najbližih korisniku. Ali pomoću Railguna može servirati i dinamične stranice koje se ne mogu cachirati, npr. Facebook timeline za određenog korisnika, ili naslovnica CNN-a koja često objavljuje nove vijesti.
+
+Na server se instalira poseban "Listener" koji drži otvorenu konekciju s datacentrima. Pošto dinamične stranice često mijenjaju samo mali dio stranice, šalje se samo promjena što uštedi i do 98% prometa.
+
+Dostupno samo za Enterprise korisnike.
 
 # Literatura
+
 * https://www.mnot.net/cache_docs/
 * https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching

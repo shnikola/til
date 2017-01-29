@@ -5,8 +5,8 @@ Svg se u browseru može koristiti na nekoliko načina:
 * kao `<svg>`, čime dijeli DOM s HTML-om
 * kao `<object data='logo.svg'>` stvara scope za CSS i DOM, a omogućava interaktivnost (npr. hover).
 
-
 ## <svg>
+
 Koordinatni sustav `<svg>` elementa ima origin `(0,0)` gore lijevo.
 * `width` i `height` definiraju veličinu elementa i defaultni `viewBox`
 * `viewBox="0 0 300 400"` definira koji dio (x, y, width, height) infinite canvasa unutar elementa je vidljiv.
@@ -16,8 +16,8 @@ SVG se sastoji od elemenata čiji izgled možemo definirati na više načina:
 * `style` atributom, npr. `style="fill:red"`
 * CSS pravilom, npr. `circle { fill: red; }`
 
-
 ## Simple objects
+
 Objekti se isrtavaju redom kojim su navedeni u SVG-u, tj. posljednji objekt će biti iznad svih
 
 `<line>` se definira s `x1`, `y1` i `x2`, `y2`
@@ -27,8 +27,8 @@ Objekti se isrtavaju redom kojim su navedeni u SVG-u, tj. posljednji objekt će 
 `<polygon>` i `<polyline>` se definiraju s `points`.
 `<image>` se definira s `x`, `y`, `width` i `height`, te `xlink:href`
 
-
 ## Path
+
 Svi gore navedeni objekti, a i bilo koji drugi, mogu se nacrtati pomoću `<path>` objekta.
 Path prima niz naredbi i argumenata, npr. `<path d="M 150,0 L 75,200 L 225,200 Z">`. Uppercase naredbe koriste apsolutne koordinate, lowercase relativne u odnosu na trenutnu poziciju.
 * `M 150,0` pozicionira se na određenu točku (bez crtanja)
@@ -37,8 +37,8 @@ Path prima niz naredbi i argumenata, npr. `<path d="M 150,0 L 75,200 L 225,200 Z
 * `Q 20,40 30,20` crta kvadratičnu bezierovu krivulju, `C` kubičnu
 * `A` crta elliptical arc koji prima milijun parametara.
 
-
 ## Text
+
 Ako želiš tekst unutar SVG-a, ubaci ga u `<text>` element.
 * pozicija se definira s `x` i `y`
 * stilizira se sa standardnim `font-size`, `font-family` i ostalim atributima.
@@ -49,8 +49,8 @@ Ako želiš tekst unutar SVG-a, ubaci ga u `<text>` element.
 
 Za objekte koji sadrže grafički tekst, može se koristiti `<title>` element unutar njih za accessibility.
 
-
 ## Stroke, fill, opacity
+
 Svaki objekt ima svoj `stroke` i `fill` (ako je path zatvoren).
 * `stroke` je boja linije, `none` za prozirno
 * `stroke-width` je širina linije.
@@ -62,17 +62,18 @@ Svaki objekt ima svoj `stroke` i `fill` (ako je path zatvoren).
 
 * `opacity` za cijeli objekt, ili zasebno `stroke-opacity` i `fill-opacity`
 
-
 ## Grouping and reusing
+
 Za grupiranje elemenata koje možeš kasnije reusati koristi `<g>`, ili još bolje `<symbol>` koji može definirati vlastiti `viewBox`. Tako definirani elementi insertaju se pomoću `<use xlink:href="symbolId">`
 
 ## CSS
+
 * `d: path("M2,2 Q8,2 8,8")` za mijenjanje patha
 
-
 ## Savjeti
+
 * definiraj oblike po funkciji, ne po izgledu. kasnije ćeš ih stilizirati.
 
+## Literatura
 
-# Literatura
 * http://w3c.github.io/svgwg/specs/svg-authoring

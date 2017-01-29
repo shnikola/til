@@ -27,6 +27,8 @@ newlines in osx
 
 `wc <file>` ispisuje broj linija (`-l`), riječi (`-w`) ili znakova (`-m`) u fileu.
 
+`sed -n '25p'` ispisuje 25 liniju. Korisno za jako velike fileove.
+
 
 ## Combining
 `cut <file>` izdvaja dio svake linije.
@@ -57,9 +59,11 @@ newlines in osx
   * `-e <pattern> -e <pattern>` ili `-E '<pattern>|<pattern>'` za traženje više patterna.
   * `-v` inverse, ispisuje linije koje ne matchaju pattern.
   * `-o` ispisuje samo matching dio linije. Korisni kad imaš cijeli file u jednoj liniji.
+  * `-l` ispisuje samo imena fileova koji su se matchali.
   * `egrep` (`grep -E`) za extended regex.
   * `fgrep` (`grep -F`) za fixed stringove, bez regex matchanja.
   * `-C 2` ispisuje 2 linije konteksta prije i poslije. `-A` za after, `-B` za before.
+
 
 
 ## Stream Editing

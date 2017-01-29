@@ -17,15 +17,21 @@ Tvoj odgovor: "I’m here and interested in this job because I think your compan
 
 
 ## Raise
-http://heidiroizen.tumblr.com/post/100265592165/some-thoughts-on-asking-for-a-raise
-- nitko se neće brinuti jesi li dovoljno plaćen, moraš to učiniti sam za sebe.
-- koristi se podatcima o plaćama, ali nemoj tražiti povišicu samo jer netko u firmi ima veću plaću od tebe.
-- timing je bitan. Puno lakše je dogovoriti se prilikom zapošljenja ili promjene pozicije.
-- povišicu traži na prijateljski i neprijeteći način.
-- nikad nemoj tražiti povišicu zbog osobnih situacija (npr. bolestan sam), nego zbog osobnih vrijednosti.
 
+http://heidiroizen.tumblr.com/post/100265592165/some-thoughts-on-asking-for-a-raise
+
+Nitko se neće brinuti jesi li dovoljno plaćen, moraš to učiniti sam za sebe.
+
+Koristi se podatcima o plaćama, ali nemoj tražiti povišicu samo jer netko u firmi ima veću plaću od tebe.
+
+Timing je bitan. Puno lakše je dogovoriti se prilikom zapošljenja ili promjene pozicije.
+
+Povišicu traži na prijateljski i neprijeteći način.
+
+Nikad nemoj tražiti povišicu zbog osobnih situacija (npr. bolestan sam), nego zbog osobnih vrijednosti.
 
 # Litaratura
+
 * https://medium.com/tarah-wheeler-van-vlack/minute-zero-in-the-gender-pay-gap-7c6695daffbd
 * https://medium.freecodecamp.com/ten-rules-for-negotiating-a-job-offer-ee17cccbdab6
 * http://www.kalzumeus.com/2012/01/23/salary-negotiation/
