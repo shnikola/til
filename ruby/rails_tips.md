@@ -30,24 +30,6 @@ https://www.youtube.com/watch?v=5hKkkQMOj3c
 
 Railsov novi router je lud, izgenerira cijeli DFA (deterministic finite automata) i radi puno bolje nego niz ifova s regexima.
 
-## ActiveRecord size vs count vs length
-
-`length` loada sve recorde i izračuna length arraya.
-`count` uvijek radi count query.
-`size` je pametan i koristi jedno ili drugo ovisno jesu li recordi loadani.
-
-Koristi `size`! Jedino ako trebaš broj taman prije nego ćeš loadati sve recorde, koristi `length`.
-
-Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full table scan.
-
-## ActiveRecord Callbacks
-
-http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/
-
-Ako želiš u callbacku gurati stvari u background job (zar ne bi trebao koristiti servise?), nemoj koristiti `after_save` nego `after_commit`.
-
-`after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
-
 ## Amazon Cloudfront
 
 Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi radi. S3 je ok, ali je napravljen za storage, a ne za delivery. Rješenje je cloudfront - daš mu origin domenu, i samo postaviš

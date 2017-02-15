@@ -1,5 +1,15 @@
 # Consulting
 
+## The great truth
+
+Zaposlenje u velikoj kompaniji ti daje iluziju stabilnosti, rad kao freelancer ti daje iluziju slobode.
+
+Kada si u kompaniji, imaš šefa. Kada si freelancer, svaki klijent ti je šef. Upside je što klijentima možeš dati otkaz.
+
+## Consulting vs Freelancing
+
+Consultant je usko specijaliziran i nudi savjete i edukaciju, ne nužno i implementaciju.
+
 ## What Customers Love
 
 https://news.ycombinator.com/item?id=13155589

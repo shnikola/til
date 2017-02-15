@@ -10,7 +10,7 @@
 
 ## Complex fields
 
-Za arraye nije potrebno posebno specificirati tip fielda. Svaki field može imati nula, jednu ili više vrijednosti. Jedino svaka vrijednost u arrayu mora biti istog tipa.
+Ako želiš da field bude array, ne trebaš ništa posebno specificirati. Svaki field može imati nula, jednu ili više vrijednosti. Jedino svaka vrijednost u arrayu mora biti istog tipa.
 
 Praznim fieldovima smatra se `null`, `[]` ili `[null]`.
 

@@ -21,7 +21,9 @@ Umjesto toga, trebali bi više vremena ulagati u *Deep Work*, kognitivno zahtjev
 http://bookofhook.blogspot.hr/2013/03/smart-guy-productivity-pitfalls.html
 
 Zašto zabušavam: Mislim da sam pametniji od drugih i da mi ne treba puno vremena za to ("Work Smart, not Hard").
+
 Ali nisi pametniji od drugih, i trivijalne stvari se znaju zakomplicirati i zahtjevati puno više vremena nego što misliš.
+
 Sjeti se da je Johna Carmacka sto puta pametniji od tebe, a i dalje sto puta manje zabušava.
 
 ## Time management
@@ -29,7 +31,3 @@ Sjeti se da je Johna Carmacka sto puta pametniji od tebe, a i dalje sto puta man
 http://calnewport.com/blog/2013/12/21/deep-habits-the-importance-of-planning-every-minute-of-your-work-day/
 
 Svaki dan popodne isplaniraj kompletan sutrašnji dan u blokovima. Većina kreativaca ne radi najbolje "kada su insipirirani" nego po striktnom rasporedu.
-
-# Randy Pausch Lecture: Time Management
-
-https://www.youtube.com/watch?v=oTugjssqOT0

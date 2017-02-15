@@ -15,7 +15,6 @@ Tvoj odgovor: "That’s a great place to start! I understand that you cannot go 
 4. Ako kažu "Ovo je prosječna plaća za programera tvojih sposobnosti"
 Tvoj odgovor: "I’m here and interested in this job because I think your company is extraordinary, not average. I don’t think you want to fill this company with average developers, and I don’t think you’d be offering me this opportunity if you did. Glassdoor has a salary for someone of my abilities and training at [number that is at least 20% more than what they cited you]. Is that a little closer to what the amazing people I’ve met so far have started at?"
 
-
 ## Raise
 
 http://heidiroizen.tumblr.com/post/100265592165/some-thoughts-on-asking-for-a-raise

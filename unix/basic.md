@@ -20,6 +20,7 @@ Bash određene patterne zamijeni listom filenameova u trenutnom directoriju.
 `VAR=value` assignment, ne smije biti razmaka oko `=`. Varijabla je dostupna samo u shellu.
 `VAR=value <cmd>` čini varijablu dostupnom unutar `<cmd>` procesa.
 `export VAR` čini varijablu dostupnom u svim *child* procesima pokrenutih iz tog shella.
+`printenv` ispisuje sve environment varijable.
 
 `$VAR` expanda se u vrijednost varijable.
 `${VAR}s` ako expandaš pored stringa, da označiš koji dio je ime varijable.
@@ -238,7 +239,7 @@ Svaki file ima usera i grupu kojim pripada, te permissione (read, write, execute
 * numeric, npr. `664`. `4`: read, `2`: write, `1`: execute
 * symbolic, `u+x`: dodaj useru execute permission. `a-w`: oduzmi svima write permission.
 
-## Linkovi
+## Inodes
 
 Svaki directory je zapravo tablica fileova, a svaki file ima samo *filename* i *inode number*. *Inode number* pokazuje na *inode* koji sadrži data dio filea: owner, permissioni, timestampovi, veličina, gdje se podatci nalaze, itd.
 
@@ -246,17 +247,18 @@ Svaki directory je zapravo tablica fileova, a svaki file ima samo *filename* i *
 
 Svaki directory pri kreiranju dobija dva retka u tablici: `.` koji pokazuje na inode directorija, te `..` koji pokazuje na inode parenta. Ta dva "retka" su zapravo hard linkovi.
 
+Sustav može ostati bez fizičkog mjesta, ali i bez inode mjesta (ako imaš jako puno malih ili praznih fileova). Inode podatci mogu se prikazati s `ls -i` za directory ili `df -i` za cijeli sistem.
+
+## Linkovi
+
 `ln <src> <dest>` stvara *hard link* na inode koji ima različiti filename, ali isti inode number. Mora biti na istom file systemu.
 
 Svi hard linkovi su ravnopravni. Ako promijenimo permissione jednom, promjenit će se i drugom. Ako obrišemo jednog, drugi će i dalje raditi. Inode će se obrisati tek kad nitko više ne linka na njega.
 
 `ln -s <src> <dest>` stvara *soft link*, koji je posebna vrsta filea čiji data dio sadrži path do drugog filea. OS se pobrine da se pri otvaranju soft linka otvori file na kojeg pokazuje. Može biti na različitom file systemu.
 
-
-Soft Linkovi ovise o izvoru: ako se `<src>` obriše, soft link više neće raditi.
+Soft linkovi ovise o izvoru: ako se `<src>` obriše, soft link više neće raditi.
 Zauzima malo više mjesta i malo je sporiji od hard linka (treba otvarati dva filea svaki put).
-
-Inode podatci mogu se prikazati s `ls -i` (za directory) ili `df -i` (za cijeli sistem).
 
 ## Search
 
@@ -283,7 +285,7 @@ Inode podatci mogu se prikazati s `ls -i` (za directory) ili `df -i` (za cijeli 
 `last reboot` ispisuje system rebootove.
 
 `top` ispisuje procese koji najviše troše CPU.
-`lsof` ispisuje sve otvorene fileova i procese koji su ih otvorili
+`lsof` ispisuje sve otvorene fileova i procese koji su ih otvorili. Pomoću `-i TCP:3000` možeš vidjeti tko je sve pokrenut na portu `3000`.
 `netstat -lnp` ispisuje procese koje imaju otvorene sockete.
 
 `free -m` ispisuje slobodnu radnu memorija u Mb.

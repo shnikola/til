@@ -1,10 +1,10 @@
 # CSS
 
 ## TODO:
+
 css-grid (kaže Jen da treba 6 mjeseci da se nauči)
-outline, outline-offset
 clip-path, mask
-floating: (npr. kada stavim float: left na sidebar, s main-contentom s desne strane, linkovi neće biti klikablini dok ne staviš position: relative i z-index na sidebar.)
+float i block formatting context: (npr. kada stavim float: left na sidebar, s main-contentom s desne strane, linkovi neće biti klikablini dok ne staviš position: relative i z-index na sidebar.)
 
 ## Hierarchy selectors
 
@@ -38,14 +38,16 @@ Primjeri korištenja:
 
 Specijalna stanja elemenata koja se mogu targetirati selektorom.
 
-**State:**
+### State
+
 * `:link` - neposjećeni link
 * `:visited` - posjećeni link
 * `:hover` - pointer je iznad elementa
 * `:active` - element je kliknut, tapnut ili keyboardan, ali klik još nije pušten
 * `:focus` - element je dobio focus klikom, tapom ili keyboardom
 
-**Structure:** _IE 9+_
+### Structure _IE 9+_
+
 * `:first-child` element koji je prvo dijete parenta, `:last-child` koji je zadnje.
 * `:only-child` element koji je jedino dijete parenta.
 * `:nth-child()` prima broj (5), parnost (even) ili formulu (2n+6). `:nth-last-child()` isto, samo počinje od kraja.
@@ -53,7 +55,8 @@ Specijalna stanja elemenata koja se mogu targetirati selektorom.
 * `:only-of-type` jedini elementi svog tipa u parentu.
 * `:nth-of-type()` - kao nth-child, samo uzima u obzir elemente istog tipa. `:nth-last-of-type()` isto, samo od kraja.
 
-**Inputs:** _IE 9+_
+### Inputs _IE 9+_
+
 * `:disabled`, `:enabled` - inputi s i bez `disabled` atributa
 * `:required`, `:optional` - inputi s i bez `required` atributa
 * `:read-only`, `read-write` - inputi s i bez `readonly` atributa. Uključuje i `contenteditable` elemente.
@@ -64,7 +67,8 @@ Specijalna stanja elemenata koja se mogu targetirati selektorom.
 
 * `:empty` - elementi koji u sebi nikakvog teksta (čak ni whitespace) niti druge elemente
 
-**Misc:**
+### Misc
+
 * `:target`- element čiji je id trenutno u anchoru urla. (`www.example.com/articles#section-1`)
 * `:not()` - prima drugi selector - klasu `:not(.blue)` ili pseudoklasu `:not(:last-of-type)`
 * `:lang()` - element s definiranim `lang` atributom
@@ -89,12 +93,6 @@ Imaju dvostruki `::` da se razlikuju od pseudoklasa, ali _IE 8_ podržava samo `
 * `::placeholder` - placeholder input elementa. _nije u standardu, prefixi posvuda_
 * `::marker` - oznaka list itema (bullet, redni broj). _nije u standardu još_
 
-## Media queries (TODO)
-
-Media queries
-<link media=print> ili media=(min-width: 61.5em)
-@media (screen, screen only) https://developer.mozilla.org/en-US/docs/Web/CSS/@media
-
 ## Property inheritance
 
 Svaki property može imati jednu od općih vrijednosti:
@@ -103,6 +101,9 @@ Svaki property može imati jednu od općih vrijednosti:
 * `unset` ignorira sva CSS pravila, koristi `inherit` ako se inače inherita (npr. `color`), ili `inital` ako ne. _Chrome, FF, Edge_
 
 Automatski nasljeđeni propertiji (`color`, `font-family`, `line-height`) se ne propagiraju u `input` i `textarea` elemente. Da bi to popravio, na početak CSS-a stavi `* { color: inherit; font-family: inherit; line-height: inherit; }`.
+
+`all: initial` postavlja sve propertije elementa (osim `direction`) na početne vrijednosti. Korisno ako želiš resetirati element.
+`all: inherit` nasljeđuje sve propertije od parenta.
 
 ## Display property
 
@@ -113,11 +114,28 @@ Automatski nasljeđeni propertiji (`color`, `font-family`, `line-height`) se ne 
 * `display: list-item` default za `<li>`, ponaša se kao `block`, ali dodaje i marker box koji se može stilizirati s `list-style`.
 * `display: flow-root` kao `block`, ali stvara zasebni formatting context pa se za floatanu djecu ne treba koristiti clearfix. _Chrome, FF_
 
+## Visibility
+
+`visiblity: hidden` čini element i njegovu djecu nevidljivim, ali i dalje utječe na layout.
+
+## Overflow
+
+Definira kako će se prikazati sadržaj koji izlazi izvan granica elementa. Tekst se defaultno wrapa i povećava visinu elementa u kojem se nalazi, pa on najčešće neće viriti.
+
+`overflow: visible` je defaultan, prikazije sadržaj.
+`overflow: hidden` skriva sadržaj koji viri.
+`overflow: scroll` skriva sadržaj i prikazuje OBA scrollbara.
+`overflow: auto` skriva sadržaj i prikazuje scrollbar gdje je potreban.
+
+Postavljanje `overflow` propertija stvar anovi formatting context
+
 ## Box Model
 
-`box-sizing` određuje kako se `width` i `height` koriste:
-* kod `box-sizing: content-box`, `width` i `height` definiraju veličinu sadržaja elementa. `padding` i `border` se pribraraju za ukupnu veličinu elementa.
-* kod `box-sizing: border-box`, `width` i `height` definiraju veličinu cijelog elementa (boxa). `padding` i `border` se oduzimaju od toga i ostatak je veličina sadržaja.
+`box-sizing` određuje kako se `width` i `height` koriste.
+
+Kod `box-sizing: content-box`, `width` i `height` definiraju veličinu sadržaja elementa. `padding` i `border` se pribraraju za ukupnu veličinu elementa.
+
+Kod `box-sizing: border-box`, `width` i `height` definiraju veličinu cijelog elementa (boxa). `padding` i `border` se oduzimaju od toga i ostatak je veličina sadržaja.
 
 `height: auto` i `width: auto` prilagođavaju veličinu sadržaju.
 
@@ -150,19 +168,36 @@ Margine se u nekim slučajevima spajaju u jednu (*margin collapse*):
 * `<blur-radius>` za `0px` je potpuno oštra. Što je broj veći, sjena je šira i mutnija.
 * `<spread-radius>` za `0px` sjena je iste veličine kao element. Negativan je smanjuje, pozitivan povećava.
 
-`box shadow: inset ...` prikazuje sjenu unutar elementa umjesto vani.
+`box-shadow: inset ...` prikazuje sjenu unutar elementa umjesto vani.
 
 Možeš imati više različitih sjena s `box-shadow: 5px 5px red, 0px 0px blue`.
+
+`box-decoration-break` definira kako će se `background`, `padding`, `border`, `margin`, i `box-shadow` ponašati kada se element wrapa u više linija. _Chrome, FF_
+* `slice` će se ponašati kao da element nije fragmentiran.
+* `clone` će svaki fragment posebno stilizirati.
+
+## Outline
+
+`outline: 1px solid blue` iscrtava liniju oko elementa, ali za razliku od `border` ne utječe na layout i ne moraju biti rectangle.
+
+`outline-offset: 2px` definira udaljenost outlinea od bordera.
 
 ## Tables
 
 Tablice se ponašaju različito od `block` i `inline` elemenata. Svaka će tablica biti u svom redu (kao `block`), ali bit će široke koliko i sadržaj unutar njih (kao `inline`).
-* `text-align` i `vertical-align` na polju definiraju poravnanje teksta unutar njega.
-* `table-layout` kako se određuje širina stupaca: `auto` prema svim poljima ili `fixed` prema širini polja u prvom retku.
-* `border-collapse` razdvojenost bordera polja: `separate` (default) svako polje ima svoj, `collapse` imaju zajednički.
-* `border-spacing: 2px` razmak između bordera dvaju polja. Radi samo ako je `border-collapse: separate`.
-* `empty-cells` hoće li se prikazati border i pozadina ako je polje prazno: `show` ili `hide`
-* `caption-side` gdje će pozicionirati `<caption>` element u odnosu na tablicu:`top` ili `bottom`.
+
+`text-align` i `vertical-align` na polju definiraju poravnanje teksta unutar njega.
+
+`table-layout` kako se određuje širina stupaca: `auto` prema svim poljima ili `fixed` prema širini polja u prvom retku.
+
+`border-collapse` razdvojenost bordera polja: `separate` (default) svako polje ima svoj, `collapse` imaju zajednički.
+`border-spacing: 2px` razmak između bordera dvaju polja. Radi samo ako je `border-collapse: separate`.
+
+`empty-cells` hoće li se prikazati border i pozadina ako je polje prazno: `show` ili `hide`
+
+Ako želiš sakriti dio tablice, koristi `visibility: collapse` umjesto `display: none` kako se pozicija stupaca ne bi morala iznova računati.
+
+`caption-side` gdje će pozicionirati `<caption>` element u odnosu na tablicu:`top` ili `bottom`.
 
 ## Position i Stacking Context
 
@@ -196,7 +231,15 @@ Ukoliko zadani `font-syle` ili `font-weight` nisu pronađeni u odabranom fontu, 
 * `font-weight`, `font-style` itd. definiraju tip fonta. Defaultno je sve `normal`.
 * `font-display` definira kako će se ponašati prije nego se loada.
 
-Ako želiš detaljno definirati kako se određeni glyphovi fonta ponašaju, postoje `font-kerning` (za disablanje pametnog kerninga), `font-variant-ligatures` (za disablanje ligatura), `font-variant-caps` (za small-caps i slične), `font-variant-numeric` (za stilove znamenki), `font-variant-alternates` (za swasheve, ornamente i sl.) _FF, Safari, font-feature-settings za starije browsere_
+Ako želiš detaljno definirati kako se određeni glyphovi fonta ponašaju, postoje:
+* `font-kerning` za disablanje pametnog kerninga.
+* `font-variant-ligatures` za disablanje ligatura.
+* `font-variant-caps` za small-caps i slične.
+* `font-variant-numeric` za stilove znamenki
+* `font-variant-alternates` za swasheve, ornamente i sl.
+_FF, Safari, font-feature-settings za starije browsere_
+
+`font-smoothing` kontrolira anti-aliasing: `none` isključuje, `antialised` ili `subpixel-antialised` za ne-retina ekrane.
 
 ## Text
 
@@ -209,6 +252,11 @@ Ako želiš detaljno definirati kako se određeni glyphovi fonta ponašaju, post
 `text-overflow` definira kako se skriva tekst koji overflowa: `ellipsis` ili custom string (`"..."`).
 
 Linije bez white spacea se po defaultu ne wrapaju. To se može postići s `overflow-wrap: break-word` (`word-wrap: break-word` u starim browserima). Alternativa je `word-break: break-all` koji lomi riječi još agresivnije (čak i kratke riječi koje bi se mogle jednostavno gurnuti u idući red).
+
+`hyphens` hoće li se riječi rastavljati s crticom.
+* `none` neće rastavljati nikada.
+* `manual` rastavljati će samo na ručno označene `&shy;` (označava mjesto pogodno za rastavljanje) i `&hyphen;` (uvijek se prikazuje kao crtica) u HTMLu.
+* `auto` browser će automatski odlučiti, ali će uzeti u obzir i ručno označene.
 
 `white-space` definira kako se white space u sadržaju interpretira:
 * `normal` (default), spaceovi se zbijaju u jedan, line breakovi ignoriraju.
@@ -249,16 +297,22 @@ Za vertikalno centrirati `block` element, najjednostavnije je: `position: absolu
 
 `currentColor` jednak je `color` propertiju elementa, korisno za npr. `border: 1px solid currentColor` _IE 9+_
 
+`@color-profile { ... }` definira color profile koji se koristi u CSS-u.
+
 ## Background
 
 `background-color` boja pozadine, defaultno `transparent`.
-`background-image` jedna ili više slika ili gradijenata, odvojenih zarezima.
+`background-image` jedna ili više slika ili gradijenata, odvojenih zarezima. Image može biti i animirani `gif` ili `svg` s definiranom animacijom u CSS-u.
+
 `background-position` pozicija slike, izražena s `left/right/center`, u `px`, ili `%`. Odvoji zarezima ako imaš više pozadina.
+
 `background-clip` u kojem dijelu elementa se pozadina iscrtava.
-`background-origin` u kojem dijelu počinje. _IE 9+_
   * `content-box` prikazuje se ispod contenta, do paddinga
   * `padding-box` prikazuje se ispod paddinga, do bordera
   * `border-box` prikazuje se i ispod bordera
+  * `text` prikazuje se samo ispod teksta, dosta kul izgleda.
+
+`background-origin` isto kao `background-clip` samo ne cropa background nego ga resizea. _IE 9+_
 
 `background-size` _IE 9+_
   * `100px 50px` za fiksnu veličinu
@@ -277,8 +331,15 @@ Za vertikalno centrirati `block` element, najjednostavnije je: `position: absolu
   * `fixed` fiksirano u odnosu na viewport, scrolla kad i prozor. Korisno za parallax scrolling
   * `local` scrolla s elementom. (Trenutno ne radi na retina chromeu). _IE 9+_
 
-`background-blend-mode` kako se blendaju background images i background color. _Chrome, FF_
-  * `multiply`, `screen`, `overlay` i drugi photoshop modovi.
+## Blending _Chrome, FF_
+
+`mix-blend-mode` definira kako se blendaju sadržaj elementa s backgroundom i sadržajem parenta.
+
+`background-blend-mode` kako se blendaju background images i background color.
+
+Blending može biti `multiply`, `screen`, `overlay` i drugi photoshop modovi.
+
+Koristi `isolation: isolate` da se background ne uzima u obzir.
 
 ## Gradients _IE10+_
 
@@ -309,6 +370,12 @@ Moguće je selektirati vrstu uređaja po pointeru: _Chrome, Edge_
 * `@media (pointer: coarse)` neprecizno upravljanje (npr. touchscreen ili Kinect).
 * `@media (pointer: fine)` precizni upravljanje (miš, touchpad, tablet stilus)
 
+## Lists
+
+`list-style-type: none` skriva marker liste.
+`list-style-image: url("square.png")` koristi image za marker.
+`list-style-position:` `inside` ili `outside` list item content boxa.
+
 ## Columns _IE 10+_
 
 Omogućuje prikaz teksta u više stupaca bez da moramo definirati gdje stupac počinje i završava.
@@ -316,7 +383,7 @@ Omogućuje prikaz teksta u više stupaca bez da moramo definirati gdje stupac po
 * `column-gap: 2em` definira razmak između stupaca.
 * `column-rule: 2px solid black` definira liniju između stupaca.
 * `column-fill: balance` browser podešava stupce da im visina bude podjednaka (default). `auto` puni stupce po redu.
-* `column-span: all` na elementu proširuje element preko svih stupaca.
+* `column-span: all` na unutarnjem elementu, proširuje element preko svih stupaca.
 
 ## Flexbox _IE 11+_
 
@@ -387,7 +454,7 @@ Transformacije se mogu kombinirati: `transform: scale(1.5) rotate(20deg)`.
 `transform-origin` definira ishodište elementa (os za rotaciju, fiskna točka za scale i skew). Defaultno je središte elementa.
 
 2D transformacije:
-* `rotate(20deg)`, defaultna os je centar elementa.
+* `rotate(20deg)`, defaultna os je centar elementa. Prima i `grad`, `rad`, i `turn`, npr. `3turn` za tri pune rotacije.
 * `scale(0.75)` za jednoliko, `scale(1.2, 2.0)` za različito, ili `skewX(5deg)`, `skewY(10deg)`.
 * `translate(1px, 2px)`, ili `translateX(-10px)`, `translateY(25%)`.
 * `skew(20deg, 30deg)`, ili `skewX(5deg)`, `skewY(10deg)`.
@@ -410,13 +477,18 @@ Ako se element 3D transformira unutar parenta koji se isto transformira, po defa
 
 Ako 3D tranformacija okrene element da mu vidimo guzicu, defaultno će biti vidljiv. Za sakriti guzicu, koristi `backface-visibility: hidden`.
 
-
 ## Shapes _Chrome, Safari_
 
 `shape-outside` definira oblik floatanog elementa oko kojeg će se wrapati text. Po defaultu je to kvadrat, ali ne mora biti.
 * `circle()` ili `ellipse()`. `circle(100px at 30% 50%)` definira radius i centar.
 * `polygon(10px 10px, 20px 20px, 30px 30px)` definira poligon pomoću vrhova.
 * `url(image.png)` koristi se alpha kanal slike (wow!).
+
+`shape-margin: 10px` dodaje marginu oko oblika.
+
+## Resize
+
+`resize: horizontal`, `vertical` ili `both` omogućuje korisniku da može resizati element. Element mora imati postavljen `overflow` na nešto osim `visible`.
 
 ## attr() _IE 8+_
 
@@ -443,6 +515,11 @@ Pripazi da ne koristiš countere za bitan sadržaj - screen readeri ne čitaju g
 Korisno za reusanje vrijednosti. Za razliku od preprocessor varijabli, mogu se mijenjati u runtimeu.
 * `:root { --main-color: red; }` postavljanje vrijednosti varijable.
 * `p { color: var(--main-color); }` dohvaćanje vrijednosti varijable.
+
+## Media queries (TODO)
+
+<link media=print> ili media=(min-width: 61.5em)
+@media (screen, screen only) https://developer.mozilla.org/en-US/docs/Web/CSS/@media
 
 ## Feature queries
 

@@ -77,6 +77,14 @@ New York je romantiziran kao grad u koji dođeš bez ičega, upoznaš ljude, stv
 
 Ako se želiš baviti umjetnošću, stvoriti nešto svoje što se ne uklapa u postojeći model - idi negdje gdje je jeftino živjeti, stvaraj što želiš stvarati, i napravi svoju scenu. Kao što se dogodilo i u New Yorku.
 
+## Don't go to art school
+
+https://medium.com/i-m-h-o/dont-go-to-art-school-138c5efd45e9
+
+Nemoj stvarati dug od $250.000 zbog diplome koju nitko neće tražiti. Za manje od $10.000 dolara koje uložiš u tečajeve i materijale (navedeni u članku) možeš imati jebeno obrazovanje.
+
+U konačnici, jedino bitno je tvoj rad.
+
 ## 100:10:1 Method
 
 https://nickbentleygames.wordpress.com/2014/05/12/the-100-10-1-method-for-game-design/

@@ -18,7 +18,7 @@ Inicijalna linija za response: `HTTP/1.1 200 OK`
 * `GET` dohvaća resource, bez side effecta.
 * `HEAD` dohvaća samo headere, a ne i body. Korisni za saznati podatke o resourcu bez da ga skineš.
 * `POST` šalje podatke vezane za resource.
-* `PUT` šalje cijeli resource.
+* `PUT` šalje cijeli resource koji će prepisati postojeći ako ga ima. Idempotent je, što znači da slanje više puta ima isti rezultat.
 * `PATCH` šalje promjene koje treba aplicirati na resourcu.
 * `DELETE` briše resource.
 * `TRACE` vraća request koji je primio, koristi za debugging.

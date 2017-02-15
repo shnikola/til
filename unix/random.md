@@ -26,7 +26,9 @@ Umjesto njega koristi `printf`.
 ## hacky hacky
 
 `strings <files>` ispisuje printabilne stringove u binarnom fileu.
-`-n 10` minimalna duljina stringa (defaultno `4`).
+`-n 10` definira minimalnu duljinu stringa (defaultno `4`).
+
+`cat file.exe | hexdump -C` ispisuje file u hex obliku i sidebarom s formatiranim tekstom.
 
 `strace -o <file> <cmd>` ispisuje sve systemske pozive koje izvršena naredba radi.
 

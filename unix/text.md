@@ -3,7 +3,7 @@ TODO
 newlines in osx
 
 ## Output
-`cat <files>` ispisuje sadržaj fileova.
+`cat <files>` ispisuje sadržaj fileova. `-n` dodaje line number ispred svake linije.
 
 `tee <file>` šalje input na *stdout* i u `<file>`. Korisno za zapisati rezultat u file i dalje ga proslijediti u pipe.
 

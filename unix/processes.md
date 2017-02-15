@@ -60,6 +60,12 @@ Kada se terminal zatvara, svim svojim jobovima šalje `SIGHUP` signal da se prek
 
 `nohup <cmd> &` pokreće novi background job imun na `SIGHUP`. Zatvara stdin, a stdout i stderr redirecta u `nohup.out` file. Korisno ako tek pokrećeš job.
 
+## Services
+
+Dugoživeći jobovi se mogu kontrolirati kroz naredbu `service`, npr. `service nginx restart`.
+
+`service --status-all` ispisuje status svih servisa.
+
 ## taskset
 
 Za kritične procese kojima je preformance jako bitan, može pomoći ako ih se *pina* na određeni CPU.

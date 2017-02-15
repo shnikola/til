@@ -130,9 +130,15 @@ Ako imaš više od 100 konekcija otvorenih, treba ti nešto robusnije kao `PG Bo
 * `dblink` za izvršavanje querija na remote bazama. Koristi `dblink_connect('postgres://...')` i `dblink('SELECT ...')`.
 * `Foreign Data Wrappers` omogućuju da wrapaš vanjski sistem (MYSQL, Redis, Twitter) i querijaš ga kao lokalni.
 
-## Replication
+## Expiring & warehousing
 
-todo
+Postgres imaju ograničen broj redova koje mogu sadržavati. U jednom trenutku zastarjele podatke moraš obrisati, što je sporo, ili prebaciti u drugu tablicu. Najjednostavnije rješenje je mijenjati tablicu koju koristiš, npr. jedan tjedan pišeš u `my_records_1`, idući u `my_records_2`. Ako ti stari podatci više ne trebaju, samo napraviš `drop my_records_1`.
+
+`pg_partman` je ekstenzija koja to radi za tebe, bez da moraš mijenjati aplikacijski kod.
+
+
+## Replication (TODO)
+
 https://www.postgresql.org/docs/current/static/high-availability.html
 
 ## psql

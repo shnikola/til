@@ -1,7 +1,8 @@
 # Concurrency
 
-*Concurrent* znači da se dvije radnje izvršavaju u istom *vremenskom intervalu*.
-*Parellel* znači da se dvije radnje izvršavaju u istom *trenutku*.
+*Concurrent* znači da se dvije radnje izvršavaju u istom *vremenskom intervalu*. *Parellel* znači da se dvije radnje izvršavaju u istom *trenutku*.
+
+Concurrency je način strukturiranja programa kako bi se mogao (ali ne i nužno morao) paralelizirati.
 
 ## Multiple processes vs Multi-threaded
 
@@ -66,6 +67,8 @@ Procesi komuniciraju streamovima preko *pipea* ili porukama preko *socketa*.
 
 ## Threads
 
+Svaki Ruby proces ima barem jedan thread: main thread. `Thread.main` ga vraća. Kada main thread završi, svi ostali threadovi i proces se isto prekidaju.
+
 `Thread.new { ... }` stvata novi thread koji izvodi naredbe u bloku.
 Threadovi imaju closure, i vidljive su im sve varijable u scopeu. Da bi izbjegao thread unsafety, da predaš parametre threadu koristi `Thread.new(param) { |x| ... }` koji radi kopiju lokalne varijable, pa je možeš bez straha mijenjati.
 
@@ -76,6 +79,7 @@ Threadovi imaju closure, i vidljive su im sve varijable u scopeu. Da bi izbjegao
 `Thread.list` je array neprekinutih threadova.
 
 `Thread.stop(thread)` privremeno zaustavlja izvođenje threada. `thread.wakeup` ga ponovno označava za nastavak izvođenja.
+`Thread.pass` predlaže scheduleru da preuzme neki drugi thread, ali ne garantira da će se to dogoditi.
 
 `thread.exit` prekida `thread` s `exit`. Ukoliko je to zadnji ili main thread, prekida se proces.
 
@@ -92,31 +96,17 @@ Za sinkorinizaciju koristi, stvori `mutex = Mutex.new` izvan threadova.
 
 `Queue` je threadsafe struktura. `enq` dodaje element, `deq` uzima ili blokira dok ne stigne novi.
 
-## Fibers
-
-Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
-
-`fiber = Fiber.new { ... }` stvara novi fiber koji se ne pokreće dok ne pozoveš `fiber.resume`. Blok se izvršava dok ne dođe do `Fiber.yield(res)`, pri čemu izlazi iz bloka i vrati `res`. S `fiber.resume` može opet nastaviti izvršavanje u bloku dok god ne dođe do `yield` ili kraja bloka.
-
-S `fiber.transfer(res)` možeš prebaciti izvršavanje s jednog fibera na drugi.
-Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer.
-
-## Continuations
-
-Continuation omogućuje skok na neko prijašnje mjesto u kodu. Da, kao `goto`.
-Continuation objekt sadrži snapshot stack framea.
-
-`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
-
-`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
-
 ## GIL
 
 MRI (standardna Ruby implementacija) ima *global interpreter lock* (GIL). On ne dopušta da se više threadova istog Ruby procesa izvršava istovremeno. To znači da će Ruby proces u jednom trenutku moći koristiti samo jednu jezgru procesora.
 
-GIL se koristi zbog thread-safetija samog MRI-a, ali on *ne garantira* da je sav tvoj Ruby code thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
+GIL se koristi kako bi se izbjegli race conditioni MRI internog koda, ali on *ne garantira* da je sav tvoj Ruby code thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
 
-Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje, te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO, drugi se thread može izvršavati u međuvremenu.
+Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GILa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO, MRI će se prebaciti na drugi thread koji nije blokiran.
+
+## Signals
+
+U slučaju da se multithreaded procesu pošalje signal, kernel će nasumično odabrati jedan thread kojem će prenijeti taj signal. Kako bi izbjegao probleme koje to može izazvati, MRI (i druge Ruby implementacije) pri pokretanju stvaraju poseban thread koji je zadužen za handlanje signala i pipeom ih šalje main threadu.
 
 ## Thread Pooling
 
@@ -190,6 +180,24 @@ A ponekad se dogodi ovako:
 3. Izvršavanje se nikad ne prebaci na main thread procesa jer je označen kao *killed*.
 
 Pouka: ne stavljaj `sleep` u `ensure` blokove threada :)
+
+## Fibers
+
+Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
+
+`fiber = Fiber.new { ... }` stvara novi fiber koji se ne pokreće dok ne pozoveš `fiber.resume`. Blok se izvršava dok ne dođe do `Fiber.yield(res)`, pri čemu izlazi iz bloka i vrati `res`. S `fiber.resume` može opet nastaviti izvršavanje u bloku dok god ne dođe do `yield` ili kraja bloka.
+
+S `fiber.transfer(res)` možeš prebaciti izvršavanje s jednog fibera na drugi.
+Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer.
+
+## Continuations
+
+Continuation omogućuje skok na neko prijašnje mjesto u kodu. Da, kao `goto`.
+Continuation objekt sadrži snapshot stack framea.
+
+`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
+
+`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
 
 ## Ruby 3 Guild Proposal
 

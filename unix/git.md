@@ -99,7 +99,8 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 `git stash` sprema sve necommitane promjene u stash.
 `git stash pop` dohvaća promjene iz stasha.
 `git stash drop` odbacuje promjene iz stasha.
-`git stash list`, `git stash show [id]` ispisuje sve iz stasha i promjene koje će se primjeniti.
+`git stash list` ispisuje sve spremljene stasheve.
+`git stash show -p` ispisuje promjene koje će se primjeniti.
 
 `git clean -f -d` briše sve untracked fileove i directorije. Korisni kad odustaneš od merga, a ostane ti nemerganih fielova. `-n` ispisuje što će se ukloniti bez da stvarno obriše.
 

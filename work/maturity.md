@@ -7,7 +7,6 @@ http://boz.com/articles/be-kind.html
 
 Kad netko zajebe, nemoj ga napadati, nego mu pomozi da to popravi, i pobrini se da shvati u čemu je pogriješio te da nauči iz te pogreške. Ako je potrebno, promijeni procedure u firmi da se ta pogreška ne može ponoviti.
 
-
 ## Being a Senior Engineer
 
 http://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer
@@ -52,3 +51,27 @@ Kako biti dobar tech lead:
 3. Ako netko predloži pristup za koji misliš da je kriv, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad. Koliko misliš da će ti vremena trebati da proučiš taj pristup?"
 4. Budi skroman. Proslijedi pohvale na tim, preuzmi kritike na sebe.
 5. Očekuj manje programiranja, ali zadrži vlasništvo nad par komponenti na 1/3 svog vremena. Tako ostaješ u toku s featurima i bugovima.
+
+## Endurance
+
+https://www.youtube.com/watch?v=yYihop9gHj4
+
+Uvijek radi na rubu svojih sposobnosti - to je jedini način da napreduješ.
+
+Knjige i internet su dobri, ali open source je najbolji način za naučiti nešto.
+
+Svaki dan prošetaj sat vremena s nekim, bez elektronike i razgovaraj o projektu.
+
+Prvo gledaj "big picture", onda radi na detaljima, ali svako malo se vrati na "big picture".
+
+Ne slušaj kritike Hacker Newsa, tamo su svi ultra negativni. Pričaj s pravim ljudima.
+
+## Open Source
+
+http://schneems.com/2016/05/31/saving-sprockets.html
+
+Open source je kul, i jako puno naučiš sudjelujući u njemu. Probaj jednom tjedno raditi na nekom open source projektu
+
+Platiti nekom pizzu (makar bio na drugom kraju svijeta) je dosta kul način za zahvaliti se na nečem (ili nagovoriti ga da napravi nešto).
+
+

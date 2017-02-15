@@ -56,6 +56,10 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 
 `ip link set eth1 multicast on` za konfiguraciju linka.
 
+## traceroute
+
+`traceroute google.com` ispisuje put kojim paket putuje od tvog računala do servera.
+
 ## httpie
 
 Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.

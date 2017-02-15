@@ -85,22 +85,6 @@ Savjeti:
 * Rails ne može znati je li neloadana konstanta bila relative (`module Admin; class UsersController`) ili qualified (`class Admin::UsersController`), pa se neće ponašati isto kao čisti Ruby. Da izbjegneš probleme, uvijek koristi *relative nesting*.
 * Nikad ne stavljaj `require` konstanti koje će se autoloadati - samo ćeš ga zbuniti. `require` 3rd party librarija je ok.
 
-## has_many i conditions
-
-http://ducktypelabs.com/four-ways-to-filter-has_many-associations/
-
-Ako želimo dohvatiti sve usere koji sudjeluju u projektu s nekim atributom
-`User.joins(:projects).where(projects: { zipcode: 30332 }).uniq` ili, ako imaš scope u Project:
-`User.joins(:projects).merge(Project.opened_recently).uniq`
-Ovaj `uniq` je potreban jer bi u suprotnom bilo duplih usera.
-
-Ako želimo eager-loadati koristimo includes
-`User.includes(:projects).where(projects: { zipcode: '30332' })`
-U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se navedu tablice koje treba
-joinati u istom queriju (a ne loadati odvojeno):
-`User.includes(:projects).where('projects.deleted_at IS NOT NULL').references(:projects)``
-Kad se koristi `includes`, `uniq` nije potreban.
-
 ## ActiveJob
 
 Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt - tako ih je puno lakše testirati.
@@ -113,13 +97,6 @@ Novi turbolinksi također imaju adaptere omogućuju ubacivanje dijelova weba u n
 
 Nažalost, turbolinksi sa sobom donose mnogo suptilnih komplikacija (treba koristiti `turbolinks:load` umjesto `window.onload`; updatanje asseta; third-party JS librariji koji očekuju da stvari rade normalno) da ih se ne isplati koristiti.
 
-## Rails 5 Attribute API
-
-http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
-
-Za definiranje typa za neki column, umjesto da se koristi šugavi serialize.
-`attribute :column_name, :integer, array: true`
-Podržava custom typove i `changed_in_place?`
 
 ## Rails Schema Cache
 

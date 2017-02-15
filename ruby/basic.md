@@ -1,5 +1,36 @@
 # Ruby
 
+## Hash
+
+Objekt koji koristiš kao ključ mora imati metode `eql?` i `hash`.
+Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promjeni. Stringovi su poseban slučaj, i Ruby interno sprema kopije svih koji se koriste kao keyevi.
+
+`Hash.new { |h, k| h[k] = [] }` s defaultnom vrijednosti.
+`Hash.new { |h, k| h[k] = expensive_operation(k) }` lazy loaded.
+
+`{a: {b: 1}}.dig(:a, :b)` nested pristup bez exceptiona _2.3_
+`{a: nil, b: 1}.compact` uklanja sve key-value parove kojima value `nil` _2.4_
+`{a: 1, b: 2}.assoc(:a)` vraća key-value pair, `[:a, 1]`
+
+## Array
+
+`[1, 2, 3].sum` vraća sumu svih elemenata.
+`[1, 2, 3].minmax` vraća min i max arraya.
+`['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` vraća one koji se ne slažu regexom
+
+## Equality
+
+`equal?` stroga jednakost, provjerava je li isti `object_id`.
+`eql?` provjerava jednakost vrijednosti, ali ne dopušta konverziju.
+`==` manje strog, dopušta jednostavnu konverziju, npr. `1 == 1.0`
+`===` koristi se za `case`. `Range` ga mapira na `include?`, `Regexp` na `match` itd.
+
+## Comparable
+
+`Comparable` je module, ako ga includaš i definiraš `<=>`, automatski dobijaš `<`, `<=`, `==`, `=>`, i `>`. Ponekad je dobro sam implementirati optimalniji `==`.
+
+Ruby će od `==` sam stvoriti `!=`.
+
 ## Enumerable
 
 `Enumerable` je module. Includaj ga ako je tvoja klasa kolekcija.
@@ -14,6 +45,47 @@ U klasi definiraj `each` metodu, i automatski dobijaš i `select`, `map` itd. Ob
 Za metode koje primaju block: `return enum_for(__method__) unless block_given?`
 
 `Enumerator.new do` koristi se za generiranje beskonačnih streamova.
+
+## Freeze
+
+`obj.freeze` pretvata objekt u immutable.
+
+## Cloning
+
+`obj.clone` kopira cijeli objekt, uključujući i singleton metode i freeze flag.
+`obj.dup` kopira cijeli objekt, bez singleton metoda i unfreeza ga.
+
+Pri kloniranju se ne rade deep kopije. Sve reference koje objekt drži će biti kopirane, pa će i kopija pokazivati na iste objekte.
+
+`initialize_copy` metoda se poziva pri kloniranju. U nju možeš staviti npr. kloniranje djece za deep copy.
+
+`Marshal.dump(obj)` i `Marshal.load(str)` serijaliziraju i deserijaliziraju objekt. Usto su najjednostavniji način za napraviti deep clone.
+
+## Splat (*)
+
+`def max(a, *b)` u definiciji metode `*` pretvara listu argumenata u array `b`.
+`max(*[1, 2, 3])` u izrazu `*` pretvara array u listu argumenata metode.
+
+## Blocks, Procs, Lambdas
+
+`def seq(a, &b)` u definiciji metode `&` pretvara blok u Proc objekt `b`.
+`seq(&proc)` u pozivu metode `&` pretvara Proc objekt u blok.
+
+`&x` u izrazu zapravo poziva `x.to_proc`.
+`&:to_s` radi jer Simboli imaju definirano `to_proc` ponašanje.
+
+Pripazi, `&:my_protected_method` neće raditi jer se poziv metode šalje iz Symbola, a ne iz trenutne klase.
+
+Proc i lambda su oboje instance `Proc` klase i imaju metode:
+* `proc.call(args)` za poziv, ili u skraćenom obliku `proc.(args)`.
+* `proc.arity` broj parametara koje prima
+* `proc.curry(2)` vraća Proc s prvim argumentom postavljenim.
+
+Proc predstavlja blok. Broj argumenata koji se šalje se ne provjerava. `return` se ne odnosi na sam blok, nego na metodu u kojoj je instanciran.
+`Proc.new{...}` ili `proc { ... }` stvara novi proc.
+
+Lambda predstavlja metodu. Broj parametara je striktan. `return` vraća samo iz lambde.
+`lambda { ... }` ili `-> (args) { ... }` stvara novu lambdu.
 
 ## Modules
 
@@ -31,12 +103,6 @@ U prvom slučaju, `nesting` unutrašnjeg modula je `[A::B, A]`, pa možeš prist
 U skraćenom slučaju, `nesting` je samo `[A::B]`, pa nećeš vidjeti konstante iz `A`.
 
 Rails ima autoload system pa će oba slučaja raditi, ali svejedno izbjegavaj skraćeni oblik.
-
-## Lambdas, procs and blocks (TODO)
-
-`obj.call(params)` metodu bilo kojeg objekta možeš pozvati i s `obj.(params)`.
-`arity`
-`curry`
 
 ## Učitavanje koda
 
@@ -80,21 +146,24 @@ Za joinanje više dijelova URL-a koristi `File.join` (osim što neće raditi na 
 
 Kad definiraš `method_missing`, uvijek definiraj i `respond_to_missing?` jer će on, osim `respond_to?`, riješiti da radi i dohvaćanje metode s `method`.
 
+## PStore
+
+Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš perzistirati podatke prevelike za ENV varijable, a premale da bi koristio pravu bazu. Omogućuje za serijaliziranje bilo kakvih Ruby objekata, ne samo stringova, arrayeva i hasheva.
+
+`store = PStore.new('my_file.pstore')` stvara novi store u zadanom fileu.
+`store[:value1] = "Saved"` zapisuje na disk.
+`store.delete(:value1)` briše vrijednost.
+`store.roots` ispisuje sve keyeve.
+`store.transaction { ... }` za transakcijsko zapisivanje.
+
 ## ruby -n
 
 `-n` radi loop nad svakom linijom STDIN-a i stavlja ga u $_
 `ls | ruby -ne 'puts $_'`
 
-## &:protected_metoda
+## Operator precedence
 
-`&:some_protected_method` neće raditi jer se poziv metode šalje iz Symbola, a ne iz trenutne klase. Tja!
-
-## Hash
-
-Za lazy loaded: `Hash.new { |hash, k| hash[k] = expensive_operation(key) }` lazy loaded hash
-
-`{a: {b: 1}}.dig(:a, :b)` nested pristup bez exceptiona _2.3_
-`{a: nil, b: 1}.compact` uklanja sve key-value parove kojima value `nil` _2.4_
+`array << 1 == 2 ? : 'a' : 'b'` će dodati `1` u array jer `<<` ima veći precedence. Radije koristi `array.push` ili `<< ( ... )`.
 
 ## Optimizacije
 
@@ -111,13 +180,10 @@ Za lazy loaded: `Hash.new { |hash, k| hash[k] = expensive_operation(key) }` lazy
 ### 2.3
 
 `user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali `try` ne baca exception ako metoda ne postoji.
-`['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` - vraća one koji se ne slažu regexom
 
 ### 2.4
 
 `binding.irb` unutar koda otvara REPL s trenutnim stanjem.
-`[1, 2, 3].sum` od sada i u Rubyiju
- od sada i u Rubyju
 `Dir.empty?("dir_name")`, `File.empty?("file_name")`
 `123.digits` - vraća znamenke (`[3, 2, 1]`). `digits(16)` radi u drugim bazama
 `Fixnum`, `Bignum` i `Integer` su svi sada `Integer` (implementacija je skrivena)

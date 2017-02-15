@@ -1,26 +1,7 @@
 # Database
 
 TODO: paginacija http://www.xarg.org/2011/10/optimized-pagination-using-mysql/
-Memcached, redis
-
-## Clustering vs Sharding (TODO)
-
-*Clustering*:
-* podatci se distribuiraju automatski,
-* prebacuju se iz jednog clustera u drugi,
-* rebalansiraš podatke za distribuirati load,
-* nodeovi komuniciraju međusobno
-* kompleksni dogovori između nodeova, upgrade je jako težak, data corruption se proširi na sve nodove, blargh
-
-*Sharding*:
-+ podatke distribuiraš ručno,
-+ ostaju na jednom mjestu,
-+ splitaš podatke da redistribuiraš load,
-+ nodeovi nisu svjesni jedan drugoga
-
-Sharding:
-+ ne možeš koristiti joinove ni transakcije
-+ ručno provjeravati unique constrainte i raditi agregacije
+Memcached
 
 ## The Log
 
@@ -69,9 +50,19 @@ Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks is
 
 Pronalaženje nekorištenih indeksa.
 
-## Remote Memcached
+## Migrations in production
 
-Memcached radi na pretpostavci kako je brže dohvatiti podatak iz memorije nego obaviti skupu operaciju ili komunicirati s remote db-om koji drži podatke na disku. U tom slučaju je čak i network poziv, ako je istoj regiji (npr. na AWSu) brža opcija. Naravno, lokalni Memcached je najbrži, ali nije skalabilan.
+https://stripe.com/blog/online-migrations
+
+Ako trebaš migrirati tablicu od sto milijuna redova koja se kontinuirano koristi u produkciji, puno je brže stvoriti novu tablicu i prebaciti podatke u nju. Ta to se koristi *dual writing pattern*:
+1. Dual writing. Stvori novu tablicu, i sve promjene na staroj primjeni i na nju. Umeđuvremenu, prebacuj stare podatke iz stare tablice u background jobu.
+2. Prebaci read pathove da koriste novu tablicu. Testiraj da li se sve dobro čita.
+3. Prebaci write pathove da koriste novu tablicu. Podesi dual writing da se sve promjene na novoj primjenjuju i na staroj za slučaj da moraš napraviti rollback.
+4. Izbriši staru tablicu.
+
+## Remote Cache
+
+Cache (npr. Memcached) radi na pretpostavci kako je brže dohvatiti podatak iz memorije nego obaviti skupu operaciju ili komunicirati s remote db-om koji drži podatke na disku. U tom slučaju je čak i network poziv, ako je istoj regiji (npr. na AWSu) brža opcija. Naravno, lokalni cache je najbrži, ali nije skalabilan.
 
 ## Data Analysis
 

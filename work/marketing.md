@@ -45,6 +45,17 @@ Gotovi templati da se ne gnjaviš s HTMLom:
 * https://github.com/leemunroe/responsive-html-email-template
 * https://htmlemail.io/
 
+## On spaghetti sauce - Malcolm Gladwell
+
+https://www.youtube.com/watch?v=VkhFh5Ms1vc
+
+Ne tražiš savršeni umak - tražiš savršene umake.
+
+Howard Moskowitz, ispitivač tržišta, tražio je kakav umak za špagete amerikanci vole, i otkrio da postoje 3 različite grupe ljudi. Jedna od njih preferira chunky umak, koji uopće nije postojao na tržištu.
+
+Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. Ljudi ne znaju što zapravo žele. Ako pitaš ljude kakvu kavu žele, svi će reći "dark rich roast", iako ih zapravo 20% voli dark rich roast. Većina preferira slabu mlijekastu kavu, ali naravno da to nitko neće reći.
+
+Tek odustajanjem od univerzalnog ("autentičnog") rješenja i prihvaćajući raznovrsnost ljudi i ukusa možemo doći do zadovoljnih mušterija.
 
 ## Mali poklon
 

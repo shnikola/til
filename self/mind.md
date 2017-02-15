@@ -15,7 +15,6 @@ Neke od vrsta meditacije:
 * *transcedental*, 15 min: u sebi ponavljaj istu ritmičku frazu (mantru).
 * *eating*, 20 min: uzmi 20 minuta da pojedeš 3 grožđice. Osjeti svaki detalj: izgled, isčekivanje, žvakanje, okus, gutanje.
 
-
 ## Cognitive Biases
 
 https://betterhumans.coach.me/cognitive-bias-cheat-sheet-55a472476b18
@@ -54,6 +53,4 @@ Ukratko:
 * U traženju smisla lako stvorimo iluziju. Zbunjuje nas manjak značenja, pa popunjavamo praznine kako znamo.
 * Brze odluke mogu biti pogrešne. Trebamo djelovati brzo, pa ih donosimo bez osnova.
 * Naše pamćenje podržava pogreške. Način na koji pamtimo čini sve prethodne korake pristranijim i pogrešnijim.
-
-
 

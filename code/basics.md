@@ -45,6 +45,7 @@ Prije dodavanja featura razmisli hoće li se koristiti (npr. je li stvarno potre
 https://www.youtube.com/watch?v=_ahvzDzKdB0
 
 Predavanje u kojem predavač ograničava svoj jezik na jednosložne riječi, a ostatak definira po potrebi.
+
 Nekoliko zanimljivih crtica:
 * Programski jezik se treba razvijati prirodno, kroz community ljudi koji ga koriste.
 * Ne planiraj kako će ti jezik izgledati, jer onda community nema osjećaj da sudjeluje u odlukama.

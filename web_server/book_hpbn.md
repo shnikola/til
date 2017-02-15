@@ -113,4 +113,6 @@ Brzina koju tehnologije reklamiraju (802.11g = 54Mbit/s, 802.11n = 600Mbit/s) je
 * količina dostupne snage odašiljanja, te
 * količina procesorske snage i odabrana modulacijska shema
 
-## 6.
+## 6. WiFi
+
+

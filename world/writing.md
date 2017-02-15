@@ -58,3 +58,9 @@ Još par savjeta:
 * Attidutes toward: elders, adolescents, dependents, rule, expectations, work, authority, cooperation vs competition, relationships with animals, age, sin, death
 * Approaches to: religion, courtship, marriage, raising children, decision-making, problem solving
 
+## Kako biti subverzivan danas
+
+https://youtu.be/93sV5XGLmgQ?t=2h5m33s
+
+Danas se čini nemoguće biti subverzivan. Ali postoje područja koja su zapostavljena, o kojima nitko ne priča i koja se izbjegavaju (npr. u Moorovom slučaju pornografija, i magija). Samim time nitko i ne pokušava promijeniti kako se to područje doživljava. Često su to vrlo funndametalna, bitna područja koja jednostavno trenutno nisu pomodna.
+

@@ -285,6 +285,50 @@ Svaki pointer event ima `pointerType`: `mouse`, `touch`, `pen`, blank ako browse
 
 Može se dogoditi da korisnik klikne na element, ali pusti button izvan elementa, što neće triggerati `mouseup` na elementu. Pointer eventi dopuštaju `el.setPointerCapture(e.pointerId)`, što će na elementu triggerirati sve buduće evente tog pointera.
 
+## Editable Content
+
+`contenteditable="true"` (`true` je obavezan) atribut na elementu učinit će taj element editabilnim u browseru, čak i ako se radi o `div` ili `label` elementu. Sva djeca elementa će također naslijediti vrijednost atributa.
+
+`contenteditable` je koristan za izradu WYSIWYG editora, ali zbog kompleksnosti problema različita ponašanja nisu definirana niti konzistentna među browserima.
+
+`document.designMode = "on"` učinit će cijelu stranicu editabilnom.
+
+`document.execCommand` omogućava izvršavanje naredbi unutar `contenteditable` elementa, npr:
+* `document.execCommand("bold")` bolda selektirani tekst
+* `document.execCommand("cut")`, `document.execCommand("paste")` cut i paste selektiranog teksta.
+* `document.execCommand("undo")` undoa zadnju izvršenu naredbu.
+
+`document.queryCommandSupported('copy')` vraća `true` ako je naredba podržana.
+
+## Selection API
+
+`selection = window.getSelection()` vraća live Selection objekt s podatcima o komadu teksta kojeg je korisnik selektirao.
+
+`selection.anchorNode` vraća element ili text node u kojem je korisnik započeo selekciju (npr. pritisnuo tipku miša). `selection.focusNode` vraća element ili text node u kojem je korisnik završio selekciju (npr. otpustio tipku miša).
+
+Svaka selekcija ima range objekt, `selection.getRangeAt(0)`. Range može sadržavati cijele nodeove ili njihove dijelove. Tehnički, selekcija može imati više rangeova (više selektiranih dijelova teksta odjednom), ali browseri podržavaju samo jedan.
+
+`selection.toString()` vraća selektirani tekst.
+
+Za selektiranje `input` i `textarea` elemenata koristi `el.select()`.
+
+Za selektiranje proizvoljnog elementa, stvori novi range s `range = document.createRange()` i `range.selectNode(node)`, pa ga selektiraj s `selection.addRange(range)`.
+
+Za deselektiranje: `selection.removeAllRanges()`.
+
+`selectionstart` event se triggerira kad user počne selektirati.
+`selectionchange` kada se selekcija promijeni.
+
+## Copy Paste
+
+Za copy u clipboard iz koda, `document.execCommand('copy')` kopira trenutnu selekciju čak i izvan `contenteditable`. Firefox zbog sigurnosti zahtjeva da je unutar callbacka na korisnikovu akciju.
+
+Za prepoznavanje copy eventa, bilo od korisničkog kopiranja s CTRL+C, bilo od `execCommand`, koristi `document.addEventListener('copy', e => ...)`.
+
+Event callback može dodati vrijednost u korisnikov clipboard pomoću `e.clipboardData.setData('text/plain', 'Hello')`. Pristup clipboardu pomoću `getData` nije dozvoljen.
+
+Programsko dodavanje podataka u clipboard omogućuje pastejacking, pa treba biti oprezan sa stvarima koje kopiraš s neta.
+
 ## Geolocation _IE 9+_
 
 `position = navigator.geolocation.getCurrentPosition()` vraća podatke o trenutnoj lokaciji uređaja.

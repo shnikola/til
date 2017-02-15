@@ -1,5 +1,19 @@
 # HTML
 
+## TODO
+
+meta robots
+meta viewport
+
+Image, multimedia
+map, area, audio, video, track, picture, source
+
+Embedded:
+embed, object, param, canvas, iframe
+
+Form:
+form, label, input, button, select, datalist, optgroup, option, textarea, output, progress, meter, fieldset, legend
+
 ## Isprika
 
 https://html.spec.whatwg.org/multipage/introduction.html#design-notes
@@ -107,11 +121,9 @@ Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. B
 
 `alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
 
-## <button>
+## Forms
 
-Ako nešto treba biti klikabilno, koristi `button`. Ozbiljno. Super je `button`.
-
-## Inputs
+Ako nešto treba biti klikabilno, koristi `<button>`. Ozbiljno. Super je `<button>`.
 
 `<select>`
 
@@ -135,32 +147,53 @@ Pripazi samo jer je bugovit još na dosta browsera.
 
 `<aside>` je dio dokumenta usputno vezan uz sadržaj, npr. sidebar.
 
-## Tekst
+## Text content
 
-`<q>` je kratki inline citation.
-`<blockquote>` je duži citirani komad teksta. Njegov `cite` atribut koristi za URL resourca odakle je preuzet, a `<cite>` element unutar njega za ime autora ili djela.
+`<ol>` je ordered lista, `<ul>` je unordered. `<li>` je item unutar liste.
+`<ol start=3>` počinje brojati od 3.
+`<ol reversed>` ide unazad.
 
-`<details> <summary> Just this </summary> Blah blah </details>` browser defaultno skriva sadržaj detailsa, a summary prikazuje s klikabilnom strelicom. _Osim IE_
+`<dl>` je lista termova i descriptiona. Sastoji se od pojmova `<dt>` iza kojih ide jedan ili više opisa `<dd>`.
+
+`<pre>` predformatirani tekst, prikazuje se sa točno kako je napisan u HTML-u (sa spaceovima i svim). Defaultno je u monospace fontu.
+
+`<figure>` predstavlja sliku ili ilustracij u s opisom, sadrži `<img>` i `<figcaption>` unutar sebe.
+
+## Inline text
 
 `<strong>` je tekst velike važnosti.
 `<em>` je tekst čije naglašavanje mijenja značenje rečenice.
 `<mark>` je tekst relevantan za usera, npr. hightlight search termova.
 `<small>` sadržaj manje važnosti, npr. copyright u footeru.
 
+`<wbr>` je word break opportunity, odnosno oznaka browseru gdje je u redu da prelomi riječ.
+
+`<q>` je kratki inline citation.
+`<blockquote>` je duži citirani komad teksta. Njegov `cite` atribut koristi za URL resourca odakle je preuzet, a `<cite>` element unutar njega za ime autora ili djela.
+
+`<abbr>` je kratica, atribut `title` može sadržavati puni naziv.
+`<dfn>` označava pojam koji se definira unutar `<section>` ili `<p>`
+`<time>` označava sat ili datum. Prima `datetime=1929-11-13T19:00Z` atribut.
+
+`<kbd>` predstavlja keyboard input, npr. `Press <kbd>A<kbd> to continue`. Može biti tipka ili riječ koja se može upisati.
+`<code>` je računalni kod. Koristi samostalno za inline, ili unutar `<pre>` za duže snippete. Defaultno je u monospace fontu.
+`<samp>` predstavlja output nekog programa, npr. `The screen will say <samp> An error has occured </samp>`.
+`<var>` predstavlja matematički izraz, npr. `<var> x + y </var>`.
+
 `<ins>` je tekst koji se dodao u nekoj verziji. Atributi `cite` za URL i `timestamp` za vrijeme dodavanja.
 `<del>` za tekst koji je obrisan, i `<s>` za tekst koji je zamijenjen nekim drugim. `<del>` i `<s>` možeš CSS-om sakriti, ili precrtati.
 
+## Interactive
 
+`<details> <summary> Just this </summary> Blah blah </details>` browser defaultno skriva sadržaj detailsa, a summary prikazuje s klikabilnom strelicom. _Osim IE_
 
-## <dfn> i ostali (TODO)
+`<menu>` predstavlja grupu naredbi koje korisnik može upotrijebiti.
 
-https://developer.mozilla.org/en/docs/Web/HTML/Element/dfn
+`<menu type="context" id="a">` je popup menu koji iskoči kad klikneš na `button` koji ima definiran `menu="a"`, ili desnim klikom na element koji ima definiran `contextmenu="m"`. Sastoji se od `<menuitem>` elemenata s akcijama i `<hr>` separatora. _FF, Edge_
 
-`<kbd>` predstavlja keyboard input, npr. `Press <kbd>A<kbd> to continue`. Može biti tipka ili riječ koja se može upisati.
-`<samp>` predstavlja output nekog programa, npr. `The screen will say <samp> An error has occured </samp>`.
+`<menu type="toolbar">` je neki normalan toolbar valjda. Nitko ga još nije implementirao.
 
-`<pre>` i `<code>`
-
+`<dialog>` predstavlja dialog box ili sličan interaktivan prozor. Ako ima atribut `open` bit će prikzan, u suprotnom neće. _Chrome_
 
 ## Cross origin
 
@@ -175,7 +208,7 @@ Browser provjerava hoće li slati referrera ovim redom:
 4. `noreferrer` html atribut
 5. nasljeđivanje od parent contexta
 
-`<meta name="referrer content=...>` i `<a referrerpolicy>` primaju iste vrijednosti:
+`<meta name="referrer" content=>` i `<a referrerpolicy>` primaju iste vrijednosti:
 * `no-referrer` neće se ništa slati.
 * `no-referrer-when-downgrade` neće slati s HTTPS na HTTP. (default)
 * `same-origin` slati će se samo unutar istog origina.

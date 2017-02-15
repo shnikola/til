@@ -10,7 +10,6 @@ Međutim, ako želiš dohvatiti u kojim je sve Serijama bio neki Glumac - što b
 
 Mongo je zapravo cache store i dobar je samo za potpuno arbitrarne JSONe za koje ti nije bitno što se unutra nalazi. A i u tom slučaju bolje ti je koristiti Postgresov `hstore`.
 
-
 ## Reddit's database has only two tables
 
 http://kev.inburke.com/kevin/reddits-database-has-two-tables/
@@ -20,7 +19,6 @@ Umjesto relacijske baze, oni za svaki entitet (Users, Links, Comments), imaju dv
 
 Najveći problem s ovim je što se moraš sam brinuti za konzistentnost podataka, umjesto da koristiš mehanizme same baze usavršene za relacijski tip podataka. A problemi koje su naveli uopće nisu problemi: Postgres omogućuje gotovo besplatno dodavanje novih stupaca, a za MySql uvijek možeš dodati pomoćnu tablicu s novim stupcem, triggerima i UPDATEom prebaciti podatke u nju, i preimenovati je kad završiš.
 
-
 ## Scaling Pinterest (2013)
 
 https://www.infoq.com/presentations/Pinterest
@@ -28,7 +26,6 @@ https://www.infoq.com/presentations/Pinterest
 * EC2, Shardani Mysql, Memcached i Redis
 * MySQL: req/res rate raste linearno, ne eksponencijalno
 * Zbog Shardanje nema joinova, sve se radi sa SELECT koji je dobro cachiran.
-
 
 ## Postgres tips from Instagram (2013)
 
@@ -69,6 +66,7 @@ Prebacivali su bazu u novi cluster s boljim hardwareom. Pritom su se pripremili 
 https://blogs.dropbox.com/tech/2016/03/magic-pocket-infrastructure/
 
 Dosad su hostali fileove na S3, a metadatu kod sebe. Ali s preko 500 PB podataka, to je postalo preskupo.
+
 Odlučili su razviti in-house rješenje, jedan od svega nekoliko exobyte-scale storage sustava na svijetu.
 
 ## Why Uber Engineering Switched from Postgres to MySQL (2016)

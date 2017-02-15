@@ -47,7 +47,6 @@ Naš mozak je izvanredan u vizualnoj memoriji. Koristi vizualne reprezentacije k
 
 Čak i ako ne upamtiš ništa iz pročitane knjige, samo čitanje je promijenilo tvoj mentalni model, pa opet nije uzaludno (http://paulgraham.com/know.html)
 
-
 ## Sleep
 
 Spavanje je nužno za učenje. San čisti metaboličke toksine u mozgu koji se stvaraju samo time što si budan. Također učvršćuje bitna sjećanja i briše nebitna, te znatno pomaže pri rješavanju ili usvajanju teških problema (npr. kad se neki grozan programerski problem sutra ujutro čini jednostavnim).
@@ -58,7 +57,7 @@ Kada učiš nešto novo i apstraktno, intenzivno se fokusiraj, a onda napravi pa
 
 Najbolji način za učenje je, umjesto čitanja puno teorije, baciti se u praksu, ili još bolje, prikačiti se nekome tko je expert u području (učenje kroz osmozu). Neuroni se dokazano bolje razvijaju ako si okružen drugima nego ako si zatvoren sam u sobi.
 
-Fizička vježba također pojačava stvaranje neurona i poboljšava pamćenje.
+Fizička vježba (npr. trčanje) također pojačava stvaranje neurona i poboljšava pamćenje. Štoviše, učinkovitije je za tvoj mozak nego ijedan postojeći lijek.
 
 ## Learning Languages
 
@@ -84,6 +83,14 @@ Acetilkolin upravlja fokusom.
 Dopamin upravlja motivacijom, oslobađa se kad dobijemo neočkivanu nagradu. Zadužen je za predviđanje budućih nagrada, što te motivira da radiš stvari koje neće odmah pružiti nagradu. Nedostatak dopamina uzrokuje manjak motivacije, a kronično pomanjkanje je Parkinskonova bolest.
 
 Seratonin povezuje se s društvenošću i riskiranjem.
+
+## Perseverence
+
+Primjeri ljudi koji su uspjeli unatoč tome što si bili loši u školi i nisu imali urođeni talent: Charles Darwin, Santiago Ramón y Cajal.
+
+## Team work
+
+Lijeva hemisfera mozga zadužena je za proces rješavanja i ne sagledava stvari iz šire perspektive, pa se može dogoditi da ne primjeti potpuno besmisleno konačno rješenje. Ako učiš ili radiš s drugima, lakše ćeš pronaći greške u svom razmišljanju, a objašnjavanje prijateljima pomoći će i tvom razumijevanju.
 
 
 # Literatura

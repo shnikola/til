@@ -5,6 +5,11 @@ dns hijacking
 dns spoofing
 uploads
 
+## Security vs Integrity
+
+Security znači da nitko ne može doći do tvojih podataka.
+Integrity znači da nitko ne može uništiti tvoje podatke.
+
 ## HTTPS
 
 `TLS` (i stara verzija, `SSL`) je protokol iznad `TCP`-a koji omogućava sigurnu konekciju. `HTTP` paket unutar njega je nepromijenjen. Napadač u mreži može vidjeti samo IP i port konekcije, otprilike koliko podataka šalješ, te koju enkripciju koristiš. Može i prekinuti konekciju, ali obje strane će znati da je treća strana to učinila.
@@ -98,6 +103,16 @@ Da bi se obranio, koristi se `X-Frame-Options` header koji će browseru zabranit
 
 Modernija alternativa je `Content-Security-Policy: frame-ancestors 'self' example.com *.example.net` _IE 10+_.
 
+## Pastejacking
+
+*Pastejacking* je napad gdje korisnik kopira neki tekst sa weba, (npr. shell naredbu), a napadač u njegov clipboard umjesto tog teksta stavlja nešto drugo.
+
+Napadač na svojoj stranici (ili pomoću XSS-a) osluškuje `copy` ili `keydown` event, pri čemu pomoću `document.execCommand('copy')` ili `e.clipboardData.setData` stavlja svoj sadržaj u korisnikov clipboard.
+
+Ako se radi o shell naredbi, napadač može dodati `\r\n` na kraj kako bi se ona izvela odmah pri pasteanju, te dodati `clear` i `echo <origalna naredba>`, ne dajući priliku korisniku da uopće primjeti da se zla naredba izvela.
+
+Nema nekog pametnog načina za obraniti se, osim da vrlo pažljivo provjeriš cliboard prije nego pasteaš nešto u terminal (npr. koristeći Jumpcut).
+
 ## Phishing
 
 *Phishing* je imitiranje stanice kako bi korisnik pomislio da je na poznatoj stranici u unio osjetljive podatke. Jedini sigurni dio browsera je address bar, jer današnji napadi mogu imitirati skoro sve:
@@ -111,7 +126,6 @@ Modernija alternativa je `Content-Security-Policy: frame-ancestors 'self' exampl
 - ne dopuštaj da korisnik bira ime ili putanju filea
 - provjeri maksimalnu veličinu
 - whitelista file typeova
-
 
 ## Literatura
 
