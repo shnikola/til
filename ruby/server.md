@@ -72,3 +72,18 @@ Podržava različite uvjete:
 * `blocklist` nikad ne prolaze
 * `throttle` prolaze ograničen broj puta u nekom intervalu
 * `track` propušta requeste i po potrebi ih logira.
+
+## ActiveRecord Connection Pool
+
+https://devcenter.heroku.com/articles/concurrency-and-database-connections
+
+Ako koristiš multi-threaded ili multi-process server, imaj na umu da svaki thread zahtjeva svoju database konekciju. Svaki database ima ograničenje koliko maksimalno konekcija može podržavati.
+
+Kako bi izbjegao otvaranje prevelikog broja konekcija, ActiveRecord drži `ConnectionPool`, veličine podesive kroz database setting `pool` (default veličina je `5`). Ako pokušaš dohvatiti konekciju kada su sve zauzete, ActiveRecord će blokirati upit i čekati dok se prva ne oslobodi. Ako ne uspije dobiti konekciju, bacit će `ConnectionTimeoutError`.
+
+Za multi-threaded servere, pool će se konfigurirati pri inicijalizaciji aplikacije koristeći property `pool` u `config/database.yml`. Kod Pume, svaki proces ima svoj pool, pa je dovoljno je da postaviš `pool: ENV['RAILS_MAX_THREADS']`, po konekciju za svaki thread.
+
+Kod multi-process servera, master proces inicijalizira aplikaciju i tek onda forka workere. Pošto njemu samom ne treba konekcija, možeš u `config/unicorn.rb` dodati:
+* `ActiveRecord::Base.connection.disconnect!` unutar `before_fork`
+* `ActiveRecord::Base.establish_connection` u `after_fork`
+

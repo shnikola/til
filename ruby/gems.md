@@ -6,4 +6,4 @@
 
 * `webmock` za stubbing externih apija pri testiranju.
 
-* `faker` (https://github.com/stympy/faker) stavara fake podatke (imena, emailove, adrese) za prototyping.
+* `faker` (https://github.com/stympy/faker) stvara fake podatke (imena, emailove, adrese) za prototyping.

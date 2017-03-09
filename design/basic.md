@@ -14,6 +14,12 @@ https://www.toptal.com/front-end/to-designers-from-a-front-end-developer
 * Definiraj izgled dinamčnog sadržaja: što ako je teksta premalo ili previše? Što ako sadržaja nema?
 * Kada to sve napraviš, dobit ćeš stabilan, konzistentan i dosadan dizajn. Tada pričaj s klijentom i odredi koji dijelovi su najbitniji te njih učini posebnim.
 
+## 8 Point Grid System
+
+https://medium.com/built-to-adapt/intro-to-the-8-point-grid-system-d2573cde8632
+
+Za sve veličine (height, width, padding, margins) koristi višekratnike broja 8. Na taj način će UI biti konzistentan, uređaji s većom pixel gustoćom neće imati problema s mutnih 0.5 piksela, a usto se i ne moraš misliti da li staviti `8px` ili `10px`.
+
 # Literatura
 
 * Designing for performance: http://designingforperformance.com/

@@ -67,34 +67,52 @@ Procesi komuniciraju streamovima preko *pipea* ili porukama preko *socketa*.
 
 ## Threads
 
-Svaki Ruby proces ima barem jedan thread: main thread. `Thread.main` ga vraća. Kada main thread završi, svi ostali threadovi i proces se isto prekidaju.
+Svaki Ruby proces ima barem jedan thread: main thread. `Thread.main` ga vraća.
 
-`Thread.new { ... }` stvata novi thread koji izvodi naredbe u bloku.
-Threadovi imaju closure, i vidljive su im sve varijable u scopeu. Da bi izbjegao thread unsafety, da predaš parametre threadu koristi `Thread.new(param) { |x| ... }` koji radi kopiju lokalne varijable, pa je možeš bez straha mijenjati.
+`Thread.new { ... }` stvara novi thread koji izvodi naredbe u bloku.
+Threadovi imaju closure, i vidljive su im sve varijable u scopeu. Da bi izbjegao thread unsafety, za predaju parametara threadu koristi `Thread.new(param) { |x| ... }` koji radi kopiju lokalne varijable, pa je možeš bez straha mijenjati.
 
 `thread.join` blokira main thread dok se `thread` ne završi. U suprotnom, svi threadovi će biti prekinuti kada završi main thread.
 
 `Thread.main` je main thread.
 `Thread.current` je thread koji se trenutno izvršava.
-`Thread.list` je array neprekinutih threadova.
+`Thread.list` vraća array neprekinutih threadova.
 
 `Thread.stop(thread)` privremeno zaustavlja izvođenje threada. `thread.wakeup` ga ponovno označava za nastavak izvođenja.
 `Thread.pass` predlaže scheduleru da preuzme neki drugi thread, ali ne garantira da će se to dogoditi.
 
-`thread.exit` prekida `thread` s `exit`. Ukoliko je to zadnji ili main thread, prekida se proces.
+`thread.exit` (`thread.kill`) prekida `thread` s `exit`. Ukoliko je to zadnji ili main thread, prekida se proces. Kada main thread završi, gasi se i proces, a svim ostalim threadovima se šalje `thread.exit`.
 
 `thread.status` vraća trenutno stanje threada: `sleep`, `run`, `aborting`; `false` ako je prekinut normalno, `nil` ako je prekinut s exceptionom.
 `thread.alive?` ako se izvršava ili spava, `thread.stop?` ako je prekinut ili spava.
 
 `thread[:key]` spremanje thread varijabli kojima i drugi threadovi mogu pristupati. Zapravo su Fiber-local.
 
-Ako se u threadu dogodi exception, defaultno će samo tiho biti prekinut. Koristi `Thread.abort_on_exception = true` da se exception iz propagira u main thread, ili `Thread.report_on_exception = true` za ispisivanje exceptiona.
+Ako se u threadu dogodi exception, defaultno će samo tiho biti prekinut. Koristi `Thread.abort_on_exception = true` da se exception propagira u main thread, ili `Thread.report_on_exception = true` za ispisivanje exceptiona.
 
 Za sinkorinizaciju koristi, stvori `mutex = Mutex.new` izvan threadova.
 * `mutex.synchronize do ...` unutar threada. Ako je mutex slobodan, thread će izvršiti blok; ako nije, blokirat će se dok se ne izvrši.
 * `mutex.try_lock` ne blokira, nego ili locka mutex i vrati `true`, ili vrati `false`.
 
 `Queue` je threadsafe struktura. `enq` dodaje element, `deq` uzima ili blokira dok ne stigne novi.
+
+## Fibers
+
+Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
+
+`fiber = Fiber.new { ... }` stvara novi fiber koji se ne pokreće dok ne pozoveš `fiber.resume`. Blok se izvršava dok ne dođe do `Fiber.yield(res)`, pri čemu izlazi iz bloka i vrati `res`. S `fiber.resume` može opet nastaviti izvršavanje u bloku dok god ne dođe do `yield` ili kraja bloka.
+
+S `fiber.transfer(res)` možeš prebaciti izvršavanje s jednog fibera na drugi.
+Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer.
+
+## Continuations
+
+Continuation omogućuje skok na neko prijašnje mjesto u kodu. Da, kao `goto`.
+Continuation objekt sadrži snapshot stack framea.
+
+`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
+
+`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
 
 ## GIL
 
@@ -108,6 +126,22 @@ Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GILa 
 
 U slučaju da se multithreaded procesu pošalje signal, kernel će nasumično odabrati jedan thread kojem će prenijeti taj signal. Kako bi izbjegao probleme koje to može izazvati, MRI (i druge Ruby implementacije) pri pokretanju stvaraju poseban thread koji je zadužen za handlanje signala i pipeom ih šalje main threadu.
 
+`Signal.trap("INT") do ... end` definira globalno handlanje signala u trenutnom procesu. Moguće je definirati samo jedan handler po signalu.
+
+Neuhvaćeni signali podižu `SignalException`, pa ako želiš handlati signal samo u određenom dijelu koda možeš koristiti `rescue`. Npr. `rescue Interrupt` za handlanje `INT` signala.
+
+## Timeout i thread.raise
+
+Ruby `Timeout` i `Rack::Timeout` rade tako da stvaraju novi thread koji spava zadano vrijeme, a kada se probudi poziva `thread.raise(Timeout::Error)` nad main threadom.
+
+`thread.raise` je izuzetno nezgodan jer može izazvati exception u bilo kojem trenutku main threada. To može biti tijekom nekog spore radnje, ali može biti i unutar cleanupa te radnje, ili čak nevezanog `rescue` ili `ensure` bloka za kojeg pretpostavljaš da će se uvijek izvršiti do kraja.
+
+Ovo može izazvati razne probleme poput neotpuštanja db konekcija, ili postavljanja threada u unrecoverable state dok mu server neznajući i dalje prosljeđuje requeste.
+
+Ovo nije problem specifičan za Ruby - to je problem koncepta timeouta koji će prekinuti svaku radnju nakon određenog vremena. Sigurnije rješenje je koristiti timeout implementiran za sami request, npr. Mysql timeout. Više informacija na https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts.
+
+`Rack::Timeout` je i dalje bolja opcija nego dopuštati jako duge requeste koji će stvoriti zastoj na serveru. Samo treba biti svjestan da svaki `Timeout::Error` koji se pozove može izazvati probleme.
+
 ## Thread Pooling
 
 Ako imaš jako puno malih zadataka koje želiš obavljati istovremeno, overhead stvaranja novog threada za svaki može biti velik. Usto, threadovi jesu jeftini, ali nisu besplatni. Ako kreiraš 1000 threadova odjednom, ostat ćeš bez resourca.
@@ -118,27 +152,13 @@ Thread Pool je implementiran u librarijima kao što je `Celluloid`.
 
 ## Rails Thread safety
 
-Rails framework code je thread-safe. Ako se svaki request obrađuje u svom threadu, defaltno nema zajedničkih varijabli koje bi mogle izazvati problem. Ipak, u našem kodu možemo nešto slučajno podijeliti kroz:
+Rails framework code je thread-safe. Ako se svaki request obrađuje u svom threadu, defaultno nema zajedničkih varijabli koje bi mogle izazvati problem. Ipak, u našem kodu možemo nešto slučajno podijeliti kroz:
 * globalne varijable
 * class varijable (koje su principu isto što i globalne)
 * class instance varijable (opet, klase se dijele, pa tako i njihove instance varijable)
 * konstante (ako ih nedajbože mijenjaš u kodu)
 
 Jedan neobičan thread-unsafe slučaj je memoizacija instance varijabli. Ako radiš `@attr ||= super.merge(...)`, pripazi da koristiš različito ime `@attr` od onog koje se koristi u `super` metodi. (https://github.com/rails/rails/pull/9789/files)
-
-## ActiveRecord Connection Pool
-
-https://devcenter.heroku.com/articles/concurrency-and-database-connections
-
-Ako koristiš multi-threaded ili multi-process server, imaj na umu da svaki thread zahtjeva svoju database konekciju. Svaki database ima ograničenje koliko maksimalno konekcija može podržavati.
-
-Kako bi izbjegao otvaranje prevelikog broja konekcija, ActiveRecord drži `ConnectionPool`, veličine podesive kroz database setting `pool` (default veličina je `5`). Ako pokušaš dohvatiti konekciju kada su sve zauzete, ActiveRecord će blokirati upit i čekati dok se prva ne oslobodi. Ako ne uspije dobiti konekciju, bacit će `ConnectionTimeoutError`.
-
-Za multi-threaded servere, pool će se konfigurirati pri inicijalizaciji aplikacije koristeći property `pool` u `config/database.yml`. Kod Pume, svaki proces ima svoj pool, pa je dovoljno je da postaviš `pool: ENV['RAILS_MAX_THREADS']`, po konekciju za svaki thread.
-
-Kod multi-process servera, master proces inicijalizira aplikaciju i tek onda forka workere. Pošto njemu samom ne treba konekcija, možeš u `config/unicorn.rb` dodati:
-* `ActiveRecord::Base.connection.disconnect!` unutar `before_fork`
-* `ActiveRecord::Base.establish_connection` u `after_fork`
 
 ## Connection Pool Internals
 
@@ -160,44 +180,6 @@ Preloading je, za razliku od lazy loadanja pomoću `autoload` metode, thread-saf
 
 `Rack::Lock` mutexom oko requesta brani različitim threadovima da u isto vrijeme izvršavaju kod. U *multi-process* sustavu (npr. Unicorn) nije potreban, jer svaki proces ima svoju memoriju i čak ni thread-unsafe kod neće imati problema. U *multi-threaded* sustavu (npr. Puma) mutex sprečava thread-unsafe situacije, što je super, ali istovremeno i ne dopušta da se threadovi istovremeno vrte, što je poanta *multi-threadanja*. Zato su odlučili ukloniti ga, i svima koji koriste *multi-threaded* servere reći: "Pazite da vam je kod thread-safe."
 
-## Thread.kill i ensure.
-
-http://blog.arkency.com/2016/04/how-i-hunted-the-most-odd-ruby-bug/
-
-Kada se šalje `Thread.kill`, thread se neće instantno prekinuti, već će prije toga odraditi `ensure` block.
-
-Kada se proces gasi (`exit`), svim threadovima pokrenutim iz njega šalje se `Thread.kill`.
-
-U ovom slučaju, proces je u `at_exit` eksplicitno pozivao `Thread.kill` threadu kojeg je prethodno pokrenuo. Thread je u svom `ensure` bloku imao `sleep(10)`. Proces bi nekad obavio taj `sleep`, a nekad ne bi. Zašto?
-
-Thread scheduling se ponaša nedeterministički. Ponekad se dogodi ovako:
-1. Proces pri izlasku pošalje `Thread.kill`. Thread uđe u `ensure` block.
-2. Proces unutar `at_exit` pošalje eksplicitni `Thread.kill`. Thread se izbaci iz `ensure` blocka i prekine `sleep`.
-
-A ponekad se dogodi ovako:
-1. Proces pri izlasku pošalje `Thread.kill`. Thread uđe u `ensure` block.
-2. Izvršavanje se prebaci na thread i počne se izvršavati `sleep`.
-3. Izvršavanje se nikad ne prebaci na main thread procesa jer je označen kao *killed*.
-
-Pouka: ne stavljaj `sleep` u `ensure` blokove threada :)
-
-## Fibers
-
-Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
-
-`fiber = Fiber.new { ... }` stvara novi fiber koji se ne pokreće dok ne pozoveš `fiber.resume`. Blok se izvršava dok ne dođe do `Fiber.yield(res)`, pri čemu izlazi iz bloka i vrati `res`. S `fiber.resume` može opet nastaviti izvršavanje u bloku dok god ne dođe do `yield` ili kraja bloka.
-
-S `fiber.transfer(res)` možeš prebaciti izvršavanje s jednog fibera na drugi.
-Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer.
-
-## Continuations
-
-Continuation omogućuje skok na neko prijašnje mjesto u kodu. Da, kao `goto`.
-Continuation objekt sadrži snapshot stack framea.
-
-`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
-
-`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
 
 ## Ruby 3 Guild Proposal
 
@@ -225,7 +207,6 @@ Gem s immutable strukturama podataka (Hash, Vector, Set, SortedList, List, Deque
 # TODO
 
 rack.hijack i message_bus
-background jobs (resque koristi procese, sidekiq threadove, suckerpunch)
 
 # Literatura
 

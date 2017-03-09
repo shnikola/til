@@ -48,7 +48,7 @@ Za elemente s animacijama triggeriraju se `animationstart` i `animationend`, te 
 
 Da bi animacija tekla glatko na 60Hz monitoru, mora se moći renderirati za manje od `16ms`. To vrijeme se troši na *recalculate styles*, *layout*, *paint*, i *composite* layera.
 
-Popis propertija koji utječu na određeni korak je na https://csstriggers.com/.
+Samo 4 propertija garantiraju glatku animaciju: `opacity`, `translate`, `rotate` i `scale`. Svi ostali zahtjevaju više koraka iscrtavanja, prema popisu na https://csstriggers.com/.
 
 Da bi ubrzao izračunavanje layouta, izbjegavaj animirati `height`, `width` ili `left` i `top`. Animiraj elemente koji su `absolute` i `fixed` koji ne utječu na layout. Za pomicanje koristi `transform: translateX()`. Za skrivanje koristi `opacity: 0` i `pointer-events: none`.
 

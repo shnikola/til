@@ -68,6 +68,14 @@ Cache (npr. Memcached) radi na pretpostavci kako je brže dohvatiti podatak iz m
 
 Ako dobijaš 1TB podataka godišnje, i podatci su strukturirani, ne treba ti Hadoop/Hive/Presto. Savršeno dobro će poslužiti replika Postgres baze, BigQuery ili Redshift.
 
+## Blockchain
+
+https://anders.com/blockchain
+
+Blockchain je distribuirana baza koja se sastoji od blokova. Svaki blok je potpisan hashem i sadrži podatke o eventu (npr. novčanoj transakciji), timestamp, i hash prethodnog bloka.
+
+Ukoliko se ijedan blok promijeni, morat će se promijeniti i njegov hash, a samim time i hashevi svih blokova koji slijede nakon njega. Block chainovi su distribuirani (nalaze se kod više klijenata), pa je dovoljno usporediti posljednje blokove da se provjeri je li neki od blokova tampered. Ispravan block chain odabire se decentraliziranim koncenzusom.
+
 # Literatura
 
 * https://sqlbolt.com/ - interaktivni tutorial, super za učenje

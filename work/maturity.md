@@ -66,12 +66,4 @@ Prvo gledaj "big picture", onda radi na detaljima, ali svako malo se vrati na "b
 
 Ne slušaj kritike Hacker Newsa, tamo su svi ultra negativni. Pričaj s pravim ljudima.
 
-## Open Source
-
-http://schneems.com/2016/05/31/saving-sprockets.html
-
-Open source je kul, i jako puno naučiš sudjelujući u njemu. Probaj jednom tjedno raditi na nekom open source projektu
-
-Platiti nekom pizzu (makar bio na drugom kraju svijeta) je dosta kul način za zahvaliti se na nečem (ili nagovoriti ga da napravi nešto).
-
 

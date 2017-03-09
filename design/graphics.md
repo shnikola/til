@@ -31,6 +31,7 @@ Dodatna optimizacija:
 * exportaj sliku minimalnih dimenzija koje su ti potrebne.
 * provuci je kroz `imageOptim` (desktop) ili `smush.it` (web) lossless optimizatore.
 * `data URI` za jako male, jednostavne slike; ali provjeri popravlja li to performance.
+* za velike GIFove je optimalnije koristiti WebM video.
 
 ## Pixel Density, Demystified
 

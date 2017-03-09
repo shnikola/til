@@ -51,3 +51,9 @@ Url stranice je data/html protocola i počinje s www.google.com/login, te ima pu
 Svatko živ bi pao na ovo.
 
 **Pouka:** Dobro provjeri url kad te gmail pita da se ulogiraš.
+
+## CloudFlare Memory Leak
+
+https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/
+
+Zbog buga u handlanju pointera u HTML parseru Cloudflarea, u HTTP response dodavao se sadržaj memorije servera. Između ostalog tu su bili dijelovi tuđih HTTP requesta s headerima, cookijima, API keyevima i sl. Još gore, search enginei su cachirali stranice s tim osjetljivim sadržajem, dopustivši svakome da im pristupi.

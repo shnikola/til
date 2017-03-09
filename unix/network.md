@@ -56,6 +56,16 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 
 `ip link set eth1 multicast on` za konfiguraciju linka.
 
+## DNS
+
+`nslookup utorkom.com` name server lookup, najstariji. Vraća IP i DNS server kojeg je pitao.
+
+`host utorkom.com` dobar za jednostavni query. Ima i reverse lookup: `host 213.11.172.228`. Vraća više informacija s `-a`.
+
+`dig utorkom.com` najviše opcija. `dig NS utorkom.com` vraća nameservere. `dig utokom.com any` za cijeli zone file. `dig @ns1.example.com utorkom.com` traži podatke od zadanog nameservera.
+
+`whois utorkom.com` dohvaća podatke o registriranim korisnicima Internet resourca (npr. domene ili IP bloka)
+
 ## traceroute
 
 `traceroute google.com` ispisuje put kojim paket putuje od tvog računala do servera.

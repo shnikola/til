@@ -11,9 +11,6 @@ map, area, audio, video, track, picture, source
 Embedded:
 embed, object, param, canvas, iframe
 
-Form:
-form, label, input, button, select, datalist, optgroup, option, textarea, output, progress, meter, fieldset, legend
-
 ## Isprika
 
 https://html.spec.whatwg.org/multipage/introduction.html#design-notes
@@ -121,17 +118,110 @@ Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. B
 
 `alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
 
-## Forms
+## Form and inputs
 
-Ako nešto treba biti klikabilno, koristi `<button>`. Ozbiljno. Super je `<button>`.
+`<form>` sakuplja inpute i definira gdje i kako će se njihove vrijednosti poslati.
 
-`<select>`
+`action` definira URL na koji se podatci šalju.
+`method` definira HTTP metodu (GET, POST, itd.)
+`enctype` definira MIME type podataka (`application/x-www-form-urlencoded` defaltno, `multipart/form-data` za fileove, `text/plain` za tekst)
 
-option, optgroup
+`target` ime browsing contexta u kojem će prikazati rezultat sa servera. Kao i za `<a>`, može biti `_self`, `_blank`, `_parent` i `_top`.
 
-`<datalist>` definira moguće vrijednosti za `<input>` elemente. Npr.
+`autocomplete="on"` poručuje browseru da prikaže dropdown s već unesenim vrijednostima za sve inpute formi. Može se definirati i za pojedinačne inpute.
+`autocomplete="off"` poručuje browseru da ne prikazuje taj dropdown.
+Čak i uz isključen autocomplete, browser password će i dalje ponuditi pamćenje podataka za login i autofillati ih ako korisnik to dopusti.
+
+`novalidate` poručuje browseru da ne validira vrijednosti inputa u formi.
+
+`<input>` se koristi za različite vrste unosa podataka. Najčešće se nalazi unutar forme, ali može biti i izvan ako koristi `form` atribut koji prima `id` forma s kojim će biti submitan. `name` je ime pod kojim će biti poslan na server.
+
+`required` zahtjeva da se unese neka vrijednost prije submita.
+`readonly` korisnik ne može mijenjati vrijednost inputa.
+`disabled` korisnik ne može mijenjati vrijednost i vrijednost se neće submitati.
+
+`autofocus` input na koji će browser fokusirati pri loadanju stranice. Smije biti samo jedan po dokumentu.
+`autocomplete="off"` poručuje browseru da ne predlaže vrijednosti tijekom korisničkog unosa.
+
+`<input type="hidden">` se ne prikazuje korisniku, ali se šalje na server.
+
+## Checked inputs
+
+`<input type="checkbox">` ima unaprijed zadani `value` koji će se poslati samo ako je checkbox označen. `checked` čini input unaprijed označenim.
+
+`<input type="radio">` omogućuje odabir jednog inputa unutar grupe. Radio inputi koji imaju isti `name` stvaraju jednu grupu. `checked` čini input unaprijed odabranim.
+
+### Text inputs
+
+`<input type="text">` za generični tekst.
+`<input type="number">` za unos brojeva. Browser prikaže strelice za inkrement/dekrement, a mobilni uređaji posebnu tipkovnicu.
+`<input type="password">` korisnikov unos se prikazuje zvijezdicama.
+`<input type="email">`,
+`<input type="url">`,
+`<input type="tel">` automatski validiraju unos, a na mobilnim uređajima prikazuju prilagođenu tipkovnicu (npr. `@` za email).
+`<input type="search">` je isti kao `text` osim što nekad prikaže malu search ikonicu i keyboard enter preimenuje u "Search".
+
+`<textarea>` za dulji unos teksta. `cols` i `rows` za definiranje broja stupaca i redova.
+
+`minlength` i `maxlength` ograničavaju duljinu unosa u input.
+`min` i `max` ograničavaju vrijednost broja za `number`. `step` definira korak inkrementa.
+
+`pattern` prima regex koji će se validirati prije submita, npr. `[0-9]{4}`.
+`inputmode` predlaže browseru koju tipkovnicu da koristi, npr. `numeric`.
+
+`placeholder` prikazuje hint kako bi unos trebao izgledati.
+
+### Selection inputs
+
+`<select>` omogućuje odabir među listom opcija. `multiple` omogućuje odabir više opcija odjednom. `size` definira broj redaka u listi multiple opcija.
+
+`<option>` elementi predstavljaju jednu opciju.
+`label` ili tekst unutar elementa će se prikazati kao naziv opcije.
+`value` definira vrijednost koja će se poslati na server.
+`selected` određuje unaprijed definiranu opciju.
+`disabled` onemogućuje odabir opcije.
+
+`<optgroup>` se može koristiti za grupiranje opcija. `label` definira naziv grupe.
+
+`<input type="range">` prikazuje slider od `min` do `max` sa `step` koracima.
+
+`<input type="date">` unos `yyyy-mm-dd`. Chrome prikazuje nativni datapicker, mobilni browseri prilagođuju keyboard.
+`<input type="month">` unos `yyyy-mm`.
+`<input type="week">` unos `yyyy-Www`, godine i tjedna.
+`<input type="time">` unos `HH:MM`.
+`<input type="datetime-local">` unos `yyyy-mm-ddTHH:MM:SS.S`.
+
+`<input type="color">` unos hex oblika, npr. `#ff0000`. Neki browseri prikazuju nativni picker.
+
+`<datalist>` definira moguće vrijednosti za bilo koji `<input>` element. Npr.
 `<datalist id="email-list">` napunjen `<option>` elementima s emailovima može se iskoristiti pomoću `<input type="email" list="email-list"`> koji će se prikazati kao dropdown u kojeg se može pisati.
 Pripazi samo jer je bugovit još na dosta browsera.
+
+### File input
+
+`<input type="file">` prikazuje button za odabir filea. Najčešće se ne može stilizirati, ali može ga se sakriti i stilizirati njegov `<label>`.
+
+`multiple` omogućuje odabit više fileova odjednom.
+`accept` definira vrste fileova koje server prihvaća, npr. `.jpg` ili `audio/*`.
+`capture` će u mobilnim browserima otvoriti kameru i koristiti snimljene podatke.
+
+### Submitting
+
+Za submitanje forme koristi `<input type="submit>` ili `<button>`. Oba elementa mogu overrideati postavke za slanje koristeći `formaction`, `formmethod`, `formenctype`, i `formtarget` atribute.
+
+`<input type="reset">` prikazuje button koji klikom vraća sve inpute forme na defaultnu vrijednost.
+
+Općenito, ako nešto treba biti klikabilno, a nije link, koristi `<button>` umjesto da stiliziraš `<a>`.
+
+### Labels
+
+`<label>` predstavlja opis inputa. Label se s inputom povezuje preko atributa `for` koji sadrži `id` inputa, ili tako što je input unutar label elementa.
+Klikom na label prebacuju se fokus na pripadajući input, ili se toggla ako je checkbox ili radio.
+
+Input se mogu grupirati pomoću `<fieldset>`, a svaka grupa može imati svoj `<legend>` kao prvi element fieldseta.
+
+`<progress>` prikazuje postotak dovršenosti neke radnje. `value` i `max` za definiranje. Browseri ga prikazuju grafički.
+`<meter>` prikazuje mjeru, npr. ocjenu ili temperaturu. Chrome ga prikazuje grafički
 
 ## Content sectioning
 
@@ -218,4 +308,5 @@ Browser provjerava hoće li slati referrera ovim redom:
 
 # Literatura:
 
+* http://htmlreference.io/
 * Kul predavanja o elementima: https://vimeo.com/webconferences/videos

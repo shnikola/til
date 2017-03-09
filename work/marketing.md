@@ -33,7 +33,7 @@ Nemoj kupovati email liste ni od koga, samo će ti IP adresa biti blokirana.
 Kada se netko subscriba, pošalji mu confirmation mail. Tako spriječavaš da netko prijavi tuđi email.
 
 Zakonski si obvezan (http://en.wikipedia.org/wiki/CAN-SPAM_Act_of_2003):
-* identificirati poruku ako reklamu.
+* identificirati poruku kao reklamu.
 * navesti svoju lokaciju.
 * omogućiti opt-out i u kratkom roku ga ispuniti.
 * ne koristiti lažan subject ili naslov emaila.
@@ -67,3 +67,4 @@ Ako prodaješ preko weba, pošalji mali poklon sa svakim paketom (npr. slatkiš)
 
 * https://moz.com/learn/seo
 * http://www.kalzumeus.com/2010/01/24/startup-seo/
+* http://coglode.com/

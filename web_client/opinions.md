@@ -1,12 +1,16 @@
 # Opinions
 
 ## Moje
-* Tehnologija koju danas imamo je fascinanta, ali naša upotreba baš i nije ("novi monitor će prikazati boje koje nikad niste vidjeli... da bi bolje vidjeli boju cipela koje prodajem u webshopu.")
+
+Tehnologija koju danas imamo je fascinanta, ali naša upotreba baš i nije ("novi monitor će prikazati boje koje nikad niste vidjeli... da bi bolje vidjeli boju cipela koje prodajem u webshopu.")
 
 
 ## Website obesity crisis
+
 http://idlewords.com/talks/website_obesity.htm
+
 "We're in a stupid situation where ads make huge profits for data carriers and ad networks, at the expense of everyone else."
+
 "Dumb ads will mean less ad revenue, because a lot of online ad spending is fueled by extravagant promises around the possibilities of surveillance technology. But the ad market is going to implode anyway when the current bubble bursts."
 
 "Rather than trying to make your overbuilt projects look simple, ask yourself if they can't just be simple."
@@ -24,9 +28,10 @@ Let’s not allow the panicked dinosaurs of online publishing to trample us as t
 
 Most importantly, let’s break the back of the online surveillance establishment that threatens not just our livelihood, but our liberty. Not only here in Australia, but in America, Europe, the UK—in every free country where the idea of permanent, total surveillance sounded like bad science fiction even ten years ago.
 
-
 ## Web development as a hack of hacks
+
 http://www.quirksmode.org/blog/archives/2016/09/web_development.html
+
 * Javascript nije loš jezik, samo nije jezik s kojim si naučio raditi.
 * Problem nije u milijun frameworka koji postoje, nego u pretpostavci da ti treba framework kako bi bilo što napravio. Nauči osnovni JS i CSS i lako ćeš raditi s bilo čime.
 * Front-end će uvijek biti složeniji od backenda, jer je environment u kojem radiš (browseri) izrazito promjenjiv. Zato ne podcjenjuj front-end development. Sve je to pravo programiranje.

@@ -55,6 +55,3 @@ Ako baš ne ide sa helperima (npr. radiš gem i želiš da user može mijenjati 
 ## Null Object
 
 Isplati se ako imaš puno conditionala, npr. `if (user) { user.name } else { 'No name.' }`. Downside je što treba držati public interface `User` i `NullUser` usklađenim.
-
-
-

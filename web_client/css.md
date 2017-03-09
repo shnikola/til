@@ -388,6 +388,7 @@ Omogućuje prikaz teksta u više stupaca bez da moramo definirati gdje stupac po
 ## Flexbox _IE 11+_
 
 Flexbox omogućava lakše raspoređivanje elemenata unutar parenta, bez `floata` ili apsolutnog pozicioniranja.
+
 Parent element koji ima `display: flex` je *flex container*, a njegova djeca (uključujući i tekst direktno u njemu) su *flex itemi*.
 
 Properties *containera*:
@@ -434,6 +435,17 @@ Ako želiš definirati fiksnu veličinu itema, koristi `flex-basis`:
 `flex: 1 6 20%` je shorthand za `flex-grow`, `flex-shrink` i `flex-basis`.
   * `flex: 1 0 0` item zauzima sav slobodan prostor, neovisno od svoje početne veličine.
   * `flex: 0 0 auto` item zadržava svoju početnu veličinu.
+
+## CSS Grid
+
+`display: grid` označava parent kao grid container.
+
+`grid-template-columns` definira kako se child elementi postavljaju u stupce.
+`grid-template-columns: 200px 200px` dva stupca fiksne širine.
+`grid-template-columns: 1fr 2fr` dva stupca, drugi duplo širi od prvoga.
+`grid-template-columns: 200px 1fr 1fr` fiksni stupac, a druga dva jednako dijele ostatak prostora.
+
+`grid-gap: 5px` za razmak između elemenata. Shorthand za `grid-column-gap` i `grid-row-gap`.
 
 ## Filter _Chrome, FF, Safari_
 

@@ -1,6 +1,7 @@
 # IO
 
 `IO` streamovi su dvosmjerni kanali između Ruby programa i nekog resourca (filea, socketa ili unix streama).
+
 Streamovi se ne loadaju u memoriju, učitavaju se samo linije na kojima radiš. Zato možeš bez problema raditi na velikim fileovima, beskonačnim streamovima i socketima.
 
 Standardni sistemski streamovi dostupni su u globalnim `$stdin`, `$stdout` i `$stderr`. `Kernel#puts` i `Kernel#gets` su zapravo aliasi na `$stdout.puts` i `$stdin.gets`.

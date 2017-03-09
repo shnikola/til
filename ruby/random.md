@@ -63,3 +63,13 @@ ActionCable je nespreman za ozbiljnije zahtjeve u produkciji, već sa 7 kanala s
 
 Phoenix s druge strane bez problema handlea 275 kanala s 55,000 usera.
 Ako radiš aplikaciju s pravim real time zahtjevima, odaberi Phoenix.
+
+## Rails with Service Workers
+
+https://rossta.net/blog/service-worker-on-rails.html
+
+Asset pipeline stvara nekoliko problema pri korištenju service workera:
+* svi asseti se drže u `/assets/*`, pa bi service mogao pristupati requestovima samo unutar tog scopea. Zato treba dodati custom middleware koji će servirati `serviceWorker.js` s patha kojeg je potrebno.
+* fingerprinting fileova i dugi `Cache-Control` period onemogućava redovno updateanje service workera ugrađenu o browsere. Treba postaviti `Cache-Control: private, max-age=0, no-cache`.
+
+`serviceworker-rails` gem sredi sve te stvari za tebe.

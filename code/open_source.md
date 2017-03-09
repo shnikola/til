@@ -13,3 +13,11 @@ Preporučena struktura:
 4. Pokaži kako se koristi. Dodaj directory `/examples` s primjerima korištenja koji se mogu pokrenuti.
 5. Upute za instalaciju
 6. License
+
+## Saving Sprockets
+
+http://schneems.com/2016/05/31/saving-sprockets.html
+
+Open source je kul, i jako puno naučiš sudjelujući u njemu. Probaj jednom tjedno raditi na nekom open source projektu
+
+Platiti nekom pizzu (makar bio na drugom kraju svijeta) je dosta kul način za zahvaliti se na nečem (ili nagovoriti ga da napravi nešto).

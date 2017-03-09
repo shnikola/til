@@ -10,7 +10,7 @@ Korištenje UUID-a olakšava skaliranje pošto se idjevi više ne generiraju sek
 
 ## Associations
 
-Kada se model savea, automatski će saveati sve `has_one` i `has_many` associatione koji još nisu persisted. Želiš li izbjeći to ponašenje, dodaj `has_one :user, autosave: false`.
+Kada se model persista, automatski će saveati sve `has_one` i `has_many` associatione koji još nisu persisted. Želiš li izbjeći to ponašenje, dodaj `has_one :user, autosave: false`.
 
 ## has_many i conditions
 
@@ -34,6 +34,10 @@ Kad se koristi `includes`, `uniq` nije potreban.
 `obj.name_changed?` ako se atribut promijenio.
 `obj.name_was` vraća prethodnu vrijednost atributa.
 `obj.restore_attributes` undoa sve nesaveane vrijednosti.
+
+## Validation
+
+Sam `validates_uniqueness_of` neće te zaštiti od dvostrukih vrijednosti u tablici, jer je moguće da se dva unosa istovremeno provjere i onda dodaju u tablicu. Uvijek ga koristi u kombinaciji s pravim unique indexom na tablici, i napravi `rescue ActiveRecord::RecordNotUnique`.
 
 ## Rails 5 Attribute API
 
@@ -61,4 +65,5 @@ http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/
 Ako želiš u callbacku gurati stvari u background job (zar ne bi trebao koristiti servise?), nemoj koristiti `after_save` nego `after_commit`.
 
 `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
+
 

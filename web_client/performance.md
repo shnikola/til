@@ -27,12 +27,19 @@ Svaki `<link href="style.css">` defaultno blokira prvi render kako bi se izbjega
 
 Kada browser pri parsiranju HTMLa dođe do `<script>` elementa (bilo inline, bilo remote), pauzira izgradnju DOM stabla dok se skripta ne dohvati i izvrši. Pritom su skripti dostupni samo elementi definirani iznad nje, jer se ostatak DOM stabla još nije izgradio. Dodatno, samo izvršavanje skripte će čekati dok se *CSSOM* stablo ne izgradi, kako bi se izbjegli race conditioni pri definiranju stilova.
 
-Kako bi se izbjeglo blokiranje `<script>` napravi sljedeće:
-* Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Potencijalno sporo za velike dokumente.
-* `<script async>` ne blokira i izvodi skripte asinkrono kad se skinu. Pripazi, skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). _IE10+_
-* `<script defer>` ne blokira i izvodi skripte kad je cijeli HTML parsiran, prije `DOMContentLoaded`. _IE10+_
-
 Da bi se stranica iscrtala prvi put što prije, potrebno je smanjiti broj ovih kritičnih (render blocking) resursa, i brojem i veličinom.
+
+## Non-blocking scripts
+
+http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html
+
+Postoji nekoliko načina za izbjeći blokiranje `<script>` elementa.
+
+Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Ovo će biti potencijalno sporo za velike dokumente.
+
+`<script async>` će skidati skriptu dok se HTML parsira i pauzirati parsiranje samo za izvođenje. Skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). Inače je super. _IE10+_
+
+`<script defer>` će skidati skriptu dok se HTML parsira i izvesti je tek kad je cijeli HTML parsiran, prije `DOMContentLoaded`. _IE10+_
 
 ## Rendering performance
 
@@ -113,6 +120,25 @@ Kako bi to izbjegao:
 
 Da minimiziraš *Flash Of Unstyled Text* zbog fallback fonta, prilagodi `font-size` fallbacka da se tekst što manje miče.
 Za dodatnu optimizaciju, prvo loadaj samo `normal` weight (browser će simulirati ostale debljine), a tek onda ostale.
+
+## Javascript Start-up Performance
+
+https://medium.com/dev-channel/javascript-start-up-performance-69200f43b201
+
+Parsiranje i izvršavanje JS skripte može trajati i nekoliko sekundi, dok je stranica neinteraktivna za to vrijeme.
+
+Što manje JS koda šalješ, to će parsiranje biti brže. Ako imaš mnogo javascripta, šalji samo kod relevantan za trenutni path.
+
+Koristi `async` i `defer` pa će browser parsirati skripte u zasebnom threadu. Chrome je to odnedavno uveo i za regularne, blokirajuće skripte.
+
+## optimize-js
+
+https://github.com/nolanlawson/optimize-js
+
+Moderni JS engini pretpostavljaju da se većina funkcija neće odmah izvoditi, pa rade samo pre-parse koji provjerava ispravnost sintakse. Ali za immediately invoked funkcije ovo će zapravo usporiti izvođenje, jer će se raditi pre-parse i onda puni parse.
+
+`optimize-js` pri buildanju dodaje zagrade na sve IIFE funkcije, kako bi se engineu dalo do znanja da prekoči pre-parse korak. Time se dobije speed boost i do 50%.
+
 
 ## Tim Kadlec: Once more, with feeling
 

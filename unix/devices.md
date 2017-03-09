@@ -19,10 +19,12 @@ Da bi se moglo pristupiti fileovima devicea ili particije, potrebno je napraviti
 `lsblk` ispisuje sve block deviceove.
 `lsbusb`/`lspci` ispisuje sve USB/PCI busove.
 
-
 ## Swap Memory
+
 Svaki sustav bi trebao imati definiran swap space na disku koji može koristiti kada mu zafali RAMa.
-Swap se može držati u swap particiji (`fdisk <device>`) ili u swap fileu (`dd if=/dev/zero of=/extraswap bs=1M count=512`)
+
+Swap se može držati u swap particiji (`fdisk <device>`) ili u swap fileu (`dd if=/dev/zero of=/extraswap bs=1M count=512`).
+
 `mkswap <device or file>` inicijalizira swap space.
 `swapon <device or file>` aktivira swap space i počinje ga koristiti. Za automatsko aktiviranje pri bootu dodaj u `/etc/fstab`.
 
