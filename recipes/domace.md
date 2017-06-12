@@ -8,12 +8,11 @@
 * **Tanke kore** slagati u tepsiju i svaku namazati uljem, osim onih na koje ide sir.
 * peci 30ak minuta na 200.
 
-
 ## Nanina krumpiruša
 
 * **4 oveća krumpira**, oguljena i nasjeckana na kockice. 3 puta isperi kockice u vodi da makneš škrob.
 * **2 srednje kapule**, nasjeckaj i dinstaj. Dodaj krumpire na vatru, posoli i popapri
-* 3 **kore** raširiš i nauljiš između, staviš smjesu na to i popapriš još jednom, zarolaš.
+* **3 kore** raširiš i nauljiš između, staviš smjesu na to i popapriš još jednom, zarolaš.
 * peci 30ak minuta na 180. tijekom počenja 1dl vode, malo ulja i papra zaliješ po svemu.
 
 ## Mamin kruh
@@ -58,11 +57,12 @@
 
 ## Francuski krumpir
 
-* **5-6 krumpira srednjih**, skuhaj cijele dok ne omekšaju, pa oguli (crveni su bolji jer se ne raspadnu)
+* **5-6 krumpira srednjih**, skuhaj cijele dok ne omekšaju. Ohladi krumpir u hladnoj vodi pa oguli (crveni su bolji jer se ne raspadnu).
 * **3 jaja** tvrdo kuhaj i oguli
-* **pola kobasice** nasjeckaj
+* **pola kobasice** nasjeckaj.
 * U nauljenu šerpu nasjeckaj pola krumpira, posoli, preko toga nasjeckaj jaja i kobasicu, pa ostatak krumpira i posoli
-* Prelij s **4dl domaćeg vrhnja**, i stavi u pećnicu na 180 20-ak minuta, dok se ne zapeče.
+* Prelij s **4dl domaćeg vrhnja**
+* Dobro zagrij pećnicu na najjače, i onda stavi šerpu 20-ak minuta, samo da se sve zapeče.
 
 ## Paradižot Šnenokle
 

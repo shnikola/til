@@ -89,6 +89,42 @@ Savjeti:
 
 Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt - tako ih je puno lakše testirati.
 
+## force_ssl
+
+`force_ssl` u controlleru će redirectati svaki HTTP request na HTTPS.
+
+`config.force_ssl = true` će postaviti redirect, a usto i postaviti sve cookije i session da budu Secure (da se ne šalju s HTTP requestovima), te podesiti HSTS headere. Detalji se mogu podesiti s `config.ssl_options`
+
+## request
+
+`request.ip` koristi `HTTP_CLIENT_IP` i `HTTP_X_FORWARDED_FOR` headere da odredi IP adresu klijenta.
+
+`request.remote_ip` radi istu stvar, ali još dodatno provjerava da li je neka od IP adresa spoofana pomoću `ActionDispatch::RemoteIp` middlewarea.
+
+## Time Zones
+
+U Rails aplikaciji postoje 3 različite time zone: sistemsko vrijeme, aplikacijsko vrijeme i database vrijeme.
+
+`Time.now` vraća sistemsko vrijeme procesa. Izbjegavaj ga jer nisi siguran koji je time zone podešen na serveru.
+
+`config.time_zone = ` postavlja aplikacijski time zone, defaultni je `UTC`.
+`Time.zone = "Fiji"` postavlja time zone za trenutni thread.
+`Time.use_zone(user_zone) do ... end` koristi specifičnu zonu samo unutar bloka.
+
+`Time.zone.now` (`Time.current`) vraća trenutno vrijeme u aplikacijskoj time zoni.
+`Time.zone.today` (`Date.current`) vraća današnji datum u aplikacijskoj time zoni.
+`Time.zone.parse("...")` parsira vrijeme u aplikacijskoj time zoni.
+`time.in_time_zone` prebacuje vrijeme u aplikacijsku time zonu.
+`time.in_time_zone(user_zone)` prebacuje vrijeme u drugu, npr. korisnikovu vremensku zonu.
+
+Pri spremanju u bazu, postoje dvije situacije. Stupci koji ne podržavaju time zone (npr. `timestamp` u MySQL) će prebaciti `Time` objekt u `UTC`. Stupci koji podržavaju time zone (npr. `timestampz` u Postgresu) će spremiti objekt zajedno s time zonom. Ovo je korisno spremati ako ti je bitno u kojoj zoni se nešto dogodilo, ali najčešće nije potrebno.
+
+Pri dohvatu iz baze, `Time` objekti će se defaultno vraćati u `UTC` time zoni. Ako želiš da se vraćaju u aplikacijskoj time zoni, postavi `config.active_record.default_timezone = :local`.
+
+Za serijalizaciju ili slanje kroz API koristi `time.iso8601` koji pretvara vrijeme u string i čuva time zone. `Time.iso8601("...")` parsira takav string.
+
+Ukratko: koristi `UTC` kao aplikacijski time zone, a `Time.zone` i `Time.current` umjesto `Time.now`.
+
 ## Turbolinks 5
 
 Pri kliku na link dohvaća se nova stranica, i njen `body` se postavi kao `document.body`. Klijent tako preuzima single process model - ne mora reloadati i reprocesirati assete pri učitavanju svake stranice, niti uspostavljati websocket konekcije.
@@ -96,7 +132,6 @@ Pri kliku na link dohvaća se nova stranica, i njen `body` se postavi kao `docum
 Novi turbolinksi također imaju adaptere omogućuju ubacivanje dijelova weba u nativne iOS i Android aplikacije.
 
 Nažalost, turbolinksi sa sobom donose mnogo suptilnih komplikacija (treba koristiti `turbolinks:load` umjesto `window.onload`; updatanje asseta; third-party JS librariji koji očekuju da stvari rade normalno) da ih se ne isplati koristiti.
-
 
 ## Rails Schema Cache
 

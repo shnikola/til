@@ -43,7 +43,7 @@ Neke pomoćne metode:
 
 ## Tempfile
 
-Ako trebaš privremeno stvoriti file (npr. imaš remote url neke slike i želiš je obraditi unix alatom koji prima samo file), koristi `Tempfile.new('some_id')`, s pathom u `tempfile.path`.
+Ako trebaš privremeno stvoriti file (npr. imaš remote url neke slike i želiš je obraditi unix alatom koji prima samo file), koristi `Tempfile.new`. Path file dosupan je u `tempfile.path`.
 
 Prednost korištenja u odnosu na obični file:
 * filename će uvijek biti unique i thread safe, pa se ne moraš brinuti o koliziji.

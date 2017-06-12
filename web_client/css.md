@@ -1,11 +1,5 @@
 # CSS
 
-## TODO:
-
-css-grid (kaže Jen da treba 6 mjeseci da se nauči)
-clip-path, mask
-float i block formatting context: (npr. kada stavim float: left na sidebar, s main-contentom s desne strane, linkovi neće biti klikablini dok ne staviš position: relative i z-index na sidebar.)
-
 ## Hierarchy selectors
 
 `.a .b` selektira elemente `.b` koji su bilo gdje među djecom elementa `.a`.
@@ -120,12 +114,12 @@ Automatski nasljeđeni propertiji (`color`, `font-family`, `line-height`) se ne 
 
 ## Overflow
 
-Definira kako će se prikazati sadržaj koji izlazi izvan granica elementa. Tekst se defaultno wrapa i povećava visinu elementa u kojem se nalazi, pa on najčešće neće viriti.
+Definira kako će se prikazati sadržaj koji izlazi izvan granica elementa. Defaultno, tekst se wrapa i povećava visinu parent elementa pa on sam neće uzrokovati overflow.
 
-`overflow: visible` je defaultan, prikazije sadržaj.
-`overflow: hidden` skriva sadržaj koji viri.
-`overflow: scroll` skriva sadržaj i prikazuje OBA scrollbara.
-`overflow: auto` skriva sadržaj i prikazuje scrollbar gdje je potreban.
+* `overflow: visible` je defaultan, prikazuje sadržaj.
+* `overflow: hidden` skriva sadržaj koji viri.
+* `overflow: scroll` skriva sadržaj i prikazuje **oba** scrollbara.
+* `overflow: auto` skriva sadržaj i prikazuje scrollbar gdje je potreban.
 
 Postavljanje `overflow` propertija stvar anovi formatting context
 
@@ -203,24 +197,45 @@ Ako želiš sakriti dio tablice, koristi `visibility: collapse` umjesto `display
 
 *Stacking order* određuje koji element će se iscrtavati iznad kojega. U slučaju da `position` i `z-index` atributi nisu definirani, elementi se iscrtavaju redom kojim su navedeni u dokumentu.
 
-Parent i njegova djeca koja se zajedno kreću unutar *stacking ordera* čine *stacking context*. `z-index` djece se gleda samo unutar *stacking contexta*, što znači da dijete iz jednog contexta neće biti prikazano iznad višeg contexta čak i ako mu staviš `z-index: 100000`.
+`z-index` elemenata se gleda samo unutar istog *stacking contexta*, što znači da element iz jednog contexta neće biti prikazan iznad višeg contexta čak i ako mu staviš `z-index: 100000`.
 
-*Stacking context* se formira:
-* ako parent ima `position` različit od `static` i `z-index`.
-* ako parent ima definiran `opacity`, `filter` `transform`, ili `perspective`.
-* ako parent ima `isolation: isolate`.
+*Stacking context* se stvara u parentu ako ima:
+* definiran `position` različit od `static` + definiran `z-index`.
+* definiran `opacity`, `filter`, `transform`, ili `perspective`.
+* `isolation: isolate`.
+
+## Float i Block Formatting Context
+
+Element koji ima `float: left` će ostati dio flowa dokumenta, ali će ga se pogurati do lijevog ruba parenta, ili do drugog prethodno floatanog elementa. Na taj način se više floatanih elemenata niže jedan kraj drugoga, a kad napune cijelu širinu parenta, prelaze u idući red.
+
+Ako želiš da se element ne wrapa oko floatova već da se pozicionira ispod njih, koristi `clear: left`.
+
+Pravila pozicioniranja i clearanja floatova primjenjuju se samo na elemente unutar istog *block formatting contexta*. Margine između različitih BFC se ne collapsaju.
+
+*Block formatting context* se stvara u parentu ako ima:
+* definiran `float`
+* `position: absolute` ili `fixed`
+* `display: inline-block`, `table-cell`, `table-caption` ili `flow-root`
+* `overflow` koji nije `visible`
+
+Floatani elementi ne utječu na visinu parenta, pa je moguće da visoki floatani element viri izvan nižeg parenta. U slučaju da su u parentu samo floatani elementi, visina parenta će biti `0`, što najčešće ne želiš.
+
+Da bi se to izbjeglo, od parenta se može stvoriti posebni BFC. Po specifikaciji, BFC i floatovi u njemu se ne smiju preklapati, pa će se posljedično parent BFC povećati da obuhvati sve floatove u sebi.
+
+Za stvaranje novog BFC-a koristi se nespretno nazvani `clearfix` hack. Ima mnogo varijatni, a najjednostavnija je `:after { content: ""; display: table; clear: both; }` koja podržava i _IE8+_. Za modernije browsere, koristi `display: flow-root`.
 
 ## Fonts
 
 `font-size`: visina slova. Koristi relativne vrijednosti `em` i `rem`, eventualno `px`.
+
 `line-height`: visina linije u odnosu na `font-size`. Najsigurnije koristiti unitless mjere, npr. `1.2`.
 
-`font-family`: lista fontova, odvojena zarezima. Imena s razmacima stavi u navodnike.
-  * Odabire se prvi font koji je dostupan. Međutim, ako se neki glyph ne nalazi u odabranom fontu, tražit će se u ostalima.
-  * Generične obitelji su zadnji fallback: `serif`, `sans-serif`, `monospace`, `cursive` i `fantasy`(!).
+`font-family` definira listu fontova odvojenih zarezima. Imena fontova s razmacima stavi u navodnike. Odabire se prvi font koji je dostupan. Međutim, ako se neki glyph ne nalazi u odabranom fontu, tražit će se u ostalima. Generične obitelji su zadnji fallback: `serif`, `sans-serif`, `monospace`, `cursive` i `fantasy`(!).
 
 `font-weight`: 100, 200, 300, 400 (`normal`), 500, 600, 700 (`bold`), 800, 900. Fallback do 400 ide na tanje, od 500 na deblje.
-`font-style`: `normal`, `italic` ili `oblique` (ali njega nitko ne koristi)
+
+`font-style`: `normal`, `italic` ili `oblique` (ali njega nitko ne koristi).
+
 `font-stretch`: `condensed`, `normal`, `expanded`. _IE9+_
 
 Ukoliko zadani `font-syle` ili `font-weight` nisu pronađeni u odabranom fontu, browser će ih pokušati *simulirati*, što često ne izgleda baš najbolje. Postoji `font-synthesis` za disablanje toga ali je podržan samo u _FF_. Do tada, pazi da fontovi koje loadaš imaju stilove i weightove koje koristiš.
@@ -239,7 +254,7 @@ Ako želiš detaljno definirati kako se određeni glyphovi fonta ponašaju, post
 * `font-variant-alternates` za swasheve, ornamente i sl.
 _FF, Safari, font-feature-settings za starije browsere_
 
-`font-smoothing` kontrolira anti-aliasing: `none` isključuje, `antialised` ili `subpixel-antialised` za ne-retina ekrane.
+`font-smoothing` kontrolira anti-aliasing: `none` isključuje, `antialised` ili `subpixel-antialised` za uređaje bez retine.
 
 ## Text
 
@@ -274,14 +289,15 @@ Za finije upravljanje razmacima između slova i riječi: `letter-spacing: 2em`, 
 
 ## vertical-align
 
-`vertical-align` radi samo na `inline` i `inline-block` elementima, te definira kako će se poravnati u odnosu na parenta.
+`vertical-align` radi samo na `inline` i `inline-block` elementima, te definira kako će se element poravnati u odnosu na parenta.
+
 Neke od vrijednosti su:
 * `baseline` poravnava u s baselineom parenta.
 * `top`, `bottom` poravnava s vrhom/dnom cijele linije.
 * `text-top`, `text-bottom` poravnava s vrhom/dnom parentovog fonta.
 * `middle` poravnava sredinu elementa sa sredinom parentove linije.
 
-Za vertikalno centrirati `block` element, najjednostavnije je: `position: absolute; top: 50%; transform: translateY(-50%)`.
+Za vertikalno centriranje `block` elementa, najjednostavnije je: `position: absolute; top: 50%; transform: translateY(-50%)`.
 
 ## Writing Modes
 
@@ -292,8 +308,8 @@ Za vertikalno centrirati `block` element, najjednostavnije je: `position: absolu
 
 ## Colors
 
-`rgba(255, 125, 12, 0.2)` (ili `#ff880f`) - `rgb` u rasponu `0..255`, i alpha kanal između `0.0` i `1.0`.
-`hsla(150, 50%, 50%, 0.5)` - `hue` je kut od `0` do `360` (odabire boju), `saturation` (zasićenost) i `lightness` (svjetlina) su postotak. Ovaj format je malo lakši za vizualizirati na prvi pogled. _IE 9+_
+`rgba(255, 125, 12, 0.2)` (ili `#ff880f`): `rgb` u rasponu `0..255`, i alpha kanal između `0.0` i `1.0`.
+`hsla(150, 50%, 50%, 0.5)`: `hue` je kut od `0` do `360` (odabire boju), `saturation` (zasićenost) i `lightness` (svjetlina) su postotak. Ovaj format je malo lakši za vizualizirati na prvi pogled. _IE 9+_
 
 `currentColor` jednak je `color` propertiju elementa, korisno za npr. `border: 1px solid currentColor` _IE 9+_
 
@@ -361,14 +377,18 @@ Gradijenti u CSS-u mogu ići kao vrijednost gdje god može biti slika (npr. `bac
 
 ## Cursor
 
-* `cursor` tip cursora iznad elementa: `default`, `pointer`, `wait`, `zoom-in`, `grab`...
-* `cursor: url(cursor.png) pointer` custom image s fallbackom
-* `pointer-events` kako element reagira na mouse event. `auto` radi normalno, `none` propušta click elementu ispod. _IE 11+_
-* `touch-action` kako element reagira na touch. `auto` dopušta sve, `none` disabla sve, `pan-x` i `pan-y` dopušta samo scroll. _IE 10+_
+`cursor` određuje izgled cursora iznad elementa: `default`, `pointer`, `wait`, `zoom-in`, `grab`...
+
+`cursor: url(cursor.png) pointer` podržava custom image s fallbackom.
+
+`pointer-events` definira kako element reagira na mouse event. `auto` radi normalno, `none` propušta click elementu ispod. _IE 11+_
+
+`touch-action` definira kako element reagira na touch. `auto` dopušta sve, `none` disabla sve, `pan-x` i `pan-y` dopušta samo scroll. _IE 10+_
 
 Moguće je selektirati vrstu uređaja po pointeru: _Chrome, Edge_
 * `@media (pointer: coarse)` neprecizno upravljanje (npr. touchscreen ili Kinect).
 * `@media (pointer: fine)` precizni upravljanje (miš, touchpad, tablet stilus)
+* `@media (hover: none)` primarni input ne podržava hover.
 
 ## Lists
 
@@ -389,7 +409,7 @@ Omogućuje prikaz teksta u više stupaca bez da moramo definirati gdje stupac po
 
 Flexbox omogućava lakše raspoređivanje elemenata unutar parenta, bez `floata` ili apsolutnog pozicioniranja.
 
-Parent element koji ima `display: flex` je *flex container*, a njegova djeca (uključujući i tekst direktno u njemu) su *flex itemi*.
+Parent element koji ima `display: flex` ili `inlin-flex` je *flex container*, a njegova djeca (uključujući i tekst direktno u njemu) su *flex itemi*.
 
 Properties *containera*:
 `flex-direction` definira *main axis* po kojem se itemi slažu:
@@ -438,14 +458,25 @@ Ako želiš definirati fiksnu veličinu itema, koristi `flex-basis`:
 
 ## CSS Grid
 
-`display: grid` označava parent kao grid container.
+`display: grid` ili `inline-grid` označava parent kao *grid container*. Njegovi child elementi tretiraju se kao *grid itemi*.
 
-`grid-template-columns` definira kako se child elementi postavljaju u stupce.
+`grid-template-columns` definira kako se itemi postavljaju u stupce.
 `grid-template-columns: 200px 200px` dva stupca fiksne širine.
 `grid-template-columns: 1fr 2fr` dva stupca, drugi duplo širi od prvoga.
 `grid-template-columns: 200px 1fr 1fr` fiksni stupac, a druga dva jednako dijele ostatak prostora.
 
-`grid-gap: 5px` za razmak između elemenata. Shorthand za `grid-column-gap` i `grid-row-gap`.
+`grid-template-columns: min-content ...` zauzima minimalnu širinu da sadržaj ne overflowa.
+`grid-template-columns: max-content ...` zauzima minimalnu širinu da sadržaj ne wrapa.
+
+`grid-template-columns: 30px 100px 30px 100px 30px 100px` se može kraće napisati kao `grid-template-columns: repeat(3, 30px 100px)`.
+
+`grid-template-rows` je isto, samo za veličinu redova.
+
+`grid-gap: 5px` za razmak između itema. Shorthand za `grid-column-gap` i `grid-row-gap`.
+
+Grid itemi se defaultno pozicioniraju po redu navedenom u dokumentu, i svaki zauzima jedan cell.
+`grid-column-start: 3` pozicionira item da počne od 3. stupca.
+`grid-column-end: 5` proteže item do 5. stupca. S gornjom vrijednosti, item će biti širok 2 stupca.
 
 ## Filter _Chrome, FF, Safari_
 
@@ -460,8 +491,7 @@ Filteri se mogu i kombinirati (`filter: blur(2px) sepia(10%)`), a i animirati.
 
 ## Transform _IE 9+_
 
-Transformiranje elemenata koje ne utječe na layout, npr: `transform: scale(1.5)`
-Transformacije se mogu kombinirati: `transform: scale(1.5) rotate(20deg)`.
+Transformiranje elemenata koje ne utječe na layout, npr `transform: scale(1.5)`. Transformacije se mogu kombinirati: `transform: scale(1.5) rotate(20deg)`.
 
 `transform-origin` definira ishodište elementa (os za rotaciju, fiskna točka za scale i skew). Defaultno je središte elementa.
 
@@ -489,9 +519,14 @@ Ako se element 3D transformira unutar parenta koji se isto transformira, po defa
 
 Ako 3D tranformacija okrene element da mu vidimo guzicu, defaultno će biti vidljiv. Za sakriti guzicu, koristi `backface-visibility: hidden`.
 
-## Shapes _Chrome, Safari_
+## Clip Paths and Shapes _Chrome, Safari_
 
-`shape-outside` definira oblik floatanog elementa oko kojeg će se wrapati text. Po defaultu je to kvadrat, ali ne mora biti.
+`clip-path` definira dio elementa koji će se prikazati i sakriti ostatak.
+
+`shape-outside` definira kako će se wrapati text oko elementa, bez da mijenja oblik elementa. Radi samo za floatane elemente.
+
+Vrijednosti koje mogu primiti:
+* `inset(10px 20px 30px 40px)` definira shape od bordera elementa.
 * `circle()` ili `ellipse()`. `circle(100px at 30% 50%)` definira radius i centar.
 * `polygon(10px 10px, 20px 20px, 30px 30px)` definira poligon pomoću vrhova.
 * `url(image.png)` koristi se alpha kanal slike (wow!).
@@ -528,20 +563,34 @@ Korisno za reusanje vrijednosti. Za razliku od preprocessor varijabli, mogu se m
 * `:root { --main-color: red; }` postavljanje vrijednosti varijable.
 * `p { color: var(--main-color); }` dohvaćanje vrijednosti varijable.
 
-## Media queries (TODO)
+## Media queries
 
-<link media=print> ili media=(min-width: 61.5em)
-@media (screen, screen only) https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+Media queries služe za prepoznavanje vrste i značajki browsera na kojem se stranica prikazuje. Više uvjeta se može kombinirati pomoću `and`, npr. `@media screen and (min-device-width: 320px)`.
 
-## Feature queries
+Media types:
+* `@media screen` za normalne browsere.
+* `@media print` za printanje stranice.
+* `@media speech` za screen readere.
 
-`@support (display: grid) { ... }` primjenit će block samo ako browser podržava property u zagradama. _Chrome, FF, Edge_
-* ovo *ne služi* da bi ispitao da li je `border-radius` podržan prije nego ga probaš primijeniti - browser će ionako preskočiti property koji ne podržava.
-* ovo služi da grupiraš propertije koje želiš da se primjene ako je `border-radius` podržan, npr. želiš `border-width: 3px` samo ako će biti i `border-radius`.
-* pravila se mogu kombinirati s `or`, `and` i `not`, npr. `(border-radius: 1px and display:grid)`
-* zbog starih browsera strukturiraj css da ide *prvo fallback code*, *onda support block*.
+Media features:
+* `@media (min-width: 200px)` i `@media (max-height: 30em)` za širinu i visinu viewporta.
+* `@media (orientation: portrait)` ili `landscape` za orijentaciju uređaja.
+* `@media (min-resolution: 300dpi)` ili `2dppx` za rezoluciju uređaja.
+
+Korištenje relativnih veličina u media querijima (`30em`) omogućava da se content ispravno prikazuje čak i ako korisnik mijenja defaultnu veličinu fonta.
+
+## Feature queries _Chrome, FF, Edge_
+
+`@support (display: grid) { ... }` primjenit će block samo ako browser podržava property u zagradama.
+
+Ovo *ne služi* da bi ispitao da li je `border-radius` podržan prije nego ga probaš primijeniti - browser će ionako preskočiti property koji ne podržava. Ovo služi da grupiraš propertije koje želiš da se primjene ako je `border-radius` podržan, npr. želiš `border-width: 3px` samo ako će biti i `border-radius`.
+
+Pravila se mogu kombinirati s `or`, `and` i `not`, npr. `(border-radius: 1px and display:grid)`
+
+Zbog starih browsera strukturiraj css da ide *prvo fallback code*, *onda support block*.
 
 ## Literatura
 
 * http://cssreference.io/
+* https://tympanus.net/codrops/css_reference
 * http://flexboxfroggy.com/ za učenje flexboxa

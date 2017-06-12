@@ -80,6 +80,11 @@ Sintaksa je slična kao i CSS:
 * GSAP (GreenSock) za sequencing i kompleksno kretanje (i cross browser compatibility)
 * mo.js je neki cool library isto
 
+Za shape morphing:
+* `morphSVG` je plugin za GreenSock
+* `snapSVG` ima `animate()` funkciju za animaciju pathova.
+* `SVG Morpheus`
+
 ## Primjeri
 
 * confetti: http://codepen.io/danwilson/pen/vKzbgd/

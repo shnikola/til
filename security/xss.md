@@ -2,6 +2,8 @@
 
 Napadač umeće javascript naredbu u stranicu kojoj korisnik vjeruje. S njime može očitati korisnikov cookie (ukrasti njegov session id) ili učitati bilo kakvu dodatnu skriptu (npr. za keylogging).
 
+Ovaj napad zloupotrebljava korisnikovo povjerenje u site na kojem se nalazi.
+
 ## Vrste XSS-a
 
 *Reflected XSS* šalje naredbu kroz URL parametar koji se renderira na stranici. Napadač mora natjerati korisnika da ode na URL s tim parametrom (može biti skriven shortenerom), ili posjeti napadačevu stranicu na kojoj je iframe s tim URL-om.
@@ -12,7 +14,7 @@ Napadač umeće javascript naredbu u stranicu kojoj korisnik vjeruje. S njime mo
 
 *Self XSS* napadač uvjeri korisnika da pokrene naredbu kroz Developer Tools konzolu.
 
-## Načini napada
+## Metoda napada
 
 `<script> evil() </script>` ako ubacuješ unutar elementa (s tim da browser neće poketati `<script>` nakon što je stranica loadana).
 

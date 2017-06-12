@@ -57,6 +57,14 @@ Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. L
 
 Tek odustajanjem od univerzalnog ("autentičnog") rješenja i prihvaćajući raznovrsnost ljudi i ukusa možemo doći do zadovoljnih mušterija.
 
+## Writing One-Sentence Product Descriptions
+
+Želiš prodati proizvod posjetitelju u 30 sekundi. Predstavi glavni feature koji:
+* rješava najveći paint point tvojim mušterijama, i
+* čini te drugačijim od tvojeg najbližeg konkurenta.
+
+Dobar oblik rečenice je input > output, npr. "Tap a button, get a ride".
+
 ## Mali poklon
 
 https://news.ycombinator.com/item?id=13158914

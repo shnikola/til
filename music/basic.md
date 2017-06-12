@@ -13,6 +13,11 @@ Oktava (u zapadnoj kulturi) sastoji se of 12 tonova, od `1*f` do `2*f` (gdje je 
 Za razliku od equal-tempered tuninga gdje je omjer susjednih frekvencija jednak, postoje i drugi tuning sistemi (just innotation, pythagorrean tuning).
 Ako ne koristi equal temperament, različiti keyevi će zvučati drugačije.
 
+## Tools
+
+* PaulStretch - za ultra dugo produživanje nekog zvuka. Odsviraj par nota, produži ih i podigni reverb, i imaš superatmosferičnu glazbu.
+
 ## Literatura
+
 * http://tobyfox.net/Tutorials/musicdef.html
 * http://www.lightnote.co/

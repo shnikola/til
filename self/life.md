@@ -57,9 +57,13 @@ Here's the thing: there is no real life. There is no full, meaningful, "best lif
 
 Consider that the apartment in this city, the house in that city, are both just boxes to live in. You can only do so much in an evening, and of all the life that exists on the Earth, you will see only a tiny glimpse of it. Human beings are world-class yearners, so it's okay to feel melancholy about this. Accept the sadness, and happiness will creep in when you least expect it."
 
+## Self-compassion vs Self-esteem
+
+Ne trebaš boostati vlastiti ego. Trebaš imati suosjećanje prema samom sebi kakvo imaš prema bliskim prijateljima i obitelji. Neuspjeh trebaš dočekati ne s "Jadan ja" nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."
+
 ## Minimalism
 
-Minimalizam kao stil života tjera pojedinca da ispita koje stvari dodaju vrijednost u njegov život. Kada ukloniš clutter iz života, ostaje ti više vremena za važne aspekte života: zdravlje, odnose, strast, razvoj i sudjelovanje.
+Minimalizam kao stil života tjera pojedinca da ispita koje stvari dodaju vrijednost u njegov život. Kada ukloniš clutter iz života, ostaje ti više vremena za važne aspekte života: zdravlje, odnose, strast, razvoj i aktivno sudjelovanje.
 
 To isto, pa čak i više, vrijedi za digitalne "stvari".
 
@@ -94,3 +98,7 @@ Napiši 100 random, makar glupavih ideja. Od njih, propagiraj 10 u idući krug g
 ## Umiranje
 
 http://hintjens.com/blog:115
+
+## How to be miserable
+
+https://www.youtube.com/watch?v=LO1mTELoj6o

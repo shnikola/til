@@ -2,7 +2,7 @@
 
 Web Cache stoji između servera i klijenta, pamti odgovore i koristi ih ako se request ponovi. Time se skraćuje put do servera, pa se *smanjuje latencija* i *smanjuje promet u mreži*.
 
-*Browser Cache* lokalno sprema response za jednog usera (*private cache*). Smanjuje potrošnju bandwitha za iste assete koji se pojavljuju na različitim stranicama.
+*Browser Cache* lokalno sprema response za jednog usera (*private cache*). Smanjuje potrošnju bandwidtha za iste assete koji se pojavljuju na različitim stranicama.
 
 *Proxy Cache* je na mreži izmežu klijenta i servera, sprema response za mnoge usere (*shared cache*). Postavlja ih ISP kako bi smanjio latenciju i promet na mreži.
 
@@ -62,6 +62,14 @@ U konfiguraciju servera dodaj:
 Ako imaš baš jako veliki traffic, može se dogoditi *cache stampede*. Više istovremenih requestova počne dohvaćati resource koji je expirao pa cache prosljeđuje request na server za svakog (umjesto samo za jednog). Ovo se može izbjeći lockingom: `proxy_cache_lock on;` i `proxy_cache_use_stale updating;`
 
 Na aplikacijskom serveru vraćaj `Cache-Control: public` samo za stranice koje ne koriste cookije.
+
+## Caching S3 with ngnix and HAProxy
+
+https://blog.sentry.io/2017/03/01/dodging-s3-downtime-with-nginx-and-haproxy.html
+
+Dohvaćanje podataka iz S3 bucketa im je imalo preveliku latenciju, a S3 usto ograničava bandwidth prema serverima izvan AWSa.
+
+Zato su dodali proxy cache sa 750GB diska u svoj datacentar kako bi se put do S3-a skratio. HAProxy je usmjeravao sve requeste na cache, ili u slučaju da cache faila, na S3.
 
 ## CloudFlare Railgun
 

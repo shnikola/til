@@ -30,4 +30,12 @@ Sjeti se da je Johna Carmacka sto puta pametniji od tebe, a i dalje sto puta man
 
 http://calnewport.com/blog/2013/12/21/deep-habits-the-importance-of-planning-every-minute-of-your-work-day/
 
-Svaki dan popodne isplaniraj kompletan sutrašnji dan u blokovima. Većina kreativaca ne radi najbolje "kada su insipirirani" nego po striktnom rasporedu.
+Svaki dan popodne isplaniraj kompletan sutrašnji dan u blokovima. Većina kreativaca ne radi najbolje "kada su inspirirani" nego po striktnom rasporedu.
+
+## Creative frustration
+
+https://twitter.com/neillcameron/status/862600715646230535
+
+Kada stvaraš (crtaš, pišeš) postoje dvije verzije tvog rada: jedna u tvojoj glavi i druga koja završi na papiru. Pošto vidiš obje verzije, možeš ih usporediti i biti frustriran razlikom između njih. Ali svi ostali vide samo verziju na papiru, i sude samo o njoj. I može im se čak i svidjeti.
+
+Ako rad ne ispadne kako si ga zamislio, što se može. Pogledaj ga, nauči nešto iz njega, pokušaj napraviti idućeg bolje. Ili još bolje: odustani od pojma kvalitete i uživaj u procesu stvaranja nečega.

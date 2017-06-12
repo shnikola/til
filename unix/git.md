@@ -2,14 +2,14 @@
 
 ## Basics
 
-Git ne sprema verzije fileova kao diffove, nego kao snapshotove. Zbog toga git funckionira više kao mini file system nego kao VCS.
+Git ne sprema verzije fileova kao diffove, nego kao snapshotove. Zbog toga git funckionira više kao mini file system nego kao version control system.
 
 Git projekt se sastoji od 3 dijela:
 * `.git` directory u kojem se nalaze objekti i metadata projekta.
 * staging area (index) u kojem se drži što ide u sljedeći commit.
-* working directory je checkout jednog snapshota projekta koji se nalazi na disku i može se modificirati.
+* working directory koji je checkout jednog snapshota projekta zapisan na disk i može se modificirati.
 
-Svaki file u working directoriju može biti tracked (postojao je u posljednjem snapshotu) ili untracked (nije postojao).
+Ako je file u working directoriju postojao u posljednjem snapshotu kažemo da je *tracked*, ako nije postojao kažemo da je *untracked*.
 
 `git init` stvara novi `.git` directory unutar postojećeg projekta.
 `git clone <url>` dohvaća cijelokupnu povijest svih fileova i stavlja je u lokalni directory. Dodaje remote repository kao `origin`. Postavlja lokalni `master` branch da tracka remote `master`.
@@ -81,7 +81,7 @@ Lokalno se čuvaju i remote branchevi (npr. `origin/master`) koji drže stanje r
 
 Ako se unutar rebasea dogodi konflikt, a želiš odustati, koristi `--abort`.
 
-Rebase je dobar jer ostavlja cijelovitu povijest commitova prilikom merga brancheva, ali ne snmiješ rebasati commitove koji su već pushani. Prilikom rebasea stvaraš nove commitove i napuštaš stare, što će učiniti kaos u tuđim repozitorijima.
+Rebase je dobar jer ostavlja cijelovitu povijest commitova prilikom merga brancheva, ali ne smiješ rebasati commitove koji su već pushani. Prilikom rebasea stvaraš nove commitove i napuštaš stare, što će učiniti kaos u tuđim repozitorijima.
 
 ### Remote Branches
 
@@ -113,12 +113,12 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 ## Reset
 
 `git reset <commit>` pomjera na što `HEAD` i trenutni branch pokazuju, npr. `git reset HEAD~` postavlja `HEAD` i trenutni branch na parent commit. Dolazi s nekoliko opcija:
-* `git reset --soft HEAD~` samo postavlja novi `HEAD`, ali ostaju stare verzije fileova u stagingu i working directoriju.
-* `git reset --mixed HEAD~` (default) stavlja verzije novog `HEAD`a u staging.
-* `git reset --hard HEAD~` stavlja verzije novog `HEAD`a u staging i working directory, što znači da se sve promjene nepovratno gube.
+* `git reset --soft HEAD~` stare verzije fileova ostaju u stagingu i working directoriju.
+* `git reset --mixed HEAD~` (default) stare verzije fileova ostaju u working directoriju.
+* `git reset --hard HEAD~` sve promjene se nepovratno gube.
 
 `git reset <file>` oblik neće mijenjati `HEAD`, nego će samo primjeniti promjene na zadanim fileovima.
-* `git reset HEAD file.txt` (`HEAD` ne treba pisati) kopira verziju filea iz `HEAD`a i stavlja ga u staging, što efektivno briše stageane promjene.
+* `git reset HEAD file.txt` (`HEAD` ne treba pisati) briše staged promjene iz filea (tj. kopira verziju filea iz `HEAD`a i stavlja ga u staging)
 * `git reset HEAD~1 file.txt` stavlja verziju iz parent commita u staging.
 
 ## Checkout
@@ -131,6 +131,9 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 
 Ako si zaboravio dodati file u commit (a nisi pushao):
 Dodaj ga s `git add file.txt`, pa pozovi `git commit --ammend` koji će dodati sve promjene iz staginga u prethodni commit.
+
+Ako si napravio krivi commit, a nisi pushao:
+Napravi `git reset HEAD~` i commitane promjene će biti u stagingu.
 
 Ako si napravio 3 commita koja želi squashati:
 Napravi `git reset --soft HEAD~2` da vratiš `HEAD` za dva commita unazad. U stagingu su ti najnovije verzije fileova koje možeš sve ubaciti u jedan `git commit`.
@@ -179,6 +182,7 @@ Branchevi se drže u `.git/refs/heads`. Svaki branch ima svoj file koji sadrži 
 * `alias.staash 'stash --include-untracked'` stash koji dodaje untracked fileove
 * `alias.st 'status --short --branch'` kratki ispis statusa
 * `alias.merc 'merge --no-ff'` merge uvijek stvara novi commit
+* `alias.prune 'fetch --prune'` briše lokalne brancheve koji su obrisani na remoteu.
 
 ## Workflows
 

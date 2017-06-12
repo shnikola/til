@@ -1,8 +1,5 @@
 # Amazon Web Services
 
-TODO
-aws route 53
-
 ## Elastic Beanstalk
 
 Koristi se za deployanje aplikacija na unaprijed konfigurirani EC2 stroj, s instaliranim OS-om i Rubijem određene verzije.
@@ -40,4 +37,6 @@ SDK će automatski koristiti tvoj defaultni profil. Ako želiš koristiti neki d
 
 # Literatura
 
+* https://www.expeditedssl.com/aws-in-plain-english
 * https://github.com/open-guides/og-aws
+

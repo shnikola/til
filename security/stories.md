@@ -57,3 +57,13 @@ Svatko živ bi pao na ovo.
 https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/
 
 Zbog buga u handlanju pointera u HTML parseru Cloudflarea, u HTTP response dodavao se sadržaj memorije servera. Između ostalog tu su bili dijelovi tuđih HTTP requesta s headerima, cookijima, API keyevima i sl. Još gore, search enginei su cachirali stranice s tim osjetljivim sadržajem, dopustivši svakome da im pristupi.
+
+## Spotify unicode account hijacking
+
+https://labs.spotify.com/2013/06/18/creative-usernames/
+
+Registriranjem korisnika s Unicode imenom `ᴮᴵᴳᴮᴵᴿᴰ` i slanjem password reset maila, promijenio bi password korisniku `BigBird`.
+
+Imali su ugrađenu provjeru protiv homografskih napada tako što su u bazu zapisivali "kanonski" oblik usernamea i koristila za uniqueness provjeru. Ali kanonizacija (`str.upcase.unicode_normalize`) nije bila idempodentna: `ᴮᴵᴳᴮᴵᴿᴰ` > `bigbird` > `BIGBIRD`, pa se u određenim slučajevima mogla izbjeći provjera uniquenessa, a i dalje koristiti username kao tuđi.
+
+**Pouka:** ako normaliziraš Unicode, provjeri je li normalizacija idempodentna (koliko god puta se pozvala uvijek vrati istu stvar).

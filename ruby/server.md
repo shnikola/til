@@ -10,13 +10,23 @@ TODO: thin, unicorn
 2. Šalje ga racku kroz varijablu u `call(env)`
 3. Rack vraća array `['200', {'Content-Type' => 'text/html'}, ['Response Body.']]` sa statusom, headerima i bodyjem.
 
+### Rack Hijack
+
+Rack 1.5 nema direktnu podršku za Streaming, Server-Sent Events i Websockete, ali dozvoljava "socket hijacking" koji prepušta developeru direktno pisanje u socket i ručno implementiranje spomenutih protokola.
+
+Full Hijacking API predaje aplikaciji potpunu kontrolu socketa, a sam server ne šalje ništa. `env['rack.hijack'].call` započinje socket hijack, a za pisanje u socket koristi se IO objekt `env['rack.hijack_io']`. Aplikacija je zadužena za ispisivanje headera i zatvaranje IO objekta.
+
+Partial Hijacking API obavlja slanje headera iz servera, a zatim predaje kontrolu socketa aplikaciji. `headers['rack.hijack'] = proc do |io|` definira ponašanje nakon slanja headera. Body dio responsa `[200, headers, []]` se zanemaruje.
+
 ## Procfile
 
 Rails aplikacija često zahtjeva pokretanje više različith procesa (web, workers, scheduleri). Za lakši management koristi se `Procfile`, koji je tekst file s linijama u formatu `<process type>: <command>`, npr. `web: bundle exec thin start -p $PORT`
 
 Za pokretanje koristi `procodile` (prvi je bio `foreman`, ali ovaj ima više opcija). Koristi `procodile start --dev` lokalno i `procodile status` za popis pokrenutih procesa.
 
-Koristi ga i Heroku, a trenutno pokrenute procese možeš vidjeti s `heroku ps`.
+Procfile se koristi i za deployment na Heroku. Trenutno pokrenute procese možeš vidjeti s `heroku ps`.
+
+Korisna opcija je `release: rubocop -Fl -fo --fail-level E` koja spriječava deployment ako aplikacija sadrži syntax error.
 
 ## Puma
 
@@ -45,6 +55,20 @@ Puma ne posjeduje mehanizam za *timeout*. `Heroku` router timeouta sve requeste 
 Unicorn se kršio s:
 `Operation not permitted @ rb_file_chown - /home/jugosluh/shared/log/unicorn.log`
 U `unicorn.rb` user nije bio postavljen na "app" s kojim sam deployao iz mine (on je stvarao foldere i sve)
+
+## message_bus
+
+https://github.com/SamSaffron/message_bus
+
+MessageBus omogućuje server-server i server-klijent asinkronu komunikaciju porukama. Koristi long polling sa streamingom kako bi poslao više poruka s istom konekcijom, a fallbacka na long polling i polling gdje server ne podržava streaming.
+
+`MessageBus.publish("/channel", "message")` šalje poruku na kanal.
+`MessageBus.publish("/channel", "hello", user_ids: [1,2,3]`) šalje poruku samo navedenim userima.
+`MessageBus.subscribe("/channel") do |msg|` definira ponašanje kad poruka stigne na kanal. Handler se vrti u zasebnom threadu dediciranom za primanje poruka.
+
+Komunikacija je replayable: u bilo kojem trenutku možeš zatražiti backlog poruka (perzistirane u Redisu ili Postgresu).
+
+MessageBus radi unutar serverskog procesa, pa nije potrebno otvarati poseban port i server za slanje poruka.
 
 ## Ruby i HTTP/2
 
@@ -77,13 +101,11 @@ Podržava različite uvjete:
 
 https://devcenter.heroku.com/articles/concurrency-and-database-connections
 
-Ako koristiš multi-threaded ili multi-process server, imaj na umu da svaki thread zahtjeva svoju database konekciju. Svaki database ima ograničenje koliko maksimalno konekcija može podržavati.
+Svaki database ima ograničenje koliko maksimalno konekcija može podržavati. Ako koristiš multi-threaded ili multi-process server, imaj na umu da svaki thread zahtjeva svoju database konekciju.
 
-Kako bi izbjegao otvaranje prevelikog broja konekcija, ActiveRecord drži `ConnectionPool`, veličine podesive kroz database setting `pool` (default veličina je `5`). Ako pokušaš dohvatiti konekciju kada su sve zauzete, ActiveRecord će blokirati upit i čekati dok se prva ne oslobodi. Ako ne uspije dobiti konekciju, bacit će `ConnectionTimeoutError`.
-
-Za multi-threaded servere, pool će se konfigurirati pri inicijalizaciji aplikacije koristeći property `pool` u `config/database.yml`. Kod Pume, svaki proces ima svoj pool, pa je dovoljno je da postaviš `pool: ENV['RAILS_MAX_THREADS']`, po konekciju za svaki thread.
+Za multi-threaded servere, connection pool će se konfigurirati pri inicijalizaciji aplikacije koristeći property `pool` u `config/database.yml`. Kod Pume, svaki proces ima svoj pool, pa je dovoljno je da postaviš `pool: ENV['RAILS_MAX_THREADS']`, po konekciju za svaki thread.
 
 Kod multi-process servera, master proces inicijalizira aplikaciju i tek onda forka workere. Pošto njemu samom ne treba konekcija, možeš u `config/unicorn.rb` dodati:
-* `ActiveRecord::Base.connection.disconnect!` unutar `before_fork`
-* `ActiveRecord::Base.establish_connection` u `after_fork`
+* `before_fork { ActiveRecord::Base.connection.disconnect! }`
+* `after_fork { ActiveRecord::Base.establish_connection }`
 

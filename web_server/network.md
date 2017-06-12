@@ -64,23 +64,16 @@ https://howdns.works/
 7. Resolver se šalje na autorativne nameservere (npr. `ns1.wikipedia.org`). Registrar je zadužen da pri registriranju domene pošalje svoje nameservere TLD registru. `WHOIS` query vraća autorativne nameservere za domenu. Oni će uvijek imati IP adresu domene.
 8. Resolver vraća OS-u IP adresu koji je cachira i prosljeđuje browseru.
 
-
-2. Browser traži IP adresu za "wikipedia.org". Browser cache -> OS cache -> Router cache -> ISP DNS cache -> Root nameserver -> .org nameserver -> wikipedia.org nameserver.
-
-
-
 ## IPv6
 
 IPv4 adrese imaju 32 bita, što znači da postoji samo 4 milijarde različitih IP adresa. U zadnje vrijeme to postaje premalo.
 
 Ipv6 imaju 128 bitova. OS-ovi ih podržavaju, ali serveri još nisu spremni.
 
-## Internationalized domain name
+## data-uri _IE8+_
 
-DNS podržava ne-ASCII znakove, ali protokoli koje email i browseri koriste često podržavaju samo ASCII.
-IDN prevodi unicode u ASCII domene koristeći `Punycode`: `Bücher.ch > xn--bcher-kva.ch`
-
-Ovo se može iskoristiti za *IDN homograph attack*: spoofanje domene koristeći npr. ćirilićna slova koja izgledaju isto kao i latinična. Zato browseri uglavno prikazaju Punycode prikaz upitnih slova.
+URI koji sadrži inline data. Koriste se kako bi se uštedio request.
+Format je `data:[<media type>][;base64],<data>`. (npr. `data:image/png;base64,iVBORw0KGgoAA...`)
 
 ## Kako iza domene može stajati više IP-jeva
 

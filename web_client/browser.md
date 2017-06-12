@@ -105,7 +105,7 @@ Propertiji uvijek dobivaju početnu vrijednost od atributa.
 
 Preferiraj koristiti propertije, pogotovo s boolean vrijednostima. Attributi za boolean moraju koristiti `setAttribute('disabled', false)` i `removeAttribute('disabled')`, a property samo `disabled = true` i `disabled = false`
 
-Custom *data attributes* dostupni su preko `el.dataset` propertija. Propertiji koriste camelcase koji se za HTML prevodi u dash-style, npr. `el.dataset.dateOfBirth` mapira se u `data-date-of-birth`. _IE 11+_
+*Custom Data Attributes* dostupni su preko `el.dataset` propertija. Propertiji koriste camelcase koji se za HTML prevodi u dash-style, npr. `el.dataset.dateOfBirth` mapira se u `data-date-of-birth`. _IE 11+_
 
 ## DOM Events
 
@@ -361,11 +361,31 @@ Opcije koje se mogu poslati pri dohvatu lokacije:
 
 Zahtjeva HTTPS za korištenje.
 
-## Media Devices (TODO)
+## Media Devices
 
 Omogućuje korištenje ulaznih uređaja poput kamere i mikrofona.
 
-navigator.mediaDevices
+`navigator.mediaDevices.enumerateDevices().then(devices => ...)` vraća array `MediaDeviceInfo` objekata:
+* `device.deviceId` za ID uređaja.
+* `device.kind` može biti `audioinput`, `audiooutput`, ili `videoinput`.
+* `device.label` za naziv uređaja.
+
+`element.setSinkId(deviceId)` se može iskoristiti kako bi se promjenio output destination `<audio>` ili `<video>` elementa.
+
+`navigator.mediaDevices.getUserMedia(constraints).then(stream => ...)` zahtjeva permission usera za korištenje input devicea. Ukoliko je odobren, vraća promise s `MediaStream` objektom.
+
+`constraint` je oblika `{audio: true, video: true}`. Za korištenje prednje kamere `{video: {facingMode: {exact: "user"}}}`.
+
+`navigator.mediaDevices.addEventListener('devicechange', ...)` za prepoznavanje ako se novi input uređaj spoji na računalo.
+
+## Media Session API
+
+Kada se pušta `audio` ili `video` na mobilnom browseru, u notification panelu prikazat će se mali player.
+
+`navigator.mediaSession.metadata = new MediaMetadata({ title: ...})` dodaje podatke o snimci koja se trenutno pušta u taj notification. Dodaj ovaj kod u callback `play` eventa. Podatci će se sami ukloniti kada snimka završi.
+
+`navigator.mediaSession.setActionHandler('nexttrack', ...)` definira ponašanje kada se klikne na next button u notificationu. Ovaj i drugi buttoni (`previoustrack`, `seekbackward`, `seekforward`) će se prikazati samo ako je definiran action handler.
+
 
 ## Speech Synthesis
 
@@ -387,26 +407,27 @@ navigator.mediaDevices
 
 ## Vibration API
 
-`window.navigator.vibrate(200)` - vibriraj 200ms
-`window.navigator.vibrate([200, 100, 200])` - vibriraj 200ms, pauza 100ms, vibriraj 200ms
-`window.navigator.vibrate(0)` - prekini trenutnu vibraciju
+`navigator.vibrate(200)` - vibriraj 200ms
+`navigator.vibrate([200, 100, 200])` - vibriraj 200ms, pauza 100ms, vibriraj 200ms
+`navigator.vibrate(0)` - prekini trenutnu vibraciju
 
 ## Battery Status API
 
-`window.navigator.getBattery()` - vraća promise s BatteryManager objektom
+`navigator.getBattery()` - vraća promise s BatteryManager objektom
 `BatteryManager.charging` puni li se trenutno. Event: `chargingchange`
 `BatteryManager.chargingTime` vrijeme u sekundama dok se ne napuni. Event: `chargingtimechange`
 `BatteryManager.dischargingTime` vrijeme u sekundama dok se ne isprazni. Event: `dischargingtimechange`
 `BatteryManager.level` napunjenost baterije između 0.0 i 1.0. Event: `levelchange`
 
-## Fetch API _Chrome, FF_
+## Timing API
 
-Omogućuje jednostavno dohvaćanje resourca s weba umjesto gnjavaže s XMLHttpRequest:
+`window.performance.getEntries()` vraća performance timeline, array `PerformanceEntry` objekata različitih `entryType` atributa koji svi imaju `startTime` i `duration`.
 
-`fetch('flowers.jpg', options).then(response => ...).catch(err => ...)`. U opcijama se može postaviti `method`, `url`, `headers`, `referrer`, `mode` (`cors`, `no-cors`, `same-origin`), `credentials` (`omit`, `same-origin`).
+*Resource Timing* mjeri loadanje određenog resourca. Dostupan je u `window.performance.getEntriesByType("resource")`. Svaki objekt sadrži intervale dostupne pod atributima: `startTime` > `redirectStart` > `redirectEnd` > `fetchStart` > `domainLookupStart` > `domainLookupEnd` > `connectStart` > `secureConnectionStart` > `connectEnd` > `requestStart` > `responseStart` > `responseEnd`.
 
-Headeri se dodaju s `headers = new Headers({ ... })`. Dodatno se mogu dodavati s `headers.append` i `headers.set`.
+*Navigation Timing* mjeri učitavanje i prikaz cijele stranice. Dostupan je u `window.performance.navigation`. Sadrži iste atribute kao i Resource Timing (za dohvaćanje dokumenta), i još dodatno: `responseEnd` > `domInteractive` > `domContentLoadedEventStart` > `domContentLoadedEventEnd` > `domComplete` > `loadEventStart` > `loadEventEnd`.
 
+*User Timing* služi za mjerenje custom korisničkih akcija. Oznake se postavljaju pomoću `performance.mark("actionStart")` i `performance.mark("actionEnd")`. Vrijeme između dvije oznake se mjeri pomoću `performance.measure('actionmark', 'actionStart', 'actionEnd')`. Mjerenja se dohvaćaju pomoću  `window.performance.getEntriesByType("mark")` ili `("measure")`, a brišu s `clearMarks()` i `cleanMeasures()`.
 
 ## Url Parsing
 

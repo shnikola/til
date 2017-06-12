@@ -19,14 +19,6 @@ Umjesto relacijske baze, oni za svaki entitet (Users, Links, Comments), imaju dv
 
 Najveći problem s ovim je što se moraš sam brinuti za konzistentnost podataka, umjesto da koristiš mehanizme same baze usavršene za relacijski tip podataka. A problemi koje su naveli uopće nisu problemi: Postgres omogućuje gotovo besplatno dodavanje novih stupaca, a za MySql uvijek možeš dodati pomoćnu tablicu s novim stupcem, triggerima i UPDATEom prebaciti podatke u nju, i preimenovati je kad završiš.
 
-## Scaling Pinterest (2013)
-
-https://www.infoq.com/presentations/Pinterest
-
-* EC2, Shardani Mysql, Memcached i Redis
-* MySQL: req/res rate raste linearno, ne eksponencijalno
-* Zbog Shardanje nema joinova, sve se radi sa SELECT koji je dobro cachiran.
-
 ## Postgres tips from Instagram (2013)
 
 http://instagram-engineering.tumblr.com/post/10853187575/sharding-ids-at-instagram
@@ -76,7 +68,7 @@ https://eng.uber.com/mysql-migration/
 Uber je počeo kao monolitna Python aplikacija na Postgresu, a danas je milijun
 mikroservisa na `Schemaless`, sharding layeru izgrađenom na Mysqlu. Razlozi zbog kojeg su odustali od Postgresa:
 * *Write amplification*: svaki update rowa u pozadini stvara novi row, te preusmjerava sve indekse na njega (čak i ako se indeksirani stupci nisu promijenili). Drugim riječima, promjena samo nekoliko bytova uzrokuju gomilu operacija na fizičkom layeru.
-* *Replication*: to se još više amplificira na replikama mastera, gdje se umjesto logičkih ("promijeni stupac u redu") šalju naredbe na razini diska ("stvori novi row, prebaci primary key na njega, prebaci indekse na njega"), što troši puno više bandwitha.
+* *Replication*: to se još više amplificira na replikama mastera, gdje se umjesto logičkih ("promijeni stupac u redu") šalju naredbe na razini diska ("stvori novi row, prebaci primary key na njega, prebaci indekse na njega"), što troši puno više bandwidtha.
 * *Upgrade* je zeznut s replikama, ali postoji neki `pglogical` alat koji tome pomaže.
 
 Još neke prednosti Mysqla:

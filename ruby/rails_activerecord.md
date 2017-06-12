@@ -56,7 +56,15 @@ Podržava custom typove i `changed_in_place?`
 
 Koristi `size`! Jedino ako trebaš broj taman prije nego ćeš loadati sve recorde, koristi `length`.
 
-Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full table scan.
+Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full table scan. Umjesto `User.count > 1` koristi `User.limit(2).count > 1`.
+
+## Batches
+
+`find_each` učitava recorde u batchevima i bloku prosljeđuje po jedan record. Korisno kako se ne bi svi recordi učitalu u memoriji odjednom. Ne dopušta korištenje `order` jer se orderaju po id-ju.
+
+`find_in_batches` učitava recorde u batchevima i bloku prosljeđuje cijeli batch kao array.
+
+`in_batches` učitava recorde u batchevima, ali bloku prosljeđuje batch kao `Relation` objekt, pa se na njemu može pozvati `delete_all` ili `update_all`.
 
 ## Callbacks
 
@@ -65,5 +73,19 @@ http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/
 Ako želiš u callbacku gurati stvari u background job (zar ne bi trebao koristiti servise?), nemoj koristiti `after_save` nego `after_commit`.
 
 `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
+
+## Connection Pool
+
+Kako bi izbjegao otvaranje prevelikog broja konekcija, ActiveRecord koristi `ConnectionPool`. Connection pool je thread safe, i svaki thread dohvaća konekciju kada je koristi, i oslobađa je kada je gotov s njom. Pool je thread-safe i osigurava da konekciju ne mogu istovremeno koristiti dva threada.
+
+Ako pokušaš iz poola dohvatiti konekciju dok su sve zauzete, ActiveRecord će blokirati upit i čekati dok se jedna ne oslobodi. Ako ne uspije dobiti konekciju u nekom roku (podesivo s `checkout_timeout: 5`), bacit će `ConnectionTimeoutError`.
+
+Veličina poola se definira s `pool: 5` u `database.yml`. To ne znači da će se pri inicijalizaciji aplikacije odmah napraviti 5 konekcija, nego da će biti stvorene po potrebi.
+
+U slučaju višeprocesnog servera, Rails stvara zasebni pool za svaki proces. TODO: Kako to radi? Koristi li se `establish_connection`?
+
+Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` metode konekcija će mu biti dodijeljena. Nakon što se response pošalje, Rails poziva `ActiveRecord::Base.clear_active_connections!` koja oslobađa sve konekcije trenutnog threada.
+
+Ali ako stvaraš vlastite threadove unutar koda, automatsko oslobađanje se neće obaviti i pool će zauvijek ostati bez te konekcije. Zato kad god pokrećeš novi thread unutar requesta, ručno handlaj konekcije koristeći `checkout`, `checkin`ili `with_connection` s blokom. Više informacija na https://bibwild.wordpress.com/2014/07/17/activerecord-concurrency-in-rails4-avoid-leaked-connections/.
 
 

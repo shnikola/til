@@ -14,7 +14,7 @@ Za osjetljive račune, dodaj 2 Factor Authentication, ili barem email verificati
 
 ## Pasting in password fields
 
-Source: https://www.troyhunt.com/the-cobra-effect-that-is-disabling
+https://www.troyhunt.com/the-cobra-effect-that-is-disabling
 
 Jedini sigurni password je onaj kojeg ne možeš zapamtiti. Zato je nužno omogućiti paste iz nekog password managera.
 
@@ -23,11 +23,18 @@ Nijedan argument protiv pasteanja ne drži vodu:
 * Malware koji ti krade clipboard ti može jednako pratiti koje tipke ukucavaš.
 * Zabraniti paste zbog limita duljine - nema smisla ograničavati duljinu passworda. Password bilo koje duljine uvijek će se pretvoriti u hash iste duljine.
 
-## Password Reset
+## Password change
 
-* Kada napraviš password reset, invalidiraj sve postojeće sessione
-* Ako user može promijeniti email, zahtjevaj da ponovno unese password. U suprotnom može napraviti password reset bez da zna stari.
+Kada korisnik promjeni password, invalidiraj mu sve postojeće sessione.
+
+Pošalji korisniku mail kada je promijenjen password, kako bi saznao u slučaju da je to napravio napadač.
+
+Ako user može promijeniti email, zahtjevaj da ponovno unese password. U suprotnom može napraviti password reset bez da zna stari.
 
 ## Timing Attacks
 
-Zaključivanje prema koliko dugo treba serveru da odgovori (npr. usporedba stringova, treba koristiti `Rack::Utils.secure_compare` koji uspoređuje uvijek u konstantom vremenu). Iako, zbog šuma u networku ovo je jako teško izvesti u praksi.
+Doznavanje informacija prema tome koliko dugo treba serveru da odgovori. Čest primjer je enumeracija korisničkih emailova - napraviš li puno login pokušaja, primjetit ćeš da emailovi koji ne postoje traju kraće od onih kojih postoje, jer se za njih ne treba provjeravati ispravnost passworda.
+
+Iako je zbog latencije u mreži ovo teško izvesti u praksi, Rack dodaje `X-Runtime` header s vremenom izvođenja na serveru koji uvelike pomaže napadaču.
+
+Kako bi se otežala vremenska procjena koristi `Rack::Utils.secure_compare` koji uspoređuje uvijek u konstantom vremenu.

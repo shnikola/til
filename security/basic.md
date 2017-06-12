@@ -1,6 +1,5 @@
 # Security
 TODO:
-session hijacking vs CSRF vs clickjacking
 dns hijacking
 dns spoofing
 uploads
@@ -9,36 +8,6 @@ uploads
 
 Security znači da nitko ne može doći do tvojih podataka.
 Integrity znači da nitko ne može uništiti tvoje podatke.
-
-## HTTPS
-
-`TLS` (i stara verzija, `SSL`) je protokol iznad `TCP`-a koji omogućava sigurnu konekciju. `HTTP` paket unutar njega je nepromijenjen. Napadač u mreži može vidjeti samo IP i port konekcije, otprilike koliko podataka šalješ, te koju enkripciju koristiš. Može i prekinuti konekciju, ali obje strane će znati da je treća strana to učinila.
-
-Protokol:
-* Nakon uspostave TCP konekcije, klijent započinje SSL handshake. Šalje verziju SSL-a, ciphersuite i compression koje želi koristiti. Server odabira najvišu verzije koje obojica podržavaju.
-* Server šalje svoj certifikat i klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat.
-* Klijent šalje ključ (kriptiran public-keyem servera) pomoću kojim će simetrično kriptirati komunikaciju.
-* Klijent šalje kriptiranu poruku, server je provjerava i šalje svoju.
-
-Kako bi provjerio identitet servera, moraš imati njegov public key. Ali ne želiš čuvati bazu public keyeva svih servera na klijentu. Zato svaki Browser dolazi s listom *Certified Authorities* kojima vjeruje. Kada server pošalje svoj certifikat, pisat će da ga je potpisao i CA, što možeš provjeriti.
-
-Za testiranje SSL-a na svom serveru, koristi https://www.ssllabs.com/ssltest
-
-## HSTS
-
-HTTP Strict Transport Security (HSTS) nalaže browseru da obavlja promet s domenom isključivo preko HTTPS-a.
-
-Postavlja se pomoću headera: `Strict-Transport-Security: max-age=31536000; includeSubDomains; preload`. `max-age` je broj sekundi koliko će dugo browser koristiti HTTPS, `includeSubDomains` uzima u obzir i sve poddomene sitea, `preload` uključuje site u listu HSTS siteova hardkodiranu u Chrome.
-
-Od trenutka kada primi header, browser će sav promet usmjeren na domenu slati koristeći `https://`.
-
-Prednost ovog pristupa u odnosu na `301` redirect na HTTPS je što *man-in-the-middle* napad može presresti prvi HTTP request i umjesto redirecta vratiti zlu stranicu. U slučaju HSTS-a, ako je korisnik ikad prije posjetio site, browser će automatski slati HTTPS bez da šalje HTTP request.
-
-## Public Key Pinning
-
-Bilo koji Certificate Authority može izdati certifikat za bilo koji site, bez dozvole vlasnika sitea. Tako se mogu izdati i lažni certifikati.
-
-Public key pinning omogućuje vlasnicima sitea da kažu čije certifikate odobravaju. Static pinning je ugrađen u browsere, a postoji i dynamic pinning koji koristi `Public-Key-Pins` header. Ali postavljanje vlastitog pinninga je komplicirano i može vrlo lako brickati site ako ne znaš što radiš.
 
 ## DNS Rebinding
 
@@ -92,17 +61,6 @@ Tehnike SQL injectiona:
 * `WHERE id = 1 and select top 1 substring(name, 1, 1) from sysobjects ... = 'a'` pogađa prvo slovo imena tablica
 * `WHERE id = 1; SHUTDOWN` gasi server
 
-## Clickjacking
-
-*Clickjacking* je kad napadač na svojoj stranici stavi nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove.
-
-Da bi se obranio, koristi se `X-Frame-Options` header koji će browseru zabraniti da prikazuje tvoju stranicu unutar `iframe`a.
-* `X-Frame-Options: deny` ne prikazuje se nikad
-* `X-Frame-Options: sameorigin` samo embeddan na stranicama istog origina
-* `X-Frame-Options: allow-from: www.example.com` samo embeddan na stranicama dane domene. Nažalost, ne podržava više domena odjednom.
-
-Modernija alternativa je `Content-Security-Policy: frame-ancestors 'self' example.com *.example.net` _IE 10+_.
-
 ## Pastejacking
 
 *Pastejacking* je napad gdje korisnik kopira neki tekst sa weba, (npr. shell naredbu), a napadač u njegov clipboard umjesto tog teksta stavlja nešto drugo.
@@ -122,7 +80,24 @@ Nema nekog pametnog načina za obraniti se, osim da vrlo pažljivo provjeriš cl
 * browserovi popupi za permissione se lako mogu nacrtati u htmlu.
 * Full Screen API može napraviti što želi.
 
+## Homograph attack
+
+DNS podržava ne-ASCII znakove, ali protokoli koje email i browseri koriste često podržavaju samo ASCII. *Internationalized Domain Name* prevodi unicode u ASCII domene koristeći `Punycode`: `Bücher.ch > xn--bcher-kva.ch`
+
+Ovo se može iskoristiti za *IDN homograph attack*: spoofanje domene koristeći npr. ćirilićna slova koja izgledaju isto kao i latinična. Zato bi browseri trebali prikazivati Punycode oblik sumnjivih slova.
+
+Sličan napad može se napraviti imitiranjem nečijeg usernamea koristeći Unicode. Za obranu od toga dobro je normalizirati sve usernameove prije zapisivanja u bazu koristeći `normalize_unicode(:nfkc)`.
+
+## Web Cache Deception Attack
+
+https://omergil.blogspot.hr/2017/02/web-cache-deception-attack.html
+
+CDN je iskonfiguriran da cachira sve URL-ove koji završavaju s `.css`. Paypalov server pri upitu na nepostojeći `/myaccount/attack.css` vraća `/myaccount` što CDN cachira makar cache policy bio postavljen na no-cache. Na taj način napadač može natjerati korisnika da napravi request na nepostojeći url, te dohvatiti rezultat requesta iz CDN cachea, došavši do osobnih informacija koje su dostupne na `/myaccount` stranici.
+
+Zato je važno ne dopuštati "pametno" prepoznavanje URL-ova, nego na sve nepostojeće URL-ove odgovarati s 404.
+
 ## Upload Security
+
 - ne dopuštaj da korisnik bira ime ili putanju filea
 - provjeri maksimalnu veličinu
 - whitelista file typeova

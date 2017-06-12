@@ -1,13 +1,5 @@
 # Elastic Search
 
-## Combining Filters
-
-`bool: {}` query za kombiniranje se sastoji od 4 dijela:
-  * `must: []` uvjeti moraju biti ispunjeni (AND).
-  * `must_not: []` uvjeti koji ne smiju biti ispunjeni (NOT).
-  * `should: []` bar jedan uvjet mora biti ispunjen (OR).
-  * `filter: []` uvjeti moraju biti ispunjeni, ali se pokreću u non-scoring, filtering modu.
-
 ## Complex fields
 
 Ako želiš da field bude array, ne trebaš ništa posebno specificirati. Svaki field može imati nula, jednu ili više vrijednosti. Jedino svaka vrijednost u arrayu mora biti istog tipa.
@@ -20,9 +12,63 @@ U slučaju da pod fieldom `comments` imaš array objekata, prilikom matchanja ar
 
 Ako želiš to izbjeći, možeš koristiti *Nested Objects* koristeći `nested` type.
 
-## Matching multiple values
+## Queries
 
-`terms: { tags: ['a', 'b'] }` pronalazi sve koje imaju tag `a` ili `b`, a ne točno `['a', 'b']`
+Query može biti u `query` kontekstu gdje se računa `score` i rezultati se rangiraju po tome; ili može biti u `filter` kontekstu gdje je match `true` ili `false`.
+
+`match_all: {}` vraća `score: 1.0` za sve dokumente.
+
+### Full-text queries
+
+Full-text queriji koriste se za pretraživanje dužeg teksta i koriste `analyzer`svakog fielda prije matchanja.
+
+`match: { message: "search fo this" }` se interpretira kao boolean `or` query za svaku od riječi u search queriju.
+`match: { message: { query: "search fo this", operator: "and" }}` ako želiš koristiti `and`.
+
+`match_phrase: { message: "quick fox" }` traži fraze dopuštajući `slop`, tj. da riječi smiju biti razmaknute za određen broj koraka.
+`match_phrase_prefix: { message: "quick brown f" }` isto kao `match_phrase`, a usto radi i prefix match na zadnjoj riječi fraze.
+
+`multi_match: { query: "search fo this", fields: ["subject", "message"] }` traži query istovremeno u više fieldova. Fieldovi se mogu navesti kao wildcard, npr. `*_name` za `first_name` i `last_name`. Pojedinom fieldu score se može boostati s `subject^3`.
+
+### Common queries
+
+Za svaku riječ u queriju `the brown fox` potrebno je napraviti zaseban upit. Često se koriste stop-words kako bi se izbjegli upiti riječi koje se nalaze u svim dokumentima. Problem s njima je što se onda upiti za `happy` i `not happy` ne razlikuju.
+
+`common: { body: { query: "the brown fox"} }` radi common query koji prvo radi query za manje frekventne riječi, a onda nad rezultatima radi query za frekventne riječi poput `the`.
+
+### Query strings
+
+`query_string: { query: "subject:brown AND message:quick OR message:fox"}` omogućava boolean operatore u samom queriju.
+
+`simple_query_string` koristi parser koji ne izbacuje exceptione i odabacuje invalid dijelove querija.
+
+### Term level queries
+
+Term level queries rade nad izrazima zapisanim u index, bez analize. Najčešće se radi o brojevima i datumima, a ne full-text fieldovima.
+
+`term: { email: "nikola@mail.com" }` traži dokumente s točno tom vrijednosti fielda.
+`terms: { tags: ['a', 'b'] }` pronalazi sve koje imaju tag `a` ili `b`.
+Za sve koji imaju i `a` i `b` koristi `bool: { must: ... }`.
+
+`range: { age: { gte: 10, lte: 20 }}` za raspone.
+`range: { date: { gte: "now-1d"}}` za datume
+
+`exists: { field: "email" }` matcha dokumente koji imaju ikakvu vrijednost u fieldu, pa makar i prazan string.
+Za missing query, koristi `bool: { must_not: { exists: { ... }}}`.
+
+`prefix: { email: "nikola@" }` matcha sve dokumente čiji field počinje s danom vrijednosti.
+`wildcard: { email: "nik*@mail.com }` za wildcard matching.
+`regexp: { email: "nik.{2}@mail.com }` za regex matching.
+
+`ids: { values: ["1", "4", "100"] }` traži dokumente po `_uid` fieldu.
+
+## Compound queries
+
+`bool: {}` query za kombiniranje se sastoji od 4 dijela:
+  * `must: []` uvjeti moraju biti ispunjeni (AND).
+  * `must_not: []` uvjeti koji ne smiju biti ispunjeni (NOT).
+  * `should: []` bar jedan uvjet mora biti ispunjen (OR).
+  * `filter: []` uvjeti moraju biti ispunjeni, ali se pokreću u non-scoring, filtering modu.
 
 ## Performance
 

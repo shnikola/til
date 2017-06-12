@@ -5,7 +5,7 @@
 https://cloudfour.com/thinks/responsive-images-101-definitions
 https://cloudfour.com/thinks/responsive-images-201-client-hints
 
-Dva su slučaja za korištenje reponzivnih imagea:
+Dva su slučaja za korištenje responzivnih imagea:
 * *Resolution switching*: kada želiš imati više veličina iste slike (npr, za različite dimenzije ili pixel density ekrana)
 * *Art Direction*: kada želiš imati različite verzije iste slike (npr. manja veličina koja je cropana, a ne samo skalirana, ili prebacivanje iz landscapea u portrait za uže ekrane).
 

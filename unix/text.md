@@ -3,6 +3,7 @@ TODO
 newlines in osx
 
 ## Output
+
 `cat <files>` ispisuje sadržaj fileova. `-n` dodaje line number ispred svake linije.
 
 `tee <file>` šalje input na *stdout* i u `<file>`. Korisno za zapisati rezultat u file i dalje ga proslijediti u pipe.
@@ -11,7 +12,6 @@ newlines in osx
   * `-n` broj linija.
   * `tail -n +2` skipa prvu liniju (tj. ispisuje sve od 2. linije)
   * `tail -F` ispisuje linije kako se dodaju.
-
 
 `less <file>` omogućuje paginaciju kroz file.
   * `+F` ispisuje linije kako se dodaju.
@@ -29,8 +29,8 @@ newlines in osx
 
 `sed -n '25p'` ispisuje 25 liniju. Korisno za jako velike fileove.
 
-
 ## Combining
+
 `cut <file>` izdvaja dio svake linije.
   * `-c 4-10` izdvaja tekst od 4. do 10. charactera. `-c 4-` izdvaja od 4. do kraja.
   * `-f 3` izdvaja treći stupac. `-d` definira delimiter (defaultno `\t`). `-s` preskače linije u kojima nema delimitera.
@@ -42,8 +42,8 @@ newlines in osx
   * `-1 3` ključ je u 3. fieldu prvoj filea. `-2` za drugi file.
   * `-t` definira delimiter inputa i outputa (defaultno je whitespace).
 
-
 ## Filteri
+
 `sort <file>` sortira linije abecedno.
   * `-n` sortira po numeričkoj vrijednosti (ako je prva riječ u liniji broj).
   * `-k 2` za sortiranje po 2. stupcu. `-t` definira delimiter (defaultno whitespace).
@@ -64,9 +64,8 @@ newlines in osx
   * `fgrep` (`grep -F`) za fixed stringove, bez regex matchanja.
   * `-C 2` ispisuje 2 linije konteksta prije i poslije. `-A` za after, `-B` za before.
 
-
-
 ## Stream Editing
+
 `tr <chars> <chars>` čita charactere i mijenja ih pa zadanoj shemi.
   * `tr 'abc' 'def'` zamijeni `a` > `d`, `b` > `e`, `c` > `f`.
   * `tr -d <chars>` briše sve matchane znakove.
@@ -88,8 +87,8 @@ newlines in osx
   * `NF` je broj fieldova u liniji. `$NF` je zadnji field, `$(NF-1)` je predzadnji, itd.
   * `NR` je redni broj linije koja se trenutno obrađuje.
 
-
 ## xargs
+
 `xargs` proslijeđuje rezultat prethodne naredbe kao listu argumenata idućoj, dijeliviši ih u podliste da ne pređe argument size limit.
   * `find . -type f -print | xargs rm` radi isto što i `find . -type f -exec rm {} +`.
   * `find . -type f -print | xargs -I{} grep foo {}` radi isto što i `find . -type f -exec rm {} \;` (pojedinačno izvođenje)
@@ -99,17 +98,45 @@ newlines in osx
 `xargs` je malo zajeban jer očekuje input u nekom čudnom formatu, pa uvijek preferiraj `find -exec`. Ako ga baš moraš koristiti,
 koristi `find -print0` i `xargs -0`.
 
+## vim
+
+`hjkl` ili kursori za kretanje.
+`0` vraća na početak linije.
+`2w` pozicionira na početak 2. riječi od kursora.
+`3e` pozicionira na kraj 3. riječi od kursora.
+`G` pozicionira na početak filea, `gg` na kraj.
+`ctrl+G` ispisuje trenutnu liniju. `12G` pozicionira na 12. liniju.
+
+`i` ulazi u insert mod za pisanje.
+`A` ulazi u append mod za pisanje.
+`ESC` vraća u normalni mod i cancela nedovršenu naredbu.
+
+`x` briše znak na mjestu kursora.
+`dw` briše riječ na mjestu kursora. `d2w` briše dvije riječi.
+`d$` briše do kraja reda.
+`dd` briše cijelu liniju. `2dd` briše dvije linije.
+
+`p` stavlja zadnji obrisani tekst u liniju ispod kursora.
+`r<znak>` replacea znak na mjestu kursora sa `<znak>`
+
+`u` radi undo zadnje naredbe. `U` radi undo svih naredbi na liniji.
+`ctrl+R` radi redo.
+
+`:q!` izlazi i discarda promjene, `:wq` izlazi i savea.
+
+`vimtutor` za kratki pregled naredbi.
 
 ## Regex
-* Za detektirati ponavljanja u regexu koristi `(something)\1`
 
+Za detektirati ponavljanja u regexu koristi `(something)\1`
 
 # Examples
 
 ## Obrada šahovskih partija
+
 http://aadrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html
-U usporedbi s Hadoop clusterom 200x je brže i ne koristi skoro nimalo memorije. To se može zahvaliti
-**paralelizmu** koji dolazi iz pipelinova.
+
+U usporedbi s Hadoop clusterom 200x je brže i ne koristi skoro nimalo memorije. To se može zahvaliti **paralelizmu** koji dolazi iz pipelinova.
 
 Format rezultat u fileu koje želimo agregirati: `[Result "1-0"]` (može biti `1-0`, `0-1` ili `1/2-1/2`)
 

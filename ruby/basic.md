@@ -16,6 +16,7 @@ Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promj
 
 `[1, 2, 3].sum` vraća sumu svih elemenata.
 `[1, 2, 3].minmax` vraća min i max arraya.
+`[1, 2, 3, 4].partition(&:odd?)` dijeli u dva arraya.
 `['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` vraća one koji se ne slažu regexom
 
 ## Equality
@@ -49,6 +50,7 @@ Za metode koje primaju block: `return enum_for(__method__) unless block_given?`
 ## Freeze
 
 `obj.freeze` pretvata objekt u immutable.
+`+str` vraća kopiju unfreezanog stringa.
 
 ## Cloning
 
@@ -127,20 +129,40 @@ Ako radiš na `Rails` aplikaciji, sve se autoloada pa ne trebaš pisati ništa.
 ## Regexi
 
 * `/regex/`, ili `%r{regex}` ako ne želiš escapati slasheve.
-* `Regexp.union(/a/, /b/, ...)` za spajanje više regexa
 * `/regex/x` ignorira whitespace i komentare. Super ako želiš kompleksni regex razlomiti u više linija.
+* `Regexp.union(/a/, /b/, ...)` za spajanje više regexa
 * `()` unutar regexa za capture. `(?:)` za grupiranje koje ne želiš captureati.
-* `(?<ime>)` za named captures, npr. `/(?<last>\w+), (?<first>\w+)/ =~ "Santic, Nikola"` stvara varijable `last` i `first`.
+* `(?<ime>)` za named captures. `/(?<last>\w+), (?<first>\w+)/ =~ "Santic, Nikola"` će stvoriti lokalne varijable `last` i `first`.
 
-Matching:
+* `a(?=b)` je positive lookahead koji će matchati samo slovo `a` nakon kojeg je `b`, ali neće uključiti i `b` u match.
+* `a(?!b)` je negative lookahead koji matcha `a` nakon kojeg nije `b`.
+
+* `\p{}` za matchanje unicode propertija, npr. `\p{In_Egyptian_Hieroglyphs}`.
+
+Metode za matching:
 * `str.match?(/re/)` vraća boolean _2.4_
 * `str =~ /re/` vraća indeks prvog matcha, ili `nil` ako ga nema
 * `str.match(/re/)` vraća `MatchData` objekt: `md[0]` za cijeli match, `md[1]` za prvi capture, `md[2]` za drugi itd; `md.captures` je array svih capturea; `md.named_captures` je hash svih named capturea _2.4_ ; `md.begin(1)` indeks početka prvog capturea.
 
-## URI.join ne radi kako misliš da radi
+## URI
 
-`URI.join('http://example.com', 'plans', 'change')` neće vratiti `http://example.com/plans/change` nego `http://example.com/change`!
-Za joinanje više dijelova URL-a koristi `File.join` (osim što neće raditi na Windowsima)
+Ako želiš matchati url iz nekog teksta, koristi `text[URI.regexp]`.
+
+Pripazi, `URI.join('http://example.com', 'plans', 'change')` neće vratiti `http://example.com/plans/change` nego `http://example.com/change`! Za joinanje
+više dijelova URL-a koristi `File.join` (osim što neće raditi na Windowsima)
+
+## Date, Time, DateTime
+
+`Date` objekt sadrži `year`, `month`, `day`. Podržava aritmetičke operacije u danima, npr. `date + 7` dodaje tjedan.
+
+`Time` objekt sadrži `year`, `month`, `day`, `hour`, `min`, `sec` i `subsec`. Podržava aritmetičke operacije u sekundama, npr. `time + 24 * 60 * 60` dodaje 1 dan.
+
+`Time` objekt sadrži podatak o vremenskoj zoni u kojoj je vrijeme zabilježeno: `zone` i `utc_offset`.
+* `Time.now` vraća vrijeme koristeći time zonu procesa. Izbjegavaj ga jer nikad nisi siguran koje vrijeme je na serveru koji pokreće proces.
+* `Time.now.getutc` vraća vrijeme koristeći UTC.
+* `Time.now.getlocal("+03:00")` vraća vrijeme koristeći danu zonu.
+
+`DateTime` je davno bio koristan, ali više nije. Nemoj ga koristiti.
 
 ## method_missing
 
@@ -155,6 +177,22 @@ Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš pe
 `store.delete(:value1)` briše vrijednost.
 `store.roots` ispisuje sve keyeve.
 `store.transaction { ... }` za transakcijsko zapisivanje.
+
+## Unpack
+
+`"Ruby".unpack("C C C C")` pretvara string u array bytova. Template po kojem se rastavlja može se skraćeno pisati kao `C4`, ili `C*` za cijeli string.
+`C` vraća unsigned int za svaki byte.
+`S` vraća unsigned int za svaka 2 bytea.
+
+`[82, 117, 98, 121].pack("C*")` generira string od arraya bytova.
+
+## Unicode nomralize
+
+Unicodeu dopušta da se isti znakovi mogu stvoriti na različite načine, npr. `š` može biti jedan znak, a može koristiti *Combining Diacritical Mark* pa biti dva znaka: `s` i `̌`. Da bi pouzdano radio s unicoded stringovima, koristi `str.unicode_normalize` koji podržava različite metode normalizacije:
+* `:nfc` Normal Form Compose pretvara sve kombinirane znakove u jedan, default.
+* `:nfd` Normal Form Decompose rastavlja sve znakove u composable dijelove.
+* `:nfkc` Compatibility Compose dodatno pojednostavlju posebne znakove, npr. `¼` u `1/4`, non-breaking space u obični space.
+* `:nfkd` Compatibility Decompose radi isto kao i prethodni, ali uz decompose.
 
 ## ruby -n
 
@@ -174,6 +212,20 @@ Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš pe
 
 `@user ||= User.find(id) if id.present?` je loše, jer će izvoditi `if` čak i ako je `@user` postavljen.
 `@user ||= (User.find(id) if id.present?)` je malo ružnije, ali puno bolje. Pogotovo za metode koje se često pozivaju.
+
+## Names to avoid
+
+Izbjegavaj sljedeća imena za varijable i atribute:
+* `class` je keyword
+* `in` je keyword
+* `method` konflikt s `Object#method`
+* `hash` konflikt s `Object#hash`
+* `format` konflikt s `Kernel#format`
+* `display` konflikt s `Object#display`
+
+## Standard Gems
+
+Od `2.5` dijelovi standard librarija se prebacuju u gemove kako bi ih mogao upgradeati bez da mijenjaš verziju Rubyja. Svi će i dalje dolaziti automatski s instalacijom Rubyja, ali neki će ostati dio Rubyja (npr. `csv`, `json`, `openssl`), a neki će biti normalni gemovi koje možeš uninstalirati (npr. `rake`, `minitest` i `did_you_mean`).
 
 ## Novi featuri
 

@@ -40,10 +40,6 @@ http://www.stefankendall.com/2013/11/10-questions-to-ask-your-potential.html
 
 Uz sve to, uzmi u obzir: "One of the things you'll learn as you progress is that superficial process issues are actually not at the core of effectiveness; talent, vision, and ability to execute are. You want to be careful that your questionnaires don't blind you to opportunities to work in radically different cultures/processes that will succeed for reasons you don't yet understand."
 
-## Culture
-
-https://github.com/bjeanes/culture/blob/master/culture_and_ethos.md
-
 ## Don't Add Your 2 Cents
 
 https://sivers.org/2c
@@ -79,7 +75,7 @@ https://medium.com/@sarahmei/when-standup-can-t-be-standup-537df18057e5
 
 Poanta standupa je da svi započnu raditi s maksimalno informacija o onom što se događa oko njih. Znači, želimo:
 * korisne informacije (vezane za ono na čemu rade, bez nebitnih stvari)
- * u pravom trenutku, kad imaju najveći utjecaj (na početku dana)
+* u pravom trenutku, kad imaju najveći utjecaj (na početku dana)
 
 U konkretnom slučaju dva teama u različitim vremenskim zonama, jedan team može na kraju svog dana ostaviti par natuknica na Slacku koje će drugi team ujutro pročitati.
 
@@ -95,4 +91,17 @@ Pisanje tjednog statusa je muka živa, ali ovaj format ga čini mnogo lakšim za
 3. Taskovi za idući tjedan. Stavi samo 3 koja su visokog prioriteta.
 4. Rizici i blockeri - sve za što će trebati pomoći ili što bi moglo predstaviti problem (npr. nezgodan framework)
 5. Bilješke. Kratke, pravovremene i korisne.
+
+## Trickle-down workaholism in startups
+
+https://m.signalvnoise.com/trickle-down-workaholism-in-startups-a90ceac76426
+
+Startup kultura mitologizira duge radne dane i burnout kao nešto što se očekuje od svakog zaposlenika. Ovaj problem dolazi od ulagača koji za svoje milijune očekuju basnoslovne napore, pri čemu se sva obećanja koje vlasnik tvrtke da prelijevaju na grbaču niže pozicioniranih radnika. Otud trud da se zaposlenike zadrži što duže u uredima nudeći im razne povlastice, otud i priča o "misiji da se svijet učini boljim mjestom".
+
+Za usporedbu, Darwinova rutina je bila: nakon jutarnje šetnje i doručka, vraća se u radnu sobu u 8 i piše sat i pol vremena. U 9:30 čita poštu i piše pisma. U 10:30 vraća se ozbiljnijem poslu u staklenike gdje radi eksperimente. U 12 bi rekao: "Obavio sam dobar posao danas" i otišao u šetnju, ručao, napisao još nekoliko pisama. Oko 3 bi malo odspavao, nakon sat vremena se probudio, otišao u šetnju, te vratio u radnu sobu do 5:30 kad bi se pridružio obitelji za večerom. Po tom rasporedu napisao je 19 knjiga.
+
+## Literatura
+
+* https://github.com/bjeanes/culture/blob/master/culture_and_ethos.md
+* https://github.com/basecamp/handbook
 

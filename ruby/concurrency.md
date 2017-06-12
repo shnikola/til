@@ -160,16 +160,6 @@ Rails framework code je thread-safe. Ako se svaki request obrađuje u svom threa
 
 Jedan neobičan thread-unsafe slučaj je memoizacija instance varijabli. Ako radiš `@attr ||= super.merge(...)`, pripazi da koristiš različito ime `@attr` od onog koje se koristi u `super` metodi. (https://github.com/rails/rails/pull/9789/files)
 
-## Connection Pool Internals
-
-https://bibwild.wordpress.com/2014/07/17/activerecord-concurrency-in-rails4-avoid-leaked-connections/
-
-Thread traži konekciju metodom `checkout`, i oslobađa je metodom `checkin`. Metoda `with_connection` wrapa ovo ponašanje oko bloka.
-
-Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` metode konekcija će mu biti dodijeljena. Nakon što se response pošalje, Rails poziva `ActiveRecord::Base.clear_active_connections!` (možeš ga i sam pozvati) koji radi `checkin` svih konekcija trenutnog threada.
-
-Ali, ako stvaraš vlastite `Thread`ove u kodu, automatski `checkin` se neće dogoditi, i nužno je da to handlaš ručno. Ako zaboraviš, konekcija se nikad neće osloboditi i `ConnectionPool` će zauvijek ostati bez nje. Pripazi ako stvaraš Threadove unutar requesta!
-
 ## Kamo je nestao config.threadsafe?
 
 http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html
@@ -179,7 +169,6 @@ Prije Rails 4.0 postojao je flag `config.threadsafe!` koji je sad po defaultu en
 Preloading je, za razliku od lazy loadanja pomoću `autoload` metode, thread-safe. Kada je uključen, nema nikakve razlike za *multi-process* i *multi-threaded* sustave. Jedino će preload frameworka zauzeti nešto više memorije jer učitava cijeli framework, a ne samo dijelove koji se koriste. (Nadajmo se da će Rails biti malo pametniji s tim u budućnosti.)
 
 `Rack::Lock` mutexom oko requesta brani različitim threadovima da u isto vrijeme izvršavaju kod. U *multi-process* sustavu (npr. Unicorn) nije potreban, jer svaki proces ima svoju memoriju i čak ni thread-unsafe kod neće imati problema. U *multi-threaded* sustavu (npr. Puma) mutex sprečava thread-unsafe situacije, što je super, ali istovremeno i ne dopušta da se threadovi istovremeno vrte, što je poanta *multi-threadanja*. Zato su odlučili ukloniti ga, i svima koji koriste *multi-threaded* servere reći: "Pazite da vam je kod thread-safe."
-
 
 ## Ruby 3 Guild Proposal
 
@@ -203,10 +192,6 @@ Posebna struktura za dijeljenje mutable objekata - potrebni lockovi, ali to kori
 https://github.com/hamstergem/hamster
 
 Gem s immutable strukturama podataka (Hash, Vector, Set, SortedList, List, Deque) koje su po definiciji thread safe.
-
-# TODO
-
-rack.hijack i message_bus
 
 # Literatura
 
