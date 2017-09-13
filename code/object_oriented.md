@@ -1,6 +1,16 @@
-# Design Patterns
+# Object Oriented Programming
 
-## Gang of Four
+## Data Structures vs Objects
+
+Objekti skrivaju podatke iza apstrakcija i pružaju funkcije koje rade s podatcima. Data strukture otkrivaju podatke i nemaju funkcija.
+
+U proceduralnom kodu (koji koristi data strukture) funkcije su zadužene za prepoznavanje i manipuliranje tipovima podataka. Lako je dodati nove funkcije jer se postojeće strukture ne moraju mijenjati, ali teško je dodati nove strukture jer treba mijenjati sve postojeće funkcije.
+
+U OO kodu svaka klasa sadrži vlastitu implementaciju funkcije. Lako je dodati novi tip podatka jer se ostale klase ne moraju mijenjati, ali teško je dodati nove funkcije jer ih trebaš dodati u sve klase.
+
+Koristi jedne ili druge ovisno o promjenama koje očekuješ.
+
+## Desing Patterns
 
 ### Template Method
 
@@ -34,9 +44,7 @@ Ako se objekt treba dohvatiti s mreže, možemo napraviti *Remote Proxy* koji ć
 
 Metoda prima IO objekt, a mi joj želimo poslati string. Stoga wrapamo String u `StringIOAdapter` koji implementira IO interface koje će metoda zvati i prosljeđuje ih Stringu.
 
-## Decorator
+### Decorator
 
 Imamo klasu kojoj ne želimo dodavati nove funkcionalnosti. Wrapamo je u Decorator klasu koja ima isti interface, ali izvrši dodatne naredbe prije ili nakon što proslijedi poziv metode osnovnoj klasi.
-
-
 

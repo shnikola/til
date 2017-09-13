@@ -1,5 +1,15 @@
 # Amazon Web Services
 
+## S3
+
+Postoji više URL-ova za pristup S3 fileu `x.png` u bucketu `imgs.utorkom.com`:
+
+`http://s3.amazonaws.com/imgs.utorkom.com/x.png` je path oblik. Za regione koji nisu US East: `http://s3-eu-west-1.amazonaws.com/imgs.utorkom.com/x.png`.
+
+`http://imgs.utorkom.com.s3.amazonaws.com/x.png` je virtual host oblik. Za regione koji nisu US East: `http://imgs.utorkom.com.s3-eu-west-1.amazonaws.com/x.png`
+
+`http://imgs.utorkom.com/x.png` ako dodaš CNAME entry s imenom bucketa (`imgs.utorkom.com`) koji pokazuje na `imgs.utorkom.com.s3.amazonaws.com`
+
 ## Elastic Beanstalk
 
 Koristi se za deployanje aplikacija na unaprijed konfigurirani EC2 stroj, s instaliranim OS-om i Rubijem određene verzije.

@@ -52,6 +52,10 @@ Koristi `<th>` za headere i `scope=row` ili `scope=col` da kažeš u kom smjeru 
 
 Kontrast između glavnog teksta i pozadine mora biti minimalno `4.5 : 1`. Koristi online alate poput: http://accessible-colors.com
 
+## Animation
+
+Na OSX, korisnik može odabrati "Reduce Motion" u preferencama. To možeš ispoštovati u animacijama koristeći `@media (prefers-reduced-motion) { animation: none }`. Zasad radi samo u Safariju.
+
 ## Mobile
 
 Nemoj disablati *Pinch to Zoom* s `maximum-scale=1.0`! Redizajniraj ako treba, ali nemoj oduzimati korisniku mogućnost da zooma.

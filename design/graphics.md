@@ -4,7 +4,7 @@
 
 https://webkit.org/blog/6682/improving-color-on-the-web
 
-Boja u printeru nastaje od molekula, te se miješa *subractivno* - što više boja miješaš, rezultat je tamniji.
+Boja u printeru nastaje od molekula, te se miješa *subtraktivno* - što više boja miješaš, rezultat je tamniji.
 Boja u ekranima nastaje od svijetla, te se miješa *aditivno* - što više boja miješaš, rezultat je svijetliji.
 
 *Color Space* koristi set parametara za definiranje i uspoređivanje boja, npr. Monochrome (koristi 1 - svjetlinu), RGB (red, green i blue) ili CMYK (cyan, magenta, yellow i black).
@@ -65,10 +65,23 @@ Problem je što većina algoritama za obradu slike krivo pretpostavlja da radi s
 
 Zato uvijek provjeri uzima li alat kojeg koristiš gamma correction u obzir.
 
-## Shadows
+## Video encoding
 
-Sjene nisu sive - one su komplementarne boji svijetlosti.
+Sliku prikazujemo kao 2D matricu piksela. Prikazujemo li boje pomoću tri primarne komponente (RGB), imamo tri 2D matrice čije su vrijednosti intenzitet boje. **Bit depth** označava koliko bitova koristimo za zapis intenziteta. Ako koristimo 8 bita po boji (vrijednosti 0-255), bit depth iznosi 24.
+
+Rezolucija predstavlja veličinu jedne matrice, tj. `širina * visina`.
+Display aspect ratio predstavlja odnos između širine i visine slike ili videa (npr. 16:9).
+Pixel aspect ratio predstavlja odnos širine i visine samog piksela koji ne mora nužno biti kvadrat.
+
+Video definiramo kao niz frameova u vremenu. **Bit rate** se računa kao `širina * visina * bit depth * frames per second`. Bit rate može biti konstantan (CBR), a može biti i promjenjiv (VBR).
+
+Za prividno povećanje frame ratea ekrana bez da se poveća bandwith, prije se koristio *interlaced video* koji bi prikazao pola slike (u trakicama) u jednom frameu, a drugu polovicu u idućem. Danas ekrani koriste *progressive scan* koji omogućuje da se linije svakog framea slijedno iscrtavaju.
+
+Bez kompresije 1h videa u 720p rezoluciji zauzimao bi 278GB. Jedan od načina kompresije iskorištava činjenicu da naše oči mnogo bolje raspoznaju svjetlinu nego boje. Umjesto RGB modela, koristimo **YCbCr** s tri kanala: brightness, chroma blue i chroma red. Znajući da je oko manje osjetljivo na boje, radimo *Chroma subsampling* koristeći manje rezolucije za chroma kanale (npr. 320x180, ako je original video 1280x720).
+
+Drugi način kompresije je smanjenje redundancije. Umjesto zapisivanja cijelokupnih podataka za svaki frame, možemo zapisivati promjenu koja se događa između dva framea. Tako razlikujemo 3 vrste frameova: I-frame (sadrži sve podatke), P-frame (sadrži razliku u odnosi na prošli), B-frame (sadrži razliku u odnosu na prošli i budući)
 
 # Literatura
 
 * https://medium.com/retronator-magazine/pixels-and-voxels-the-long-answer-5889ecc18190
+* https://github.com/leandromoreira/digital_video_introduction

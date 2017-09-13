@@ -65,7 +65,7 @@ Pravi snimke animacija i pregledavaj u slow motionu kako bi bolje primjetio zast
 Omogućuje nativno animiranje elemenata iz Javascripta. Korisno u slučaju da CSS animacije nisu dovoljne (npr. ako želiš dimanički mijenjati vrijednosti, upravljati playbackom, ili handlati animation evente).
 
 Najveća prednost u odnosu na druge animation librarije je performance. Čak i ako poslušamo sve savjete za glatke animacije, Garbage Collector može u bilo koje trenutku zagušiti thread zbog čega će animacija opet biti trzava.
-Web Animations API šalje naredbe u zaseban thread (*compisitor*) zadužen za crtanje, kojeg koriste i CSS animacije. Zato će čak i uvjetima velikog opterećenja animacije i dalje biti glatke.
+Web Animations API šalje naredbe u zaseban thread (*compositor*) zadužen za crtanje, kojeg koriste i CSS animacije. Zato će čak i uvjetima velikog opterećenja animacije i dalje biti glatke.
 
 Sintaksa je slična kao i CSS:
 `elem.animate({ transform: [ 'rotate(0deg)', 'rotate(360deg)' ] },

@@ -22,3 +22,11 @@
 * **1 pomu**, **feta sir** nasjeckaj, **rikolu**
 * **2 režnja češnjaka** nasjeckaj u **1 jogurt**
 * sve zajedno ubaci u tortilju.
+
+## Baked Camembert
+
+* ugrij pećnicu na **180**
+* **kolut camembera** zareži po vrhu i u njega umetni sitno nasjeckani **režanj češnjaka**, **ružmarin** ili **timijan**.
+* poprskaj maslinovim uljem i stavi u pećnicu na 15 minuta.
+
+Kao prilog poprženi kruh, brusnice i orašasti plodovi.

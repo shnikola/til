@@ -143,9 +143,9 @@ Ako klijent ima dio rangea, a želi ostatak (npr. ako resuma download), onda uz 
 
 ### Proxies
 
-Proxiji rade request u ime klijenta, pa klijentova IP adresa nikad ne dođe do servera. Isto je i s reverse proxijima, gdje server ne zna koji host je klijent tražio. Da bi se te infomracije prenijele, uvedeni su custom headeri koji su postali de-facto standard.
+Proxiji rade request u ime klijenta, pa klijentova IP adresa nikad ne dođe do servera. Isto je i s reverse proxijima, gdje server ne zna koji host je klijent tražio. Da bi se te informacije prenijele, uvedeni su custom headeri koji su postali de-facto standard.
 
-* `X-Forwarded-For`(c) IP adresa klijenta i svih prethodnih proxija u kroz koje je request prošao (npr. `129.78.138.66, 129.78.64.103`)
+* `X-Forwarded-For` i `Client-IP`(c) IP adresa klijenta i svih prethodnih proxija u kroz koje je request prošao (npr. `129.78.138.66, 129.78.64.103`)
 * `X-Forwarded-Host`(c) host i port koji je klijent tražio od reverse proxija (npr. `en.wikipedia.org:80`)
 * `X-Forwarded-Proto`(c) protokol koji je klijent tražio od reverse proxija (npr. `https`)
 * `Forwarded`(c) pokušaj standardiziranja gornja 3 headera. (npr. `for=192.0.2.60; proto=http; `). Ne koristi se baš.

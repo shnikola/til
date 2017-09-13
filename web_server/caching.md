@@ -6,16 +6,14 @@ Web Cache stoji između servera i klijenta, pamti odgovore i koristi ih ako se r
 
 *Proxy Cache* je na mreži izmežu klijenta i servera, sprema response za mnoge usere (*shared cache*). Postavlja ih ISP kako bi smanjio latenciju i promet na mreži.
 
-*Gateway Cache* (reverse proxy cache) je ispred servera, sprema response za mnoge usere. Postavlja ih vlasnik servera kako bi site bio brži i skalabilniji. CDN je distrubuirana mreža Gateway Cacheva (jer server upravlja onim što će se cachirati).
+*Gateway Cache* (reverse proxy cache) je ispred servera, sprema response za mnoge usere. Postavlja ih vlasnik servera kako bi site bio brži i skalabilniji. CDN je distribuirana mreža Gateway Cacheva (jer server upravlja onim što će se cachirati).
 
 ## Browser and Proxy Cache
 
-Kako Cache radi:
-1. Ako header responsa kaže da ga se ne smije čuvati, cache ga ignorira.
-2. Ako je request SSL ili Authenticated, shared cache ga ignorira.
-3. Ako je cachirani podatak *fresh*, cache ga šalje klijentu bez da provjeri sa serverom. Podatak je *fresh* ako ima expiry koji još nije istekao (ili ako je cache očitao podatak nedavno i on nije izmijenjen duže vremena).
-4. Ako je cachirani podatak *stale*, cache će pitati server da ga *validira*, tj. potvrdi je li ostao isti.
-5. U posebnim slučajevima (npr. kad je odspojen od mreže) cache može servirati *stale* podatak.
+Kada request stigne do cachea:
+1. Ako nema cachirani odgovor, prosljeđuje request serveru. Odgovor će spremiti ako response header dopušta, npr. ako nije `Cache-Control: no-store`. Shared cache također neće spremati SSL i Authenticated odgovore.
+2. Ako je cachirani odgovor *fresh*, cache ga šalje klijentu bez da provjeri sa serverom. Podatak je *fresh* ako ima expiry koji još nije istekao.
+3. Ako je cachirani podatak *stale*, cache će pitati server da ga *validira*, tj. potvrdi je li ostao isti. U posebnim slučajevima (npr. kad je odspojen od mreže) cache može servirati *stale* podatak.
 
 *Freshness* omogućava da se odgovor dobije instatno iz cachea, a *validation* da se cijeli odgovor ne mora nanovo skidati sa servera.
 
@@ -42,26 +40,6 @@ Cache se ne može invalidirati dok ne istekne expiry. Jedini način za prisiliti
 * enablaj ETagove na serveru.
 * resource koje možeš cachiraj na CDNu.
 * odvoji dio filea koji se često mijenja kako bi se ostatak mogao bolje cachirati.
-
-## nginx Reverse Proxy Cache
-
-`nginx` ima svoj vlastiti ugrađeni proxy cache - nema potrebe za odvojenim rješenjima poput Varnisha.
-
-U `nginx.conf` dodaj:
-* `proxy_cache_path /var/lib/nginx/cache levels=1:2 keys_zone=backcache:8m max_size=50m`
-  * `/var/lib/nginx/cache` definira directory u kojem će s držati cache (pripazi da postoji i da ga ownaš)
-  * `levels` način organiziranja cachea po folderima (nebitno)
-  * `keys_zone` definira ime zone, veličinu rezerviranu za keyeve (`8MB`) i maksimalnu veličinu za cache
-* `proxy_cache_key "$scheme$request_method$host$request_uri$is_args$args"` način na koji se generira cache key.
-* `proxy_cache_valid 200 302 10m` storea uspješne response i redirectove na 10 minuta, a `404 1m` na 1 minutu.
-
-U konfiguraciju servera dodaj:
-* `proxy_cache backcache` definira koji cache zone se koristi.
-* `add_header X-Proxy-Cache $upstream_cache_status` dodaje header je bio cache hit ili miss.
-
-Ako imaš baš jako veliki traffic, može se dogoditi *cache stampede*. Više istovremenih requestova počne dohvaćati resource koji je expirao pa cache prosljeđuje request na server za svakog (umjesto samo za jednog). Ovo se može izbjeći lockingom: `proxy_cache_lock on;` i `proxy_cache_use_stale updating;`
-
-Na aplikacijskom serveru vraćaj `Cache-Control: public` samo za stranice koje ne koriste cookije.
 
 ## Caching S3 with ngnix and HAProxy
 

@@ -73,6 +73,7 @@ Ako prodaješ preko weba, pošalji mali poklon sa svakim paketom (npr. slatkiš)
 
 # Literatura
 
+* https://www.sideprojectchecklist.com/marketing-checklist/
 * https://moz.com/learn/seo
 * http://www.kalzumeus.com/2010/01/24/startup-seo/
 * http://coglode.com/

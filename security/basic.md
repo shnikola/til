@@ -19,38 +19,6 @@ Kreativni napad je zamjeniti serverovu IP adresu s *korisnikovom privatnom*, npr
 
 Potencijalna obrana od ovog je da browseri uvedu *DNS pinning*, tj. da uvijek koriste IP koji su dobili u prvom requestu.
 
-## DOS
-
-https://www.incapsula.com/ddos/ddos-attacks/denial-of-service.html
-
-Denial Of Service napad šalje pakete na server koji ometaju njegov rad. Distributed DOS šalje pakete s više računala odjednom (tzv. *botnet*). Ometati rad možeš na više načina:
-* *Volume Based Attacks*: Pošalji toliko paketa da ih connection ili firewall ne mogu handlati (npr. UDP ili ICMP flood).
-* *Protocol Attacks*: Pošalji takve pakete koji će zauzeti resurse servera, load balancera ili firewalla (npr. SYN flood).
-* *Application Layer Attacks:* Pošalji legitimne requeste na aplikaciju koji zahtjevaju puno resursa.
-
-Detekcija je otežana jer mog spoofati IP - nije im bitno da response dođe do njih. Štoviše, *Reflection attack* šalje legitimne requestove javno dostupnom serveru, ali s IP-jem žrtve, pa on dobija sve odgovore.
-
-Osnovni problem je: ako napadač šalje 11Gbps na tvoj 10Gbps router, nikakva zaštita unutar servera tu ne može pomoći. Jedina zaštita je imati DOS protection kao CloudFlare s puno većim kapacitetom, koji će detektirati i filtrirati takav promet. Primjeri volume based attackova:
-
-*UDP Flood* šalje hrpu UDP paketa na random portove, pri čemu server mora provjeriti postoji li aplikacija na tom portu, i odgovoriti s ICMP error paketom, što troši resurse. *DNS UDP Flood* šalje hrpu requestova na DNS za nepostojeće domene što mu iscrpi resurse i napuni cache nepotrebim recordima.
-
-*DNS Amplification* šalje request na DNS resolver sa spoofanom IP adresom servera. Amplification se postiže s određenim opcijama, pa response DNS-a može biti i 70 puta veći nego request napadača. *NTP Amplification* ima isti princip, samo koristi NTP servere.
-
-Neki od protocol attackova:
-
-*Ping of Death* šalje ping podijeljen u IP pakete koji zajedno čine paket veći od 65,535 byteova, što uzrokuje buffer overflow na serveru. *Teardrop* šalje fragmente koji se preklapaju, pa greška u izračunu šalje veliki broj u memcpy, uzrokujući veliko zauzeće memorije.
-
-*SYN Flood (layer 4)* šalje veliki broj SYN paketa za uspostavu TCP veze, bez da dovrši 3-way handshake. Server ostane bez slobodnih konekcija pa se više nitko ne može spojiti.
-
-*Slowloris* šalje dijelove HTTP paketa (npr. headere) ali ih nikad ne dovrši, čime zauzme sve konekcije na serveru.
-
-*RUDY* šalje HTTP POST s jako velikim content-legthom, ali jako sporo (npr. byte svakih 10 sekundi).
-
-Kod application (layer 7) napada, napadač jednostavno radi hrpu requestova na skupe endpointe (npr. search), pa se server uspori i ne može handlati ostale requestove. Obrana:
-* Ako dolaze s jednog IP-ja, dodaj rate limiting po IP-ju.
-* Ako dolaze s rezličitih, otkrij koji URL napadaju i cachiraj ga CDN-om. Za stranice koje se dinamički generiraju (npr. thread na forumu) cachiraj na 5 minuta za nelogirane korisnike. Nitko neće primjetiti. Čak se isplati i generirati statički html svaku sekundu ako dobijaš više od 1 req/s.
-* Stranice koje ne možeš cachati (search, login screen), promjeni URL ili dodaj CAPTCHu preko CDNa.
-
 ## SQL injection metode
 
 https://www.troyhunt.com/everything-you-wanted-to-know-about-sql
@@ -60,33 +28,6 @@ Tehnike SQL injectiona:
 * `WHERE id = 1 UNION ALL SELECT password FROM user` dohvaća iz druge tablice.
 * `WHERE id = 1 and select top 1 substring(name, 1, 1) from sysobjects ... = 'a'` pogađa prvo slovo imena tablica
 * `WHERE id = 1; SHUTDOWN` gasi server
-
-## Pastejacking
-
-*Pastejacking* je napad gdje korisnik kopira neki tekst sa weba, (npr. shell naredbu), a napadač u njegov clipboard umjesto tog teksta stavlja nešto drugo.
-
-Napadač na svojoj stranici (ili pomoću XSS-a) osluškuje `copy` ili `keydown` event, pri čemu pomoću `document.execCommand('copy')` ili `e.clipboardData.setData` stavlja svoj sadržaj u korisnikov clipboard.
-
-Ako se radi o shell naredbi, napadač može dodati `\r\n` na kraj kako bi se ona izvela odmah pri pasteanju, te dodati `clear` i `echo <origalna naredba>`, ne dajući priliku korisniku da uopće primjeti da se zla naredba izvela.
-
-Nema nekog pametnog načina za obraniti se, osim da vrlo pažljivo provjeriš cliboard prije nego pasteaš nešto u terminal (npr. koristeći Jumpcut).
-
-## Phishing
-
-*Phishing* je imitiranje stanice kako bi korisnik pomislio da je na poznatoj stranici u unio osjetljive podatke. Jedini sigurni dio browsera je address bar, jer današnji napadi mogu imitirati skoro sve:
-* ime taba i favicon se mogu postaviti na bilo koju vrijednost.
-* ime domene se može postaviti na `paypal-accounts.com` ili `account-update.com/paypal.com` i većina korisnika neće primjetiti da to nema veze s `paypal.com`.
-* unutar same stranice može se nacrtati novi prozor sa svojim address barom u kojem možeš napisati što želiš.
-* browserovi popupi za permissione se lako mogu nacrtati u htmlu.
-* Full Screen API može napraviti što želi.
-
-## Homograph attack
-
-DNS podržava ne-ASCII znakove, ali protokoli koje email i browseri koriste često podržavaju samo ASCII. *Internationalized Domain Name* prevodi unicode u ASCII domene koristeći `Punycode`: `Bücher.ch > xn--bcher-kva.ch`
-
-Ovo se može iskoristiti za *IDN homograph attack*: spoofanje domene koristeći npr. ćirilićna slova koja izgledaju isto kao i latinična. Zato bi browseri trebali prikazivati Punycode oblik sumnjivih slova.
-
-Sličan napad može se napraviti imitiranjem nečijeg usernamea koristeći Unicode. Za obranu od toga dobro je normalizirati sve usernameove prije zapisivanja u bazu koristeći `normalize_unicode(:nfkc)`.
 
 ## Web Cache Deception Attack
 
@@ -102,6 +43,24 @@ Zato je važno ne dopuštati "pametno" prepoznavanje URL-ova, nego na sve nepost
 - provjeri maksimalnu veličinu
 - whitelista file typeova
 
+## URI validation
+
+https://blog.steve.fi/If_your_code_accepts_URIs_as_input__.html
+
+Dopusti samo `http://` i `https://` inpute. Inače ti napadač može poslati `file:///etc/passwd`.
+
+## Reflections on Trusting Trust by Ken Thompson
+
+Trojanski konj je program koji glumi koristan program. Npr. unixov `login` koji osim što prihvati tvoju lozinku, šalje je i napadaču email. Ukoliko je promijenjen samo binary naredbe `login`, dovoljno ju je rekompilirati da uklonio zlonamjerni kod.
+
+Ali ako napadač u compiler doda kod koji prepoznaje da se kompilira naredba `login` i doda joj zlonamjerni kod, trojanac će se održati čak i ako u potpunosti reinstaliramo `login` iz bilo kojeg sourca.
+
+Ovo je moguće napraviti čak i bez da se ostavi trag u sourceu compilera. Prvo se u source compilera doda prepoznavanje kompiliranja `logina`, ali i prepoznavanje kompiliranja samog compilera. Zatim se taj binary spremi kao službeni C kompiler, a iz sourcea se izbriše spomenuti zlonamjerni kod. Svaka buduća reinstalacija kompilera će umetnuti ovaj samogenerirajući kodu binary kompilera, iz kojeg god sourca se on kompilirao.
+
 ## Literatura
 
 * https://www.owasp.org/index.php/Category:Attack
+
+## Tools
+
+* https://github.com/rapid7/metasploit-framework - penetration testing, napisan u Rubyju.

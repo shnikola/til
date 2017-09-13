@@ -23,6 +23,10 @@ Nijedan argument protiv pasteanja ne drži vodu:
 * Malware koji ti krade clipboard ti može jednako pratiti koje tipke ukucavaš.
 * Zabraniti paste zbog limita duljine - nema smisla ograničavati duljinu passworda. Password bilo koje duljine uvijek će se pretvoriti u hash iste duljine.
 
+## Forgotten Password
+
+Token koji generiraš za reset passworda prefiksaj s user id, kako bi smanjio šansu nasumičnog pogađanja.
+
 ## Password change
 
 Kada korisnik promjeni password, invalidiraj mu sve postojeće sessione.
@@ -38,3 +42,8 @@ Doznavanje informacija prema tome koliko dugo treba serveru da odgovori. Čest p
 Iako je zbog latencije u mreži ovo teško izvesti u praksi, Rack dodaje `X-Runtime` header s vremenom izvođenja na serveru koji uvelike pomaže napadaču.
 
 Kako bi se otežala vremenska procjena koristi `Rack::Utils.secure_compare` koji uspoređuje uvijek u konstantom vremenu.
+
+# Tools
+
+* http://hashcat.net/hashcat/ - alat za sve crackiranje password hasheva.
+

@@ -7,3 +7,5 @@ Prostor je defaultno zasjenjen, a izvor svijetla radi ray casting u svim smjerov
 Optimalnije rješenje može se dobiti ako poznaješ oblike prepreka. Npr. ako su prepreke pravokutnici, dovoljno je slati linije prema njihovim vrhovima, što zahtjeva puno manje izračuna presjeka.
 
 Za više izvora svijetla, samo iscrtaj poligon za svaki izvor.
+
+Btw, sjene nisu sive - one su komplementarne boji svijetlosti.

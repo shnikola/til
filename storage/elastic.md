@@ -2,7 +2,7 @@
 
 ## Complex fields
 
-Ako želiš da field bude array, ne trebaš ništa posebno specificirati. Svaki field može imati nula, jednu ili više vrijednosti. Jedino svaka vrijednost u arrayu mora biti istog tipa.
+Ako želiš da field bude array, ne trebaš ništa posebno specificirati. Svaki field može imati nijednu, jednu ili više vrijednosti. Jedino ograničenje je da sve vrijednosti u arrayu moraju biti istog tipa.
 
 Praznim fieldovima smatra se `null`, `[]` ili `[null]`.
 
@@ -26,7 +26,7 @@ Full-text queriji koriste se za pretraživanje dužeg teksta i koriste `analyzer
 `match: { message: { query: "search fo this", operator: "and" }}` ako želiš koristiti `and`.
 
 `match_phrase: { message: "quick fox" }` traži fraze dopuštajući `slop`, tj. da riječi smiju biti razmaknute za određen broj koraka.
-`match_phrase_prefix: { message: "quick brown f" }` isto kao `match_phrase`, a usto radi i prefix match na zadnjoj riječi fraze.
+`match_phrase_prefix: { message: "quick brown f" }` isto kao `match_phrase`, a usto radi i prefix match na zadnjoj riječi fraze. Korisno za autocomplete.
 
 `multi_match: { query: "search fo this", fields: ["subject", "message"] }` traži query istovremeno u više fieldova. Fieldovi se mogu navesti kao wildcard, npr. `*_name` za `first_name` i `last_name`. Pojedinom fieldu score se može boostati s `subject^3`.
 
@@ -60,7 +60,7 @@ Za missing query, koristi `bool: { must_not: { exists: { ... }}}`.
 `wildcard: { email: "nik*@mail.com }` za wildcard matching.
 `regexp: { email: "nik.{2}@mail.com }` za regex matching.
 
-`ids: { values: ["1", "4", "100"] }` traži dokumente po `_uid` fieldu.
+`ids: { values: ["1", "4", "100"] }` traži dokumente po `_id` fieldu.
 
 ## Compound queries
 
@@ -72,4 +72,4 @@ Za missing query, koristi `bool: { must_not: { exists: { ... }}}`.
 
 ## Performance
 
-* `doc["field"]` je brži od `_source.field` jer je u memoriji.
+`doc["field"]` je brži od `_source.field` jer je u memoriji.

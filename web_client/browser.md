@@ -77,6 +77,8 @@ Metode za traženje mogu se pozvati nad `document` (za sve) ili `el` (za djecu e
 
 `el.cloneNode()` stvara kopiju nodea, a `el.cloneNode(true)` stvara kopiju nodea i sve njegove djece. Klonirani node će imati iste atribute, ali ne i propertije i listenere dodane s `addEventListener`. Klonirani node nije dio dokumenta dok se ne doda s `appendChild` ili sličnim.
 
+`document.importNode(template.content, true)` klonira novi node iz `<template>` elementa.
+
 ## DOM Ready i Loaded
 
 Da bi manipulirao elementima, DOM stablo mora biti izgrađeno. To se da očitati iz `document.readyState` propertija.
@@ -232,6 +234,12 @@ Uvijek koristi `rel=noopener` na linkovima. On osigurava da će `window.opener` 
 
 `window.history.scrollRestoration` ponašanje scrolla. `auto` daje browseru da odluči, `manual` postavlja na vrh stranice. _Chrome i FF_
 
+## Form Events
+
+* `input` kada se vrijednost inputa promjeni.
+* `change` starija verzija `input`, poziva se samo kad se element odfokusira nakon promjene. Npr. povlačenje `range` inputa neće pozvati `change` dok korisnik ne otpusti miša. Za kompatibilnost koristi `addEventListener("change input")`.
+* `submit` se poziva nad elementom forme prije nego se submita.
+
 ## Mouse Events
 
 Mouse eventovi:
@@ -385,7 +393,6 @@ Kada se pušta `audio` ili `video` na mobilnom browseru, u notification panelu p
 `navigator.mediaSession.metadata = new MediaMetadata({ title: ...})` dodaje podatke o snimci koja se trenutno pušta u taj notification. Dodaj ovaj kod u callback `play` eventa. Podatci će se sami ukloniti kada snimka završi.
 
 `navigator.mediaSession.setActionHandler('nexttrack', ...)` definira ponašanje kada se klikne na next button u notificationu. Ovaj i drugi buttoni (`previoustrack`, `seekbackward`, `seekforward`) će se prikazati samo ako je definiran action handler.
-
 
 ## Speech Synthesis
 

@@ -126,6 +126,12 @@ Ako radiš vlastiti Ruby projekt kojeg pozivaš iz `main.rb`:
 Ako radiš gem, koristi `require` svugdje jer će se RubyGems pobrinuti za sve.
 Ako radiš na `Rails` aplikaciji, sve se autoloada pa ne trebaš pisati ništa.
 
+## Ruby Process
+
+`ENV` sadrži environment varijable postavljene u parent procesu. `ENV` nije Hash, ali ima neke njegove metode (`ENV['PATH']` ili `ENV.has_key?('PATH')`)
+
+`ARGV` je array stringova argumenata s kojima je pozvan proces (npr. `["foo", "bar", "-va"]`).
+
 ## Regexi
 
 * `/regex/`, ili `%r{regex}` ako ne želiš escapati slasheve.
@@ -144,12 +150,16 @@ Metode za matching:
 * `str =~ /re/` vraća indeks prvog matcha, ili `nil` ako ga nema
 * `str.match(/re/)` vraća `MatchData` objekt: `md[0]` za cijeli match, `md[1]` za prvi capture, `md[2]` za drugi itd; `md.captures` je array svih capturea; `md.named_captures` je hash svih named capturea _2.4_ ; `md.begin(1)` indeks početka prvog capturea.
 
-## URI
+## URI parsing
 
 Ako želiš matchati url iz nekog teksta, koristi `text[URI.regexp]`.
 
-Pripazi, `URI.join('http://example.com', 'plans', 'change')` neće vratiti `http://example.com/plans/change` nego `http://example.com/change`! Za joinanje
-više dijelova URL-a koristi `File.join` (osim što neće raditi na Windowsima)
+Za validiranje emaila koristi `URI::MailTo::EMAIL_REGEXP`.
+
+`URI.join` nije baš najbolji za izgradnju urlova. `URI.join('http://example.com', 'plans', 'change')` neće vratiti `http://example.com/plans/change` nego `http://example.com/change`. Umjesto toga, koristi `addressable` gem.
+
+Rails url helperi escapaju parametre s `CGI.escape` (escapaju se `;` i `&`),
+a sve ostalo s `URI.escape` (ne escapa ove stvari `;` i `&`).
 
 ## Date, Time, DateTime
 
@@ -167,6 +177,22 @@ više dijelova URL-a koristi `File.join` (osim što neće raditi na Windowsima)
 ## method_missing
 
 Kad definiraš `method_missing`, uvijek definiraj i `respond_to_missing?` jer će on, osim `respond_to?`, riješiti da radi i dohvaćanje metode s `method`.
+
+## Exceptions
+
+Exceptioni su objekti, instancirani od podklasa klase `Exception`. Svaki exception ima `message` (string) i `backtrace` (array stringova).
+
+`rescue ZeroDivisionError => e` lovi exception zadane klase i stavlja ga u `e`.
+`rescue Errno::ETIMEDOUT, Errno::ECONNREFUSED => e` lovi više klasa.
+`rescue => e` lovi `StandardError` exception.
+
+Krovna klasa `Exception` sadrži i syntax error exceptione i signal handling, pa nikada ne želiš koristiti `rescue => Exception e`.
+
+`raise ArgumentError.new("You messed up!")` izaziva exception i postavlja mu `message`.
+`raise ArgumentError, "You messed up!"` alternativni način poziva.
+`raise "You messed up"` izaziva `RuntimeError`.
+
+`fail` je sinonim za `raise`.
 
 ## PStore
 
@@ -186,7 +212,7 @@ Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš pe
 
 `[82, 117, 98, 121].pack("C*")` generira string od arraya bytova.
 
-## Unicode nomralize
+## Unicode normalize
 
 Unicodeu dopušta da se isti znakovi mogu stvoriti na različite načine, npr. `š` može biti jedan znak, a može koristiti *Combining Diacritical Mark* pa biti dva znaka: `s` i `̌`. Da bi pouzdano radio s unicoded stringovima, koristi `str.unicode_normalize` koji podržava različite metode normalizacije:
 * `:nfc` Normal Form Compose pretvara sve kombinirane znakove u jedan, default.
@@ -231,7 +257,7 @@ Od `2.5` dijelovi standard librarija se prebacuju u gemove kako bi ih mogao upgr
 
 ### 2.3
 
-`user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali `try` ne baca exception ako metoda ne postoji.
+`user&.admin?` je kao `user && user.admin?`. U principu kao `try`, ali će za razliku od `try` baciti exception ako metoda ne postoji.
 
 ### 2.4
 

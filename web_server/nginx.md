@@ -22,5 +22,25 @@ Config za svaki site definiran je u `/etc/nginx/sites-available`.
 
 `service nginx reload` iznova učitava konfiguraciju.
 
+## nginx Reverse Proxy Cache
+
+`nginx` ima svoj vlastiti ugrađeni proxy cache - nema potrebe za odvojenim rješenjima poput Varnisha.
+
+U `nginx.conf` dodaj:
+* `proxy_cache_path /var/lib/nginx/cache levels=1:2 keys_zone=backcache:8m max_size=50m`
+  * `/var/lib/nginx/cache` definira directory u kojem će s držati cache (pripazi da postoji i da ga ownaš)
+  * `levels` način organiziranja cachea po folderima (nebitno)
+  * `keys_zone` definira ime zone, veličinu rezerviranu za keyeve (`8MB`) i maksimalnu veličinu za cache
+* `proxy_cache_key "$scheme$request_method$host$request_uri$is_args$args"` način na koji se generira cache key.
+* `proxy_cache_valid 200 302 10m` storea uspješne response i redirectove na 10 minuta, a `404 1m` na 1 minutu.
+
+U konfiguraciju servera dodaj:
+* `proxy_cache backcache` definira koji cache zone se koristi.
+* `add_header X-Proxy-Cache $upstream_cache_status` dodaje header je bio cache hit ili miss.
+
+Ako imaš baš jako veliki traffic, može se dogoditi *cache stampede*. Više istovremenih requestova počne dohvaćati resource koji je expirao pa cache prosljeđuje request na server za svakog (umjesto samo za jednog). Ovo se može izbjeći lockingom: `proxy_cache_lock on;` i `proxy_cache_use_stale updating;`
+
+Na aplikacijskom serveru vraćaj `Cache-Control: public` samo za stranice koje ne koriste cookije.
+
 # Literatura
 https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/

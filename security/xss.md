@@ -47,3 +47,14 @@ CSP također i brani napade korištenjem `eval()`, `new Function()`, `setTimeout
 
 Možeš podesiti CSP da šalje report s blokiranim resourcom koristeći direktivu `report-uri /my-report-parser`. Browser će poslati POST s JSONom na dani url.
 Ukoliko tek postavljaš CSP i želiš samo primati reporte, ali ne i blokirati resource, koristi `Content-Security-Policy-Report-Only` header.
+
+## Pastejacking
+
+*Pastejacking* je napad gdje korisnik kopira neki tekst sa weba, (npr. shell naredbu), a napadač u njegov clipboard umjesto tog teksta stavlja nešto drugo.
+
+Napadač na svojoj stranici (ili pomoću XSS-a) osluškuje `copy` ili `keydown` event, pri čemu pomoću `document.execCommand('copy')` ili `e.clipboardData.setData` stavlja svoj sadržaj u korisnikov clipboard.
+
+Ako se radi o shell naredbi, napadač može dodati `\r\n` na kraj kako bi se ona izvela odmah pri pasteanju, te dodati `clear` i `echo <origalna naredba>`, ne dajući priliku korisniku da uopće primjeti da se zla naredba izvela.
+
+Nema nekog pametnog načina za obraniti se, osim da vrlo pažljivo provjeriš cliboard prije nego pasteaš nešto u terminal (npr. koristeći Jumpcut).
+

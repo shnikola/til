@@ -1,7 +1,5 @@
 # Servers
 
-TODO: thin, unicorn
-
 ## Rack
 
 `Rack` je univerzalni adapter između servera (`unicorn`, `puma`) i aplikacije (`rails`, `sinatra`).
@@ -17,6 +15,14 @@ Rack 1.5 nema direktnu podršku za Streaming, Server-Sent Events i Websockete, a
 Full Hijacking API predaje aplikaciji potpunu kontrolu socketa, a sam server ne šalje ništa. `env['rack.hijack'].call` započinje socket hijack, a za pisanje u socket koristi se IO objekt `env['rack.hijack_io']`. Aplikacija je zadužena za ispisivanje headera i zatvaranje IO objekta.
 
 Partial Hijacking API obavlja slanje headera iz servera, a zatim predaje kontrolu socketa aplikaciji. `headers['rack.hijack'] = proc do |io|` definira ponašanje nakon slanja headera. Body dio responsa `[200, headers, []]` se zanemaruje.
+
+### Rack Events
+
+https://github.com/rack/rack/blob/master/lib/rack/events.rb
+
+Rack je malo šugav jer svaki middleware mora kopati po čitavom "rack stacku" da bi napravio nešto.
+
+Ovo je prijedlog event-based pristupa gdje se middleware kojeg ne zanima response body zakači na evente poput `on_start`, `on_finish` ili `on_error`.
 
 ## Procfile
 
@@ -52,9 +58,13 @@ Puma ne posjeduje mehanizam za *timeout*. `Heroku` router timeouta sve requeste 
 
 ## Unicorn
 
-Unicorn se kršio s:
-`Operation not permitted @ rb_file_chown - /home/jugosluh/shared/log/unicorn.log`
-U `unicorn.rb` user nije bio postavljen na "app" s kojim sam deployao iz mine (on je stvarao foldere i sve)
+Unicorn je multi-process HTTP server. Master process forka workere kojima se prosljeđuju requesti.
+
+Pošto svaki request zahtjeva slobodan proces, Unicorn radi ok s klijentima koji imaju male latencije i velik bandwith. Ali u slučaju da aplikacija očekuje velike requestove (npr. image upload) ili šalje velike odgovore sporim klijentima, svaki worker će biti zauzet dugo vremena. Kada su svi workeri zauzeti, raste vrijeme čekanja u redu svakog requesta. Zato se kao bolja opcija preporučuju Puma ili Rainbows.
+
+## EventMachine
+
+EventMachine omogućuje event-based handlanje IO naredbi u stilu nodeJSa. Event loop se izvodi u jednom threadu koristeći Linux `select()`, pa s istim resursima može handlati puno više konekcija od standardnog multithread servera koji zahtjeva po thread za svaku konekciju. Koristan u slučaju da imaš jako veliki throughput.
 
 ## message_bus
 

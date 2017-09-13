@@ -64,3 +64,19 @@ https://youtu.be/93sV5XGLmgQ?t=2h5m33s
 
 Danas se čini nemoguće biti subverzivan. Ali postoje područja koja su zapostavljena, o kojima nitko ne priča i koja se izbjegavaju (npr. u Moorovom slučaju pornografija, i magija). Samim time nitko i ne pokušava promijeniti kako se to područje doživljava. Često su to vrlo funndametalna, bitna područja koja jednostavno trenutno nisu pomodna.
 
+## Lessons from the screenplay
+
+Početak scene stvara okvir o čemu se radi sceni, sužavajući se prema zadnjoj riječi ili rečenici u kojoj je poanta cijele scene.
+
+*Subplot character* prolazi kroz iste probleme kao protagonist, a publici daje kontrast.
+
+Lessons from "Independence day": epic antagonist, action is about characters, be mean to characters
+
+Ultimate antagonist:
+* exceptionally good at attacking the hero's greates weekness
+* pressuring protagonosti into difficult choices
+* competing for the same goal forces them into direct conflict
+
+Establiraj da se može umrijeti u filmu kako bi povećao napetost (npr. Moonrise Kingdom gdje ubiju psa).
+
+Protagonist causes things to happen, not has things happen to them.

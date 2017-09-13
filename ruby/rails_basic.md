@@ -44,9 +44,12 @@ U slučaju `Post` `has_many :comments`:
 ## Cache Stores
 
 Rails koristi *key based cache* - umjesto da eksplicitno expira value, promijenjeni objekt dobije novi key. U slučaju da se cache napuni, prvo će se odbaciti najdavnije korišteni - znači ovi pod starim keyevima.
-  * **MemoryStore** je najbrži, ali jede RAM i nemožeš ga dijeliti ni među procesima, ni među serverima. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je **LRURedux**.
-  * **FileStore** je malo sporiji, i ne možeš ga dijeliti među serverima. Također ne radi na Herokuu. Koristi ga ako imaš mali request load, a veliku caching potrebu (> 100MB)
-  * **Memcache** je spor preko networka (računaj oko 20ms bar), ali je distribuiran. Koristi ga ako imaš više servera. Alternativa je **Redis** kojem možeš definirati drugačija pravila expiranja, i može se dumpati na disk pa ga je lakše restartirati.
+
+**MemoryStore** je najbrži, ali jede RAM i nemožeš ga dijeliti ni među procesima, ni među serverima. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je **LRURedux**.
+
+**FileStore** je malo sporiji, i ne možeš ga dijeliti među serverima. Također ne radi na Herokuu. Koristi ga ako imaš mali request load, a veliku caching potrebu (> 100MB)
+
+**Memcache** je spor preko networka (računaj oko 20ms bar), ali je distribuiran. Koristi ga ako imaš više servera. Alternativa je **Redis** kojem možeš definirati drugačija pravila expiranja, i može se dumpati na disk pa ga je lakše restartirati.
 
 ## Conditional GET
 
@@ -85,21 +88,17 @@ Savjeti:
 * Rails ne može znati je li neloadana konstanta bila relative (`module Admin; class UsersController`) ili qualified (`class Admin::UsersController`), pa se neće ponašati isto kao čisti Ruby. Da izbjegneš probleme, uvijek koristi *relative nesting*.
 * Nikad ne stavljaj `require` konstanti koje će se autoloadati - samo ćeš ga zbuniti. `require` 3rd party librarija je ok.
 
-## ActiveJob
-
-Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt - tako ih je puno lakše testirati.
-
 ## force_ssl
 
 `force_ssl` u controlleru će redirectati svaki HTTP request na HTTPS.
 
 `config.force_ssl = true` će postaviti redirect, a usto i postaviti sve cookije i session da budu Secure (da se ne šalju s HTTP requestovima), te podesiti HSTS headere. Detalji se mogu podesiti s `config.ssl_options`
 
-## request
+## Remote IP
 
-`request.ip` koristi `HTTP_CLIENT_IP` i `HTTP_X_FORWARDED_FOR` headere da odredi IP adresu klijenta.
+`request.ip` koristi `HTTP_CLIENT_IP` i `HTTP_X_FORWARDED_FOR` headere da odredi IP adresu klijenta. Oba su nestandardna headera koje postavljaju proxiji.
 
-`request.remote_ip` radi istu stvar, ali još dodatno provjerava da li je neka od IP adresa spoofana pomoću `ActionDispatch::RemoteIp` middlewarea.
+`request.remote_ip` radi istu stvar, ali još dodatno provjerava da li je neka od IP adresa spoofana pomoću `ActionDispatch::RemoteIp` middlewarea. Ponekad se dogodi da jedan proxy postavi `CLIENT_IP` header, a drugi `X_FORWARDED_FOR`. U tom slučaju, aplikacijski server ne može znati koja adresa je klijentova, pa po defaultu baca `IpSpoofAttackError`. Ukoliko ne radiš autentifikaciju po IP-u, najjednostavnije je isključiti ovu provjeru pomoću `config.action_dispatch.ip_spoofing_check = false`.
 
 ## Time Zones
 
@@ -114,8 +113,11 @@ U Rails aplikaciji postoje 3 različite time zone: sistemsko vrijeme, aplikacijs
 `Time.zone.now` (`Time.current`) vraća trenutno vrijeme u aplikacijskoj time zoni.
 `Time.zone.today` (`Date.current`) vraća današnji datum u aplikacijskoj time zoni.
 `Time.zone.parse("...")` parsira vrijeme u aplikacijskoj time zoni.
-`time.in_time_zone` prebacuje vrijeme u aplikacijsku time zonu.
-`time.in_time_zone(user_zone)` prebacuje vrijeme u drugu, npr. korisnikovu vremensku zonu.
+`Time.zone.local(2015, 12, 1)` stvara novo vrijeme (umjesto `Time.new`).
+
+Za konvertiranje između zona koristi `time.in_time_zone`, ali nemoj ga koristiti za inicijaliziranje datuma. Npr:
+* `Date.new(2015, 1, 1).to_time.in_time_zone` prvo pretvara datum u sistemsku zonu (`2015-01-01 00:00:00 +0100`), i onda nju konvertira u aplikacijsku zonu (`2014-31-12 23:00:00 +0000`). To najčešće ne želiš.
+* `Date.new(2015, 1, 1).in_time_zone` direktno konvertira u aplikacijsku zonu (`2015-01-01 00:00:00 +0000`)
 
 Pri spremanju u bazu, postoje dvije situacije. Stupci koji ne podržavaju time zone (npr. `timestamp` u MySQL) će prebaciti `Time` objekt u `UTC`. Stupci koji podržavaju time zone (npr. `timestampz` u Postgresu) će spremiti objekt zajedno s time zonom. Ovo je korisno spremati ako ti je bitno u kojoj zoni se nešto dogodilo, ali najčešće nije potrebno.
 
@@ -132,11 +134,3 @@ Pri kliku na link dohvaća se nova stranica, i njen `body` se postavi kao `docum
 Novi turbolinksi također imaju adaptere omogućuju ubacivanje dijelova weba u nativne iOS i Android aplikacije.
 
 Nažalost, turbolinksi sa sobom donose mnogo suptilnih komplikacija (treba koristiti `turbolinks:load` umjesto `window.onload`; updatanje asseta; third-party JS librariji koji očekuju da stvari rade normalno) da ih se ne isplati koristiti.
-
-## Rails Schema Cache
-
-http://blog.iempire.ru/2016/12/13/schema-cache
-
-Rails pri pokretanju aplikacije radi `SHOW FULL FIELDS` request na bazu kako bi dohvatio informacije o svim stupcima. Ovaj request zna biti spor, pa ako imaš jako puno Unicorn procesa koje restartiraš u isto vrijeme, baza se može naći pod velikim opterećenjem.
-
-Rješenje je pokrenuti rake `rake db:schema:cache:dump` koji će zapisati podatke o stupcima u file, kako procesi ne bi morali raditi upite na bazu.

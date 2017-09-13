@@ -18,4 +18,7 @@ Sidekiq dolazi s ugrađenim dashboardom gdje možeš vidjeti stanje svih jobova.
 
 Zapisuje jobove u memoriju aplikacije. Svaki job ima svoj queue s poolom threadova koji će ih obrađivati. Ne zahtjeva nikakav dodatan dependency, ali je i najnesigurniji - bilo kakvo gašenje procesa će obrisati sve jobove. Zato ga koristi samo za non-mission-critical zadaće.
 
+## Savjeti
+
+Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt - tako ih je puno lakše testirati.
 

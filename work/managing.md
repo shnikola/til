@@ -1,27 +1,18 @@
 # Managing
 
-## Hiring by Project
+## Hiring
 
-https://mattermark.com/the-one-method-ive-used-to-eliminate-bad-tech-hires
+Dobar način za zaposliti kvalitetnu osobu - zadaj zadatak u petak, neka ga riješi preko vikenda i dođe u ponedjeljak da prokomentira. Zadatak neka bude neovisan od nekog postojećeg projekta, i s dovoljno mjesta da ga kandidat može nadograditi po želji. Obrati pažnju na:
+1) pitanja koja će postaviti prilikom zadavanja zadatka
+2) koliko dobro objašnjava svoje odabire i koliko je spreman prihvatiti tuđe mišljenje
 
-Najbolji način za zaposliti kvalitetnu osobu - zadaj zadatak u petak, neka ga riješi preko vikenda i dođe u ponedjeljak da prokomentira. Zadatak neka bude neovisan od nekog postojećeg projekta, i s dovoljno mjesta da ga kandidat može nadograditi po želji. Pritom pazi na:
-* pitanja koja će postaviti prilikom zadavanja zadatka
-* koliko dobro objašnjava svoje odabire i koliko je spreman prihvatiti tuđe mišljenje
 I, ako možeš to priuštiti, plati ga za taj zadatak zaposlio ga ili ne.
-
-## Don't Hire by Keyword
-
-http://www.michaelrwolfe.com/2012/01/16/dont-hire-by-keyword
 
 Ne inzistiraj da ti zaposlenici dolaze iz backgrounda u kojem je tvoj business.
 Fokusiraj se na to da imaju dobre komunikacijske vještine, da su timski igrači,
 i da se kulturalno slažu.
 
-## Good Interview Question
-
-https://www.nczonline.net/blog/2015/09/my-favorite-interview-question
-
-"Suppose you could design your dream job that you'll be starting on Monday. It's at your ideal company with your ideal job title and salary. All you have to do is tell them what you want to do at your job and you can have it. What does your job entail?"
+Dobro pitanje za osobu koju zapošljavaš je: "Suppose you could design your dream job that you'll be starting on Monday. It's at your ideal company with your ideal job title and salary. All you have to do is tell them what you want to do at your job and you can have it. What does your job entail?" Više: https://www.nczonline.net/blog/2015/09/my-favorite-interview-question
 
 ## Interview Questions To Employers
 
@@ -39,6 +30,10 @@ http://www.stefankendall.com/2013/11/10-questions-to-ask-your-potential.html
 10. What do you wish you had known about the company before working here? What's the worst part of this job?
 
 Uz sve to, uzmi u obzir: "One of the things you'll learn as you progress is that superficial process issues are actually not at the core of effectiveness; talent, vision, and ability to execute are. You want to be careful that your questionnaires don't blind you to opportunities to work in radically different cultures/processes that will succeed for reasons you don't yet understand."
+
+## Remote work
+
+Temelj uspješne remote suradnje je povjerenje. U ljudskoj prirodi je pretpostaviti najgore kada se remote contact ne javlja. Najbolji način za uspostavu povjerenja je *managing upwards* - slati managerima status update svako toliko vremena. Time im olakšavaš posao i izbjegavaš neugodne upite tipa "U kojoj je fazi to i to?".
 
 ## Don't Add Your 2 Cents
 

@@ -19,11 +19,9 @@ U mreži se komunicira pomoću paketa koji su građeni slojevito:
 3. Oko njega je IP paket s IP adresama izvora i odredišta kako bi paket stigao na pravi server.
 4. Oko njega je ethernet/wifi paket s MAC adresom koja se konstantno mijenja kako se paket kreće od računala do računala.
 
-## What really happens when you navigate to a URL
+## Lifecycle requesta
 
-http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/
-
-1. Unesemo url wikipedia.org/login u browser
+1. Unesemo url wikipedia.org/login u browser.
 2. Browser DNS-om dohvaća IP adresu za "wikipedia.org".
 3. Browser šalje request na IP: URL, tko sam (User-Agent), što želim (Accept, Accept-Encoding), da održi TCP vezu (Connection), i stanje klijenta (Cookies)
 4. Server odgovara s `301 Moved Permanently`, `Location: https://www.wikipedia.org/`
@@ -49,13 +47,13 @@ Vrste recorda:
 * `CNAME`: alias na `A` record (`puzzle` -> `pitalica`) ili drugu domenu (`blog` -> `journal.srijeda.com`)
 * `MX`: usmjerava na `A` record ili drugu domenu kojoj će proslijediti primljeni email. `@` host za glavnu domenu.
 * `TXT`: drži tesktualne podatke, uglavnom za verifikaciju
-* `NS`: nameserveri authoritive za domenu. Host može biti `@` (za trenutnu zonu) ili `pitalica` (delegiranje subodmene u drugu zonu)
+* `NS`: autorativni nameserveri za domenu. Host može biti `@` (za trenutnu zonu) ili `pitalica` (delegiranje subodmene u drugu zonu)
 
 ## DNS Resolving
 
 https://howdns.works/
 
-1. Browser traži IP adresu za wikipedia.org.
+1. Browser traži IP adresu za `wikipedia.org`.
 2. Provjerava u browser cacheu; ako nema:
 3. Provjerava u OS cacheu; ako nema:
 4. Provjerava s resolverom (ISP server); ako on nema u cacheu:
@@ -75,9 +73,3 @@ Ipv6 imaju 128 bitova. OS-ovi ih podržavaju, ali serveri još nisu spremni.
 URI koji sadrži inline data. Koriste se kako bi se uštedio request.
 Format je `data:[<media type>][;base64],<data>`. (npr. `data:image/png;base64,iVBORw0KGgoAA...`)
 
-## Kako iza domene može stajati više IP-jeva
-
-* Round-robin DNS - vraća jedan od nekoliko IP-jeva (nije preporučen http://serverfault.com/questions/60553/why-is-dns-failover-not-recommended)
-* GeoDNS - vraća IP ovisno o korisnikovoj lokaciji
-* Load Balancer - stroj koji prosljeđuje request ostalim serverima (npr. HAProxy)
-* Anycast je routing metoda u kojoj je IP mapiran na više fizičkih servera, ali se ne koristi s TCP-om.

@@ -12,6 +12,27 @@ Korištenje UUID-a olakšava skaliranje pošto se idjevi više ne generiraju sek
 
 Kada se model persista, automatski će saveati sve `has_one` i `has_many` associatione koji još nisu persisted. Želiš li izbjeći to ponašenje, dodaj `has_one :user, autosave: false`.
 
+## Foreign keys
+
+`add_foreign_key :articles, :users` dodaje foreign key na `user_id` stupac tablice `articles`.
+
+`add_foreign_key :user, :posts, on_delete: :cascade` dodaje kaskadno brisanje.
+
+`t.references :post, foreign_key: { on_delete: :cascade }, index: true` za dodavanje pri kreiranju tablice.
+
+Uvijek koristi foreign_key u kombinaciji s indeksom.
+
+## Preloading
+
+Za izbjegavanje N+1 querija, koristi neku od metoda koje preloadaju asocijacije objekta.
+
+`post.preload(:comments)` dohvaća komentare u zasebnom queriju.
+`post.eager_load(:comments)` koristi LEFT OUTER JOIN.
+
+`post.includes(:comments)` do Railsa 5 je sam donosio odluku. Od Railsa 5 se ponaša kao `preload(:comments)`, a ako mu dodaš `.references(:comments)` kao `eager_load(:comments)`
+
+`post.joins(:comments)` ne učitava asocijacije pa ga koristi za filtriranje.
+
 ## has_many i conditions
 
 http://ducktypelabs.com/four-ways-to-filter-has_many-associations/
@@ -88,4 +109,14 @@ Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` meto
 
 Ali ako stvaraš vlastite threadove unutar koda, automatsko oslobađanje se neće obaviti i pool će zauvijek ostati bez te konekcije. Zato kad god pokrećeš novi thread unutar requesta, ručno handlaj konekcije koristeći `checkout`, `checkin`ili `with_connection` s blokom. Više informacija na https://bibwild.wordpress.com/2014/07/17/activerecord-concurrency-in-rails4-avoid-leaked-connections/.
 
+## Schema dumps
 
+Kada deployaš aplikaciju na novi server ili je pokrećeš iznova na novom računalu, ne želiš pozivati sve migracije iznova. Umjesto toga, koristi `rake db:setup` koji izgradi bazu koristeći `db/schema.rb`.
+
+## Schema Cache
+
+http://blog.iempire.ru/2016/12/13/schema-cache
+
+Rails pri pokretanju aplikacije radi `SHOW FULL FIELDS` request na bazu kako bi dohvatio informacije o svim stupcima. Ovaj request zna biti spor, pa ako imaš jako puno Unicorn procesa koje restartiraš u isto vrijeme, baza se može naći pod velikim opterećenjem.
+
+Rješenje je pokrenuti rake `rake db:schema:cache:dump` koji će zapisati podatke o stupcima u file, kako procesi ne bi morali raditi upite na bazu.

@@ -74,9 +74,9 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 
 Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
 * `http PUT example.org` osnovni poziv
-* `X-API-Token:123` za custom headere
+* `X-API-Token:123` za headere
 * `field=value` za parametre, po defaultu se šalje kao JSON, s `-f` kao forma
-* `field:=[1,2,3]` za raw JSON, ako value treba biti number, boolean ili array
+* `field:='{"name": "nikola"}'` za raw JSON.
 * `--session=logged-in` čuva cookije i autorizaciju
 
 ## tcpdump

@@ -1,22 +1,8 @@
 # Concurrency
 
-*Concurrent* znači da se dvije radnje izvršavaju u istom *vremenskom intervalu*. *Parellel* znači da se dvije radnje izvršavaju u istom *trenutku*.
-
-Concurrency je način strukturiranja programa kako bi se mogao (ali ne i nužno morao) paralelizirati.
-
-## Multiple processes vs Multi-threaded
-
-* Threadovi zauzimaju manje memorije od procesa
-* Threadovi se brže stvaraju, uništavaju, i lakše se switcha između njih jer koriste istu memoriju.
-* Threadovi uvijek umiru kad im parent proces umre; forkani procesi koji ne završe prije parenta postaju zombiji.
-* Threadovi mogu komunicirati preko `Queue`, procesi moraju koristiti pipeove ili sockete.
-* Procesi su memorijski izolirani pa se ne moraš brinuti za race conditione, lakši su za programiranje i debugiranje.
-
-Ukratko: threadovi su jeftiniji, ali moraš biti puno oprezniji s njima. Procesi su skuplji, ali daju ti sigurnost.
-
 ## Procesi
 
-`fork { ... }` stvara novi `ruby` proces koji će izvoditi naredbe unutar bloka, dok će parent nastaviti izvoditi naredbe nakon `fork`. Vraća `pid` stvorenog subprocesa.
+`fork { ... }` stvara novi `ruby` proces koji će izvoditi naredbe unutar bloka, dok će parent nastaviti izvoditi naredbe nakon `fork`. Vraća `pid` stvorenog subprocesa. Ruby 2.0+ podržava copy on write.
 
 `if pid = fork ... else  ...` stvara novi proces koji će vratiti `nil` i izvoditi `else` dio izraza, dok će parent vratiti `pid` i izvoditi gornji `if` dio.
 
@@ -24,12 +10,13 @@ Ukratko: threadovi su jeftiniji, ali moraš biti puno oprezniji s njima. Procesi
 `exit!(code)` prekida proces, vraća `code`, ali ne poziva `at_exit`.
 
 `Process.wait(pid)` blokira trenutni proces dok se proces `pid` ne završi.
+`Process.wait` blokira dok se bilokoji subproces ne završi, vraća njegov `pid`.
+`Process.wait2` vraća `pid` i `exit_code` završenog subprocesa.
 `Process.waitall` blokira dok svi subprocesi ne završe.
 
-Ukoliko parent ne čeka svoj subproces da završe, on će postati zombie.
-`Process.detach(pid)` stvara novi thread koji će se pobrinuti da subproces završi bez da se mora pozivati `wait`.
+Ukoliko se subproces završi prije nego parent pozove `wait`, kernel će tu informaciju queuati i bit će dostupna kada parent konačno pozove `wait`. Tako se izbjegavaju bilo kakvi race conditioni.
 
-Kada se stvara novi proces u Unixu, on dobija kopiju cijele memorijskog prostora parent procesa. Kako je to skupo, koristi se *Copy on write* mehanizam, koji isprva dopušta procesima da koriste istu memoriju, a radi kopiju tek kada jedan od njih pokuša pisati u nju. Ruby 2.0+ podržava copy on write.
+Ukoliko parent ne čeka svoj subproces da završi, njegov exit status će ostati queuean i zauzimati resurse - postat će zombie proces. Stoga, ako ne koristiš `Process.wait(pid)`, koristi `Process.detach(pid)` koji interno stvara novi thread čiji je jedini zadatak da čeka child process i pokupi njegov exit status.
 
 Procesi komuniciraju streamovima preko *pipea* ili porukama preko *socketa*.
 
@@ -96,6 +83,8 @@ Za sinkorinizaciju koristi, stvori `mutex = Mutex.new` izvan threadova.
 
 `Queue` je threadsafe struktura. `enq` dodaje element, `deq` uzima ili blokira dok ne stigne novi.
 
+`hamster` gem sadrži immutable strukture podataka (Hash, Vector, Set, SortedList, List, Deque) koje su po definiciji thread safe.
+
 ## Fibers
 
 Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
@@ -120,15 +109,22 @@ MRI (standardna Ruby implementacija) ima *global interpreter lock* (GIL). On ne 
 
 GIL se koristi kako bi se izbjegli race conditioni MRI internog koda, ali on *ne garantira* da je sav tvoj Ruby code thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
 
-Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GILa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO, MRI će se prebaciti na drugi thread koji nije blokiran.
+Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GILa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO (HTTPS request, DB query, čitanje i pisanje na disk), MRI će se prebaciti na drugi thread koji nije blokiran.
 
 ## Signals
 
 U slučaju da se multithreaded procesu pošalje signal, kernel će nasumično odabrati jedan thread kojem će prenijeti taj signal. Kako bi izbjegao probleme koje to može izazvati, MRI (i druge Ruby implementacije) pri pokretanju stvaraju poseban thread koji je zadužen za handlanje signala i pipeom ih šalje main threadu.
 
-`Signal.trap("INT") do ... end` definira globalno handlanje signala u trenutnom procesu. Moguće je definirati samo jedan handler po signalu.
+`Process.kill("INT", pid)` šalje signal procesu s danim `pid`. `INT` će uzrokovati isti signal kao da si stisnuo `CTRL+C` u terminalu.
 
-Neuhvaćeni signali podižu `SignalException`, pa ako želiš handlati signal samo u određenom dijelu koda možeš koristiti `rescue`. Npr. `rescue Interrupt` za handlanje `INT` signala.
+`Signal.trap("INT") do ... end` definira globalno handlanje signala u
+trenutnom procesu. Moguće je definirati samo jedan handler po signalu, pa pripazi da ne overridaš handler koji je neki gem dodao.
+
+`Signal.trap("INT", "IGNORE")` definira ignoriranje `INT` signala u trenutnom procesu.
+
+Neuhvaćeni i neignorirani signali podižu `SignalException`, pa ako želiš handlati signal samo u određenom dijelu koda možeš koristiti `rescue`. Npr. `rescue Interrupt` za handlanje `INT` signala.
+
+Imaj na umu da je dojava signala nepouzdana. Npr. ako proces handla `INT` signal dok mu se šalje drugi `INT` signal, ovaj drugi signal možda neće ni primiti.
 
 ## Timeout i thread.raise
 
@@ -141,14 +137,6 @@ Ovo može izazvati razne probleme poput neotpuštanja db konekcija, ili postavlj
 Ovo nije problem specifičan za Ruby - to je problem koncepta timeouta koji će prekinuti svaku radnju nakon određenog vremena. Sigurnije rješenje je koristiti timeout implementiran za sami request, npr. Mysql timeout. Više informacija na https://github.com/ankane/the-ultimate-guide-to-ruby-timeouts.
 
 `Rack::Timeout` je i dalje bolja opcija nego dopuštati jako duge requeste koji će stvoriti zastoj na serveru. Samo treba biti svjestan da svaki `Timeout::Error` koji se pozove može izazvati probleme.
-
-## Thread Pooling
-
-Ako imaš jako puno malih zadataka koje želiš obavljati istovremeno, overhead stvaranja novog threada za svaki može biti velik. Usto, threadovi jesu jeftini, ali nisu besplatni. Ako kreiraš 1000 threadova odjednom, ostat ćeš bez resourca.
-
-Da bi se to izbjeglo, koristi *thread pooling*. Pool ima određenu veličinu koja određuje koliko će threadova unaprijed stvoriti (ili u slučaju lazy poola, koji je maksimum koji će stvoriti). Pool zadatke koje dobije prosljeđuje trenutno idle threadu.
-
-Thread Pool je implementiran u librarijima kao što je `Celluloid`.
 
 ## Rails Thread safety
 
@@ -187,13 +175,7 @@ Svi mutable objekti pripadaju jednom guildu i ne može im se pristupati iz drugo
 
 Posebna struktura za dijeljenje mutable objekata - potrebni lockovi, ali to koristi se samo u rijetkim slučajevima.
 
-## Thread safe collections
-
-https://github.com/hamstergem/hamster
-
-Gem s immutable strukturama podataka (Hash, Vector, Set, SortedList, List, Deque) koje su po definiciji thread safe.
-
 # Literatura
 
 * http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil
-* https://www.toptal.com/ruby/ruby-concurrency-and-parallelism-a-practical-primer
+* https://engineering.universe.com/introduction-to-concurrency-models-with-ruby-part-i-550d0dbb970

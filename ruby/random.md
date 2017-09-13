@@ -20,16 +20,9 @@ https://www.youtube.com/watch?v=4DqzaqeeMgY
 
 Problem s gem odlučivanjem koju verziju gema koristiti. Rješenje: ne radi tu odluku u runtimeu, nego pri instalaciji.
 
-## Rack::Events
-
-https://github.com/rack/rack/blob/master/lib/rack/events.rb
-
-Rack je malo šugav jer svaki middleware mora kopati po čitavom "rack stacku" da bi napravio nešto.
-Ovo je prijedlog event-based pristupa gdje se middleware kojeg ne zanima response body zakači na evente poput `on_start`, `on_finish` ili `on_error`.
-
 ## Wheneverize
 
-Pripazi da wheneverize i slični cron gemovi pokreću cijeli Rails environment, što zna potrajati par minuta, pa nekoliko takvih jobova može pojesti CPU i memoriju. Zato uvijek pokušaj pisati light-weight skripte ili ih pozivati iz već pokrenutog background joba.
+Imaj na umu da wheneverize i slični cron gemovi pokreću cijeli Rails environment, što zna potrajati par minuta, pa nekoliko takvih jobova može pojesti CPU i memoriju. Zato uvijek pokušaj pisati light-weight skripte ili ih pozivati iz već pokrenutog background joba.
 
 ## Micromachine
 

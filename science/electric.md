@@ -1,4 +1,4 @@
-# Science and Technology
+# Electrical Engineering
 
 ## Why Three Prongs?
 
@@ -17,14 +17,6 @@ Ali uređaji se troše i "hot" žica se s vremenom zna izolirati i dotaknuti met
 U slučaju da "hot" žica dotakne kućište, u stvorit će se kratki spoj i iskočiti osigurači, što je puno bolje nego smrt.
 
 Ali i dalje se može dogoditi da ti toster bez utikača s uzemljenjem upadne u kadu. To se može spriječiti uređajem koji mjeri razliku u strujama koje prolaze "hot" i "neutralnom" žicom. Ako je sve u redu, struje bi morale biti iste. Ali, ako se čovjek nađe na putu, dio struje ide u njega, i razlika postoji. U tom slučaju taj zaustavni uređaj može prekinuti strujni krug i spasiti nekome život.
-
-## Time, technology and leaping seconds
-
-https://googleblog.blogspot.hr/2011/09/time-technology-and-leaping-seconds.html
-
-Zbog raznih fluktuacija u zemljinoj rotaciji, i najprecizniji satovi moraju se povremeno prilagoditi da se poklapaju sa "solarnim" vremenom. Takva prilagođavanja, tzv. *leap seconds* dogodila su se 24 puta od 1972.
-
-U Googlu su to riješili tako da tijekom dana u kojem se *leap second* treba dodati, NTP server postupno dodaje po nekoliko milisekunda, pa se svi serveri pomalo prilagode bez da treba svaki posebno mijenjati.
 
 ## How Tesla Will Change The World
 

@@ -18,6 +18,12 @@ Load balancing mogu preusmjeravati promet prema različitim metodama: random, ro
 
 Load balancer je single point of failure, pa je korisno imati ih više. U Active/Active modu svi primaju konekcije, a u Active/Passive modu jedan prima konekcije, a drugi postaje aktivan ako prvi umre.
 
+### DNS Load Balancing
+
+Jedna prednost DNS load balancinga je što može ponuditi korisniku IP adresu koja mu je fizički najbliža, time smanjujući latenciju. Također, DNS serveri imaju mnogo manji promet nego klasični load balancer, pa su kao pouzdaniji.
+
+*Anycast* dopušta da više lokacija koristi istu IP adresu. Kada se request pošalje na Anycast IP, routeri će ga usmjeriti na server koji je najbliži. AWS Route 53 nudi tu opciju.
+
 ### DB Scalabiliy
 
 Nakon skaliranja servera, single point of failure postaje baza podataka. Baza se može skalirati na više načina.

@@ -24,33 +24,11 @@ https://www.josipfranjkovic.com/blog/race-conditions-on-web
 
 **Pouka:** Koristi per-user lockove na bitnim dijelovima koda.
 
-## On Phone Numbers and Identity
-
-https://medium.com/the-coinbase-blog/on-phone-numbers-and-identity-423db8577e58
-
-Napadač je došao u posjed Verizon telefonskog računa (koristio je osobne podatke pronađene na netu).
-Zatim je prebacio broj s Verizona na VOIP, i tako dobio pristup broju. Sada je mogao koristiti broj za
-recover Facebook accounta i glumiti vlasnika preko SMS-a.
-
-**Pouka:** Posjedovanje kontrole nad telefonskim brojem ne može biti garancija identiteta. Za 2-factor autentifikaciju koristi U2F, Push-based ili TOTP. Sami SMS više nije dovoljan.
-
 ## Instagram RCE
 
 http://www.exfiltrated.com/research-Instagram-RCE.php
 
 Našao zaboravljeni server (https://sensu.instagram.com) koji je koristio verziju Railsa vulnerable na Remote Code Execution kroz session. Još bolje, našao je sensu-admin Rails gem u kojem je bio example `secret_token.rb` kojeg su koristili u produkciji (facepalm), te je pomoću toga izgenerirao cookie s kojim je ušao na server i pronašao keyeve za AWS. Drama ensued.
-
-## Gmail Phishing
-
-https://mobile.twitter.com/tomscott/status/812265182646927361
-
-Slika koja izgleda kao gmail attachemnt je zapravo link koji vodi na login phishing stranicu.
-
-Url stranice je data/html protocola i počinje s www.google.com/login, te ima puno spaceova prije `<script>` dijela, kako se on ne bi vidio u url-u browsera.
-
-Svatko živ bi pao na ovo.
-
-**Pouka:** Dobro provjeri url kad te gmail pita da se ulogiraš.
 
 ## CloudFlare Memory Leak
 
@@ -67,3 +45,9 @@ Registriranjem korisnika s Unicode imenom `ᴮᴵᴳᴮᴵᴿᴰ` i slanjem pass
 Imali su ugrađenu provjeru protiv homografskih napada tako što su u bazu zapisivali "kanonski" oblik usernamea i koristila za uniqueness provjeru. Ali kanonizacija (`str.upcase.unicode_normalize`) nije bila idempodentna: `ᴮᴵᴳᴮᴵᴿᴰ` > `bigbird` > `BIGBIRD`, pa se u određenim slučajevima mogla izbjeći provjera uniquenessa, a i dalje koristiti username kao tuđi.
 
 **Pouka:** ako normaliziraš Unicode, provjeri je li normalizacija idempodentna (koliko god puta se pozvala uvijek vrati istu stvar).
+
+## Taking Control of All .io Domains With a Targeted Registration
+
+https://thehackerblog.com/the-io-error-taking-control-of-all-io-domains-with-a-targeted-registration/
+
+Pronašao je da su 4 od 7 navedenih nameservera top level domene `.io` neregistrirani i čak dostupni za kupnju. Kupio ih je i mogao je bez problema servirati lažne DNS rezultate.

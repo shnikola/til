@@ -24,20 +24,6 @@ Skaliranje i optimiziranje loga (ipak ne možemo čuvati svaki živi event zauvi
 * Za event data (tracking), čuvati samo window, stare evente brisati.
 * Za keyed data (db), brisati recorde čije novije verzije imamo u logu.
 
-## Common performance problems
-
-Za spore querije koristi `EXPLAIN` da vidiš detalje upita. Stupac `rows` (Mysql), odnosno `Plan Rows` (Postgres) govore kroz koliko će redova upit morati proći u najgorem slučaju. Ako je vrijednost `1`, upit će se dobro skalirati. Ako je vrijednost jednaka ukupnom broju redova u tablici, upit zahtjeva *full table scan* što nije skalabilno.
-
-`SELECT COUNT(*)` zahtjeva full page scan, pa ga izbjegavaj za velike tablice.
-* cachiraj vrijednost, bilo kao stupac u tablici, ili u memoriji.
-* ne prikazuj ukupan broj gdje nije potrebno (npr. kod paginacije).
-* umjesto točnog broja napiši npr. "of Thousands".
-
-Pri paginaciji s `OFFSET(1000)`, skenira se i svih 1000 prethodnih redova. Upit za zadnju stranicu će efektivno morati proći kroz cijelu tablicu. Usto, dodavanje novih redova tijekom paginacije će dovesti do prikaza istih redova na različitim stranicama.
-* Izbaci direktna skakanja na N-tu stranicu, prikažu samo "Next" i "Prev".
-* Koristi `WHERE id < 1000 ORDER BY id DESC` umjesto `OFFSET` kad možeš.
-* U slučaju sortiranja po drugom stupcu, koristi u kombinaciji s `id`, npr. `WHERE created_at < ? AND id < 20 ORDER BY created_at DESC, id DESC`
-
 ## Indexes
 
 Indeksi su korisni samo ako dohvaćaš mali broj rezultata; ili za izbjegavanje sortiranja.

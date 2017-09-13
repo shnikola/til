@@ -38,28 +38,21 @@ Deployment razlikuje build, release i run korake. Build dohvaća kod i dependeci
 
 Lokalne servise (MySQL, Redis, RabbitMQ) treba tretirati kao bilo koji eksterni resurs (NewRelic, S3, Sendgrid). Spajaj se na njih preko URLa, pa ih neće biti problem zamijeniti third party servisom (npr. Amazon RDSom) ili backupom bazom u slučaju corruptane baze.
 
-Aplikacija pruža HTTP tako što se binda na port na kojem osluškuje requestove. Server requestove koje prima routa na taj port.
+Aplikacija se binda na port na kojem osluškuje requestove. Server requestove koje prima routa na taj port.
 
 Aplikacija se pokreće kroz stateless procese. Aplikacijski procesi su potpuno neovisni i ne dijele ništa, te aplikacija ne pretpostavlja da sistemska naredba (npr. skidanje datoteke lokalno da disk) ostavlja posljedicu koju drugi procesi mogu iskoristiti.
 
 Aplikacija se lako skalira dodavanjem novih procesa kad procesi ne dijele ništa. Developer može dodijeliti uloge svakom procesu, npr. za serviranje HTTP requestova, za obavljanje background i scheduled jobova. Aplikacija ne smije biti zadužena za pisanje PID fileova ili daemoniziranje. Time se treba baviti proces manager OS-a, npr. Upstart ili Foreman zadužen za handlanje outputa, crashanih procesa i korisničkih restarta.
 
-Administrativne naredbe ako migracija baze ili pokretanje jednokratnih skripti pokreću se u one-off procesima u environmentu identičnom ostalima.
+Administrativne naredbe poput migracije baze ili pokretanja jednokratnih skripti pokreću se u one-off procesima u environmentu identičnom ostalima.
 
 Procesi su disposable, što znači da se mogu instatno paliti i gasiti, što olakšava skaliranje, deployment i mijenjanje konfiguracije. Zato bi procesi trebali imati što kraći startup time (oko par sekundi) i gracefully se ugasiti po primitku SIGTERM signala.
 
-Za web procese, graceful gašenje postiže se prestankom slušanja porta kako se novi requesti ne bi primali, i dovršavanjem trenutnih, te gašenjem procesa. Za worker procese, postiže se vraćanjem trenutnog joba nazad u queue.
+Za web procese, graceful gašenje postiže se prestankom slušanja porta kako se novi requesti ne bi primali, dovršavanjem trenutnih requestova, te gašenjem procesa. Za worker procese, postiže se vraćanjem trenutnog joba nazad u queue.
 
 Development i production environment trebali bi biti što je moguće sličniji. To znači da se isti backing servisi koriste na lokalnim i produkcijskim strojevima, da isti ljudi developaju i deployaju.
 
 Aplikacija se ne bi smjela brinuti za management logfileova. Umjesto toga, treba ispisivati logove na `stdout`, a o sakupljanju svih logova i slanju na konačno odredište treba se brinuti serverski environment. Tako se logovi mogu zapisivati u file, ili slati u neki agregacijski sustav kao Splunk ili Hadoop.
-
-
-## Automatska provjera https certifikata
-
-http://prefetch.net/code/ssl-cert-check
-
-`cd ssl/certs; for pem in *.pem; do ssl-cert-check -a -x 15 -e admin@yourdomain.com -q -c $pem; done`
 
 ## Continuous Integration
 

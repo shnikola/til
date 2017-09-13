@@ -62,7 +62,7 @@
 * **pola kobasice** nasjeckaj.
 * U nauljenu šerpu nasjeckaj pola krumpira, posoli, preko toga nasjeckaj jaja i kobasicu, pa ostatak krumpira i posoli
 * Prelij s **4dl domaćeg vrhnja**
-* Dobro zagrij pećnicu na najjače, i onda stavi šerpu 20-ak minuta, samo da se sve zapeče.
+* Dobro zagrij pećnicu na najjače, i onda stavi šerpu 20-ak minuta, samo da se sve zapeče. Ako nije dovoljno zagrijana, vrhnje će otopiti i iscuriti na dno umjesto da se zapeče.
 
 ## Paradižot Šnenokle
 
@@ -72,3 +72,12 @@ Za 4 srednje (ili 3 velike) porcije
 * žlicom dodaji bjelanjke u vrelo mlijeko (nemoj previše odjednom) i drži ih par minuta pa izvadi u zdjelicu
 * u žumanjke dodaj par žlica šećera, malo mlijeka i malo brašna, pa izmiskaj i dodaj u mlijeko.
 * kad se zgusne prelij preko bjelanjaka
+
+## Punjene paprike
+
+* **8 paprika** srednjih, s zaobljenijim vrhom, izdubi.
+* **srednji luk** usitni i poprži. Od **500g miješanog mljevenog mesa** 2/3 poprži na tavi, a ostatak ostavi sirovo.
+* u zdjeli umiješaj poprženo i sirovo meso, **1 jaje**, **kafenu šalicu riže**, crvenu papriku, papar i sol.
+* napuni paprike, ali ostavi malo mjesta jer se riža poveća u kuhanju.
+* posloži paprike u lonac kao human centipede ili s otvorom prema gore. Dodaj **250ml pasirane rajčice** i **vode** da taman prekrije paprike. Kuhaj 30 minuta.
+* pred kraj kuhanja napravi zapršku: na **malo ulja** stavi **žlicu oštrog brašna** i **malo paprike**, mješaj dok se ne pretvori u masu. Razrijedi s malo vode i ulij u lonac. To daje gustoću umaku.

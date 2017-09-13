@@ -44,7 +44,7 @@ suočen s mnogim malim alternativama koji počinju ispočetka? Vrijeme će pokaz
 
 http://gilesbowkett.blogspot.hr/2016/10/let-asset-pipeline-die.html
 
-Giles Bowket je prije mjesec dana učio početi japanski, pa ima potrebu napisati golemi esej o svom novootkrivenom shvaćanju Ruby kulture. Ako nije dovoljno jasno, živcira me taj čovjek.
+Giles Bowket je prije mjesec dana počeo učiti japanski, pa ima potrebu napisati golemi esej o svom novootkrivenom shvaćanju Ruby kulture. Ako nije dovoljno jasno, čovjek mi ide na živce.
 
 Ali osnovna ideja iza teksta vrijedi: nije dobro okupljati zajednicu oko mržnje prema nečemu, bio to PHP, Java ili Javascript. Ruby zajednica oduvijek se ističe po inkluzivnosti, i zato bi trebala omogućiti koegzistenciju različitih stavova, paradigmi i kultura.
 
