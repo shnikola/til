@@ -11,7 +11,13 @@ Rails 5.1. oba zamjenjuje s metodom `form_with` u dvije varijante: `form_with ur
 
 `form_with` je po defaultu `remote: true`. Želiš li to disablati, koristi `local: true`.
 
+## Form Inputs
 
+`form_tag` bez bloka samo otvara form tag, što zna poremetiti sve sljedeće forme. Koristi `form_tag do; end` za praznu formu.
+
+Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. `Post has_many :categories`) koristi:
+* `f.collection_select :category_id, Category.all, :id, :name` za `has_one`
+* `f.collection_check_boxes :category_ids, Category.all, :id, :name` za `has_many`. Koristi blok za definiranje kako će se label, checkbox, i dodatni elementi generirati.
 
 ## Asset Host
 

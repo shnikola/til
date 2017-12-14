@@ -36,3 +36,17 @@ LPWT stjecanje znanja: Learn (primi znanje od nekoga), Play (isprobaj to znanje 
 
 Predavanja ne bi trebale biti priče za laku noć gdje prikazuješ slideove i držiš monolog. Trebala bi biti dijalog u kojem publika pokušava pobiti teoriju koju predavač izlaže. Najbolji način za učenje i podučavanje je dijalog.
 
+## Masters and doctorate
+
+"Doing the master is to understand that you don't know anything. Doing your doctorate is to learn the others know nothing as well."
+
+## Drugs
+
+"The truth is marijuana probably isn't gonna make you kill people, and it most likely isn't going to fund terrorism, but, well son, pot makes you feel fine being bored. And it's when you're bored that you should be learning some new skill or discovering some new science or being creative.
+
+If you smoke pot you may grow up to find out that you aren't good at anything."
+
+
+# Literatura
+
+* https://magicalchildhood.wordpress.com/2010/08/31/what-should-a-4-year-old-know/

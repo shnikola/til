@@ -1,24 +1,5 @@
 # Social
 
-## Phishing
-
-*Phishing* je imitiranje stanice kako bi korisnik pomislio da je na poznatoj stranici u unio osjetljive podatke. Jedini sigurni dio browsera je address bar, jer današnji napadi mogu imitirati skoro sve:
-* ime taba i favicon se mogu postaviti na bilo koju vrijednost.
-* ime domene se može postaviti na `paypal-accounts.com` ili `account-update.com/paypal.com` i većina korisnika neće primjetiti da to nema veze s `paypal.com`.
-* unutar same stranice može se nacrtati novi prozor sa svojim address barom u kojem možeš napisati što želiš.
-* browserovi popupi za permissione se lako mogu nacrtati u htmlu.
-* Full Screen API može napraviti što želi.
-
-## Homograph attack
-
-DNS podržava ne-ASCII znakove, ali protokoli koje email i browseri koriste često podržavaju samo ASCII. *Internationalized Domain Name* prevodi unicode u ASCII domene koristeći `Punycode`: `Bücher.ch > xn--bcher-kva.ch`
-
-Ovo se može iskoristiti za *IDN homograph attack*: spoofanje domene koristeći npr. ćirilićna slova koja izgledaju isto kao i latinična. Zato bi browseri trebali prikazivati Punycode oblik sumnjivih slova.
-
-Sličan napad može se napraviti imitiranjem nečijeg usernamea koristeći Unicode. Za obranu od toga dobro je normalizirati sve usernameove prije zapisivanja u bazu koristeći `normalize_unicode(:nfkc)`.
-
-# Stories
-
 ## How to hack a friend
 
 https://defaultnamehere.tumblr.com/post/163734466355/operation-luigi-how-i-hacked-my-friend-without
@@ -51,4 +32,13 @@ recover Facebook accounta i glumiti vlasnika preko SMS-a.
 
 **Pouka:** Posjedovanje kontrole nad telefonskim brojem ne može biti garancija identiteta. Za 2-factor autentifikaciju koristi U2F, Push-based ili TOTP. Sami SMS više nije dovoljan.
 
+## Airplane Boarding Passes
+
+https://media.ccc.de/v/33c3-7964-where_in_the_world_is_carmen_sandiego
+
+Kada netko posta sliku svoje avionske karte na instagram, iz nje se vrlo lako može izvući booking reference (PNR) ili frequent flyer number. Ponekad su otisnuti na karti, ali uvijek su sadržani u bar kodu koji je formata: `M1<prezime>/<ime> E<6-digit booking no> ... UA <frequent flier no>`. Isti podatci se mogu lako saznati iz odbačenih karata u smeću, pa čak i naljepnica što se stavljaju na prtljagu.
+
+Zračne kompanije tretiraju booking reference i frequent flyer number kao tajni podatak i koriste ih kao osnovnu autentifikaciju na svojim stranicama. Pomoću njih možeš se ulogirati i viditi većinu podataka o putniku i putovanju. Neke kompanije (npr. United Airlines) čak dopuštaju da uz par dodatnih lako nabavljivih podataka (prezime, datum rođenja) možeš promijeniti podatke (npr. staviti broj putovnice traženog kriminalca), promijeniti sjedala ili čak otkazati checkin.
+
+**Pouka:** Ne stavljaj slike avionskih karata na društvene mreže.
 

@@ -72,6 +72,18 @@ Refactoring treba biti "safe and boring" - puno testova koje nakon svake pojedin
 
 Napiši najbolji mogući kod sada, ali budi spreman da ga obrišeš sutra.
 
+## Simple Made Easy
+
+https://www.infoq.com/presentations/Simple-Made-Easy
+
+Teži jednostavnosti (*simple*): da sve što radiš ima jednu ulogu, predstavlja jedan koncept i da stoji samostalno.
+
+Ne miješaj to s lakoćom (*easy*): da se može brzo instalirati, da ti je poznato ili da će svima biti jasno isprve.
+
+Modularnost ne znači jednostavnost - nemoj da te organizacija koda prevari. Ako samo odvojiš dva sustava, oni su i dalje kompleksni.
+
+"Information is simple. Don't ruin it."
+
 # Literatura
 
 * Clean Code by Robert C. Martin - Odlična knjiga pisana čitkim i razgovornim ugodnim tonom. Iako fokusirana na Javu, sadrži mnogo korisnih primjera iz stvarnog svijeta i dokaza da se kod uvijek može popraviti.

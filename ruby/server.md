@@ -94,28 +94,3 @@ Prednosti:
 * jedna konekcija znači jedan TLS handshake
 * klijenti mogu izraziti preferenciju koji request da se prvi ispuni (npr. CSS i JS prije imagea)
 * pošto je skidanje jednog velikog filea i puno malih sada isto, gubi se potreba za jednim velikim JS i CSS fileom i spriteovima
-
-## Rack::Attack
-
-https://github.com/kickstarter/rack-attack
-
-Ograničava requeste koji dolaze na server, prekidajući ih u middlewareu i vraćajući `419 Too Many Requests`.
-
-Podržava različite uvjete:
-* `safelist` requestovi uvijek prolaze
-* `blocklist` nikad ne prolaze
-* `throttle` prolaze ograničen broj puta u nekom intervalu
-* `track` propušta requeste i po potrebi ih logira.
-
-## ActiveRecord Connection Pool
-
-https://devcenter.heroku.com/articles/concurrency-and-database-connections
-
-Svaki database ima ograničenje koliko maksimalno konekcija može podržavati. Ako koristiš multi-threaded ili multi-process server, imaj na umu da svaki thread zahtjeva svoju database konekciju.
-
-Za multi-threaded servere, connection pool će se konfigurirati pri inicijalizaciji aplikacije koristeći property `pool` u `config/database.yml`. Kod Pume, svaki proces ima svoj pool, pa je dovoljno je da postaviš `pool: ENV['RAILS_MAX_THREADS']`, po konekciju za svaki thread.
-
-Kod multi-process servera, master proces inicijalizira aplikaciju i tek onda forka workere. Pošto njemu samom ne treba konekcija, možeš u `config/unicorn.rb` dodati:
-* `before_fork { ActiveRecord::Base.connection.disconnect! }`
-* `after_fork { ActiveRecord::Base.establish_connection }`
-

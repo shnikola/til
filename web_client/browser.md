@@ -185,7 +185,7 @@ Shadow DOM je način za izoliranje DOM stabla određenog elementa. CSS unutar sh
 ## window.location
 
 Svi propertiji u `window.location` se mogu promijeniti, što se odmah reflektira u browseru (npr. radi se novi request).
-Promjena lokacije je dozvoljena *samo ako* skripta koja je izvršava ima isti `origin` (protokol i domenu) kao i lokacija.
+Promjena lokacije je dozvoljena *samo ako* skripta koja je izvršava ima isti `origin` (protokol i host) kao i lokacija.
 
 `window.location.href` - vraća cijeli URL.
 `window.location.protocol` - protokol, s `:` na kraju
@@ -199,28 +199,6 @@ Promjena lokacije je dozvoljena *samo ako* skripta koja je izvršava ima isti `o
 `window.location.replace("...")` učitava novi resource, ali trenutni URL ne stavlja u `history` (neće ga biti kad odeš back)
 `window.location.reload()` reloada trenutni resource. `reload(true)` reloada sa servera, inače može koristiti browser cache.
 
-## window.frames
-
-`window.frames[i]` vraća windowe embeddane u trenutnom prozoru. `window.frames.length` za broj windowa.
-`window.parent` ukoliko je prozor embeddan, vraća parenta. Inače vraća samog sebe.
-`window.top` ukoliko je prozor embeddan, vraća top parenta. Inače vraća samog sebe.
-
-`window.frameElement` vraća `<iframe>` element parent windowa u kojem je embeddan.
-`iframe.contentWindow` (poziva se na `<iframe>` elementu) vraća window koji se nalazi u njemu.
-
-Svi embeddani frameovi imaju pristup svojim parentima, i svi parenti imaju pristup frameovima.
-Ali ako frame i parent imaju različiti `origin` (protokol i domenu), moći će ograničeno pristupiti tuđem `window` objektu:
-  * `top`, `parent`, `frames`, i `opener`  propertijima.
-  * `blur()`, `focus()`, `close()`, `location.replace()` i `postMessage()` funkcijama.
-
-## window.opener
-
-`window.opener` vraća prozor koji ga je otvorio s `window.open()` ili preko linka s `target=_blank`.
-
-*Oprez!* Svaki put kada otvaraš link u novom tabu, taj prozor ima pristup tvom windowu s `window.opener`. Ovo radi čak i ako je novi prozor na različitoj domeni od tvoje! Napadač time može redirectati tvoj prozor na phishing site bez da primjetiš (https://mathiasbynens.github.io/rel-noopener/).
-
-Uvijek koristi `rel=noopener` na linkovima. On osigurava da će `window.opener` biti null. Usto i primjetno poboljšava performanse browsera (novi tab ne mora dijeliti isti thread.) Usto, ne koristi `target=_blank` na linkovima koje unose useri.
-
 ## window.history
 
 `window.history.length` vraća koliko je URLa u session historiju.
@@ -233,6 +211,40 @@ Uvijek koristi `rel=noopener` na linkovima. On osigurava da će `window.opener` 
 `window.history.state` vraća trenutni `state` bez pozivanja eventa.
 
 `window.history.scrollRestoration` ponašanje scrolla. `auto` daje browseru da odluči, `manual` postavlja na vrh stranice. _Chrome i FF_
+
+## window.frames
+
+`window.frames` vraća array windowa embeddanih u trenutnom prozoru.
+`window.parent` ukoliko je prozor embeddan, vraća parenta. Inače vraća samog sebe.
+`window.top` ukoliko je prozor embeddan, vraća top parenta. Inače vraća samog sebe.
+
+`window.frameElement` vraća `<iframe>` element parent windowa u kojem je embeddan.
+`iframe.contentWindow` (poziva se na `<iframe>` elementu) vraća window koji se nalazi u njemu.
+
+Svaki embeddani frame ima pristup svojim parentima, i svaki parent ima pristup frameovima. Ako parent i frame imaju isti origin, mogu jedno drugome pristupati varijablama i funkcijam a u `window` objektu. Ako nemaju isti origin, pristup tuđem `window` je ograničen na `top`, `parent`, `frames`, `opener`, `blur()`, `focus()`, `close()`, `location.replace()`, i `postMessage()`.
+
+## window.open()
+
+`window.open(url)` otvara url u novom browing contextu (kao `target=_blank`).
+`window.open(url, name)` otvara url u postojećem browsing contextu (prozor, tab ili iframe) s danim imenom. Ako context pod tim imenom ne postoji, stvorit će novi.
+`window.open(url, name, options)` definira postavke prozora: `width`, `height`, `top`, `left`, `titlebar=0` (traka s naslovom), `menubar=0`, `location=0` (traka s adresom), `personalbar=0` (bookmark traka). Bez postavki, otvara se s postavkama trenutnog prozora (najčešće to znači u novom tabu).
+
+`child = window.open(...)` vraća window objekt novostvorenog prozora. Možeš pristupati njegovim propertijima i funkcijama kako Same-Origin policy dopušta.
+Otvoreni window može pristupiti svom otvaraču pomoću `window.opener`. Taj property imaju i tabovi koji su se otvorili preko linka s `target=_blank`.
+
+`child.focus()` vraća prozor u fokus ako je minimiziran ili u pozadini.
+
+Otvarač može zatvoriti prozor koji je otvorio s `child.close()`. `child.closed` provjerava je li prozor već zatvoren. Prozor može i zatvoriti i sam sebe s `window.close()`.
+
+Moderni browseri imaju ugrađenu zaštitu protiv popupa, i dopuštaju `window.open` samo ako je nastao zbog korisničke interkacije (klika ili tipke).
+
+## window.postMessage()
+
+`postMessage` omogućuje komunikaciju između dvaju prozora koji mogu biti i cross-origin. Dovoljno je da prozor koji šalje poruku ima referencu na `window` objekt primatelja, npr. od `window.open()`, `window.parent` ili `window.frames[i].contentWindow`.
+
+`child.postMessage({a: 1}, "http://receiver.com")` šalje objekt `child` prozoru. Drugi argument je origin kojeg primatelj mora imati da bi poruka bila poslana. To služi kao osiguranje da se poruka ne pošalje na zlonamjerni site na koji je `child` prozor redirectan. Ako ti je u redu slati bilo kome, možeš koristiti `child.postMessage({a: 1}, "*")`.
+
+`window.addEventListener("message", e => ...)` u `child` prozoru prima sve poruke poslane pomoću `postMessage`. Event objekt sadrži `data` (poslani objekt), `origin` prozora koji je poslao poruku i `source` (referencu na window objekt pošiljatelja). U primatelju prije obrade poruke uvijek provjeri stiže li s origina kojeg očekuješ: `if (event.origin == "http://sender.com")`.
 
 ## Form Events
 

@@ -43,4 +43,5 @@ Ako imaš baš jako veliki traffic, može se dogoditi *cache stampede*. Više is
 Na aplikacijskom serveru vraćaj `Cache-Control: public` samo za stranice koje ne koriste cookije.
 
 # Literatura
-https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/
+
+* https://www.nginx.com/resources/wiki/start/topics/tutorials/config_pitfalls/

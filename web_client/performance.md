@@ -55,7 +55,6 @@ Savjeti za izbjegavanje re-layouta i re-painta:
 * Animiraj elemete koji su `absolute` ili `fixed`.
 * Nemoj se bindati na `scroll` event, već tretiraj dolazak do određene točke u scroll kao event koji se okine jednom.
 
-
 ## Resource Hints
 
 **Preconnect:** `<link rel="preconnect" href="//fonts.googleapis.com">` unaprijed odrađuje DNS lookup, TCP i SSL konekciju na dani host. Korisno ako imaš više blokirajućih resourca s različitih hostova, odradiš im sav connection overhead istovremeno, a oni se naknadno bez overheada skinu serijski. _FF, Chrome_
@@ -80,7 +79,7 @@ Koristi data uri za manje slike koje se pojavljuju samo na jednom mjestu, a spri
 
 Za retina/responzivne slike koristi `Picturefill`.
 
-Za velike slike, videe i iframeove koristi delayed load.
+Browser automatski skida sve `<img>`, `<video>` i `<iframe>` elemente, čak i one koje nisu vidljive korisniku. Ako želiš to izbjeći, koristi *lazy load* - js koji će postaviti `src` tek kad element uđe u viewport.
 
 ## Web Fonts Optimization
 

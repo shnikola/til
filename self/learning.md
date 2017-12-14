@@ -92,7 +92,6 @@ Primjeri ljudi koji su uspjeli unatoč tome što si bili loši u školi i nisu i
 
 Lijeva hemisfera mozga zadužena je za proces rješavanja i ne sagledava stvari iz šire perspektive, pa se može dogoditi da ne primjeti potpuno besmisleno konačno rješenje. Ako učiš ili radiš s drugima, lakše ćeš pronaći greške u svom razmišljanju, a objašnjavanje prijateljima pomoći će i tvom razumijevanju.
 
-
 # Literatura
 
 * https://www.coursera.org/learn/learning-how-to-learn

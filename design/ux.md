@@ -30,6 +30,33 @@ Za elemente kojima znaš ratio (npr. `16:9`), koristi *intrinsic ratio* s `paddi
 
 Za elemente kojima ne znaš visinu, nađi `min-height` da minimiziraš skakanje.
 
+## Tekst
+
+`font-size: 16px` i `line-height: 1.5` su prilično siguran default za body tekst.
+
+All caps mogu biti teški za čitanje, koristi `letter-spacing: 1.4` da mu daš oduška.
+
+## Shadows
+
+Bijelom tekstu na svijetloj pozadini dodaj lagani shadow (`text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2)`) za bolju čitljivost i da iskoči.
+
+Za hover na button podigni za 1px (čini se kao da iskoči) i povećaj drop shadow spread.
+
+Box shadow izgleda prirodnije s vertikalnim offsetom i manjim spreadom (umjesto `box-shadow: 0px 0px 8px` bolje je `box-shadow: 0px 2px 4px`).
+
+## Colors
+
+Gradient tamnjenja (npr. `hsl(194, 100%, 100%)` do `hsl(194, 100%, 80%)`) će biti življi ako im pomakneš hue za 10-20 stupnjeva (npr. `hsl(194, 100%, 100%)` do `hsl(208, 100%, 80%)`).
+
+Čisti sivi tekst izgleda čudno na obojenoj pozadini. Umjesto toga, koristi hue pozadine (npr. ako je pozadina `hsl(192, 56%, 56%)`, boja teksta neka bude `hsl(192, 17%, 99%)`).
+
+Ako su ikone deblje od teksta pokraj njih, koristi boju svijetliju od teksta za neaktivni state.
+
+Obojena linija na vrhu stranice debljine 4-6px dobro izgleda. Isto vrijedi za modale i panele.
+
+Umjesto razdvajanja naslova panela od ostatka linijom, koristi tamniju nijansu za ostatak.
+
 ## Literatura
 
 * https://developers.google.com/web/fundamentals/design-and-ui/ux-basics/
+* https://twitter.com/i/moments/880688233641848832

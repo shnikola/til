@@ -8,30 +8,39 @@ Korištenje UUID-a olakšava skaliranje pošto se idjevi više ne generiraju sek
 
 `create_table :users, id: :uuid` koristi UUID za tablicu u migraciji.
 
-## Associations
+## Association persisting
 
-Kada se model persista, automatski će saveati sve `has_one` i `has_many` associatione koji još nisu persisted. Želiš li izbjeći to ponašenje, dodaj `has_one :user, autosave: false`.
+Kada se assigna `belongs_to` asocijacija (npr. `comment.post = post`), ni child ni parent se neće automatski perzistirati u bazu.
+
+Kada se assigna `has_one` ili `has_many` asocijacija, (npr. `post.comments = comments`) novi child objekti se automatski saveaju s novim foreign keyem. Prethodni child objekti se također perzistiraju: foreign key im se postavlja na `nil`, ili se brišu ako je postavljen `dependent: :destroy`. Ako parent još nije perzistiran, child objekti će se saveati tek kada se i parent savea.
+
+`post.comments << comment` (ili `post.comments.push`) dodaje novi child objekt i automatski ga perzistira.
+
+Za dodavanje asocijacija bez automatsko saveanja, koristi `post.comments.build`.
+
+## Bi-direction associations i inverse_of
+
+`post` i `post.comments.first.post` bi trebali biti isti objekt. Kada se `post.name` promijeni, to bi trebalo biti vidljivo i u `comment.post.name`.
+
+Rails (od verzije 4) automatski povezuje ovakve asocijacije gdjegod može. Ipak, u slučajevima kad se koriste opcije `foreign_key`, `primary_key` ili `class_name` potrebno je pomoći i dodati `inverse_of` opciju, npr. `belongs_to :post, inverse_of: :comments`.
 
 ## Foreign keys
 
-`add_foreign_key :articles, :users` dodaje foreign key na `user_id` stupac tablice `articles`.
-
-`add_foreign_key :user, :posts, on_delete: :cascade` dodaje kaskadno brisanje.
-
+`add_foreign_key :comments, :posts, on_delete: :cascade` dodaje foreign key constraint na `post_id` stupac tablice `comments`.
 `t.references :post, foreign_key: { on_delete: :cascade }, index: true` za dodavanje pri kreiranju tablice.
 
-Uvijek koristi foreign_key u kombinaciji s indeksom.
+Uvijek koristi `foreign_key` u kombinaciji s indeksom. Uvijek koristi `on_delete` za ponašanje ako se parent obriše: `:restrict` (default) baca error, `:cascade` briše child red, `:nullify` postavlja foreign key vrijednost na NULL. `on_update` nije potreban jer se primary key u parentu rijetko mijenja.
 
 ## Preloading
 
 Za izbjegavanje N+1 querija, koristi neku od metoda koje preloadaju asocijacije objekta.
 
-`post.preload(:comments)` dohvaća komentare u zasebnom queriju.
-`post.eager_load(:comments)` koristi LEFT OUTER JOIN.
+`posts.preload(:comments)` dohvaća komentare u zasebnom queriju.
+`posts.eager_load(:comments)` koristi LEFT OUTER JOIN.
 
-`post.includes(:comments)` do Railsa 5 je sam donosio odluku. Od Railsa 5 se ponaša kao `preload(:comments)`, a ako mu dodaš `.references(:comments)` kao `eager_load(:comments)`
+`posts.includes(:comments)` do Railsa 5 je sam donosio odluku. Od Railsa 5 se ponaša kao `preload(:comments)`, a ako mu dodaš `.references(:comments)` kao `eager_load(:comments)`
 
-`post.joins(:comments)` ne učitava asocijacije pa ga koristi za filtriranje.
+`posts.joins(:comments)` ne učitava asocijacije pa ga koristi za filtriranje.
 
 ## has_many i conditions
 
@@ -48,6 +57,10 @@ U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se n
 `User.includes(:projects).where('projects.deleted_at IS NOT NULL').references(:projects)`
 
 Kad se koristi `includes`, `uniq` nije potreban.
+
+## Reloading
+
+Jednom kad se objekt iz baze učita u memoriju, vrijednosti atributa se cachiraju. Ako je netko u drugom dijelu aplikacije zapisao nove vrijednosti u bazu, objekt možeš reloadati s `comment.reload`. Isto vrijedi i za asocijacije, npr. `post.comments.reload`.
 
 ## ActiveModel::Dirty
 
@@ -75,7 +88,7 @@ Podržava custom typove i `changed_in_place?`
 `count` uvijek radi count query.
 `size` je pametan i koristi jedno ili drugo ovisno jesu li recordi loadani.
 
-Koristi `size`! Jedino ako trebaš broj taman prije nego ćeš loadati sve recorde, koristi `length`.
+Koristi `size`. Jedino ako trebaš broj taman prije nego ćeš loadati sve recorde, koristi `length`.
 
 Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full table scan. Umjesto `User.count > 1` koristi `User.limit(2).count > 1`.
 
@@ -89,11 +102,7 @@ Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full tab
 
 ## Callbacks
 
-http://www.justinweiss.com/articles/a-couple-callback-gotchas-and-a-rails-5-fix/
-
-Ako želiš u callbacku gurati stvari u background job (zar ne bi trebao koristiti servise?), nemoj koristiti `after_save` nego `after_commit`.
-
-`after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
+Ako želiš u callbacku gurati stvari u background job (što ionako ne bi trebao), nemoj koristiti `after_save` nego `after_commit`. `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
 
 ## Connection Pool
 

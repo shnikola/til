@@ -409,7 +409,7 @@ Omogućuje prikaz teksta u više stupaca bez da moramo definirati gdje stupac po
 
 Flexbox omogućava lakše raspoređivanje elemenata unutar parenta, bez `floata` ili apsolutnog pozicioniranja.
 
-Parent element koji ima `display: flex` ili `inlin-flex` je *flex container*, a njegova djeca (uključujući i tekst direktno u njemu) su *flex itemi*.
+Parent element koji ima `display: flex` ili `inline-flex` je *flex container*, a njegova djeca (uključujući i tekst direktno u njemu) su *flex itemi*.
 
 Properties *containera*:
 `flex-direction` definira *main axis* po kojem se itemi slažu:
@@ -472,11 +472,19 @@ Ako želiš definirati fiksnu veličinu itema, koristi `flex-basis`:
 
 `grid-template-rows` je isto, samo za veličinu redova.
 
+`grid-template-areas` dijeli prostor grida na imenovane površine:
+```
+grid-template-areas: "title title title"
+                     "menu header header"
+                     "menu sidebar footer"
+```
+
 `grid-gap: 5px` za razmak između itema. Shorthand za `grid-column-gap` i `grid-row-gap`.
 
 Grid itemi se defaultno pozicioniraju po redu navedenom u dokumentu, i svaki zauzima jedan cell.
 `grid-column-start: 3` pozicionira item da počne od 3. stupca.
 `grid-column-end: 5` proteže item do 5. stupca. S gornjom vrijednosti, item će biti širok 2 stupca.
+`grid-area: "title"` proteže item na površini `title` zadanu u `grid-template-areas`.
 
 ## Filter _Chrome, FF, Safari_
 

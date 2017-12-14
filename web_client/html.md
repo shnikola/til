@@ -1,16 +1,5 @@
 # HTML
 
-## TODO
-
-meta robots
-meta viewport
-
-Image, multimedia
-map, area, audio, video, track, picture, source
-
-Embedded:
-embed, object, param, canvas, iframe
-
 ## Isprika
 
 https://html.spec.whatwg.org/multipage/introduction.html#design-notes
@@ -91,33 +80,6 @@ Za geolokaciju, koristi:
 
 `ping` klik na link će poslati POST na URL u valueu. Može se koristiti za tracking klikova bez dodatnog js-a. _Samo Chrome_
 
-## <iframe>
-
-`src` definira URL resourca. Alternativno, `srcdoc` sadrži content koji će se prikazati. Overridea `src`. _Chrome i FF_
-
-`name` dopušta targetiranje iframea s `target=`.
-
-`allowfullscreen` dozvoljava korištenje full screen API-ja. _IE9+_
-
-`sandbox` definira što je dopušteno u iframeu. Ako je dodan na iframe, ništa nije dopušteno dok se eksplicitno ne dopusti. _IE 11+_
-* `allow-forms` (submitting)
-* `allow-modals` (alert)
-* `allow-scripts` (dopušta js),
-* `allow-top-navigation` (možeš koristiti `window.top`).
-* `allow-orientation-lock`, `allow-pointer-lock`, `allow-popups`, `allow-popups-to-escape-sandbox` (dopušta popupe koji ne nasljeđuju sandbox ograničenja),
-
-Iframe, čak i cross-origin, može redirectati tab u kojem je embeddan pomoću `window.top.location.href=`. Koristi `sandbox` da to spriječiš.
-
-XSS na jednoj stranici može pomoću `iframe`a pristupiti svim stranicama na toj domeni. `X-Frame-Options: DENY` da spriječiš.
-
-## <img>
-
-Nakon što je parsirao HTML, browser automatski skida sve `<img src>` slike, čak i one koje nisu vidljive korisniku. Ako želiš to izbjeći (jer imaš tisuću slika na stranici), koristi *lazy load* - js koji će postaviti `src` tek kad element uđe u viewport.
-
-Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. Browser će odlučiti koju da upotrijebi. `src` atribut koristi se kao fallback.
-
-`alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
-
 ## Form and inputs
 
 `<form>` sakuplja inpute i definira gdje i kako će se njihove vrijednosti poslati.
@@ -145,7 +107,7 @@ Ako želiš imati responzivan image, koristi `srcset` s listom verzija imagea. B
 
 `<input type="hidden">` se ne prikazuje korisniku, ali se šalje na server.
 
-## Checked inputs
+### Checked inputs
 
 `<input type="checkbox">` ima unaprijed zadani `value` koji će se poslati samo ako je checkbox označen. `checked` čini input unaprijed označenim.
 
@@ -285,26 +247,68 @@ Input se mogu grupirati pomoću `<fieldset>`, a svaka grupa može imati svoj `<l
 
 `<dialog>` predstavlja dialog box ili sličan interaktivan prozor. Ako ima atribut `open` bit će prikzan, u suprotnom neće. _Chrome_
 
-## Cross origin
+## <iframe>
 
-Elementi `img`, `video`, `audio`, `link` i `script` po defaultu neće koristiti CORS za dohvaćanje resourca. Ako imaju atribut `crossorigin="anonymous"` koristit će CORS bez credentialsa (cookija, basic autheticationa). Uz atribut `crossorigin="use-credentials"` koristit će CORS s credentialsima.
+`src` definira URL resourca. Alternativno, `srcdoc` sadrži content koji će se prikazati. Overridea `src`. _Chrome i FF_
 
-## Referrer
+`name` dopušta targetiranje iframea s `target=`.
 
-Browser provjerava hoće li slati referrera ovim redom:
-1. `Referrer-Policy` http header
-2. `<meta name="referrer">` u headu
-3. `referrerpolicy` html atribut
-4. `noreferrer` html atribut
-5. nasljeđivanje od parent contexta
+`allowfullscreen` dozvoljava korištenje full screen API-ja. _IE9+_
 
-`<meta name="referrer" content=>` i `<a referrerpolicy>` primaju iste vrijednosti:
-* `no-referrer` neće se ništa slati.
-* `no-referrer-when-downgrade` neće slati s HTTPS na HTTP. (default)
-* `same-origin` slati će se samo unutar istog origina.
-* `origin` svima se šalje samo origin, ne i path.
-* `origin-with-cross-origin` unutar istog origina šalje se path, inače samo origin.
-* `unsafe-url` šalje se cijeli URL svima. Nije safe, jer šalje i na HTTP.
+`sandbox` definira što je dopušteno u iframeu. Ako je dodan na iframe, ništa nije dopušteno dok se eksplicitno ne dopusti. _IE 11+_
+* `allow-forms` (submitting)
+* `allow-modals` (alert)
+* `allow-scripts` (dopušta js),
+* `allow-top-navigation` (možeš koristiti `window.top`).
+* `allow-orientation-lock`, `allow-pointer-lock`, `allow-popups`, `allow-popups-to-escape-sandbox` (dopušta popupe koji ne nasljeđuju sandbox ograničenja),
+
+Iframe, čak i cross-origin, može redirectati tab u kojem je embeddan pomoću `window.top.location.href=`. Koristi `sandbox` da to spriječiš.
+
+XSS na jednoj stranici može pomoću `iframe`a pristupiti svim stranicama na toj domeni. `X-Frame-Options: DENY` da spriječiš.
+
+## Images
+
+`<img>` predstavlja sliku u dokumentu. `src` definira URL resourca.
+
+`alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
+
+`ismap` označava da je slika karta. Ako je slika u `<a>` elementu, klik na nju će poslati na server i koordinate klika. Alternativno, `usemap="#world"` može referencirati `<map name="world">` element s `<area>` linkovima.
+
+Ako želiš imati responzivan image, koristi `srcset` s listom urlova s različitim veličinama. Browser će odlučiti koju da upotrijebi. Za fallback koristi `src` atribut.
+
+`<picture>` omogućuje definiranje više različith `<source>` elemenata unutar sebe od kojih browser odabire najprikladniji za prikazati pomoću `srcset` i `media` atributa. Koristi ga kada želiš imati različite verzije slike, a ne samo veličine. Za fallback stavi `<img>` element u njega.
+
+## Multimedia
+
+`<audio>` pušta zvučni sadržaj iz `src` atributa ili iz `<source>` elemenata unutar sebe. Po defaultu je nevidljiv, ali atribut `controls` prikazuje jednostavan player kojim korisnik može upravljati.
+
+`preload` definira da li će se sadržaj unaprijed učitati (`none`, `metadata`, ili defaultno hoće).
+`autoplay` atribut pušta sadržaj čim to može učiniti.
+`loop` čini da se sadržaj pušta u loopu.
+`volume` definira glasnoću od `0.0` do `1.0`.
+`muted` mutea zvuk.
+
+`buffered` je read-only atribut koji vraća `TimeRanges` koji su se učitali.
+`played` je read-only atribut koji vraća `TimeRanges` koji su pušteni.
+
+`<video>` pušta video sadržaj sadržaj iz `src` atributa ili iz `<source>` elemenata unutar sebe. `controls` atribut prikazuje kontrole za upravljanje videom.
+
+Koristi iste atribute kao i `<audio>`, i još neke dodatne.
+`poster` definira URL imagea koji će se prikazati dok se video ne počne puštati.
+`playsinline` neće defaultno puštati video u fullscreenu na nekim uređajima.
+
+`<video>` može u sebi imati više `<track>` elemenata koje sadrže subtitle u `.vtt` formatu.
+
+## Embedded Objects
+
+`<object>` koristi za embedanje vanjskih resursa poput PDF-a, flasha i sl. Obvezni su `data` atribut s urlom i `type` s vrstom resursa. Prije se koristio `<embed>` element, ali `<object>` je bolji jer unutar njega možeš definirati fallback.
+
+`<object>` može u sebi imati više `<param>` za prosljeđivanje parametara.
+
+## data-uri _IE8+_
+
+URI koji sadrži inline data. Koriste se kako bi se uštedio request.
+Format je `data:[<media type>][;base64],<data>`. (npr. `data:image/png;base64,iVBORw0KGgoAA...`)
 
 # Literatura:
 

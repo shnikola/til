@@ -1,17 +1,39 @@
-# HTTPS
+# HTTPS / TLS / SSL
 
-`TLS` (i stara verzija, `SSL`) je protokol iznad `TCP`-a koji omogućava sigurnu konekciju. `HTTP` paket unutar njega je nepromijenjen. Napadač u mreži može vidjeti samo IP i port konekcije, otprilike koliko podataka šalješ, te koju enkripciju koristiš. Može i prekinuti konekciju, ali obje strane će znati da je treća strana to učinila.
+`TLS` je protokol koji omogućuje sigurniju mrežnu komunikaciju između dvije strane. `SSL` je starija verzija protokola (`TLS 1.0` je `SSL 3.1`). `HTTPS` je naziv za slanje `HTTP` paketa preko `TLS` protokola.
 
-Protokol:
-1. Nakon uspostave TCP konekcije, klijent započinje SSL handshake. Šalje verziju SSL-a, ciphersuite i compression koje želi koristiti. Server odabira najvišu verziju koju obojica podržavaju.
-2. Server šalje svoj certifikat i klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat.
+`TLS` pruža tri usluge aplikacijama koje ga koriste:
+* autentifikaciju (omogućuje provjeru identiteta obje strane)
+* enkripciju (skriva sadržaj poruka koje se šalju)
+* integritet (provjerava da li su poruke mijenjane ili lažirane).
+
+## Handshake
+
+1. Nakon uspostave TCP konekcije, klijent započinje TLS handshake. Šalje verziju TLS-a, ciphersuite i compression koje želi koristiti.
+2. Server odabire najvišu verziju koju obojica podržavaju. Server šalje svoj certifikat i klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat.
 3. Klijent šalje ključ pomoću kojim će simetrično kriptirati komunikaciju. Za razmjenu ključa koristi se RSA ili Diffie-Hellman. Poruka se potpisuje javnim ključem servera.
 4. Server provjerava integritet poruke i odgovara enkriptiranom porukom.
 5. Klijent je provjerava i počinje slati aplikacijske podatke.
 
+## Man in the Middle
+
+Svi uređaji između klijenta i servera u HTTPS konekciji (pa tako i napadač) mogu vidjeti samo IP i port konekcije, otprilike koliko podataka se šalje, te koja enkripcija se koristi. Mogu i prekinuti konekciju, ali obje strane će znati da je treća strana to učinila.
+
+Ukoliko se spajaš na vanjsku mrežu preko proxija (npr. preko računala firme u kojoj si zaposlen ili ISP-a), proxy u pravilu ne može vidjeti promet koji šalješ preko HTTPS-a. Ali ako na računalo instaliraš certifikat vlasnika proxija, proxy će moći stvoriti 2 HTTPS tunela klijent-proxy i proxy-server, imajući pristup svim podatcima koje šalješ i primaš. Zato budi jako oprezan čije certifikate instaliraš na svoje računalo.
+
+Velik dio nevidljive infrastrukture weba (cache serveri, content filteri, security gatewayi) izgrađeni su pod pretpostavkom HTTP protokola na portu 80. Neki od njih će samo proslijediti promet koji ne prepoznaju, dok će drugi pokušati slijepo dodati svoj sadržaj ili čak odbaciti pakete smatrajući ih malicioznim. Upravo zato svi moderni protokoli (HTTP2, Websocketi) predlažu ili čak zahtjevaju korištenje HTTPS tunela, kako bi se izbjegle potencijalne nekompatibilnosti s nekim random uređajem u mreži.
+
 ## Certificate Chain
 
-Kako bi provjerio identitet servera, moraš imati njegov public key. Ali ne želiš čuvati bazu public keyeva svih servera na klijentu. Zato svaki browser i OS dolaze s listom *Certified Authorities* kojima vjeruju. Kada server pošalje svoj certifikat, pisat će da ga je potpisao i CA, što možeš provjeriti.
+Kako bi provjerio identitet servera, klijent mora imati njegov public key.  Ali ne želiš čuvati bazu public keyeva svih servera na klijentu. Zato svaki browser i OS dolaze s listom *Certified Authorities* kojima vjeruju. Server klijentu šalje svoj certifikat, u njemu se nalaze public key, ime i informacije o serveru, te potpis CA kojeg klijent može provjeriti i uvjeriti se da vjeruje serverovom certifikatu.
+
+SSL Certifikati koriste X.509 format i obično se čuvaju u `.cert` fileovima. Potpisuj ga koristeći neku od `SHA-2` funkcija - moderni browseri će se buniti ako je korišten `SHA-1` ili nešto slabije.
+
+*DV (Domain Validation)* certifikat se danas može nabaviti besplatno putem *Let's Encrypt* servisa - potrebno je samo dokazati vlasništvo domene u DNS postavkama. *EV (Extended Validation* certifikati dodatno garantiraju povezanost ustanove ili kompanije s domenom. U browseru se za njih prikazuje label s imenom vlasnika (npr. "PayPal Inc.") umjesto samo "Secure". Imaj na umu da certifikati služe samo za identifikaciju - skuplji certifikat nudi istu kriptografsku zaštitu kao i besplatni.
+
+Kako bi se kontroliralo ponašanje CA institucija, Google je uveo *Certificate Transparency*. To je append-only log u kojem se objavljuje svaki certifikat kojeg CA potpiše.
+
+## Certificate Revocation
 
 Ponekad se certifikat treba povući (*revoke*) jer mu je privatni ključ ili CA kompromitiran. Za taj slučaj, svaki certifikat u sebi sadrži upute kako provjeriti je li povučen.
 
@@ -47,7 +69,17 @@ Certificate Authority može izdati certifikat za bilo čiji server bez dozvole v
 
 Public key pinning omogućuje vlasnicima sitea da kažu koje certifikate odobravaju. Static pinning je ugrađen u browsere, a postoji i dynamic pinning koji koristi `Public-Key-Pins` header. Ali postavljanje vlastitog pinninga je komplicirano i može vrlo lako brickati site ako ne znaš što radiš.
 
+## Napadi na HTTPS
+
+*POODLE* je napad na `SSL 3.0` koji zloupotrebljava dodavanje proizvoljnog paddinga u CBC modu kako bi pročitao sadržaj requesta. Moderni browseri su otporni na njega.
+
+*BEAST* napad omogućuje man-in-the-middle prisluškivanje prometa `TLS 1.0` protokola. Napad koristi slabost protokola koji koristi CBC i reusa IV. Moderni browseri su otporni na njega.
+
+*CRIME* napad omogućuje napadaču s XSS-om i sniffanjem prometa da otkrije podatak iz requesta, npr. vrijednost `Cookie: secret=x7h1ta` headera. Napad koristi TLS kompresiju headera, šaljući requeste koji sadržavaju dodatni string `Cookie: secret=1`, `Cookie: secret=2`, itd. mjereći veličinu paketa. Zbog kompresije, najmanji paket će biti onaj koji sadrži string jednak onom iz headera. Iz tog je razloga preporučljivo ne koristiti TLS kompresiju, i svi moderni browseri i serveri je disablaju.
+
+Sličan napad, *BREACH*, koristi HTTP kompresiju da dohvati podatak iz bodyja. Nažalost, HTTP kompresija se ne može praktično isključiti, pa od njega nema definitivne obrane.
+
 ## Tools
 
-* Za testiranje SSL-a na svom serveru, koristi https://www.ssllabs.com/ssltest.
-* https://istlsfastyet.com
+* https://www.ssllabs.com/ssltest
+* https://www.ssllabs.com/ssl-pulse/

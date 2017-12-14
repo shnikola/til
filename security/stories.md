@@ -30,12 +30,6 @@ http://www.exfiltrated.com/research-Instagram-RCE.php
 
 Našao zaboravljeni server (https://sensu.instagram.com) koji je koristio verziju Railsa vulnerable na Remote Code Execution kroz session. Još bolje, našao je sensu-admin Rails gem u kojem je bio example `secret_token.rb` kojeg su koristili u produkciji (facepalm), te je pomoću toga izgenerirao cookie s kojim je ušao na server i pronašao keyeve za AWS. Drama ensued.
 
-## CloudFlare Memory Leak
-
-https://blog.cloudflare.com/incident-report-on-memory-leak-caused-by-cloudflare-parser-bug/
-
-Zbog buga u handlanju pointera u HTML parseru Cloudflarea, u HTTP response dodavao se sadržaj memorije servera. Između ostalog tu su bili dijelovi tuđih HTTP requesta s headerima, cookijima, API keyevima i sl. Još gore, search enginei su cachirali stranice s tim osjetljivim sadržajem, dopustivši svakome da im pristupi.
-
 ## Spotify unicode account hijacking
 
 https://labs.spotify.com/2013/06/18/creative-usernames/
@@ -46,8 +40,16 @@ Imali su ugrađenu provjeru protiv homografskih napada tako što su u bazu zapis
 
 **Pouka:** ako normaliziraš Unicode, provjeri je li normalizacija idempodentna (koliko god puta se pozvala uvijek vrati istu stvar).
 
-## Taking Control of All .io Domains With a Targeted Registration
+## Gaining Access through Helpdesk
 
-https://thehackerblog.com/the-io-error-taking-control-of-all-io-domains-with-a-targeted-registration/
+https://medium.freecodecamp.org/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c
 
-Pronašao je da su 4 od 7 navedenih nameservera top level domene `.io` neregistrirani i čak dostupni za kupnju. Kupio ih je i mogao je bez problema servirati lažne DNS rezultate.
+Popularni komunikacijski alati kao Slack, Yammer i Facebook Workplace često dopuštaju registraciju svima koji imaju email s domenom kompanije (`@company.hr`). Za registraciju uneseš email, a oni ti šalju poruku s linkom potvrde.
+
+Istovremeno, neki issue trackeri dopuštaju da otvoriš novi issue tako da pošalješ email virtualnu email adresu (`incoming+initdc/myproject+a67d5cf917...@company.hr`). Uneseš li tu virtualnu adresu u Slack, on će poslati konfirmacijski email na nju, što će stvoriti tebi vidljiv ticket u kojem je link s pristupom Slacku.
+
+Drugi način je korištenjem ticketing sustava kao Zendesk, Kayako i WHMC koji dopuštaju da se registriraš s bilo kojom email adresom bez provjere, i imaš pristup ticketima koji stižu s tog emaila. Registriraš se u Zendesku s `feedback@slack.com`, a na slacku s `support@company.hr`. Slack će poslati mail s linkom na `support@company.hr` s adrese `feedback@slack.com`, što će Zendesk protumačiti kao novi ticket koji si otvorio i dodati ga u tvoju listu.
+
+Na Slacku developeri često na javnim kanalima shareaju tajne podatke poput passworda ili informacija o klijentima, što napadač može iskoristiti za daljnje napade.
+
+**Pouka:** ne dopuštaj korinicima pristup Slacku bez invitea. Ako nije opcija, neka se automatizirani mailovi šalju s različite poddomene, npr. `@reply.company.hr`. Izbjegavaj autentifikaciju samo na račun email domene.

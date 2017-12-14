@@ -8,6 +8,9 @@ Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promj
 `Hash.new { |h, k| h[k] = [] }` s defaultnom vrijednosti.
 `Hash.new { |h, k| h[k] = expensive_operation(k) }` lazy loaded.
 
+`hash.fetch(:a, "None found")` dohvaća vrijednost uz fallback ako key ne postoji. Bolje od `hash[:a] || "None found"` jer radi i za falsey vrijednosti.
+`hash.fetch(:a) { do_something }` dohvaća vrijednost, ili ako key ne postoji, izvršava blok.
+
 `{a: {b: 1}}.dig(:a, :b)` nested pristup bez exceptiona _2.3_
 `{a: nil, b: 1}.compact` uklanja sve key-value parove kojima value `nil` _2.4_
 `{a: 1, b: 2}.assoc(:a)` vraća key-value pair, `[:a, 1]`
@@ -17,7 +20,7 @@ Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promj
 `[1, 2, 3].sum` vraća sumu svih elemenata.
 `[1, 2, 3].minmax` vraća min i max arraya.
 `[1, 2, 3, 4].partition(&:odd?)` dijeli u dva arraya.
-`['a', 'b', 'c'].grep_v(/a/) # => ['b', 'c']` vraća one koji se ne slažu regexom
+`[1, 2, 3].zip(["a", "b", "c"])` spaja dva arraya u parove (`[1, "a"], [2, "b"], [3, "c"]`). Korisno za povati `to_h`
 
 ## Equality
 
@@ -31,21 +34,6 @@ Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promj
 `Comparable` je module, ako ga includaš i definiraš `<=>`, automatski dobijaš `<`, `<=`, `==`, `=>`, i `>`. Ponekad je dobro sam implementirati optimalniji `==`.
 
 Ruby će od `==` sam stvoriti `!=`.
-
-## Enumerable
-
-`Enumerable` je module. Includaj ga ako je tvoja klasa kolekcija.
-U klasi definiraj `each` metodu, i automatski dobijaš i `select`, `map` itd. Objekti unutar kolekcije moraju imati definiran `<=>`
-
-## Enumerator
-
-`Enumerator` je objekt koji možeš iterirati, standardno (s `each`) ili ručno (s `next`).
-
-`enum_for(:some_method)` (ili `to_enum(:some_method)`) vraća enumerator za metodu koja radi iteraciju, bez da dohvaćaš sve podatke.
-
-Za metode koje primaju block: `return enum_for(__method__) unless block_given?`
-
-`Enumerator.new do` koristi se za generiranje beskonačnih streamova.
 
 ## Freeze
 

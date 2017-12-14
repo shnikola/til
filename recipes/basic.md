@@ -9,9 +9,6 @@
 
 * Maillard reaction
 
-Kada pržiš meso za gulaš, *pojačaj vatru* i *stavljaj manje mesa* odjednom.
-Na preniskoj temperaturi meso se počinje kuhati, pa se proteini otapaju u onu gadnu sivu tekućinu.
-
 ## Pirjanje/Dinstanje (Braising)
 
 Namirnicu prvo suho popržiš na tavi, kako bi joj pojačao okus putem Maillardove reakcije. Ako namirnica nije proizvela dovoljno vlastite tekućine, dodaje se kisela tekućina (npr. poma, pivo, balzamic vinegar, vino) i temeljac. Uobičajeno se stavi tekućine da prekrije 2/3 komada mesa. Lonac se poklopi kako bi se sva tekućina i okus zadržali.

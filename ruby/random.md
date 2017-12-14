@@ -14,22 +14,6 @@ http://phusion.github.io/traveling-ruby/
 
 Traveling Ruby omogućava da zapakiraš Ruby app kako bi bila executable na Windowsima, Linuxu i OSXu.
 
-## How does bundler work, anyway?
-
-https://www.youtube.com/watch?v=4DqzaqeeMgY
-
-Problem s gem odlučivanjem koju verziju gema koristiti. Rješenje: ne radi tu odluku u runtimeu, nego pri instalaciji.
-
-## Wheneverize
-
-Imaj na umu da wheneverize i slični cron gemovi pokreću cijeli Rails environment, što zna potrajati par minuta, pa nekoliko takvih jobova može pojesti CPU i memoriju. Zato uvijek pokušaj pisati light-weight skripte ili ih pozivati iz već pokrenutog background joba.
-
-## Micromachine
-
-https://github.com/soveran/micromachine
-
-Mini state-machine library. Probao sam ga sam implementirati sam - i dosta dobro sam ga napisao. Bravo ja!
-
 ## Popravljeni open-uri
 
 https://twin.github.io/improving-open-uri
@@ -39,18 +23,6 @@ https://twin.github.io/improving-open-uri
 * dodaje ekstenziju na `Tempfile` koji se stvori pri downloadu.
 * dodaje opcije ograničenja broja redirectova i maximum filesizea.
 * dodaje defaultni User-Agent da ga aplikacije ne odbijaju.
-
-## Partial Downloads with Enumerators and Fibers
-
-https://twin.github.io/partial-downloads-with-enumerators-and-fibers
-
-Uploader `shrine` ima feature da se file direktno uploada na `S3`, bez da ide na server. Ali uploadanom fileu uvijek treba provjeriti je li *MIME type* onaj kojeg očekujemo. Pritom se ne možemo se pouzdati u ekstenziju ili `Content-Type`, jer dolaze od usera. MIME type se pouzdano može odrediti samo iz *contenta*, koristeći `MimeMagic` gem ili Unix naredbu `file`.
-
-Ako je file remotely uploaded, ne želimo ga opet cijelog skidati na server za validaciju. Želimo stvoriti interface koji će omogućiti partial download *po potrebi* (znači, ne da se file cijeli skine odjednom, nego da skida komad po komad).
-
-`net/http` ima `response.read_body` za chunked download, ali mora se nalaziti unutar `http.request_get` bloka, koji zatvara konekciju pri izlasku. Zato se HTTP request poziva unutar `Fiber`a, a u `http.request_get` blok stavlja se `Fiber.yield` koji pauzira izvršavanje tog koda dok se opet ne pozove s `fiber.resume`. Brilliant!
-
-Inače, gem `HTTP.rb` je puno bolja implentacija http clienta i ima ovo out-of-the box, ali za library je uvijek bolje da koristi stdlib.
 
 ## Rails ActionCable vs Phoenix Channels
 

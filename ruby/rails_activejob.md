@@ -22,3 +22,5 @@ Zapisuje jobove u memoriju aplikacije. Svaki job ima svoj queue s poolom threado
 
 Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt - tako ih je puno lakše testirati.
 
+Imaj na umu da `wheneverize` i slični cron gemovi pokreću cijeli Rails environment, što zna potrajati par minuta, pa nekoliko takvih jobova može pojesti CPU i memoriju. Zato uvijek pokušaj pisati light-weight skripte ili ih pozivati iz već pokrenutog background joba.
+

@@ -1,5 +1,10 @@
 # Meso
 
+## Savjeti
+
+Kada pržiš meso za gulaš, *pojačaj vatru* i *stavljaj manje mesa* odjednom.
+Na preniskoj temperaturi meso se počinje kuhati, pa se proteini otapaju u onu gadnu sivu tekućinu.
+
 ## Teletina / Junetina / Govedina
 
 Teletina su goveda mlađa od 12 mjeseci. Roze i sivkaste boje, mekano i bez masti.
@@ -32,9 +37,21 @@ Djelovi:
 
 ### Lungić (Tenderloin) na brzaka
 
-* Lungić na sobnoj temperaturi posoli, popapri, utrljaj začine (npr. virginia steak, ili kumin i smeđi šećer).
-* Na tavi dobro zagrij malo ulja i ispeci ga dobro sa svake strane po 2 minute da lijepo posmeđi.
-* Prebaci ga u teću u pećnicu na 200 stupnjeva, peci 15 minuta, pa okreni i još 15 minuta.
+* Lungić na sobnoj temperaturi ukloni srebrno tkivo, ostavi malo masti, posoli, popapri, utrljaj začine ako želiš (npr. virginia steak, ili kumin i smeđi šećer).
+* Na tavi stavi malo ulja na što jaču vatru i posmeđi ga dobro sa dvije strane. Treća strana će se ispeći u pećnici.
+* Prebaci ga u pećnicu na 180 stupnjeva, peci 20ak minuta.
+* Od karameliziranih sokova u tavi možeš napraviti umak.
+* Izvadi i pusti 5-10 minuta da se odmori.
+
+### Pulled Pork
+
+* **Komad od 1-1.5kg svinje** (lopatica, vratina ili but su dobri) operi, očisti od masnijih dijelova, i zareži s nekoliko paralelnih rezova.
+* Pripremi mješavinu za trljanje: **3 žlice smeđi šećer**,  **2 žlice paprike**, **1 žlica chipotla**, **2 žličice soli**, **po 1 žličica: kajenske paprike, cimeta, kumina**. Dobro utrljaj sa svih strana mesa i u zarezotine. Stavi meso u lonac koji može u pećnicu.
+* Pripremi umak: **2 luka**, **4 režnja češnjaka**, **0.5l pilećeg temeljca**, **po 2 žlice: ulja, koncetrata rajčice, melase, Worcestershire umaka, jabučnog octa**. Polij po mesu, neka ga luk prekrije.
+* Poklopi lonac i stavi ga u pećnicu na nisku temperaturu, ne višu 150 stupnjeva.
+* Nakon minimalno 4 sata, izvadi meso na tanjur, odstrani čudne masne dijelove a ostatak raskomadaj dvjema vilicama.
+* Umak stavi na vatru dok se ne reducira i postane gust, pa ubaci usitnjeno meso u njega.
+* Kao prilog jedi s ukiseljenom mrkvom, smrdljivim mekim sirom ili mileramom.
 
 ## Piletina
 

@@ -23,12 +23,6 @@ Pri neslaganju treba izbjegavati iduće:
 
 "We must always take sides. Neutrality helps the oppressor, never the victim. Silence encourages the tormentor, never the tormented." Ellie Wiesel, Nobel acceptance speech.
 
-## Tolerancija
-
-https://en.wikipedia.org/wiki/Paradox_of_tolerance
-
-U društvu koje tolerira sve, toleranciju preotimaju i uništavaju netolerantni. Društvo ne može biti beskrajno tolerantno. Mora biti netolerantno na netoleranciju.
-
 ## The Busy Trap
 
 https://opinionator.blogs.nytimes.com/2012/06/30/the-busy-trap

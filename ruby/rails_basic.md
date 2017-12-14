@@ -1,17 +1,5 @@
 # Ruby on Rails
 
-## Rails u produkciji
-
-http://www.akitaonrails.com/2016/03/22/is-your-rails-app-ready-for-production
-
-**Deploy:** Heroku (ako želiš jeftinije tipa EC2 ili Digital Ocean, treba klijentima dati do znanja da s tim ne dobijaju 24/7 security updates)
-**Server:** Passenger ili Puma (Unicorn ima problem sa sporim klijentima)
-**Metrics:** New Relic, Papertrail
-**Rails Dependencies:** Rails 12 Factor, Rack-Cache middleware, Rack-Attack, Rack-Protection, Sprockets 3.3+
-**DB:** Postgresql, male Redis instance uz Sidekiq (workere podesi da koriste readonly Follower bazu)
-**CDN:** Koristi ih! AWS Cloudfront ili Fastly.
-**Upload:** Attachinary gem (direktni upload iz klijenta na servis koji zaobilazi Rails app, samo dobiješ id)
-
 ## Request/Response Cycle
 
 http://www.rubypigeon.com/posts/examining-internals-of-rails-request-response-cycle

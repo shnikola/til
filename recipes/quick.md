@@ -30,3 +30,13 @@
 * poprskaj maslinovim uljem i stavi u pećnicu na 15 minuta.
 
 Kao prilog poprženi kruh, brusnice i orašasti plodovi.
+
+## Kvinoja sa špinatom
+
+* **250ml kvinoje**, isperi i stavi u vodu da se kuha (1:2 omjer). Gotova je kad upije cijelu vodu.
+* Dok se kvinoja kuha, u zdjelici pomiješaj: **2 žlice maslinovog ulja**, **2 žlice limunovog soka**, **2 režnja usitnjenog češnjaka**, **1 žličica senfa**, **pola žličice soli**. To je dressing.
+* Na tavi tostiraj **40g oraha ili badema** dok ne počnu mirisati.
+* Nasjeckaj **10ak sušenih rajčica**
+* Kad je kvinoja gotova, stavi je u zdjelu, polij je dressingom, umiješaj sušene rajčice i orahe.
+* Kada se malo ohladi, umiješaj **listove špinata**.
+

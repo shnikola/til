@@ -151,36 +151,15 @@ Proxiji rade request u ime klijenta, pa klijentova IP adresa nikad ne dođe do s
 * `Forwarded`(c) pokušaj standardiziranja gornja 3 headera. (npr. `for=192.0.2.60; proto=http; `). Ne koristi se baš.
 * `Via`(c, s): verzija protokola, hostname, i optional product version proxija kroz koje je poruka prošla (npr. `1.0 fred, 1.1 example.com (Apache/1.1)`). Uglavnom za debugiranje, a služi i za detektiranje proxy loopova.
 
-### CORS
-
-Slanje advanced requestova (POST, PUT, DELETE) i custom headera iz AJAXa na resource s druge domene nije dopušteno. Time se sprječava zloupotreba cookija i autentifikacije sitea na drugoj domeni (npr. skripta na zlom siteu POSTa sliku kurca na tvoj facebook). To se zove **Same Origin Policy**.
-
-CORS je način da klijent i server na siguran način mogu utvrditi je li dopušten cross origin request.
-
-Ako je request kompleksan (sve osim GET, HEAD i POST bez custom headera), šalje se preflight OPTIONS request na server:
-* `Origin`(c): domena s koje dolazim
-* `Access-Control-Request-Method`(c): koju metodu planiram pozvati
-* `Access-Control-Request-Headers`(c): koje headere planiram koristiti
-
-Server odgovara s:
-* `Access-Control-Allow-Origin`(s): dopuštena domena, `*`, ili error ako nije dopušten
-* `Access-Control-Allow-Methods`(s): dopuštene metode
-* `Access-Control-Allow-Headers`(s): dopušteni headeri
-* `Access-Control-Max-Age`(s): koliko dugo ovaj preflight response može biti cachiran
-
-Nakon toga se šalje pravi request, opet s `Origin` headerom.
-
-Za slanje cookija i authentifikacije preko AJAXa, potrebno je dodati `withCredentials = true` flag. Browser će pritom odbaciti svaki response koji nema `Access-Control-Allow-Credentials: true`(s).
-
 ### Do Not Track
 
-Sasvim nevjerojatno, netko je pokušao standardizirati transparentnost trackinga na webu. Browseri bi trebali omogućiti da korisnik odabere želi li da ga se tracka, pri čemu će se u svaki requst dodati `DNT: 1`(c) (ne želim) ili `DNT: 0` (želim).
+Sasvim nevjerojatno, netko je pokušao standardizirati transparentnost trackinga na webu. Browseri bi trebali omogućiti da korisnik odabere želi li da ga se tracka, pri čemu će se u svaki request dodati `DNT: 1`(c) (ne želim) ili `DNT: 0` (želim).
 
 Serveri bi također trebali obavještavati korisnika o načinu na koji trackaju s `TSV`(s), npr. `C` - tracking with consent. Nažalost, nema zakonskih ni tehnoloških obveza da server ispoštuje korisnikov izbor.
 
 ## HTTP/2
 
-Ako želiš raditi paralelne requestove u HTTP 1.X, moraš koristiti više TCP konekcija. Zbog request queinga, svaka konekcija može istovremeno prenositi samo jedan request ili response. Koliki god bandwidth imao, latenciju ne možeš smanjiti dok god šalješ request po request.
+Ako želiš raditi paralelne requestove u HTTP 1.X, moraš koristiti više TCP konekcija. Zbog request queueinga, svaka konekcija može istovremeno prenositi samo jedan request ili response. Koliki god bandwidth imao, latenciju ne možeš smanjiti dok god šalješ request po request.
 
 HTTP/2 napravljen je da podržava sve postojeće funckionalnosti HTTP 1.1, ali da ukloni problem latencije i smanji broj potrebnih konekcija na pojedinom hostu.
 
@@ -192,7 +171,7 @@ Umjesto toga može se koristiti `Upgrade` header, ali to zahtjeva dodatni roundt
 
 ### Streams
 
-U HTTP/2, sva komunikacija se obavlja preko jedne TCP konekcije koja može sadržavati neograničen broj dvosmjernih *streamova*. Svaki stream ima ID i koristi se za prenošenje *messagea*. Message pretstavlja HTTP poruku, tj. request ili response, a sastoji se od jednog ili više binarnih *frameova*. Frame prenosi određenu vrstu podataka (npr. HTTP headere ili dio payloada), a u svom headeru sadrži ID streama, što omogućuje paralelno slanje više frameova iz različitih streamova (*interleaving*).
+U HTTP/2, sva komunikacija se obavlja preko jedne TCP konekcije koja može sadržavati neograničen broj dvosmjernih *streamova*. Svaki stream ima ID i koristi se za prenošenje *messagea*. Message predstavlja HTTP poruku, tj. request ili response, a sastoji se od jednog ili više binarnih *frameova*. Frame prenosi određenu vrstu podataka (npr. HTTP headere ili dio payloada), a u svom headeru sadrži ID streama, što omogućuje paralelno slanje više frameova iz različitih streamova (*interleaving*).
 
 Zahvaljujući tome sve TCP konekcije su perzistentne, i otvara se samo jedna po originu. Time se smanjuje overhead stvaranja novih konekcija, a i memorijski i procesorski footprint na serveru, klijentima i svima između. Ista konekcija će se koristiti čak i za requestove iz različith tabova. `chrome://net-internals#http2` ispisuje listu trenutnih konekcija u browseru.
 
@@ -206,13 +185,13 @@ Kako bi se smanjio overhead slanja headera HTTP/2 ih komprimira koristeći HPACK
 
 ### Flow Control
 
-Flow control dopušta primaocu da kontrolira koliko podataka prima od pošiljatelja. Ovo je korisno u slučaju kad npr. klijent zatraži cijeli video, a korisnik ga u pola skidanja pauzira. Klijent tada može smanjiti window tog streama i omoguiti drugim streamovima da zauzmu veći bandwith. Ovo je slično kao i TCP flow control, ali omogućuje kontrolu na razini streama.
+Flow control dopušta primaocu da kontrolira koliko podataka prima od pošiljatelja. Ovo je korisno u slučaju kad npr. klijent zatraži cijeli video, a korisnik ga u pola skidanja pauzira. Klijent tada može smanjiti window tog streama i omogućiti drugim streamovima da zauzmu veći bandwith. Ovo je slično kao i TCP flow control, ali omogućuje kontrolu na razini streama.
 
 U HTTP/1.1, jednom kad je `Content-Length` poslan, nemoguće je prekinuti poruku bez da se prekina cijela konekcija, što je skupo. HTTP2 podržava prekidanje poruke pomoću RST_STREAM framea bez da se prekine konekcija.
 
 ### Server Push
 
-*Server push* omogućuje serveru da šalje više responseova na jedan klijentov request. Na ovaj način server može poslati resurse za koje zna da će klijentu biti potrebni (npr. JS i CSS) bez da ih klijent zatraži, uštedivši na latenciji requesta.
+*Server push* omogućuje serveru da šalje više responsa na jedan klijentov request. Na ovaj način server može poslati resurse za koje zna da će klijentu biti potrebni (npr. JS i CSS) bez da ih klijent zatraži, uštedivši na latenciji requesta.
 
 Server prije slanje šalja uvodni frame s headerom resourca (PUSH_PROMISE) i daje priliku klijentu da odbije push (RST_STREAM) ako npr. već ima resource u cacheu.
 

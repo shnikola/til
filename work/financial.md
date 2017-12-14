@@ -6,7 +6,7 @@ http://kk.org/thetechnium/1000-true-fans
 
 Da bi mogao živjeti kao autor (fotograf, glazbenik ili poduzetnik) ne trebaju ti milijuni kupaca. Treba ti samo 1000 istinskih fanova koji će kupiti sve što proizvedeš. Ako ti svaki fan godišnje plati $100, možeš dobro živjeti. Sve što moraš je proizvoditi.
 
-Ovo je puno realniji i prirodniji put do uspjeha nego nadanje o stvaranju milijnuskog bestsellera.
+Ovo je puno realniji i prirodniji put do uspjeha nego nadanje o stvaranju milijunskog bestsellera.
 
 ## The 40% Rule for SAAS companies
 
@@ -25,7 +25,7 @@ https://mattermark.com/important-financial-indicators-for-startups-at-every-stag
 
 Na početku postojanja, bitna je samo količina na računu. Ona plaća zaposlenike, servere i režije. Količinu na računu podijeliš s prosječnom mjesečnom potrošnjom da dobiješ koliko ti je mjeseci ostalo dok ne ostaneš bez novaca. Mjesečni troškovi (umanjeni za mjesečne prihode) nazivaju se *Monthly Burn Rate*.
 
-Kada počneš primati redovne prihode (revenue), oni postaju najbitnija metrika. *Annualized Run Rate* ekstrapolira godišnju zaradu pomoću nekog perioda (npr. zaradio si $5 u Q1, znači da ti ARR 4x$5 = $20).
+Kada počneš primati redovne prihode (revenue), oni postaju najbitnija metrika. *Annualized Run Rate* ekstrapolira godišnju zaradu pomoću nekog perioda (npr. zaradio si $5 u Q1, znači da ti je ARR `4 x $5 = $20`).
 *Annually Recurring Revenue* uzima u obzir pretplatnike čiji se prihodi ponavljaju svake godine.
 
 Osim što predstavlja način da napušeš revenue pomoću ARR, ovaj članak tvrdi da profitabilnost nije važna i da je stvar izbora. Burn rate je, po njima, jedna od rijetkih stvari koje tvrtka može kontrolirati.
@@ -36,7 +36,7 @@ http://www.kalzumeus.com/2012/09/21/ramit-sethi-and-patrick-mckenzie-on-why-your
 
 Dva mjestimično ljigava tipa racionaliziraju (često jedan u kupe, drugi u špade) zašto je u redu naplaćivati $1000 za ebook ili savjet za gdje staviti button. Ali da se izvući i koristan savjet iz ovog razgovora.
 
-Treba naplaćivati više kako bi izbjegao "patološke mušterije" koje će platiti malo, oduzeti gomilu vremena i nikad biti zadovoljne. Ako klijentu uspješno preneseš vrijednost svoje usluge, on će je više cijeniti. Usto, klijenti koji su spremni platiti više su često tehnološki potkovaniji i nećeš gubiti vrijeme na provjeravanje radi li im internet.
+Treba naplaćivati više kako bi izbjegao "patološke mušterije" koje će platiti malo, oduzeti gomilu vremena i nikad biti zadovoljne. Ako klijentu uspješno preneseš vrijednost svoje usluge, on će je više cijeniti. Usto, klijenti koji su spremni platiti više često su tehnološki potkovaniji i nećeš gubiti vrijeme na provjeravanje radi li im internet.
 
 Umjesto da naplaćuješ sitno za neki proizvod, radije ga daj besplatno i koristi ga za promidžbu. Ali daj do znanja ljudima da je vrijedan.
 

@@ -30,7 +30,7 @@ Pisanje u stream
 `io.flush` gura buffer u stream. `io.sync = true` flusha nakon svakog zapisa.
 Za random access koristi `io.pos`, `io.eof?`, `io.seek` i `io.rewind`.
 
-`IO.copy_stream(src, dest)` kopira sadržaj jednog IO streama u drugi. Vraća broj kopiranih bytova.
+`IO.copy_stream(src, dest)` kopira sadržaj jednog IO streama u drugi, bez da učita cijeli sadržaj u memoriju, što je korisno pri kopiranju velike količine podataka.
 
 ## File < IO
 
@@ -73,3 +73,5 @@ Druga opcija je koristiti `IO.select(read_ios, write_ios)` koji blokira poziv do
 Za ozbiljan asinkroni I/O handling koristi frameworke poput `EventMachine` i `Celluloid`.
 
 Za lightweight nadogradnju, `nio4r` nudi stateful `select` (ne moraš mu prosljeđivati array streamova svaki put), mogućnost timeouta, te lakše monitoriranje socketa s `readable?` i `writable?`.
+
+

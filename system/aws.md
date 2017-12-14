@@ -27,6 +27,10 @@ Koristi se za deployanje aplikacija na unaprijed konfigurirani EC2 stroj, s inst
 `eb deploy` šalje lokalni kod (ili, ako je git postavljen, koristi `git archive` zadnjeg commita) u trenutni environment aplikacije.
 `eb deploy project-staging` za deployanje na određeni environment.
 
+## Elastic IP
+
+Statička IP adresa koja može pokazivati na EC2 instancu s automatskim failoverom.
+
 ## CLI
 
 Najlakši način za handlanje više AWS računa na istom stroju je pomoću `aws configure --profile project-name` za svaki projekt.

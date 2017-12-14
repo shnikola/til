@@ -38,16 +38,8 @@ Cache se ne može invalidirati dok ne istekne expiry. Jedini način za prisiliti
 
 * za isti resource koristi jedan URL.
 * enablaj ETagove na serveru.
-* resource koje možeš cachiraj na CDNu.
+* cachiraj na CDNu assete resource koje možeš.
 * odvoji dio filea koji se često mijenja kako bi se ostatak mogao bolje cachirati.
-
-## Caching S3 with ngnix and HAProxy
-
-https://blog.sentry.io/2017/03/01/dodging-s3-downtime-with-nginx-and-haproxy.html
-
-Dohvaćanje podataka iz S3 bucketa im je imalo preveliku latenciju, a S3 usto ograničava bandwidth prema serverima izvan AWSa.
-
-Zato su dodali proxy cache sa 750GB diska u svoj datacentar kako bi se put do S3-a skratio. HAProxy je usmjeravao sve requeste na cache, ili u slučaju da cache faila, na S3.
 
 ## CloudFlare Railgun
 
@@ -56,6 +48,14 @@ CloudFlare inače servira statične resource (slike, JS, CSS) direktno iz cachea
 Na server se instalira poseban "Listener" koji drži otvorenu konekciju s datacentrima. Pošto dinamične stranice često mijenjaju samo mali dio stranice, šalje se samo promjena što uštedi i do 98% prometa.
 
 Dostupno samo za Enterprise korisnike.
+
+## Caching S3 with ngnix and HAProxy
+
+https://blog.sentry.io/2017/03/01/dodging-s3-downtime-with-nginx-and-haproxy.html
+
+Dohvaćanje podataka iz S3 bucketa im je imalo preveliku latenciju, a S3 usto ograničava bandwidth prema serverima izvan AWSa.
+
+Zato su dodali proxy cache sa 750GB diska u svoj datacentar kako bi se put do S3-a skratio. HAProxy je usmjeravao sve requeste na cache, ili u slučaju da cache faila, na S3.
 
 # Literatura
 

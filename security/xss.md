@@ -26,7 +26,7 @@ Ovaj napad zloupotrebljava korisnikovo povjerenje u site na kojem se nalazi.
 
 Browseri imaju ugrađene XSS filtere (npr. prepoznaju ako je source skripte u URLu) i automatski ga blokiraju. Ako si lud, možeš disablati to ponašanje s `X-XSS-Protection: 0` headerom.
 
-Za sve ostalo, escapaj korisničke podatke pri renderiranju. Pripazi da različito escapaš ako se ubacuje u HTML element, atribut, `<style>` ili `<script>` tag.
+Za sve ostalo, escapeaj korisničke podatke pri renderiranju. Pripazi da različito escapaš ako se ubacuje u HTML element, atribut, `<style>` ili `<script>` tag.
 
 Ako koristiš URL od korisnika, provjeri da počinje s `http`, a ne s `javascript:` ili `data:`.
 
@@ -39,11 +39,11 @@ Ako koristiš URL od korisnika, provjeri da počinje s `http`, a ne s `javascrip
 * `connect-src` origini na koje se možeš spojiti (XHR, WebSockets, EventSource)
 * `default-src` definira dopuštene origine za sve.
 
-Instrukcije mogu imati vrijednost u obliku origina (`https://host1.com`), primati wildcardove (`*://*.google.com:*`) ili keyword: `'none'` ne dopušta ništa, `'self'` dopušta s trenutnog origina, ali ne i poddomena.
+Instrukcije mogu imati vrijednost u obliku origina (`https://host1.com`), primati wildcardove (`*://*.google.com:*`) ili keyworde: `'none'` ne dopušta ništa, `'self'` dopušta s trenutnog origina, ali ne i poddomena.
 
 Ali najveća sigurnost koju CSP pruža je da zabranjuje sav inline scripting: to je jedini efektivan način za obraniti se od inline XSS-a. To uključuje `<script>` elemente, `javascript:` urlove i inline event handlere poput `onclick`. Isto vrijedi i za inline `<style>`. Ako baš moraš dozvoliti inline script i style, koristi `unsafe-inline` keyword u `script-src` i `style-src`.
 
-CSP također i brani napade korištenjem `eval()`, `new Function()`, `setTimeout(string)` i `setInterval(string)` tako što ih u potpunosti blokira.
+CSP također brani od napada koji koriste `eval()`, `new Function()`, `setTimeout(string)` i `setInterval(string)` tako što ih u potpunosti blokira.
 
 Možeš podesiti CSP da šalje report s blokiranim resourcom koristeći direktivu `report-uri /my-report-parser`. Browser će poslati POST s JSONom na dani url.
 Ukoliko tek postavljaš CSP i želiš samo primati reporte, ali ne i blokirati resource, koristi `Content-Security-Policy-Report-Only` header.
@@ -57,4 +57,3 @@ Napadač na svojoj stranici (ili pomoću XSS-a) osluškuje `copy` ili `keydown` 
 Ako se radi o shell naredbi, napadač može dodati `\r\n` na kraj kako bi se ona izvela odmah pri pasteanju, te dodati `clear` i `echo <origalna naredba>`, ne dajući priliku korisniku da uopće primjeti da se zla naredba izvela.
 
 Nema nekog pametnog načina za obraniti se, osim da vrlo pažljivo provjeriš cliboard prije nego pasteaš nešto u terminal (npr. koristeći Jumpcut).
-

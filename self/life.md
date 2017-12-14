@@ -32,15 +32,6 @@ https://medium.com/art-marketing/on-wine-a-tragedy-c6296b7968b1
 
 Ljudi se stresiraju da li su odabrali pravo vino - ali ne postoji pravo vino. Ako i znaš nešto o vinu, to znanje nije apsolutno i ne odnosi se ni na koga osim tebe. Zamijeni "vino" s bilo čime.
 
-## Strah
-
-https://www.quora.com/What-are-some-useful-skills-I-can-learn-in-minutes/answer/Gary-Larson-15
-
-Strah utječe na moje ponašanje, na način na koji najčešće nisam svjestan.
-Neprimjereno gnjevna reakcija prema nekome najčešće proizlazi iz nekog mog unutarnjeg straha.
-
-Razgovor s partnerom/prijateljem/psihologom o strahu je najbolji način za riješiti ga se.
-
 ## Anxiety Loves Company
 
 http://sethgodin.typepad.com/seths_blog/2016/09/anxiety-loves-company.html

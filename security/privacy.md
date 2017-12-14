@@ -1,5 +1,22 @@
 # Privacy
 
+## Referrer
+
+Browser provjerava hoće li slati referrera ovim redom:
+1. `Referrer-Policy` header
+2. `<meta name="referrer">` u headu
+3. `referrerpolicy` html atribut linka
+4. `noreferrer` html atribut linka
+5. nasljeđivanje od parent contexta
+
+Vrijednosti koje header ili atributi imaju:
+* `no-referrer` neće se ništa slati.
+* `no-referrer-when-downgrade` neće slati s HTTPS na HTTP. (default)
+* `same-origin` slati će se samo unutar istog origina.
+* `origin` svima se šalje samo origin, ne i path.
+* `origin-with-cross-origin` unutar istog origina šalje se path, inače samo origin.
+* `unsafe-url` šalje se cijeli URL svima. Nije safe, jer šalje i na HTTP.
+
 ## Deniability and Duress
 
 http://www.mit.edu/~specter/articles/17/deniability1.html
@@ -25,6 +42,7 @@ Ali Google nije servis kojem se može vjerovati na taj način. Štoviše, on kor
 ## Ubercookie Fingerprint
 
 http://ubercookie.robinlinus.com/
+
 Koristi `AudioContext` i `getClientRects` da fingerprinta i razlikuje čak i identične uređaje.
 
 ## Behaviour profiling
