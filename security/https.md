@@ -1,17 +1,21 @@
 # HTTPS / TLS / SSL
 
-`TLS` je protokol koji omogućuje sigurniju mrežnu komunikaciju između dvije strane. `SSL` je starija verzija protokola (`TLS 1.0` je `SSL 3.1`). `HTTPS` je naziv za slanje `HTTP` paketa preko `TLS` protokola.
+`TLS` (i starija verzija `SSL`) je protokol koji omogućuje sigurniju mrežnu komunikaciju između dvije strane. `HTTPS` je naziv za slanje `HTTP` paketa preko `TLS` protokola.
 
 `TLS` pruža tri usluge aplikacijama koje ga koriste:
 * autentifikaciju (omogućuje provjeru identiteta obje strane)
 * enkripciju (skriva sadržaj poruka koje se šalju)
 * integritet (provjerava da li su poruke mijenjane ili lažirane).
 
+`SSL` je starija verzija protokola - `TLS 1.0` je otprilike `SSL 3.1`).
+`TLS 1.0` podržavaju svi browseri, čak i IE6.
+`TLS 1.1` i `1.2` podržavaju noviji browseri, IE 11+.
+
 ## Handshake
 
-1. Nakon uspostave TCP konekcije, klijent započinje TLS handshake. Šalje verziju TLS-a, ciphersuite i compression koje želi koristiti.
-2. Server odabire najvišu verziju koju obojica podržavaju. Server šalje svoj certifikat i klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat.
-3. Klijent šalje ključ pomoću kojim će simetrično kriptirati komunikaciju. Za razmjenu ključa koristi se RSA ili Diffie-Hellman. Poruka se potpisuje javnim ključem servera.
+1. Nakon uspostave TCP konekcije, klijent započinje TLS handshake. Predlaže verziju TLS-a, ciphersuite i compression koji će se koristiti.
+2. Server odabire najvišu verziju koju obojica podržavaju. Server šalje svoj certifikat koji sadrži njegov public key.
+3. Klijent provjerava vjeruje li certifikatu ili strani koja je potpisala certifikat. Šalje ključ pomoću kojeg će simetrično kriptirati komunikaciju. Za razmjenu ključa koristi se RSA ili Diffie-Hellman. Poruku potpisuje public keyem servera.
 4. Server provjerava integritet poruke i odgovara enkriptiranom porukom.
 5. Klijent je provjerava i počinje slati aplikacijske podatke.
 
@@ -25,13 +29,15 @@ Velik dio nevidljive infrastrukture weba (cache serveri, content filteri, securi
 
 ## Certificate Chain
 
-Kako bi provjerio identitet servera, klijent mora imati njegov public key.  Ali ne želiš čuvati bazu public keyeva svih servera na klijentu. Zato svaki browser i OS dolaze s listom *Certified Authorities* kojima vjeruju. Server klijentu šalje svoj certifikat, u njemu se nalaze public key, ime i informacije o serveru, te potpis CA kojeg klijent može provjeriti i uvjeriti se da vjeruje serverovom certifikatu.
+Certifikat sadrži identitet servera i njegov public key, ali moramo provjeriti da napadač nije lažirao certifikat s vlastitim public keyem. Ne želimo čuvati bazu public keyeva svih servera na klijentu. Zato svaki browser i OS dolaze s listom *Certified Authorities* kojima vjeruju. Server klijentu šalje svoj certifikat, u njemu se nalaze public key, ime i informacije o serveru, te potpis CA kojeg klijent može provjeriti i uvjeriti se da vjeruje serverovom certifikatu.
 
-SSL Certifikati koriste X.509 format i obično se čuvaju u `.cert` fileovima. Potpisuj ga koristeći neku od `SHA-2` funkcija - moderni browseri će se buniti ako je korišten `SHA-1` ili nešto slabije.
+SSL Certifikati koriste X.509 format i obično se čuvaju u `.cert` fileovima. Potpisuju se koristeći neku od `SHA-2` funkcija - moderni browseri će se buniti ako je korišten `SHA-1` ili nešto slabije.
 
 *DV (Domain Validation)* certifikat se danas može nabaviti besplatno putem *Let's Encrypt* servisa - potrebno je samo dokazati vlasništvo domene u DNS postavkama. *EV (Extended Validation* certifikati dodatno garantiraju povezanost ustanove ili kompanije s domenom. U browseru se za njih prikazuje label s imenom vlasnika (npr. "PayPal Inc.") umjesto samo "Secure". Imaj na umu da certifikati služe samo za identifikaciju - skuplji certifikat nudi istu kriptografsku zaštitu kao i besplatni.
 
 Kako bi se kontroliralo ponašanje CA institucija, Google je uveo *Certificate Transparency*. To je append-only log u kojem se objavljuje svaki certifikat kojeg CA potpiše.
+
+Pri slanju svog certifikata, server može zatražiti i certifikat od klijenta, kako bi potvrdio njegov identitet.
 
 ## Certificate Revocation
 
@@ -81,5 +87,6 @@ Sličan napad, *BREACH*, koristi HTTP kompresiju da dohvati podatak iz bodyja. N
 
 ## Tools
 
+* https://security.stackexchange.com/questions/20803/how-does-ssl-tls-work
 * https://www.ssllabs.com/ssltest
 * https://www.ssllabs.com/ssl-pulse/

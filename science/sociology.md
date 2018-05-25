@@ -48,3 +48,28 @@ Na ovaj način netolerantna manjina može vršiti dikatuturu nad tolerantnom ve�
 
 Knjige se ne zabranjuju i ljudi se ne stavljaju na crne liste zato što smetaju prosječnom građaninu, nego zato što smetaju nekolicini motiviranih aktivista, a ostatak stanovništva su prepasivni da bi ih bilo briga.
 
+## Politics
+
+Libertarijanizam je nastao kao pojam nakon što se "liberalizam" počeo koristi izvan svog izvornog značenja. U teoriji bi trebali biti ekvivalentni, ali postoje razlike. Svi se zalažu za prava na slobodne i pravedne izbore, građanska prava, slobodu tiska, religije, i trgovine.
+
+U SAD-u, liberali su za veću vlast države (porezi, zakoni), a libertarijanci za manju. Liberali se ne libe koristiti silu u skladu sa svojim ciljevima (npr. korištenje policije da se riješi problem redistribucije dobara), dok su libertarijanci izrazito protiv nasilja. Liberali streme jednakosti ishoda (pozitivna diskriminacija, viši porezi za bogate), a libertarijanci jednakosti prilika (svatko igra po istim pravilima).
+
+## Što me živcira u današnjoj politčkoj raspravi
+
+Ako si s ljevice i ne slažeš se s nečijim stavom, nazvat ćeš ga nacistom i sve će se složiti s tobom. Razgovor završen.
+
+U trenutnom diskursu ako se ne slažeš s nekim moraš reći da je on moralno loša osoba. Ideje bi se trebale moći raspraviti, i argumentirano pobiti, a ne s visoka odbaciti.
+
+## Slurs
+
+Dugo me mučilo zašto crnci smiju jedan drugome reći "nigger", a ja ne mogu. Onda sam shvatio da je "nigger" zapravo uvreda koju su oni prihvatili kao prijateljsku zajebanciju, ali često korištenje u glazbi i filmovima je skrilo izvornu uvredljivost te riječi.
+
+Slično je i s drugim uvredama: ako mi prijatelj kaže "Gdje si pizdo?", nasmijat ću se. Ako mi nepoznati čovjek na ulici kaže "Pizdo", zabrinut ću se.
+
+Prema Žižeku, međusobno podbadanje i prijateljska zajebancija su nužni kako bi se ljudi zbližili, a politička korektnost to želi oduzeti (https://www.youtube.com/watch?v=5dNbWGaaxWM)
+
+## Razvoj (todo)
+
+- razvoj tehnologije dovodi do izuma koji mogu sve lakše i lakše uništiti cijelo čovječanstvo (npr. nanotehnologija i Gray Goo problem). Postoji li rješenje tog problema ako bilo tko nepažnjom može izbrisati ljudsku rasu s lica zemlje?
+- luditi i zaustavljanje napretka, koliko je to izvedivo? Evoluciju se npr. ne može zaustaviti, i ribe koje su izašle iz vode; ljudi istrijebe te ribe iako su nastali od njih.
+

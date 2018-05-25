@@ -60,7 +60,7 @@ Tek odustajanjem od univerzalnog ("autentičnog") rješenja i prihvaćajući raz
 ## Writing One-Sentence Product Descriptions
 
 Želiš prodati proizvod posjetitelju u 30 sekundi. Predstavi glavni feature koji:
-* rješava najveći paint point tvojim mušterijama, i
+* rješava najveći "pain point" tvojim mušterijama, i
 * čini te drugačijim od tvojeg najbližeg konkurenta.
 
 Dobar oblik rečenice je input > output, npr. "Tap a button, get a ride".

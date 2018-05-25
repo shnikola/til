@@ -1,50 +1,20 @@
 # Network
 
-## SSH
+## Debugging
 
-`ssh <user>@<host>` otvara shell na remote stroju. Ali može i još mnogo drugih stvari!
+`ping -c 3 www.google.com` šalje 3 ICMP echo requesta na odredište i čeka na ICMP echo reply. Ispisani podatci sadrže `icmp_seq` (redni broj paketa), `ttl` (koliko hopova dopuštamo paketu), i `time` (roundtrip vrijeme od slanja paketa do primitka odgovora).
 
-*Local port forwarding* (`-L <local>:<remote>`) šalje *lokalni* promet SSH tunelom do *remote* hosta. Korisno za spajanje na serverov DB.
-Primjer: `-L 9000:localhost:5432` promet lokalnog porta `9000` šalje na SSH server koji ga prosljeđuje svom localhostu na port `5432` (gdje se nalazi DB).
+`traceroute google.com` ispisuje put kojim paket putuje od tvog računala do servera. Interno radi tako da šalje ICMP echo inkrementirajući TTL dok ne dobije odgovor
 
-*Remote port forwarding* (`-R <remote>:<local>`) šalje promet s *remote* hosta SSH tunelom na *lokalni* stroj. Korisno za spajanje izvana na tvoj lokalni stroj dok developaš.
-Primjer: `-R 9000:localhost:3000` promet `<host>:9000` prosljeđuje se tvom lokalnom računalu na port `3000`.
+## portovi
 
-*Dynamic port forwarding* (`-D <port>`) koristi lokalni port kao SOCKS proxy, pa *sav* promet možeš tunelirati preko SSH.
-Primjer: `ssh -D 5555 server`, i u browseru ili curlu možeš podesiti proxy na `localhost:5555`.
+`cat /etc/services` popis servisa i portova koje koriste.
 
-*Agent Forwarding* (`-A`) prosljeđuje tvoje lokalne private keyeve SSH serveru, pa možeš pullati s Githuba bez da dodaješ deployment keyeve. Moraš turbo vjerovati serveru da bi ovo koristio.
+## ifconfig
 
-*Command execution* (`ssh <user>@<host> <cmd>`) izvodi naredbu na remote stroju, a rezultat možeš normalni pipeati lokalno. U `.ssh/authorized_keys` mogu se dodati naredbe (`command=...`) koje se obavezno izvode prije otvaranja shella. Tako rade Github i Heroku protokoli, koji interno koriste SSH, ali whitelistaju samo dio naredbi, dok otvaranje shella ne dopuštaju.
+`ifconfig` ispisuje listu network interfacea koji omogućuju da kernel radi s network hardwareom. Neki od uobičajenih su `eth0` (ethernet), `wlan0` (wireless), i `lo` (loopback na samog sebe, za `127.0.0.1`).
 
-Neke kul opcije:
-* `~C` dok si u shellu otvara SSH konzolu, gdje možeš dodati opcije kao `-L` i `-R`.
-* `~?` za popis svih escape sekvenci.
-* `-fNn` za tuneliranje bez da se otvori remote terminal.
-
-Obavezno koristi passwordless authentifikaciju.
-
-`ssh-keygen` generira private/public key pair. Koristi *passphrase* da se zaštitiš od sudoera.
-`ssh-copy-id <user>@<host>` za dodavanje svog public keya na remote machine (trebaš znati password).
-
-`ssh-agent` dozvoljava da samo jednom ukucaš passphrase (drži ga u memoriji tijekom login sessiona).
-`ssh-add` dodaje novi private key u `ssh-agent`.
-
-Lokalni private key file mora biti `600`, `~/.ssh/authorized_keys` mora biti `644`.
-
-Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/config`. Neke postavke:
-* `Port` definira custom port za spajanje
-* `LocalForward` za definiranje tunela.
-* `Compression yes` korisno za spore servere.
-* `ServerAliveInterval 15`, `ServerAliveCountMax 6` šalji keep alive svakih 15 sekundi, do 6 puta. Ako server krepne, veza će se disconnectati nakon 15*6=90 sekundi.
-
-## rsync
-
-`rsync <src>/ <user>@<host>:<dest>` sinkronizira directorije između različitih sistema, plus je super brz.
-  * `-nv` ne kopira ništa nego ispisuje što bi se sve kopiralo. Odlično prije stvarnog poziva.
-  * `-a` radi rekurzivno i čuva sve permissione.
-  * `-P` daje progress bar i omogućava resume ako se veza prekine.
-  * `--delete` briše fileove u `<dest>` ako ih nema u `<src>`.
+Uz svaki interface stoje dodatni detalji: `HWaddr` (Mac adresa), `inet` (IP adresa), `inet6` (IPv6 adresa).
 
 ## iproute2
 
@@ -65,10 +35,6 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 `dig utorkom.com` najviše opcija. `dig NS utorkom.com` vraća nameservere. `dig utokom.com any` za cijeli zone file. `dig @ns1.example.com utorkom.com` traži podatke od zadanog nameservera.
 
 `whois utorkom.com` dohvaća podatke o registriranim korisnicima Internet resourca (npr. domene ili IP bloka)
-
-## traceroute
-
-`traceroute google.com` ispisuje put kojim paket putuje od tvog računala do servera.
 
 ## httpie
 

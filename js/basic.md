@@ -33,3 +33,4 @@ Na eventove koji se triggeriraju mnogo puta u sekundi (npr. `scroll` ili `mousem
 
 * https://github.com/airbnb/javascript style guide
 * http://bonsaiden.github.io/JavaScript-Garden quirks
+* https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70

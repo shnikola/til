@@ -60,7 +60,7 @@ Serveri vrlo često greškom dopuštaju `null` origin (u specifikaciji predviđe
 
 ## Clickjacking
 
-*Clickjacking* je kad napadač na svojoj stranici stavi nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove.
+*Clickjacking* je kad napadač na svojoj stranici stavi nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove. Odlično mjesto za clickjacking je cookie consent poruka na koju su svi navikli da klikaju bez razmišljanja.
 
 Da bi se obranio, koristi se `X-Frame-Options` header koji će browseru zabraniti da prikazuje tvoju stranicu unutar `iframe`a.
 * `X-Frame-Options: deny` ne prikazuje se nikad

@@ -54,3 +54,22 @@ Ukratko:
 * Brze odluke mogu biti pogrešne. Trebamo djelovati brzo, pa ih donosimo bez osnova.
 * Naše pamćenje podržava pogreške. Način na koji pamtimo čini sve prethodne korake pristranijim i pogrešnijim.
 
+## Box Breathing
+
+http://quietkit.com/box-breathing
+
+Navy SEAL / joga tehnika za opuštanje ako si pod stresom. Ponavljaj
+1. 4 sekunde udisaj
+2. 4 sekunde drži
+3. 4 sekunde izdisaj
+4. 4 sekunde drži
+
+## Placebo religija
+
+http://zencephalon.com/placebo
+
+"Of all the gods he has the most evidence supporting his existence. Not only that, but scientists have uncovered ample scientific evidence of his healing powers. In fact, scientists so respect Placebo's healing powers that scientists don't ask, "do Placebo's healing powers really exist?" but ask instead "how can we heal better than Placebo?" We find it actually really hard to heal better than Placebo! He heals people very well!"
+
+## Snaga volje
+
+Kada je nečiji tata želio prestati pušiti, nije bacio kutiju cigareta u smeće, već ju je stavio na policu pokraj svog radnog stola. Tako ju je povremeno vidio i imao fizički podsjetnik svoje odluke. Tek mnogo godina nepušenja kasnije, čistio je policu i bacio tu kutiju u smeće. Obavila je svoj posao.

@@ -50,7 +50,7 @@ Consider that the apartment in this city, the house in that city, are both just 
 
 ## Self-compassion vs Self-esteem
 
-Ne trebaš boostati vlastiti ego. Trebaš imati suosjećanje prema samom sebi kakvo imaš prema bliskim prijateljima i obitelji. Neuspjeh trebaš dočekati ne s "Jadan ja" nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."
+Ne trebaš boostati vlastiti ego. Trebaš imati suosjećanje prema samom sebi kakvo imaš prema bliskim prijateljima. Neuspjeh ne trebaš dočekati s "Jadan ja, kako sam grozan." nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."
 
 ## Minimalism
 
@@ -80,11 +80,22 @@ Nemoj stvarati dug od $250.000 zbog diplome koju nitko neće tražiti. Za manje 
 
 U konačnici, jedino bitno je tvoj rad.
 
+## Posjedovati brod
+
+I knew someone who owned a sailboat and I asked him what that was like. He said "get in the shower with all your clothes on, turn the cold water on full blast, and then start eating money."
+
+The two best days of owning a boat are the day you buy it, and the day you sell it.
+
 ## 100:10:1 Method
 
 https://nickbentleygames.wordpress.com/2014/05/12/the-100-10-1-method-for-game-design/
 
 Napiši 100 random, makar glupavih ideja. Od njih, propagiraj 10 u idući krug gdje ih malo bolje razradi. Od njih, jednu dovedi do kraja.
+
+## Earned
+
+A fit body, a calm mind, a house full of love. These things cannot be bought - they must be earned.
+
 
 ## Umiranje
 

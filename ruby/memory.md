@@ -50,6 +50,8 @@ Koristi preloading na pumi i unicornu. Forkanje nakon inicijalizacije omogućuje
 
 Nemoj mijenjati GC settingse osim ako stvarno znaš što radiš, vjerojatno ćeš samo pogoršati situaciju, a dobitci su minimalni.
 
+Velike aplikacije s puno threadova (npr. Sidekiq workeri koji imaju defaultno 25 threadova) izazivaju veliku fragmentaciju jer Ruby koristi glibcmalloc koji je loš. Ili smanji broj threadova, ili postavi `MALLOC_ARENA_MAX = 2`, ili se nadaj da će Ruby uskoro shippati s jemallocom.
+
 ## Memory Leaks
 
 Objekti se mogu podijeliti u 3 grupe:

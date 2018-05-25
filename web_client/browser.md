@@ -105,7 +105,7 @@ Propertiji uvijek dobivaju početnu vrijednost od atributa.
 `el.getAttribute()`, `el.setAttribute()` pristupa *atributu*.
 `el.id`, `el.id=` pristupa *propertiju*.
 
-Preferiraj koristiti propertije, pogotovo s boolean vrijednostima. Attributi za boolean moraju koristiti `setAttribute('disabled', false)` i `removeAttribute('disabled')`, a property samo `disabled = true` i `disabled = false`
+Preferiraj koristiti propertije, pogotovo s boolean vrijednostima. Atributi za boolean moraju koristiti `setAttribute('disabled', false)` i `removeAttribute('disabled')`, a property samo `disabled = true` i `disabled = false`
 
 *Custom Data Attributes* dostupni su preko `el.dataset` propertija. Propertiji koriste camelcase koji se za HTML prevodi u dash-style, npr. `el.dataset.dateOfBirth` mapira se u `data-date-of-birth`. _IE 11+_
 
@@ -292,6 +292,10 @@ Browser će u slučaju touch eventa emulirati i mouse eventove, i to ovim redom:
 * `touchstart`, `touchmove` (ako se kreće), `touchend`, `mousemove`, `mousedown`, `mouseup`, `click`
 * Ako želiš da se odvojeno handlaju samo touch eventovi, dodaj `e.preventDefault()` u `touchstart`.
 
+Detektirati da li korisnikov uređaj podržava touch je prekomplicirano. Umjesto toga, puno bolje je detektirati da li korisnik koristi touch: s `window.addEventListener('touchstart', onFirstTouch)` postavi globalni flag ili dodaj klasu na `body`, pa ukloni listener s `window.removeEventListener('touchstart', onFirstTouch)`.
+
+Isto vrijedi i za hover. Želiš li prikazati tooltip na hover korisnicima s mišem, a na touch korisnicima bez njega, samo detektiraj koristi li korisnik `window.removeEventListener('mouseover', ...)`.
+
 ## Pointer Events _IE 11+, FF, Chrome prefixed_
 
 Pointer eventovi su unifikacija mouse i touch eventova:
@@ -447,6 +451,12 @@ Kada se pušta `audio` ili `video` na mobilnom browseru, u notification panelu p
 *Navigation Timing* mjeri učitavanje i prikaz cijele stranice. Dostupan je u `window.performance.navigation`. Sadrži iste atribute kao i Resource Timing (za dohvaćanje dokumenta), i još dodatno: `responseEnd` > `domInteractive` > `domContentLoadedEventStart` > `domContentLoadedEventEnd` > `domComplete` > `loadEventStart` > `loadEventEnd`.
 
 *User Timing* služi za mjerenje custom korisničkih akcija. Oznake se postavljaju pomoću `performance.mark("actionStart")` i `performance.mark("actionEnd")`. Vrijeme između dvije oznake se mjeri pomoću `performance.measure('actionmark', 'actionStart', 'actionEnd')`. Mjerenja se dohvaćaju pomoću  `window.performance.getEntriesByType("mark")` ili `("measure")`, a brišu s `clearMarks()` i `cleanMeasures()`.
+
+## Feature Detection
+
+Da detektiraš podržava li browser npr. `fetch`, nemoj koristiti `if (window.fetch)` jer neki od propertija mogu vratiti falsey vrijednost iako su podržani (npr. `window.hidden`). Umjesto toga, koristi `if ('fetch' in window)`.
+
+Za podržavanje starijih browsera, najbolje je pri inicijalizaciji detektirati feature koje koristiš, a browser ih nema, i po potrebi skinuti polyfille.
 
 ## Url Parsing
 

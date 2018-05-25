@@ -1,13 +1,13 @@
 # Devices
 
 Unix omogućuje jednaki način pristupa svim vrstama uređaja (*devices*). Svi uređaji koje OS prepozna imaju svoj file (*device node*) u `/dev` directoriju. Osim imena, device node ima major number (koji driver je zadužen za njega) i minor number (njegov id za taj driver). `ls -l` za više detalja. Device node može predstavljati:
-* *block device* (dozvoljava random access, kao disk)
+* *block device* (dozvoljava random access, npr. `/dev/sda` za disk)
 * *character device* (pristupa mu se slijedno kao streamu, npr. `/dev/fd/0` tj. `/dev/stdout`)
 * *pseudo device* (npr. `/dev/null` ili `/dev/random`)
 
 Fizički device može se podijeliti na više logičkih cijelina (*partitions*). Svaka particija će imati svoj device node u `/dev` directoriju. Particije olakšavaju backup i povećavaju sigurnost. Čak i ako jedna ode kvragu (npr. ostane bez slobodnog mjesta), druge će nastaviti raditi.
 
-Da bi se moglo pristupiti fileovima devicea ili particije, potrebno je napraviti *mounting*. Mounting povezuje filesystem na block deviceu s nekim directorijem. Kada se eksterni disk ili DVD spoji na računalo, mounting se dogodi automatski u directory `/mnt` (`/Volumes` za OSX). Automatsko mountanje pri bootu može se podesiti u `/etc/fstab` fileu.
+Da bi se moglo pristupiti fileovima devicea ili particije, potrebno je napraviti *mounting*. Mounting povezuje filesystem na block deviceu s nekim directorijem. Kada se eksterni disk ili DVD spoji na računalo, mounting se dogodi automatski u directory `/mnt` (`/Volumes` za OSX) zahvaljujući `udevd`deamonu. Automatsko mountanje pri bootu može se podesiti u `/etc/fstab` fileu.
 
 `fdisk <device>` kreira novu particiju.
 `mkfs -t <type> <device>` stvara filesystem na danom deviceu/particiji. Pritom briše sve podatke s njega.

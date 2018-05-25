@@ -2,39 +2,28 @@
 
 ## Paušalni porez
 
-Smiješ tražiti ako:
-* ti je godišnji primitak manji od 150.000 kn, i
-* nisi obveznik PDV-a.
+Smiješ tražiti ako ti je godišnji primitak manji od `300.000 kn` (limit za ulazak u PDV.)
 
-Plaćaš do `2.690 kn` godišnje.
+Plaćaš maksimalno `14.000 kn` doprinosa i `6700 kn` poreza.
 
 ## Porez na dohodak
 
 Porezna osnovica = `poslovni primitak - poslovni izdatci - osobni odbitak (2600kn mjesečno + još neki bonusi za uzdržavane članove obitelji, djecu i invalidnost)`. Osnovica se oporezuje u stopama:
-* 2200kn se oporezuje s 12%
-* idućih 11000 se oporezuje s 25%
-* ostatak se oporezuje s 40%.
+* do 2.200 kn se oporezuje s 12%
+* do 17.500 kn se oporezuje s 24%
+* ostatak se oporezuje s 36%.
 
-Usto se dodatno plaća prirez (oko 15% od poreza, ovisno os prebivališta).
+Usto se dodatno plaća prirez (oko 15% od poreza, ovisno o prebivalištu).
 
 ## Porez na dobit
 
-Moraš ako:
-* u godini imaš `primitak > 3.000.000 kn`, ili
-* u godini imaš `dohodak > 400.000 kn` i `dugotrajnu imovinu > 2.000.000 kn`
-
-A možeš i tražiti od porezne uprave da te prebace na njega.
-
-Plaćaš 20% od `prihodi - rashodi`.
+Plaćaš 12% od `prihodi - rashodi`, odnosno 18% za preko 3 milijuna kuna. Ali pri isplati na račun se plaća još 12%.
 
 ## Porez na dodanu vrijednost
 
-Moraš ako:
-* u godini isporučiš usluge koje nisu oslobođene PDV-a čija je vrijednost `> 230.000 kn`
+Moraš ući u sustav PDV-a ako godišnje zaradiš više od `300.000 kn` bruto. Ako uđeš u sustav PDV-a kao obrt ili tvrtka, na izlazni račun se dodaje PDV u iznosu od `25%`. Prednost je što možeš tražiti povrat PDV-a kojeg si platitio u ulaznim računima.
 
-A možeš tražiti to i kad osnivaš obrt.
-
-Dodaješ PDV na izlazni račun, u iznosu 25%. Prednost je što možeš tražiti povrat PDV-a kojeg si platitio u ulaznim računima.
+Ako uđeš u sustav PDV-a kao fizička osoba (preko autorskog ugovora) dužan si plaćati PDV i izdavati R2 račun. Ne moraš voditi poslovne knjige, ali vodiš knjigu izlaznih računa te jednom mjesečno predaješ PDV obrazac i plaćaš PDV.
 
 ## Ugovor o djelu
 
@@ -60,3 +49,8 @@ Kada student zaradi više od `15.000 kn`, prestaje biti porezna olakšica rodite
 
 Sva zarada izvan studentskih ugovora (npr. stipendije, autorski ugovori) se ne računa u limit. Dapače, ako platiš porez na autorski ugovor, a nisi iskoristio sav neoporezivi osobni dobitak, možeš dobiti povrat poreza na kraju godine.
 
+## Usporedba s Europom
+
+Porez na dobit od 12% (tj. 18%) je među jeftinijima u Europi. Problematično je opterećenje dohotka fizičkih osoba: porez na dohodak (24% i 36%) i doprinosi su dosta visoki.
+
+Problem je u tome što je premalo zaposlenih u odnosu na broj umirovljenika, a sustav je nemoguće naglo promijeniti jer se postojećim umirovljenicima ne bi otkuda mogla isplaćivati mirovina.

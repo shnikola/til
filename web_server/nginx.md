@@ -20,7 +20,16 @@ Config za svaki site definiran je u `/etc/nginx/sites-available`.
 
 `sudo nginx -t` provjerava sintaksu config filea.
 
-`service nginx reload` iznova učitava konfiguraciju.
+`sudo service nginx reload` iznova učitava konfiguraciju.
+
+## Redirect
+
+```
+server {
+  server_name .utorkom.com;
+  return 301 https://www.srijeda.com$request_uri;
+}
+```
 
 ## nginx Reverse Proxy Cache
 

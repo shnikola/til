@@ -9,16 +9,19 @@
 
 ## Units
 
-`2 px` - 2 točke na ekranu.
-`2 em` - 2 puta veće od `font-size` na tom elementu.
-`2 rem` - 2 puta veće od `font-size` na root (`<html>`) elementu.
-`2 vh` - 2% visine viewporta (prozora). _IE 9+_
-`2 vw` - 2% širine viewporta. _IE 9+_
+* `2px` - 2 točke na ekranu.
+* `2em` - 2 puta veće od `font-size` na tom elementu.
+* `2rem` - 2 puta veće od `font-size` na root (`<html>`) elementu.
+* `2vh` - 2% visine viewporta (prozora). _IE 9+_
+* `2vw` - 2% širine viewporta. _IE 9+_
+* `2ch` - 2 širine znaka `0`. _IE 9+_
 
 Primjeri korištenja:
 * `font-size: 12vw` za tekst koji će uvijek zauzimati istu širinu. Točnu vrijednost odrediš isprobavanjem.
 * `height: 100vh; width: 100vw` za hero image koji zauzima cijeli ekran.
 * `margin: 20vh 20vw; width: 60vw; height: 60vh;` za apsolutno centrirani div.
+
+Izbjegavaj korištenje `em` i `rem`. Gotovo nikad nećeš htjeti da se promjenom fonta na jednom mjestu automatski promijene dimenzije elemenata po cijelom siteu. Redizajn je ipak malo kompleksniji od toga.
 
 ## Attribute selectors _IE 7+_
 
@@ -204,6 +207,8 @@ Ako želiš sakriti dio tablice, koristi `visibility: collapse` umjesto `display
 * definiran `opacity`, `filter`, `transform`, ili `perspective`.
 * `isolation: isolate`.
 
+Z-indeksi se lako mogu zakomplicirati ako ih koristiš nasumično. Umjesto toga, definiraj varijable (kao za boje) za različite layere, tj. stacking kontekste aplikacije: `$z-index-header: 1; $z-index-menu: 2; $z-index-modal: 3;` i sl.
+
 ## Float i Block Formatting Context
 
 Element koji ima `float: left` će ostati dio flowa dokumenta, ali će ga se pogurati do lijevog ruba parenta, ili do drugog prethodno floatanog elementa. Na taj način se više floatanih elemenata niže jedan kraj drugoga, a kad napune cijelu širinu parenta, prelaze u idući red.
@@ -226,7 +231,7 @@ Za stvaranje novog BFC-a koristi se nespretno nazvani `clearfix` hack. Ima mnogo
 
 ## Fonts
 
-`font-size`: visina slova. Koristi relativne vrijednosti `em` i `rem`, eventualno `px`.
+`font-size`: visina slova. Koristi `px`. `em` i `rem` se ne isplate.
 
 `line-height`: visina linije u odnosu na `font-size`. Najsigurnije koristiti unitless mjere, npr. `1.2`.
 
@@ -314,6 +319,15 @@ Za vertikalno centriranje `block` elementa, najjednostavnije je: `position: abso
 `currentColor` jednak je `color` propertiju elementa, korisno za npr. `border: 1px solid currentColor` _IE 9+_
 
 `@color-profile { ... }` definira color profile koji se koristi u CSS-u.
+
+## Object fit
+
+`object-fit` definira kako se objekt (image, video) resizea da bi stao u parent container:
+* `none` neće mijenjati veličinu (default).
+* `fill` raširit će se nepoštujući ratio da bi u potpunosti ispunio container.
+* `contain` raširit će se do rubova održavajući aspect ratio, ostavlja prazan prostor.
+* `cover` raširit će se do ruboba održavajući aspect ratio, odreže višak.
+* `scale-down` kao `contain` ili `none`, koji god je manji.
 
 ## Background
 
@@ -453,8 +467,13 @@ Ako želiš definirati fiksnu veličinu itema, koristi `flex-basis`:
 * ako ukupna širina svih itema premašuje container, `flex-shrink` definira za koliki se faktor item može smanjiti.
 
 `flex: 1 6 20%` je shorthand za `flex-grow`, `flex-shrink` i `flex-basis`.
-  * `flex: 1 0 0` item zauzima sav slobodan prostor, neovisno od svoje početne veličine.
-  * `flex: 0 0 auto` item zadržava svoju početnu veličinu.
+  * `flex: 0 1 auto` item će se smanjiti ako nema dovoljno mjesta, inače ostaje iste veličine. Defaultna vrijednost.
+  * `flex: 1 1 auto` item će se smanjiti ako nema dovoljno mjesta, inače će zauzeti svo slobodno mjesto. Skraćeno `flex: auto`.
+  * `flex: 0 0 auto` item neće mijenjati veličinu. Skraćeno `flex: none`.
+
+_IE10_ i _IE11_ imaju različite defaultne vrijednosti za `flex` shorthand, pa umjesto `flex: 1` koristi `flex: 1 0 0`.
+
+Nemoj koristiti `%` margine i padding na flex itemima, prekomplicirano je.
 
 ## CSS Grid
 

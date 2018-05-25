@@ -6,6 +6,18 @@ http://www.davedelaney.me/blog/how-to-fend-off-a-jerk
 
 Kad se netko prema tebi ponaša kao seronja, pravi se sretan. Što su gori prema tebi, ti budi sretniji. To će ih jako isfrustrirati, a tebi će biti zabavno.
 
+## Green Flags when Dating
+
+Referenciranje nečeg što je sugovornik spomenuo prije nekoliko dana ili tjedana. Tako pokazuješ da slušaš.
+
+Ako nešto sjebeš da priznaš to i ispričaš se.
+
+Pozitivnost - da govoriš o stvarima o koje voliš umjesto o stvarima koje mrziš.
+
+Da si pristojan prema strancima (npr. konobarima). "You can easily judge the character of a man by how he treats those who can do nothing for him".
+
+Handlanje stresnih situacija i propalih planova bez optuživanja i s humorom.
+
 ## Neslaganje
 
 http://www.paulgraham.com/disagree.html
@@ -48,3 +60,20 @@ Kada te obuzme loša emocija, probaj je imenovati i otkriti pod kojom pretpostav
 * Strah pretpostavlja da će pokazivanjem straha roditelji doći i spasiti te. Odgovor: neće, moraš se sam nositi s tim; ili opasnost koju osjećaš nije stvarna.
 * Sram pretpostavlja da ćeš zbog nečega biti odbačen od društva i umrijeti sam ispod mosta. Odgovor: svi imaju previše problema da bi primjetili a kamoli zapamtili da si pale hlače.
 * Krivnja pretpostavlja da će ti osoba oprostiti ako pokažeš koliko se loše osjećamo. Odgovor: svi griješe, iskreno se ispričaj i idi dalje.
+
+## Tantrums
+
+https://www.reddit.com/r/relationships/comments/75ow3y/my_27f_boyfriend_29m_throws_tantrums_and_im/
+
+Histeriziranje se može dovesti u kontrolu kroz razgovor i terapiju. Pomaže ako snimiš osobu dok je u histeričnom stanju i zajedno s njom pogledaš to par dana kasnije.
+
+## What Great Listeners Actually Do
+
+https://hbr.org/2016/07/what-great-listeners-actually-do
+
+1. Stvori atmosferu u kojoj će se osoba osjećati samopouzdano i sigurno.
+2. Ukloni mobitele, laptope. Gledaj osobu u oči dok govori.
+3. Pokušaj shvatiti što osoba želi reći. Postavljaj pitanja i ponovi činjenica da utvrdiš jesi li u pravu.
+4. Promatraj neverbalne znakove: izraz lica, gestikulaciju, pozu.
+5. Pokušaj shvatiti kako se osoba osjeća o onom što govori. Empatiziraj i podrži te osjećaje bez osude.
+6. Postavi pitanja koja će osobi pomoći da sagleda problem na drugi način. Možeš i dati svoje mišljenje ako je od pomoći, ali nikako nemoj uzurpirati razgovor i prebaciti ga na sebe.

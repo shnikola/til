@@ -50,5 +50,5 @@ Ako rad ne ispadne kako si ga zamislio, što se može. Pogledaj ga, nauči nešt
 
 # Literatura
 
-* https://www.youtube.com/watch?v=d0m0jIzJfiQ
+* https://www.youtube.com/watch?v=d0m0jIzJfiQ (How To Design Deep Games with Jonathan Blow)
 * https://qotoqot.com/blog/improving-focus

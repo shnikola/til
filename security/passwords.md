@@ -25,7 +25,9 @@ Nijedan argument protiv pasteanja ne drži vodu:
 
 ## Forgotten Password
 
-Token koji generiraš za reset passworda prefiksaj s user id, kako bi smanjio šansu nasumičnog pogađanja.
+Pošalji korisniku mail s linkom koji sadrži token pomoću kojeg može promijeniti password.
+
+U mailu stavi podatke o IP adresi osobe koja je zatražila password reset.
 
 ## Password change
 

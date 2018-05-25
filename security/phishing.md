@@ -21,4 +21,4 @@ DNS podržava ne-ASCII znakove, ali protokoli koje email i browseri koriste čes
 
 Ovo se može iskoristiti za *IDN homograph attack*: spoofanje domene koristeći npr. ćirilićna slova koja izgledaju isto kao i latinična. Zato bi browseri trebali prikazivati Punycode oblik sumnjivih slova.
 
-Sličan napad može se napraviti imitiranjem nečijeg usernamea koristeći Unicode. Za obranu od toga dobro je normalizirati sve usernameove prije zapisivanja u bazu koristeći `normalize_unicode(:nfkc)`.
+Sličan napad može se napraviti imitiranjem nečijeg usernamea koristeći Unicode. Za obranu od toga dobro je normalizirati sve usernameove prije zapisivanja u bazu koristeći `normalize_unicode(:nfkc)`, te ih prebaciti u Punycode.

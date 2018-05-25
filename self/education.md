@@ -46,6 +46,11 @@ Predavanja ne bi trebale biti priče za laku noć gdje prikazuješ slideove i dr
 
 If you smoke pot you may grow up to find out that you aren't good at anything."
 
+## Autoritet
+
+Ako želi da dijete posjeti baku, roditelj tradicionalnog autoriteta će reći: "Briga me što želiš, moraš posjetiti svoju baku". Ovo je pošteno jer ostavlja hijerarhiju moći transparentnom, i dopušta djetetu da se ponudi.
+
+S druge strane, roditelj liberalnog autoriteta će reći "Znaš koliko te baka, voli, ali posjeti je samo ako to stvarno želiš." Pod iluzijom slobodnog izbora je puno više pritiska, jer ne samo da moraš posjetiti baku, nego moraš i voliti posjećivati je.
 
 # Literatura
 

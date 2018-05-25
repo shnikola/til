@@ -12,6 +12,12 @@ U slučaju da pod fieldom `comments` imaš array objekata, prilikom matchanja ar
 
 Ako želiš to izbjeći, možeš koristiti *Nested Objects* koristeći `nested` type.
 
+## Dynamic Field Mapping
+
+Kada se elastic susretne s fieldom dokumenta koji nije definiran u mappingu, on će ga dodati u mapping. Ako je vrijednost novog fielda `bool`, u mapping će ga zapisati kao `bool` i sl. Iznimka je `string`, kojeg će elastic pokušati pretvoriti u `date`, `double` ili `long`, a ako ne uspije, zapisat će ga kao `text`.
+
+Ovo ponašanje se može disablati na razini objekta tako da se postavi `dynamic: false` (ignorira nepoznate fieldove) ili `dynamic: strict` (exception na nepoznate fieldove).
+
 ## Queries
 
 Query može biti u `query` kontekstu gdje se računa `score` i rezultati se rangiraju po tome; ili može biti u `filter` kontekstu gdje je match `true` ili `false`.

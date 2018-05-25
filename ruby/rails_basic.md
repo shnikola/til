@@ -15,39 +15,6 @@ http://www.rubypigeon.com/posts/examining-internals-of-rails-request-response-cy
 * Vraća se u controller gdje `response.to_a` dobija rack array koji prosljeđuje routeru, pa nazad kroz sav middleware. Tu se postavlja `ETag`, serijaliziraju se cookiji itd.
 * Web Server serijalizira rack array u HTTP response string i šalje ga nazad klijentu.
 
-## Basic Caching
-
-**Fragment Caching** omogućuje cachiranje dijela html stranice.
-`cache @product do` spremit će rezultat bloka pod keyem `views/products/<id>-<updated_at>/<md5 fragmenta>`. Key će se promijeniti ako se product ili fragment promijene.
-`cache_if` ili `cache_unless` ako želiš uvjetno koristiti caching.
-`cache_key` je metoda objekta koju `cache` koristi. Za ActiveRecord ona vraća `<id>-<updated_at>`.
-
-**Russian Doll Caching** omogućuje da caching fragmenti u sebi imaju druge caching fragmente.
-U slučaju `Post` `has_many :comments`:
-  * ukoliko se jedan `comment` updatea, `post` se neće updateati i cache će postati stale.
-  * potrebno dodati u `Comment`: `belongs_to :post, touch: true`.
-
-**SQL Caching** sprema rezultate svakog SQL querija, i vraća ih ako se taj query ponovi *u istom requestu*.
-
-## Cache Stores
-
-Rails koristi *key based cache* - umjesto da eksplicitno expira value, promijenjeni objekt dobije novi key. U slučaju da se cache napuni, prvo će se odbaciti najdavnije korišteni - znači ovi pod starim keyevima.
-
-**MemoryStore** je najbrži, ali jede RAM i nemožeš ga dijeliti ni među procesima, ni među serverima. Koristi ga ako imaš malo caching potreba (< 20MB). Ludo brzo optimizirana verzija toga je **LRURedux**.
-
-**FileStore** je malo sporiji, i ne možeš ga dijeliti među serverima. Također ne radi na Herokuu. Koristi ga ako imaš mali request load, a veliku caching potrebu (> 100MB)
-
-**Memcache** je spor preko networka (računaj oko 20ms bar), ali je distribuiran. Koristi ga ako imaš više servera. Alternativa je **Redis** kojem možeš definirati drugačija pravila expiranja, i može se dumpati na disk pa ga je lakše restartirati.
-
-## Conditional GET
-
-Za ispravan odgovor na klijetnove `HTTP_IF_NONE_MATCH` i `HTTP_IF_MODIFIED_SINCE` headere koristi:
-* `if stale?(@product)` oko rendera. `else` nije potreban, automatski će se vratiti `:not_modified`.
-* `if stale?(last_modified: @product.updated_at.utc, etag: @product.cache_key)` ako želimo sami birati.
-* ako ne pozivaš render, upotrijebi deklarativni `fresh_when(@product)`
-* po defaultu se koristi *weak etagovi* koji garantiraju semantičku ekvivalentnost (dobro za HTML).
-* s `strong_etag` koriste se *strong etagovi* koji garantiraju byte-za-byte ekvivalentnost (dobro za `Range` requestove na PDF i video, ili za CDNove koji podržavaju samo strong etagove).
-
 ## Rails Gems
 
 Bundler omogućuje da aplikacija koristi specifičnu verziju gema, makar je na računalu instalirano više verzija.
@@ -76,13 +43,7 @@ Savjeti:
 * Rails ne može znati je li neloadana konstanta bila relative (`module Admin; class UsersController`) ili qualified (`class Admin::UsersController`), pa se neće ponašati isto kao čisti Ruby. Da izbjegneš probleme, uvijek koristi *relative nesting*.
 * Nikad ne stavljaj `require` konstanti koje će se autoloadati - samo ćeš ga zbuniti. `require` 3rd party librarija je ok.
 
-## force_ssl
-
-`force_ssl` u controlleru će redirectati svaki HTTP request na HTTPS.
-
-`config.force_ssl = true` će postaviti redirect, a usto i postaviti sve cookije i session da budu Secure (da se ne šalju s HTTP requestovima), te podesiti HSTS headere. Detalji se mogu podesiti s `config.ssl_options`
-
-## Remote IP
+## Request IP
 
 `request.ip` koristi `HTTP_CLIENT_IP` i `HTTP_X_FORWARDED_FOR` headere da odredi IP adresu klijenta. Oba su nestandardna headera koje postavljaju proxiji.
 
@@ -114,6 +75,30 @@ Pri dohvatu iz baze, `Time` objekti će se defaultno vraćati u `UTC` time zoni.
 Za serijalizaciju ili slanje kroz API koristi `time.iso8601` koji pretvara vrijeme u string i čuva time zone. `Time.iso8601("...")` parsira takav string.
 
 Ukratko: koristi `UTC` kao aplikacijski time zone, a `Time.zone` i `Time.current` umjesto `Time.now`.
+
+## Cookies
+
+`cookies[:user_name] = "nikola"` zapisuje vrijednost u cookie. Cookiji su string-based, pa sve složene tipove treba serijalizirati ručno: `cookies[:token] = JSON.serialize([1, 2]`.
+
+`cookies[:login] = { value: "a", expires: 1.hour.from_now }` postavlja expiration.
+`cookies.permanent[:login] = "a"` postavlja trajni cookie.
+
+`cookies.signed[:user_id] = current_user.id` potpisuje cookie kako se ne bi mogao mijenjati s klijentske strane. Dohvaća se s `cookies.signed[:user_id]`.
+`cookies.encrypted[:discount] = 45` enkriptira cookie kako se ne bi mogao čitati s klijentske strane. Dohvaća se s `cookies.encrypted[:discount]`.
+Za potpisivanje i enkripciju se koristi `secrets.secret_key_base`.
+
+`secure: true` će slati cookie samo u HTTPS requestima.
+`httponly: true` ne dopušta javascriptu da pristupi cookiju.
+
+
+## Rails Console
+
+`app` - trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`
+`helper` - svi view helperi, npr. `helper.link_to` i `helper.truncate`
+
+## Constantize security
+
+Nikad ne koristi `constantize` na stringovima koji su user input, jer to omogućava remote code execution (pomoću `Logger` klase).
 
 ## Turbolinks 5
 

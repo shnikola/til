@@ -34,14 +34,6 @@ Pri dohvaćanju imagea browser šalje `DPR` (device pixel ratio) i `Width` heade
 `Accept` header za type slike, `src=normal` (bez ekstenzije). Server odlučuju o typeu.
 Nažalost, browseri još ne podržavaju. Dok ne budu, koristi puni `srcset`.
 
-## Custom font-size
-
-Defaultna početna veličina fonta u browseru je `16px`, ali korisici mogu to promijeniti u postavkama.
-
-Zato nemoj *nikad* pisati `html { font-size: 20px }`, jer tako ne poštuješ njihove postavke.
-
-Umjesto toga, koristi `html { font-size: 125% }`, a za sve ostale fontove koristi `rem`.
-
 ## Responsive Typography
 
 http://typecast.com/blog/a-more-modern-scale-for-web-typography
@@ -96,3 +88,9 @@ Ako imaš kompliciranu navigaciju:
 * *The Multi Toggle*: nested accordion meniji na vrhu. Nije pretjerano fancy, ali je dovoljno dobro.
 * *Right-To-Left*: klik na kategoriju slidea lijevo na podmeni. Fancy, ali komplicirano.
 * *Skip-the-subnav*: Klik na nad-kategoriju otvara novu stranicu s podnavigacijom. Zahtjeva reload, ali user najčešće želi ići tamo ako je već kliknuo.
+
+## Feature detection
+
+https://codeburst.io/the-only-way-to-detect-touch-with-javascript-7791a3346685
+
+Ne prilagođavaj stranicu onome što korisnikov uređaj *može*, nego onome što korisnik radi. Npr. ne detektiraj da li uređaj podržava touch (što je teško već samo po sebi) nego da li se dogodio `touchstart` event.

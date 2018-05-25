@@ -19,6 +19,12 @@ Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. 
 * `f.collection_select :category_id, Category.all, :id, :name` za `has_one`
 * `f.collection_check_boxes :category_ids, Category.all, :id, :name` za `has_many`. Koristi blok za definiranje kako će se label, checkbox, i dodatni elementi generirati.
 
+## Friendly URLs
+
+Najjednostavniji način za dodati SEO friendly urlove je u modelu definirati metodu `to_param` koja vraća `[id, title.parameterize].join("-")`.
+
+Linkove generiraj s `link_to "Title", @article` koji će pozvati `to_param` nad objektom. U controlleru objekt dohvaćaj uobičajeno s `Article.find(params[:id])` koji će friendly url pretvoriti u integer.
+
 ## Asset Host
 
 Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi radi. S3 je ok, ali je napravljen za storage, a ne za delivery. Rješenje je cloudfront - daš mu origin domenu, i samo postaviš

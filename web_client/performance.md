@@ -1,14 +1,32 @@
 # Performance
 
-## Basic measurement
+## Osnovni savjeti
 
-* https://www.webpagetest.org
+1. Ne dohvaćaj stvari koje ti ne trebaju
+2. Cachiraj sve što možeš cachirati
+3. Komprimiraj sve što možeš komprimirati
+
+## Malo konkretniji savjeti
+
+* Renderiraj HTML na serveru, ili još bolje, serviraj unaprijed buildani HTML s CDN-a gdje možeš.
+* Koristi `preload` u `<head>`, a skripte učitavaj na dnu `<body>`.
+* Koristi što manje dependencija. Manje koda, manje downloada, parsiranja i izvršavanja. Učitavaj polyfille samo za korisnike kojima trebaju.
+* Koristi defaultne fontove ako možeš, većina računala ima lijepe.
+* Koristi Service workere kako bi ti site radio offline ili u slučaju spore veze.
+
+## Mjerenje
+
+Odaberi jednu ključnu metriku (*key performance indicator*) koju ćeš mjeriti. To treba biti jedan broj koji je relevantan za tvoj site i koji se može konzistentno mjeriti. Npr. koliko treba korisniku da može početi čitati tekst na homepageu.
+
+Ovaj broj treba biti vidljiv i jasan svima u firmi. U slučaju da marketing želi dodati novi sadržaj na homepage, možeš postaviti pitanje: "Je li nam ok povećati korisnikovo čekanje za 700ms kako bi mogli prikazati tu reklamu ili HD video?". Cilj nije imati najbrži site na svijetu, ali treba imati benchmark prema kojem se možeš ravnati.
+
+Pronađi točku u javascript kodu gdje je tvoj site "spreman". Tu dodaj `performance.mark('The page is really ready')`. Zatim odi na https://www.webpagetest.org, Simple Testing i u details tabu ćeš vidjeti vrijeme kada se to dogodilo.
+
+Kada radiš mjerenja, uzmi u obzir i uređaje sa sporijim CPU-om (mobitele) i sporijom mrežom (3G).
+
+Drugi korisni alati za mjerenje:
 * https://developers.google.com/speed/pagespeed/insights/
 * YSlow extension
-
-## Measuring
-
-Kada mjeriš korisnička vremena, ne računaj prosjek nego razdiobu.
 
 ## Rendering Process
 
@@ -28,7 +46,7 @@ Svaki `<link href="style.css">` defaultno blokira prvi render kako bi se izbjega
 
 Drugi način neblokirajućeg skidanja CSS-a je korištenjem `preload` linka koji će se na `onload` postaviti u stylesheet: `<link rel="preload" as="style" href="style.css" onload="this.rel='stylesheet'">`. Pripazi da imaš fallback za starije browsere.
 
-U slučaju jako velikih CSS fileova, možeš izdvojiti "critical" stilove potrebne da se prikaže prvi dio stranice i staviti ih inline u HTML, a ostatak učitati iz JS-a.
+Ponekad nije ludo ubaciti inline CSS u `head`, pogotovo ako se radi o maloj stranici (HTML+CSS < `14kb`) na koju se korisnici ne vraćaju, pa caching ne koristi. Komplikacije tipa "above-the-fold" inlininga izbjegavaj.
 
 ## Non-blocking JS
 
@@ -38,9 +56,9 @@ Postoji nekoliko načina za izbjeći blokiranje `<script>` elementa.
 
 Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Ovo će biti potencijalno sporo za velike dokumente.
 
-`<script async>` će skidati skriptu dok se HTML parsira i pauzirati parsiranje samo za izvođenje. Skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). Inače je super. _IE10+_
+`<script defer>` će skidati skriptu dok se HTML parsira, ali će je izvesti tek kad je cijeli HTML parsiran, prije `DOMContentLoaded`. Tako se neće blokirati parsiranje. _IE10+_
 
-`<script defer>` će skidati skriptu dok se HTML parsira i izvesti je tek kad je cijeli HTML parsiran, prije `DOMContentLoaded`. _IE10+_
+`<script async>` će skidati skriptu dok se HTML parsira i pauzirati parsiranje samo za izvođenje. Skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). Inače je super. _IE10+_
 
 Također, nemoj koristiti `document.write` jer blokira parsiranje HTML-a. Ako je DOM stablo već izgrađeno, morat će ga iznova graditi. Umjesto toga, koristi `document.createElement`.
 
@@ -59,15 +77,15 @@ Savjeti za izbjegavanje re-layouta i re-painta:
 
 **Preconnect:** `<link rel="preconnect" href="//fonts.googleapis.com">` unaprijed odrađuje DNS lookup, TCP i SSL konekciju na dani host. Korisno ako imaš više blokirajućih resourca s različitih hostova, odradiš im sav connection overhead istovremeno, a oni se naknadno bez overheada skinu serijski. _FF, Chrome_
 
+**DNS Prefetch:** `<link rel="dns-prefetch" href="http://www.spreadfirefox.com">` unaprijed dohvaća DNS podatke za domenu kako bi umanjio latenciju DNS resolutiona. Moderni browseri inače to rade automatski za linkove i resurse (js, css, img) prisutne na stranici. Dodaj ako želiš ručno prefetchati neku domenu koje nema na trenutnoj stranici, ali očekuješ da će biti na drugim stranicama. _Chrome, FF, IE10+_
+
 **Preload:** `<link rel="preload" href="image.png">` unaprijed učitava resource za trenutnu stranicu. Browser inače preloada sve resurse navedene u HTMLu (js, css, img), ali ovo je korisno za resource koji se učitavaju iz CSS-a ili JS-a (npr fontovi). _Chrome_
 
 Pomoću `as` atributa u `preload` definiraš je li resource `script`, `style`, `image`, `media` ili `document`, pomoću čega će browser odrediti prioritet skidanja. Za fontove uvijek koristi `crossorigin`, čak iako su na istom originu.
 
-**Prefetch:** `<link rel="dns-prefetch" href="http://www.spreadfirefox.com">` unaprijed dohvaća DNS podatke za domenu kako bi umanjio latenciju DNS resolutiona. Moderni browseri inače to rade automatski za linkove i resurse (js, css, img) prisutne na stranici. Dodaj ako želiš ručno prefetchati neku domenu koje nema na trenutnoj stranici, ali očekuješ da će biti na drugim stranicama. _Chrome, FF, IE10+_
+Preload možeš još malko ubrzati ako umjesto taga u responsu vratiš header `Link: https://example.com/image.png; rel=preload; as=image`, čime će browser moći napraviti preload request bez da mora isparsirati HTML.
 
-`<link rel="prefetch" href="image.png">` navodi resource koji će vjerojatno biti potreban u nekoj od sljedećih stranica. Browser će ga skinuti i cachirati s niskim prioritetom u backgroundu. _Chrome, FF, IE10+_
-
-**Prerender:** `<link rel="prerender" href="//utorkom.com/2">` unaprijed učitava *cijelu stranicu* za koju smatraš da će korisnik ubrzo posjetiti. Budi *ultra oprezan* ako ovo koristiš, jer troši puno bandwidtha, i stvara lažne posjete u analitici. _Chrome, IE11+_
+**Prefetch:**  `<link rel="prefetch" href="image.png">` navodi resource koji će vjerojatno biti potreban u nekoj od sljedećih stranica. Browser će ga skinuti i cachirati s niskim prioritetom u backgroundu. _Chrome, FF, IE10+_
 
 ## Image Optimization
 
@@ -83,28 +101,25 @@ Browser automatski skida sve `<img>`, `<video>` i `<iframe>` elemente, čak i on
 
 ## Web Fonts Optimization
 
-Ako želiš podržavati sve browsere, moraš servirati 4 font formata:
-* `WOFF 2.0` novijim browserima koji ga podržavaju
-* `WOFF` većini browsera
-* `TTF` za stare Android browsere
-* `EOT` za `< IE 9` browsere
-Pobrini se da koristiš gzip kompresiju za `TTF` i `EOT` formate. `WOFF` formati je imaju built-in.
+Prvo, razmisli o korištenju sistemskih fontova. Većina OS-ova ima velik broj savršeno dobrih fontova. Iskoristi to. Ako želiš koristiti defaultni sistemski font, koristi ovako nešto: `font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";`
 
-Kada koristiš `@font-face`:
-* unutar `src` koristi `format()` kao hint. U tom slučaju browser neće morati skinuti font da bi odredio podržava li ga.
-* u slučaju velikog broja glyphova (npr. azijskih jezika), podijeli font na subsetove i koristi `unicode-range`, pa će browser skinuti font samo za gliphove koji se nalaze na stranici.
+`WOFF` i `WOFF2` formati su dovoljni za većinu modernih browsera. Dodaj `TTF` ako želiš podržavati stari Android, i `EOT` za `<IE9`.
 
-Fontovi se učitavaju tek kad se izgradi render tree (koji ovisi o DOM i CSSOM trees). Tek nakon što se loada CSS, počet će se loadati potrebni fontovi. Dok se font ne loada neki browseri (_Safari_) neće uopće prikazati tekst (*Flash Of Invisible Text*), a neki će čekati 3 sekunde prije nego prikažu fallback font (_Chrome, Firefox_).
+Kada koristiš `@font-face`, unutar `src` koristi `format('woff')` kao hint. U tom slučaju browser neće morati skinuti font da bi odredio podržava li ga.
 
-Kako bi to izbjegao:
-* `font-display: swap` instantno koristi fallback dok se font ne loada. _Chrome flag_
-* `font-display: optional` u slučaju da user ima limitirani bandwidth, koristi fallback i uopće ne loadaj font. Koristi ovo svugdje jednom kad bude u browserima. _Chrome flag_
-* koristi `Font Loading API` (u razvoju) ili `Font Face Observer` da ručno loadaš i dodaš `.font-loaded` na body kad je spreman. Korisno u slučaju da ne upravljamo `@font-face`om, npr. dohvaćamo CSS s Google Fontsa.
-* `<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>` će preloadati font prije nego se učita CSS gdje je definiran.
+Fontovi se učitavaju tek kad se izgradi render tree (koji ovisi o DOM i CSSOM trees). Tek nakon što se loada CSS, počet će se loadati potrebni fontovi. Dok se font ne loada neki browseri (npr. _Safari_) neće uopće prikazati tekst (*Flash Of Invisible Text*), a neki će čekati 3 sekunde prije nego prikažu fallback font (_Chrome, Firefox_).
+
+Kako bi izbjegao FOIT, koristi preloading: `<link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin>` će preloadati font prije nego se učita CSS gdje je definiran.
+
+Ako preloading nije podržan u browserima koje targetiraš, možeš koristiti `Font Face Observer` da ručno loadaš i dodaš `.font-loaded` na body kad je spreman. Korisno u slučaju da ne upravljamo `@font-face`om, npr. dohvaćamo CSS s Google Fontsa.
+
+Korisno je i definirati kako će se browser ponašati dok se font ne učita pomoću `font-display` u `@font-face`. Ako si siguran da će font stići brzo, `font-display: block` će sakriti tekst dok ne stigne. S druge strane, `font-display: swap` će koristi fallback dok se font ne loada.
 
 Da minimiziraš *Flash Of Unstyled Text* zbog fallback fonta, prilagodi `font-size` fallbacka da se tekst što manje miče.
 
 Za dodatnu optimizaciju, prvo loadaj samo `normal` weight (browser će simulirati ostale debljine), a tek onda ostale.
+
+U slučaju velikog broja glyphova (npr. azijskih jezika), podijeli font na subsetove i koristi `unicode-range`, pa će browser skinuti font samo za gliphove koji se nalaze na stranici.
 
 ## Javascript Start-up Performance
 
@@ -176,4 +191,6 @@ https://developers.google.com/web/updates/2016/07/infinite-scroller
 # Literatura
 
 * https://medium.com/reloading/preload-prefetch-and-priorities-in-chrome-776165961bbf
+* https://hackernoon.com/measuring-web-performance-its-really-quite-simple-adeda8f7f39e
+* https://hackernoon.com/10-things-i-learned-making-the-fastest-site-in-the-world-18a0e1cdf4a7
 * https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/

@@ -14,11 +14,6 @@ http://hivelogic.com/articles/using_usr_local/
 `/usr/local/bin` - programi koje si sam downlodao ili buildao. Prednost stavljanja programa ovdje je što ih system update *neće* overwriteati, pa će sve custom promjene ostati. Pri buildanju koristi `prefix=/usr/local`, a u `$PATH` dodaj `/usr/local/bin` i `/usr/local/sbin`
 `/opt` - third party monolitski paketi (tipa Oracle)
 
-## echo vs printf
-
-Nemoj koristiti `echo` za ispisivanje nepoznatih varijabli (nekonzistentno ponašanje za `\n` i `-n`).
-Umjesto njega koristi `printf`.
-
 ## Skraćeno kopiranje
 
 `cp really_long_filename{,.orig}`

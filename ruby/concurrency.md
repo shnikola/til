@@ -75,7 +75,7 @@ Threadovi imaju closure, i vidljive su im sve varijable u scopeu. Da bi izbjegao
 
 `thread[:key]` spremanje thread varijabli kojima i drugi threadovi mogu pristupati. Zapravo su Fiber-local.
 
-Ako se u threadu dogodi exception, defaultno će samo tiho biti prekinut. Koristi `Thread.abort_on_exception = true` da se exception propagira u main thread, ili `Thread.report_on_exception = true` za ispisivanje exceptiona.
+Ako se u threadu dogodi exception, ispisati će se u stderr (u starijim verzijama Rubija će samo silently failati). Koristi globalni `Thread.abort_on_exception = true` da se exception propagira u main thread.
 
 Za sinkorinizaciju koristi, stvori `mutex = Mutex.new` izvan threadova.
 * `mutex.synchronize do ...` unutar threada. Ako je mutex slobodan, thread će izvršiti blok; ako nije, blokirat će se dok se ne izvrši.

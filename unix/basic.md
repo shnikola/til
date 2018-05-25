@@ -175,62 +175,8 @@ Posebne varijable u scripti:
 * `$1`, `$2`, `$3` parametri skripte. `"$@"` array svih parametara. `$#` broj parametara.
 * `$$` PID skripte.
 
-## User management
-
-`whoami` vraća ime trenutnog usera.
-`id` vraća uid i group id trenutnog usera.
-
-`cat /etc/passwd` ispisuje sve usere s pripadajućim uid, groupid, home path i shell path.
-`who` ispisuje trenutno ulogirane usere.
-`last` ispisuje usere koji su bili ulogirani.
-
-`w` kombinira `who`, `uptime` i `ps`: tko je ulogiran, koliko dugo, i koji proces trenutno vrti.
-
-`adduser <ime>` stvara novog usera, radi sve za tebe. Postoji i `useradd`, ali s njim je teško.
-`passwd <ime>` mijenja password usera.
-`userdel <ime>` briše usera, ali nakon trebaš napraviti `rm -r /home/<ime>`.
-
-`groupadd <ime>` stvara novu grupu
-`groupdel <ime>` briše grupu
-`gpasswd -a <ime> <grupa>` dodaje usera u grupu
-`gpasswd -d <ime> <grupa>` briše usera iz grupe
-
-## su i sudo
-
-Za izvršavanje naredbi kao *root*, koriste se `su` ili `sudo`. Osnovna razlika je:
-* `su` zahtjeva *root* password.
-* `sudo` zahtjeva *tvoj* password, te koristi `/etc/sudoers` da odluči što smiješ raditi. Ovo je bolje jer nitko ne mora znati *root* password.
-
-`sudo <cmd>` izvršava naredbu kao root.
-
-`su` (`sudo -s`) otvara non-login shell. Trenutni directory i env varijable ostaju iste.
-
-`su -` (`sudo -i`) otvara login shell. Premješta se u rootov home directory i pokreće `~/.bash_profile` (kao da se root upravo ulogirao). Bolji način, jer osigurava da će sve raditi kako si je root postavio.
-
-`su <user>` i `sudo -u <user>` koristi ako želiš izvršavati kao `<user>`, a ne kao root.
-
-## System
-
-`uname` ispisuje podatke o OS-u. `-r` kernel release. `-a` za sve podatke.
-`hostname` ispisuje sistemsko ime u mreži.
-`date` ispisuje trenutno vrijeme.
-`uptime` ispisuje koliko dugo već system radi, te load zadnjih 1, 5 i 15 min.
-
-## Stats
-
-`history` ispisuje sve prethodnih naredbi.
-`last reboot` ispisuje system rebootove.
-
-`top` ispisuje procese koji najviše troše CPU.
-`lsof` ispisuje sve otvorene fileova i procese koji su ih otvorili. Pomoću `-i TCP:3000` možeš vidjeti tko je sve pokrenut na portu `3000`.
-`netstat -lnp` ispisuje procese koje imaju otvorene sockete.
-
-`free -m` ispisuje slobodnu radnu memorija u Mb.
-
-`watch <command>` poziva naredbu svakih 2 sekunde (npr. `watch df -h`).
-`-n 5` za svakih 5 sekundi. `-d` za highlight promjena.
-
 ## Literatura
 
-* Pregled: https://github.com/jlevy/the-art-of-command-line
-* Česte greške: http://mywiki.wooledge.org/BashPitfalls
+* https://linuxjourney.com/
+* https://github.com/jlevy/the-art-of-command-line
+* http://mywiki.wooledge.org/BashPitfalls

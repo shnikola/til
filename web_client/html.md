@@ -255,17 +255,6 @@ Input se mogu grupirati pomoću `<fieldset>`, a svaka grupa može imati svoj `<l
 
 `allowfullscreen` dozvoljava korištenje full screen API-ja. _IE9+_
 
-`sandbox` definira što je dopušteno u iframeu. Ako je dodan na iframe, ništa nije dopušteno dok se eksplicitno ne dopusti. _IE 11+_
-* `allow-forms` (submitting)
-* `allow-modals` (alert)
-* `allow-scripts` (dopušta js),
-* `allow-top-navigation` (možeš koristiti `window.top`).
-* `allow-orientation-lock`, `allow-pointer-lock`, `allow-popups`, `allow-popups-to-escape-sandbox` (dopušta popupe koji ne nasljeđuju sandbox ograničenja),
-
-Iframe, čak i cross-origin, može redirectati tab u kojem je embeddan pomoću `window.top.location.href=`. Koristi `sandbox` da to spriječiš.
-
-XSS na jednoj stranici može pomoću `iframe`a pristupiti svim stranicama na toj domeni. `X-Frame-Options: DENY` da spriječiš.
-
 ## Images
 
 `<img>` predstavlja sliku u dokumentu. `src` definira URL resourca.

@@ -2,9 +2,18 @@
 
 ## Versioning
 
-S verzioniranjem kreni od starta kako bi izbjegao glavobolje u budućnosti. Zahtjevaj da svi klijenti šalju eksplicitnu verziju (ne dopuštaj defaultnu), najbolje u headeru, npr: `Accept: application/vnd.utorkom+json; version=3`.
+S verzioniranjem kreni od starta kako bi izbjegao glavobolje u budućnosti. Opcije za klijentski odabir verziju su:
+* Dio patha `utorkom.com/api/v3/resources`
+* Url parametar `utorkom.com/api/resources?version=v3`
+* Accept header `Accept: application/vnd.utorkom+json; version=3`. `vnd.` je vendor prefix koji označava da je MIME type custom. `+json` znači da se koristi JSON format, ali je definirana dodatna semantika iznad JSONa.
 
-`vnd.` je vendor prefix koji označava da je MIME type custom. `+json` znači da se koristi JSON format, ali je definirana dodatna semantika iznad JSONa.
+## Authentication
+
+Bez iznimke zahtjevaj HTTPS pristup APIju. Ne radi automatski redirect, jer se time potiču neispravni klijenti. Umjesto toga, ne prihvaćaj connectione na port 80, ili vraćaj `403 Forbidden`.
+
+Što jednostavnija autentifikacija, to bolja. Za svakog korisnika izgeneriraj random ključ od 16+ znakova i zapiši ga u bazu. Neka ga šalju sa svakim requestom u `Authorization: Bearer` headeru. Klijenti neka ga čuvaju u cookiju (sigurniji su od local storagea).
+
+U rijetkom slučaju kada je preskupo za svaki request raditi upit u bazu (uzmi u obzir da gotovo uvijek ionako radiš upit da dohvatiš usera), koristi stateless token kao JWT.
 
 ## Status Codes
 
@@ -26,8 +35,6 @@ Neuspješni request:
 Koristi URL path za identifikaciju resursa, body za sadržaj, a headere za metapodatke.
 
 Prihvaćaj serijalizirani JSON kao request body, vraćaj serijalizirani JSON kao response body. Minificiraj JSON response tako da makneš whitespace iz njega. Za human readable, možeš dodati podršku za `?pretty=1` parametar.
-
-Bez iznimke zahtjevaj HTTPS pristup APIju. Ne radi automatski redirect, jer se time potiču neispravni klijenti. Umjesto toga, ne prihvaćaj connectione na port 80, ili vraćaj `403 Forbidden`.
 
 Omogući referenciranje s unique atributima koji nisu id. Neka rade i `https://service.com/apps/97addcf0-c182` (id) i `https://service.com/apps/www-prod` (ime aplikacije).
 
@@ -59,4 +66,4 @@ JSON schema omogućuje definiranje API specifikacije kroz JSON.
 
 # Literatura
 
-* https://www.youtube.com/watch?v=d0m0jIzJfiQ (How To Design Deep Games with Jonathan Blow)
+* https://news.ycombinator.com/item?id=16157002

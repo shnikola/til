@@ -1,5 +1,10 @@
 # Maturity
 
+## Jednostavna pravila
+
+1. Ne deployaš popodne.
+2. Ne deployaš petkom.
+
 ## Working with Code
 
 Kompetentan programer zna kako nešto napraviti, proficient programer zna *zašto* i *kada* nešto napraviti. Par savjeta kako ići u tom smjeru:

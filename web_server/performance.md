@@ -1,5 +1,16 @@
 # Performance
 
+## Hijerarhija Latencija
+
+* CPU cycle: `0.25 ns`
+* L1 cache: `1 ns`
+* L2 cache: `7 ns`
+* RAM read: `60 ns`
+* SSD read `20 μs` (`20,000 ns`)
+* Round Trip unutar datacentra `500 μs` (`500,000 ns`)
+* Hard Disk read `20 ms` (`20,000,000 ns`)
+* Round Trip LA - Amsterdam `150ms` (`150,000,000 ns`)
+
 ## Primer on Latency and Bandwidth
 
 **Latency:** vrijeme od slanja paketa s izvora do primitka u odredištu (sekunde)
@@ -20,17 +31,6 @@ Optical fiber je obična svjetlosna cijev (signal uđe, signal izađe), ali razl
 Ali u odnosu na taj superbrzi "backbone" interneta, kapacitet na rubovima mreže mnogo je manji. Bandwidth dostupan korisniku jednak je najmanjem kapacitetu između njega i servera. Prosječan bandwidth cijelog svijeta je 5 Mbps, što nije loše, ali na knap ako želiš streamati HD video (50% svog prometa na netu je streamanje videa.)
 
 Zahtjevi za bandwidthom i brzinom rastu, a tehnologija ne može zauvijek napredovati. Zato je potrebno raditi aplikacije koje će na pametan način sakriti nedostatke tehnologije.
-
-## Hijerarhija Latencija
-
-* CPU cycle: `0.25 ns`
-* L1 cache: `1 ns`
-* L2 cache: `7 ns`
-* RAM read: `60 ns`
-* SSD read `20 μs` (`20,000 ns`)
-* Round Trip unutar datacentra `500 μs` (`500,000 ns`)
-* Hard Disk read `20 ms` (`20,000,000 ns`)
-* Round Trip LA - Amsterdam `150ms` (`150,000,000 ns`)
 
 ## TCP
 
@@ -170,9 +170,9 @@ Kako bi se smanjio broj requestova, koristi se *bundling*. Skripte i stylesheeto
 
 Za smanjenje broja requestova koristi se *resource inlining* tako što se JS i CSS dodaju direktno u dokument, a slike zapišu pomoću data URI sheme. Korisno za male (1-2 KB) i unique assete. Ako se asset koristi na više mjesta, više ga se isplati poslati preko requesta koji se može cachirati.
 
-## HTTP/2
+### HTTP/2
 
-Navedene HTTP/1.X optimizacije su zapravo workaroundi oko ograničenja protokola. HTTP/2 dopušta multipleksiranje u istoj konekciji, zbog čega requesti postaju jeftini. Zahvaljujući tome, većina se spomenutih optimizacija mmože ukloniti.
+Navedene HTTP/1.X optimizacije su zapravo workaroundi oko ograničenja protokola. HTTP/2 dopušta multipleksiranje u istoj konekciji, zbog čega requesti postaju jeftini. Zahvaljujući tome, većina se spomenutih optimizacija može ukloniti.
 
 Domain sharding nije potreban. HTTP/2 je najoptimalniji kada ima jednu konekciju, odnosno jedan origin.
 

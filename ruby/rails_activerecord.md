@@ -47,16 +47,16 @@ Za izbjegavanje N+1 querija, koristi neku od metoda koje preloadaju asocijacije 
 http://ducktypelabs.com/four-ways-to-filter-has_many-associations/
 
 Ako želimo dohvatiti sve usere koji sudjeluju u projektu s nekim atributom
-`User.joins(:projects).where(projects: { zipcode: 30332 }).uniq` ili, ako imaš scope u Project:
-`User.joins(:projects).merge(Project.opened_recently).uniq`
-Ovaj `uniq` je potreban jer bi u suprotnom bilo duplih usera.
+`User.joins(:projects).where(projects: { zipcode: 30332 }).distinct` ili, ako imaš scope u Project:
+`User.joins(:projects).merge(Project.opened_recently).distinct`
+Ovaj `distinct` je potreban jer bi u suprotnom bilo duplih usera.
 
 Ako želimo eager-loadati koristimo includes `User.includes(:projects).where(projects: { zipcode: '30332' })`
 
 U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se navedu tablice koje treba joinati u istom queriju (a ne loadati odvojeno):
 `User.includes(:projects).where('projects.deleted_at IS NOT NULL').references(:projects)`
 
-Kad se koristi `includes`, `uniq` nije potreban.
+Kad se koristi `includes`, `distinct` nije potreban.
 
 ## Reloading
 
@@ -66,6 +66,7 @@ Jednom kad se objekt iz baze učita u memoriju, vrijednosti atributa se cachiraj
 
 `obj.changed?` ako se bilo što u objektu promijenilo.
 `obj.name_changed?` ako se atribut promijenio.
+`obj.changed_from_active?` ako je u pitanju enum koji je bio `:active`.
 `obj.name_was` vraća prethodnu vrijednost atributa.
 `obj.restore_attributes` undoa sve nesaveane vrijednosti.
 
@@ -103,6 +104,10 @@ Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full tab
 ## Callbacks
 
 Ako želiš u callbacku gurati stvari u background job (što ionako ne bi trebao), nemoj koristiti `after_save` nego `after_commit`. `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
+
+## Only
+
+`User.order(:name).only(:where)` discarda sve uvjete querija osim danih. Korisno za librarije.
 
 ## Connection Pool
 

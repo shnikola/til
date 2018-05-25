@@ -2,7 +2,7 @@
 
 ## Moje
 
-Tehnologija koju danas imamo je fascinanta, ali naša upotreba baš i nije ("novi monitor će prikazati boje koje nikad niste vidjeli... da bi bolje vidjeli boju cipela koje prodajem u webshopu.")
+Tehnologija koju danas imamo je fascinantna, ali naša upotreba baš i nije ("novi monitor će prikazati boje koje nikad niste vidjeli... da bi bolje vidjeli boju cipela koje prodajem u webshopu.")
 
 ## Website obesity crisis
 

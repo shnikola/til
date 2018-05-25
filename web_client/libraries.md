@@ -1,5 +1,11 @@
 # Libraries
 
+## Polyfills
+
+* `core-js` dodaje funkcije u stdlib iz ES5, ES6, i ES7: promises, collections, iteratore itd.
+
+## Helpers
+
 * `in-view.js` (https://camwiegert.github.io/in-view/) šalje event kad element uđe ili izađe iz viewporta.
 * `scrollReveal.js` (https://scrollrevealjs.org/) za animiranje elemenata pri scrollanju.
 * `scrollMagic` (http://scrollmagic.io/) za razno animiranje pri scrollanju (6KB)
@@ -10,13 +16,16 @@
 
 * `howler.js` (https://howlerjs.com) cross-platform js audio (7KB)
 
-Experimenting:
+## Experimenting
+
 * `dat.gui` (https://workshop.chromeexperiments.com/examples/gui) UI za mijenjanje varijabli.
 
-Animation:
+## Animation
+
 * http://mojs.io/
 * http://anime-js.com/
 * http://velocityjs.org/
 
-3D WebGl:
+## 3D WebGl
+
 * https://threejs.org/

@@ -80,17 +80,11 @@ Komunikacija je replayable: u bilo kojem trenutku možeš zatražiti backlog por
 
 MessageBus radi unutar serverskog procesa, pa nije potrebno otvarati poseban port i server za slanje poruka.
 
-## Ruby i HTTP/2
+## HTTP/2
 
-https://www.nateberkopec.com/2016/01/07/what-http2-means-for-ruby-developers.html
+HTTP/2 nije u potpunosti kompatibilan s Rackom, ali radi se na tome.
 
-HTTP/2 nije kompatibilan s Rackom: request/response streaming bi trebao biti default, komunikacija dvosmjerna (server ili klijent mogu gurnuti više stvari bez odgovora)
+Ako koristiš proxy koji podržava HTTP/2 (nginx, h2o), klijenti će moći koristiti kompresiju headera.
 
-HTTP/2 je inače nešto kao websocketsi, ali za websocketse treba implementirati dosta stvari koje http nudi (redirection, REST, caching)
+Ako koristi CDN kompatibilan s HTTP2, klijenti će moći dohvaćati više asseta u istoj konekciji, pa domain sharding i bundling u spriteove više nisu potrebni.
 
-Prednosti:
-* headeri se compressaju (uključujući cookije), uštedi se do 80%. **koristi HTTP/2 compatible proxy (nginx, h2o)**
-* mogućnost slanja više responsea u istoj konekciji, domain sharding više nije potreban. **koristi HTTP/2 compatible CDNove**
-* jedna konekcija znači jedan TLS handshake
-* klijenti mogu izraziti preferenciju koji request da se prvi ispuni (npr. CSS i JS prije imagea)
-* pošto je skidanje jednog velikog filea i puno malih sada isto, gubi se potreba za jednim velikim JS i CSS fileom i spriteovima

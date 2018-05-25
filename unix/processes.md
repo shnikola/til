@@ -104,6 +104,8 @@ Za kritične procese kojima je preformance jako bitan, može pomoći ako ih se *
 
 `ps aux` ispisuje svačije procese (`a`), s userom (`u`), uključuje i procese koji nisu pokrenuti iz terminala (`x`).
 
+`ps m` ispuje i threadove svakog procesa.
+
 `ps -eo pid,user,rss` ispisuje samo dane propertije.
 
 `pstree <pid ili user>` prikazuje stablo procesa. `-p` prikazuje pidove.
@@ -127,14 +129,4 @@ Tablica procesa:
 * TIME+: ukupno vrijeme procesora koje je proces koristio
 * COMMAND: naredba koje je pokrenula proces
 
-Opcije unutar programa:
-`c` - prikaži puni path commanda
-`k` - kill process
-`d` - promijeni interval updatea
-`o` - promijeni ordering
-`u` - filtriraj za usera
-`w` - saveaj trenutnu konfiguraciju topa
-
-## cronjob
-
-`cronjob` nije interaktivni shell pa ne učitava `.bash_profile` ni `.bashrc`. Možeš ih ručno pozvati pomoću `source /home/user/.bash_profile`.
+`top -p <pid>` prikazuje podatke samo za jedan proces.

@@ -115,14 +115,6 @@ Queriji:
 * `SELECT (total_time / 1000 / 60) as total_minutes, (total_time/calls) as average_time, query FROM pg_stat_statements ORDER BY total_minutes DESC LIMIT 100` za nalaženje sporih i često pozivanih querija.
 * `EXPLAIN ANALYZE` na query za više informacija
 
-## Connection pooling
-
-Connection pool sadrži listu već uspostavljenih konekcija koje aplikacija može koristiti kako bi izbjegla overhead spajanja.
-*Framework Pooling*: kada se aplikacija pokreće, sama stvara pool konekcija. Dio mnogih frameworka (Sequel gem, Rails).
-*Persistent Connections*: aplikacija održava konekciju po requestu. Nedostatak je što si ograničen samo na jednu po requestu.
-
-Ako imaš više od 100 konekcija otvorenih, treba ti nešto robusnije kao `PG Bouncer`, standalone pooler.
-
 ## Remote connections
 
 * `dblink` za izvršavanje querija na remote bazama. Koristi `dblink_connect('postgres://...')` i `dblink('SELECT ...')`.

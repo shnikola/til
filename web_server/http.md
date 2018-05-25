@@ -1,6 +1,4 @@
-# HTTP
-
-## HTTP 1.X
+# HTTP 1.X
 
 HTTP 1.X je protokol plaintext formata, delimitiran newline znakovima. Svaka HTTP poruka ima jednaki format:
 ```
@@ -13,7 +11,7 @@ Header2: value2
 Inicijalna linija za request: `GET /path/to/file/index.html HTTP/1.1`
 Inicijalna linija za response: `HTTP/1.1 200 OK`
 
-### Metode
+## Metode
 
 * `GET` dohvaća resource, bez side effecta.
 * `HEAD` dohvaća samo headere, a ne i body. Korisni za saznati podatke o resourcu bez da ga skineš.
@@ -27,7 +25,7 @@ Inicijalna linija za response: `HTTP/1.1 200 OK`
 
 Ukoliko metoda nije dopuštena, server će vratiti `405 Method Not Allowed` i `Allow`(s) s listom dopuštenih metoda.
 
-### Osnovni headeri
+## Osnovni headeri
 
 * `Date`(c,s) vrijeme kad je poruka poslana. Required za server.
 * `Content-Type`(c,s) format podataka u message body.
@@ -41,7 +39,7 @@ Ukoliko metoda nije dopuštena, server će vratiti `405 Method Not Allowed` i `A
 * `Server`(s) ime servera.
 * `Retry-After`(s) u slučaju 503 Service Unavailable, vrijeme nakon kojeg da klijent pokuša opet.
 
-### Chunked Response
+## Chunked Response
 
 Chunked response omogućuje streamanje resourca, odnosno slanje podataka bez da se unaprijed zna njihova veličina.
 
@@ -62,13 +60,13 @@ abcdefghijklmnopqrstuvwxyz [chunk]
 Trailer1: value1
 ```
 
-### Persistent connection
+## Persistent connection
 
 Otvaranje i zatvaranje TCP konekcije zahtjeva znatan dio CPU vremena, bandwidtha, i memorije. Umjesto da se konekcija zatvara nakon dohvaćanja jednog resursa, optimalnije ju je ostaviti otvorenom za dohvaćanje idućeg. U HTTP/1.1 to je uključeno po defaultu.
 
 `Connection: keep-alive`(c,s) šalje se za održati konekciju otvorenom, a `Connection: close` za zatvoriti nakon responsea.
 
-### Content negotiation
+## Content negotiation
 
 Na istom URLu može se naći više verzija istoj resursa. Klijent može zatražiti određenu verziju uz oznaku quality factora: `de; q=1.0, en; q=0.5`
 
@@ -83,7 +81,7 @@ Na istom URLu može se naći više verzija istoj resursa. Klijent može zatraži
 
 * `Content-Disposition`(s) način na koji će se resource prikazati u klijentu. Koristi se uglavnom za direktni download (`attachment; filename="article.pdf"`)
 
-### Redirects
+## Redirects
 
 Redirection se triggerira kada server vrati `3xx` response zajedno s `Location`(s) headerom u kojem se nalazi URL redirecta.
 
@@ -95,7 +93,7 @@ Ako želiš redirectati nakon POST ili PUT requesta kako refresh ne bi ponovio t
 
 Poseban slučaj je `304 Not Modified` koji "redirecta" na lokalnu kopiju u browserovom cacheu.
 
-### Cookies
+## Cookies
 
 `Set-Cookie`(s) daje upute za postavljanje jednog key-value para, npr. `userId=2`. Dodatni atributi su:
 * `Expires`/`Max-Age` koliko će trajati.
@@ -106,7 +104,7 @@ Poseban slučaj je `304 Not Modified` koji "redirecta" na lokalnu kopiju u brows
 
 `Cookie`(c) šalje skup svih cookija postavljenih za trenutnu domenu.
 
-### Basic Authentication
+## Basic Authentication
 
 Ukoliko je potrebna autentifikacija, server će vratiti `HTTP 401 Unauthorized` response i `WWW-Authenticate`(s) header sa shemom za autentifikaciju, npr. `Basic`.
 
@@ -114,7 +112,7 @@ Klijent odgovara s `Authorization`(c) koji sadrži shemu i credentialse. Za `Bas
 
 Slična metoda postoji za autentifikaciju na proxiju pomoću `Proxy-Authenticate`(s) i `Proxy-Authorization`(c).
 
-### Cache
+## Cache
 
 * `Cache-Control`(s) tko smije cachirati resource, pod kojim uvjetima, i koliko dugo.
 
@@ -129,7 +127,7 @@ Slična metoda postoji za autentifikaciju na proxiju pomoću `Proxy-Authenticate
 * `Age`(s) koliko dugo je resource u proxy cacheu (u sekundama)
 * `Vary`(s) lista klijentovih headera koji su korišteni za serviranje sadržaja. Na taj način klijent zna promjena kojih headera invalidira cache. Nije baš najsigurnije za prčkati, ali dobro je znati da postoji i da te može sjebati.
 
-### Range
+## Range
 
 Omogućava parcijalno dohvaćanje filea sa servera (npr. video od druge minute).
 
@@ -141,7 +139,7 @@ Server vraća `206 Partial Content` i `Content-Range`(s) s rangeom vraćenog res
 
 Ako klijent ima dio rangea, a želi ostatak (npr. ako resuma download), onda uz `Range`(c) šalje i `If-Range`(c) s datumom ili etagom. Ukoliko je resource ostao isti, dobit će `206` i dio koji nedostaje. Ako se resource promijenio, dobit će `200` i cijeli resource.
 
-### Proxies
+## Proxies
 
 Proxiji rade request u ime klijenta, pa klijentova IP adresa nikad ne dođe do servera. Isto je i s reverse proxijima, gdje server ne zna koji host je klijent tražio. Da bi se te informacije prenijele, uvedeni su custom headeri koji su postali de-facto standard.
 
@@ -151,25 +149,25 @@ Proxiji rade request u ime klijenta, pa klijentova IP adresa nikad ne dođe do s
 * `Forwarded`(c) pokušaj standardiziranja gornja 3 headera. (npr. `for=192.0.2.60; proto=http; `). Ne koristi se baš.
 * `Via`(c, s): verzija protokola, hostname, i optional product version proxija kroz koje je poruka prošla (npr. `1.0 fred, 1.1 example.com (Apache/1.1)`). Uglavnom za debugiranje, a služi i za detektiranje proxy loopova.
 
-### Do Not Track
+## Do Not Track
 
 Sasvim nevjerojatno, netko je pokušao standardizirati transparentnost trackinga na webu. Browseri bi trebali omogućiti da korisnik odabere želi li da ga se tracka, pri čemu će se u svaki request dodati `DNT: 1`(c) (ne želim) ili `DNT: 0` (želim).
 
 Serveri bi također trebali obavještavati korisnika o načinu na koji trackaju s `TSV`(s), npr. `C` - tracking with consent. Nažalost, nema zakonskih ni tehnoloških obveza da server ispoštuje korisnikov izbor.
 
-## HTTP/2
+# HTTP/2
 
 Ako želiš raditi paralelne requestove u HTTP 1.X, moraš koristiti više TCP konekcija. Zbog request queueinga, svaka konekcija može istovremeno prenositi samo jedan request ili response. Koliki god bandwidth imao, latenciju ne možeš smanjiti dok god šalješ request po request.
 
 HTTP/2 napravljen je da podržava sve postojeće funckionalnosti HTTP 1.1, ali da ukloni problem latencije i smanji broj potrebnih konekcija na pojedinom hostu.
 
-### Uspostava
+## Uspostava
 
 Negotiation protokola može se izvesti na više načina, ali najčešći je unutar TLS handshakea koristeći ALPN. HTTP/2 ne zahtjeva TLS, ali svi browseri ga trenutno tako koriste. TLS također onemogućuje razne proxije i routere koji ne znaju za HTTP/2 da prtljaju po paketima.
 
 Umjesto toga može se koristiti `Upgrade` header, ali to zahtjeva dodatni roundtrip.
 
-### Streams
+## Streams
 
 U HTTP/2, sva komunikacija se obavlja preko jedne TCP konekcije koja može sadržavati neograničen broj dvosmjernih *streamova*. Svaki stream ima ID i koristi se za prenošenje *messagea*. Message predstavlja HTTP poruku, tj. request ili response, a sastoji se od jednog ili više binarnih *frameova*. Frame prenosi određenu vrstu podataka (npr. HTTP headere ili dio payloada), a u svom headeru sadrži ID streama, što omogućuje paralelno slanje više frameova iz različitih streamova (*interleaving*).
 
@@ -179,23 +177,30 @@ Sadržaj frameova više nije plaintext s newline delimiterima, nego je podijelje
 
 Klijent može svakom streamu definirati prioritet ili ovisnost o drugom streamu, kako bi server prilagodio alokaciju CPU-a, memorije i bandwitha te osigurao optimalno slanje podataka. Browseri će automatski priotizirati bitne resurse poput HTML dokumenta, blokirajućih CSS-a i JS-a, dok će slike dohvaćati s nižim prioritetom.
 
-### Headeri
+## Headeri
 
 Kako bi se smanjio overhead slanja headera HTTP/2 ih komprimira koristeći HPACK format. Također, svi headeri su lowercase.
 
-### Flow Control
+## Flow Control
 
 Flow control dopušta primaocu da kontrolira koliko podataka prima od pošiljatelja. Ovo je korisno u slučaju kad npr. klijent zatraži cijeli video, a korisnik ga u pola skidanja pauzira. Klijent tada može smanjiti window tog streama i omogućiti drugim streamovima da zauzmu veći bandwith. Ovo je slično kao i TCP flow control, ali omogućuje kontrolu na razini streama.
 
 U HTTP/1.1, jednom kad je `Content-Length` poslan, nemoguće je prekinuti poruku bez da se prekina cijela konekcija, što je skupo. HTTP2 podržava prekidanje poruke pomoću RST_STREAM framea bez da se prekine konekcija.
 
-### Server Push
+## Server Push
 
 *Server push* omogućuje serveru da šalje više responsa na jedan klijentov request. Na ovaj način server može poslati resurse za koje zna da će klijentu biti potrebni (npr. JS i CSS) bez da ih klijent zatraži, uštedivši na latenciji requesta.
 
 Server prije slanje šalja uvodni frame s headerom resourca (PUSH_PROMISE) i daje priliku klijentu da odbije push (RST_STREAM) ako npr. već ima resource u cacheu.
 
 Ovo je efektivno isto što i resource inlining, ali dodatno omogućuje zasebni caching svakog resourca.
+
+## Early Hints
+
+Ako server želi poslati klijentu upute da preloada neki resurs, to može učiniti s npr. headerom `Link: rel=preload`. Ali da bi taj header poslao, i dalje mora pričekati da cijeli response bude spreman, što uključuje čekanje baze i generiranje HTML-a. Server push dopušta ranije slanje, ali može se iskoristiti samo za resurse koji su dostupni server. Također, server push će početi slati resurs čak i ako klijent ima u cacheu - preloading je fleksibilniji i potrošit će manje bandwitha.
+
+*Early hints* omogućuju serveru da pošalje headere prije konačnog responsea. Klijentu se šalje resonse sa statusom `103`, na što će klijent evaulirati headere, iskoristiti ih koliko može, i nastaviti čekati da stigne uobičajeni response.
+
 
 # Literatura
 

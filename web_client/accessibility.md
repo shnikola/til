@@ -52,6 +52,18 @@ Koristi `<th>` za headere i `scope=row` ili `scope=col` da kažeš u kom smjeru 
 
 Kontrast između glavnog teksta i pozadine mora biti minimalno `4.5 : 1`. Koristi online alate poput: http://accessible-colors.com
 
+## Font Size
+
+Defaultna početna veličina fonta u browseru je `16px`, ali korisnici mogu na razne načine to promijeniti.
+
+Ako povećaju font na razini OS-a, npr. na 150%, svi elementi na stranici se povećavaju za 150%, neovisno o tome jesu li deklarirani u `px` ili `rem`.
+
+Ako zoomiraju u browseru, opet se svi elementi na stranici proporcionalno povećavaju, neovisno o jedinicama u kojim su deklarirani.
+
+Ako povećaju font na razini browsera, tek se u tom slučaju povećava defaultni font, pa se ostali fontovi pritom povećavaju samo ako koristiš `rem`. Ali u praksi većina najpopularnijih siteova ne poštuje ovo pravilo i koristi `px`, pa i većina korisnika koristi drugu metodu povećavanja fonta.
+
+Ukratko, koristi `px` za fontove, `em` i `rem` donose previše komplikacija da bi bili vrijedni truda.
+
 ## Animation
 
 Na OSX, korisnik može odabrati "Reduce Motion" u preferencama. To možeš ispoštovati u animacijama koristeći `@media (prefers-reduced-motion) { animation: none }`. Zasad radi samo u Safariju.

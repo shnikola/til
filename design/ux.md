@@ -14,6 +14,10 @@ https://baymard.com/blog/inline-form-validation
 * Međutim, kad error postoji na fieldu, ukloni ga čim user promijeni input u validan - nemoj čekati da napusti field.
 * Pozitivna validacija (zeleni check) pomaže.
 
+## Email validation
+
+Nijedna regex validacija te ne može zaštiti od toga da korisnik ukuca pogrešni email. Umjesto toga, provjeri da li email sadrži `@` i, bitnije, zahtjevaj da korisnik potvrdi primitak emaila.
+
 ## Kada koristiti target=_blank
 
 https://css-tricks.com/use-target_blank/
@@ -32,7 +36,9 @@ Za elemente kojima ne znaš visinu, nađi `min-height` da minimiziraš skakanje.
 
 ## Tekst
 
-`font-size: 16px` i `line-height: 1.5` su prilično siguran default za body tekst.
+`font-size: 16px` i `line-height: 1.5` su prilično siguran default za body tekst. Još bolje `font-size: 18px` i `line-height: 16px`. Boja `#333` ili tamnija.
+
+Širina stupca teksta neka bude max `700px` (nešto što bi Wikipedija mogla uzeti u obzir).
 
 All caps mogu biti teški za čitanje, koristi `letter-spacing: 1.4` da mu daš oduška.
 

@@ -1,6 +1,4 @@
 # Text Processing
-TODO
-newlines in osx
 
 ## Output
 
@@ -28,6 +26,8 @@ newlines in osx
 `wc <file>` ispisuje broj linija (`-l`), riječi (`-w`) ili znakova (`-m`) u fileu.
 
 `sed -n '25p'` ispisuje 25 liniju. Korisno za jako velike fileove.
+
+`expand <file>` pretvara tabove u spaceove.
 
 ## Combining
 
@@ -129,6 +129,13 @@ koristi `find -print0` i `xargs -0`.
 ## Regex
 
 Za detektirati ponavljanja u regexu koristi `(something)\1`
+
+
+## echo vs printf
+
+Nemoj koristiti `echo` za ispisivanje nepoznatih varijabli (nekonzistentno ponašanje za `\n` i `-n`).
+
+Umjesto njega koristi `printf`.
 
 # Examples
 
