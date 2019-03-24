@@ -29,8 +29,21 @@ Tradicionalno se radi gnječem u mužaru, a može se raditi i štapnim mikserom.
 * Dodaj naribanih **50g parmezana** i **30g pekorina**, uključi blender zadnji put.
 * Po želji ocijedi malko limuna unutra.
 
+## Vinaigrette
+
+Emulzija ulja, kiseline (octa ili limunovog soka) i začina. Ulje i kiseline u omjeru 3:1 (probaj i 4:1).
+
+* **100ml dobrog maslinovog ulja**, **30ml dobrog octa**, **sol i papar** blendaj pola minute dok se ne stvori emulzija. Isprobaj i dodaj još octa po ukusu.
+* **1 ljutiku** ubaci i blendaj dok se ne stopi s dressingom.
+
+Najbolje serviraj odmah, ali izdržat će u frižideru par dana. Mogu se još dodati bilo kakvi začini i biljke; režanj svježeg ili pečenog češnjaka; žlica senf ili soja sosa; žlica meda ili nekog sirupa.
+
 ## Zgrušavanje
 
 Zgrušavanje u umacima se događa kada toplina, kiselina ili sol promjene svojstva proteina, koji se počnu povezivati u grudice. Kako bi to spriječio, pripremaj umake na sporo rastućoj i niskoj temperaturi (koristi double-boiler), i ne dodaji previše kiseline ili soli. Dobro osiguranje protiv zgrušavanja su škrob ili masnoća koji spriječava proteine da se spajaju
 
 Zato se npr. žumanjci za hollandaise kuhaju na niskoj temperaturi, a limunov sok se dodaje tek na kraju.
+
+## Šalša
+
+Pome iz konzerve su kiselije, pa želiš dodati slatkoću. Umjesto šećera, možeš dodati prirodnu slatkoću, npr. naribanu mrkvu ili naranču.

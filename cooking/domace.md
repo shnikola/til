@@ -24,7 +24,7 @@
 * **sjemenki svakakvih**
 * **1dl ulja**
 * dodaj **2.5-3dl tople vode** dodaj da se spoji, bolje da bude mljeckavije nego tvrđe, drvenom žlicom
-* kad se digne, stavi na papir za pečenjei oblikuj, utisni komadiće **maslaca** u vrh.
+* kad se digne, stavi na papir za pečenje i oblikuj, utisni komadiće **maslaca** u vrh.
 * stavi na `220` na pećnici
 * kad izvadiš, poškropi vodom i omotaj u krpu.
 
@@ -88,3 +88,38 @@ Za 4 srednje (ili 3 velike) porcije
 * napuni paprike, ali ostavi malo mjesta jer se riža poveća u kuhanju.
 * posloži paprike u lonac kao human centipede ili s otvorom prema gore. Dodaj **250ml pasirane rajčice** i **vode** da taman prekrije paprike. Kuhaj 30 minuta.
 * pred kraj kuhanja napravi zapršku: na **malo ulja** stavi **žlicu oštrog brašna** i **malo paprike**, mješaj dok se ne pretvori u masu. Razrijedi s malo vode i ulij u lonac. To daje gustoću umaku.
+
+## Sarma Betine Bake
+
+* Nasjeckaj **1 luk i isto masnije slanine** i zažuti u loncu.
+* Dodaj **1 nasjeckani režanj češnjaka**, miješaj minutu.
+* Od **1kg mljevenog mesa** (2/3 svinjetina, 1/3 junetina), dvije trećine stavi u lonac i promješaj da posivi.
+* Nasjeckaj **250g mesnatije slanine** i **jedan krak domaće kobasice**, pa umiješaj u lonac s ostatkom mesa. Miješaj par minuta pa skini s vatre.
+* Malu šalicu **riže** isperi i umiješaj u lonac.
+* Dodaj **2 velike žlice slatke paprike** i **1 žlicu ljute paprike**, i promiješaj.
+* Rastavi **glavicu kiselog kupusa**, odsijeci deblje dijelove. Ako je preslana, isperi listove.
+* Stavi list na dlan (pazi da je udubljen kao tanjur) s korijenom prema ruci. Stavi meso okomito na os ruke, pa presavij desnu stranu do skoro polovice. Zatim savijaj od korijena prema gore, pa uguraj vršak lijeve strane u rupu. Pripazi da ostaviš dovoljno mjesta jer riža i meso nabubre.
+* Složi sarme u lonac i uguraj ostatak kupusa sa strane, pa prelij sve vodom.
+* Možeš dodati 2-3 suha rebra i ribanog kupusa.
+* Stavi da se krčka sat-dva, dok kupus nije kuhan (tad je meso sigurno kuhano).
+* Ako želiš obogatiti tekući dio, dodaj zapršku na kraju. Ako nije dovoljno crveno ili ljuto, dodaj mljevene paprike u zapršku.
+
+## Torta od jagoda Betine Bake
+
+Za biskvit (s vodom):
+* 6 jaja, i jednaku masu šećera u prahu, i brašna koliko su teška 4 jaja
+
+Odvojiš žumanjke, šećer i koricu limuna smiskaš dok ne bude gusto. I unutra dok miksaš dodaji 6 žlica vode. Kad je gusto, brašno umiješaj brašno rukom (ne miskerom). Odvojeno smiksaj snijeg od bijelanjaka, i nježno ih umiješaj u smjesu.
+
+U kalup stavi papir za pečenje i namaži uokolo maslom, izlij to u kalup. Peci na 160 stupnjeva 30ak minuta dok nije rumena, probaj čačkalicom.
+
+Za fil (slobodno povećaj za veći fil):
+200g maslaca, 180g šećera u prahu, jedno žumanjce i 1 vanilin šećer (ili pravu). Sve zajedno izmiksati dok ne bude pjenasto. Možeš dodati par žlica šlaga. U to umješaj 750g jagoda.
+
+Prereži biskvit napola, malo naprskaj limunovim sokom da bude vlažan. U kalup stavi donji biskvit, istreseš svu kremu unutra. Poklopi biskvitom i premaži šlagom, ukrasi jagodama.
+
+## Knedle Betine Bake
+
+Zamrznute knedle samo malo odmrzni. Stavi dosta vode u veliki lonac da dobro proključa i onda ubaci knedle unutra. Kad isplivaju, kuhaj još 4-5 minuta. Izvadi da se malo da se ohlade.
+
+Posebno isprži na ulju prezle da budu smeđe, na kraju stavi šećer. Sve prezle gurni na jednu stranu, i uvaljaj jednu knedlu po knedlu.

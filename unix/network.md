@@ -10,6 +10,10 @@
 
 `cat /etc/services` popis servisa i portova koje koriste.
 
+`nmap -A 192.168.100.2` skenira prvih 1000 TCP portova, detektira OS i servise.
+`nmap -p 80,443 192.168.100.2` skenira portove `80` i `443`
+`sudo nmap -sU 192.168.100.2` skenira prvih 1000 UDP portova
+
 ## ifconfig
 
 `ifconfig` ispisuje listu network interfacea koji omogućuju da kernel radi s network hardwareom. Neki od uobičajenih su `eth0` (ethernet), `wlan0` (wireless), i `lo` (loopback na samog sebe, za `127.0.0.1`).

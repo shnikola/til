@@ -1,5 +1,42 @@
 # Git
 
+## Savjeti
+
+Kada pišeš commit message, fokusiraj se na "zašto", a ne "što" (taj dio ti pokriva kod)
+
+Za pisanje commit messaga, editor je puno bolje mjesto od terminala. Postavi `git config --global core.editor "atom --wait"`
+
+Korisni aliasi:
+* `alias.unstage 'reset HEAD --'`
+* `alias.commend 'commit --amend --no-edit'`
+* `alias.staash 'stash --include-untracked'` stash koji dodaje untracked fileove
+* `alias.st 'status --short --branch'` kratki ispis statusa
+* `alias.merc 'merge --no-ff'` merge uvijek stvara novi commit
+* `alias.prune 'fetch --prune'` briše lokalne brancheve koji su obrisani na remoteu.
+
+## Tools
+
+`git reflog` lista svega što se napravilo u gitu, s indexima. Restore na taj trenutak s `git reset HEAD@{index}`
+
+`git checkout --patch` interaktivno prolazi kroz sve fileove i pita te želiš li discardati promjene u njemu.
+
+`git blame -C -L 10,20 file.txt` ispisuje commitove koji su dodali linije 10-20 u zadanom fileu. `-C` prepoznaje ukoliko je linija stigla iz nekog drugog filea.
+
+`git log -S "some-code"` daje punu povijest dijela koda.
+
+## Workflows
+
+Za jednostavan proivod, koristi *Feature Branch workflow*.
+* Svaki feature se razvija u svom branchu.
+* Kad je spreman, merga se u `master`.
+
+Za ozbiljniji proizvod s releasovima i verzijama, koristi *Gitflow*.
+* Feature branchevi se mergaju u `develop`. Kad se skupi dovoljno featurea, `develop` se forka u `release-0.1`.
+* U `release-0.1` se ne dodaju novi featuri, već samo ispravljaju bugovi i piše dokumentacija.
+* Kad je spremno za shipping, `release-0.1` se mergea u `master` i tagira se verzijom.
+* `master` se onda mergea nazad u `develop`. Na ovaj način jedan team može dovršavati release dok drugi radi
+na idućoj verziji.
+
 ## Basics
 
 Git ne sprema verzije fileova kao diffove, nego kao snapshotove. Zbog toga git funckionira više kao mini file system nego kao version control system.
@@ -127,7 +164,7 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 
 `git checkout <file>` ne pomjera `HEAD`, ali stavlja verziju filea iz `HEAD`a u staging i working directory, efektivno brišući necommitane promjene (kao `git reset --hard`).
 
-# Rewriting history
+## Rewriting history
 
 Ako si zaboravio dodati file u commit (a nisi pushao):
 Dodaj ga s `git add file.txt`, pa pozovi `git commit --ammend` koji će dodati sve promjene iz staginga u prethodni commit.
@@ -155,14 +192,6 @@ Patterni u `.gitignore` fileu vrijede za sve fileove, u kojem god direktoriju se
 * `logs/` za ignorirati sve foldere tog imena.
 * `!lib.a` neće ignorirati `lib.a`, čak i ako bi trebao biti ignoriran.
 
-## Tools
-
-`git reflog` lista svega što se napravilo u gitu, s indexima. Restore na taj trenutak s `git reset HEAD@{index}`
-
-`git checkout --patch` interaktivno prolazi kroz sve fileove i pita te želiš li discardati promjene u njemu.
-
-`git blame -C -L 10,20 file.txt` ispisuje commitove koji su dodali linije 10-20 u zadanom fileu. `-C` prepoznaje ukoliko je linija stigla iz nekog drugog filea.
-
 ## Internals
 
 Git drži sve verzije fileova, directorija i commitova u `.git/objects`. Svaki objekt je identificiran hashem od 40 znakova, a može biti: blob (sadržaj filea), tree (directory s imenima objekata i njihovim hashevima), i commit (sadrži commitan tree i svoje parente commitove).
@@ -175,27 +204,6 @@ Svaki sljedeći commit će imati pointer na svoj parent commit, tj. commit koji 
 
 Branchevi se drže u `.git/refs/heads`. Svaki branch ima svoj file koji sadrži samo pokazivač na posljednji commit u tom branchu.
 
-## Korisni aliasi
-
-* `alias.unstage 'reset HEAD --'`
-* `alias.commend 'commit --amend --no-edit'`
-* `alias.staash 'stash --include-untracked'` stash koji dodaje untracked fileove
-* `alias.st 'status --short --branch'` kratki ispis statusa
-* `alias.merc 'merge --no-ff'` merge uvijek stvara novi commit
-* `alias.prune 'fetch --prune'` briše lokalne brancheve koji su obrisani na remoteu.
-
-## Workflows
-
-Za jednostavan proivod, koristi *Feature Branch workflow*.
-* Svaki feature se razvija u svom branchu.
-* Kad je spreman, merga se u `master`.
-
-Za ozbiljniji proizvod s releasovima i verzijama, koristi *Gitflow*.
-* Feature branchevi se mergaju u `develop`. Kad se skupi dovoljno featurea, `develop` se forka u `release-0.1`.
-* U `release-0.1` se ne dodaju novi featuri, već samo ispravljaju bugovi i piše dokumentacija.
-* Kad je spremno za shipping, `release-0.1` se mergea u `master` i tagira se verzijom.
-* `master` se onda mergea nazad u `develop`. Na ovaj način jedan team može dovršavati release dok drugi radi
-na idućoj verziji.
 
 # Literatura
 

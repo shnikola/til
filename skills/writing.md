@@ -1,5 +1,13 @@
 # Writing
 
+## Kako pisati dobro
+
+Što brže napiši lošu verziju. Samo nabacaj ideje koje želiš iznijeti. Onda kreni u uređivanje.
+
+U tehničkom tekstu, izbjegavaj zamjenice. Bolje je ponoviti imenicu, nego ostati nejasan (npr. umjesto "Izmjenili smo token u APIju jer je prošli imao bug." napiši "Izmjenili smo token u APIju jer je prošli token imao bug.")
+
+Kada postavljaš pitanja, ne pitaj "Kada je release? Ovaj tjedan ili idući tjedan?". Umjesto toga, pitaj: "Release je ovaj tjedan, a ne idući, zar ne?".
+
 ## Boil It Down
 
 https://en.wikisource.org/wiki/Boil_it_down_(1924)
@@ -34,18 +42,6 @@ Cut another sentence into,
 send it on, and we'll begin to,
 BOIL IT DOWN!
 
-## Easy Reading Is Damn Hard Writing
-
-https://www.helpscout.net/blog/damn-hard-writing/
-
-1. Što brže napiši prvu lošu verziju.
-2. Rewrite, rewrite, rewrite.
-3. Izbaci sve nepotrebno.
-
-Još par savjeta:
-* Koristi rečenice različite duljine za ritam.
-* Koristi strukture poznatih izraza ("The barking dog seldom bites" -> "The anxious writer seldom writes")
-* Treba zvučati kao da je naspisano bez ikakve muke.
 
 ## The Cultural Iceberg for Worldbuilding
 

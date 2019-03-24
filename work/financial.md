@@ -1,5 +1,17 @@
 # Financial
 
+## Sales
+
+Prvo prodaj proizvod, onda ga napravi. Najveća pogreška u pokretanju vlastitog biznisa je trošenje godina na stvaranju proizvoda za koji nisi uopće provjerio ima li zainteresiranih kupaca.
+
+U razgovoru s potencijalnim klijentom umjesto da govoriš o svom proizvodu, postavljaj otvorena pitanja kako bi saznao kako oni doživljavaju problem i način na koji ga tvoj proizvod rješava.
+
+Interes za proizvodom ne znači i potražnju. Osim interesa, klijent mora imati i potrebu za tvojim prozvodom, budžet, i autoritet da odobri kupnju. Ne brkaj entuzijazam koji ćeš sigurno susresti i stvarnu potražnju za svojim proizvodom.
+
+## In a Big Craze, Be the Arms Dealer
+
+Kad god se pojavi fenomen na tržištu s niskim pragom ulaska i velikim brojem sudionika, najbolja strategija je zarađivati na njima. Kad je zlatna groznica, prodaji lopate. Umjesto restorana, napravi kompaniju koja snabdjeva restorane. Umjesto vina, prodaji bačve.
+
 ## 1000 True Fans
 
 http://kk.org/thetechnium/1000-true-fans

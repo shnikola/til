@@ -16,4 +16,3 @@ Kuha se dugo i lagano na temperaturi ispod 100 stupnjeva, u pećnici ili na šte
 Toplina, vrijeme i tekućina razbijaju kolagenska tkiva koja čine meso žilavim, pa je ova metoda idealna za žilave komade mesa. Mnoga pirjana jela (npr. coq au vin) su nastala od pokušaja da se neukusno meso učini jestivim.
 
 Dinstanje je sinonim, iako često označava da se ne stavlja dodatna tekućina.
-

@@ -19,9 +19,11 @@ Uvijek radi na rubu svojih sposobnosti - to je najbolji način da napreduješ.
 
 Prouči primarne izvore umjesto prepričanih članaka. Inspiracija stiže od originalnih ideja.
 
-Odaberi nekoliko specifičnih skillova i postani kompetentan u njima do krajnjeg ekstrema.
+Odaberi nekoliko specifičnih vještina i postani što kompetentniji u njima.
 
 Prvo gledaj "big picture", onda radi na detaljima, ali svako malo se vrati na "big picture".
+
+Sjeti se da će većina koda kojeg napišeš jedan dan biti izbrisana, i pomiri se s tim.
 
 Svaki dan prošetaj sat vremena, sam ili u društvu, razmišljaj ili razgovaraj o projektu.
 
@@ -31,13 +33,19 @@ Očekuj manje programiranja, ali zadrži vlasništvo nad par komponenti na 1/3 s
 
 Kad netko zajebe, nemoj ga napadati nego mu pomozi da to popravi, pobrini se da shvati u čemu je pogriješio te da nauči iz te pogreške. Ako je potrebno, promijeni procedure u firmi da se ta pogreška ne može ponoviti.
 
+Kad ti zajebeš, prvo javi menadžmentu (uvijek je bolje da saznaju od tebe, a ne od klijenta ili šefa). Reci im koji je problem i da radiš na rješenju. Postavi se kao vlasnik problema i da timeline u kojem ćeš ga riješiti, ili moći dati više informacija.
+
 Ne budi seronja: neka ljudima bude ugodno raditi s tobom. Kada kritiziraš, komentiraj kod, a ne osobu.
 
 Traži konstruktivnu kritiku svojih ideja: sve što radiš utječe na druge. Zajednička rasprava uvijek dovodi do boljih odluka.
 
 Ako netko predloži pristup za koji misliš da je kriv, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad. Koliko misliš da će ti vremena trebati da proučiš taj pristup?"
 
+Ne odgađaj donošenje odluka, jer kad se nakupe, donosit ćeš ih na brzinu ili izignorirati, pa će problemi opet ostati neriješeni. Umjesto "Hajmo razmisliti o tome" reci "Hajmo odlučiti". Ne čekaj savršeno rješenje - odluči i idi dalje.
+
 Ako te netko želi pitati nešto, budi dostupan i pravi se kako te uopće ne smeta što te prekida u nečemu. Ako ti želiš nekog pitati nešto, uvijek provjeri odgovara li im sada i ponudi se doći kasnije ako su usred nečega.
+
+Ako ne znaš odgovor na netko pitanje, reci: "Ne znam, ali saznat ću i javiti vam do tad-i-tad." Ne troši sugovornikovo vrijeme na isprike ili nesigurne informacije samo da ne bi priznao da nešto ne znaš.
 
 Ne izbjegavaj davati *procjene vremena*: nitko ih ne voli, pa vježbaj da postaneš bolji u njima.
 
@@ -89,4 +97,5 @@ Inače jako dobra i zabavna prezentacija!
 * https://www.briangilham.com/blog/2016/10/10/be-kind
 * http://boz.com/articles/be-kind.html
 * http://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer
+* https://queue.acm.org/detail.cfm?id=3308563
 * https://www.youtube.com/watch?v=yYihop9gHj4 (Endurance by Yehuda Katz)

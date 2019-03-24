@@ -1,15 +1,34 @@
 # Meso
 
-## Savjeti
+## Kemijski sastav
+
+Meso je izvor animalnog proteina (sve potrebne aminokiseline), željeza i vitamina. Meso riba, peradi i puževa sadrži manje zasićenih masnoća i kolesterola pa je kao zdravije. Meso starijih životinja sadrži manje vode pa se teže probavlja.
+
+## Mariniranje
+
+Marinade su mješavine ulja, kiseline (octa ili limunskog soka), soli, papra i začinskog bilja u kojima meso odstoji prije stavljanja na roštilj. Nakon mariniranja meso postaje mekše (razgrađuju se proteini), sočnije (štiti od isušivanja na visokoj temperaturi), i ima bogatiji okus.
+
+* **Mediteranska:** maslinovo ulje, aceto, peršin, bosiljak, origano, timijan.
+* **Kontinentalna:** senf, vino, luk, ljute papričice, lovor.
+* **Arapska:** jogurt, naranča, korijander, cimet, đumbir, češnjak.
+* **Azijska:** suncokretovo ulje, soja sos, smeđi šećer, đumbir, češnjak.
+
+Za mariniranje divljači, govedine, svinjetine i tamnog mesa peradi koristi crno vino, a za bijelo meso bijelo vino. S vinom se slažu timijan i ružmarin.
+
+Nemoj stavljati previše soli jer ona izvlači vlagu iz mesa, pa može postati presuho. Pazi da je meso potpuno uronjeno u tekućinu. Ne koristi metalne posude (reagiraju s kiselinom).
+
+## Pečenje
 
 Kada pržiš meso za gulaš, *pojačaj vatru* i *stavljaj manje mesa* odjednom.
 Na preniskoj temperaturi meso se počinje kuhati, pa se proteini otapaju u onu gadnu sivu tekućinu.
 
+Na roštilju, steakovi se peku 5-6 minuta, burgeri, svinjski kotleti i piletina 10 min.
+
 ## Teletina / Junetina / Govedina
 
-Teletina su goveda mlađa od 12 mjeseci. Roze i sivkaste boje, mekano i bez masti.
-Junetina su goveda 12-24 mjeseci. Svijetlocrvene boje, masno tkivo je krem bijelo.
-Govedina su goveda starija od 24 mjeseca. Tamnocrvene boje, masno tkivo je žuto.
+Teletina su goveda stara 3.tj do 6 mjeseci. Roze i sivkaste boje, mekano i bez masti.
+Junetina su goveda 6-30 mjeseci. Svijetlocrvene boje, masno tkivo je krem bijelo.
+Govedina su goveda starija od 30 mjeseca. Tamnocrvene boje, masno tkivo je žuto.
 
 Dijelovi:
 * **Biftek** (pisana pečenica) duguljasti tanki komad unutar hrpta. Meso izvan kategorije, za naglo ili roštilj. Sirov za tatarski biftek. Cijeli biftek se može peći u pećnici.
@@ -38,6 +57,8 @@ Djelovi:
 ## Piletina
 
 ## Janjetina
+
+Mlada janjetina 3 tjedna do 3 mjeseca. Janjetina 3-9 mjeseci. Ovčetina starija od 9 mjeseci.
 
 Za ražanj 12-13kg, za peku 7-8 kg.
 Janjetina gubi 35% mase pečenjem.
@@ -78,5 +99,7 @@ Za prilog dobro operi i kuhaj par krumpira u kori dok ne postanu meki da nož mo
 
 ## Polpete
 
-Kad radiš polpete, dodaj malo kruha s vrućim mlijekom - to daje prhkosti, da meso ne bude presuho.
+* **100g kruha** bez korice natopi u **100ml vrućeg mlijeka** (to daje prhkosti, da meso ne bude presuho).
+* Ocijedi kruh i umiješaj u **500g mljevenog mesa** i **1 jaje**. Ako je premekano, dodaj krušnih mrvica.
+* Oblikuj u polpetice i ispeci na ulju na tavi.
 

@@ -1,5 +1,11 @@
 # Hiring
 
+## Kada zapošljavati
+
+Veličina tvrtke nema veze s njenim uspjehom. Možda je prava veličina za tvoj posao 20 ljudi, možda 100, a možda je dovoljan jedan čovjek s laptopom. Rasti sporo i vidi koja veličina ti najbolje odgovara. Nema ništa loše u ostajanju malim, dapače. Preuranjeno zapošljavanje je razlog propasti mnogih kompanija.
+
+Nikad ne zapošljavaj nekog za zadatak u kojem se nisi sam okušao. Na taj način, poznavat ćeš prirodu zadatka: znat ćeš napisati realističan opis posla i koja pitanja postaviti na intervjuu; znat ćeš kako izgleda dobro obavljen posao; znat ćeš da li je najbolje zaposliti nekog za puno radno vrijeme, pola dana, ili outsourcati cijeli posao.
+
 ## Intervjuiranje zaposlenika
 
 Dobar način za zaposliti kvalitetnu osobu - zadaj zadatak u petak, neka ga riješi preko vikenda i dođe u ponedjeljak da prokomentira. Zadatak neka bude neovisan od nekog postojećeg projekta, i s dovoljno mjesta da ga kandidat može nadograditi po želji. Obrati pažnju na:
@@ -70,6 +76,7 @@ Nikad nemoj tražiti povišicu zbog osobnih situacija (npr. bolestan sam), nego 
 # Literatura
 
 * http://heidiroizen.tumblr.com/post/100265592165/some-thoughts-on-asking-for-a-raise
+* https://www.artofwork.co/job-interviewing
 * https://medium.com/tarah-wheeler-van-vlack/minute-zero-in-the-gender-pay-gap-7c6695daffbd
 * https://medium.freecodecamp.com/ten-rules-for-negotiating-a-job-offer-ee17cccbdab6
 * http://www.kalzumeus.com/2012/01/23/salary-negotiation/

@@ -46,6 +46,16 @@ Problem: Na intervju ti dolazi `N` osoba, jedna po jedna. Odmah nakon svakog int
 
 Optimalna strategija je odbaciti prvih `N/e` kandidata, i zatim zaposliti prvu osobu koja je bolja od svih odbačenih. Vjerojatnost da ovako odabereš najboljeg je `1/e`, tj. `37%`.
 
+## Zarobljenici i kape
+
+100 zarobljenika su poredani jedan iza drugog i svakome se stavi crvena ili bijela kapa na glavu. Počevši od zadnjeg, krvnik pita koje boje je njegova kapa. Ukoliko odgovori točno, pušta ga na slobodu, u suprotnom ga ubije. Koliko ih se najviše može spasiti?
+
+99 sigurno. Prvi izbroji crvene kape ispred sebe. Ako je broj paran, kaže "bijelo", ako je neparan, kaže "crveno". Idući vidi koliko je crvenih ispred njega, ako je parnost različita, on ima crvenu kapu. Idući također i tako sve do zadnjeg.
+
+**Varijanta**: Što ako ima 50 različitih kapa?
+
+Dogovore se da je svaka boja kape jednaka broju 1-50. Prvi zbroji sve kape i kaže boju od `suma mod 50`. Idući također zbroji kape ispred sebe i oduzme od izgovorenog broja da dobije svoju.
+
 # Literatura
 
 * https://www.sciencenews.org/article/when-intuition-and-math-probably-look-wrong

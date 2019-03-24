@@ -1,15 +1,6 @@
-# Filozofija
+# Život
 
-## Epistemologija (o znanju)
-
-**Münchhausenova trilema** je misaoni eksperiment koji pokazuje kako se nijedna teorija ne može praktično dokazati. Bilo koji dokaz sadrži tvrdnje koje same moraju biti dokazane. Postoje samo 3 jednako nezadovoljavajuće opcije ako želimo nešto u potpunosti dokazati:
-* cirkularni argument, gdje teorija i dokaz ovise jedno o drugom.
-* regresivni argument, gdje svaki dokaz zahtjeva novi, i tako ad infinitum.
-* aksiomatski argument, koji ovisi o unaprijed prihavećnim tvrdnjama.
-
-U modernoj epistemologiji, koherentizam prihvaća cirkularni argument, infinitizam regresivni, a fundacionalizam aksiomatski argument.
-
-## Ispraznost modernog života i odgovori na njega
+## Ispraznost modernog života
 
 Ideja o manjku smisla u modernom svijetu nije ništa novo. Desetljećima se lamentira o tome kako religija gubi na važnosti i zamjenjuje je znanost. Ali neograničeno obilje modernog društva i sva materijalna dobra nas i dalje ne čine sretnima. Ako o problemu piše ljevica, primjetit će kako ljudi konzumerističkim kapitalizmom pokušavaju upotpuniti tu prazninu; ako piše desnica, radi se o drogama i neobaveznom seksu. U oba slučaja se nejasno obećava kako može biti bolje od ovog.
 
@@ -27,7 +18,7 @@ Petersonove knjige su kvalitetno napisan self-help u kojem kroz Kršćansku simb
 
 ### Dobar život
 
-Prema njemu, osnovna dinamika svemira je Red protiv Kaosa. Red je udobni svijet svakodnevnih rutina (npr. Shire),a Kaos su strašne stvari koje ne razumiješ izvan zone tvog komfora (npr. zmajevi i podzemlje). Najbolji životi se žive na rubu Reda i Kaosa, pretvarajuću Kaos u novi Red. Ako si preduboko u Redu, prevladat će te dosada, tiranija i stagnacija. Ako si preduboko u Kaosu, osjećaš se bespomoćno i doživljavaš slom. S ravnotežom, uvijek susrećeš nove stvari, učiš se nositi s njima i koristiš ih da obogatiš svoj život i život onih do kojih ti je stalo.
+Prema njemu, osnovna dinamika svemira je Red protiv Kaosa. Red je udobni svijet svakodnevnih rutina (npr. Shire), a Kaos su strašne stvari koje ne razumiješ izvan zone tvog komfora (npr. zmajevi i podzemlje). Najbolji životi se žive na rubu Reda i Kaosa, pretvarajuću Kaos u novi Red. Ako si preduboko u Redu, prevladat će te dosada, tiranija i stagnacija. Ako si preduboko u Kaosu, osjećaš se bespomoćno i doživljavaš slom. S ravnotežom, uvijek susrećeš nove stvari, učiš se nositi s njima i koristiš ih da obogatiš svoj život i život onih do kojih ti je stalo.
 
 Ako nemamo hrabrosti probati nešto novo, držat ćemo se Reda i odbijati sve što bi moglo promijeniti naš udobni pogled na svijet (ne želimo promijeniti posao koji mrzimo, ili ideološki želimo ugurati sve u istu kategoriju jer ne želimo priznati da smo u krivu). Ako nemamo hrabrosti donijeti odluku, upadamo u Kaos i držimo "opcije otvorene" nikad ne postavši nešto.
 
@@ -41,18 +32,13 @@ Ako prolaziš kroz patnju i vjeruješ da je svemir zao, postaješ negativac. Ako
 
 ### Društveni poredak
 
-Peterson smatra da svatko ima u sebi ima kapacitet da postane nacistički zločinac, ali postavlja pitanje što uzrokuje takav razvoj događaja? Njegov odgovor je da su anarhija i kaos gori za čovječanstvo od strašne i nezamislive okrutnosti, i da je zato evolucija odgurala društvo u smjeru u kojem uvijek bira okrutnost ispred kaosa. Pitanje je kako spriječiti da do takvog izbora  uopće dođe.
+Peterson smatra da svatko u sebi ima kapacitet da postane nacistički zločinac, ali postavlja pitanje što uzrokuje takav razvoj događaja? Njegov odgovor je da su anarhija i kaos gori za čovječanstvo od strašne i nezamislive okrutnosti, i da je zato evolucija odgurala društvo u smjeru u kojem uvijek bira okrutnost ispred kaosa. Pitanje je kako spriječiti da do takvog izbora  uopće dođe.
 
 Način da spriječiš bullying u školskom dvorištu je da učitelj bude prisutan i kažnjava bullyje. Prema Petersonu, kaos (nepostojanje učitelja) prirodno evoluira u primitivni red (bullying). Ne možeš popraviti primitivni red tako što ćeš ga ukloniti, jer će samo biti zamijenjen drugim (ako bullyja pregazi auto, netko drugi će postati novi bully). Da bi popravili situaciju, moram uspostaviti bolji red (nadzor učitelja, koji su vezani društvenim zakonima, koji su se razvijali stoljećima).
-
-### Trans aktivizam i zamjenice
-
-Peterson tvrdi da nema ništa protiv korištenja zamjenice koju sugovornik preferira, dok god je taj dogovor postignut u dobroj volji između njih dvoje. Ono čemu se protivi je da zakon propisuje kako se kome treba obraćati, pogotovo ako se radi o nedavno stvorenim zamjenicama ("xe" i "xer") koje tek mali dio trans populacije koristi. Prema njemu, dizanje frke oko zamjenica su političke igre moći koje samo koriste trans pokret kako bi ostvarili druge ciljeve.
-
-S druge strane, zakon koji je Peterson napao nigdje nije izričito tjerao ikoga da koristi neke zamjenice, već govori o izbjegavanju zlostavljanja trans osoba namjerno ih nazivajući pogrešnim imenom.
 
 ## C.S. Lewis - The Great Divorce
 
 Lewis believes that Hell is a choice. On the literal level, it’s a choice not to accept God. But on a more metaphorical level, it’s a choice to avoid facing a difficult reality by ensconcing yourself in narratives of victimhood and pride. You start with some problem – maybe your career is stuck. You could try to figure out what your weaknesses are and how to improve – but that would require an admission of failure and a difficult commitment. You could change companies or change fields until you found a position that better suited your talents – but that would require a difficult leap into the unknown. So instead you complain to yourself about your sucky boss, who is too dull and self-absorbed to realize how much potential you have. You think “I’m too good for this company anyway”. You think “Why would I want to go into a better job, that’s just the rat race, good thing I’m not the sort of scumbag who’s obsessed with financial success.” When your friends and family members try to point out that you’re getting really bitter and sabotaging your own prospects, you dismiss them as tools of the corrupt system. Finally you reach the point where you hate everybody – and also, if someone handed you a promotion on a silver platter, you would knock it aside just to spite them.
 
 …except a thousand times more subtle than this, and reaching into every corner of life, and so omnipresent that avoiding it may be *the* key life skill
+

@@ -1,4 +1,4 @@
-# Fear
+# Strah
 
 Strah je manjak samopouzdanja da ću se moći nositi s onim što me čeka.
 

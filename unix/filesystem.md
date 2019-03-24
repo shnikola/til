@@ -9,6 +9,7 @@
 
 `mkdir <dir>` stvara novi directory. `-p` stvara i sve međudirektorije u danom pathu ako ne postoje.
 `touch <file>` ako ne postoji, stvara prazan file. Ako postoji, updatea access i modified timestamp.
+`mktemp` stvara privremeni file (`-d` za direktorij) s unikatnim imenom.
 
 `cp <src> <dest>` radi kopiju filea i sprema ga kao `<dest>`.
   * ako je `<dest>` directory (s *trailing slashom*), kopira file u njega.

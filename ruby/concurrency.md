@@ -85,6 +85,8 @@ Za sinkorinizaciju koristi, stvori `mutex = Mutex.new` izvan threadova.
 
 `hamster` gem sadrži immutable strukture podataka (Hash, Vector, Set, SortedList, List, Deque) koje su po definiciji thread safe.
 
+Najčešće ne želiš sam handlati pokretanje threadova, nego koristi `concurrent-ruby` gem koji riješava probleme kao što je thread pooling.
+
 ## Fibers
 
 Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
@@ -92,7 +94,9 @@ Fiberi omogućuju prekid izvršavanja nekog bloka i nastavak po pozivu.
 `fiber = Fiber.new { ... }` stvara novi fiber koji se ne pokreće dok ne pozoveš `fiber.resume`. Blok se izvršava dok ne dođe do `Fiber.yield(res)`, pri čemu izlazi iz bloka i vrati `res`. S `fiber.resume` može opet nastaviti izvršavanje u bloku dok god ne dođe do `yield` ili kraja bloka.
 
 S `fiber.transfer(res)` možeš prebaciti izvršavanje s jednog fibera na drugi.
-Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer.
+Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threadovima upravlja scheduler, a fiberima programer. Time se mogu upotrijebiti za pisanje asinkronog concurrent koda, kao što je npr. server `falcon`.
+
+`Enumerator` zapravo interno koristi fibere, pri čemu se fiber pauzira dok ne dohvatiš idući element.
 
 ## Continuations
 

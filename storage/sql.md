@@ -84,6 +84,30 @@ Lockanje na razini rowa:
 * ako želiš redak zaključati samo za čitanje (da nitko drugi ne može pisati dotad) koristi `SELECT ... LOCK IN SHARE MODE`
 * ako želiš redak zaključati za pisanje (nitko drugi ne može čitati ni pisati dotad) koristi `SELECT ... FOR UPDATE`
 
+Kada drugi query želi napraviti SELECT koji uključuje taj redak, bit će blokiran dok se prvi query ne izvrši. Ako ne želi biti blokiran, može napraviti query s `FOR UPDATE NOWAIT` (izbacit će error) ili `FOR UPDATE SKIP LOCKED` (preskočit će lockane redove).
+
+## Job Queue
+
+Zahtjevi job queua u SQL-u su:
+* Worker dohvaća prvi slobodan job i zauzima ga.
+* Nijedan drugi worker ne smije uzeti job dok je zauzet.
+* Ako worker naiđe na exception, job se mora automatski osloboditi.
+
+Česta pogreška se događa u korištenju subquerija koji zapravo nisu atomarni. Npr:
+```
+UPDATE queue SET is_done = 't' WHERE itemid = (
+    SELECT itemid FROM queue WHERE NOT is_done ORDER BY itemid FOR UPDATE LIMIT 1
+)
+```
+neće raditi jer se SELECT subquery izvršava prvi, pa će dva workera istovremeno dohvatiti isti job. Jedan će ga updateati, a drugi će čekati na locku, i paralelnost je izgubljena. U slučaju da nema `FOR UPDATE` locka, oba će workera dohvatiti job i obraditi ga, što je još gore.
+
+Umjesto toga, jobove dohvaćaj s:
+```
+DELETE FROM queue WHERE itemid =  (
+    SELECT itemid FROM queue ORDER BY itemid FOR UPDATE SKIP LOCKED LIMIT 1
+)
+```
+
 ## Connection pooling
 
 Connection pool sadrži listu već uspostavljenih konekcija koje aplikacija može koristiti kako bi izbjegla overhead spajanja.
@@ -107,6 +131,12 @@ Pri paginaciji s `OFFSET(1000)`, skenira se i svih 1000 prethodnih redova. Upit 
 * Izbaci direktna skakanja na N-tu stranicu, prikažu samo "Next" i "Prev".
 * Koristi `WHERE id < 1000 ORDER BY id DESC` umjesto `OFFSET` kad možeš.
 * U slučaju sortiranja po drugom stupcu, koristi u kombinaciji s `id`, npr. `WHERE created_at < ? AND id < 20 ORDER BY created_at DESC, id DESC`
+
+## Indeksi
+
+Indeksi su korisni samo za querije koji dohvaćaju mali broj rezultata; ili za izbjegavanje sortiranja. Engine neće koristiti indeks ako procjeni da je sekvencijalni scan brži (npr. ako ima previše rezultata).
+
+Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
 
 # Literatura
 

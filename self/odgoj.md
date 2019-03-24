@@ -8,6 +8,10 @@ Ako imaš priliku odgajati dijete, omogući mu dosljedno i sigurno okruženje, a
 
 Dobar način za osvijestiti ovo su natjecateljske aktivnosti - sportovi, akadameska natjecanja, gdjegod ima priliku biti najbolji negdje i failati.
 
+## Chores
+
+Što je ranije moguće, daj djetetu da sudjeluje u kućanskim poslovima. Trajat će višestruko duže, ali tako će se naučiti samostalnosti i osvijestiti sebe kao dio kućanstva. Pomaže ako učiniš aktivnosti zabavnima i dovoljno jednostavnima da i malo dijete može sudjelovati (npr. punjene suđa u mašinu, hranjenje mačke i sl.)
+
 ## Failing Tests
 
 Nakon što nije položio završni test, učiteljica je autističtnom učeniki poslala pismo:
@@ -30,15 +34,9 @@ We are so pleased that all of these different talents and abilities make you the
 
 Well done Ben, we are proud of you."
 
-## Teaching
+## Aspiracije
 
-LPWT stjecanje znanja: Learn (primi znanje od nekoga), Play (isprobaj to znanje u igri), Work (iskoristiti to znanje na stvarnom problemu), Teach (prenesi znanje na drugoga).
-
-Predavanja ne bi trebale biti priče za laku noć gdje prikazuješ slideove i držiš monolog. Trebala bi biti dijalog u kojem publika pokušava pobiti teoriju koju predavač izlaže. Najbolji način za učenje i podučavanje je dijalog.
-
-## Masters and doctorate
-
-"Doing the master is to understand that you don't know anything. Doing your doctorate is to learn the others know nothing as well."
+Najveći utjecaj na nečiji život, pogotovo relativno mladih ljudi, možeš imati tako da predložiš da naprave nešto bolje ili ambicioznije nego što su imali na umu.
 
 ## Drugs
 
@@ -51,6 +49,10 @@ If you smoke pot you may grow up to find out that you aren't good at anything."
 Ako želi da dijete posjeti baku, roditelj tradicionalnog autoriteta će reći: "Briga me što želiš, moraš posjetiti svoju baku". Ovo je pošteno jer ostavlja hijerarhiju moći transparentnom, i dopušta djetetu da se ponudi.
 
 S druge strane, roditelj liberalnog autoriteta će reći "Znaš koliko te baka, voli, ali posjeti je samo ako to stvarno želiš." Pod iluzijom slobodnog izbora je puno više pritiska, jer ne samo da moraš posjetiti baku, nego moraš i voliti posjećivati je.
+
+## iGen Happiness
+
+Istraživanje (doi:10.1037/emo0000403) je pokazalo da sretniji tinejdžeri više vremena provode u aktivnostima koje ne uključuju ekrane: spavanje je na prvom mjestu, sport i tjelovježba, interakcija s drugim u ljudima uživo, volonterski rad, odlazak u kino, religijski obredi itd.
 
 # Literatura
 

@@ -14,6 +14,12 @@ Kada je IBM dizajnirao PC arhitekturu, koristili su gotove nabavljive dijelove u
 
 Zato Heroku zapošljava Matza. Oni prodaju platformu kojoj je Ruby komplement. Što više ljudi koristi Ruby, više će koristiti i Heroku.
 
+## Alchian-Allen effect
+
+Kada dva zamjenjiva proizvoda različitih cijena poskupe za fiskni iznos (npr. trošak prijevoza ili fiksni porez), potrošnja skupljeg će se povećati u odnosu na jeftiniji. To je zato što se njegova cijena povećala za manji postotak.
+
+Zato Australci piju više kvalitetnih Kalifornijskih vina od Kalifornijaca, a Kalifornijci piju više kvalitetnih Australskih vina od Australaca. Troškovi prijevoza čine transport samo najskupljih vina isplativim. Slično, za vrijeme prohibicije snažniji se alkohol puno bolje prodavao, jer se rizik za slabiji nije isplatio.
+
 # Literatura
 
 * https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/

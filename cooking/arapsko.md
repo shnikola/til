@@ -23,3 +23,10 @@
 * U blender ubaci slanutak, tekućinu, **2 režnja češnjaka**, **2 žlice tahinija**. Blendaj par minuta.
 * Posoli i iscijedi **sok pola limuna**.
 * Zalij maslinovim uljem.
+
+## Leća na Marokanski
+
+* Stavi lonac vode da zavrije i ubaci **100g leće**, neka se kuha 20 minuta dok ne postane mekana.
+* Dok se leća kuha, nasjeckaj **1 manju kapulu** i **3 režnja češnjaka** pa ih stavi nakratko na tavu da smekšaju.
+* Ubaci kapulu i češnjak u blender zajedno s nasjeckanom **1 crvenom paprikom** i **2 žlice koncetrirane rajčice**. Dodaj začine: **sol**, **suhu papriku**, **kumin**, **korijander**, **đumbir u prahu**, **kajensku papriku**. Ocijedi **pola limuna**.
+* Pomiješaj pastu s lećom. Nasjeckaj peršin ako želiš.

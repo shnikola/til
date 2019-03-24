@@ -18,3 +18,9 @@ Kada pretječeš auto ili kamion:
 http://99percentinvisible.org/article/dutch-reach-clever-workaround-keep-cyclists-getting-doored/
 
 Kad izlaziš iz auta, otvaraj vrata suprotnom rukom (desnom ako si vozač, lijevom ako si suvozač). Tijelo će ti se automatski okrenuti i pogledat ćeš nadolazeće bicikliste ili promet.
+
+## Savjeti
+
+Kada pretječeš, čekaj da vidiš oba svjetla pretjecanog auta prije nego skreneš ispred njega.
+
+Nikad ne mijenjaj traku na križanjima.

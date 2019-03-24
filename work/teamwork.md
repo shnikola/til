@@ -6,9 +6,25 @@ Ako počneš raditi pod novi menadžerom, prirodno je da će te na tjednim sasta
 
 Ovaj odnos je još naglašeniji ako se radi o remote poslu. Temelj uspješne suradnje je povjerenje. U ljudskoj prirodi je pretpostaviti najgore kada se remote contact ne javlja. Najbolji način za uspostavu povjerenja je *managing upwards* - slati managerima status update svako toliko vremena. Time im olakšavaš posao i izbjegavaš neugodne upite tipa "U kojoj je fazi to i to?".
 
+## Delegation
+
+Ako delegiraš zadatak na nekog, daj im potpuni autoritet, odgovornost i potrebne resurse. Ako te moraju pitati za svako odobrenje troškova, znači da im ne vjeruješ. Poanta delegiranja je da upravo izbjegneš takav micromanagement.
+
+Delegiraj, ali najgori dio posla uvijek napravi sam.
+
+Kada zadaješ zadatak, odredi točno određeni cilj i vrijeme. Utorak nije određeno vrijeme, utorak u 15:00 jest. Komunikacija mora biti jasna.
+
+Delegiraj ljudima dok se ne počnu žaliti. Ljudi najčešće žele priliku da pokažu da su sposobni.
+
+Ne govori ljudima kako da rade, nego što trebaju napraviti. Dopsuti im da te iznenade.
+
 ## Standup
 
 Poanta standup sastnaka je da svi započnu radni dan s maksimalno informacija o o relevantnih za njihove zadatke. U slučaju dva teama u različitim vremenskim zonama, jedan team može na kraju svog dana ostaviti par natuknica na Slacku koje će drugi team ujutro pročitati.
+
+## Planiranje
+
+Budućnost se ne može planirati. Umjesto planova radi "nagađanja", jer će te to podsjetiti da nisu upisana u kamen.
 
 ## Customer Support
 

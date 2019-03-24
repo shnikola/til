@@ -6,26 +6,26 @@ Investiranje je davanje novca kompaniji kako bi mogla rasti i razvijati svoje po
 
 Špekulacija je kupovanje dionica s nadom da ćeš ih moći skuplje prodati i tako zaraditi. Pritom ne znaš niti te briga o tome što kupuješ. Drugim riječima, kockanje. Špekulacija nije nužno loša - ona povećava likvidnost burze dionica, tj. čini prodaju, kupnju i zamjenu dionica lakšom. Da nema špekulanata, ne bi imao kome prodati svoje dionice ako bi poželio.
 
+## Obveznice vs Dionice
+
+Da bi korporacija prikupila kapital za rast i ulaganje u nove projekte, može posuditi novce od banke. Ako su uvjeti koje banka nudi nepovoljni, može posuditi novce od investitora, izdajući obveznice (*bonds*). Vlasnici obveznica posuđuju novac korporaciji, a zauzvrat dobijaju isplatu osnovice s kamatom. Treći način za prikupljanje kapitala je izdavanje dionica (*shares*, zbirno *stock*).
+
+Obveznice su najmanje riskantna investicija. Vlasnici obveznica dobijaju samo dogovorenu kamatu, i vrijednost obveznice se ne mijenja. U slučaju bankrota i likvidacije korporacije, obveznici imaju zakonsko pravo da se prvi isplate od prodaje imovine kompanije.
+
+Povlaštene dionice (*preferred stock*) su nešto između obveznica i dionica. Ne daju pravo glasa, i često garantiraju fiksnu dividendu. U slučaju bankrota, povlašteni dioničari se isplaćuju nakon obveznika, ali prije običnih dioničara. Povlaštene dionice s opozivom (*callable preferred stock*) daju kompaniji pravo da u bilo kojem trenutku otkupi dionice nazad od ulagača, najčešće uz otplatu premije.
+
+Obične dionice (*common stock*) su najriskantinije. Vrijednost im može neograničeno rasti, ali i padati. U slučaju likvidacije, dioničari su zadnji koje se isplaćuje, i najčešće dobijaju tek mali dio uloženog.
+
+Korporacija može definirati i sebi specifične vrste dionica s posebnim pravilima (npr. s većim brojem glasova po dionici). Takve dionice u imenu imaju prefiks, npr. `BRK.A`, `BRK.B`.
+
 ## Prava dioničara
 
 Korporacije su poseban oblik organizacije koje zakon tretira kao pravnu osobu. Korporacija je "osoba" i posjeduje svoju imovinu. Time se ograničava odgovornost i korporacije i dioničara - ako korporacija bankrotira, dioničar ne odgovara svojom imovinom; ako dioničar bankrotira, ne može prodati imovinu korporacije da bi platio dugove.
 
-Drugim riječima. vlasnici dionica nisu vlasnici korporacija niti njihove imovine. Umjesto toga:
-* mogu glasati na sastancima dioničara i birati upravni odbor (*board of directors*) koji je zadužen za povećanje vrijednosti korporacije
+Drugim riječima, vlasnici dionica nisu vlasnici korporacije niti njene imovine. Umjesto toga:
+* mogu glasati na sastancima dioničara i birati upravni odbor (*board of directors*) koji je zadužen za povećanje vrijednosti korporacije.
 * imaju pravo na dividendu, udio u profitu kompanije. Mnoge dionice ne isplaćuju dividendu, nego reinvestiraju profit u rast kompanije, što se opet odražava na vrijednost dionice.
 * mogu prodati dionice nekom drugome.
-
-## Dionice vs Obveznice
-
-Korporacija izdaje svoje dionice (*shares*, zbirno *stock*) kako bi prikupila kapital za rast i ulaganje u nove projekte. Kupovina dionica direktno od korporacije naziva se *primary market*, a kupnja od drugih vlasnika dionica *secondary market*. Korporacija može prikupiti kapital i posudbom od banke, ili izdavanjem obveznica. Vlasnici obveznija posuđuju novac korporaciji, a zauzvrat dobijaju isplatu osnovice s kamatom.
-
-Obveznice (*bonds*) su najmanje riskantna investicija. Vlasnici obveznica dobijaju samo dogovorenu kamatu, i vrijednost obveznice se ne mijenja. U slučaju bankrota i likvidacije korporacije, obveznici imaju zakonsko pravo da se prvi isplate od prodaje imovine kompanije.
-
-Povlaštene dionice (*preferred stock*) su nešto između obveznica i dionica. Ne daju pravo glasa, i često garantiraju fiksnu dividendu. U slučaju bankrota, povlašteni dioničari se isplaćuju nakon obveznika, ali prije običnih dioničara. Povlaštene dionice s opozivom (*callable preferred stock*) daju kompaniji pravo da u bilo kojem trenutku otkupi dionice nazad od ulagača, najčešće uz otplatu premije.
-
-Obične dionice (*common stock*) su najriskantinije. Vrijednost im može neograničeno rasti, ali i padati. U slučaju likvidacije, dioničari su zadnji koje se isplaćuje, i najčešće dobijaju tek sitniš.
-
-Korporacija može definirati i sebi specifične vrste dionica s posebnim pravilima (npr. s većim brojem glasova po dionici). Takve dionice u imenu imaju nastavak, npr. `BRK.A`, `BRK.B`.
 
 ## Privatne vs Javne Dionice
 

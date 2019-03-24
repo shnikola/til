@@ -1,4 +1,4 @@
-# Povijest umjetnosti
+# Slikarstvo
 
 ## Renesansa
 

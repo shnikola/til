@@ -6,12 +6,6 @@ Security znači da nitko ne može doći do tvojih podataka.
 
 Integrity znači da nitko ne može uništiti tvoje podatke.
 
-## URI validation
-
-https://blog.steve.fi/If_your_code_accepts_URIs_as_input__.html
-
-Dopusti samo `http://` i `https://` inpute. Inače ti napadač može poslati `file:///etc/passwd`.
-
 ## Reflections on Trusting Trust by Ken Thompson
 
 Trojanski konj je program koji glumi koristan program. Npr. unixov `login` koji osim što prihvati tvoju lozinku, šalje je na napadačev email. Ukoliko je promijenjen samo `login` binary, dovoljno je rekompajlirati iz sourca da bi se uklonio zlonamjerni kod.
@@ -23,6 +17,7 @@ Ovo je moguće napraviti čak i bez da se ostavi trag u sourceu compilera. Prvo 
 ## Literatura
 
 * https://www.owasp.org/index.php/Category:Attack
+* https://jdow.io/blog/2018/03/18/web-application-penetration-testing-methodology
 
 ## Tools
 

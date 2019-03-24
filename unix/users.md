@@ -18,7 +18,6 @@ Svaki korisnik ima svoj folder koji se inače nalazi u `/home/<username>`.
 `gpasswd -a <ime> <grupa>` dodaje usera u grupu
 `gpasswd -d <ime> <grupa>` briše usera iz grupe
 
-
 ## Logins
 
 `who` ispisuje trenutno ulogirane usere.
@@ -50,6 +49,3 @@ Password flag je prazan ako user nema password, `x` ako ima, `*` ako user nema l
 `/etc/shadow` sadrži enkriptirane korisničke passworde i podatke o tome kada i ako ističu.
 
 `/etc/group` sadrži listu svih grupa i usera koji im pripadaju.
-
-
-

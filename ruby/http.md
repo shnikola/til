@@ -2,6 +2,10 @@
 
 Rubijev stdlib je odličan, s iznimkom šugavog `Net::HTTP` librarija. On koristi verbozan i nekonzistentan API, s mnogo low level detalja kojima se developer mora gnjaviti. Izbjegavaj ga koristiti ako ne moraš.
 
+Od altenativnih librarija postoje wrapperi oko `Net:HTTP` s ljepšim API-jem (`RestClient`, `HTTParty`), wrapperi oko `libcurla` (`Typheous`, `Curb`).
+
+`Faraday` je adapter koji podržava različite HTTP librarije u backendu, pružajući isti API za korištenje svakog (nešto kao Rack).
+
 ## HTTP.rb
 
 Pure ruby HTTP klijent je odličan u svojoj jednostavnosti:

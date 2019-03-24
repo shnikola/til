@@ -1,5 +1,17 @@
 # Production
 
+## Scaling
+
+nginx ispred puma servera, servira static assete i handla spore klijente. Session se drži u cookiju
+
+Korisno je imati viewove neovisne o aplikaciji (user stanje da se dohvaća ajaxom) kako bi se mogao što veći dio viewa cacheirati.
+
+Instaliraj 2+ memcached servera i koristi Dalli.
+
+Simptomi problema skalabilnosti, za read: sporo učitavanje stranica, korisnici dobijaju 503, database visoki CPU i read IO. Za write: dabase write IO visok, aplikacija se "lock upa", replike kasne sa stanjem
+
+Caching je brz i jeftin, koristi ga ako će jedan upit uštediti nekoliko database upita.
+
 ## Heroku
 
 Dodaj heroku remote s `heroku git:remote -r heroku-staging -a app-name`.
@@ -53,7 +65,6 @@ Iznimka je passenger koji dolazi s distribucijom nginxa, pa gzipanje dolazi out-
 
 ## Rails u produkciji
 
-http://www.akitaonrails.com/2016/03/22/is-your-rails-app-ready-for-production
 
 **Deploy:** Heroku (ako želiš jeftinije tipa EC2 ili Digital Ocean, treba klijentima dati do znanja da s tim ne dobijaju 24/7 security updates)
 **Server:** Passenger ili Puma (Unicorn ima problem sa sporim klijentima)

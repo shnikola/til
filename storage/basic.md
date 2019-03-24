@@ -1,7 +1,28 @@
-# Database
+# Data Storage
 
-TODO: paginacija http://www.xarg.org/2011/10/optimized-pagination-using-mysql/
-Memcached
+## Odabir baze
+
+* Relational DB: MySQL, PostgreSQL, Oracle, SQL Server
+* Document Stores: MongoDB, CouchDB, Amazon DynamoDB
+* Key Value Stores: Redis, Memcached, Riak, Amazon DynamoDB
+* Wide Column Stores: Cassandra, HBase, Accumulo, Hypertable
+* Search Engines: ElasticSearch, Solr, Splunx, Sphinx
+* Graph DB: Neo4j, Titan, OrientDB
+* Time Series DB: RRDtool, InfluxDB, Graphite
+
+Pri odabiru vrste spremišta, uzmi u obzir tip aplikacije:
+* Online Transaction Processing: veliki broj korisnika, istovremeno izvršavaju puno malih transakcija. Trebaju biti brze što ostvaruju cachiranjem "live" podataka.
+* Analytics: mali broj korisnika izvršavaju spore querije kroz cijele data setove
+
+Za većinu aplikacija RDB isprva nude sve potrebne funkcionalnosti. Kasnije kada se javlja potreba za skaliranjem počni uvoditi druge tehnologije.
+
+Event logovi (npr. praćenje korisničkih eventova) često počnu kao append only tablice u relacijskoj bazi. Ali ubrzo postanu problematične jer generiraju velik broj writeova (milijune dnevno) i opterećuju hardware. Ako ne postoji dobar razlog za držanje tih podataka u RDB-u, prebaci ih u specijalizirani storage, npr. AWS Redshift.
+
+**Elasticsearch** je odličan za full text search, i skalira se za veliku količinu podataka (i do TB). Jedino je zeznut za konfigurirati.
+
+**Redis** je dobar za spremanje privremenih podataka. Koristi ga kao cache koji nudi semantiku listi, hasha i seta. Ali nije transactional i moraš ga koristiti pod pretpostavkom da svi podatci mogu u bilo kojem trenutku nestati.
+
+**RabbitMQ** je queue visokih performansi za komunikaciju point-to-point ili pub-sub.
 
 ## The Log
 
@@ -23,18 +44,6 @@ Skaliranje i optimiziranje loga (ipak ne možemo čuvati svaki živi event zauvi
 * Particioniranje recorda po nekom id-ju, batching čitanja i pisanja
 * Za event data (tracking), čuvati samo window, stare evente brisati.
 * Za keyed data (db), brisati recorde čije novije verzije imamo u logu.
-
-## Indexes
-
-Indeksi su korisni samo ako dohvaćaš mali broj rezultata; ili za izbjegavanje sortiranja.
-
-Engine automatski neće koristiti indeks ako procjeni da je sekvencijalni scan brži (npr. ako ima previše rezultata)
-
-Unique indeksi su uvijek potrebni, jer `validates_uniqueness_of` ne štiti od concurrent requestova.
-
-Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
-
-Pronalaženje nekorištenih indeksa.
 
 ## Migrations in production
 
@@ -66,3 +75,4 @@ Ukoliko se ijedan blok promijeni, morat će se promijeniti i njegov hash, a sami
 
 * https://sqlbolt.com/ - interaktivni tutorial, super za učenje
 * http://use-the-index-luke.com - sve o indeksima
+* https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql

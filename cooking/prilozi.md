@@ -15,3 +15,10 @@
 * Nasjeckaj **10ak sušenih rajčica**
 * Kad je kvinoja gotova, stavi je u zdjelu, polij je dressingom, umiješaj sušene rajčice i orahe.
 * Kada se malo ohladi, umiješaj **listove špinata**.
+
+## Refried Beans
+
+* na vatri otopi **žlicu masti** (ili samo stavi ulje)
+* nasjeckaj **1 luk** pa ga prži na masnoći dok dobro ne zažuti.
+* dodaj **kumin** i **kajensku papriku**
+* ocijedi i isperi **800g graha iz konzerve** (sačuvaj tekućinu), pa stavi na tavu. Izgnječi do željene teksture, pa prži 10ak minuta. Posoli i popapri.

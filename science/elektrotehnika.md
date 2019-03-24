@@ -22,8 +22,9 @@ Ali i dalje se može dogoditi da ti toster bez utikača s uzemljenjem upadne u k
 
 http://waitbutwhy.com/2015/06/how-tesla-will-change-your-life.html
 
-1. Izgaranje fosilnih goriva dovodi do povećanja udjela CO2, zbog uvođenja ugljika koji je milijunima godina bio zarobljen ispod zemlje. Povećanje udjela CO2 neupitno dovodi do povećanja temperature, a već male promjene temperature mogu izazvati veliko sranje.
-2. Ogroman dio izgaranja fosilnih goriva dolazi iz automobila (preko 70% u SAD-u). Automobilska tehnologija nije se kardinalno promijenila u zadnjih 100 godina. Razlozi su što je novoj kompaniji jako teško ući u automobilsku industriju, te zato što negativni učinak automobila na fosilna goriva nije direktno vidljiv.
+Izgaranje fosilnih goriva dovodi do povećanja udjela CO2, zbog uvođenja ugljika koji je milijunima godina bio zarobljen ispod zemlje. Povećanje udjela CO2 neupitno dovodi do povećanja temperature, a već male promjene temperature mogu izazvati veliko sranje.
+
+Ogroman dio izgaranja fosilnih goriva dolazi iz automobila (preko 70% u SAD-u). Automobilska tehnologija nije se kardinalno promijenila u zadnjih 100 godina. Razlozi su što je novoj kompaniji jako teško ući u automobilsku industriju, te zato što negativni učinak automobila na fosilna goriva nije direktno vidljiv.
 
 Vozila koja koriste električni motor:
 *hibridi* imaju električni i motor na unutarnje izgaranje, bateriju puni gorivo i kočenje. I dalje su ovisni o gorivu.

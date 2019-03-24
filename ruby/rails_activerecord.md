@@ -58,6 +58,10 @@ U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se n
 
 Kad se koristi `includes`, `distinct` nije potreban.
 
+## has_many i delete
+
+`user.posts.delete_all` po defaultu neće obrisati sve postove, samo će im postaviti `user_id` na NULL. Da bi brisanje radilo, potrebno je postaviti `has_many :posts, dependent: :delete_all`.
+
 ## Reloading
 
 Jednom kad se objekt iz baze učita u memoriju, vrijednosti atributa se cachiraju. Ako je netko u drugom dijelu aplikacije zapisao nove vrijednosti u bazu, objekt možeš reloadati s `comment.reload`. Isto vrijedi i za asocijacije, npr. `post.comments.reload`.

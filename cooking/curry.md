@@ -18,16 +18,13 @@ Upgrade prijedlozi:
 * Nakon pome možeš dodati **bilo što**: prženu piletinu, bijelu ribu, grah, slanutak, tikvicu. Preferiraj sastojke koje ne treba dugo kuhati ili su već termički obrađeni.
 * Kao prilog basmati riža ili obični jogurt
 
-## Curry s pastom (Za veliki lonac)
+## Thai Curry
 
-* **700g piletine**, nasjeckaj, posoli, popapri i poprži na tavi. Izvadi sa strane.
-* **2 kapule** i **3 režnja češnjaka** nasjeckaj i zažuti u loncu.
-* **pola veće tikve (700g)** nasjeckaj i stavi u lonac,
-* **konzervu sjeckane rajčice (400g)** stavi u lonac,
-* **svježi đumbir** naribaj i stavi u lonac,
-* **150g žute curry paste** (mi smo koristili Cock Brand) stavi u lonac,
-* sve polij s **500 ml vode** i ubaci pileću kocku,
-* ubaci piletinu u lonac i krčkaj 20ak minuta, dok tikva ne smekša.
-* dok se krčka, **250g šampinjona** i **3 paprike** nasjeckaj i poprži na tavi.
-* kad tikva smekša, dodaj gljive i papriku, te ulij **200 ml kokosovog mlijeka** pa krčkaj još 5 minuta.
-
+* **Pola litre kokosovog mlijeka** stavi u lonac i reduciraj dok ne postane gusto i ulje se počne odvajati.
+* Dodaj **50g curry paste (oko 3 žlice)** i miješaj 3 minute dok se dobro ne pomiješa i postane aromatično.
+* Ubaci **500g nasjeckanih pilećih zabataka**, i dobro ih pomiješaj s pastom.
+* Dodaj **još pola litre kokosovog mlijeka** i **250ml pilećeg temeljca**
+* Dodaj **2 žlice palminog ili smeđeg šećera**, **žlicu ribljeg umaka** (najsmrdljivijeg sastojka u svemiru) i **3-4 lista limete**.
+* Neka se krčka 10-15 minuta dok piletina nije mekana. U ovom trenutku možeš dodati i tvrđe povrće (npr. mrkvu ili tikvu).
+* Kad je piletina spremna, dodaj **bambus** iz konzerve (ne daje puno na okusu, ali je hrskav) i **nasjeckanu papriku**. Pusti da zavrije pa makni s vatre.
+* Dodaj još šećera i ribljeg umaka po potrebi. Serviraj s rižom.

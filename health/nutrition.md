@@ -14,7 +14,7 @@ Ne postoji mnogo dokaza o povezanosti određenih namirnica i zdravlja, ali ovo s
 
 4. Pij većinom vodu. Budi umjeren s alkoholom, kavom i ostalim napitcima. Odnosi se prema svim napitcima s kalorijama, uključujući i mlijeko, kao prema alkoholu. Možeš ih piti jer ti se sviđaju, ali ne konzumiraj ih kao da su ti potrebni.
 
-5. Što češće jedi s drugim ljudima, pogtovo s ljudima koji su ti dragi. Veća je vjerojatnost da ćeš kuhati, jesti ćeš sporije i bit ćeš sretniji.
+5. Što češće jedi s drugim ljudima, pogotovo s ljudima koji su ti dragi. Veća je vjerojatnost da ćeš kuhati, jesti ćeš sporije i bit ćeš sretniji.
 
 Par mudrih izreka:
 * "Bolje je platiti u dućanu nego u doktora."
@@ -52,7 +52,7 @@ Ulje: `1 žlica` (sva imaju približno isto). To je `13g` masti.
 
 Voće: `1` jabuka, kruška, ili banana; `2` mandarine, breskve, kivija. To je oko `20g` ugljikohidrata.
 
-Povrće: `80g` graha, `150g` krumpira; `200g` luka, poriluka, mrkve; `300g` brokule; `400g` karfiola, patlidžana; `500g` gljiva, rajčice, paprike.
+Povrće: `80g` graha, `1` kukuruz;  `150g` krumpira; `200g` luka, poriluka, mrkve; `300g` brokule; `400g` karfiola, patlidžana; `500g` gljiva, rajčice, paprike, tikvica.
 
 Povrće koje ima jako malo kalorija: salata, špinat, kupus, krastavci, tikvice, celer, šparoge, repa i rotkvice, češnjak.
 

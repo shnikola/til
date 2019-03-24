@@ -90,7 +90,6 @@ Za potpisivanje i enkripciju se koristi `secrets.secret_key_base`.
 `secure: true` će slati cookie samo u HTTPS requestima.
 `httponly: true` ne dopušta javascriptu da pristupi cookiju.
 
-
 ## Rails Console
 
 `app` - trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`

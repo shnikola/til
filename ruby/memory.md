@@ -52,6 +52,14 @@ Nemoj mijenjati GC settingse osim ako stvarno znaš što radiš, vjerojatno će�
 
 Velike aplikacije s puno threadova (npr. Sidekiq workeri koji imaju defaultno 25 threadova) izazivaju veliku fragmentaciju jer Ruby koristi glibcmalloc koji je loš. Ili smanji broj threadova, ili postavi `MALLOC_ARENA_MAX = 2`, ili se nadaj da će Ruby uskoro shippati s jemallocom.
 
+## String memory reduction
+
+Stringovi su najčešći krivac za veliku potrošnju memorije. Stavljanje komentara `frozen_string_literal: true` na početak filea će tretirati sve stringove u kodu kao immutable.
+
+Za freezanje pojedinačnih stringova, koristi `-` (npr. `-"frozen string"`). Ruby će automatski deduplicirati frozen stringove, pa će više pojavljivanja istog stringa biti samo jednom alocirano.
+
+Korištenje stringova za spremanje ili dohvaćanje iz hasha se automatski freeza, pa je umjesto `foo["a".freeze]` dovoljno pisati `foo["a"]`. Isto vrijedi i za `case when` izraze.
+
 ## Memory Leaks
 
 Objekti se mogu podijeliti u 3 grupe:
@@ -87,3 +95,4 @@ ReadCube dashboard reportovi trošili su previše memorije. S `memory_profiler` 
 * http://www.be9.io/2015/09/21/memory-leak/
 * https://samsaffron.com/archive/2015/03/31/debugging-memory-leaks-in-ruby
 * https://www.youtube.com/watch?v=kZcqyuPeDao - Halve Your Memory Usage With These 12 Weird Tricks
+* https://rubytalk.org/t/psa-string-memory-use-reduction-techniques/74477

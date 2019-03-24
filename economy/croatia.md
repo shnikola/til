@@ -4,6 +4,8 @@
 
 Smiješ tražiti ako ti je godišnji primitak manji od `300.000 kn` (limit za ulazak u PDV.)
 
+U taj godišnji primitak se broje i svi primitci od autorksih i studentskih ugovora u toj godini, pa pripazi ako radiš do limita.
+
 Plaćaš maksimalno `14.000 kn` doprinosa i `6700 kn` poreza.
 
 ## Porez na dohodak

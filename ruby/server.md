@@ -12,9 +12,9 @@
 
 Rack 1.5 nema direktnu podršku za Streaming, Server-Sent Events i Websockete, ali dozvoljava "socket hijacking" koji prepušta developeru direktno pisanje u socket i ručno implementiranje spomenutih protokola.
 
-Full Hijacking API predaje aplikaciji potpunu kontrolu socketa, a sam server ne šalje ništa. `env['rack.hijack'].call` započinje socket hijack, a za pisanje u socket koristi se IO objekt `env['rack.hijack_io']`. Aplikacija je zadužena za ispisivanje headera i zatvaranje IO objekta.
+Full Hijacking API predaje aplikaciji potpunu kontrolu socketa, a sam server ne šalje ništa. `env['rack.hijack'].call` započinje socket hijack, a za pisanje u socket koristi se IO objekt `env['rack.hijack_io']`. Aplikacija je zadužena za ispisivanje headera i zatvaranje socketa.
 
-Partial Hijacking API obavlja slanje headera iz servera, a zatim predaje kontrolu socketa aplikaciji. `headers['rack.hijack'] = proc do |io|` definira ponašanje nakon slanja headera. Body dio responsa `[200, headers, []]` se zanemaruje.
+Partial Hijacking API obavlja slanje headera iz servera, a zatim predaje kontrolu socketa aplikaciji. `headers['rack.hijack'] = proc do |io|` definira ponašanje nakon slanja headera. Body dio responsa `[200, headers, nil]` se zanemaruje.
 
 ### Rack Events
 

@@ -95,6 +95,11 @@ SELECT region, product FROM orders WHERE region IN (SELECT region FROM top_regio
 
 Upsert je CREATE_OR_UPDATE koji se izvodi unutar *jedne transakcije* na razini baze. Naredba je `INSERT INTO users (id, name) VALUES (1, 'Nikola') ON CONFLICT DO UPDATE SET name=excluded.name`
 
+## Backup and restore
+
+Dump: `pg_dump production_db_name -h db-host.rds.amazonaws.com --verbose > dump.sql`
+Restore `psql development_dbn_ame < dump.sql`
+
 ## Schema Migrations
 
 * `DDL Transaction` omogućuje da mijenjaš tablicu i stupce s mogućnošću rollbacka ako se dogodi error (MySQL to nema).
@@ -132,9 +137,13 @@ Shell varijable:
 * `HISTFILESIZE=` i `HISTSIZE=` za neograničen history size.
 U `.psqlrc` dodaj:
 * `\x auto` prikazuje rezultat u najboljem formatu.
-* `\timing on` ispisuje koliko je svaki quer trajao
+* `\timing on` ispisuje koliko je svaki query trajao
 * `\set HISTCONTROL ignoredups`
 Korisne naredbe:
 * `\d` ispisuje sve relatione u bazi. `\dt` samo za tablice.
 * `\d <table>` ispisuje info o tablici.
 * Postavi `EDITOR=atom` (ili koji već), pa koristi `\e` za pisanje querija u editoru.
+
+# Literatura
+
+* Scaling: https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql

@@ -1,4 +1,4 @@
-# Learning
+# Učenje
 
 ## Focused and Diffused mode
 
@@ -91,6 +91,10 @@ Primjeri ljudi koji su uspjeli unatoč tome što si bili loši u školi i nisu i
 ## Team work
 
 Lijeva hemisfera mozga zadužena je za proces rješavanja i ne sagledava stvari iz šire perspektive, pa se može dogoditi da ne primjeti potpuno besmisleno konačno rješenje. Ako učiš ili radiš s drugima, lakše ćeš pronaći greške u svom razmišljanju, a objašnjavanje prijateljima pomoći će i tvom razumijevanju.
+
+## Masters and doctorate
+
+"Doing the master is to understand that you don't know anything. Doing your doctorate is to learn the others know nothing as well."
 
 # Literatura
 

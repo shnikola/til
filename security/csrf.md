@@ -24,7 +24,7 @@ Server treba generirati CSRF token s velikom random vrijednosti koji se dodaje u
 
 ## Same-origin policy and CORS
 
-Bitna stavka u obrani od CSRF je *same-origin policy*. Origin se definira kao `schema + host + port`, npr. `https://www.gmail.com:80`. Browseri dopuštaju da se neki resursi na stranici dohvaćaju s drugog origina: slike, stylesheetovi, skripte, iframeovi i video sadržaj. Dopušta se i slanje POST forme na različiti origin.
+Bitna stavka u obrani od CSRF je *same-origin policy*. Browseri dopuštaju da se neki resursi na stranici dohvaćaju s drugog origina: slike, stylesheetovi, skripte, iframeovi i video sadržaj. Dopušta se i slanje POST forme na različiti origin. Origin se definira kao `schema + host + port`, npr. `https://www.gmail.com:80`.
 
 Ali browser neće dopustiti da skripta AJAXom dohvati ili pošalje podatke na drugi origin. Zahvaljujući tome, skripta s `evil.com` ne može dohvatiti tvoje mailove s `gmail.com` APIja koristeći tvoje cookije.
 
@@ -45,6 +45,12 @@ Za slanje cookija i authentifikacije preko AJAXa, potrebno je dodati `withCreden
 Preflight se radi kako bi se zaštitili stari serveri koji ne očekuju da će primiti `PUT` ili `DELETE` s različitog origina. Da im novi browseri ne bi automatski poslali takav request, šalje se `OPTIONS` na koji oni neće odgovoriti, pa će browser prepoznati da ne podržavaju CORS.
 
 Preflight requesti se mogu cachirati, koristeći serverov header `Access-Control-Max-Age`, ali browseri ne dopuštaju cachiranje cijele domene nego na razini requesta, i još dopuštaju maksimalno vrijeme od 10 min. Stoga je cachiranje trenutno prilično beskorisno.
+
+### no-cors
+
+Browser neke resurse (slike, cssovi, scripte i media sadržaj) dohvaća s različitog origina bez CORSa, šaljući s requestom i sve cookije za taj origin. Ovo nije baš dobra stvar, ali jako puno siteova ovisi o tome pa je prekasno da se mijenja.
+
+Iako se tako dohvaćeni podatci ne mogu isčitati iz skripte (pa ne možeš kao `src` slike postaviti JSON endpoint), možeš detektirati jesu li podatci uspješno dohvaćeni ili ne. Na taj način, ako postoji slika koja se prikazuje samo ulogiranim korisnicima, možeš detektirani je li korisnik ulogiran u neki vanjski servis.
 
 ## Misconfigured CORS Exploitation
 

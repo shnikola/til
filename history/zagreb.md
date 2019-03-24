@@ -40,7 +40,7 @@ Lusteri u zagrebačkoj katedrali su prethodno krasili kockarnicu Gold Coast u La
 
 Zagrebačka mumija u etruščanskoj sobi Arheološkog muzeja.
 
-U Frankopanskoj 10 je prilikom gradnje kina Helios početkom 20.st. pronađena kost kuka vunastog mamuta. Komorna pozornica kazališta Gavella nazvana je "Scena Mamut" u čast ovom zagrebačkom mamutu
+U Frankopanskoj 10 je prilikom gradnje kina Helios početkom 20.st. pronađena kost kuka vunastog mamuta. Komorna pozornica kazališta Gavella nazvana je "Scena Mamut" u čast ovom zagrebačkom mamutu.
 
 ## 20. stoljeće
 

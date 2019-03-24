@@ -1,27 +1,26 @@
 # Marketing
 
-## PR
+## Motivacija kupca
 
-http://www.paulgraham.com/submarine.html
+Ljudi ne kupuju proizvod, nego bolju verziju sebe. Kupuju ga ne zbog toga što on radi, nego zbog onog što zamišljaju da će raditi s njim.
 
-Sve što pročitaš na netu ili časopisu, a ne vidiš razlog zašto je napisano (tj. ne radi se o tragediji ili politici), PR tvrtka stoji iza toga.
+## Ispitivanje tržišta
+
+Ne tražiš savršeni umak - tražiš savršene umake.
+
+Howard Moskowitz, ispitivač tržišta, tražio je kakav umak za špagete amerikanci vole, i otkrio da postoje 3 različite grupe ljudi. Jedna od njih preferira chunky umak, koji uopće nije postojao na tržištu.
+
+Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. Ljudi ne znaju što zapravo žele. Ako pitaš ljude kakvu kavu žele, svi će reći "dark rich roast", iako ih zapravo 20% voli dark rich roast. Većina preferira slabu mlijekastu kavu, ali naravno da to nitko neće reći.
+
+Tek odustajanjem od univerzalnog ("autentičnog") rješenja i prihvaćajući raznovrsnost ljudi i ukusa možemo doći do zadovoljnih mušterija.
 
 ## SEO
 
-* Ako tvoj proizvod ima više od dva konkurenta, featuri se manje bitni - SEO ti je najbitniji.
-* Odredi jesi li "head" (općeniti search) ili "long tail" (puno specifičnih searcheva) site.
-* Koristi bread crumb navigaciju
-* Optimiziraj title, one je najbitniji. Pripazi i na headinge na stranici.
-* Biti na vrhu rezulatata je iznimno bitno. Prvi link dobija 40% klikova, idući 11%. Cijela druga stranica dobija samo 10%.
-* Zato se fokusiraj na search terms u kojima se možeš dobro rangirati.
+Ako tvoj proizvod ima više od dva konkurenta, featuri se manje bitni - SEO ti je najbitniji. Biti na vrhu rezulatata je iznimno bitno. Prvi link dobija 40% klikova, idući 11%. Cijela druga stranica dobija samo 10%. Zato se fokusiraj na search terms u kojima se možeš dobro rangirati.
 
-Za startupe:
-* I prije nego što je proizvod gotov, stavljaj što više sadržaja na stranicu (blogaj o domeni, o korisnicima) kako bi se što više linkova raspršilo uokolo.
-* Kombiniraj sadržaj koji će privući pažnju i koji će prodavati proizvod.
-* Za prikupljanje sadržaja izbjegavaj: user generated, bilo ukradeni (scribd, youtube), bilo originalni (wordpress); mass content creation slabo plaćenih najamnih radnika (demand media); plaćanje stručnjacima (čak ni ny times ne može to priuštiti)
-* Umjesto toga, koristi vlastite podatke (npr. OKcupid postovi o statistici preferencija), piši o svevremenskim temama (aktualne teme brzo zastare)
-* prati analitiku koji postovi dobijaju najviše pažnje, i zadrži se na tim temama.
-* Koristi probleme i jezik koji tvoje mušterije koriste kad ti šalju emailove, jer vjerojatno tako i pretražuju
+I prije nego što je proizvod gotov, stavljaj što više sadržaja na stranicu (blogaj o domeni, o korisnicima) kako bi se što više linkova raspršilo uokolo. Kombiniraj sadržaj koji će privući pažnju i koji će prodavati proizvod. Koristi vlastite podatke (npr. OKcupid postovi o statistici preferencija), piši o svevremenskim temama (aktualne teme brzo zastare).
+
+Prati analitiku koji postovi dobijaju najviše pažnje, i zadrži se na tim temama. Koristi probleme i jezik koji tvoje mušterije koriste kad ti šalju emailove, jer vjerojatno tako i pretražuju
 
 ## Emails
 
@@ -45,18 +44,6 @@ Gotovi templati da se ne gnjaviš s HTMLom:
 * https://github.com/leemunroe/responsive-html-email-template
 * https://htmlemail.io/
 
-## On spaghetti sauce - Malcolm Gladwell
-
-https://www.youtube.com/watch?v=VkhFh5Ms1vc
-
-Ne tražiš savršeni umak - tražiš savršene umake.
-
-Howard Moskowitz, ispitivač tržišta, tražio je kakav umak za špagete amerikanci vole, i otkrio da postoje 3 različite grupe ljudi. Jedna od njih preferira chunky umak, koji uopće nije postojao na tržištu.
-
-Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. Ljudi ne znaju što zapravo žele. Ako pitaš ljude kakvu kavu žele, svi će reći "dark rich roast", iako ih zapravo 20% voli dark rich roast. Većina preferira slabu mlijekastu kavu, ali naravno da to nitko neće reći.
-
-Tek odustajanjem od univerzalnog ("autentičnog") rješenja i prihvaćajući raznovrsnost ljudi i ukusa možemo doći do zadovoljnih mušterija.
-
 ## Writing One-Sentence Product Descriptions
 
 Želiš prodati proizvod posjetitelju u 30 sekundi. Predstavi glavni feature koji:
@@ -77,3 +64,5 @@ Ako prodaješ preko weba, pošalji mali poklon sa svakim paketom (npr. slatkiš)
 * https://moz.com/learn/seo
 * http://www.kalzumeus.com/2010/01/24/startup-seo/
 * http://coglode.com/
+* https://devmarketing.xyz
+* On spaghetti sauce - Malcolm Gladwell [https://www.youtube.com/watch?v=VkhFh5Ms1vc]
