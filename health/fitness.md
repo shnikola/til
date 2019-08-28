@@ -1,25 +1,36 @@
 # Fitness
 
-## Posture
+## Držanje
 
 Ramena iza, brada gore. postavi si monitor da gledaš ravno dok sjediš, a ne prema dolje.
 
 Ako dugo sjediš, ustani i prošetaj svakih 45 minuta.
 
+## Ciljevi
+
+Da budeš dovoljno snažan da možeš podignuti dijete, premještati namještaj, ili ponijeti nekog u slučaju opasnosti, bez da se ozlijediš. Da smanjiš rizik od spriječivih bolesti.
+
+Za tu razinu fizičke spreme, trebaš moći:
+* Squat `1.5x` tjelesne mase
+* Bench `1.3x` tjelesne mase
+* Deadlift `1.6x` tjelesne mase
+* Overhead `0.8x` tjelesne mase
+* Sklekova `35` zaredom
+* Zgibova `12` zaredom
+* Plank `> 60` sekundi
+
 ## Fundamental Four
 
-1. Strength: snaga, koliko možeš podići jednom. Osnova svake aktivnosti.
-2. Power - eksplozivnost, koliko možeš podići vrlo brzo.
-3. Muscle mass - mišićna masa. Korisna u sportovima poput ragbija, odmaže u sportovima poput penjanja.
-4. Muscular endurance - izdržljivost, koliko puta možeš podići teret bez prekida. osnova za trčanje i plivanje.
+1. Snaga (*strength*): koliko možeš podići jednom. Osnova svake aktivnosti.
+2. Eksplozivnost (*power*): koliko možeš podići vrlo brzo.
+3. Izdržljivost (*muscular endurance*): koliko puta možeš podići teret bez prekida. Osnova za trčanje i plivanje.
+4. Mišićna masa (*muscle mass*): koliko velike mišiće imaš. Korisno u sportovima poput ragbija, odmaže u sportovima poput penjanja.
 
 Ako treniraš s težinom koju možeš podići samo jednom, dobivaš na snazi, ali ne i na masi. Ako treniraš s težinom koju možeš podići 6-12 puta, dobivaš na masi. Ako treniraš s težinom koju možeš podići 50 puta, dobivaš na mišićnoj izdržljivosti.
 
-Ljudsko tijelo se prilagođava stresu. Nakon vježbe, mišići slabe od umora, zatim se oporavljaju, te nakon par dana ulaze u *superkompenzaciju* gdje postaju malo snažniji nego prije. Uskoro nakon toga ponovno se vraćaju na staro. Zato je važno tempirati trening da uvijek vježbaš u razdoblju superkompenzaciju, svaki put malo povećavajući težinu koju dižeš. Ako staviš treninge prečesto ili prerijetko, mišići neće biti spremni i nećeš napredovati
+Ljudsko tijelo se prilagođava stresu. Nakon vježbe, mišići slabe od umora, zatim se oporavljaju, te nakon par dana ulaze u *superkompenzaciju* gdje postaju malo snažniji nego prije. Uskoro nakon toga ponovno se vraćaju na staro. Zato je važno tempirati trening da uvijek vježbaš u razdoblju superkompenzacije, svaki put malo povećavajući težinu koju dižeš. Ako staviš treninge prečesto ili prerijetko, mišići neće biti spremni i nećeš napredovati.
 
-pressing and dead-lifting on even days, squatting and doing chin-ups on odd days, avoiding all other exercises, and adding a little to the bar each time, you'll be stronger than you've ever been in only a month's time
-
-keep it simple; understand that variety is overrated. Variety does stave off boredom – it's fun to mix in new exercises all the time – but a guy who hasn't trained in a long time, if ever, will get stronger faster on the simplest program of squats, dead lifts, and presses, three times a week
+Raznolikost je precijenjena. Najbrži način do snage su squatovi, deadliftovi i bench, tri puta tjedno.
 
 ## Osnovne vježbe
 
@@ -80,3 +91,4 @@ Spuštaj se u čučanj ali čim ti potkoljenica dotakne šipku, prestani savijat
 # Literatura
 
 * https://www.youtube.com/watch?v=OyK0oE5rwFY
+* https://whitecoattrainer.com/blog/how-strong-are-you

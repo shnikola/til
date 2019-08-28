@@ -1,5 +1,9 @@
 # Umiranje
 
+## Kako umrijeti
+
+Ako ti ikad dijagnosticiraju neizlječivu bolest, odbij bilo kakav tretman koji će ti dati vrijeme po cijenu kvalitete života. Provođenje ostatka života u bolnici je bez iznimke mučenje. Bolnica je prisiljena održavati te na životu koliko god moguće, po cijenu operacija, guranja cijevi, spajanja na strojeve i šopanja lijekovima. Ono što većina doktora odabere za sebe je umrijeti kod kuće, bez medicinske intervencije.
+
 ## Što reći nekome tko je izgubio voljenu osobu
 
 Kada vidimo nekoga da tuguje za bliskom osobom, prirodna reakcija je da im želimo dati prostora i ne miješati se jer se to čini isforsirano. Ali u takvoj situaciji ti je komunikacija s prijateljima i obitelji zapravo najviše potrebna.
@@ -18,3 +22,5 @@ Nakon par tjedana, uključi ih u "normalne" aktivnosti. Pozovi ih na gledanje fi
 
 * http://hintjens.com/blog:115
 * https://medium.com/@webwright/today-is-my-wifes-first-birthday-since-she-died-7369944c43ec
+https://www.saturdayeveningpost.com/2013/03/how-doctors-die/
+* https://www.reddit.com/r/TrueReddit/comments/220re9/who_by_very_slow_decay_a_freshlyminted_doctor/cgjmbfa/

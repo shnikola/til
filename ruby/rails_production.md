@@ -65,7 +65,6 @@ Iznimka je passenger koji dolazi s distribucijom nginxa, pa gzipanje dolazi out-
 
 ## Rails u produkciji
 
-
 **Deploy:** Heroku (ako želiš jeftinije tipa EC2 ili Digital Ocean, treba klijentima dati do znanja da s tim ne dobijaju 24/7 security updates)
 **Server:** Passenger ili Puma (Unicorn ima problem sa sporim klijentima)
 **Metrics:** New Relic, Papertrail
@@ -76,4 +75,5 @@ Iznimka je passenger koji dolazi s distribucijom nginxa, pa gzipanje dolazi out-
 # Literatura
 
 * https://www.speedshop.co/2017/10/12/appserver.html
+* https://scottbartell.com/2019/03/26/how-to-scale-ruby-on-rails-app-on-heroku/
 

@@ -36,7 +36,10 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 
 `host utorkom.com` dobar za jednostavni query. Ima i reverse lookup: `host 213.11.172.228`. Vraća više informacija s `-a`.
 
-`dig utorkom.com` najviše opcija. `dig NS utorkom.com` vraća nameservere. `dig utokom.com any` za cijeli zone file. `dig @ns1.example.com utorkom.com` traži podatke od zadanog nameservera.
+`dig utorkom.com` najviše opcija.
+`dig NS utorkom.com` vraća nameservere.
+`dig any utokom.com` za cijeli zone file.
+`dig @ns1.example.com utorkom.com` traži podatke od zadanog nameservera.
 
 `whois utorkom.com` dohvaća podatke o registriranim korisnicima Internet resourca (npr. domene ili IP bloka)
 

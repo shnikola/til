@@ -9,12 +9,13 @@
 
 ## Units
 
-* `2px` - 2 točke na ekranu.
-* `2em` - 2 puta veće od `font-size` na tom elementu.
-* `2rem` - 2 puta veće od `font-size` na root (`<html>`) elementu.
-* `2vh` - 2% visine viewporta (prozora). _IE 9+_
-* `2vw` - 2% širine viewporta. _IE 9+_
-* `2ch` - 2 širine znaka `0`. _IE 9+_
+`1px` je veličina koji svaki uređaj definira za sebe, a službeno je "veličina dovoljna da se horizontalna linija debljine 1px može prikazati oštrih rubova (bez antialisnga).
+
+`1em` je vrijednost `font-size` na tom elementu.
+`1rem` je vrijednost `font-size` na root (`<html>`) elementu.
+`1vh` je 1% visine viewporta (prozora). _IE 9+_
+`2vw` je 1% širine viewporta. _IE 9+_
+`1ch` je širina znaka `0`. _IE 9+_
 
 Primjeri korištenja:
 * `font-size: 12vw` za tekst koji će uvijek zauzimati istu širinu. Točnu vrijednost odrediš isprobavanjem.

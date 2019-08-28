@@ -84,14 +84,14 @@ Za 4 srednje (ili 3 velike) porcije
 
 * **8 paprika** srednjih, s zaobljenijim vrhom, izdubi.
 * **srednji luk** usitni i poprži. Od **500g miješanog mljevenog mesa** 2/3 poprži na tavi, a ostatak ostavi sirovo.
-* u zdjeli umiješaj poprženo i sirovo meso, **1 jaje**, **kafenu šalicu riže**, crvenu papriku, papar i sol.
+* u zdjeli umiješaj poprženo i sirovo meso, **1 jaje**, **100g riže (malu šalicu)**, crvenu papriku, papar i sol.
 * napuni paprike, ali ostavi malo mjesta jer se riža poveća u kuhanju.
 * posloži paprike u lonac kao human centipede ili s otvorom prema gore. Dodaj **250ml pasirane rajčice** i **vode** da taman prekrije paprike. Kuhaj 30 minuta.
 * pred kraj kuhanja napravi zapršku: na **malo ulja** stavi **žlicu oštrog brašna** i **malo paprike**, mješaj dok se ne pretvori u masu. Razrijedi s malo vode i ulij u lonac. To daje gustoću umaku.
 
 ## Sarma Betine Bake
 
-* Nasjeckaj **1 luk i isto masnije slanine** i zažuti u loncu.
+* Nasjeckaj **1 luk i jednaku količinu masnije slanine** i zažuti u loncu.
 * Dodaj **1 nasjeckani režanj češnjaka**, miješaj minutu.
 * Od **1kg mljevenog mesa** (2/3 svinjetina, 1/3 junetina), dvije trećine stavi u lonac i promješaj da posivi.
 * Nasjeckaj **250g mesnatije slanine** i **jedan krak domaće kobasice**, pa umiješaj u lonac s ostatkom mesa. Miješaj par minuta pa skini s vatre.

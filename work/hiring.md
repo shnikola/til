@@ -6,6 +6,10 @@ Veličina tvrtke nema veze s njenim uspjehom. Možda je prava veličina za tvoj 
 
 Nikad ne zapošljavaj nekog za zadatak u kojem se nisi sam okušao. Na taj način, poznavat ćeš prirodu zadatka: znat ćeš napisati realističan opis posla i koja pitanja postaviti na intervjuu; znat ćeš kako izgleda dobro obavljen posao; znat ćeš da li je najbolje zaposliti nekog za puno radno vrijeme, pola dana, ili outsourcati cijeli posao.
 
+## Mudrost novog zaposlenika
+
+Kada zaposliš novu osobu, zadaj im da dokumentiraju sve što susretnu da im je neobično, komplicirano ili ne radi kako treba. Uvijek će pronaći nešto što se može popraviti, a na što se ostatak firme navikao jer je "oduvijek tako". Junior developeri će primjetiti iste stvari kao i skupi konzultanti, samo se od njih očekuje da se prilagode.
+
 ## Intervjuiranje zaposlenika
 
 Dobar način za zaposliti kvalitetnu osobu - zadaj zadatak u petak, neka ga riješi preko vikenda i dođe u ponedjeljak da prokomentira. Zadatak neka bude neovisan od nekog postojećeg projekta, i s dovoljno mjesta da ga kandidat može nadograditi po želji. Obrati pažnju na:

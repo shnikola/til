@@ -8,6 +8,11 @@
 
 **Kuleshov effect:** prikaže se slika glumca s neutralnim izrazom, pa slika mrtvog djeteta ili tanjura juhe ili lijepe žene - gledatelji će reći da je lik bio tužan ili gladan ili pohotan, iako je svaki put prikazan isti izraz.
 
+## Tehnika
+
+Kretanje kamere (ako je objektiv naprijed): **dolly** naprijed-nazad, **truck** lijevo-desno, **boom** gore-dole
+Rotacija kamere: **pan** lijevo-desno, **tilt** gore-dole.
+
 ## Povijest
 
 Leland Stanford, guverner Kalifornije, 1872. se kladio da konj u punom galopu u nekom trenutku ne dira tlo. Zato je zaposlio fotografa **Eadwearda Muybridgea** koji je postavio 12 fotoaparata sa žičanim okidačem na putu i tako napravio 12 fotogragija konja u pokretu. To je pokrenulo ciklus studija pokreta raznih životinja. (Usput, konj zaista u jednom trenutku ne dira tlo).

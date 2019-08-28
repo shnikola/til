@@ -1,5 +1,11 @@
 # Jezik
 
+## Imena
+
+Starozavjetno ime Solomon je zapravo izvorno bilo Šlomo (שלמה). Kako hebrejski nema oznake za samoglasnike s vremenom se izgovor pretvorio u Shəlōmō, gdje je ə super-kratko. Prilikom prijevoda na grčki (septuaginta) došlo je do problema. Grci nemaju slovo Š ni super-kratke samoglasnike pa su ih zamijenili sa sigmom (s) i omicronom (o). Također, grčka imena nisu nikad završavala s *-o*, pa su prevoditelji kraj pretvorili u *-on* da više liči na ime. Tako je nastao Solomon. Slična stvar se dogodila i s Mojsijem (Mosesom) koji je izvorno bio Moshe.
+
+Kad se pisao latinski prijevod, bila je prilika da se uklone grčki nastavci (kako je i Plato, Zeno i sl.), ali Vulgata se vrlo strogo držala Grčkog teksta i imena su ostala.
+
 ## Rebracketing
 
 Izvorno "a napron", postao je "an apron". Slično i "a nadder", "an adder".
@@ -9,11 +15,11 @@ Izvorno "a napron", postao je "an apron". Slično i "a nadder", "an adder".
 
 Mnoge arapske riječi su preuzele i njihov određeni član "al", npr. "al-kuhl" je postao "alkohol".
 
-Čuvši ime Alexandria, Arapi su smatrali da je "Al" član: "Al-exandria". Dodatno, u izgovoru su zamijenili "k" i "s", pa su ga zvali "Al-iskandria". Po tome su osnivača grada preveli u "Iskandar", što je i danas arapska varijanta imena Aleksandar.
+Čuvši ime Alexandria, Arapi su mislili da je "Al" član: "Al-exandria". Dodatno, u izgovoru su zamijenili "k" i "s", pa su ga zvali "Al-iskandria". Po tome su osnivača grada preveli u "Iskandar", što je i danas arapska varijanta imena Aleksandar.
 
 ## Carski rez
 
-Carski rez je dobio ime po Juliju Cezaru koji je dobio ime po carskom rezu. Naime, neki njegov predak se rodio na taj način, pa je obiteljski *cognomen* (kao treće ime) bio Caesar (od *caedere*, rezati). Njegovo ime je uskoro postala titula tj. sinonim za vladara (proširilo se kroz Bibliju: "Daj cezaru cezarovo, a Bogu Božje"), koji se kasnije iskrivio u *kaiser*, *tsar* i *czar*.
+Carski rez je dobio ime po Juliju Cezaru koji je dobio ime po carskom rezu. Naime, neki njegov predak se rodio na taj način, pa je obiteljski *cognomen* (kao treće ime) bio Caesar (od *caedere*, rezati). Njegovo ime je uskoro postala titula tj. sinonim za vladara (proširilo se kroz Bibliju: "Daj cezaru cezarovo, a Bogu Božje"), koji se kasnije iskrivio u *kaiser*, *tsar* i *czar*. Tako da carski rez zapravo znači "rezani rez".
 
 ## Medvjed
 

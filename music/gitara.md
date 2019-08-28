@@ -12,6 +12,8 @@ Vrat diraj samo palcem i vrhovima prstiju, ne naslanjaj dlan.
 
 Kad god sviraš, sviraj s metronomom.
 
+Action - udaljenost žice od fretboarda. Akustične ne možeš namještati, ali električne možeš. Fiksiraj tremolo (zavida se iza) jer ga vjerojatno nećeš koristiti.
+
 ## Vježba
 
 Vježbaj ono što ti ne ide, a ne što ti ide.
@@ -20,10 +22,10 @@ Vježbaj ono što ti ne ide, a ne što ti ide.
 
 Blues shuffle: tripleti s pauzom na srednjem tripletu.
 
-## Bilješke
+# Skale
 
-Miješam akorde: E - Em; E7 - A7; B7 - D7.
-
-B7: X21202
-
-Vježbaj E-B7 Prijelaz
+Minor pentatonic: (. je root)
+```
+1. 1  1  1  1  1.
+4  3  3. 3  4  4
+```

@@ -9,6 +9,12 @@
 * **400g sjeckane rajčice** ubaci na vatru na 5 minuta. Dodaj malo vode ako je presuho.
 * **4 jaja** razbij i ubaci unutra, pa pokrij tavu i čekaj da se ispeku u parama.
 
+## Tahini
+
+Za 120ml:
+* **140g sezama** tostiraj 3-5 minuta u tavi.
+* Ubaci u blender zajedno s **2-4 žlice biljnog ulja**.
+
 ## Falafel
 
 * Smjesu za falafel zamuti i ostavi da odleži, pa isprži u vrućem ulju
@@ -23,6 +29,14 @@
 * U blender ubaci slanutak, tekućinu, **2 režnja češnjaka**, **2 žlice tahinija**. Blendaj par minuta.
 * Posoli i iscijedi **sok pola limuna**.
 * Zalij maslinovim uljem.
+
+## Babaganuš
+
+* **1 veći patlidžan** izbodi vilicom i peci oko sat vremena na 180.
+* Izvadi ga i dobro ga nasjeckaj zajedno s **2 češnja češnjaka**, posoli i popapri (dobar je sečuanski ili papar s limunom).
+* Umiješaj po **1 žličicu sjeckanog vlasca i mente**.
+* Dodaj **sok polovice limuna** i **maslinovo ulje**.
+* Ako si fancy, pospi s **50g tostiranog sezama**.
 
 ## Leća na Marokanski
 

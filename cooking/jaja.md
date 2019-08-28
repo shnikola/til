@@ -1,16 +1,36 @@
 # Jaja
 
-## Tvrdo i Meko Kuhano jaje
+## Sirovo jaje
 
-* stavi jaje u lonac i prekrij ga hladnom vodom
-* uključi vatru i čekaj da voda uzavrije, pa poklopi i ugasi
-* ostavi 2-8 minute za meko, 8-12 minuta za tvrdo.
+* Praire Oyster Egg: sirovo jaje s malo soli, tabasca i worceseter sosa.
+* Amber Moon Egg: to gore, s 90ml viskija.
 
-## Jaja na oko
+## Kuhano jaje
 
-* razbij jaja na tavu s uljem ili maslacem, uključi srednju vatru
-* kada bjelanjak prestane biti proziran, prekrij tavu i drži još 4 minute na vatri.
-* umjesto toga, možeš ga okrenuti i peći na vatri minutu za "over easy".
+* Čekaj da voda uzavrije, pa ubaci jaja.
+* `5 min` za super mekano, `6.5 min` za mekano, `8 min` za tvrdo.
+* Ubaci u hladnu vodu nakon jer se tako lakše odvoji kora.
+
+## Jaje na oko
+
+**Sunny Side Up:**
+* Stavi malo maslaca u tavu, ubaci jaje.
+* Bjelanjak ne smije potamniti ni dobiti hrskavost, žumanjak mora biti tekuć.
+* Na kraju posoli.
+
+**Fried Egg:**
+* Ulij dosta maslinovog ulja u tavu i stavi na visoku temperaturu, ubaci jaje.
+* Rubovi bjelanjka moraju potamniti i postati hrskavi, u kontrastu sa skoro sirovim dijelom oko žumanjka.
+* Ako ne želiš nepečeni bijelanjak, možeš ga zalijevati uljem dok se peče.
+
+**Steamed Egg:**
+* Stavi malo ulja u tavu, ubaci jaje.
+* Kad bjelanjak prestane biti proziran, ubaci malo vode, pokrij tavu i ostavi tako oko minute.
+
+**Over easy:**
+* Stavi malo maslaca u tavu, ubaci jaje.
+* Kad bjelanjak prestane biti proziran, flipaj jaje.
+* `par sekundi` za over-easy, `5-10` sekundi za over-medium, `10-15` sekundi za over-hard.
 
 ## Poširano jaje
 
@@ -23,27 +43,42 @@ Dodavanje kiseline (kvasine, limuna, vina) u vodu će ubrzati koagulaciju bjelan
 
 Tradicionalno se jede uz tost i slaninu, na sendviču ili na salati.
 
-## French Omelette
+## Scrambled Egg
 
-https://www.nytimes.com/video/dining/100000001116746/jacques-pepin-makes-an-omelet-.html
+**Cracked-and-scrambled:**
+* Stavi malo maslaca u tavu, razbij par jaja direktno u tavi.
+* Na srednjoj vatri ih samo miješaj u tavi, pazi da ne bude prevruće.
+* Izvadi ih prije nego izgledaju gotova (još se peku na tanjuru)
 
-Francuski omlet treba biti "smooth and silky" izvana, "moist and tender" iznutra.
+**Low-and-slow:**
+* Stavi malo maslaca u tavu, razbij par jaja u zdjelicu i dobro ih izmuti.
+* Stavi na nisku temperaturu i neprestano miješaj. Tekstura treba biti kao svježi sir.
 
-* **3 jaja** razbij, posoli i popapri. Možeš ubaciti i sjeckane začine. Snažno ih izmuti dok smjesa ne postane rijetka i bijelanjak se skroz rasprši.
-* **žlicu maslaca** stavi u tavu, zagrij minutu i pol dok se ne otopi pa izlij unutra jaja.
-* sad zajebani dio - drmaj tavom kao manijak i istovremeno miješaj jaje, skupljajući s rubova tave i vraćajući u sredinu, i tako nekih pola minute.
-* dok je jaje još vlažno, nagni tavu da većina sklizne u jedan rub, pa zarolaj jaje prema tom rubu. Malo prije kraja zarolaj i s druge strane. Prevrni ga u tanjur da pregib bude prema dole.
-* tijekom vađenja iz tave možeš dodati maslaca za lubriciranje, a i maslacem premazati omlet za kraj.
+**Hot-and-fast:**
+* Stavi malo maslaca u tavu, razbij par jaja u zdjelicu i dobro ih izmuti.
+* Stavi na visoku temperaturu i neprestano miješaj. Bit će gotova za minutu. Tekstura će biti više homogena, kao tava.
 
-## Fluffy Scrambled Eggs (za dvoje)
-
-https://www.youtube.com/watch?v=PUP7U5vTMM0
-
-* stavi **par gljiva**, **par pomica** na tavu, posoli ih, i peci na lagano.
-* u lončić razbij **4 jaja** i ubaci **20g maslaca**. Nemoj ih umutiti, nego ih miješaj špatulom na laganoj vatri dok ne postane kremasta smjesa.
-* kad se lagano zgusne, makni s vatre i nastavi miješati. Miješaj miješaj miješaj! Onda opet vrati na vatru, i dalje miješaj. Kad počne tvrdnuti, skini s vatre.
+**Fluffy Gordon Ramsey:**
+* Stavi **par gljiva**, **par pomica** na tavu, posoli ih, i peci na lagano.
+* U lončić razbij **4 jaja** i ubaci **20g maslaca**. Nemoj ih umutiti, nego ih miješaj špatulom na laganoj vatri dok ne postane kremasta smjesa.
+* Kad se lagano zgusne, makni s vatre i nastavi miješati. Miješaj miješaj miješaj! Onda opet vrati na vatru, i dalje miješaj. Kad misliš da nije još gotovo, skini s vatre.
 * Posoli, popapri, dodaj žlicu vrhnja ili milerama i nasjeckani vlasac.
-* Serviraj na tostirani kruh.
+
+## Omlet
+
+**Diner-style:**
+* Razbij **3 jaja** u zdjelicu i dobro ih izmuti da homogene smjese, bez tragova bjelanjaka..
+* **žlicu maslaca** stavi u tavu, zagrij dok ne posmeđi.
+* Ubaci jaja, tu i tamo gurni očvsnute dijelove prema sredini. Kad je donji dio očvrsnuo, presavij ga popola. Možeš ispod ugurati još malo maslaca. Treba biti lagano smeđe boje.
+* Dobar za punjenje npr. sirom, šunkom i paprikom
+
+**French Omelette:**
+https://www.nytimes.com/video/dining/100000001116746/jacques-pepin-makes-an-omelet-.html
+* Razbij **3 jaja** u zdjelicu i dobro ih izmuti da homogene smjese, bez tragova bjelanjaka. Možeš ubaciti i sjeckane začine.
+* **žlicu maslaca** stavi u tavu na slabu vatru, zagrij minutu i pol dok se ne otopi (ali ne i posmeđi) pa izlij unutra jaja.
+* sad zajebani dio - 30 sekudni drmaj tavom kao manijak i istovremeno miješaj jaje, povremeno skupljajući s rubova tave. Ako ti uspije bez da se previše ispeče, bolji si čovjek od mene.
+* dok je jaje još vlažno, nagni tavu da većina sklizne u jedan rub, pa zarolaj jaje prema tom rubu. Malo prije kraja zarolaj i s druge strane. Prevrni ga u tanjur da pregib bude prema dole.
+* Francuski omlet treba biti "smooth and silky" izvana, "moist and tender" iznutra.
 
 ## Kajgana sa skutom
 

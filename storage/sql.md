@@ -138,6 +138,10 @@ Indeksi su korisni samo za querije koji dohvaćaju mali broj rezultata; ili za i
 
 Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
 
+## Encoding
+
+MySQLov `utf8` zapravo ne podržava cijeli Unicode, nego samo 3 od 4 byta. Za pravi UTF-8, koristi `utf8mb4`.
+
 # Literatura
 
 * SQL Antipatterns by Bill Karwin

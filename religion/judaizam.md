@@ -8,12 +8,27 @@ Hebrejska biblija ili *Tannakh* (akronim naziva tri dijela: Torah, Nevi'im i Ket
 
 Septuaginta, najstariji grčki prijevod hebrejske biblije, nazvan je po 72 učenjaka (po 6 iz svakog izraelskog plemena) koje je grčki kralj Egipta Prolomej II. u 3. st.pr.Kr. zadužio da prevedu Toru (prvo petoknjižje). Nakon Tore, i ostale knjige su prevedene kroz iduća 2 stoljeća. Septuaginta je uključila dodatne (deuterokanonske) knjige koje rabini smatraju apokrifnim.
 
+## Svetkovine
+
+**Yom Kippur** (Dan pomirenja) podsjeća na grijeh koji je židove odvojio od Boga. Samo za taj blagdan veliki svećenik ulazi u Holy of Holies, najsvetiji dio hrama  (izvorno Šatora sastanka) gdje je kovčeg saveza. Tamo žrtvuje jednog jarca Bogu, a na drugog polaže ruke i time prenosi sve grijehe Izraelskog naroda i odvodi na mjesto u pustinji na kojem prebiva demon Azazel.
+
+## Mesija
+
+Mesija je hebrejska riječ koja znači "pomazanik". Kralj Izraela, božji predstavnik na zemlji, se polijevao mirisnim uljem u ceremoniji krunjenja. U Tori, Bog obećava kralju Davidu, najvećem kralju koji je uništio neprijatelje i započeo zlatno doba Izraela, da će uvijek imati potomka na prijestolju Jeruzalema. To je trajalo 400 godina, a onda su došli Babilonci, pobrisali kraljevstvo Juda, uništili Jeruzalem, i skinuli židovskog kralja s prijestolja. Židovski mislioci su smatrali da će se obećanje održati i da će se Davidov potomak jednog dana vratiti da povrati izraelsko kraljevstvo.
+
 ## Zakoni
 
 Halakha - glavni židovski zakoni.
+
 Khumra - dodatni zakoni koji nisu obavezni, ali su preporučeni. "Kad gradiš novu kuću, na krovu načini ogradu da svoju kuću, kad bi tko s nje pao, ne okaljaš krvlju." (Ponovljeni zakon 22:8)
 
-**Mamzeri** su osobe koje su se rodile iz zabranjenog odnosa, npr. incesta ili preljuba (djeca rođena izvan braka su ok). Ako si mamzer, i tvoja djeca će biti mamzeri. Ali ako nisi židov, i rođen si iz takvog odnosa, smiješ postati židov i nećeš biti mamzer. Mamzerima je zabranjeno stupati u brak sa Židovima, ali imaju sva ostala prava. Usto, u praksi rabini gotovo uvijek zaključe da ne postoji dovoljno dokaza da je dijete mamzer (npr. ne može se dokazati da je žena bila u braku dok je prevarila muža, ili da dijete nije ipak muževo). Židovski zakon čak priznaje da trudnoća može trajati do 12 mjeseci kako bi se to opravdalo.
+**Sabath** je dan odmora i halakha zabranjuje 39 vrsta kreativnih aktivnosti: kuhanje, trošenje novca, pisanje itd.
+
+Paljenje i gašenje vatre je zabranjeno na sabath, što mnogi ortodksni židovi interpretiraju kao i zabranu korištenja električne energije. To znači da subotom ne smiju paliti i gasiti svijetla. Da bi tome pribjegli, koriste se timeri, Sabath lampe koje uvijek gore ali se mogu prekriti, ili Kosher prekidači koji kao "možda" neće upaliti svijetlo, pa to ne krši zakon (iako neki kažu da krši). Mnogi uređaji imaju Sabath mod rada, npr. Sabath liftovi staju na svakom katu kako korisnici ne bi morali stiskati dugme.
+
+Postoji zona oko datumske granice (169°W–177°E) u kojoj nije baš skroz jasno kada je halakha subota (gleda li se po lokalnom vremenu ili prema Jeruzalemu). Židovski autoriteti predlažu izbjegavanju putovanja u taj dio svijeta oko vikenda.
+
+**Mamzeri** su osobe koje su se rodile iz zabranjenog odnosa, npr. preljuba ili incesta (djeca rođena izvan braka su ok). Ako si mamzer, i tvoja djeca će biti mamzeri. Ali ako nisi židov, i rođen si iz takvog odnosa, smiješ postati židov i nećeš biti mamzer. Mamzerima je zabranjeno stupati u brak sa Židovima, ali imaju sva ostala prava. Usto, u praksi rabini gotovo uvijek zaključe da ne postoji dovoljno dokaza da je dijete mamzer (npr. ne može se dokazati da je žena bila u braku dok je prevarila muža, ili da dijete nije ipak muževo). Židovski zakon čak priznaje da trudnoća može trajati do 12 mjeseci kako bi se to opravdalo.
 
 ## Pasha
 
@@ -61,7 +76,9 @@ Tri drevne metode koje Kabbalah koristi: Gematria, Notarikon i Temurah
 
 ## Na svoju sliku
 
-U Postanku 1:27 piše: "Na svoju sliku stvori Bog čovjeka". Ali kako je moguće da ga je stvorio na svoju sliku ako nema fizičku formu? Prema Tomi Akvinskom, čovjek je stvoren na sliku Božju ne u fizičkoj formi, nego po intelektu i sposobnosti razmišljanja. Prema rabinu Akivi, "svoju sliku" znači sliku, tj. nacrt koju Bog posjeduje. Taj nacrt se naziva **Adam Kadmon** ("izvorni čovjek"), koji je nacrt ne samo za čovjeka, nego za cijeli univerzum. Odnos između nacrta i univerzuma je temelj Kabale.
+U Postanku 1:27 piše: "Na svoju sliku stvori Bog čovjeka". Ali kako je moguće da ga je stvorio na svoju sliku ako nema fizičku formu? Prema Tomi Akvinskom, čovjek je stvoren na sliku Božju ne u fizičkoj formi, nego po intelektu i sposobnosti razmišljanja.
+
+Prema rabinu Akivi, "svoju sliku" znači sliku, tj. nacrt koju Bog posjeduje. Taj nacrt se naziva **Adam Kadmon** ("izvorni čovjek"), koji je nacrt ne samo za čovjeka, nego za cijeli univerzum. Odnos između nacrta i univerzuma je temelj Kabale.
 
 Jedna od bizarnijih teorija primjećuje da ako Tetragramaton napišeš vertikalno i malo stisneš, donekle izgleda kao čovjek.
 

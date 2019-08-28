@@ -12,6 +12,8 @@ Riječi kršćanskog Vjerovanja započele su kao izjava pri krštenju, a poslije
 
 **Vjera u Kristov drugi dolazak, posljednji sud i spasenje vjernika**. Krista se čeka da se vrati kako bi obavio ostatak mesijanskog proročanstva: uskrsne sve mrtve, obavi posljednji sud i konačno uspostavi božje kraljevstvo.
 
+Treba primjetiti da se u Vjerovanju nigdje ne spominje Biblija.
+
 ## Shizme u kršćanskoj crkvi
 
 Kršćanstvo se kroz cijelu povijest svađalo oko sitnica, ali u pozadini je uvijek bila borba za moć, popularnost, ili nacionalni identitet.
@@ -68,17 +70,6 @@ U najvećoj kršćanskoj shizmi u posljednjih 500 godina, Ruska pravoslavna Crkv
 
 Do raskola je došlo nakon što je Carigrad priznao nezavisnost Ukrajinske pravoslavne Crkve, te poništio ekskomunikaciju nad dvojicom ukrajisnkih svećenika koju je proglasila Moskva.
 
-## Unitarijanci
-
-Kršćanski Unitarijanizam je teološki pokret koji smatra da kršćanstvo nije pravi monoteizam jer vjeruju u trojstvo. Unitarijanci vjeruju da je Bog samo jedan. Po njima, Isus je bio velik čovjek, prorok i moralni autoritet, možda čak i nadnaravno biće, ali nije bio Bog. Glavni argument im je da Isus nikad nije tvrdio da je Bog, niti je njegovo učenje ikad spominjalo trojsvo.
-
-Unitarijanci su nastali neovisno sredinom 16. stoljeća u Poljskoj i Transilvaniji. U Poljskoj dio Reformirane Protestantske Crkve prihvaća učenje Fausta Sozzinija, pa ih se još naziva Socinijancima. Do 17. stoljeća protjerani su iz Poljske, i sele su u Transilvaniju i Nizozemsku, gdje preuzimaju naziv "Unitarijanci". S vremenom su se proširili na Englesku i SAD.
-
-**Socinijanski unitarijanizam** smatra da je Isus započeo svoje postojanje kao čovjek, odnosno da nije postojao prije. Neki vjeruju da je bio samo čovjek (*psilantropizam*), neki vjeruju da ga je Bog posvojio kao sina (*adapcionizam*), a neki vjeruju da je doista nastao začet duhom svetim.
-
-**Arijanski unitarijanizam** smatra da je Isus prije svog ljudskog života postojao kao *Logos*, biće koje je stvorio Bog, i koje je s njim obitavao na nebu. Opet, postoje nijanse: neki vjeruju da je Isus božanski duh iste prirode kao i Bog, a neki vjeruju da je anđeo ili neko niže božansko biće različite prirode od Boga.
-
-Do kraja 19. stoljeća, dio Unitarijanaca se udaljio od kršćanskih korijena i počeo primati nekršćane i neteističke crkve i pojednice u zajednicu. Tako se Unitarijanizam razvio u liberalni religijski pokret **Unitarijanski Univerzalizam** koji nema zajedničko vjerovanje, već okuplja članove u "slobodnoj i odgovornoj potrazi za istinom i značenjem".
 
 ## Marija
 
@@ -86,9 +77,11 @@ Gotovo sve kršćanske crkve slažu se da je Marija **majka Božja** (u smislu d
 
 Sve se crkve slažu da je Marija bila **djevica kad je rodila**. O tome pišu samo evanđelisti Matej i Luka, što je malo čudno jer se više nikad ne spominje u Bibliji. Moguć razlog tome je što se u ranom kršćanstvu to nije smatralo toliko bitnim, jer se vjerovalo da dijete u potpunosti dolazi od majke, a da muškarac samo inicira formativni proces. Katolička i protestantska crkva vjeruju da je Marija ostala **vječna djevica** i nakon Isusovog rođenja, što znači da nije imala odnose s Josipom i da joj je Isus bio jedino dijete. Biblija spominje Isusovu braću i sestre, a službena interpretacija je da su oni djeca iz Josipovog prošlog braka, ili rođaci. Matej (1:25) kaže da Josip i Marija nisu imali odnose "prije" nego se Isus nije rodio, što ostavlja otvorenim pitanje jesu li imali išta nakon.
 
-Marijina bezgrešnost se ne spominje u Bibliji, ali od samih početaka se pojavljuje u kršćanskoj tradiciji. Osim što je provela život čista od osobnog grijeha, Marija je začeta bez istočnog grijeha. **Bezgrešno začeće** se ne odnosi na začeće Isusa, nego na začeće same Marije, pri kojem je Bog intervenirao kako bi ostala čista. Ovaj događaj je duže vrijeme izazivao rasprave jer bi značio da Mariji nije bio potreban spasitelj. Papa Pio IX je `1854` dogmatizirao bezgrešno začeće, objasnivši da je Marija imala Božju milost od rođenja, ali joj je spasenje i dalje morao donijeti Krist (poseban slučaj, recimo). Pravoslavci ne prihvaćaju dogmu o bezgrešnom začeću zbog neslaganja u definiciji istočnog grijeha. Za katolike istočni grijeh je uzrok grešne ljudske prirode, i tko ga ima ne može prestati griješiti. Za pravoslavce istočni grijeh je uzrok smrtnosti, a pošto je prema njima Marija umrla, morala je imati istočni grijeh. Protestanti i anglikanci ne prihvaćaju dogmu o Marijinoj bezgrešnosti jer se ne nalazi u Bibliji.
+**Marijina bezgrešnost** se ne spominje u Bibliji, ali od samih početaka se pojavljuje u kršćanskoj tradiciji. Marijino rođenje se prvi put spominje u Jakovljevom protoevanđelju (proto- jer se radnja događa prije evanđelja) iz 2.st. Bogati Židov Joakim i Ana nisu mogli imati djece, pa je Joakim otišao na 40 dana postiti u planinu, a Ani se ukazao Bog, objavivši da je trudna (ovo je čudo, ali nije nešto posebno jer se već događalo u starom zavjetu). Kada se Marija rodila, 3 godine su je držali u spavaćoj sobi kako zlo ne bi utjecalo na nju. Zatim su je odveli u hram u Jerzuzalemu, gdje svaku noć dolazi anđeo i hrani je. Kada je Marija navršila 12 godina, svećenici su se zabrinuli jer će dobiti menstruaciju, što bi onečistilo hram, pa je odluče udati za starca Josipa (ne zna se baš zašto je Josip starac u ovoj priči, valjda da se naglasi kako se neće htjeti seksati). Prema ovoj priči, Josip je imao djecu iz drugog braka, što objašnjava Isusovu braću koja se spominju u evanđeljima.
 
-U Novom Zavjetu se ne spominje **Marijina smrt**. Katolici i pravoslavci vjeruju da je uznesena na nebo, pa njenih ostataka na zemlji nema, ali se oko same smrti ne slažu. Pravoslavci vjeruju da je Marija umrla prirodnom smrću, u snu. Krist je po smrti primio njenu dušu, a treći dan je njeno tijelo uskrslo, te je zajedno s dušom uzneseno na nebo gdje čeka sudnji dan. Katolici vjeruju da je uzašla na nebo u tjelesnom obliku, a je li zapravo umrla ostaje otvoreno pitanje. U oba slučaja, ovaj dan se slavi 15. kolovoza, a kod nas se zove Velika Gospa. Dio protestanata uopće ne vjeruje u uzašašće jer nije spomenuto u Svetom Pismu.
+Osim što je provela život čista od osobnog grijeha, Marija je začeta bez istočnog grijeha. **Bezgrešno začeće** se ne odnosi na začeće Isusa, nego na začeće same Marije, pri kojem je Bog intervenirao kako bi ostala čista. Ovaj događaj je duže vrijeme izazivao rasprave jer bi značio da Mariji nije bio potreban spasitelj. Papa Pio IX je `1854` dogmatizirao bezgrešno začeće, objasnivši da je Marija imala Božju milost od rođenja, ali joj je spasenje i dalje morao donijeti Krist (poseban slučaj, recimo). Pravoslavci ne prihvaćaju dogmu o bezgrešnom začeću zbog neslaganja u definiciji istočnog grijeha. Za katolike istočni grijeh je uzrok grešne ljudske prirode, i tko ga ima ne može prestati griješiti. Za pravoslavce istočni grijeh je uzrok smrtnosti, a pošto je prema njima Marija umrla, morala je imati istočni grijeh. Protestanti i anglikanci ne prihvaćaju dogmu o Marijinoj bezgrešnosti jer se ne nalazi u Bibliji.
+
+U Novom Zavjetu se ne spominje **Marijina smrt**. Katolici i pravoslavci vjeruju da je **uznesena na nebo** (za razliku od Isusa koji je *uzašao*, vlastitom moći), pa njenih ostataka na zemlji nema, ali se oko same smrti ne slažu. Pravoslavci vjeruju da je Marija umrla prirodnom smrću, u snu. Krist je po smrti primio njenu dušu, a treći dan je njeno tijelo uskrslo, te je zajedno s dušom uzneseno na nebo gdje čeka sudnji dan. Katolici vjeruju da je uzašla na nebo u tjelesnom obliku, a je li zapravo umrla ostaje otvoreno pitanje. U oba slučaja, ovaj dan se slavi 15. kolovoza, a kod nas se zove Velika Gospa. Dio protestanata uopće ne vjeruje u uzašašće jer nije spomenuto u Svetom Pismu.
 
 Razlog rasprave o Marijinoj smrti je Otkrivenje u kojem je smrtnost prikazana kao kazna za istočni grijeh. Marija je rođena bez istočnog grijeha, pa se to može interpretirati kao da je i besmrtna. S druge strane, i Krist je bio bezgrešan, pa je umro za čovječanstvo. Stoga je druga interpretacija da je ona kao i Isus, podijelila patnju i smrt za ljudsko iskupljenje.
 
@@ -111,6 +104,14 @@ Neki su za računanje koristili 8-godišnji lunisolarni ciklus, neki period od 8
 Katolici i protestanti tako slave između 22.3. i 25.4., unutar 7 dana nakon astronomskog punog mjeseca. Pravoslavci slave između 4.4. i 8.5., unutar 7 dana nakon "julijanskog" punog mjeseca (koji je par dana nakon astronomskog).
 
 Zbog razjedinjenog slavljenja Uskrsa i općenito nezgodnog računanja, u 20. stoljeću bilo je više prijedloga fiksiranja datuma Uskrsa. Najpopularnija rješenja su bila druga nedjelja ili dan nakon druge subote u travnju (obje sheme uzimaju u obzir da je najvjerojatniji datum Isusovog uskrsnuća 9.4.30.), ali nijedno nije zaživjelo. Na Svjetskom savezu crkava 1997. u Siriji predloženo je da se astronomski puni mjesec i ekvinocij računaju prema jeruzalemskom meridijanu. Ali pravoslavne crkve bi po toj shemi bile iskusile veće promjene od katoličkih, pa su odbile.
+
+## Silazak nad pakao
+
+Isus je umro u petak, a uskrsnuo u nedjelju - pitanje je što je radio ta 3 dana? Drugo pitanje je - što je s ljudima koji su umrli prije Isusovog iskupljenja? Jesu li i oni spašeni ili samo nisu imali sreće što su se rodili prerano? Iz ova dva pitanja nastale su legende o tome kako se Isus spustio u pakao (*harrowing of hell*) i tamo razglasio vijest o svom uskrsnuću. Neki kažu da sa sobom u raj poveo samo svetce, neki kažu da je poveo sve.
+
+U Bibliji se silazak nad pakao ne spominje, ali u **Prvoj Petrovoj poslanici** ima jedan dio koji nikome nije jasan o čemu priča (3:19): "...ubijen doduše u tijelu, ali oživljen u duhu. U njemu otiđe i propovijedati duhovima u tamnici koji bijahu nekoć nepokorni, kad ih ono Božja strpljivost iščekivaše, u vrijeme Noino, dok se gradila korablja u kojoj nekolicina, to jest osam duša, bi spašena vodom." Tu je započela ideja da je Isus u ta tri dana išao pričati s nekim mrtvima.
+
+Silazak nad pakao se prvi put se spominje u **Nikodemovom Evanđelju**. Nikodem je farizej koji se spominje par puta u Ivanovom evanđelju, a ovaj tekst potječe iz 5. st. i lažno se predstavlja kao njegovo djelo. U tekstu, židovski vođe ne vjeruju da je Isus ustao iz mrtvih, pa im ljudi ljudi dovode dvojicu Simeonovih sinova (Simeon je u Lukinom evanđelju prepoznao Isusa kao bebu). Ti sinovi su umrli, a kad je Isus ustao iz mrtvih, ustali su i oni. Sinovi ispričaju da su bili u Hadu kad su čuli glas kako govori: "Kralj je stigao, otvorite vrata jer kralj Židova ulazi". Proroci starog zavjeta su se ustali i potvrdili da je to taj kojeg čekaju; Adam se ustao i održao govor; Ivan Krstitelj se ustao i održao govor; na kraju Isus stiže i odvodi ih iz Hada u raj.
 
 ## Hereze po katoličkoj crkvi
 

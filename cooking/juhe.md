@@ -6,6 +6,8 @@ Svakoj juhi je dobro dodati 2-3 režnja češnjaka jer naglašava okuse i mirise
 
 Da juha ne reducira previše, treba se krčkat na jako jako niskoj temperaturi. Mjehurić po minuti da izađe. Plin je vjerojatno prejak pa mi zato juha previše reducira. Ako želiš snažniju juhu s više okusa, ostavi lonac otklopljen, jer će se tako isparavanje povećati.
 
+U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
+
 # Recepti
 
 ## Krem Juha od Pome
@@ -87,6 +89,6 @@ Ako se osjećaš fancy, za dekoricaiju možeš isjeckati krumpir na tanke štapi
 * Ubaci začine i prži ih dok ne zamirišu: **kumin**, **mljevenu papriku**, **kajenska paprika**, **goruščicu**, **origano**.
 * Na tavu dodaj **800g mljevenog mesa** i dinstaj na jakoj vatri dok ne po sivi. Posoli i popapri.
 * Prebaci sve u lonac, dodaj **800g sjeckane rajčice**, ulij **400ml vode** (umjesto vode možeš uliti **tamno pivo**) i ubaci **1 goveđu kocku**. Pojačaj vatru da uzavrije i onda smanji i poklopi da se krčka barem 30 minuta, ali što duže to bolje.
-* Kad si dovoljno gledan, dodaj **1 konzervu kukuruza** i **1 konzervu crvenog graha**, kuhaj još 10 minuta.
+* Kad si dovoljno gladan, dodaj **1 konzervu kukuruza** i **1 konzervu crvenog graha**, kuhaj još 10 minuta.
 * Opcionalno dodaj **2 kocke tamne čokolade** ili **žlicu kakaa**.
 * Jedi uz masnije vrhnje i kukuruzni kruh. Navodno je još bolji ako prenoći u frižideru.

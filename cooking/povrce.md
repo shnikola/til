@@ -1,20 +1,34 @@
 # Povrće
 
+## Krumpir
+
+**Kuhani krumpir**: stavi ga u hladnu vodu pa diži do ključanja - tako će se ravnomjernije skuhati.
+
+**Kuhano pečeni krumpir**: oguli i skuhaj u slanoj vodi, pa stavi u pećnicu na 220 stupnjeva.
+
+**Scalloped**: oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnjem
+
+**Tater tots**: skuhaj oguljeni krumpir, naribaj ga, pomiješaj sa soli i škrobom za spajanje, formiraj u pločicu, i onda prži u ulju.
+
+**Hash browns**: naribaj krumpir i ostavi u vodi preko noći. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
+
+**Duchess potato**: Pire krumpir i malo jaja stavi u tuljac za šlag i na papir za pečenje napravi male hrpice, i stavi u pećnicu na 220, 15 minuta.
+
+## Batat
+
+Ako radiš pire od batata, stavi ga peći, a ne kuhati. On povlači puno vode, pa pire bude prerijedak.
+
 ## Poriluk
 
 Blažeg okusa i mirisa od luka i češnjaka, ne nadvladava ostale namirnice u jelu. Plus ga je lakše sjeckati jer je duguljast.
 
 Poriluk se razvija probijajući kroz zemlju, pa unutar listova ima dosta prljavštine. Da bi ga očistio, odreži mu korijen, te prereži dio gdje postaje zelen. Bijeli dio onda prereži popola i ubaci sve u zdjelu s vodom - zemlja će potonuti na dno.
 
-## Batat
-
-Ako radiš pire od batata, stavi ga peći, a ne kuhati. On povlači puno vode, pa pire bude prerijedak.
-
 ## Pastrnjak
 
 Najbolji za juhe (npr. s kruškom) i piree, ima finu prirodnu slatkoću.
 
-# Grahorice
+## Grahorice
 
 Priprema grahorica poput graha, leće ili slanutka može zahtjevati mnogo vremena. Da bi se kuhanje skratilo zrna se mogu namakati u vodi nekoliko sati prije kuhanja (voda se od namakanja se baci), ili kuhati u pretis loncu.
 

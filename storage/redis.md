@@ -68,6 +68,7 @@ Liste se korist i za job management gdje se jobovi stavljaju u listu s `LPUSH` a
 
 `HINCRBY mykey a 10` inkrementira vrijednost fielda `a` za `10`.
 
+`HGETALL mykey` vraća cijeli hash.
 `HKEYS mykey` vraća sve fieldove hasha.
 `HVALS mykey` vraća sve vrijednosti hasha.
 

@@ -4,13 +4,11 @@
 
 Entropija je mjera uređenosti sustava. Što je sustav uniformniji, to je entropija viša. Što je sustav specifičniji, to je entropija niža.
 
-Koliko je energija raspršena. Energija se uvijek "širi" (prelazi iz mjesta gdje je ima u mjesto gdje je nema), pa se entropija uvijek povećava.
+Visoka entropija znači da je energija jednoliko raspršena. Energija se uvijek "širi" (prelazi iz mjesta gdje je ima u mjesto gdje je nema), pa se entropija uvijek povećava. Energiju možeš nakupiti lokalno, ali uvijek po cijenu raspršavanja negdje drugdje. Jednom kad sva energija bude jednoliko raspršena, više neće biti razlike u potencijalima koja izaziva rad. Nastupit će **toplinska smrt svemira**.
 
-Energiju možeš nakupiti lokalno, ali uvijek pod cijenu raspršavanja negdje drugdje. Jednom kad bude sva raspršena, više se neće biti razlike u energijama koja izaziva rad. Heat death of the universe.
+Razlog stalnog povećanja entropije je statistički fenomen. Nakupljenost energije je statistički malo vjerojatna pojava. Ako imaš tople atome na jednoj strani i hladne atome na drugoj, tijekom njihovog micanja oni će se pomiješati i temperatura će se izjednačiti.
 
-Zašto se entropija uvijek povećava. To je statiskiči fenomen, Nakupljenost energije je statistički malo vjerojatna pojava. Ako imaš tople atome na jednoj strani i hladne atome na drugoj, tijekom njihovog micanja oni će se pomijšati i temperatura će se izjednačiti.
-
-Tako da se protok vremena može definirati kroz povećanje entropije.
+Protok vremena se može definirati kroz povećanje entropije.
 
 ## Boltzmann Brain
 

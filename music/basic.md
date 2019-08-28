@@ -19,6 +19,10 @@ Ako ne koristi equal temperament, različiti keyevi će zvučati drugačije.
 
 Kad čujemo ton u pjevanju ili sviranju, zajedno s njim čujemo i overtoneove. Kada se odsvira C2 na klaviru, stvara se niz zvučnih valova. Najglasniji je taj C2, zatim C3 za oktavu viši, te zatim G2. To su tonovi koje čujemo podsvijesno, i zato se našim ušima sviđa kvinta. Većina zapadne muzike je bazirana baš na kvintama.
 
+## Akordi
+
+Suspended znači "makni 3 i zamjeni s...". Npr. sus2 mijenja 3 s 2.
+
 ## Progresije
 
 `II-V-I` je popularna jazz progresija.

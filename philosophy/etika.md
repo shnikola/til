@@ -1,24 +1,14 @@
 # Etika
 
-## Utilitarianism
+## Utilitarizam
 
-Utilitarianism is a moral theory claiming that an action is moral if it makes the world a better place. But what do we mean by “a better place”?
+Utilitarizam polazi od pretpostavke da je etički ispravno djelovanje koje čini svijet boljim. Ali što znači činiti svijet boljim?
 
-Suppose you decide (as Jeremy Bentham did) that it means increasing the total amount of happiness in the universe as much as possible – the greatest good for the greatest number. Then you run into a so-called “repugnant conclusion”. The philosophers quantify happiness into “utils”, some arbitrary small unit of happiness. Suppose your current happiness level is 100 utils. And suppose you could sacrifice one util of happiness to create another person whose total happiness is two utils: they are only 1/50th as happy as you are. This person seems quite unhappy by our standards. But crucially, their total happiness is positive; they would (weakly) prefer living to dying. Maybe we can imagine this as a very poor person in a war-torn Third World country who is (for now) not actively suicidal.
+Prema **Jeremiju Benthamu**, koji je uveo pojam utilitarizma u filozofiju, to znači povećanje ukupne sreće u svijetu. Recimo da kvantificiramo sreću u "utilima", i da je moja trenutna razina sreće 100 utila. Ako nam je cilj povećati ukupan broj utila, etički je žrtvovati 1 naš util da stvorimo dijete s 2 utila sreće, koje će biti prilično nesretno u odnosu na nas. Ponavljamo li ovu metodu, završili bi sa 100 osoba od 2 utila, na rubu nesreće, ali s najvećom ukupnom srećom. Iako abstraktno, ovo pitanje se direktno veže na kontrolu rasta populacije kako bi svi imali dovoljno resursa za dobar standard života.
 
-It would seem morally correct to make this sacrifice. After all, you are losing one unit of happiness to create two units, increasing the total happiness in the universe. In fact, it would seem morally correct to keep making the sacrifice as many times as you get the opportunity. The end result is that you end up with a happiness of 1 util – barely above suicidality – and also there are 99 extra barely-not-suicidal people in war-torn Third World countries.
+Ovaj tzv. *repugnant conclusion* mnoge je filozofe odveo iz "totalnog utilitarzma" u "prosječni utilitarizam", gdje je cilj povećati prosječnu sreću na svijetu po osobi. Ali ovdje dolazimo do drugog problema - nije li onda etički ispravno ubiti nesrente ljude? To će povećati prosječnu sreću vrlo efikasno.
 
-And the same moral principles that lead you to make the sacrifice bind everyone else alike. So the end result is everyone in the world ends up with the lowest possible positive amount of happiness, plus there are billions of extra near-suicidal people in war-torn Third World countries.
-
-This seems abstract, but in some sense it might be the choice on offer if we have to decide whether to control population growth (thus preserving enough resources to give everyone a good standard of living), or continue explosive growth so that there are many more people but not enough resources for any of them to live comfortably.
-
-The so-called “repugnant conclusion” led many philosophers away from “total utilitarianism” to “average utilitarianism”. Here the goal is still to make the world a better place, but it gets operationalized as “increase the average happiness level per person”. The repugnant conclusion clearly fails at this, so we avoid that particular trap.
-
-But here we fall into another ambush: wouldn’t it be morally correct to kill unhappy people? This raises average happiness very effectively!
-
-So we make another amendment. We’re not in the business of raising happiness, per se. We’re in the business of satisfying preferences. People strongly prefer not to die, so you can’t just kill them. Killing them actively lowers the average number of satisfied preferences.
-
-Philosopher Roger Chao combines these and other refinements of the utilitarian method into a moral theory he calls negative average preference utilitarianism, which he considers the first system of ethics to avoid all the various traps and pitfalls. It says: an act is good if it decreases the average number of frustrated preferences per person.
+Zato dodajemo novu nadopunu. Cilj utilitarizma nije povećati sreću, nego ispuniti preferencije. A ljudi imaju snažnu preferenciju da ne umru. Roger Chao je zagovornik teorije negativnog prosječnog preferencijskog utilitarizma, koja kaže da je djelovanje sipravno ako smanjuje prosječan broj neispunjenih preferencija po osobi.
 
 ## Peter Singer and Effective Altruism
 

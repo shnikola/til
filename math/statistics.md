@@ -84,9 +84,21 @@ Statistička moć (**power**) studije je izglednost da će moći razlikovati efe
 
 Kako bi dobili pouzadnije rezultate, mnoge studije nastoje sakupiti još podataka kroz replikaciju, radeći dodatna mjerenja. Problem koji se često previdi je pseudoreplikacija, kada su dodatna mjerenja zapravo povezana s izvornima. Npr. ako mjerimo iste ispitanike kroz više dana, uzimamo dodatne neurone iz iste životinje, testiramo stanice iz iste kulture, replikacija nije valjana jer takva mjerenja nisu neovisna.
 
+## Surprisingly popular
+
+Metoda za dobivanje mišljenja malog broja eksperata iz populacije. Npr. postavlja se pitanje "Je li Sydney glavni grad Australije?" (da: 60%, ne: 40%) i "Što mislite, što će većina ljudi odgovoriti na to pitanje?" (da: 75%, ne 25%). Računa se razlika u odgovorima između ova dva pitanja:
+
+`da: 60% - 75% = -15%`
+`ne: 40% - 25% = 15%`
+
+Odgovor "ne" je iznenađujuće popularan (`15% > -15%`), pa se može vjerovati da je to točan odgovor. Kada ispitanici misle da imaju "insider knowledge", najčešće su u pravu a ne u zabludi.
+
+## Optimal Stopping
+
+Pred tobom je niz od `N` kartica na kojima je različitih brojeva, od 1 do 1^100. Po redu okrećeš jednu po jednu karticu i cilj ti je odabrati najveći broj. Ali možeš odabrati samo karticu koji su posljednju okrenuo. Koje je optimalno pravilo odabira?
+
+Optimalna strategija je odbaciti prvih `N/e` brojeva (koristimo ih za uzorak), i zatim odabrati prvi idući broj koji je veći od svih odbačenih. Vjerojatnost da će on biti najveći je `1/e`, tj. `37%`.
+
 # Literatura
 
 * https://www.statisticsdonewrong.com
-
-
-

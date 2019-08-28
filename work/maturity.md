@@ -7,7 +7,7 @@
 
 ## Working with Code
 
-Kompetentan programer zna kako nešto napraviti, proficient programer zna *zašto* i *kada* nešto napraviti. Par savjeta kako ići u tom smjeru:
+Kompetentan programer zna kako nešto napraviti, stručan programer zna *zašto* i *kada* nešto napraviti. Par savjeta kako ići u tom smjeru:
 
 Razmotri zašto nešto radiš na određeni način. Navedi prednosti i nedostatke tog pristupa u konkretnoj situaciji.
 
@@ -61,41 +61,41 @@ Ne tuži se ni na što ako nemaš barem jedan prijedlog riješenja.
 
 Budi skroman. Proslijedi pohvale na tim, preuzmi kritike na sebe.
 
-## Surviving the Framework Hype Cycle
+## Kako odabrati tehnologiju
 
-https://www.youtube.com/watch?v=9zc4DSTRGeM
-
-Nova tehnologija se uvijek čini privlačnijom - jer je još nismo upoznali i zamrzili. Svaka tehnologija prolazi kroz prirodni *Hype Cycle*:
+Nova tehnologija se uvijek čini privlačnijom - jer je još nisi upoznao i zamrzio. Svaka tehnologija prolazi kroz prirodni *Hype Cycle*:
 
 1. *Technology Trigger*: launch uz velika obećanja i nekoliko early adoptera. Za Rails, "Build a Blog in 15 minutes" video. Hacker News blow upa i svi su jako uživljeni.
 2. *Peak of Inflated Expectations*: svi pričaju o tehnologiji kao da će ispuniti mokre snove svih programera. DHH na naslovnici Linux časopisa posvećenom Rubyju.
-3. *Trough of Disillusionment*: tehnologija ne ispuni nemoguća očekivanja. Ljudi glasno odlaze i kukaju kako je najgore na svijetu. Članci poput "Rails is a Ghetto".
-4. *Slope of Enlightenment*: ako tehnologija *preživi*, počinje nazirati svijetlo na kraju tunela. Izlaze verzije 2.0, 3.0. Alati i materijali za učenje postaju sve bolji.
+3. *Trough of Disillusionment*: tehnologija ne ispunjava nemoguća očekivanja. Ljudi glasno odlaze i kukaju kako je najgore na svijetu. Članci poput "Rails is a Ghetto".
+4. *Slope of Enlightenment*: ako tehnologija preživi, počinje nazirati svijetlo na kraju tunela. Izlaze verzije 2.0, 3.0. Alati i materijali za učenje postaju sve bolji.
 5. *Plateau of Productivity*: dio ljudi koji su ostali postaju produktivni i ne vide potrebu da pretjerano pričaju o tome. MySQL već godinama nije nikome seksi, jer se nalazi ovdje.
 
-Svaki programer spada u jednu od kategorija. Svaka kategorija ne nužna da bi tehnologija napredovala
+Svaki programer spada u jednu od kategorija. Svaka kategorija je nužna da bi tehnologija napredovala
 * *Pioneers*: eksperimentiraju i stvaraju sliku kako bi stvari mogle izgledati.
 * *Settlers*: spajaju to sa stvarnim problemima.
 * *Town Planners*: skaliraju da dođe do velikog broja ljudi. Dosadno održavanje.
 
 Bitno je znati u kojem se trenutku priključiti tehnologiji. Ja sam settler/planner, pa mi najbolje odgovara 4. korak.
 
-Utjeha:
-* Tehnologija koju koristiš neće umrijeti. Rails 2 aplikacije se danas vrte u produkciji i rješavaju probleme za puno ljudi.
-* Ako te strah da te vrijeme ne pregazi: na poslu koristi jednu stabilnu tehnologiju, a na side projectu jednu iz znatiželje.
-* Dosta s Java-shamingom! Nitko se *ne bi smio sramiti* što voli i koristi neku tehnologiju.
+Tehnologija koju koristiš neće umrijeti. Rails 2 aplikacije se danas vrte u produkciji i rješavaju probleme za puno ljudi.
+
+Ako te strah da te vrijeme ne pregazi: na poslu koristi jednu stabilnu tehnologiju, a na side projectu jednu iz znatiželje.
+
+Dosta s Java-shamingom! Nitko se ne bi smio sramiti što voli i koristi neku tehnologiju.
 
 Obećanje nove tehnologije nije da ćeš magično postati 10x programer. Obećanje je da ćeš doći do Plateaua. Tamo ćeš biti dovoljno produktivan da se fokusiraš i sagledaš sliku iz krupnije perspektive.
 
-Inače jako dobra i zabavna prezentacija!
-
-(vidi još: https://www.youtube.com/watch?v=3wyd6J3yjcs, sličan rant, samo iz perspektive Java developera)
+Predavanja:
+* Surviving the Framework Hype Cycle (https://www.youtube.com/watch?v=9zc4DSTRGeM)
+* The Silver Bullet Syndrome (https://www.youtube.com/watch?v=3wyd6J3yjcs)
 
 ## Literatura
 
+* https://monicalent.com/blog/2019/06/03/absolute-truths-unlearned-as-junior-developer/
+* https://stackoverflow.blog/2019/08/07/what-every-developer-should-learn-early-on/
 * https://www.oreilly.com/ideas/the-traits-of-a-proficient-programmer
 * https://www.briangilham.com/blog/2016/10/10/be-kind
-* http://boz.com/articles/be-kind.html
 * http://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer
 * https://queue.acm.org/detail.cfm?id=3308563
 * https://www.youtube.com/watch?v=yYihop9gHj4 (Endurance by Yehuda Katz)

@@ -59,3 +59,6 @@ https://github.com/discourse/discourse/blob/master/lib/middleware/turbo_dev.rb
 
 Koristi ovaj middleware kao prvi u rack stacku, da prekine nepotrebno pozivanje svih ostalih middlewarea (učitavanje sessiona, dohvaćanje konekcije itd.)
 
+# Literatura
+
+* Optimization Techniques by Jeremy Evans [https://www.youtube.com/watch?v=RuGZCcEL2F8]

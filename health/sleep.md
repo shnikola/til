@@ -4,9 +4,9 @@ Spavanje je iznimno bitno za intelektualni i kreativni rad. Osnovno pravilo je: 
 
 Cilj spavanja nije odmor - tijekom sna metabolički procesi uspore se samo 15%. Cilj sna je optimiziranje memorije i čišćenje toksina iz mozga.
 
-Izbjegavaj alarme. Nemoj planirati kad ćeš ići spavati nego pusti tijelu da odluči. Ako ne možeš zaspati unutar 30 minuta, ustani. Ako ti misli lete dok pokušavaš zaspati, ustani i radi neki intelektualni rad.
-
 Potreba za snom je vrlo individualna, i nije univerzalnih 8 sati. Nekima treba manje, nekima više. Duže žive oni koji spavaju po vlastitoj potrebi, a ne oni koji spavaju manje, kako se često krivo interpretiraju istraživanja.
+
+Izbjegavaj alarme. Nemoj planirati kad ćeš ići spavati nego pusti tijelu da odluči. Ako ne možeš zaspati unutar 30 minuta, ustani. Ako ti misli lete dok pokušavaš zaspati, ustani i radi neki intelektualni rad.
 
 Tijelo zna stvoriti osjećaj gladi čak i ako nam hrana nije potrebna kako bi stvorilo zalihe. Sa spavanjem to nije slučaj, pa isključimo li budilicu tijelo neće pretjerivati u spavanju - spavat ćemo točno koliko nam treba. Spavanje se akumulira i nemoguće je skupljati zalihe sna unaprijed.
 
@@ -40,4 +40,4 @@ Provjeri si razine **Vitamina D** i **Magnezija**, te ih uzimaj ujutro ako ti fa
 # Literatura
 
 * https://www.supermemo.com/en/articles/sleep
-* https://www.lesswrong.com/posts/E4cKD9iTWHaE7f3AJ/melatonin-much-more-than-you-wanted-to-know
+* https://slatestarcodex.com/2018/07/10/melatonin-much-more-than-you-wanted-to-know/

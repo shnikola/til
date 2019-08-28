@@ -18,7 +18,7 @@ Korisni aliasi:
 
 `git reflog` lista svega što se napravilo u gitu, s indexima. Restore na taj trenutak s `git reset HEAD@{index}`
 
-`git checkout --patch` interaktivno prolazi kroz sve fileove i pita te želiš li discardati promjene u njemu.
+`git restore --patch` interaktivno prolazi kroz sve fileove i pita te želiš li discardati promjene u njemu.
 
 `git blame -C -L 10,20 file.txt` ispisuje commitove koji su dodali linije 10-20 u zadanom fileu. `-C` prepoznaje ukoliko je linija stigla iz nekog drugog filea.
 
@@ -57,7 +57,7 @@ Ako je file u working directoriju postojao u posljednjem snapshotu kažemo da je
 `git rm --cached <file>` briše file iz staging area, ali ga ostavlja na disku.
 
 `git reset HEAD <file>` unstagea file, ali ostavlja promjene.
-`git checkout -- <file>` briše promjene iz filea.
+`git restore -- <file>` briše promjene iz filea.
 
 ## Remote repositories
 
@@ -92,7 +92,7 @@ Branchevi su samo pointeri na određeni commit. Kada se stvori novi commit u bra
 `git branch` ispisuje lokalne brancheve. `-v` prikazuje posljednji commit svakog brancha.
 
 `git branch staging` stvara novi branch na trenutnom commitu.
-`git checkout staging` prebacuje se na branch tako da pointa HEAD na njega.
+`git switch staging` prebacuje se na branch tako da pointa HEAD na njega.
 
 ### Merging
 
@@ -112,9 +112,9 @@ Lokalno se čuvaju i remote branchevi (npr. `origin/master`) koji drže stanje r
 `git cherry-pick <commit>` kopira cijeli commit i dodaje ga na trenutni branch.
 
 `git rebase <branch>` kopira niz commitova iz trenutnog brancha koji su divergirali od zadanog. Na taj način se može mergati a da se očuvaju pojedinačni commitovi. Primjer rebasea:
-* `git checkout feature` nas pozicionira na vrh brancha.
+* `git switch feature` nas pozicionira na vrh brancha.
 * `git rebase master` dodaje u `master` sve commitove iz `feature`.
-* `git checkout master` i `git merge feature` radi fast forward merge da prebaci `master` na posljednji commit.
+* `git switch master` i `git merge feature` radi fast forward merge da prebaci `master` na posljednji commit.
 
 Ako se unutar rebasea dogodi konflikt, a želiš odustati, koristi `--abort`.
 
@@ -125,8 +125,8 @@ Rebase je dobar jer ostavlja cijelovitu povijest commitova prilikom merga branch
 Ako netko napravi push na `origin` remote repozitorij i `origin/master` pointa na novi commit, možeš dohvatiti novi commit i promjene na remote branchevima pomoću `git fetch origin`. Ova naredba će dohvatiti nove commitove, ali neće ih mergati u tvoje lokalne brancheve. To moraš napraviti ručno s `git merge origin/master`.
 
 Da bi pojednostavnio dohvaćanje remote promjena, moguće je podesiti da lokalni branch tracka remote branch:
-`git checkout --track origin/serverfix` stvara novi lokalni branch `serverfix` koji tracka remote branch `origin/serverfix`.
-`git checkout serverfix` isto to samo skraćeno, radi ako postoji samo jedan takav branch u remotima.
+`git switch --track origin/serverfix` stvara novi lokalni branch `serverfix` koji tracka remote branch `origin/serverfix`.
+`git switch serverfix` isto to samo skraćeno, radi ako postoji samo jedan takav branch u remotima.
 `git push -u origin` pusha lokalni branch na `origin` i tracka ga.
 
 Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`. `git branch -vv` ispisuje koji lokalni branch tracka koji remote.
@@ -164,6 +164,8 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 
 `git checkout <file>` ne pomjera `HEAD`, ali stavlja verziju filea iz `HEAD`a u staging i working directory, efektivno brišući necommitane promjene (kao `git reset --hard`).
 
+Ovo je bilo superkonfuzno, pa su u verziji `2.23` checkout funkcionalnosti razdvojili na `git switch` i `git restore`.
+
 ## Rewriting history
 
 Ako si zaboravio dodati file u commit (a nisi pushao):
@@ -176,7 +178,7 @@ Ako si napravio 3 commita koja želi squashati:
 Napravi `git reset --soft HEAD~2` da vratiš `HEAD` za dva commita unazad. U stagingu su ti najnovije verzije fileova koje možeš sve ubaciti u jedan `git commit`.
 
 Ako si commitao u krivi branch, npr `master`:
-Pozicioniraj se u ispravni branch s `git checkout correct-branch`. Dodaj mu taj krivi commit s `git cherry-pick master`. Prebaci se u master branch i izbriši commit s `git reset HEAD~ --hard`.
+Pozicioniraj se u ispravni branch s `git switch correct-branch`. Dodaj mu taj krivi commit s `git cherry-pick master`. Prebaci se u master branch i izbriši commit s `git reset HEAD~ --hard`.
 
 ## Config
 

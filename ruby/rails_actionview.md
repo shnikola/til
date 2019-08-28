@@ -11,19 +11,34 @@ Rails 5.1. oba zamjenjuje s metodom `form_with` u dvije varijante: `form_with ur
 
 `form_with` je po defaultu `remote: true`. Želiš li to disablati, koristi `local: true`.
 
-## Form Inputs
-
 `form_tag` bez bloka samo otvara form tag, što zna poremetiti sve sljedeće forme. Koristi `form_tag do; end` za praznu formu.
+
+## Form Inputs
 
 Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. `Post has_many :categories`) koristi:
 * `f.collection_select :category_id, Category.all, :id, :name` za `has_one`
 * `f.collection_check_boxes :category_ids, Category.all, :id, :name` za `has_many`. Koristi blok za definiranje kako će se label, checkbox, i dodatni elementi generirati.
+
+## Helperi s blokovima
+
+Za spajanje više elemenata u helper metodi, koristi: `concat hidden_field_tag :field`.
+
+Ako trebaš primiti i korisnikov blok, koristi: `concat capture(&block) if block_given?`, ili `capture(f, &block)` ako prosljeđuješ argument u blok.
 
 ## Friendly URLs
 
 Najjednostavniji način za dodati SEO friendly urlove je u modelu definirati metodu `to_param` koja vraća `[id, title.parameterize].join("-")`.
 
 Linkove generiraj s `link_to "Title", @article` koji će pozvati `to_param` nad objektom. U controlleru objekt dohvaćaj uobičajeno s `Article.find(params[:id])` koji će friendly url pretvoriti u integer.
+
+## Time formats
+
+Umjesto da koristiš `strftime` u viewovima, definiraj formate u `config/initializers/time_formats.rb`, npr:
+
+`Date::DATE_FORMATS[:stamp] = "%Y%m%d"`
+`Time::DATE_FORMATS[:stamp] = "%Y%m%d%H%M%S"`
+
+I onda ih koristi u viewu s `date.to_s(:stamp)`.
 
 ## Asset Host
 

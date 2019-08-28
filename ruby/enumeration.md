@@ -56,6 +56,8 @@ Da bi koristio `Enumerable` metode u vlastitoj klasi, dovoljno je definirati met
 
 `sort` sortira kolekciju koristeći `<=>`. `sort{|a, b| ...}` definira metodu usporedbe, `sort_by{|e| ...}` definira vrijednost po kojoj se sortira.
 
+Za ograničavanje vrijednosti, umjesto `[100, val].min` koristi `val.clamp(0, 100)`.
+
 ## Mapping and Reducing
 
 `map {|e| ...}` vraća kolekciju rezultata bloka izvršenog nad svakim elementom.

@@ -133,6 +133,30 @@ Moderna vinarska industrija započela je u Francuskoj nakon 2. svjetskog rata. U
 
 Istovremeno se javlja suprotna struja koja se zalaže za proizvodnju na "starinski način", bez natapanja vinograda u pesticidima, gnojivima, i korištenja sumpora za reguliranje fermentacije. Tako dobivena **prirodna vina** (natural wines) su smrdljivija, mutnija i kiselija, i okusom su uglavnom bliskija grožđu nego standardna vina. Problem je što ne postoji zakonska definicija što spada pod prirodno vino, pa kvaliteta iznimno varira od boce do boce. Zbog korištenja neregularinih divljih kvasaca okus im je nepredvidljiv i često zna otići u smjeru smrdljivih čarapa ili zapaljenih šibica. Svejedno, u zadnje vrijeme im dosta raste popularnost otkako je "autentičnost" postala popularna u industriji hrane.
 
+## Kokteli
+
+**Margarita** (Meksiko): `1.5cl` soka limete, `0.7cl` Cointreau, `3.5cl` tekile. Kolut limete.
+
+**Cosmopolitan** (USA): `3cl` soka limete, `špric` soka brusnice, `4.5cl` cointreau, `4.5cl` votke. Kolut limete.
+
+**Bloody Mary** (USA): `9cl` soka rajčice, `1.5cl` soka limuna, `3 šprica` worchester sosa, `4.5cl` votke, soli, papra, tabasco. Kriška limuna, stabljika celera.
+
+**Tequila Sunrise** (USA): `9cl` soka od naranče, `1.5cl` grenadine, `4.5cl` tekile. Trešnjica i kriška naranče.
+
+**Mimosa** (Francuska): `7.5cl` šampanjca, `7.5cl` soka naranče.
+
+**Death in the Afternoon** (Francuska): `13.5cl` šampanjca, `4.5cl` absinta.
+
+**Pina Colada** (Puerto Rico): `3cl` bijelog ruma, `3cl` kokosovog vrhnja, `9cl` soka ananasa. Kriška ananasa, maraschino trešnjica.
+
+**Daiquiri** (Kuba): `2.5cl` soka limete, `1.5cl` šećernog sirupa, `4.5cl` bijelog ruma. Kolut limete.
+
+**Mojito** (Kuba): `3cl` soka limete, `4cl` bijelog ruma, `6 listića` mente, `2 žlice` šećera, mineralna voda, mrvljeni led.
+
+**Bellini** (Italija): `10cl` prošeka, `5cl` pirea breskve.
+
+**Negroni** (Italija): `3cl` campari, `3cl` gina, `3cl` crvenog vermuta. Kriška naranče.
+
 ## Opisivanje okusa
 
 **Complex** znači da mijenja okus od trenutka kad ti dotakne jezik do after tastea. **One-note** znači da je cijelo vrijeme isti.

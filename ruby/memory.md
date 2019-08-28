@@ -8,6 +8,28 @@
 
 `report = MemoryProfiler.report { obj = ... }` mjeri koliko se bytova alociralo, a koliko je ih je zadržano u memoriji nakon završetka bloka.
 
+## Memory allocation
+
+Alokacija memorija u Ruby aplikacijama odvija se na tri razine: u Ruby interpreteru, u memory allocation libu OS-a, i u kernelu.
+
+Ruby interpreter organizira objekte u *Ruby heap pagevima*. Page je podijeljen na slotove od 40 byteova, i svaki objekt zauzima jedan slot. Ako su svi slotovi u pageu zauzeti, Ruby alocira novi heap page.
+
+Neki objekti ne stanu slot (npr. string od 1MB), pa se za njih alocira vanjska memorija, a u slot stavi pointer na nju.
+
+Heap pageve i vanjsku memoriju Ruby alocira korsteći sistemski memory allocator, library koji je dio glibca (C runtimea). Taj library ima dvije metode: `malloc(size)` za zauzimanje proizvoljne veličine memorije i `free(addr)` za oslobađanje.
+
+Kada memory allocator dobije zahtjev za memorijski prostor, on šalje zahtjev kernelu. Kernel alocira memoriju u blokovima od 4KB (to se zove *page*). Pošto allocator može dobiti zahtjev za bilo kojom veličinom, a komunikacija s kernelom je skupa, najčešće će od kernela zatražiti veću količinu memorije (npr. 32 stranice) koja se zove *heap*. Dok ima mjesta u heapu, dodjeljivat će ga bez da mora raditi dodatne zahtjeve prema kernelu. (Pazi da ne miješaš OS page i heap s Ruby pagevima i heapom.)
+
+Kada koristiš `top` ili `ps`, memorija koju proces troši prikazana je iz perspektive kernela. Ovaj broj može biti znatno veći od stvarne potrebe aplikacije zbog fragmentacije. Fragmentacija se može dogoditi na dvije razine: u Ruby heap pagevima (neki slotovi su slobodni, ali ne i cijeli page) i u OS heap pagevima (dijelovi pageva su slobodni, ali ne i cijeli page).
+
+Da bi izmjerio koliko memorije aplikacija koristi: `ObjectSpace.memsize_of_all` daje veličinu svih zauzetih slotova plus vanjske memorije. `GC.stat[:heap_free_slots]` daje veličinu svih slobodnih slotova. Zbrojimo li to dvoje dobit ćemo ukupnu memoriju koju Ruby aplikacija troši, uključujući fragmentaciju Ruby pageova. Pokazalo se da većina problematične fragmentacija dolazi zapravo iz OS pageva - dok ruby koristi 7MB, kernel vidi preko 200MB zauzete memorije!
+
+Problem je još izraženiji u multithreaded aplikacijama. Dva threada ne mogu istovremeno pristupati isto OS heapu, pa allocator alocira poseban heap za svaki thread kako bi izbjegao čekanje. Što je više heapova, više je i fragmentaciju i ukupno potrošene memorije.
+
+Rješenja koja su se pokazala da pomažu su postaviti `MALLOC_ARENA_MAX=2` koji će smanjiti broj heapova za multithreading, ili korištenje `jemalloc` librariju umjesto glibca.
+
+U najnovijim vijestima: čini se da je glavni problem što memory alokator ne otpušta slobodnu memoriju kernelu dovoljno često. Pozivanje `malloc_trim()` nakon GC-a pomaže, ali još je u eksperimentalnoj fazi.
+
 ## Ruby GC
 
 Svi objekti se spremaju na heap kojeg kontrolira MRI. Heap se sastoji od pageva. Svaki page je velik `16KB`, i sadrži `408` slotova u koje se spremaju informacije o jednom objektu. Svaki objekt isprva zauzima `40` byteova. Kada se objekt stvara, MRI traži slobodno mjesto na heapu. Ako ga nema, dodaje se novi page.
@@ -91,8 +113,8 @@ ReadCube dashboard reportovi trošili su previše memorije. S `memory_profiler` 
 
 # Literatura
 
-* https://www.speedshop.co/2017/03/09/a-guide-to-gc-stat.html
 * http://www.be9.io/2015/09/21/memory-leak/
 * https://samsaffron.com/archive/2015/03/31/debugging-memory-leaks-in-ruby
 * https://www.youtube.com/watch?v=kZcqyuPeDao - Halve Your Memory Usage With These 12 Weird Tricks
 * https://rubytalk.org/t/psa-string-memory-use-reduction-techniques/74477
+* https://www.joyfulbikeshedding.com/blog/2019-03-14-what-causes-ruby-memory-bloat.html

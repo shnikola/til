@@ -15,6 +15,15 @@ http://www.rubypigeon.com/posts/examining-internals-of-rails-request-response-cy
 * Vraća se u controller gdje `response.to_a` dobija rack array koji prosljeđuje routeru, pa nazad kroz sav middleware. Tu se postavlja `ETag`, serijaliziraju se cookiji itd.
 * Web Server serijalizira rack array u HTTP response string i šalje ga nazad klijentu.
 
+## Routing
+
+`namespace 'admin' { resources :users } ` će dodati `admin` na pathove (`/admin/users`), foldere (`/admin/users_controller.rb`), i helpere (`admin_users_path`).
+
+`scope` omogućuje da odabereš gdje će se dodati:
+* `path: 'admin'` dodaje na path,
+* `module: 'admin'` dodaje na foldere,
+* `as: 'admin'` dodaje na helpere.
+
 ## Rails Gems
 
 Bundler omogućuje da aplikacija koristi specifičnu verziju gema, makar je na računalu instalirano više verzija.
@@ -92,8 +101,16 @@ Za potpisivanje i enkripciju se koristi `secrets.secret_key_base`.
 
 ## Rails Console
 
-`app` - trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`
-`helper` - svi view helperi, npr. `helper.link_to` i `helper.truncate`
+`rails c --sandbox` će napraviti rollback svim DB promjenama na kraju sessiona.
+
+Rails konzola nudi pomoćne metode:
+* `app` je trenutni session instance, ima `app.get('/projects/6')` i `app.project_path(Project.first)`
+* `helper` za sve view helpere, npr. `helper.link_to` i `helper.truncate`
+
+Pry ima dodatne pomoćne metode:
+* `show-source outcome.to_s` će ispisati `to_s` metodu objekta.
+* `ls outcome` će ispisati sve metode objekta.
+* `cd outcome` će se postaviti u scope objekta, pa ne moraš koristiti `instance_variable_get`.
 
 ## Constantize security
 

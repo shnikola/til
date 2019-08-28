@@ -10,7 +10,7 @@ Ako trebaš donijeti tešku odluku koju odgađaš (npr. odlazak iz zemlje ili pr
 
 ## Self-compassion
 
-Često se ljudim savjetuje da rade na samopouzdanju, ali mnogo važnije biti suosjećajan prema samom sebi. Trebaš si moći oprostiti kao što bi oprostio bliskim prijateljima. Neuspjeh ne trebaš dočekati s "Jadan ja, kako sam grozan." nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."
+Često se ljudima savjetuje da rade na samopouzdanju, ali mnogo važnije biti suosjećajan prema samom sebi. Trebaš si moći oprostiti kao što bi oprostio bliskim prijateljima. Neuspjeh ne trebaš dočekati s "Jadan ja, kako sam grozan." nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."
 
 ## Životni odabir
 

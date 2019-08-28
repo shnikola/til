@@ -8,7 +8,7 @@ Umjesto `var x` koja je globalna koristi:
 
 ## String templates
 
-Koristi backtikove za interpolaciju unutar stringa: ``My name is ${name}``.
+Koristi backtikove za interpolaciju varijable unutar stringa: ``My name is ${name}``.
 
 ## Destructuring
 
@@ -16,6 +16,11 @@ Postavljanje varijabli iz arraya ili objekta:
 * `let [a, b, c] = [1, 2, 3]`
 * `let {a, b, c} = {a: 1, b: 2, c: 3}`
 * `let [head, ...tail] = [1, 2, 3]` stavlja ostatak u `tail`
+* `const { component } = Redux` radi `component = Redux.component`
+
+## Object Literal Notation
+
+`{ a, b }` umjesto `{ a: a, b: b }`
 
 ## Arrow Functions
 

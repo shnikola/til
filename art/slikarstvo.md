@@ -1,5 +1,11 @@
 # Slikarstvo
 
+## Boje
+
+Slikarske boje su u principu obojano ljepilo. Zadatak im je da iz tekućine pređu u čvrsto stanje i ostanu na mjestu. Različite vrste boja to postižu na različite načine. Vodene boje se suše - isparavanjem voda odlazi u zrak i na slici ostaju samo pigmenti.
+
+Uljane boje su napravljene od ulja (maka, oraha ili lana) koje oksidira na zraku, stvarajući tanki plastični sloj na površini. Taj sloj je vodootporan i jako izdržljiv, pa se zato ulja na platnu odlične drže i nakon dugo vremena. Veliki renesansni umjetnici poput Van Eycka, Ver­meera, i Titiana slikali su u slojevima, koristeći taj poluprozirni polimer kako bi stvorili kompleksne pigmente ili jako duboke crne boje.
+
 ## Renesansa
 
 Europa 15. i 16. stoljeće, prelazak s religijskog objašnjenja svijeta na znanstveni. Centri renesansne umjestnosti su Italija i današnja Belgija. Osnovne karakteristike renesansnog slikarstva su realističnost (analizira se okolina, anatomija, trodimenzionalnost predmeta u prostoru), i vraćanje antičkim uzorima (kako antičko slikarsktvo nije sačuvano, kopiraju se slikarstvo, arhitektura, i tekstovi iz Plinijeve "Naturalis Historiae"). Umjetnici iz cijele Europe putuju u Italiju u potrazi za antičkim spomenicima.

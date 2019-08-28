@@ -26,7 +26,7 @@ Na roštilju, steakovi se peku 5-6 minuta, burgeri, svinjski kotleti i piletina 
 
 ## Teletina / Junetina / Govedina
 
-Teletina su goveda stara 3.tj do 6 mjeseci. Roze i sivkaste boje, mekano i bez masti.
+Teletina su goveda stara 3 tjedna do 6 mjeseci. Roze i sivkaste boje, mekano i bez masti.
 Junetina su goveda 6-30 mjeseci. Svijetlocrvene boje, masno tkivo je krem bijelo.
 Govedina su goveda starija od 30 mjeseca. Tamnocrvene boje, masno tkivo je žuto.
 
@@ -54,8 +54,6 @@ Djelovi:
 * **Lopatica** pirjanje i gulaš.
 * **Lungić** (svinjski biftek) najcjenjeniji komad mesa. Za medaljone ili pečenje u pećnici.
 
-## Piletina
-
 ## Janjetina
 
 Mlada janjetina 3 tjedna do 3 mjeseca. Janjetina 3-9 mjeseci. Ovčetina starija od 9 mjeseci.
@@ -75,6 +73,14 @@ Janjetina gubi 35% mase pečenjem.
 
 Prijedlozi umaka:
 * Na tavu u kojoj se pekao stavi **maslac**, sitno isjeckani **luk ili ljutiku**, **2 režnja češnjaka**, i **4-5 zanko narezanih gljiva**. Kad su gljive gotove, deglaziraj tavu s **50ml crnog vina ili prošeka**, i dodaj **žlicu koncetrata od rajčice**. Miješaj na jačoj vatri do željene gustoće.
+
+## Pečenka
+
+* Meso dobro posoli, začini (npr. timijan, paprika, korijander) i stavi da odleži pola sata.
+* Oguli i nasjeckaj **2 kapule**, **1 glavicu češnjaka** samo oguli od vanjske opne i odreži vrhove. Nasjeckaj **mrkve**, **mladih krumpira**.
+* Ubaci sve zajedno u posudu za pečenje, pomiješaj s par žlica ulja. Ulij **150ml vina**.
+* Peci na 180 stupnje, `60 minuta pokriveno` (na pola puta ga promiješaj), onda u lončić izlij sokove i peci `30 minuta otkriveno` da se zapeče.
+* Sokove reduciraj u umak.
 
 ## Pulled Pork
 

@@ -16,6 +16,8 @@ Svaki dan popodne isplaniraj kompletan sutrašnji dan u blokovima (npr. po sat v
 
 Dobro definiraj zadatke, jer loše definirani zadatci ne mogu održati pažnju. Ako je zadatak prevelik, podijeli ga na više manjih. Ostavi jednostavne i dosadne zadatke za drugio dio dana kad si umorniji.
 
+Dodaj si tjedni podsjetnik da evaluiraš jesu li ti savjeti za produktivnost pomogli.
+
 ## Početak rada
 
 Nemoj odgađati početak rada čekajući motivaciju, jer ona neće doći. Počni raditi, što će potaknuti inspiraciju, koja će izazvati motivaciju za daljnji rad. Sve počinje tvojom akcijom.
@@ -30,7 +32,7 @@ Napravi si i shutdown ritual, tako da mozak zna da si završio za danas. To mož
 
 ## Okruženje
 
-Imaj posebno mjesto za rad. Ako možeš, koristi različito računalo za posao od onog za zabavu.
+Imaj posebno mjesto za rad. Kod kuće si opušten i ne osjećaš poticaj da moraš nešto obaviti. Ako se ne možeš fokusirati, promjeni okolinu: otiđi u kafić ili knjižnicu u kojoj nisi nikad bio.
 
 Otežaj si distraktivne aktivnosti. Blokiraj si twitter, facebook i news siteove. Drži mobitel izvan radne sobe i isključi si bilo kakve zvučne notifikacije. (Email i poruke bi trebale spriječiti ometanje, a ne ga stvarati).
 
@@ -62,4 +64,4 @@ Kada radiš popis zadataka, zapitaj se koliko ti je svaki zadatak bitan, i koji 
 * https://www.youtube.com/watch?v=d0m0jIzJfiQ (How To Design Deep Games with Jonathan Blow)
 * https://qotoqot.com/blog/improving-focus
 * http://calnewport.com/blog/2012/11/21/knowledge-workers-are-bad-at-working-and-heres-what-to-do-about-it/
-
+* https://guzey.com/productivity/
