@@ -54,11 +54,18 @@ Klase su syntax sugar oko prototype modela: `class Cat { ... }`
 
 ## Modules
 
-Svaki file je zaseban module, a dijele feature preko `export` i `import`
+Prije nego što je JS dobio podršku za module, koristilo se nekoliko sistema.
+
+Node koristi `module.exports = { sum: sum }` za exportanje i `const math = require("./math.js")` za importanje.
+
+AMD dozvoljava asinkrono loadanje modula. Koristi se `define('math', ['dependecy'], function (dependency}) { ... return { sum: sum } }) ` za exportanje, i `require('math', function(module) { // callback })` za import.
+
+U ES6, svaki file je zaseban module, a dijele feature preko `export` i `import`
 * `export function sum() { ... }` i `export var pi = 3.14` u `lib/math.js`
 * `import * as math from 'lib/math'` dopušta korištenje `math.sum` i `math.pi`
 * `import {sum, pi} from 'lib/math'` dopušta korištenje `sum` i `pi`
-Moduli se čak mogu dinamički loadati sa `System.import('lib/math').then(...)`
+
+Postoji podrška i za asyncroni load: `System.import('lib/math').then(...)`
 
 # Literatura
 

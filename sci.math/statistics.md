@@ -68,7 +68,7 @@ Empirijska vjerojatnost - opažamo je u stvarnim podacima, tj. iz uzoraka. Daju 
 
 `P (A && B) = P(A)*P(B)` ako su A i B neovisni. A i B su neovisni ako se vjerojatnost jednog ne mijenja ovisno o drugom.
 
-`P (A | B) = P(A && B) / P(B)`
+`P (A | B) = P(A && B) / P(B)` uvjetna vjerojatnost.
 
 ## p-values
 
@@ -83,6 +83,12 @@ Statistička moć (**power**) studije je izglednost da će moći razlikovati efe
 ## Replikacija
 
 Kako bi dobili pouzadnije rezultate, mnoge studije nastoje sakupiti još podataka kroz replikaciju, radeći dodatna mjerenja. Problem koji se često previdi je pseudoreplikacija, kada su dodatna mjerenja zapravo povezana s izvornima. Npr. ako mjerimo iste ispitanike kroz više dana, uzimamo dodatne neurone iz iste životinje, testiramo stanice iz iste kulture, replikacija nije valjana jer takva mjerenja nisu neovisna.
+
+## Bayes
+
+Recimo da je u populaciji 20% bolesnih. Ako imaš test koji će prepoznati bolest u 90% bolesnika (*true positive*) i greškom prepoznati u 30% zdravih (*false positive*), kolika je vjerojatnost da je ispitanik s pozitivnim rezultatom stvarno bolestan?
+
+Od ukupne populacije, pozitivnih bolesnih će biti `0.2 * 0.9 = 18%`, a pozitivnih zdravih `0.8 * 0.3 = 24%`. Znači da je veća vjerojatnost da je ispitanik zdrav.
 
 ## Surprisingly popular
 

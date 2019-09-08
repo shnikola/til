@@ -45,6 +45,10 @@ Drugi načini na koji je manipulirao medijskim prostorom:
 
 Problem je što su slične metode manipulacije počinju koristiti za širenje političkih ideja i vrijeđanje pojedinaca. Stranice poput *Jezebel* ili *Breitbarta* ih koriste kako povećali svoju čitanost potpirujući strah i ljutnju, i stvarajući raskol među svojim pobornicima i protivnicima, jer to donosi nove klikove.
 
+## Pop kultura
+
+Zanimljivo je kako su neka djela toliko utjecajna da uđu u strukturu pop kulture i nakon nekog vremena se više uopće ne čine inovativnim. Npr. filmovi Kevina Smitha u kojem su likovi pričali o Star Warsu i stripovima, sada su potpuno nezanimljivi kad je Big Bang Theory najpopularniji sitcom u Americi. S druge strane, neka djela su dovoljno kvalitetna da i dalje nadvisuju imitatore (2001, Kum, Matrix).
+
 # Literatura
 
 * Trust Me I'm Lying - Ryan Holiday

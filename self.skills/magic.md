@@ -20,4 +20,4 @@
 
 ## Dissapearing
 
-**Die box** ili **sucker box**: široka kutija s dvoja vrata. Staviš kocku u jednu stranu kutije, nagneš da zvuči kao da je slideala na jednu stranu, otvoriš prva vrata. Nagneš na drugu stranu (opet zvuk slideanja), otvoriš druga vrata. Svima je očito da slideaš kocku lijevo desno, ali kad otvoriš oba vrata kocke nema. Kocka je zapravo šuplja i kad je staviš u kutiju izgleda kao dio kutije, zvuk proizvodi podnožje kutije.
+**Die box** ili **sucker box**: široka kutija s dvoja vrata. Staviš kocku u lijevu stranu kutije. Ko fol skrivečki nagneš kutiju na desnu stranu (čuje se kako kocka slidea), otvoriš lijeva vrata da pokažeš kako kocke nema. Netko će reći, otvori ova druga vrata, pa nagneš na lijevu stranu (opet zvuk slideanja), otvoriš desna vrata, kocke nema. Svima je očito da slideaš kocku lijevo desno, ali onda otvoriš oba vrata istovremeno i kocke nema. Kocka je zapravo šuplja i kad je staviš u kutiju izgleda kao dio kutije, zvuk proizvodi podnožje kutije.

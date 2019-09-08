@@ -70,10 +70,9 @@ U najvećoj kršćanskoj shizmi u posljednjih 500 godina, Ruska pravoslavna Crkv
 
 Do raskola je došlo nakon što je Carigrad priznao nezavisnost Ukrajinske pravoslavne Crkve, te poništio ekskomunikaciju nad dvojicom ukrajisnkih svećenika koju je proglasila Moskva.
 
-
 ## Marija
 
-Gotovo sve kršćanske crkve slažu se da je Marija **majka Božja** (u smislu da je rodila Božje utjelovljenje Isusa), osim nestorijanskih crkvi koje vjeruju da je rodila samo Kristovu ljudsku stranu.
+U ranom kršćanstvu, gnostici su smatrali da je Marija bila samo vodič za Isusovo ljudsko tijelo ("prošao je kroz nju kao voda kroz cijev") i da od nje nije ništa naslijedio. Nestorijanske crkve smatrale su da je Marija rodila samo Kristovu ljudsku stranu, a da je božja došla odvojeno. Danas, gotovo sve kršćanske crkve slažu se da je Marija **majka Božja** (u smislu da je rodila Božje utjelovljenje Isusa).
 
 Sve se crkve slažu da je Marija bila **djevica kad je rodila**. O tome pišu samo evanđelisti Matej i Luka, što je malo čudno jer se više nikad ne spominje u Bibliji. Moguć razlog tome je što se u ranom kršćanstvu to nije smatralo toliko bitnim, jer se vjerovalo da dijete u potpunosti dolazi od majke, a da muškarac samo inicira formativni proces. Katolička i protestantska crkva vjeruju da je Marija ostala **vječna djevica** i nakon Isusovog rođenja, što znači da nije imala odnose s Josipom i da joj je Isus bio jedino dijete. Biblija spominje Isusovu braću i sestre, a službena interpretacija je da su oni djeca iz Josipovog prošlog braka, ili rođaci. Matej (1:25) kaže da Josip i Marija nisu imali odnose "prije" nego se Isus nije rodio, što ostavlja otvorenim pitanje jesu li imali išta nakon.
 
@@ -113,11 +112,11 @@ U Bibliji se silazak nad pakao ne spominje, ali u **Prvoj Petrovoj poslanici** i
 
 Silazak nad pakao se prvi put se spominje u **Nikodemovom Evanđelju**. Nikodem je farizej koji se spominje par puta u Ivanovom evanđelju, a ovaj tekst potječe iz 5. st. i lažno se predstavlja kao njegovo djelo. U tekstu, židovski vođe ne vjeruju da je Isus ustao iz mrtvih, pa im ljudi ljudi dovode dvojicu Simeonovih sinova (Simeon je u Lukinom evanđelju prepoznao Isusa kao bebu). Ti sinovi su umrli, a kad je Isus ustao iz mrtvih, ustali su i oni. Sinovi ispričaju da su bili u Hadu kad su čuli glas kako govori: "Kralj je stigao, otvorite vrata jer kralj Židova ulazi". Proroci starog zavjeta su se ustali i potvrdili da je to taj kojeg čekaju; Adam se ustao i održao govor; Ivan Krstitelj se ustao i održao govor; na kraju Isus stiže i odvodi ih iz Hada u raj.
 
-## Hereze po katoličkoj crkvi
+## Teorije o Kristovoj Naravi
 
-* **Adopcionizam**: Krist je bio čovjek odabran od Boga. (Hereza po Nicejskom Saboru)
+* **Adopcionizam**: Marija i Josip se seksali, dobili dijete, pravednije od svih ostalih, Bog ga je odabrao da bude spasitelj. Krist nije Bog, jer je samo jedan Bog. (Hereza po Nicejskom Saboru)
 * **Arijanizam**: Krist je stvoren od Boga, ali nije Bog (Hereza po Nicejskom Saboru).
-* **Doketizam**: Krist je božansko biće koje je uzelo ljudski lik. (Hereza po Nicejskom Saboru)
+* **Doketizam**: Krist je božansko biće koje je uzelo ljudski lik. Bog ne može biti čovjek kao što ne može biti šljiva. Isus se samo činio čovjekom, to je bila iluzija (grč. *doceto*, činiti se) (Hereza po Nicejskom Saboru)
 * **Apolinarizam**: Krist je imao ljudsko tijelo, ali božanski um. (Hereza po Carigradskom saboru jer se pokušava stvoriti "treće biće", ni Bog ni čovjek).
 * **Nestorijanizam**: Krist je imao odvojenu ljudsku i božansku narav koje su živjele u istom tijelu. (Hereza po Efeškom saboru)
 * **Monofizitizam**: Krist ima jedinstvenu narav, kakva god bila. (Hereza po Kalcedonskom saboru).
@@ -125,6 +124,34 @@ Silazak nad pakao se prvi put se spominje u **Nikodemovom Evanđelju**. Nikodem 
 * **Miafizitizam**: Krist ima jednu narav koja je složena od božanske i ljudske. (Hereza po Kalcedonskom saboru jer je monofizitizam. Prihvaćaju ga nekalcedonske crkve)
 * **Monoenergizam**: Krist ima dvije naravi, ali jednu energiju. (Hereza po 3. Carigradskom saboru.)
 * **Monoteletizam**: Krist ima dvije naravi, ali jednu volju. (Hereza po 3. Carigradskom saboru.)
+
+Na kraju, pobjedio je kompromis: Krist je u potpunosti čovjek, i u potpunosti je Bog - istovremeno. Nije polučovjek i polubog, nego potpuno čovjek i potpuno Bog. To je proglašeno misterijem - ako misliš da si razumio, zapravo nisi razumio.
+
+## Sveti red
+
+Tri razine svetog reda: đakonat, prezbiterstvo, i biskupstvo.
+Sveti red se prenosi s osobe na osobu, počevši od 12 aposotla - to se zove apostolsko nasljeđe.
+
+Samo biskupi smiju dijeliti sveti red, i to za sve tri razine. Dodatno, da bi zaredio drugog biskupa, mora imati nalog od pape. U principu on može zarediti drugog biskupa, i sakrament je valjan (ovaj drugi će postati biskup), ali je bez dozvole najstrože zabranjen i kažnjava se izopćenjem za obojicu.
+
+Glavni zadatak prezbitera (obični svećenici) je da dijele euharistiju, a đakona da pomažu svećenicima u raznim službama.
+
+### Celibat
+
+Po pitanju seksualnog života svećinika, razlikuju se tri pojma:
+* **Celibat:** ne stupanje u brak.
+* **Čednost:** (*chastity*) prakticiranje samo dozvoljenih seksualnih aktivnosti (npr. samo unutar braka, ne korištenje kontracepcije)
+* **Apstinencija:** (*continence*) ne prakticiranje seksa uopće.
+
+Anglikanci i protestanti ne zahtjevaju celibat i uglavnom potiču svećeničku ženidbu.
+
+U Pravoslavnoj Crkvi, svećenici smiju biti oženjeni, ali samo ako su se oženili prije nego su se zaredili. Čak i ako postaneš udovac kao svećenik, ne smiješ se ponovno ženiti. Iznimka su biskupi koji ne smiju biti oženjeni, jer kao imaju puno posla.
+
+Katolička Crkva je imala ista pravila do `Trentskog Koncila 1563`, kada je celibat postao obvezan za sve svećenike. Svećenici ne smiju biti oženjeni, osim ako će biti trajni đakoni (đakoni koji ne mogu dalje napredovati), ili ako prelaze na katoličanstvo iz drugih denominacija a već su oženjeni.
+
+Svećenićki celibat nije propisan nigdje u Bibliji. Štoviše, Ivan Krstitelj (Isusov rođak s majčine strane) je bio sin židovskog visokog svećenika, Zekarije. Judaizam općenito potiče rabine i svećenike da se žene. Islam ide još dalje, i zabranjuje cjeloživotni celibat.
+
+Ideja katoličkog celibata najvjerojatnije nije teološki motivirana (iako je službeno obrazloženje da je Isus bio u celibatu), nego politički. Pape u 11. stoljeću su htjeli zaustaviti običaj da oženjeni svećenici predaju crkvenu imovinu svojim sinovima. Zato su počeli donositi dekrete koji zabranjuju nasljeđivanje kod svećenika, tjeraju ih da se razdvoje od svojih žena, i konačno zabrane brak u potpunosti.
 
 # Literatura
 

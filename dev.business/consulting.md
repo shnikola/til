@@ -43,6 +43,8 @@ Piši emailove kraći od 200 riječi. Nitko nema vremena to čitati.
 
 ## Obavljanje posla
 
+Imaj na umu zbog koje stručnosti te klijent uzeo, nemoj da te druge stvari distraktiraju.
+
 Ako si premalo naplatio projekt, stisni zube i dovrši ga. Ako to nije moguće, budi iskren s klijentom i daj im izlazni plan. Što god se desi, nemoj samo nestati!
 
 Oko 50% freelancera nestane prije nego dovrše posao. Pouzdanost je jako rijetka vrlina u ovom poslu.

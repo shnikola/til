@@ -18,6 +18,10 @@ Delegiraj ljudima dok se ne počnu žaliti. Ljudi najčešće žele priliku da p
 
 Ne govori ljudima kako da rade, nego što trebaju napraviti. Dopsuti im da te iznenade.
 
+## Povjerenje
+
+Učinkoviti timovi trebaju povjerenje. Manjak povjerenja nadoknađuje se birokracijom (npr. code reviewima, tjednim izvještajima, detaljnim praćenjem potrošenog vremena). Što više povjerenja i međusobne odgovornosti tim posjeduje, to će biti manje birokracije i tim će biti efikasniji.
+
 ## Standup
 
 Poanta standup sastnaka je da svi započnu radni dan s maksimalno informacija o o relevantnih za njihove zadatke. U slučaju dva teama u različitim vremenskim zonama, jedan team može na kraju svog dana ostaviti par natuknica na Slacku koje će drugi team ujutro pročitati.

@@ -41,7 +41,6 @@ Mudre Izreke 4:18: 18A pravednička je staza kao svjetlost svanuća, koja je sve
 
 Bible is an "organizational book" that does not belong to individuals and that the Bible cannot be properly understood without guidance by "Jehovah's visible organization
 
-
 ## Unitarijanci
 
 Kršćanski Unitarijanizam je teološki pokret koji smatra da kršćanstvo nije pravi monoteizam jer vjeruju u trojstvo. Unitarijanci vjeruju da je Bog samo jedan. Po njima, Isus je bio velik čovjek, prorok i moralni autoritet, možda čak i nadnaravno biće, ali nije bio Bog. Glavni argument im je da Isus nikad nije tvrdio da je Bog, niti je njegovo učenje ikad spominjalo trojsvo.

@@ -16,6 +16,8 @@ Mjesečno:
 - Očisti frižider
 - Operi podove
 
+Kada ideš na put duži od 5 dana, očisti stan. Najbolja stvar je vratiti se u pospremljenu kuću.
+
 ## Uređaji
 
 Koji god uređaj da uzimaš, uzmi ga na minimalno 5 godina garancije.

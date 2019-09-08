@@ -88,6 +88,10 @@ Spuštaj se u čučanj ali čim ti potkoljenica dotakne šipku, prestani savijat
 
 5) Šipka se ne kreće vertikalno nego koso - od iznad očiju do točke na prsima. Fokusiraj pogled na strop, ne na šipku, kako bi održao istu putanju.
 
+## Samoobrana
+
+Ako vidiš da će te netko udariti šakom u glavu, spusti bradu prema dolje. Gornji dio lubanje je ti je najčvršći, i vjerojatno će ozlijediti ruku. U suprotnom, udarac u čeljust će te nokautirati i izbiti ti zube.
+
 # Literatura
 
 * https://www.youtube.com/watch?v=OyK0oE5rwFY

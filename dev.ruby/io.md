@@ -38,7 +38,7 @@ Za random access koristi `io.pos`, `io.eof?`, `io.seek` i `io.rewind`.
 
 Neke pomoćne metode:
 * `File.read('file.txt')` otvara file, učita cijelog u string i zatvara ga. Korisno za male fileove.
-* `File.readlines('file.txt')` isto kao i gore, samo vraća array s linijama.
+* `File.readlines('file.txt', chomp: true)` isto kao i gore, samo vraća array s linijama (`chomp` uklanja `\n` s kraja linije).
 * `File.foreach('file.txt')` itererira kroz linije filea bez da ga učita cijelog u memoriju.
 
 ## Tempfile
@@ -73,5 +73,3 @@ Druga opcija je koristiti `IO.select(read_ios, write_ios)` koji blokira poziv do
 Za ozbiljan asinkroni I/O handling koristi frameworke poput `EventMachine` i `Celluloid`.
 
 Za lightweight nadogradnju, `nio4r` nudi stateful `select` (ne moraš mu prosljeđivati array streamova svaki put), mogućnost timeouta, te lakše monitoriranje socketa s `readable?` i `writable?`.
-
-

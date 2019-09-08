@@ -12,7 +12,11 @@ Pomažu probiotici, antidijarojici, i rehidracijske soli.
 
 **Racekadotrili** smanjuju lučenje vode u crijevo, pa je stolica čvršća i sprječava dehidraciju. Najbolje djeluje ako u 6-8 sati nakon proljeva popiješ kapsulu. Kod nas je `Hidrasec`.
 
-**Oralna rehidracijska otopina** sadrži elektrolite i povećava apsorpciju vode. Groznog je okusa, i ako povraćaš uzimaj gutljaj po gutljaj. Par sati nakon što popiješ probaj lagano jesti da vratiš crijeva u funkciju.
+**Oralna rehidracijska otopina** sadrži elektrolite i povećava apsorpciju vode. Groznog je okusa, i ako povraćaš uzimaj gutljaj po gutljaj. Par sati nakon što popiješ probaj lagano jesti da vratiš crijeva u funkciju. Kod nas je `Rehidromix`.
+
+## Tinnitus
+
+Ovo nekad funkcionira: Stavi dlanove preko ušiju tako da ti prsti idu prema stražnjem dijelu glave. Srednji prsti trebaju gledati jedan prema drugome malo iznad baze lubanje. Stavi kažiprste iznad srednjih prstiju i pucni s njima, udarajući lubanju i stvarajući glasan, bubnjajući zvuk. Ponovi 40-50 puta. Nekima pomogne odmah. Ponavljaj nekoliko puta na dan ako je potrebno.
 
 ## Kirurški termini
 
@@ -23,3 +27,7 @@ Pomažu probiotici, antidijarojici, i rehidracijske soli.
 - **-peksija** kirurg je pomaknuo organ na pravo mjesto.
 - **-rafija** kirurg je nešto zašio.
 - **-deza** kirurg je spojio dvije stvari.
+
+# Literatura
+
+* http://zencephalon.com/placebo

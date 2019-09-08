@@ -1,59 +1,38 @@
 # Odgoj
 
-## Fairness
+## Svijet je okrutan
 
 Ako imaš priliku odgajati dijete, omogući mu dosljedno i sigurno okruženje, ali nauči ga da svijet *nije* pošten, da on nije uvijek najbolji ili najpametniji u prostoriji (i da ne bi ni trebao biti), i da je drugim ljudima stalo mnogo više do samih sebe nego do njega.
 
-Što duže bude zaštićen idealnim svijetom kojim mu pružiš, to će teže podnijeti prve prepreke i krize koje će mu život kad tad donijeti.
+Što duže bude zaštićen idealnim svijetom kojim mu pružiš, to će teže podnijeti prve prepreke i krize koje će mu život kad-tad donijeti.
 
-Dobar način za osvijestiti ovo su natjecateljske aktivnosti - sportovi, akadameska natjecanja, gdjegod ima priliku biti najbolji negdje i failati.
+Dobar način za osvijestiti ovo su natjecateljske aktivnosti - sportovi, akademska natjecanja, ili gdjegod može izgubiti čak i ako je dao sve od sebe.
 
 ## Chores
 
 Što je ranije moguće, daj djetetu da sudjeluje u kućanskim poslovima. Trajat će višestruko duže, ali tako će se naučiti samostalnosti i osvijestiti sebe kao dio kućanstva. Pomaže ako učiniš aktivnosti zabavnima i dovoljno jednostavnima da i malo dijete može sudjelovati (npr. punjene suđa u mašinu, hranjenje mačke i sl.)
 
-## Failing Tests
+## Neuspjeh u školi
 
-Nakon što nije položio završni test, učiteljica je autističtnom učeniki poslala pismo:
-
-"... I am writing to congratulate you on your attitude and success in completing your end of key stage SATs. Steph and Anne have worked so well with you and you have made some fantastic progress.
-
-A very important piece of information I want you to understand is that these tests only measure a little bit of your abilities. They are important and you have done so well, but Ben Twist is made up of many other skills and talents that we at Lansbury Bridge see and measure in other ways.
-
-Other talents you have that these test do not measure include:
-* Your artistic talents
-* Your ability to work as a team
-* Your growing independence
-* Your kindness
-* Your ability to express opinion
-* Your abilities in sport
-* Your ability to make and keep friends
-* Your ability to discuss and evauluate your own progress
-
-We are so pleased that all of these different talents and abilities make you the special person you are and these are all of the things we measure to reassure us that you are always making progress and continuing to develop as lovely bright young man.
-
-Well done Ben, we are proud of you."
+Akademski uspjeh je koristan, ali podsjeti dijete da školski testovi mjere samo jedan mali dio njih i njihovih sposobnosti. Postoji hrpa talenata koji se ne mjere testovima kao što su: nadarenost za umjetnost, sport, timski rad, neovisnost, dobrotu prema drugima, sposobnost izražavanja mišljenja, stvaranje prijateljstva, poticanje osobnog razvoja.
 
 ## Aspiracije
 
 Najveći utjecaj na nečiji život, pogotovo relativno mladih ljudi, možeš imati tako da predložiš da naprave nešto bolje ili ambicioznije nego što su imali na umu.
 
-## Drugs
+## Dosada
 
-"The truth is marijuana probably isn't gonna make you kill people, and it most likely isn't going to fund terrorism, but, well son, pot makes you feel fine being bored. And it's when you're bored that you should be learning some new skill or discovering some new science or being creative.
+Dosada je korisna jer te natjera da otkriješ neku novu zanimaciju, strast i sposobnost. Najkreativnije ideje se razvijaju upravo iz dosade.
 
-If you smoke pot you may grow up to find out that you aren't good at anything."
+To je istinski problem s lakim drogama i mobitelima - uz njih nemaš priliku osjećati dosadu. Daju nam privremenu distrakciju, ali ne i zadovoljstvo.
 
-## Autoritet
+Istraživanja su pokazala da sretniji tinejdžeri više vremena provode u aktivnostima koje ne uključuju ekrane: spavanje je na prvom mjestu, sport i tjelovježba, interakcija s drugim u ljudima uživo, volonterski rad, odlazak u kino, religijski obredi itd.
 
-Ako želi da dijete posjeti baku, roditelj tradicionalnog autoriteta će reći: "Briga me što želiš, moraš posjetiti svoju baku". Ovo je pošteno jer ostavlja hijerarhiju moći transparentnom, i dopušta djetetu da se ponudi.
+## Pretjerana briga
 
-S druge strane, roditelj liberalnog autoriteta će reći "Znaš koliko te baka, voli, ali posjeti je samo ako to stvarno želiš." Pod iluzijom slobodnog izbora je puno više pritiska, jer ne samo da moraš posjetiti baku, nego moraš i voliti posjećivati je.
-
-## iGen Happiness
-
-Istraživanje (doi:10.1037/emo0000403) je pokazalo da sretniji tinejdžeri više vremena provode u aktivnostima koje ne uključuju ekrane: spavanje je na prvom mjestu, sport i tjelovježba, interakcija s drugim u ljudima uživo, volonterski rad, odlazak u kino, religijski obredi itd.
+Kada se roditelj neumjereno brine za dijete, zapravo ga je strah da se on neće moći nositi s tim da se djetetu nešto dogodi. To je razumljivo, jer se i dalje sjećaju kada je imalo dvije godine i nije moglo promijeniti pelenu. Problem je što takvom brigom pokazuju da nemaju povjerenja u dijete i time potkopavaju djetetovo samopouzdanje.
 
 # Literatura
 
 * https://magicalchildhood.wordpress.com/2010/08/31/what-should-a-4-year-old-know/
+* https://www.telegraph.co.uk/news/2016/07/11/teacher--writes-moving-letter-to-autistic-pupil-who-failed-exams/
