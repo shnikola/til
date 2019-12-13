@@ -23,3 +23,12 @@ Uz sve to, status page im je imao ogroman promet, pa su upogonili 90 Heroku dyno
 http://perf.fail/post/97144331419/learning-from-apples-livestream-perf-fiasco
 
 Stranica dohvaća feed.json koji nije GZIPan (90% uštede). Iz feeda se dohvaća svih 500 imagea odmah, umjesto on-demand. Svi imagei imaju max-age < 10s, iako se neće mijenjati, pa CDN ne pomaže puno. Svakih 10 sekundi se dohvaća feed.json iznova, umjesto da postoji mehanizam za diff ili push.
+
+## Caching S3 with ngnix and HAProxy
+
+https://blog.sentry.io/2017/03/01/dodging-s3-downtime-with-nginx-and-haproxy.html
+
+Dohvaćanje podataka iz S3 bucketa im je imalo preveliku latenciju, a S3 usto ograničava bandwidth prema serverima izvan AWSa.
+
+Zato su dodali proxy cache sa 750GB diska u svoj datacentar kako bi se put do S3-a skratio. HAProxy je usmjeravao sve requeste na cache, ili u slučaju da cache faila, na S3.
+

@@ -1,5 +1,49 @@
 # SQL
 
+## Column types
+
+`INT` podržava veličine do 2^32 (ako je `UNSIGNED`). Length (npr. `INT(11)`) određuje samo koliko će se nula prikazivati ako se ispisuje sa `ZEROFILL`.
+
+Koristi  `NUMERICAL` ili `DECIMAL` (imaju isto ponašanje) umjesto `FLOAT` i `DOUBLE` kako bi izbjegao pogreške zbog zaokruživanja.
+
+Ne koristi `ENUM` ili `CHECK` constraints koj idefiniraju moguće vrijednosti stupca. Dodavanje novih i izmjena starih vrijednosti postaje komplicirana. Drži moguće vrijednosti stupca u zasebnoj tablici ili aplikacijskom kodu.
+
+Postgres podržava `UUID` type, s `DEFAULT uuid_generate_v4()`.
+
+## Encoding
+
+MySQLov `utf8` zapravo ne podržava cijeli Unicode, nego samo 3 od 4 byta. Za pravi UTF-8, koristi `utf8mb4`.
+
+Neke minor verzije MySqla imaju problem s insertanjem većih JSON-a (> 5MB), što se može zaobići koristeći `SET CHARSET binary` prije i `SET CHARSET default` poslije inserta.
+
+## Null
+
+`NULL` predstavlja nepoznatu vrijednost, pa sve operacije u kombinaciji s `NULL` rezultiraju u `NULL` (npr. boolean `NULL OR TRUE` ili konkatenacija teksta `'tekst' || NULL`). Isto tako, ne može se koristiti u `WHERE` naredbama kao normalna vrijednost. Umjesto `WHERE name <> NULL` koristi `WHERE name IS NOT NULL`.
+
+`NULL` nije false, i nemoj ga koristi kao false. Boolean stupcima (npr. `disabled`) uvijek stavi `NOT NULL` i defaultnu vrijednost.
+
+## Upsert
+
+Postgres: `INSERT INTO users (id, name) VALUES (1, 'Nikola') ON CONFLICT DO UPDATE SET name=excluded.name`
+
+Mysql: `INSERT INTO users (id, name) VALUES (1, 'Nikola') ON DUPLICATE KEY UPDATE name=name`
+
+## Indeksi
+
+Indeksi su korisni samo za querije koji dohvaćaju mali broj rezultata; ili za izbjegavanje sortiranja. Engine neće koristiti indeks ako procjeni da je sekvencijalni scan brži (npr. ako ima previše rezultata). Ako je engine glup, prisili ga da koristi indeks s `FORCE INDEX index_name`.
+
+Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
+
+`B-Tree` (balanced tree) je defaultni tip indeksa koji radi dobro za sve tipove podataka. `GIN` (inverted index) korisni kad indeksiraš više vrijednosti na jedan row (npr. array stupce ili full-text search). `GiST` (search tree) korisni za geometrijske tipove ili full-text search.
+
+**Partial index** omogućava indeksiranje samo nekih redova u tablici, pa je indeks manji i brži za scaniranje: `CREATE INDEX i ON articles(created_at) WHERE flagged IS TRUE`
+
+**Expression index** omogućava indeksiranje modificarnih podatka, ako često radiš querije koji koriste funkcije, npr. `CREATE INDEX i ON users(lower(name))` ako često radiš query s `WHERE lower(email)` ili `CREATE INDEX i ON articles(date(published_at))` ako pretavaraš `datetime` u `date`.
+
+Stvaranje novog indeksa locka cijelu tablicu za pisanje. `CREATE INDEX CONCURRENTLY` radi sporije, ali bez lockanja.
+
+Indeksi se s vremenom fragmentiraju zbog obrisanih i updateanih redova. Korisno je napraviti `REINDEX`, ali i on dugo traje i locka cijelu tablicu. Zato je bolje stvoriti isti indeks pod drugim imenom `CONCURRENTLY`, i onda obrisati stari.
+
 ## Foreign Keys
 
 Foreign keys osiguravaju integritet podataka, što ne bi trebala biti odgovornost aplikacije, već baze. Umjesto da dodaješ `on_delete` opcije framework modelu, koristi foreign key s `ON DELETE CASCADE` constraintom koji omogućuje atomarno brisanje svih vezanih redova.
@@ -13,6 +57,26 @@ Ako trebaš držati više vrijednosti u jednom fieldu, nikako nemoj koristiti st
 Druga stvar koju treba izbjegavati je stvaranje dodatnih stupaca za držanje vrijednost (`tag1`, `tag2`, `tag3`). Opet, pretraživanje, dodavanje i brisanje vrijednosti postane presloženo.
 
 Umjesto toga, koristi zasebnu normaliziranu tablicu.
+
+## Fulltext search
+
+Jednostavni tekst search može biti u obliku `LIKE 'Nik%`, i indeks će raditi dok god je zadan početak stringa.
+
+Postgres podržava prilično dobar full-text search:
+`CREATE INDEX tsv_idx ON documents USING gin(to_tsvector('english', text))`
+
+## Migrations
+
+`DDL Transaction` je zgodna stvar koju Postgres podržava da možeš rollbackati promjenu ako se dogodi greška pri mijenjanju tablice (npr. u Rails migracijama). MySql to nema.
+
+Mijenjanje strukture tablice u produkciji je nezgodno, pogotovo ako tablica ima već hrpu redova. `ALTER TABLE` će po defaultu lockati tablicu za pisanje. Da bi to izbjegao koristi `ALGORITHM=INSTANT` (Mysql 8.0) ili Postgres u kojem to radi out-of-the-box.
+
+Ako trebaš migrirati tablicu od sto milijuna redova koja se kontinuirano koristi u produkciji, najjednostavnije je stvoriti novu tablicu i prebaciti podatke u nju, koristeći **dual writing pattern**:
+
+1. Dual writing. Stvori novu tablicu, i sve promjene na staroj primjeni i na nju. Umeđuvremenu, prebacuj stare podatke iz stare tablice u background jobu.
+2. Prebaci read pathove da koriste novu tablicu. Testiraj da li se sve dobro čita.
+3. Prebaci write pathove da koriste novu tablicu. Podesi dual writing da se sve promjene na novoj primjenjuju i na staroj za slučaj da moraš napraviti rollback.
+4. Izbriši staru tablicu.
 
 ## Tree Models
 
@@ -28,29 +92,15 @@ Closure table koristi dodatnu tablicu s `ancestor` i `decendant` stupcima u koji
 
 Ako u aplikaciji imamo baznu klasu (`Post`) i više podklasa (`UserPost`, `AdminPost`) koje želimo spremati u bazu, postoji nekoliko načina da oblikujemo njihove tablice.
 
-*Single Page Inheritance* drži sve subklase u jednoj tablici (`posts`). Specifični atributi podklasa imaju svoje stupce, a u slučaju da se ne koriste vrijednosti su `NULL`. Potreban je i dodatni stupac u kojem će držati ime podklase. Nedostatak je što dodavanjem novih atributa podklasa tablica postaje sparse. Također, iz same baze nije očigledno koji atributi su zajednički, a koji specifični. Koristi kad imaš mali broj podklasa s malo specifičnih atributa.
+**Single Page Inheritance** drži sve subklase u jednoj tablici (`posts`). Specifični atributi podklasa imaju svoje stupce, a u slučaju da se ne koriste vrijednosti su `NULL`. Potreban je i dodatni stupac u kojem će držati ime podklase. Nedostatak je što dodavanjem novih atributa podklasa tablica postaje sparse. Također, iz same baze nije očigledno koji atributi su zajednički, a koji specifični. Koristi kad imaš mali broj podklasa s malo specifičnih atributa.
 
-*Concrete Table Inheritance* drži svaku subklasu u svojoj tablici (`user_posts`, `admin_posts`). Prednost je što ne miješaš specifične atribute i baza će prijaviti grešku pokušaš li koristiti atribut kojeg nema u podklasi. Ne zahtjeva dodatni stupac za tip. Nedostatak je teže dohvaćanje zajedničkih atributa za sve podklase. Također, ako se dodaje novi zajednički atribut, moraju se mijenjati sve tablice podklasa. Koristi ako ne moraš selektirati više podklasa odjednom.
+**Concrete Table Inheritance** drži svaku subklasu u svojoj tablici (`user_posts`, `admin_posts`). Prednost je što ne miješaš specifične atribute i baza će prijaviti grešku pokušaš li koristiti atribut kojeg nema u podklasi. Ne zahtjeva dodatni stupac za tip. Nedostatak je teže dohvaćanje zajedničkih atributa za sve podklase. Također, ako se dodaje novi zajednički atribut, moraju se mijenjati sve tablice podklasa. Koristi ako ne moraš selektirati više podklasa odjednom.
 
-*Class Table Inheritance* koristi jednu tablicu za zajedničke atribute (`posts`) i po jednu za specifične atribute svake podklase (`user_posts`, `admin_posts`). Koristi kada želiš selektirati zajedničke atribute podklasa.
+U ovom slučaju `comments` tablica mora uz asocijaciju `post_id` mora imati i dodatni stupac `post_type`. Polimorfne asocijacije izbjegavaj jer ne dopuštaju foreign keyeve, a dohvaćanje asociranog retka zahtjeva složeni `JOIN`. Umjesto toga, za svaku podklasu asocijacije napravi eksplicitnu join tablicu (`user_post_comments`, `admin_post_comments`).
 
-Oblik tablice koji svakako izbjegavaj je *Entity-Attribute-Value*: generička tablica koja omogućava da dodaješ arbitrarne atribute na neku tablicu (npr. `12, 'featured_by', 'Nikola'`). Sve operacije tada postaju mnogo složenije i moraju se obavljati na aplikacijskoj razini (ne može biti `NOT NULL`, podržava samo jedan tip podataka, ne možeš koristiti foreign keyeve). Ako moraš spremati nestrukturirane podatke, koristi key-value store, a ne relacijsku bazu.
+**Class Table Inheritance** koristi jednu tablicu za zajedničke atribute (`posts`) i po jednu za specifične atribute svake podklase (`user_posts`, `admin_posts`). Koristi kada želiš selektirati zajedničke atribute podklasa.
 
-## Polymorphism
-
-U slučajevima poput *Concrete Table Inheritance*, `comments` tablica mora sadržavati polimorfnu asocijaciju `post_id` uz dodatni stupac `post_type`. Polimorfne asocijacije u pravilu treba izbjegavati jer ne dopuštaju foreign keyeve, a dohvaćanje asociranog retka zahtjeva složeni `JOIN`. Umjesto toga, za svaku podklasu asocijacije napravi eksplicitnu join tablicu (`user_post_comments`, `admin_post_comments`).
-
-## Column types
-
-Koristi  `NUMERICAL` ili `DECIMAL` (imaju isto ponašanje) umjesto `FLOAT` i `DOUBLE` kako bi izbjegao pogreške zbog zaokruživanja.
-
-Ne koristi `ENUM` ili `CHECK` constraints koj idefiniraju moguće vrijednosti stupca. Dodavanje novih i izmjena starih vrijednosti postaje komplicirana. Drži moguće vrijednosti stupca u zasebnoj tablici ili aplikacijskom kodu.
-
-## Null
-
-`NULL` predstavlja nepoznatu vrijednost, pa sve operacije u kombinaciji s `NULL` rezultiraju u `NULL` (npr. boolean `NULL OR TRUE` ili konkatenacija teksta `'tekst' || NULL`). Isto tako, ne može se koristiti u `WHERE` naredbama kao normalna vrijednost. Umjesto `WHERE name <> NULL` koristi `WHERE name IS NOT NULL`.
-
-`NULL` nije false, i nemoj ga koristi kao false. Npr. stupac `disabled` neka bude `NOT NULL`.
+Oblik tablice koji svakako izbjegavaj je **Entity-Attribute-Value**: generička tablica s 3 stupca koja omogućava da dodaješ arbitrarne atribute na neku tablicu (npr. `12, 'featured_by', 'Nikola'`). Sve operacije tada postaju mnogo složenije i moraju se obavljati na aplikacijskoj razini (ne može biti `NOT NULL`, podržava samo jedan tip podataka, ne možeš koristiti foreign keyeve). Ako moraš spremati nestrukturirane podatke, koristi key-value store, a ne relacijsku bazu.
 
 ## Grouping Ambiguity
 
@@ -72,6 +122,11 @@ Ako tablica nije prevelika, moguće je dohvatiti sve id-jeve u aplikaciju s `Pos
 
 Neke baze imaju ugrađene metode za sampling tablice. Postgres ima `SELECT * FROM posts TABLESAMPLE SYSTEM (5)` koji vraća približno 5% redova iz tablice.
 
+## Backup and restore
+
+Dump: `pg_dump production_db_name -h db-host.rds.amazonaws.com --verbose > dump.sql`
+Restore `psql development_dbn_ame < dump.sql`
+
 ## Data Import
 
 Ako trebaš importati veliki CSV file u bazu, overhead aplikacijskog frameworka može biti preskup. Umjesto toga, koristi direktno učitavanje fileova u tablicu:
@@ -86,25 +141,28 @@ Lockanje na razini rowa:
 
 Kada drugi query želi napraviti SELECT koji uključuje taj redak, bit će blokiran dok se prvi query ne izvrši. Ako ne želi biti blokiran, može napraviti query s `FOR UPDATE NOWAIT` (izbacit će error) ili `FOR UPDATE SKIP LOCKED` (preskočit će lockane redove).
 
-## Job Queue
+## Job queue
+
+Najčešće umjesto zasebnog pub/sub servera poput Kafke možeš koristiti najobičniju SQL bazu. Postgres npr. može bez problema handlati 10,000 inserta po sekundi.
 
 Zahtjevi job queua u SQL-u su:
 * Worker dohvaća prvi slobodan job i zauzima ga.
 * Nijedan drugi worker ne smije uzeti job dok je zauzet.
 * Ako worker naiđe na exception, job se mora automatski osloboditi.
 
-Česta pogreška se događa u korištenju subquerija koji zapravo nisu atomarni. Npr:
+Definiraš trigger nad dodavanjem novih jobova u tablicu:
 ```
-UPDATE queue SET is_done = 't' WHERE itemid = (
-    SELECT itemid FROM queue WHERE NOT is_done ORDER BY itemid FOR UPDATE LIMIT 1
-)
+CREATE TRIGGER jobs_status AFTER INSERT OR UPDATE OF status ON jobs
+FOR EACH ROW EXECUTE PROCEDURE jobs_status_notify();
 ```
-neće raditi jer se SELECT subquery izvršava prvi, pa će dva workera istovremeno dohvatiti isti job. Jedan će ga updateati, a drugi će čekati na locku, i paralelnost je izgubljena. U slučaju da nema `FOR UPDATE` locka, oba će workera dohvatiti job i obraditi ga, što je još gore.
 
-Umjesto toga, jobove dohvaćaj s:
+Šalje se notifikacijama svim workerima (i drugim klijentima) koji slušaju na kanalu s `PERFORM pg_notify('jobs_status_channel', NEW.id::text)`.
+
+Svaki worker sluša s `LISTEN jobs_status_channel` i dohvaća job ovako:
 ```
-DELETE FROM queue WHERE itemid =  (
-    SELECT itemid FROM queue ORDER BY itemid FOR UPDATE SKIP LOCKED LIMIT 1
+UPDATE jobs SET status='initializing' WHERE id = (
+    SELECT id FROM jobs WHERE status='new'
+    ORDER BY id FOR UPDATE SKIP LOCKED LIMIT 1
 )
 ```
 
@@ -132,16 +190,19 @@ Pri paginaciji s `OFFSET(1000)`, skenira se i svih 1000 prethodnih redova. Upit 
 * Koristi `WHERE id < 1000 ORDER BY id DESC` umjesto `OFFSET` kad možeš.
 * U slučaju sortiranja po drugom stupcu, koristi u kombinaciji s `id`, npr. `WHERE created_at < ? AND id < 20 ORDER BY created_at DESC, id DESC`
 
-## Indeksi
+Provjeri cache hit rate s:
+`SELECT sum(heap_blks_read) as heap_read, sum(heap_blks_hit) as heap_hit, sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) as ratio FROM pg_statio_user_tables`. Ako je ratio manji od 99%, povećaj cache.
 
-Indeksi su korisni samo za querije koji dohvaćaju mali broj rezultata; ili za izbjegavanje sortiranja. Engine neće koristiti indeks ako procjeni da je sekvencijalni scan brži (npr. ako ima previše rezultata).
+Korištenje indeksa provjeri s
+`SELECT relname, 100 * idx_scan / (seq_scan + idx_scan) percent_usage, n_live_tup rows_in_table FROM pg_stat_user_tables WHERE seq_scan + idx_scan > 0 ORDER BY rows_in_table DESC`. Sve tablice s preko 10,000 rowova bi trebale imati indeks.
 
-Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
-
-## Encoding
-
-MySQLov `utf8` zapravo ne podržava cijeli Unicode, nego samo 3 od 4 byta. Za pravi UTF-8, koristi `utf8mb4`.
+Za nalaženje sporih i često pozivanih querija:
+`SELECT (total_time / 1000 / 60) as total_minutes, (total_time/calls) as average_time, query FROM pg_stat_statements ORDER BY total_minutes DESC LIMIT 100`
 
 # Literatura
 
 * SQL Antipatterns by Bill Karwin
+ https://sqlbolt.com/ - interaktivni tutorial, super za učenje
+* http://use-the-index-luke.com - sve o indeksima
+* https://layerci.com/blog/postgres-is-the-answer
+* https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql

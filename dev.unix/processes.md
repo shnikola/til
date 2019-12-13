@@ -130,3 +130,7 @@ Tablica procesa:
 * COMMAND: naredba koje je pokrenula proces
 
 `top -p <pid>` prikazuje podatke samo za jedan proces.
+
+# Literatura
+
+* https://peteris.rocks/blog/htop

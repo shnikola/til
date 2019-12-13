@@ -62,6 +62,14 @@ Obojena linija na vrhu stranice debljine 4-6px dobro izgleda. Isto vrijedi za mo
 
 Umjesto razdvajanja naslova panela od ostatka linijom, koristi tamniju nijansu za ostatak.
 
+## Responzivna navigacija
+
+Ako imaš samo par linkova u headeru, super, samo ih ostavi gore.
+
+Ako imaš više linkova, dodaj button koji će ili otvoriti full screen menu ili slideati sidebar s menijem.
+
+Ako imaš kompliciranu navigaciju, analitikom probaj odrediti koji linkovi su ti nebitni (npr. terms ne trebaju biti u glavnog navigaciji). Ako imaš milijun sekcija i stranica, istakni search.
+
 ## Literatura
 
 * https://developers.google.com/web/fundamentals/design-and-ui/ux-basics/

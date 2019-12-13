@@ -1,8 +1,6 @@
-# Typography
+# Tipografija
 
 ## Body text
-
-https://medium.com/@xtianmiller/your-body-text-is-too-small-5e02d36dc902
 
 Veličina body texta trebala bi biti minimalno `20px` za desktop, `15px` za mobilne siteove.
 
@@ -14,6 +12,6 @@ Sans-serifi se bolje skaliraju. Neki dobri: `Atlas Grotesk`, `Futura`, `Lato`, `
 
 Veliko početno slovo nije samo lijepo - služi da čitatelj lako nađe gdje tekst počinje.
 
-## Fontovi koji su mi se svidjeli
+# Literatura
 
-* Hiragino Kaku Gothic ProN - za body tekst
+https://medium.com/@xtianmiller/your-body-text-is-too-small-5e02d36dc902

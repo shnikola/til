@@ -12,6 +12,10 @@ Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. L
 
 Odustani od univerzalnog rješenja i prihvati raznovrsnost potreba i ukusa svojih mušterija.
 
+## Planiranje
+
+Budućnost se ne može planirati. Planove radije zovi "nagađanja" (*guesses*), jer će te to podsjetiti da ništa nije uklesano u kamen.
+
 ## In a Big Craze, Be the Arms Dealer
 
 Kad god se pojavi fenomen na tržištu s niskim pragom ulaska i velikim brojem sudionika, najbolja strategija je zarađivati na njima. Kad je zlatna groznica, prodaji lopate. Umjesto restorana, napravi kompaniju koja snabdjeva restorane. Umjesto vina, prodaji bačve.
@@ -38,7 +42,11 @@ Ako tvoj proizvod ima više od dva konkurenta, **SEO** ti je najbitniji. I prije
 
 Za **Email kampanje** koristi Campaign Monitor ili MailChimp. Kada se netko subscribea, pošalji mu confirmation mail. Tako spriječavaš da netko prijavi tuđi email. Nemoj kupovati email liste ni od koga, samo će ti IP adresa biti blokirana. `https://htmlemail.io/` nudi responsive email template da se ne gnjaviš s html-om.
 
-## Dobre ideje
+## Kupac ima prioritet
+
+Jedan tata (jer uvijek su tate u tim pričama) je radio kao prodavač osiguranja u velikoj poslovnom centru. Ispred zgrade bilo je veliko parkiralište za 500 automobila koje bi se rijetko popunilo, ali tata je uvijek parkirao što dalje od ulaza što je moguće, čak i po liši, mrazu i snijegu. Činio je to da bi kupci koji dolaze imali mjesto bliže ulazu, jer oni to zaslužuju. Ja mislim da je čovjek samo htio imati 10 minuta šetnje sam sa sobom prije nego se vrati kući.
+
+## Podmićivanje slatkišima
 
 Ako šalješ fizički proizvod, pošalji mali poklon sa svakim paketom (npr. lokalni slatkiš, ili kokice za mikrovalnu ako će korisnik ostati cijelu noć budan s tvojim proizvodom). Tebe neće puno koštati, a mušterija će biti ugodno iznenađena, i spomenuti te drugima. Skoro pa besplatna reklama.
 

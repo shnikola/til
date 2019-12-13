@@ -3,13 +3,13 @@
 ## Hierarchy selectors
 
 `.a .b` selektira elemente `.b` koji su bilo gdje među djecom elementa `.a`.
-`.a > .b` samo direktna djeca.
-`.a ~ .b` sibling, dijele istog roditelja.
-`.a + .b` adjacent sibling, ide neposredno iza `.a`.
+`.a > .b` selektira sve `.b` koji su direktno u `.a`.
+`.a ~ .b` selektira sve `.b` koji idu nakon `.a`.
+`.a + .b` selektira sve `.b` koji idu neposredno nakon `.a`.
 
 ## Units
 
-`1px` je veličina koji svaki uređaj definira za sebe, a službeno je "veličina dovoljna da se horizontalna linija debljine 1px može prikazati oštrih rubova (bez antialisnga).
+`1px` je veličina koji svaki uređaj definira za sebe, a službeno je "veličina dovoljna da se horizontalna linija debljine 1px može prikazati oštrih rubova (bez antialiasinga).
 
 `1em` je vrijednost `font-size` na tom elementu.
 `1rem` je vrijednost `font-size` na root (`<html>`) elementu.

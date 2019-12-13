@@ -93,6 +93,12 @@ Ako promatramo četvrtinu štapa, primjetit ćemo da konop zapravo ide po dijago
 
 Da bi izmjerio 30 minuta: zapališ fitilj s obje strane. Gorit će duplo brže, i cijeli će izgoriti za 30 minuta. Da bi izmjerio 15 minuta: zapališ prvi fitilj da mjeri 30 minuta. Zapališ prvi da gori jednostrano, a kad prođe 30 minuta (tj. kad mu je preostalo još 30 minuta) zapališ mu i drugu stranu - ostatak će goriti točno 15 minuta.
 
+## Kretanje
+
+**Dva biciklista udaljena 20km, voze jedan prema drugom brzinom 10km/h. Istovremeno, muha leti 15km/h od jednog do drugog i nazad, i tako sve dok se njih dvojica ne susretnu. Koliki je put muha prešla?**
+
+Umjesto da računaš beskonačnu sumu, znaš da je njima trebalo sat vremena da se susretnu. Muha je letila svo to vrijeme, što znači da je prešla 15km. (Prema anegdoti John von Neumann je to riješio na teži način, zbrojivši beskonačni niz u par sekundi)
+
 ## Vjerojatnosti
 
 **100 osoba ulazi u avion. Prva osoba je izgubila kartu, pa sjedne na nasumično mjesto. Svaka iduća osoba sjedne na svoje mjesto, a ako je ono zauzeto, sjedne na nasumično mjesto. Ti si posljednji putnik koji ulazi - koja je vjerojatnost da ćeš sjesti na svoje mjesto?**

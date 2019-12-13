@@ -14,7 +14,7 @@ Pri odabiru vrste spremišta, uzmi u obzir tip aplikacije:
 * Online Transaction Processing: veliki broj korisnika, istovremeno izvršavaju puno malih transakcija. Trebaju biti brze što ostvaruju cachiranjem "live" podataka.
 * Analytics: mali broj korisnika izvršavaju spore querije kroz cijele data setove
 
-Za većinu aplikacija RDB isprva nude sve potrebne funkcionalnosti. Kasnije kada se javlja potreba za skaliranjem počni uvoditi druge tehnologije.
+Za većinu aplikacija **RDB** isprva nude sve potrebne funkcionalnosti. Druge tehnologije počni uvoditi tek kada se javi potreba za skaliranjem  .
 
 Event logovi (npr. praćenje korisničkih eventova) često počnu kao append only tablice u relacijskoj bazi. Ali ubrzo postanu problematične jer generiraju velik broj writeova (milijune dnevno) i opterećuju hardware. Ako ne postoji dobar razlog za držanje tih podataka u RDB-u, prebaci ih u specijalizirani storage, npr. AWS Redshift.
 
@@ -24,9 +24,15 @@ Event logovi (npr. praćenje korisničkih eventova) često počnu kao append onl
 
 **RabbitMQ** je queue visokih performansi za komunikaciju point-to-point ili pub-sub.
 
-## The Log
+## Remote Cache
 
-https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+Cache (npr. Memcached) radi na pretpostavci kako je brže dohvatiti podatak iz memorije nego obaviti skupu operaciju ili komunicirati s remote db-om koji drži podatke na disku. U tom slučaju je čak i network poziv, ako je istoj regiji (npr. na AWSu) brža opcija. Naravno, lokalni cache je najbrži, ali nije skalabilan.
+
+## Data Analysis
+
+Ako dobijaš 1TB podataka godišnje, i podatci su strukturirani, ne treba ti Hadoop/Hive/Presto. Savršeno dobro će poslužiti replika Postgres baze, BigQuery ili Redshift.
+
+## The Log
 
 *Log* je append-only lista. Novi unos ide na kraj liste, pa je sortirana po vremenu dodavanja. U njega zapisujemo evente (npr. klikove korisnika) ili modifikacije podataka (npr. `create` ili `update`).
 
@@ -45,27 +51,7 @@ Skaliranje i optimiziranje loga (ipak ne možemo čuvati svaki živi event zauvi
 * Za event data (tracking), čuvati samo window, stare evente brisati.
 * Za keyed data (db), brisati recorde čije novije verzije imamo u logu.
 
-## Migrations in production
-
-https://stripe.com/blog/online-migrations
-
-Ako trebaš migrirati tablicu od sto milijuna redova koja se kontinuirano koristi u produkciji, puno je brže stvoriti novu tablicu i prebaciti podatke u nju. Ta to se koristi *dual writing pattern*:
-1. Dual writing. Stvori novu tablicu, i sve promjene na staroj primjeni i na nju. Umeđuvremenu, prebacuj stare podatke iz stare tablice u background jobu.
-2. Prebaci read pathove da koriste novu tablicu. Testiraj da li se sve dobro čita.
-3. Prebaci write pathove da koriste novu tablicu. Podesi dual writing da se sve promjene na novoj primjenjuju i na staroj za slučaj da moraš napraviti rollback.
-4. Izbriši staru tablicu.
-
-## Remote Cache
-
-Cache (npr. Memcached) radi na pretpostavci kako je brže dohvatiti podatak iz memorije nego obaviti skupu operaciju ili komunicirati s remote db-om koji drži podatke na disku. U tom slučaju je čak i network poziv, ako je istoj regiji (npr. na AWSu) brža opcija. Naravno, lokalni cache je najbrži, ali nije skalabilan.
-
-## Data Analysis
-
-Ako dobijaš 1TB podataka godišnje, i podatci su strukturirani, ne treba ti Hadoop/Hive/Presto. Savršeno dobro će poslužiti replika Postgres baze, BigQuery ili Redshift.
-
 ## Blockchain
-
-https://anders.com/blockchain
 
 Blockchain je distribuirana baza koja se sastoji od blokova. Svaki blok je potpisan hashem i sadrži podatke o eventu (npr. novčanoj transakciji), timestamp, i hash prethodnog bloka.
 
@@ -73,6 +59,5 @@ Ukoliko se ijedan blok promijeni, morat će se promijeniti i njegov hash, a sami
 
 # Literatura
 
-* https://sqlbolt.com/ - interaktivni tutorial, super za učenje
-* http://use-the-index-luke.com - sve o indeksima
-* https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql
+* https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
+* https://anders.com/blockchain

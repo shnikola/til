@@ -12,7 +12,7 @@ Riječi kršćanskog Vjerovanja započele su kao izjava pri krštenju, a poslije
 
 **Vjera u Kristov drugi dolazak, posljednji sud i spasenje vjernika**. Krista se čeka da se vrati kako bi obavio ostatak mesijanskog proročanstva: uskrsne sve mrtve, obavi posljednji sud i konačno uspostavi božje kraljevstvo.
 
-Treba primjetiti da se u Vjerovanju nigdje ne spominje Biblija.
+Treba napomenuti da se u Vjerovanju nigdje ne spominje Biblija.
 
 ## Shizme u kršćanskoj crkvi
 

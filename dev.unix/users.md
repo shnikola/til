@@ -18,6 +18,8 @@ Svaki korisnik ima svoj folder koji se inače nalazi u `/home/<username>`.
 `gpasswd -a <ime> <grupa>` dodaje usera u grupu
 `gpasswd -d <ime> <grupa>` briše usera iz grupe
 
+`usermod -aG sudo <ime>` dodaje usera u sudoers grupu.
+
 ## Logins
 
 `who` ispisuje trenutno ulogirane usere.

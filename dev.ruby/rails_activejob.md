@@ -24,3 +24,6 @@ Ne stavljaj previše koda u ActiveJob, već u njima samo pozivaj service objekt 
 
 Imaj na umu da `wheneverize` i slični cron gemovi pokreću cijeli Rails environment, što zna potrajati par minuta, pa nekoliko takvih jobova može pojesti CPU i memoriju. Zato uvijek pokušaj pisati light-weight skripte ili ih pozivati iz već pokrenutog background joba.
 
+## Mailers
+
+`email_address_with_name("nikola@email.com", "Nikola Šantić")` će ispravno escapati sve znakove za email polje s imenom.

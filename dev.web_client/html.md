@@ -302,4 +302,5 @@ Format je `data:[<media type>][;base64],<data>`. (npr. `data:image/png;base64,iV
 # Literatura:
 
 * http://htmlreference.io/
+* https://google.github.io/styleguide/htmlcssguide.xml
 * Kul predavanja o elementima: https://vimeo.com/webconferences/videos

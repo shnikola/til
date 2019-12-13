@@ -10,7 +10,7 @@ Zato ti najbolje ideje dolaze pod tušem - jer nisi fokusiran ni na što, nego o
 
 ## Pamćenje
 
-Najbolje pamtiš koristeći *Spaced repetition* - ponavljajući gradivo kroz više dana, jednom dnevno ili svaka dva dana. To daje puno bolje rezultate nego ponavljanje gradiva 20 puta u jednom popodnevu.
+Najbolje pamtiš koristeći *Spaced repetition* - ponavljajući gradivo kroz više dana, jednom dnevno ili svaka dva dana. To daje puno bolje rezultate nego ponavljanje gradiva 20 puta u jednom popodnevu. Dobar alat za spaced repetition je `Anki`.
 
 Svaki put kad dohvaćaš podatak iz dugoročne memorije, stavljaš ga u kratkoročnu memriju. Od tamo je moguće da se to sjećanje rekonsolodira, tj. da se u novom kontekstu opet spremi u dugoročnu memoriju. Drugim riječima, svaki put kad dohvaćaš sjećanje, mijenjaš ga.
 

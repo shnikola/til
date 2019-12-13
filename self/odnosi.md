@@ -18,6 +18,16 @@ Ako nisi siguran da si razumio, postavljaj pitanja i ponovi činjenica da utvrdi
 
 Postavi pitanja koja će osobi pomoći da sagleda problem na drugi način. Možeš i dati svoje mišljenje ako je od pomoći, ali nemoj uzurpirati razgovor i prebaciti ga na sebe.
 
+## Rješavanje razmirica
+
+Kada se uloviš u svađi, podsjeti se da ste u istom timu, i da želite zajedno riješiti problem. Jako je lako upasti u "ona je protiv mene" mentalitet.
+
+Ako se u raspravi uloviš da postaješ uzrujan, to je dobar pokazatelj da si možda u krivu.
+
+Dr. John Gottman je radio istraživanje nad hrpom parova, i otkrio je uzorak onih koji ostaju zajedno:
+1. Fokusiraju se na srž problema, a ne na simptome koji se manifestiraju (npr. kako se osjećaju).
+2. Razgovaraju s poštovanjem i ne spuštaju se na osobne napade koji nemaju veze s trenutnim problemom.
+
 ## Jezik ljubavi
 
 Svatko ima različit način iskazivanja ljubavi, i na različit način očekuje da mu se ljubav iskaže. Ovo su neki od načina:
@@ -45,14 +55,29 @@ Handlanje stresnih situacija i propalih planova s humorom i bez optuživanja.
 
 Kad se netko prema tebi ponaša kao seronja, pravi se sretan. Što su gori prema tebi, ti budi sretniji. To će ih jako isfrustrirati, a tebi će popraviti raspoloženje.
 
-## Rasprava
+## Govor tijela
 
-Ako se u raspravi uloviš da postaješ uzrujan, to je dobar pokazatelj da si možda u krivu.
+Signali da je nekome ugodno u komunikaciji s tobom:
+* približi se (nagne se prema tebi, napravi korak naprijed).
+* stopala su im usmjerena prema tebi.
+* nagne glavu na stranu (znatiželja) ili je nasloni na ruku (koncentracija).
+* savije nogu i sjednje na nju (ako sjedi na nečem mekanom).
+* smiješi se dok govoriš.
+
+Signali da je nekome neugodno:
+* diraju svoj vrat, lice, ili noge (diranje dijelova tijela s mnogo živčanih završetaka te smiruje kad si nervozan)
+* pozicioniraju se da je objekt između vas.
+* stopala su im usmjerena van razgovora.
+* ne gledaju prema tebi.
+
+## Internetska rasprava
 
 Ispravljanje nečijeg pravopisa u raspravi je dno dna.
 
 # Literatura
 
+* https://www.improveyoursocialskills.com/basic-social-skills-guide
 * https://opinionator.blogs.nytimes.com/2012/06/30/the-busy-trap
 * https://hbr.org/2016/07/what-great-listeners-actually-do
 * http://www.davedelaney.me/blog/how-to-fend-off-a-jerk
+* https://www.gottman.com/blog/category/column/the-four-horsemen/

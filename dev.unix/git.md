@@ -166,7 +166,7 @@ Jednom kad se branch tracka, `git pull` će automatski obaviti `fetch` i `merge`
 
 Ovo je bilo superkonfuzno, pa su u verziji `2.23` checkout funkcionalnosti razdvojili na `git switch` i `git restore`.
 
-## Rewriting history
+## Ispravljanje pogrešaka
 
 Ako si zaboravio dodati file u commit (a nisi pushao):
 Dodaj ga s `git add file.txt`, pa pozovi `git commit --ammend` koji će dodati sve promjene iz staginga u prethodni commit.

@@ -1,20 +1,17 @@
 # SVG
 
-Svg se u browseru može koristiti na nekoliko načina:
+SVG se u browseru može koristiti na nekoliko načina:
 * kao `<img src='logo.svg'>` za neinteraktivne slike
 * kao `<svg>`, čime dijeli DOM s HTML-om
 * kao `<object data='logo.svg'>` stvara scope za CSS i DOM, a omogućava interaktivnost (npr. hover).
 
-## <svg>
+## viewBox
 
-Koordinatni sustav `<svg>` elementa ima origin `(0,0)` gore lijevo.
-* `width` i `height` definiraju veličinu elementa i defaultni `viewBox`
-* `viewBox="0 0 300 400"` definira koji dio (x, y, width, height) infinite canvasa unutar elementa je vidljiv.
+Koordinatni sustav `<svg>` elementa ima origin `(0,0)` gore lijevo. Koliko god velika svg slika bila, `<svg>` element u HTMLu promatramo kroz "prozor", slično kao iframe. Veličina i pozicija tog prozora se definira atributom `viewBox`.
 
-SVG se sastoji od elemenata čiji izgled možemo definirati na više načina:
-* atributom, npr. `fill="red"`
-* `style` atributom, npr. `style="fill:red"`
-* CSS pravilom, npr. `circle { fill: red; }`
+`viewBox="10 10 300 400"` postavlja gornji lijevi vrh prozora u točku `(10, 10)` SVG-a, te prikazuju `300` piksela širine i `400` visine. Povećavanjem širine i visine slika se zoom outa.
+
+Za definiranje viewBoxa potrebno je prvo definirati width i height `<svg>` elementa.
 
 ## Simple objects
 
@@ -67,6 +64,11 @@ Svaki objekt ima svoj `stroke` i `fill` (ako je path zatvoren).
 Za grupiranje elemenata koje možeš kasnije reusati koristi `<g>`, ili još bolje `<symbol>` koji može definirati vlastiti `viewBox`. Tako definirani elementi insertaju se pomoću `<use xlink:href="symbolId">`
 
 ## CSS
+
+Izgled SVG elemenata se može definirati na više načina:
+* atributom, npr. `fill="red"`
+* `style` atributom, npr. `style="fill:red"`
+* CSS pravilom, npr. `circle { fill: red; }`
 
 * `d: path("M2,2 Q8,2 8,8")` za mijenjanje patha
 

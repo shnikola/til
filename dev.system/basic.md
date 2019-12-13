@@ -58,6 +58,10 @@ Raid 6 je sličan kao Rails 5, ali dopušta da dva diska umru.
 
 Raid 10 kombinira Raid 0 i Raid 1, tako da imaš i striping i redundanciju. Zahtjeva barem 4 diska.
 
+## Integracija
+
+400 errore koji dolaze unutar sustava znače da postoji pogreška u integraciji, i treba ih tretirati kao 500-ke.
+
 # Literatura
 
 * https://github.com/donnemartin/system-design-primer

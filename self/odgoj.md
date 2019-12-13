@@ -1,14 +1,20 @@
 # Odgoj
 
+## Varijanca
+
+Disclaimer prije svakog savjeta o odgoju: postoji golema varijanca među djecom, čak i među djecom istih roditelja. Savjeti koji funkcioniraju odlično na jednom djetetu će katastrofalno failati na drugom. Zato ne postoji "jedan istinski način" odgajanja djece. Veći dio roditeljstva je samo otkrivanje što funkcionira na tvojoj djeci.
+
+To treba imati na umu i kad uspoređuješ sebe s drugim roditeljima. Neki roditelji imaju sreću da dobiju lako dijete, i onda se čude zašto jednostavno ne radiš isto što i oni, jer oni su očito fantastični roditelji, a tebi ide grozno.
+
 ## Svijet je okrutan
 
-Ako imaš priliku odgajati dijete, omogući mu dosljedno i sigurno okruženje, ali nauči ga da svijet *nije* pošten, da on nije uvijek najbolji ili najpametniji u prostoriji (i da ne bi ni trebao biti), i da je drugim ljudima stalo mnogo više do samih sebe nego do njega.
+Omogući djetetu dosljedno i sigurno okruženje, ali nauči ga da svijet *nije* pošten, da on nije uvijek najbolji ili najpametniji u prostoriji (i da ne bi ni trebao biti), i da je drugim ljudima stalo mnogo više do njih samih nego do njega.
 
 Što duže bude zaštićen idealnim svijetom kojim mu pružiš, to će teže podnijeti prve prepreke i krize koje će mu život kad-tad donijeti.
 
 Dobar način za osvijestiti ovo su natjecateljske aktivnosti - sportovi, akademska natjecanja, ili gdjegod može izgubiti čak i ako je dao sve od sebe.
 
-## Chores
+## Kućanski poslovi
 
 Što je ranije moguće, daj djetetu da sudjeluje u kućanskim poslovima. Trajat će višestruko duže, ali tako će se naučiti samostalnosti i osvijestiti sebe kao dio kućanstva. Pomaže ako učiniš aktivnosti zabavnima i dovoljno jednostavnima da i malo dijete može sudjelovati (npr. punjene suđa u mašinu, hranjenje mačke i sl.)
 

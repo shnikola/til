@@ -40,11 +40,13 @@ Spavaj koliko ti treba. Ako si popodne umoran, umjesto kave odspavaj 30-ak minut
 
 Dnevno šetaj barem 30 minuta.
 
-## Ponavljanje
+## Vježbanje
 
-Postoji razlika između vježbanja i promišljenog vježbanja. Mozak ima tendenciju da svako ponavljanje pretvori u automatsku naviku. Obična vježba bez promišljanja ti samo učvršćuje tvoje trenutne navike, ali s njom ne napreduješ. Moraš biti fokusiran da bi postao bolji.
+Istraživanja su pokazala da vrhunski glazbenici vježbaju jednako dugo koliko i prosječni glazbenici, ali s dvije bitne razlike:
 
-Promišljeno vježbanje je grozno neugodno i zahtjeva trud i fokus. U osnovi je to kontinuirano neuspjevanje u nečemu, jer je to način na koji pomičemo svoje granice. Drugim riječima, ako ti je grozno - to znači da napreduješ.
+1) Promišljeno i metodički vježbaju one djelove koji im najgore idu. Na taj način pomiču svoje granice. Ovo je jako teško, jer ti se čini kao da većinu vremena failaš. Ali zapravo, ako ti je grozno - to znači da napreduješ.
+
+2) Ne vježbaju kroz cijeli dan, nego fokusirano u 2 bloka, jednom ujutro i jednom popodne.
 
 ## Time managment
 
@@ -70,4 +72,5 @@ Mozgu treba odmor, treba mu popodnevna šetnja prirodom, kave i večere s prijat
 * https://www.youtube.com/watch?v=d0m0jIzJfiQ (How To Design Deep Games with Jonathan Blow)
 * https://qotoqot.com/blog/improving-focus
 * http://calnewport.com/blog/2012/11/21/knowledge-workers-are-bad-at-working-and-heres-what-to-do-about-it/
+* https://www.calnewport.com/blog/2011/11/11/if-youre-busy-youre-doing-something-wrong-the-surprisingly-relaxed-lives-of-elite-achievers
 * https://guzey.com/productivity/

@@ -2,18 +2,23 @@
 
 ## Request/Response Cycle
 
-http://www.rubypigeon.com/posts/examining-internals-of-rails-request-response-cycle
+Rack entry point definiran je u `config.ru`, gdje se poziva `Rails.application`, instanca tvoje aplikacije.
 
-* Rack entry point definiran je u `config.ru`, gdje se poziva `Rails.application`, instanca tvoje aplikacije.
-* Rack poziva `call(env)` aplikacije koji radi `build_request(env)` (dodaje hrpu stvari u `env`) i prosljeđuje ga middleware stacku.
-* Request se prosljeđuje kroz svaki middleware, i svaki doda nešto u `env`, npr. deserijalizirane cookije ili logiranje.
-* Nakon middlewarea ide se u router. `env` se wrapa u `ActionDispatch::Request` objekt, a stvara se prazni `ActionDispatch::Response` objekt.
-* Odabire se controller i action te poziva `controller_class.dispatch(action, request, response)`
-* Svaki controller može imati vlastiti middleware stack, pa se i kroz njega prolazi.
-* Za svaki request controller se instancira i poziva se `dispatch` nad objektom, koji zapisuje `request` i `response`, te poziva kod u akciji koji si napisao.
-* `render` postavlja `response.body` i `Content-Type` header.
-* Vraća se u controller gdje `response.to_a` dobija rack array koji prosljeđuje routeru, pa nazad kroz sav middleware. Tu se postavlja `ETag`, serijaliziraju se cookiji itd.
-* Web Server serijalizira rack array u HTTP response string i šalje ga nazad klijentu.
+Rack poziva `call(env)` aplikacije koji radi `build_request(env)` (dodaje hrpu stvari u `env`) i prosljeđuje ga middleware stacku.
+
+Request se prosljeđuje kroz svaki middleware, i svaki doda nešto u `env`, npr. deserijalizirane cookije ili logiranje.
+
+Nakon middlewarea ide se u router. `env` se wrapa u `ActionDispatch::Request` objekt, a stvara se prazni `ActionDispatch::Response` objekt.
+
+Odabire se controller i action te poziva `controller_class.dispatch(action, request, response)`. Svaki controller može imati vlastiti middleware stack, pa se i kroz njega prolazi.
+
+Za svaki request, controller se instancira i poziva se `dispatch` nad objektom, koji zapisuje `request` i `response`, te poziva kod u akciji koji si napisao.
+
+`render` postavlja `response.body` i `Content-Type` header.
+
+Vraća se u controller gdje `response.to_a` dobija rack array koji prosljeđuje routeru, pa nazad kroz sav middleware. Tu se postavlja `ETag`, serijaliziraju se cookiji itd.
+
+Web Server serijalizira rack array u HTTP response string i šalje ga nazad klijentu.
 
 ## Routing
 
@@ -31,6 +36,8 @@ Bundler omogućuje da aplikacija koristi specifičnu verziju gema, makar je na r
 U `config/boot.rb` poziva se `bundler/setup`. On iz `$LOAD_PATH` uklanja pathove do svih gemova koje je RubyGems dodao, i dodaje samo one koji se nalaze u Gemfileu.
 
 U `config/application.rb` poziva se `Bundler.require(*Rails.groups)` koji poziva `require` za svaki od gemova u Gemfileu. Zato nije potrebno pozivati `require` posebno unutar aplikacijskog koda.
+
+`bundle outdated` ispisuje sve gemove koji imaju nove verzije.
 
 ## Rails Autoloading
 
@@ -51,6 +58,14 @@ Railsov autoload konstanti ne koristi `autoload` metodu iz Rubyja iz više razlo
 Savjeti:
 * Rails ne može znati je li neloadana konstanta bila relative (`module Admin; class UsersController`) ili qualified (`class Admin::UsersController`), pa se neće ponašati isto kao čisti Ruby. Da izbjegneš probleme, uvijek koristi *relative nesting*.
 * Nikad ne stavljaj `require` konstanti koje će se autoloadati - samo ćeš ga zbuniti. `require` 3rd party librarija je ok.
+
+## HashWithIndifferentAccess
+
+`HashWithIndifferentAccess` je nezgodan za korištenje jer se uglavnom ponaša kao `Hash`, ali ne uvijek. Npr. ako je `indif_hash = {a: 1}`, `indif_hash.merge("a" => 2)` će očekivano dati `{a: 2}`, ali ako se merga u suprotnom smjeru `{"a" => 2}.merge(indif_hash)` će stvoriti duplikat `{:a => 1, "a" => 2}`.
+
+`HashWithIndifferentAccess` se također neće automatski splattati u keyword argumente. Poziv metode `def method(a: 1, b: 1)`, će raditi samo ako se šalje običan Hash, `method({a: 1, b: 2})`.
+
+U oba slučaja, možeš konvertirati `HashWithIndifferentAccess` u `Hash` pomoću `symbolize_keys`.
 
 ## Request IP
 
@@ -85,6 +100,10 @@ Za serijalizaciju ili slanje kroz API koristi `time.iso8601` koji pretvara vrije
 
 Ukratko: koristi `UTC` kao aplikacijski time zone, a `Time.zone` i `Time.current` umjesto `Time.now`.
 
+## Send files
+
+Kada šalješ file na browser, pristojno je poslati `Content-Disposition` header koji definira kako se sadržaj prikazuje (`inline` za u browseru, `attachment` za download). Defaultno se za filename uzima zadnji dio urla, a može se podesiti s `filename=` u headeru, ali treba paziti na escapanje. Umjesto toga, koristi `send_file_headers!(type: "application/zip", disposition: "attachment", filename: zipname)` koji sve headere podesi za tebe.
+
 ## Cookies
 
 `cookies[:user_name] = "nikola"` zapisuje vrijednost u cookie. Cookiji su string-based, pa sve složene tipove treba serijalizirati ručno: `cookies[:token] = JSON.serialize([1, 2]`.
@@ -116,7 +135,7 @@ Pry ima dodatne pomoćne metode:
 
 Nikad ne koristi `constantize` na stringovima koji su user input, jer to omogućava remote code execution (pomoću `Logger` klase).
 
-## Turbolinks 5
+## Turbolinks
 
 Pri kliku na link dohvaća se nova stranica, i njen `body` se postavi kao `document.body`. Klijent tako preuzima single process model - ne mora reloadati i reprocesirati assete pri učitavanju svake stranice, niti uspostavljati websocket konekcije.
 

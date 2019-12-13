@@ -28,3 +28,7 @@ Latinska riječ za medvjeda je *ursus*, grčka je *arktos*, sanskrtska je *rksha
 U južnim krajevima izvorna se riječ zadržala, ali u sjevernim krajevima susrećemo zamjenske riječi. U germanskim jezicima medvjed je *bear*, *baer* i *bjorn* - smeđi. U slavenskim jezicima je *medved*, *niedzwiedz* - jedač meda. U baltičkima je *lokys*, *lacis*, *clokis* - čupavi.
 
 Vjeruje se da je u sjevernim krajevima, gdje je bilo više medvjeda, korištenje pravog medvjedovog imena bilo tabu zbog straha da će ga prizvati, pa su nastali eufemizmi. Medvjed je vjerojatno bio jedno od strašnijih bića s kojim se europljanin mogao susresti. Neki smatraju da je i proto-indo-europska riječ *rkso-* povezana s *rakhsas* (ozljeda), pa da medvjed izvorno znači "the destroyer".
+
+## Lažni prijatelji
+
+Amerikanka u Meksiku putuje prema Chichen Itzi: “¡Estoy excitada!” ("napaljena sam"). Kad joj objasne pogrešku, kaže: “¡Estoy embarazada!” ("trudna sam").

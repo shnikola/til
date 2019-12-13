@@ -1,5 +1,11 @@
 # Korporacije
 
+## Conway's Law
+
+Arhitektura svakog softvera odražava komunikacijske strukture organizacije u kojoj je nastao.
+
+Razlog je sljedeći: developeri koji rade na istom kodu moraju moći međusobno komunicirati. Tamo gdje je komunikacija dobra, moguće je da developeri rade unutar istog modula. Tamo gdje je komunikacija otežana, definirat će se API kao tehnička zamjena za društvenu komunikaciju.
+
 ## Skaliranje organizacije
 
 Najveći problem pri rastu korporacija je kognitivno opterećenje zaposlenika (*cognitive load*). S rastom sustava, svaki developer će morati držati sve više informacija u glavi, i time će napredak biti sve sporiji. Arhitektura sustava (npr. monolit vs mikroservisi) prvenstveno se treba oblikovati da svaki tim može samostalno dostaviti proizvod za koji je zadužen (da ne ovise o poznavanju komplicirane konfiguracije ili osobi u drugom timu zaduženom za deployment).

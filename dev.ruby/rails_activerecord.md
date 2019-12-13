@@ -83,6 +83,14 @@ Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full tab
 
 `in_batches` učitava recorde u batchevima, ali bloku prosljeđuje batch kao `Relation` objekt, pa se na njemu može pozvati `delete_all` ili `update_all`.
 
+## Bulk
+
+`User.insert_all([{id: 1, name: "A"}, {id: 2, name: "B"}])` inserta više recorda u bazu odjednom. Recordi koji su već u bazi se ignoriraju.
+
+`User.upsert_all([{id: 1, name: "A"}, {id: 2, name: "B"}])` inserta više recorda u bazu odjednom. Recordi koji su već u bazi se updateaju.
+
+Za Rails verzije prije 6, koristi `activerecord-import` gem.
+
 ## Callbacks
 
 Ako želiš u callbacku gurati stvari u background job (što ionako ne bi trebao), nemoj koristiti `after_save` nego `after_commit`. `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
@@ -130,17 +138,19 @@ Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` meto
 
 Ali ako stvaraš vlastite threadove unutar koda, automatsko oslobađanje se neće obaviti i pool će zauvijek ostati bez te konekcije. Zato kad god pokrećeš novi thread unutar requesta, ručno handlaj konekcije koristeći `checkout`, `checkin`ili `with_connection` s blokom. Više informacija na https://bibwild.wordpress.com/2014/07/17/activerecord-concurrency-in-rails4-avoid-leaked-connections/.
 
-## Schema dumps
+## Migracije
 
-Kada deployaš aplikaciju na novi server ili je pokrećeš iznova na novom računalu, ne želiš pozivati sve migracije iznova. Umjesto toga, koristi `rake db:setup` koji izgradi bazu koristeći `db/schema.rb`.
+Kada deployaš aplikaciju na novi server ili je pokrećeš iznova na novom računalu, ne želiš pozivati sve migracije iznova. Umjesto toga, želiš učitati tablice iz `db/schema.rb`.
+
+`rails db:setup` kreira bazu, stvara tablice koristeći `db/schema.rb` (ne pokreće migracije), izvršava `rails db:seed` ako postoji.
+
+`rails db:prepare` će izvršiti `db:setup` ako baza ne postoji, ili izvršiti `db:migrate` ako baza postoji. Tako da ga možeš uvijek zvati.
 
 ## Schema Cache
 
-http://blog.iempire.ru/2016/12/13/schema-cache
-
 Rails pri pokretanju aplikacije radi `SHOW FULL FIELDS` request na bazu kako bi dohvatio informacije o svim stupcima. Ovaj request zna biti spor, pa ako imaš jako puno Unicorn procesa koje restartiraš u isto vrijeme, baza se može naći pod velikim opterećenjem.
 
-Rješenje je pokrenuti rake `rake db:schema:cache:dump` koji će zapisati podatke o stupcima u file, kako procesi ne bi morali raditi upite na bazu.
+Rješenje je pokrenuti `rails db:schema:cache:dump` koji će zapisati podatke o stupcima u file, kako procesi ne bi morali raditi upite na bazu.
 
 # Literatura
 

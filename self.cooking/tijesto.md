@@ -20,3 +20,18 @@ Kvasac u tijestu se hrani šećerima, množi se ispuštajući ugljik dioksid i a
 
 Nakon što se prvi put digne, preporuča se tijesto još jednom premijesiti kako bi se mjehurići zraka ravnomijerno raspodijelili. Na taj način se dobija jednoliki oblik i okus.
 
+## Aktiviranje kvasca
+
+Kad kvasac (bilo svježi bilo suhi) miješaš s mlakom vodom ili mlijekom, najbolje je dodati ili malo šećera ili brašna jer ga to hrani i brže reagira.
+
+# Recepti
+
+## Pita Bread
+
+* Jednu vrećicu **suhog kvasca (7g)** stavi u **300ml tople (ne vruće) vode**, pa dodaj **prstohvat šećera ili brašna**. Pomiješaj i ostavi 5 minuta dok se ne otopi.
+* Dodaj **460g brašna**, **2 žličice soli** i **2 žličice maslinovog ulja**, dobro pomiješaj pa stavi na pobrašnjenu podlogu i 8 minuta mijesi. Obje ruke. Naporno je. Treba biti glatko i elastično.
+* Očisti posudu u kojoj si miješao, ulij malo maslinovog ulja, pa stavi tijesto unutra da bude lagano premazano sa svih strana. Ostavi da se diže 1-2 sata. Trebalo bi udvostručiti volumen.
+* Kad je naraslo, lagano ga premjesi, pa podijeli na 10 loptica.
+* Svaku lopticu laaagano razvaljaj (možeš i samo rukom). Ostavi ih mrvicu deblje da ne presuše.
+* Peci u pećnici oko 3 minute na `230`.
+

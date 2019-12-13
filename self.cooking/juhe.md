@@ -33,7 +33,7 @@ U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
 
 ## Krem Juha od Bundeve
 
-* **1kg butternut tikvu** nasjeckaj na kocke, nasjeckaj **1 veću mrkvu**, pa naulji i stavi u pećnicu na 200 stupnjeva da se karamelizira. Nakon 20ak minuta izvadi i prodrmaj pa vrati na još 20 minuta.
+* **1kg butternut tikvu** nasjeckaj na kocke, nasjeckaj **1 veću mrkvu**, **pola jabuke** pa naulji i stavi u pećnicu na 200 stupnjeva da se karamelizira. Nakon 20ak minuta izvadi i prodrmaj pa vrati na još 20 minuta.
 * Nasjeckaj **1 kapulu** i **4 režnja češnjaka**, stavi u lonac s **50g maslaca** i miješaj 10ak minuta.
 * Kad je tikva gotova, ubaci je u lonac s lukom i polij s **1l pilećeg temeljca**.
 * Ubaci **timijan** i **lovor**. Pojačaj vatru do ključanja pa ostavi da se lagano krčka 10 minuta.
@@ -61,6 +61,14 @@ http://www.seriouseats.com/2016/10/food-lab-broccoli-cheddar-cheese-soup.html
 * Štapnim mikserom izmiksaj juhu, pa vrati na laganu vatru i ulij **200ml 20% vrhnja**. Posoli i popapri po ukusu. Začini **svježim vlascem** i **muškatnim oraščićem**.
 
 Ako se osjećaš fancy, za dekoricaiju možeš isjeckati krumpir na tanke štapiće, pa ga ispržiti u ulju, i servirati zajedno sa **svježim peršinom i ružmarinom**, isprženim u ulju na 15 sekundi.
+
+## Juha od leće
+
+* Nasjeckaj **1 luk** i **2 mrkve**, dinstaj u loncu 10 minuta.
+* Nasjeckaj **4 režnja češnjaka**, ubaci u lonac s **2 žličice mljevenog kumina**, **1 žličicu currija**, **1 žličicu timijana**. Poprži 30 sekundi.
+* Ubaci **400g sjeckane rajčice**, **200g suhe leće** i prelij s **1 litrom povrtnog temeljca**.
+* Posoli, popapri, krčkaj 20-30 minuta, ili kad je već leća skuhana. Možeš dio odvojiti i izblendati da bude kremastije.
+* Iscijedi sok **pola limuna** unutra.
 
 ## Varivo Bilo Kakvo
 

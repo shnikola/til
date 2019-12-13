@@ -1,66 +1,30 @@
 # Code Quality
 
-## Odgovornost
+## Kompleksnost
+
+Temeljni problem u računarskoj znanosti je problem dekompozicije: kako kompleksan zadatak podijeliti na manje zadatke koji se mogu neovisno riješiti.
+
+Kompleksnost je najveći neprijatelj programera. Dva su načina borbe protiv kompleksnosti: pojednostavljivanje koda (npr. eliminiranje posebnih slučajeva, dobro imenovanje varijabli) ili enkapsuliranje (skrivanje kompleksnosti u modulu).
+
+## Simple vs Easy
+
+Ne miješaj jednostavnost (*simple*) s lakoćom korištenja (*easy*). Teži jednostavnosti, a tek onda lakoći korištenja.
+
+**Jednostavnost** znači da komponenta ima jednu ulogu, predstavlja jedan koncept i stoji samostalno.
+
+**Lakoća korištenja** znači da se komponenta može brzo instalirati, da ti je poznata ili da će svima biti jasno isprve.
+
+Modularnost ne znači jednostavnost - nemoj da te organizacija koda prevari. Ako samo odvojiš dva sustava, oni su i dalje kompleksni.
+
+## Kvaliteta koda u stvarnom svijetu
 
 Za nered u aplikaciji nisu krivi project manageri koji forsiraju nemoguć ritam dodavanja featura. Kriv si ti, jer si odgovoran da managerima pružiš povratnu informaciju - da se ne nešto ne stigne ili se ne može dodati. Njihov posao je da brane zahtjeve i raspored, tvoj posao je da braniš kvalitetu koda.
 
-Suprotno čestom mišljenju, glavna dužnost profesionalnog progamera nije natjerati program da radi. Današnja funkcionalnost će se vjerojatno promijeniti u sljedećem releasu, ali čitljivost koda će utjecati na sve promjene koje će se u budućnosti raditi. Kvaliteta i disciplina koda ostaju čak i kad i originalnog koda više nema.
+Suprotno čestom mišljenju, glavna dužnost profesionalnog programera nije natjerati program da radi. Današnja funkcionalnost će se vjerojatno promijeniti u sljedećoj verziji, ali čitljivost koda će utjecati na sve promjene koje će se u budućnosti raditi. Čak i kad i izvornog koda više nema, njegova struktura i kvaliteta ostaju.
 
-## Business vs Development
+**Business uvijek pobjeđuje development**. Zahtjevi uvijek divergiraju. Zato preferiraj izolirane akcije umjesto reusanja business logike, koja će se sigurno mijenjati.
 
-Business uvijek pobjeđuje development. Zahtjevi uvijek divergiraju.
-
-Preferiraj izolirane akcije umjesto reusanja business logike, koja će se sigurno mijenjati.
-
-Prije dodavanja featura razmisli hoće li se koristiti (npr. je li stvarno potreban CMS ili OAuth login)
-
-### Meaningful names
-
-Avoid words like Manager, Processor, Data, or Info in the name of a class.
-
-Pick One Word per Concept: it’s confusing to have fetch, retrieve, and get as equivalent methods of different classes. Likewise, it’s confusing to have a controller and a manager and a driver in the same code base. What is the essential difference between a DeviceManager and a ProtocolController?
-
-### Functions
-
-Miješanje razina apstrakcije zbunjuje. Čitatelju neće biti jasno je li određeni izraz esencijalni koncept ili samo detalj. Svaka funkcija bi se trebala baviti samo jednom razinom apstrakcije: high level odluka da li dodati meta tag u html i low-level zapisivanje `\n` u string ne bi smjeli biti u istoj funkciji.
-
-Što više argumenata funkcija prima, to ju je teže razumjeti. Izbjegavaj funkcije s više od 3 argumenta. Više povezanih argumenata zamijeni objektom.
-
-Izbjegavaj output argumente, tj. funkcije koje mijenjaju stanje argumenata. Umjesto `appendFooter(report)` radije koristi jasniji `report.appendFooter()`.
-
-Izbjegavaj selector argumente, npr. boolean koji mijenja funkcionalnost funkcije. Bolje imati dvije funkcije nego funkciju koja prima vrijednost koja opisuje njeno ponašanje.
-
-Funkcija bi trebala ili napraviti nešto ili odgovoriti na neko pitanje - nikad oboje. Npr. `if (set("username", "unclebob"))` je zbunjujuća naredba jer nije jasno u kojem slučaju daje koji rezultat.
-
-Kad napišeš funkciju koja vraća `null`, stvaraš dodatni posao onome koji tu funkciju poziva da svaki put mora provjeriti što je dobio nazad. Umjesto toga, baci exception ili vrati null-objekt. `null` se nikad ne bi smio slati ni kao argument funkcije.
-
-Ako želiš naglasiti da se funkcije smiju pozivati samo određenim redoslijedom (npr. `calculatePay`, `emailPaychecks`), proslijedi rezultat izvršene funkcije u sljedeću.
-
-## Comments
-
-Jedina namjena komentara je da pomognu kada se ne možeš jasno izraziti pomoću koda. U tom smislu, komentari su uvijek znak neuspjeha - što je manje komentara u kodu, to je kod jasniji. Ako je kod loš, umjesto da napišeš komentar, učini ga boljim.
-
-Što je komentar stariji ili udaljeniji od koda na koji se odnosi, to je veća vjerojatnost da postane neistinit. Istina je jedino u kodu, sve ostalo je šum.
-
-Komentari ne bi smjeli sadržavati meta podatke poput autora, datuma posljednje promjene i changeloga - za to postoji version control sustav.
-
-Komentirani kod je najgori od svih jer s vremenom postaje sve nerelevantniji, a nitko ga se ne usudi obrisati misleći da ga netko planira koristiti. Samo ga obriši bez straha, version control će ga zapamtiti.
-
-## Classes
-
-Klase bi trebale biti dovoljno male da se njihovo ponašanje može opisati pomoću dvadesetak riječi, bez korištenja "i", "ili", "ali" i "ako".
-
-*Single responsibility principle* kaže da svaka klasa ili modul smije imati samo jednu odgovornost, tj. samo jedan razlog da se mijenja. Developeri često krše to pravilo jer im se čini je teško shvatiti sustav s mnogo malih komponenata. Međutim, imao puno malih klasa ili par golemih, jednaka je količina koda koju moraš shvatiti - pitanje je samo je li lakše imati više malih, dobro označenih ladica ili dvije velike ladice u kojima držiš sve živo.
-
-Bazna klasa ne bi smjela ovisiti o svojim podklasama. Poanta stvaranja bazne klase je da odvoji high level koncept od implementacija, a ne da ovisi o njima.
-
-# Concurrency
-
-Concurrency decoupla "što se izvršava" i "kada se izvršava". Dizajn programa se znatno mijenja i postaje složeniji. Zato je bitno održati single responsibility principle i odvojiti concurrency logiku od ostatka koda.
-
-Svaki thread bi trebao biti neovisan od ostalih. Pristup dijeljenim podacima izbjegavaj koliko god je moguće, a umjesto toga koristi kopije podataka.
-
-Što ranije počni razmišljati o shut-down strategiji, jer se tu stvaraju najsloženiji rubni slučajevi.
+Svejedno, kao developeru zadatak ti je da budeš sanity check. Prije dodavanja featurea dobro razmisli hoće li se koristiti (npr. je li stvarno potreban CMS ili OAuth login).
 
 ## Refactoring
 
@@ -72,20 +36,65 @@ Refactoring treba biti "safe and boring" - puno testova koje nakon svake pojedin
 
 Napiši najbolji mogući kod sada, ali budi spreman da ga obrišeš sutra.
 
-## Simple Made Easy
+## Imenovanje
 
-https://www.infoq.com/presentations/Simple-Made-Easy
+Izbjegavaj riječi poput `Manager`, `Processor`, `Data`, i `Info` u imenima klasa.
 
-Teži jednostavnosti (*simple*): da sve što radiš ima jednu ulogu, predstavlja jedan koncept i da stoji samostalno.
+Koristi jednu riječ za koncept: zbunjujuće je imati `fetch`, `retrieve`, i `get` kao ekvivalentne metode u različitim klasama, ili `controller`, `manager` i `driver` kao različite klase. Postoji li naročita azlika između `DeviceManager` i `ProtocolController`?
 
-Ne miješaj to s lakoćom (*easy*): da se može brzo instalirati, da ti je poznato ili da će svima biti jasno isprve.
+## Metode
 
-Modularnost ne znači jednostavnost - nemoj da te organizacija koda prevari. Ako samo odvojiš dva sustava, oni su i dalje kompleksni.
+Miješanje razina apstrakcije zbunjuje. Čitatelju neće biti jasno je li određeni izraz esencijalni koncept ili samo detalj. Svaka metoda bi se trebala baviti samo jednom razinom apstrakcije: high level odluka da li dodati meta tag u html i low-level zapisivanje `\n` u string ne bi smjeli biti u istoj metodi.
 
-"Information is simple. Don't ruin it."
+Što više argumenata metoda prima, to ju je teže razumjeti. Izbjegavaj metode s više od 3 argumenta. Više povezanih argumenata zamijeni objektom.
+
+Izbjegavaj output argumente, tj. metode koje mijenjaju stanje argumenata. Umjesto `appendFooter(report)` radije koristi jasniji `report.appendFooter()`.
+
+Izbjegavaj selector argumente, npr. boolean koji mijenja funkcionalnost funkcije. Bolje imati dvije funkcije nego funkciju s parametrom koji opisuje njeno ponašanje.
+
+Metoda bi trebala ili napraviti nešto ili odgovoriti na neko pitanje - nikad oboje. Npr. `if (set("username", "unclebob"))` je zbunjujuća naredba jer nije jasno u kojem slučaju daje koji rezultat.
+
+Kad napišeš metodu koja vraća `null`, stvaraš dodatni posao onome koji tu metodu poziva da svaki put mora provjeriti što je dobio nazad. Umjesto toga, baci exception ili vrati null-objekt. `null` se nikad ne bi smio slati ni kao argument metode.
+
+Ako želiš naglasiti da se metode smiju pozivati samo određenim redoslijedom (npr. `calculatePay`, `emailPaychecks`), proslijedi rezultat izvršene funkcije u sljedeću.
+
+Izbjegavaj razbijati kod na previše sitnih metoda, jer to uvodi dodatna sučelja i povećava kompleksnost. Sučelje svake metode bi trebalo biti jednostavnije od njene implementacije.
+
+## Komentari
+
+Jedina namjena komentara je da pomognu kada se ne možeš jasno izraziti pomoću koda. U tom smislu, komentari su uvijek znak neuspjeha - što je manje komentara u kodu, to je kod jasniji. Ako je kod loš, umjesto da napišeš komentar, učini ga boljim.
+
+Što je komentar stariji ili udaljeniji od koda na koji se odnosi, to je veća vjerojatnost da postane neistinit. Istina je jedino u kodu, sve ostalo je šum.
+
+Komentari ne bi smjeli sadržavati metapodatke poput autora, datuma posljednje promjene i changeloga - za to postoji version control sustav.
+
+Zakomentirani kod je najgori od svih jer s vremenom postaje sve nerelevantniji, a nitko ga se ne usudi obrisati misleći da ga netko planira koristiti. Samo ga obriši bez straha, version control će ga zapamtiti.
+
+## Klase
+
+Klase bi trebale biti dovoljno male da se njihovo ponašanje može opisati pomoću dvadesetak riječi, bez korištenja "i", "ili", "ali" i "ako".
+
+*Single responsibility principle* kaže da svaka klasa ili modul smije imati samo jednu odgovornost, tj. samo jedan razlog da se mijenja. Developeri često krše to pravilo jer im se čini je teško shvatiti sustav s mnogo malih komponenata. Međutim, imao puno malih klasa ili par golemih, jednaka je količina koda koju moraš shvatiti - pitanje je samo je li lakše imati više malih, dobro označenih ladica ili dvije velike ladice u kojima držiš sve živo.
+
+Bazna klasa ne bi smjela ovisiti o svojim podklasama. Poanta stvaranja bazne klase je da odvoji high level koncept od implementacija, a ne da ovisi o njima.
+
+## Concurrency
+
+Concurrency decoupla "što se izvršava" i "kada se izvršava". Dizajn programa se znatno mijenja i postaje složeniji. Zato je bitno održati single responsibility principle i odvojiti concurrency logiku od ostatka koda.
+
+Svaki thread bi trebao biti neovisan od ostalih. Pristup dijeljenim podacima izbjegavaj koliko god je moguće, a umjesto toga koristi kopije podataka.
+
+Što ranije počni razmišljati o shut-down strategiji, jer se tu stvaraju najsloženiji rubni slučajevi.
+
+## Exceptioni
+
+Posebni slučajevi uvijek čine kod kompleksnijim, a exceptioni su najčešći izvor posebnih slučajeva.
+
+Prvo pokušaj redefinirati problem da eliminiraš slučajeve koji stvaraju exceptione. Ako to ne možeš, pokušaj ih maskirati u nižim razinama da ograničiš njihov utjecaj. Više exceptiona agregiraj u jedan zajednički.
 
 # Literatura
 
 * Clean Code by Robert C. Martin - Odlična knjiga pisana čitkim i razgovornim ugodnim tonom. Iako fokusirana na Javu, sadrži mnogo korisnih primjera iz stvarnog svijeta i dokaza da se kod uvijek može popraviti.
+* https://www.infoq.com/presentations/Simple-Made-Easy
 * https://medium.com/@rdsubhas/10-modern-software-engineering-mistakes-bc67fbef4fc8
 

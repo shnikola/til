@@ -20,6 +20,14 @@ Kada dva zamjenjiva proizvoda različitih cijena poskupe za fiskni iznos (npr. t
 
 Zato Australci piju više kvalitetnih Kalifornijskih vina od Kalifornijaca, a Kalifornijci piju više kvalitetnih Australskih vina od Australaca. Troškovi prijevoza čine transport samo najskupljih vina isplativim. Slično, za vrijeme prohibicije snažniji se alkohol puno bolje prodavao, jer se rizik za slabiji nije isplatio.
 
+## Predatory Pricing
+
+Popularna taktika startupa s golemim investicijama je spustiti cijene da gube novce sa svakim prodanim proizvodom, a razliku pokrivaju novcima od investitora.
+
+Ovakva strategija (*predatory pricing*) je u principu ilegalna, i zakoni kao što su Robinson-Patman i Clayton Act bi trebali zabranjivati takvo ponašanje. Kapitalizam funkcionira jer uspješne kompanije uzimaju sirovine i stvaraju proizvod koji je vrijedniji od sume svojih dijelova. To stvara dodatnu vrijednost, i u takvom modelu kompanije se natječu stvarajući bolju robu i usluge.
+
+Predatory pricing omogućuje kompanijama da budu konkurentne samo zahvaljujući kapitalu. Uber, Lyft, i hrpa drugih startup divova su sistematski neprofitabilne, krpaju deficite kroz prodaju dionica i nadaju se da će zauzeti tržište. Ovo je problem ne samo za pojedinu kompaniju, nego i za svu njenu konkurenciju koja mora zapravo zaraditi novac.
+
 # Literatura
 
 * https://www.joelonsoftware.com/2002/06/12/strategy-letter-v/
