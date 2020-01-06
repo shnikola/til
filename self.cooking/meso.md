@@ -35,7 +35,7 @@ Dijelovi:
 * **Hrbat** (roastbeef) se nalazi između buta i pržolice. Meso 1. kategorije, za na naglo ili roštilj. Duguljasti komad koji se reže na više dijelova: početni dio s rebrima (Cote de beuf/Prime Rib), Club Steak, T-Bone Steak i Porterhouse Steak.
 * **Pržolica** (ramstek, Rib Eye Steak) isto kvalitetno. Prošarano finim nitima masnoće i vrlo saftno. Narezan za odležanje pa tavu ili roštilj. Cijeli u pećnici.
 * **Ruža** mekši dio buta. Sastoji se od oraha (okrugliji) i hiftl (plosnatiji). Nakon lakšeg udaranja batom i mariniranja može se ispeći na tavi ili roštilju. Ali dobra je i za umake, pašticadu.
-* **Frikando** (butni valjak, lažni biftek) žilaviji dio buta, ali liči na biftek pa se lako zabuniti. Dijeli se na crnu i bijelu pečenicu. Za gulaše, umake, pašticadu, kuhanje, špikanje.
+* **Frikando** (butni valjak, lažni biftek) žilaviji dio buta, ali liči na biftek pa se lako zabuniti. Dijeli se na crnu i bijelu pečenicu. Ne koristi se za odreske, nego za gulaše, umake, pašticadu, kuhanje, špikanje.
 * **Koljenica** (ossobuco - "šuplja kost") za gulaše i juhe. Povećava volumen kuhanjem.
 * **Vrat** je žilav. Za juhe, rague. Za mljeveno meso, jeftiniji je od buta.
 * **Plećka** dobra za gulaše, a jeftinija od buta.

@@ -12,6 +12,14 @@ U tavi se otopi masnoća (maslac, ulje ili svinjska mast), te joj se doda jednak
 
 Pri dodavanju tekućine u zapršku, želiš izbjeći stvaranje grudica. Tekućina mora biti hladna ili sobne temperature, i dodaje se malo po malo u zapršku, neprestano miješajući. Nakon što se tekućina doda, potrebno je krčkati 10-20 minuta za najbolji okus i gustoću.
 
+## Hollandaise
+
+* **1 žumanjak**, **žličicu vode**, **žličicu limonovog soka** i **prstohvat soli** ubaci u usku visoku posudu od blendera.
+* **50g maslaca** otopi u lončiću, taman da počne ključati
+* stavi štapni mikser u posudu i miksaj, sporo dokapavajući maslac. Trebat će ti oko 30 sekundi. Ideja je da se stvori emulzija, a vrući maslac će skuhati žumanjak.
+
+Izvorno se radi na pari, mućenjem jaja i dodavanjem maslaca, ali ručno je puno teže stvoriti emulziju. Ako ne skuhajš jaja dovoljno, umak će biti prerijedak, a ako ih skuhaš previše, stvorit će se kajgana.
+
 ## Aioli
 
 * U srednju zdjelu razbij **1 jaje** i naribaj **4 režnja češnjaka**.
