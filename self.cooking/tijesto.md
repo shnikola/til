@@ -26,6 +26,15 @@ Kad kvasac (bilo svježi bilo suhi) miješaš s mlakom vodom ili mlijekom, najbo
 
 # Recepti
 
+## Medene buhtle
+
+* U veliku zdjelu ulij **240ml toplog mlijeka** i u njega ubaci **1 vrećicu kvasca** i **pola žličice šećera**. Ostavi 5 minuta da se kvasac aktivira.
+* Uključi mikseri miksaj dok dodaješ **80g meda**, **1 jaje i 1 žumanjak**, **60g otopljenog maslaca**, **pola žličice soli** i **450g brašna**. Miješaj 2 minute. Tijesto treba biti gusto i samo malo ljepljivo. Ako je preljepljivo, dodaji žlicu brašna dok nije kako treba.
+* Formiraj u kuglu, mijesi rukama 2 minute. Stavi u nauljenu posudu, prekrij folijom i stavi na toplo mjesto da se diže 2 sata.
+* Kad se udvostruči, još jednom ga premijesi da zrak izađe iz tijesta. Prereži oštrim nožem 3 dijela, pa svaku trećinu na 5 dijelova. Napravi 15 kuglica i postavi ih u nauljenu škrovadu, prekrij folijom da se opet diže 1 sat.
+* Ugrij pećnicu na 180, i peci 15-ak minuta dok ne postanu smeđi gore.
+* Za slatku varijantu, premaži maslacem i medom.
+
 ## Pita Bread
 
 * Jednu vrećicu **suhog kvasca (7g)** stavi u **300ml tople (ne vruće) vode**, pa dodaj **prstohvat šećera ili brašna**. Pomiješaj i ostavi 5 minuta dok se ne otopi.

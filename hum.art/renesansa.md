@@ -40,9 +40,17 @@ U Mantovi, na sjeveru Italiju, nalazi se vojvodska palača sa sobom koju je Mate
 
 **Leonardo Da Vinci**, kraj 15. stoljeća. Slikar, kipar, znanstvenik, inženjer, arhitekt, glazbenik. To znači biti renesansni čovjek. Radio u Firenzi, za Medice i u Milanu za Sforzu. Zanimanje za znanost mu je vidljivo u dosta crteža koje je ostavio. Preživjelo je samo 10-ak njegovih slika, dio kojih je oštećen ili nedovršen. *Posljednja večera* u samostanu u Milanu, danas u lošem stanju jer je koristio eksperimentalnu tehniku bojanja na gipsu, što nije baš izdržljiva metoda. Likovi su monumentalni, s dotad neviđenom životnosti i izrazima emocija. Isus je obznanio da će ga netko od njegovih učenika izdati. Dotad su prikazi večere bili dostojanstveni i tihi; ovo je teška drama. Mnogi su poslije radili kopije ove slike ili je koristili kao inspiraciju. *Annunciation* ima sjajna stabla iza anđela.
 
+**Michelangelo Buonarotti**, rođen 1475. doživio skoro 100 godina. Radio u Firenci i Rimu čitavog života. Autor *Davida*, *Mojsija* i kupole bazilike Sv. Petra u Vatikanu. Prvi umjetnik kojeg su suvremenici proglasili genijem.
+
+*Strop Sikstinske kapele* mu je najpoznatije slikarsko djelo. Radio ga je 5 godina. Centralni prostor prikazuje 9 prizora iz knjige postanka. Najpoznatije je scena stvaranja čovjeka, treunutak prije nego Bog prenosi dušu u Adamovo tijelo. Bog je prikazan po uzoru na grčke kipove poput Laokona i sinova. Općenito njegov stil slikanja pokušava imitirati skulpture. Postoje crteži i skice koje je radio za pripremu i izgledaju fantastično.
+
+U istoj kapeli je 20 godina kasnije oslikao zid iza oltara s prizorima posljednjeg suda. Tu je Michelangelo već bio pesimističniji i prikazuje sve grešnike kako ih isus proklinje u pakao.
+
+Michelangelo često koristi *contrapposto*, poziciju u kojem dijelovi tjela gledaju u različitim smjerovima, stvarajući dojam dinamike.
+
 ## Rana Flamanska
 
-Rana Flamanska se odnosi na područje današnje Nizozemske i Belgije, posevno gradove Brugge, Ghent, Brussel i Leven. Flamanci su također htjeli biti realistični, ali su umjesto linearne perspektive koristili detalje, poput refleksija na predmetima. Ali i dalje je tu skriven simbolizam (npr. Virgin of Chancellor Rolin, gdje su u pejzažu vinogradu jer je subjekt bio bogati veleposjednik)
+Rana Flamanska se odnosi na područje današnje Nizozemske i Belgije, posevno gradove Brugge, Ghent, Brussel i Leven. Flamanci su također htjeli biti realistični, ali su umjesto linearne perspektive koristili detalje, poput refleksija na predmetima. Ali i dalje je tu skriven simbolizam (npr. Virgin of Chancellor Rolin, gdje su u pejzažu vinogradu jer je subjekt bio bogati veleposjednik).
 
 **Jan van Eycke** sredina 15. stoljeća, where he was court painter to the Dukes of Burgundy, rulers of The Netherlands, and one of the most wealthy and powerful families in Europe.
 

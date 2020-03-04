@@ -44,6 +44,10 @@ Neki manijaci koriste eksterni **preamp** umjesto integriranog u audio interface
 
 Većina mikrofona imaju output **impedanciju** od `200 ohma`, što omogućava korištenje dugačkih kablova bez gubitka kvalitete (za razliku od npr. električnih gitara). Kad ga spajaš na pretpojačalo, pripazi samo da je input impedancija tog uređaja barem 5 puta veća. Ako nije, neće se ništa oštetiti, ali će performanse biti lošije.
 
+## Gain
+
+Level i gain se koriste u sličnim kontekstima, ali imaju donekle različito značenje. **Level** se odnosi na snagu izlaznog audio signala. **Gain** se odnosi na pojačanje ulaznog signala koji se dalje prosljeđuje drugim komponentama. Tako gain utječe ne samo na glasnoću, nego i na boju zvuka. Npr. gitarsko pojačalo ima kontrolu za gain koja pojačava signal i stvara distorziju. **Gain** konkretno znači pojačanje signala, suporotno od toga je **atenuacija**.
+
 ## Šum
 
 Šum dolazi od svuda. Čak i u naizgled nijemim predmetima molekule letaju uokolo i proizvode **termalni šum**.

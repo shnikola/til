@@ -1,5 +1,14 @@
 # Network
 
+## httpie
+
+Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
+* `http PUT example.org` osnovni poziv
+* `X-API-Token:123` za headere
+* `field=value` za parametre, po defaultu se šalje kao JSON, s `-f` kao forma
+* `field:='{"name": "nikola"}'` za raw JSON.
+* `--session=logged-in` čuva cookije i autorizaciju
+
 ## Debugging
 
 `ping -c 3 www.google.com` šalje 3 ICMP echo requesta na odredište i čeka na ICMP echo reply. Ispisani podatci sadrže `icmp_seq` (redni broj paketa), `ttl` (koliko hopova dopuštamo paketu), i `time` (roundtrip vrijeme od slanja paketa do primitka odgovora).
@@ -43,15 +52,6 @@ Skup alata za konfiguraciju i prikupljanje informacija o mreži.
 
 `whois utorkom.com` dohvaća podatke o registriranim korisnicima Internet resourca (npr. domene ili IP bloka)
 
-## httpie
-
-Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
-* `http PUT example.org` osnovni poziv
-* `X-API-Token:123` za headere
-* `field=value` za parametre, po defaultu se šalje kao JSON, s `-f` kao forma
-* `field:='{"name": "nikola"}'` za raw JSON.
-* `--session=logged-in` čuva cookije i autorizaciju
-
 ## tcpdump
 
 http://jvns.ca/blog/2016/03/16/tcpdump-is-amazing/
@@ -79,4 +79,3 @@ Za load testing.
 ## ngrok
 
 Za testiranje lokalnog servera s vanjskog stroja. Samo pokreni `ngrok http 3000` i dobit ćeš url tipa `https://83832de1.ngrok.io`.
-

@@ -102,7 +102,13 @@ Ukratko: koristi `UTC` kao aplikacijski time zone, a `Time.zone` i `Time.current
 
 ## Send files
 
-Kada šalješ file na browser, pristojno je poslati `Content-Disposition` header koji definira kako se sadržaj prikazuje (`inline` za u browseru, `attachment` za download). Defaultno se za filename uzima zadnji dio urla, a može se podesiti s `filename=` u headeru, ali treba paziti na escapanje. Umjesto toga, koristi `send_file_headers!(type: "application/zip", disposition: "attachment", filename: zipname)` koji sve headere podesi za tebe.
+`send_data(data)` šalje binarne podatke klijentu. Korisno ako moraš svaki put dinamično generirati, ali zbog memorije radije koristi streaming.
+
+`send_file(path)` šalje file s diska. U tom slučaju slanje podataka preskače se rails stack i slanje preuzima server (npr. nginx).
+
+Kada šalješ file na browser, pristojno je poslati `Content-Disposition` header koji definira kako se sadržaj prikazuje (`inline` za u browseru, `attachment` za download). Za filename se defaultno uzima zadnji dio urla, a može se podesiti s `filename=` u headeru, samo treba paziti na escapanje.
+
+`send_data` i `send_file` primaju opcije `filename`, `disposition` i `type` koje to rade tebe. Za streaming, postavi headere s `send_file_headers!(type: "application/zip", disposition: "attachment", filename: zipname)`.
 
 ## Cookies
 

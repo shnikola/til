@@ -2,10 +2,10 @@
 
 Distribuirani sustavi sastoje se od više nodeova koji komuniciraju preko mreže. Osnovni problem je propagiranje podataka iz jednog nodea u ostale.
 
-CAP teorem kaže da distribuirani sustav može imati samo 2 od 3 sljedeća svojstva:
-* Consistency: ako pišem u jedan node, read na drugom nodeu će vratiti te podatke.
-* Availability: ako komuniciram s jednim nodeom, odgovorit će, tj. neće delayati zauvijek.
-* Partition-tolerance: ako je mreža particionirana (poruke ne mogu putovati iz jednog nodea u drugi), i dalje će vrijediti sve što sustav garantira, tj. consistency i availability.
+**CAP teorem** kaže da distribuirani sustav može imati samo 2 od 3 sljedeća svojstva:
+* **Consistency**: ako pišem u jedan node, read na drugom nodeu će vratiti te podatke.
+* **Availability**: ako komuniciram s jednim nodeom, odgovorit će, tj. neće delayati zauvijek.
+* **Partition-tolerance**: ako je mreža particionirana (poruke ne mogu putovati iz jednog nodea u drugi), i dalje će vrijediti sve što sustav garantira, tj. consistency i availability.
 
 U praksi ne možeš izbjeći da se dogodi particija mreže, pa biraš između A i C:
 * CP sustav ne garantira Availability, tj. može timeoutati umjesto da vrati rezultat. Korisno za sustave koji moraju garantirati atomarni read i write.

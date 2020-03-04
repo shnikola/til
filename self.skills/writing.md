@@ -1,78 +1,29 @@
 # Writing
 
-## Kako pisati dobro
+## Konkretnost
 
-Što brže napiši lošu verziju. Samo nabacaj ideje koje želiš iznijeti. Onda kreni u uređivanje.
+Kada želiš prenijeti nešto univerzalno, koristi konkretne, a ne općenite ideje. Općenitost ne rezonira ni s kim. Što si konkretniji, to se lakše povezati s tobom. Život je u detaljima.
 
-U tehničkom tekstu, izbjegavaj zamjenice. Bolje je ponoviti imenicu, nego ostati nejasan (npr. umjesto "Izmjenili smo token u APIju jer je prošli imao bug." napiši "Izmjenili smo token u APIju jer je prošli token imao bug.")
+## Subverzivnost
 
-Kada postavljaš pitanja, ne pitaj "Kada je release? Ovaj tjedan ili idući tjedan?". Umjesto toga, pitaj: "Release je ovaj tjedan, a ne idući, zar ne?".
+Subverzivnost je mijenjanje načina na koji se neka institucija ili vrijednost doživljava.
 
-## Boil It Down
+Iako se danas čini teško biti subverzivan (glupi postomodernizam je sve upropastio), postoji hrpa područja djelovanja koja su zapostavljena i koja nitko ne pokušava pristupiti na novi način (npr. u slučaju Alana Moora to su pornografija i magija).
 
-https://en.wikisource.org/wiki/Boil_it_down_(1924)
-
-If you've got a thought that's happy,
-Boil it down.
-Make it short and crisp and snappy,
-Boil it down.
-
-When your brain its coin has minted,
-Down the page your pen has sprinted,
-If you want your effort printed,
-Boil it down.
-
-Take out every surplus letter,
-Boil it down.
-Fewer syllables the better,
-Boil it down.
-
-Make your meaning plain.
-Express it so we'll know not merely guess it;
-then my friend ere you address it,
-Boil it down.
-
-Cut out all the extra trimmings,
-Boil it down.
-Skim it well, then skim the skimmings,
-Boil it down.
-
-When you're sure 'twould be a sin to
-Cut another sentence into,
-send it on, and we'll begin to,
-BOIL IT DOWN!
-
-
-## The Cultural Iceberg for Worldbuilding
-
-*Surface culture*: food, flags, festivals, fashion, holidays, music, performance, dances, games, arts & crafts, literature, language.
-
-*Deep culture*:
-* Communications Styles and Rules: facial expression, gestures, eye contact, personal space, touching, body language, conversational patterns, handling and displaying emotion, tone of voice
-* Notions of: courtesy and manners, friendship, leadership, cleanliness, modesty, beauty
-* Concepts of: self, time, past and future, fairness and justice, roles related to age, sex, class, family
-* Attidutes toward: elders, adolescents, dependents, rule, expectations, work, authority, cooperation vs competition, relationships with animals, age, sin, death
-* Approaches to: religion, courtship, marriage, raising children, decision-making, problem solving
-
-## Kako biti subverzivan danas
-
-https://youtu.be/93sV5XGLmgQ?t=2h5m33s
-
-Danas se čini nemoguće biti subverzivan. Ali postoje područja koja su zapostavljena, o kojima nitko ne priča i koja se izbjegavaju (npr. u Moorovom slučaju pornografija, i magija). Samim time nitko i ne pokušava promijeniti kako se to područje doživljava. Često su to vrlo funndametalna, bitna područja koja jednostavno trenutno nisu pomodna.
-
-## Lessons from the screenplay
+## Savjeti za scenarije
 
 Početak scene stvara okvir o čemu se radi sceni, sužavajući se prema zadnjoj riječi ili rečenici u kojoj je poanta cijele scene.
 
+Protagonist treba biti aktivan. Mora biti uzrok akcije, a ne samo objekt nad kojim se akcija događa.
+
+Ne boj se biti zloban prema svojim likovima. Teški trenutci će učiniti katarzu boljom.
+
 *Subplot character* prolazi kroz iste probleme kao protagonist, a publici daje kontrast.
 
-Lessons from "Independence day": epic antagonist, action is about characters, be mean to characters
-
-Ultimate antagonist:
-* exceptionally good at attacking the hero's greates weekness
-* pressuring protagonosti into difficult choices
-* competing for the same goal forces them into direct conflict
+Ultimativni antagonist posebno dobro napada herojevu slabost, tjera ga da donosi teške odluke. Protagonist i antagonist mogu imati iste ciljeve što ih dovodi u direktni konflikt.
 
 Establiraj da se može umrijeti u filmu kako bi povećao napetost (npr. Moonrise Kingdom gdje ubiju psa).
 
-Protagonist causes things to happen, not has things happen to them.
+# Literatura
+
+* https://en.wikisource.org/wiki/Boil_it_down_(1924)

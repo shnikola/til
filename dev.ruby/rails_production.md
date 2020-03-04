@@ -59,9 +59,7 @@ Kod multi-process servera, master proces inicijalizira aplikaciju i tek onda for
 
 Ako pokrećeš svoj vlastiti server iza remote proxija (npr. nginx, apache), podesi proxy da gzipa odgovore aplikacijskog servera (nginx gzipa HTML po defaultu).
 
-Ako pokrećeš server na Heroku, remote proxy se ne koristi, pa je potrebno gzipati odgovore u samoj aplikaciji. U `application.rb` dodaj `config.middleware.insert_after ActionDispatch::Static, Rack::Deflater`. Neki asseti se pri kompilaciji zapišu na disk gzipani, pa nema potrebe da ih se još jednom gzipa on-the-fly.
-
-Iznimka je passenger koji dolazi s distribucijom nginxa, pa gzipanje dolazi out-of-the-box.
+Ako pokrećeš server na Heroku, remote proxy se ne koristi, pa je potrebno gzipati odgovore u samoj aplikaciji (osim ako koristiš `passenger` koji ima svoj nginx ugrađen). U `application.rb` dodaj `config.middleware.use Rack::Deflater`.
 
 ## Rails u produkciji
 

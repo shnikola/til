@@ -1,5 +1,17 @@
 # Javascript
 
+## this
+
+`this` je referenca na kontekst u kojem se trenutna funkcija izvršava.
+
+Za `function f() { return this; }`:
+* `f()` će vratiti `window`
+* `a = { method: f }; a.method()` će vratiti `a`.
+
+`f.call(context, args)` poziva funkciju i postavlja joj `this` u zadanu vrijenost, npr. `t.call(a)` je ekvivalentno `a.t()`
+
+`f.bind(context)` vraća novu funkciju s postavljenim `this`, bez da je pozove.
+
 ## Array Functions
 
 Callback uvijek dobija argumente redom: item, index, list.
@@ -21,6 +33,10 @@ Callback uvijek dobija argumente redom: item, index, list.
 
 `new Date()` vraća Date objekt s metodama za dohvaćanje dijelova datuma: `date.getFullYear`, `date.getMonth`, `date.getDate`, `date.getHours`, `date.getMinutes`, `date.getSeconds`.
 `Date.now()` vraća timestamp u milisekundama. _IE 9+_
+
+## Regex
+
+Za matchanje koristi `str.match(/a/g)`. Nemoj koristiti `re.test('ab')` jer je regex objekt iz nekog bleasavog razloga stateful.
 
 ## Debounce i Throttle
 

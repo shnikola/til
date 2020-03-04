@@ -116,7 +116,7 @@ Kada se dogodi event (npr `click`) prvo se šalje od root elementa (*capturing*)
 `el.addEventListener('click', callback)` dodaje callback na event koji će se izvršiti pri bubblingu.
 `el.addEventListener('click', callback, true)` dodaje callback koji će se izvršiti pri captureu. Korisno za evente koji ne bubblaju, npr. `focus` i `blur`.
 `el.removeEventListener('click', callback)` uklanja callback funkciju. Trebaš je imati spremljenu u varijabli. Ako želiš obrisati sve listenere, najlakše je klonirati element, jer se listeneri ne kloniraju.
-`el.dispatchEvent(event)` šalje event na element, gdje prolazi kroz normalni capturing i bubbling.
+`el.dispatchEvent(event)` šalje event na element, gdje prolazi kroz normalni capturing i bubbling i triggera listenere.
 
 Unutar callback funkcije:
 `event.target` najdublji element od kojeg je event počeo.

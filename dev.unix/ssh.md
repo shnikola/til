@@ -40,7 +40,7 @@ Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/confi
 
 `scp myfile.txt app@shitake:/remote/directory` kopira lokalni file na stroj `shitake` koristeći usera `app`. Za direktorije koristi `-r`.
 
-`rsync -aP --delete /local/directory app@shitake:/remote/directory` kopira direktorij na remote stroj, ali je brži jer ne kopira postojeće fileove. Odlično za sinkroniziranje direktorija. `-a` radi rekurzivno i čuva sve permissione, `-P` daje progress bar i omogućava resume ako se veza prekine, `--delete` briše fileove u `<dest>` ako ih nema u `<src>`.
+`rsync -aP --delete /local/directory/ app@shitake:/remote/directory` kopira direktorij na remote stroj, ali je brži jer ne kopira postojeće fileove. Odlično za sinkroniziranje direktorija. `-a` radi rekurzivno i čuva sve permissione, `-P` daje progress bar i omogućava resume ako se veza prekine, `--delete` briše fileove u `<dest>` ako ih nema u `<src>`.
 
 `rsync -nv` koristi za probu, ne kopira ništa nego ispisuje što bi se sve kopiralo.
 

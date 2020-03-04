@@ -29,6 +29,14 @@ U južnim krajevima izvorna se riječ zadržala, ali u sjevernim krajevima susre
 
 Vjeruje se da je u sjevernim krajevima, gdje je bilo više medvjeda, korištenje pravog medvjedovog imena bilo tabu zbog straha da će ga prizvati, pa su nastali eufemizmi. Medvjed je vjerojatno bio jedno od strašnijih bića s kojim se europljanin mogao susresti. Neki smatraju da je i proto-indo-europska riječ *rkso-* povezana s *rakhsas* (ozljeda), pa da medvjed izvorno znači "the destroyer".
 
+## Boje
+
+Narančasta je dobila ime po voću, ne obrnuto. Tek kada je u 15. stoljeću voće došlo u Europu, narančasta boja se počela tako nazivati. Prije toga, nazivali su je crvenom (zato se ljude narančaste kose naziva crvenokosima)
+
 ## Lažni prijatelji
 
 Amerikanka u Meksiku putuje prema Chichen Itzi: “¡Estoy excitada!” ("napaljena sam"). Kad joj objasne pogrešku, kaže: “¡Estoy embarazada!” ("trudna sam").
+
+## Hrvatske novotvorenice
+
+Riječ `udomitelj` je nastala tek 1993., kad je pobjedila na natječaju za najbolju novu riječ časopisa "Jezik".

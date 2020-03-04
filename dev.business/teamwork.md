@@ -10,6 +10,14 @@
 
 Poanta **standup** sastanaka je da svi započnu radni dan s maksimalno informacija o o relevantnih za njihove zadatke. U slučaju dva teama u različitim vremenskim zonama, jedan team može na kraju svog dana ostaviti par natuknica na Slacku koje će drugi team ujutro pročitati.
 
+## Komunikacija
+
+Kada postavljaš pitanja, ne pitaj "Kada je release? Ovaj tjedan ili idući tjedan?". Umjesto toga, pitaj: "Release je ovaj tjedan, a ne idući, zar ne?".
+
+## Dokumentacija
+
+U tehničkom tekstu, izbjegavaj zamjenice. Bolje je ponoviti imenicu, nego ostati nejasan (npr. umjesto "Izmjenili smo token u APIju jer je prošli imao bug." napiši "Izmjenili smo token u APIju jer je prošli token imao bug.")
+
 ## Povjerenje
 
 Učinkoviti timovi trebaju povjerenje. Manjak povjerenja nadoknađuje se birokracijom (npr. code reviewima, tjednim izvještajima, detaljnim praćenjem potrošenog vremena). Što više povjerenja i međusobne odgovornosti tim posjeduje, to će biti manje birokracije i tim će biti efikasniji.

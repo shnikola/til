@@ -21,6 +21,8 @@
 
 `file <file>` koristeći *magic numbers*, ispisuje tip podataka u fileu. `--mime-type` za MIME.
 
+`tar -zcvf dest.tar.gz src` za zipanje fileova.
+
 ## Search
 
 `find <start_dir> <filter>` rekurzivno prolazi kroz sve fileove u `<start_dir>` i ispisuje one koji prolaze `<filter>`

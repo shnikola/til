@@ -1,8 +1,4 @@
-# 12 Factor App
-
-https://12factor.net/
-
-Metodologija za deployment aplikacija koja omogućuje automatizaciju, portabilnost i skalabilnost.
+# Deploy
 
 Jedna aplikacija ima točno jedan codebase (repository). Aplikacija može imati više pokrenutih instanci (deployeva) s različitim branchevima codebasea (npr. staging), ali sve pripadaju istom codebaseu.
 
@@ -29,3 +25,8 @@ Za web procese, graceful gašenje postiže se prestankom slušanja porta kako se
 Development i production environment trebali bi biti što je moguće sličniji. To znači da se isti backing servisi koriste na lokalnim i produkcijskim strojevima, da isti ljudi developaju i deployaju.
 
 Aplikacija se ne bi smjela brinuti za management logfileova. Umjesto toga, treba ispisivati logove na `stdout`, a o sakupljanju svih logova i slanju na konačno odredište treba se brinuti serverski environment. Tako se logovi mogu zapisivati u file, ili slati u neki agregacijski sustav kao Splunk ili Hadoop.
+
+# Literatura
+
+* https://12factor.net/
+

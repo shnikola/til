@@ -64,6 +64,8 @@ Za ograničavanje vrijednosti, umjesto `[100, val].min` koristi `val.clamp(0, 10
 
 `flat_map {|e| ...}` kao `map`, ali će pozvati svaki rezultate flattati u jedan array.
 
+`filter_map { |i| i + 1 if i.even? }` mapira i istovremeno izbacuje one koji su `nil`, pa ne moraš zvati `compact`.
+
 `reduce(:+)` kombinira sve elemente koristeći binarnu operaciju zadanu simbolom (bez `&`, to je obični parametar).
 `reduce{|memo, e| ...}` kombinira elemente naredbom iz bloka. Kao prvi argument prosljeđuje se trenutni rezultat.
 `reduce(5){|memo, e| ...}` zadaje početnu vrijednost rezultatu, inače se  postavlja na prvi element.

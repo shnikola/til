@@ -15,6 +15,8 @@ Mode može biti za:
 * pisanje (`w` piše preko postojećeg, `a` dodaje na kraj)
 * čitanje + pisanje (`r+` piše preko postojećeg, `w+` briše sve i piše ispočetka, `a+` dodaje na kraj)
 
+Ako radiš s binarnim podatcima, a ne tekstom, dodaj opciju `binmode: true`. Ovo je nužno samo za Windows platforme, ali korisno ju je postaviti za svaki slučaj.
+
 Svaki stream ima `external_encoding` (encoding teksta zapisanog u streamu) i `internal_encoding` (encoding stringa zapisanog u Rubyju). Možeš ih definirati pri otvaranju streama u modu: `w:ext_enc:int_enc`.
 
 Čitanje streama:

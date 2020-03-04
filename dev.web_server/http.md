@@ -110,6 +110,8 @@ Ukoliko je potrebna autentifikacija, server će vratiti `HTTP 401 Unauthorized` 
 
 Klijent odgovara s `Authorization`(c) koji sadrži shemu i credentialse. Za `Basic` to su Base64 kodirani `username:password`. Ukratko, nimalo siguran način autentifikacije.
 
+Browser će slati isti `Authorization` header sa svakim budućim requestom unutar patha koji je vratio `401`. Npr. ako je `/admin/index` vratio `401`, browser će slati header na `/admin/*` rute, ali ne i na `/public`.
+
 Slična metoda postoji za autentifikaciju na proxiju pomoću `Proxy-Authenticate`(s) i `Proxy-Authorization`(c).
 
 ## Cache
@@ -200,7 +202,6 @@ Ovo je efektivno isto što i resource inlining, ali dodatno omogućuje zasebni c
 Ako server želi poslati klijentu upute da preloada neki resurs, to može učiniti s npr. headerom `Link: rel=preload`. Ali da bi taj header poslao, i dalje mora pričekati da cijeli response bude spreman, što uključuje čekanje baze i generiranje HTML-a. Server push dopušta ranije slanje, ali može se iskoristiti samo za resurse koji su dostupni server. Također, server push će početi slati resurs čak i ako klijent ima u cacheu - preloading je fleksibilniji i potrošit će manje bandwitha.
 
 *Early hints* omogućuju serveru da pošalje headere prije konačnog responsea. Klijentu se šalje resonse sa statusom `103`, na što će klijent evaulirati headere, iskoristiti ih koliko može, i nastaviti čekati da stigne uobičajeni response.
-
 
 # Literatura
 

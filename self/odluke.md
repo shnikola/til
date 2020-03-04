@@ -10,6 +10,12 @@ Ako trebaš donijeti veliku odluku koju odgađaš (npr. odlazak iz zemlje ili pr
 
 Ne donosi važne odluke kada si ljut, gladan, umoran ili usamljen.
 
+## Compound interest
+
+Složena kamata je jedna od najsnažnijih sila koja upravlja našim životima. Osim što je bitna u posuđivanju i investiranju novaca, ključna je za bilo koji oblik napredovanja.
+
+Ako svake godine postaneš za samo 5% bolji u nekoj vještini, **za 15 godina ćeš biti dvostruko bolji** nego na početku! Trik je da postotak nikad ne zvuči puno, broj godina se čini velik, ali godine će proći htio ti to ili ne, i sitne životne odluke će imati golemi utjecaj na tvoj život u budućnosti. Ovo je primjenjivo na dizanje utega, sviranje instrumenata, ulaganje novca, unos manje kalorija itd. Zato štogod želiš napraviti, počni raditi što prije.
+
 ## Self-compassion
 
 Često se ljudima savjetuje da rade na samopouzdanju, ali mnogo važnije biti suosjećajan prema samom sebi. Trebaš si moći oprostiti kao što bi oprostio bliskim prijateljima. Neuspjeh ne trebaš dočekati s "Jadan ja, kako sam grozan." nego sa "Svima se događa neuspjeh. To je ono što nas čini ljudima."

@@ -24,6 +24,18 @@ Event logovi (npr. praćenje korisničkih eventova) često počnu kao append onl
 
 **RabbitMQ** je queue visokih performansi za komunikaciju point-to-point ili pub-sub.
 
+## Transakcije
+
+ACID je skup svojstava koje transakcije u bazi moraju posjedovati da bi garantiralne ispravno stanje baze u svim situacijama.
+
+**Atomicity** zahtjeva da se transakcija tretira kao jedna cjelina, čak i ako se sastoji od više naredbi. Ako ijedna od njenih naredbi faila, failat će i cijela transakcija i baza će se vratiti na prethodno stanje.
+
+**Consistency** zahtjeva da transakcija poštuje sva definirana pravila validacije (npr. constrainte, foreign keyeve, triggere).
+
+**Isolation** zahtjeva da concurrent transakcije daju isti rezultat kao da se izvrše slijedno.
+
+**Durability** zahtjeva da, jednom kad se transakcija izvrši, podatci ostanu zapisani čak i u slučaju pada sustava (npr. nestanka struje).
+
 ## Remote Cache
 
 Cache (npr. Memcached) radi na pretpostavci kako je brže dohvatiti podatak iz memorije nego obaviti skupu operaciju ili komunicirati s remote db-om koji drži podatke na disku. U tom slučaju je čak i network poziv, ako je istoj regiji (npr. na AWSu) brža opcija. Naravno, lokalni cache je najbrži, ali nije skalabilan.

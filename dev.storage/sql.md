@@ -135,11 +135,26 @@ Ako trebaš importati veliki CSV file u bazu, overhead aplikacijskog frameworka 
 
 ## Locking
 
-Lockanje na razini rowa:
-* ako želiš redak zaključati samo za čitanje (da nitko drugi ne može pisati dotad) koristi `SELECT ... LOCK IN SHARE MODE`
-* ako želiš redak zaključati za pisanje (nitko drugi ne može čitati ni pisati dotad) koristi `SELECT ... FOR UPDATE`
+**Optimistic locking** je strategija u kojoj svaki red ima broj verzije. Kada ga želiš promijeniti, zapišeš trenutnu verziju, i prilikom zapisivanja provjeriš da se verzija nije promijenila, npr. s `UPDATE ... WHERE id = 5 AND version = 23`. Ako update ne uspije, odustaje se od transakcije i daje korisniku da ponovno napravi izmjene. Koristi se kada očekuješ da će se konflikt rijetko događati.
+
+**Pessimistic locking** je strategija u kojoj ekskluzivno zaključaš redak dok ne napraviš izmjene na njemu. Ima veći integritet od optimističnog lockanja, ali moraš biti pažljiv da ne upadneš u deadlock.
+
+Ako želiš redak zaključati samo za svoje čitanje (da nitko drugi ne može pisati dotad) koristi `SELECT ... LOCK IN SHARE MODE`
+Ako želiš redak zaključati za svoje pisanje (nitko drugi ne može čitati ni pisati dotad) koristi `SELECT ... FOR UPDATE`
 
 Kada drugi query želi napraviti SELECT koji uključuje taj redak, bit će blokiran dok se prvi query ne izvrši. Ako ne želi biti blokiran, može napraviti query s `FOR UPDATE NOWAIT` (izbacit će error) ili `FOR UPDATE SKIP LOCKED` (preskočit će lockane redove).
+
+## Transaction Isolation
+
+Izolacija transakcije je tradeoff između peformansa (može li se query izvršavati paralelno s ostalima) i pouzdanosti (možemo li dobiti zastario ili neispravan rezultat). Postavlja se s `SET TRANSACTION ISOLATION LEVEL <level>` za session ili globalno.
+
+`READ UNCOMMITTED` query neće čekati da se druge transakcije dovrše, već će vratiti rezultate koji će se možda rollbackati. To je kad želimo nešto jako brzo i nije nas jako briga je li precizno.
+
+`READ COMITTED` dopušta da dva `SELECT`-a unutar iste transakcije vrate različiti rezultat ako se row umeđuvremenu updateao
+
+`REPEATABLE READ` garantira da će dva `SELECT`-a unutar iste transakcije vratiti jednake redove (ali možda dođu neki novi ako su se insertali umeđuvremenu).
+
+`SERIALIZABLE` garantira da će dva `SELECT`-a unutar iste transakcije vratiti identičan rezultat. Sve ostale transakcije (pisanje, brisanje) su blokirane dok se transakcija ne dovrši.
 
 ## Job queue
 

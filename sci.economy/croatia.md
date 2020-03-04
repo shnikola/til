@@ -4,9 +4,11 @@
 
 Smiješ tražiti ako ti je godišnji primitak manji od `300.000 kn` (limit za ulazak u PDV.)
 
-U taj godišnji primitak se broje i svi primitci od autorksih i studentskih ugovora u toj godini, pa pripazi ako radiš do limita.
+U taj godišnji primitak se broje i svi primitci od autorksih i studentskih ugovora u toj godini, pa pripazi ako radiš do limita. Za godišnji primitak nije bitno kada si izdao račun, nego kada su ti stigli novci.
 
 Plaćaš maksimalno `14.000 kn` doprinosa i `6700 kn` poreza.
+
+Ako paušalni obrt želiš pretvoriti d.o.o., isplati ti se izdati što više računa (do 300.000 kuna), pa zatvoriti obrt i otvoriti d.o.o. Neki ljudi to rade svake godine, ali to je donekle nelegalno.
 
 ## Porez na dohodak
 
@@ -19,7 +21,7 @@ Usto se dodatno plaća prirez (oko 15% od poreza, ovisno o prebivalištu).
 
 ## Porez na dobit
 
-Plaćaš 12% od `prihodi - rashodi`, odnosno 18% za preko 3 milijuna kuna. Ali pri isplati na račun se plaća još 12%.
+Plaćaš 12% od `prihodi - rashodi`, odnosno 18% za preko 3 milijuna kuna. Ali pri isplati na račun se plaća još 12%, što je ukupno oko 20%.
 
 ## Porez na dodanu vrijednost
 

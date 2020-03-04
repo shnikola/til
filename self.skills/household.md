@@ -47,3 +47,12 @@ Postoje dva guru proizvođača suđerica u EU: Miele i Bosch/Siemens (BSH). **Mi
 **Gorenje** nemoj nikako jer je to kineska Midea.
 
 Za pranje koristi **JAR Platinum tablete** (probaj naći da budu ispod kunu po tableti), **Blink sjajilo** (10kn po litri) iz Mullera. Koristi **krupnu sol** jer je bolja. Umjesto soli možeš koristiti i **3u1 tablete**.
+
+### Bojleri
+
+Bojleri s otvorenim plamenom su zeznuti. Za svaki kW snage, trebao bi imati kubik zraka u prostoriji. Pazi da ih ne staviš u male i slabo prozračene prostorije (npr. s PVC stolarijom), jer može doći do trovanja monksidom.
+
+## Vrt
+
+Usmjeri karijolu u smjeru kojem želiš ići prije nego je napuniš.
+

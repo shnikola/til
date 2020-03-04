@@ -105,12 +105,17 @@ Automatski nasljeđeni propertiji (`color`, `font-family`, `line-height`) se ne 
 
 ## Display property
 
-* `display: none` uklanja element iz document flowa. Dokument se renderira kao da element ne postoji.
-* `display: inline` element se nalazi unutar linije. `margin` i `padding` se mogu dodati, ali djelovat će samo horizontalno. Ignorira se `width` i `height`.
-* `display: inline-block` isto kao `inline`, ali može se postaviti `width` i `height`.
-* `display: block` po defaultu zauzima širinu cijelog svog parenta.
-* `display: list-item` default za `<li>`, ponaša se kao `block`, ali dodaje i marker box koji se može stilizirati s `list-style`.
-* `display: flow-root` kao `block`, ali stvara zasebni formatting context pa se za floatanu djecu ne treba koristiti clearfix. _Chrome, FF_
+`display: inline` element se nalazi unutar linije. `margin` i `padding` se mogu dodati, ali djelovat će samo horizontalno. `width` i `height` se ignoriraju.
+
+`display: inline-block` isto kao `inline`, ali unutra se ponaša kao `block`, pa se mogu postaviti `margin`, `padding`, `width` i `height`.
+
+`display: block` po defaultu zauzima širinu cijelog svog parenta.
+
+`display: none` uklanja element iz document flowa. Dokument se renderira kao da element ne postoji.
+
+`display: list-item` je default za `<li>`. Ponaša se kao `block`, ali dodaje i marker box koji se može stilizirati s `list-style`.
+
+`display: flow-root` kao `block`, ali stvara zasebni formatting context pa se za floatanu djecu ne treba koristiti clearfix. Too little too late, sad svi ionako koristimo flexbox. _Chrome, FF_
 
 ## Visibility
 
@@ -314,7 +319,8 @@ Za vertikalno centriranje `block` elementa, najjednostavnije je: `position: abso
 
 ## Colors
 
-`rgba(255, 125, 12, 0.2)` (ili `#ff880f`): `rgb` u rasponu `0..255`, i alpha kanal između `0.0` i `1.0`.
+`rgba(255, 125, 12, 0.2)`. `rgb` u rasponu `0..255`, i alpha kanal između `0.0` i `1.0`. Alpha kanal se može koristiti i u `#rrggbbaa` modu.
+
 `hsla(150, 50%, 50%, 0.5)`: `hue` je kut od `0` do `360` (odabire boju), `saturation` (zasićenost) i `lightness` (svjetlina) su postotak. Ovaj format je malo lakši za vizualizirati na prvi pogled. _IE 9+_
 
 `currentColor` jednak je `color` propertiju elementa, korisno za npr. `border: 1px solid currentColor` _IE 9+_
@@ -327,7 +333,7 @@ Za vertikalno centriranje `block` elementa, najjednostavnije je: `position: abso
 * `none` neće mijenjati veličinu (default).
 * `fill` raširit će se nepoštujući ratio da bi u potpunosti ispunio container.
 * `contain` raširit će se do rubova održavajući aspect ratio, ostavlja prazan prostor.
-* `cover` raširit će se do ruboba održavajući aspect ratio, odreže višak.
+* `cover` raširit će se do rubova održavajući aspect ratio, odreže višak.
 * `scale-down` kao `contain` ili `none`, koji god je manji.
 
 ## Background
@@ -396,7 +402,7 @@ Gradijenti u CSS-u mogu ići kao vrijednost gdje god može biti slika (npr. `bac
 
 `cursor: url(cursor.png) pointer` podržava custom image s fallbackom.
 
-`pointer-events` definira kako element reagira na mouse event. `auto` radi normalno, `none` propušta click elementu ispod. _IE 11+_
+`pointer-events` definira kako element reagira na mouse event. `none` ne dopušta selektiranje, hover, čak propušta click elementu ispod. _IE 11+_
 
 `touch-action` definira kako element reagira na touch. `auto` dopušta sve, `none` disabla sve, `pan-x` i `pan-y` dopušta samo scroll. _IE 10+_
 

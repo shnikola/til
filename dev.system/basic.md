@@ -4,13 +4,13 @@
 
 Servis je skalabilan ako dodavanje novih resursa povećava njegove performanse.
 
-Vertikalno skaliranje: pojačavanje snage servera. Ograničeno maksimalnom konfiguracijom.
+**Vertikalno skaliranje**: pojačavanje snage servera. Ograničeno maksimalnom konfiguracijom.
 
-Horizontalno skaliranje: dodavanje još servera. Zahtjeva load balancer. Svaki server mora imati isti codebase i ne spremati user-related podatke (sessione ili uploadane fileove) lokalno na disku ili u memoriji.
+**Horizontalno skaliranje**: dodavanje još servera. Zahtjeva load balancer. Svaki server mora imati isti codebase i ne spremati user-related podatke (sessione ili uploadane fileove) lokalno na disku ili u memoriji.
 
 ### Load Balancing
 
-*Load balancing* se može napraviti samo koristeći DNS kao round robin. Problem je što se DNS cachira i ne možemo uniformno podijeliti requeste. Bolje rješenje je imati poseban load balancer, softverski (ELB, HAProxy, LVS) ili hardverski (Barracuda, Cisco, Citrix...) koji su ludo skupi.
+Load balancing se može napraviti samo koristeći DNS kao round robin. Problem je što se DNS cachira i ne možemo uniformno podijeliti requeste. Bolje rješenje je imati poseban load balancer, softverski (ELB, HAProxy, LVS) ili hardverski (Barracuda, Cisco, Citrix...) koji su ludo skupi.
 
 Load balanceri mogu podržavati *SSL Termination* gdje on dekriptira requeste i enkriptira response. Tako se serveri ne moraju trošiti na SSL enkripciju niti imati instalirane SSL certifikate.
 
@@ -21,6 +21,8 @@ Load balancer je single point of failure, pa je korisno imati ih više. U Active
 ### DNS Load Balancing
 
 Jedna prednost DNS load balancinga je što može ponuditi korisniku IP adresu koja mu je fizički najbliža, time smanjujući latenciju. Također, DNS serveri imaju mnogo manji promet nego klasični load balancer, pa su kao pouzdaniji.
+
+Ako DNS za A record vraća više IP adresa, browser će se pokušati spojiti na prvu. Ako ne uspije, pokušat će sa sljedećom itd. Na taj način se može implementirati primitivan failover, ali mnogo ograničeniji u odnosu na zasebni monitoring. Ova metoda se većinom koristi za zloupotrebu sigurnosnih rupa u browserima (npr. DNS Rebinding).
 
 *Anycast* dopušta da više lokacija koristi istu IP adresu. Kada se request pošalje na Anycast IP, routeri će ga usmjeriti na server koji je najbliži. AWS Route 53 nudi tu opciju.
 
@@ -54,13 +56,9 @@ Raid 1 koristi *mirroring*, odnosno zapisivanje istog filea na više diskova. To
 
 Raid 5 koristi *parity*. Podržava više diskova od kojih se samo jedan koristi za redundaciju. Ako jedan disk umre, podatci se mogu rekonstruirati pomoću ostalih.
 
-Raid 6 je sličan kao Rails 5, ali dopušta da dva diska umru.
+Raid 6 je sličan kao Raid 5, ali dopušta da dva diska umru.
 
 Raid 10 kombinira Raid 0 i Raid 1, tako da imaš i striping i redundanciju. Zahtjeva barem 4 diska.
-
-## Integracija
-
-400 errore koji dolaze unutar sustava znače da postoji pogreška u integraciji, i treba ih tretirati kao 500-ke.
 
 # Literatura
 

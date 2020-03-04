@@ -10,17 +10,19 @@
 
 *Zone File* sadrži mappinge domena u IP adrese ili druge resource. Svaki mapping ima `name` (što se mapira), `record class` (IN za Internet), `record type`, `record data` i `ttl` (vrijeme trajanja cachea)
 
-Vrste recorda:
-* `A`: usmjerava (sub)domenu IPv4 adresu. Host može biti `@` (root), `pitalica` (subdomena), ili `*` (fallback)
-* `AAAA`: isto kao i `A`, samo za IPv6
-* `CNAME`: alias na `A` record (`puzzle` -> `pitalica`) ili drugu domenu (`blog` -> `journal.srijeda.com`)
-* `MX`: usmjerava na `A` record ili drugu domenu kojoj će proslijediti primljeni email. `@` host za glavnu domenu.
-* `TXT`: drži tekstualne podatke, uglavnom za verifikaciju
-* `NS`: autorativni nameserveri za domenu. Host može biti `@` (za trenutnu zonu) ili `pitalica` (delegiranje subodmene u drugu zonu)
+## Vrste recorda
+
+**A** usmjerava (sub)domenu IPv4 adresu. Host može biti `@` (root), `pitalica` (subdomena), ili `*` (fallback). **AAAA** je isto kao i A, samo za IPv6
+
+**CNAME** je alias na A record (`puzzle` -> `pitalica`) ili drugu domenu (`blog` -> `journal.srijeda.com`)
+
+**MX** usmjerava na A record ili drugu domenu kojoj će proslijediti primljeni email. `@` host za glavnu domenu.
+
+**TXT** drži tekstualne podatke, uglavnom za verifikaciju
+
+**NS** pokazuje na autorativne nameservere za domenu. Host može biti `@` (za trenutnu zonu) ili `pitalica` (delegiranje subodmene u drugu zonu)
 
 ## DNS Resolving
-
-https://howdns.works/
 
 1. Browser traži IP adresu za `wikipedia.org`.
 2. Provjerava u browser cacheu; ako nema:
@@ -31,4 +33,6 @@ https://howdns.works/
 7. Resolver se šalje na autorativne nameservere (npr. `ns1.wikipedia.org`). Registrar je zadužen da pri registriranju domene pošalje svoje nameservere TLD registru. `WHOIS` query vraća autorativne nameservere za domenu. Oni će uvijek imati IP adresu domene.
 8. Resolver vraća OS-u IP adresu koji je cachira i prosljeđuje browseru.
 
+## Literatura
 
+https://howdns.works/

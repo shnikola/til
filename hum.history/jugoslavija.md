@@ -8,6 +8,15 @@ Kako bi spomenici odgovarali svim Jugoslavenima, neovisno o nacionalnosti i reli
 
 Danas, većina spomenika je zapuštena ili devastirana. Njihovo stanje je sada spomenik jednom propalom snu.
 
+## Planinarenje
+
+Hrvatsko planinarsko društvo (kasnije, Hrvatski planinarski savez) osnovano je 1874., i to kao deveto planinarsko društvo u svijetu. Prvi predsjednik je bio dr. Josip Schlosser, liječnik i botaničar, po kojem su stube prema medicinskom fakultetu dobile ime.
+
+Prvi planinarski objekt u Hrvatskoj bila je metalna piramida na Sljemenu, stavljena da se može bolje vidjeti okolica od drveća. Kad je postavljan TV-toranj, piramidu su prebacili na Japetić.
+
+Ante Pavelić i Josip Broz Tito su se isto vrijeme 1925. učlanili u HPD, jer se s njihovom iskaznicom moglo bez problema preći alpe.
+
+
 ## Literatura
 
 * http://www.spomenikdatabase.org/
