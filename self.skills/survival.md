@@ -1,5 +1,19 @@
 # Survival
 
+## Spremnost
+
+Imaj spreman ruksak i u njemu drži:
+- veću bocu vode
+- hranu (bademe, glukozu)
+- hranu za macu
+- zviždaljku, džepni nožić
+- radio, svjetiljku, rezervne baterije
+- punjač za mobitel
+- nešto odjeće, čisti donji veš
+- pastu za zube, sapun, lijekove i flastere
+
+Drži dokumente i novce na poznatom mjestu da ih možeš zgrabiti pri izlasku. Bitnije dokumente drži skenirane na dropboxu.
+
 ## Planinarenje
 
 Posljedice visine tijelo počinje osjećati iznad 3000 metara. Ako se uspinješ iznad toga, ne povećavaj visinu spavanja preko 300m po danu.

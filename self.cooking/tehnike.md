@@ -1,11 +1,12 @@
-# Cooking
+# Tehnike
 
-## TODO
+## Lešo / Kuhano
 
-* Brašno (griz, krupica etc)
-* Tijesta
+Lešanje je kuhanje u slanoj kipućoj vodi. Lešo meso je čest ručak u primorskim krajevima, jer se od juhe dobijene od kuhanja moglo najbolje zasititi.
 
-* Maillard reaction
+Lešaju se i ribe (kovač, grdobina, škarpina su najcjenjenije), ili riblja sitnež s rakovima, volcima ili što bi se već našlo u mreži. Čak se i srdela često spremala lešo, s malo kvasine, jer bi tako ribarima najlakše pala na želudac. Dodavanjem kapule, poma i začina u lešadu nastali su brudet, popara i gregada.
+
+Leša se i povrće - u primorju se povrće kao prilog priprema isključivo na lešo. Tu je najpoznatija lešo blitva, prelivena s malo maslinovog ulja.
 
 ## Pirjanje/Dinstanje (Braising)
 

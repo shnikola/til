@@ -40,7 +40,7 @@ Kada browser pri parsiranju HTMLa dođe do `<script>` elementa (bilo inline, bil
 
 Stavi `<script>` tagove na dno `<body>` elementa, pa će se učitati zadnje. Ovo će biti potencijalno sporo za velike dokumente.
 
-`<script defer>` će skidati skriptu dok se HTML parsira, ali će je izvesti tek kad je cijeli HTML parsiran, prije `DOMContentLoaded`. Tako se neće blokirati parsiranje. _IE10+_
+`<script defer>` će skidati skriptu dok se HTML parsira, i odgoditi je da se izvede kad cijeli HTML bude parsiran (prije `DOMContentLoaded` eventa). Tako se neće blokirati parsiranje. _IE10+_
 
 `<script async>` će skidati skriptu dok se HTML parsira i pauzirati parsiranje samo za izvođenje. Skripte se neće nužno izvesti redom kojim su u dokumentu, pa ga nemoj koristiti ako ovise jedna o drugoj (npr. `jquery`). Inače je super. _IE10+_
 

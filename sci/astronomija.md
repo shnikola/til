@@ -32,15 +32,17 @@ Da stvar ne bude prejednostavna, mijenaju se još i zemljina nagnutost (od `22.1
 
 Iako se planeti sunčevog sustava prikazuju u liniji, zapravo su većinu vremena na različitim mjestima u orbitama u jako udaljeni jedni od drugih. Venera može biti najbliže Zemlji, na `38 milijuna km` udaljenosti. Ali većinu vremena Zemlji je najbliži planet Merkur, jer je toliko blizu Suncu. Merkur je zapravo većinu vremena najbliži planet svim planetima sunčevog sustava.
 
-## Fermijev paradox
+## Fermijev paradoks
 
-Neke od teorija zašto nismo stupili u kontakt s vanzemaljskom inteligencijom:
+U neizmjernoj veličini svemira inteligentan život bi trebao biti relativno čest. Iz današnje perspektive, izgledno je da ćemo kroz 1000 godina kolonizirati dio sunčevog sustava. Ali pošto svemir postoji već 14 milijardi godina, morale bi postojati i civilizacije milijunima godina stare. Zašto nismo stupili u kontakt ili našli ikakve tragove njihovog postojanja? Postoje razna objašnjenja.
 
-* Nastanak inteligentnog života je iznimno rjedak i Zemlja je unikatan planet u univerzumu.
-* Život na Zemlji je jedan od prvih koji su nastali u svemiru.
-* Od nastanka života do razvoja civilizacije tipa 3, postoji barijera (filter) koju većina ne može proći - možda nešto što smo već prošli (npr. nastanak višestaničnih organizama) ili nešto što nas tek čeka (nuklearni rat i nestanak resursa).
-* Vanzemaljska inteligencija je mnogo razvijenija od naše i ne smatra nas vrijednima da komuniciraju s nama.
-* Vanzemaljska inteligencija je potpuno različita od naše i ne možemo komunicirati čak i ako bi htjeli.
+Moguće je da smo na samom početku ere koloniziranja svemira. Život na Zemlji je možda jedan od prvih koji su nastali u svemiru.
+
+Moguće je da je vjerojatnost nastanka inteligentnog života možda iznimno niska i Zemlja je unikatan planet u univerzumu.
+
+Moguće je da je vanzemaljska inteligencija potpuno različita od naše i ne možemo komunicirati s njom niti prepoznati njihove poruke. Možda nas ne doživljavaju inteligentnima kao što mi ne doživljavamo planktone.
+
+Moguće je da svaka civilizacija tijekom svog postojanja nabasa na **veliki filter** kojeg nitko ne može proći. Može se raditi o nečemu što smo već prošli (npr. nastanak višestaničnih organizama), ili o nečemu što nas tek čeka. Možda se radi o samouništenju (nuklearni rat, globalno zatopljenje), o neprijateljskoj umjetnoj inteligenciji (na koju se lako nabasa nepripremljen) ili o ograničenju i zakonima fizike koji nam brane da napustimo svoj sustav.
 
 # Literatura
 

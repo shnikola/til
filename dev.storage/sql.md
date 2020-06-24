@@ -58,13 +58,6 @@ Druga stvar koju treba izbjegavati je stvaranje dodatnih stupaca za držanje vri
 
 Umjesto toga, koristi zasebnu normaliziranu tablicu.
 
-## Fulltext search
-
-Jednostavni tekst search može biti u obliku `LIKE 'Nik%`, i indeks će raditi dok god je zadan početak stringa.
-
-Postgres podržava prilično dobar full-text search:
-`CREATE INDEX tsv_idx ON documents USING gin(to_tsvector('english', text))`
-
 ## Migrations
 
 `DDL Transaction` je zgodna stvar koju Postgres podržava da možeš rollbackati promjenu ako se dogodi greška pri mijenjanju tablice (npr. u Rails migracijama). MySql to nema.
@@ -102,6 +95,27 @@ U ovom slučaju `comments` tablica mora uz asocijaciju `post_id` mora imati i do
 
 Oblik tablice koji svakako izbjegavaj je **Entity-Attribute-Value**: generička tablica s 3 stupca koja omogućava da dodaješ arbitrarne atribute na neku tablicu (npr. `12, 'featured_by', 'Nikola'`). Sve operacije tada postaju mnogo složenije i moraju se obavljati na aplikacijskoj razini (ne može biti `NOT NULL`, podržava samo jedan tip podataka, ne možeš koristiti foreign keyeve). Ako moraš spremati nestrukturirane podatke, koristi key-value store, a ne relacijsku bazu.
 
+## Geometrija
+
+Postgres podržava hrpu operacija za geometrijske podatke, tako da ti PostGIS ne treba.
+
+Ako trebaš samo točku, dodaj stupce `longitude` i `latitude` tipa `NUMERIC(8, 5)`. Ako trebaš linije i poligone, koristi `Geometry` tip stupca.
+
+Za provjeru sadrži li shape nešto koristi operator `@>`.
+Za računanje udaljenosti `earth_distance` funkciju iz `earthdistance` modula (konvertiraj koordinate s `ll_to_earth(lat, long)`.
+
+PostGIS koristi za importanje `WKT/WKB` formata, za kompleksne 3D geometriji gdje je razlika između sfere i sferoida bitna.
+
+## Fulltext Search
+
+Postgres podržava fulltext search, koristeći `tsvector` data type. To je array normaliziranih riječi koji izbacuje stop riječi (npr. `for`, `a`).
+
+`to_tsvector('english', 'looking for the right words')` pretvara text u `ts_vector`. Više vektora možeš kombinirati s `||`: `to_tsvector('english', title) || to_tsvector('english', description)`.
+
+`to_tsquery('english', 'look')` pretvara tekst u search query koji se može primjeniti operatorom `@@`: `WHERE to_tsvector(...) @@ to_tsquery(...)`.
+
+`ts_rank(to_tsvector(...), to_tsquery(...))` vraća broj od 0 do 1, koristi za `ORDER BY rank`.
+
 ## Grouping Ambiguity
 
 `SELECT MAX(score), id FROM posts GROUP BY type` će vratiti najveći `score` za svaku vrstu posta, ali neće nužno vratiti i `id` posta s najvećim scoreom.
@@ -135,7 +149,7 @@ Ako trebaš importati veliki CSV file u bazu, overhead aplikacijskog frameworka 
 
 ## Locking
 
-**Optimistic locking** je strategija u kojoj svaki red ima broj verzije. Kada ga želiš promijeniti, zapišeš trenutnu verziju, i prilikom zapisivanja provjeriš da se verzija nije promijenila, npr. s `UPDATE ... WHERE id = 5 AND version = 23`. Ako update ne uspije, odustaje se od transakcije i daje korisniku da ponovno napravi izmjene. Koristi se kada očekuješ da će se konflikt rijetko događati.
+**Optimistic locking** je strategija u kojoj svaki red ima broj verzije. Kada ga želiš promijeniti, zapišeš trenutnu verziju, i prilikom zapisivanja provjeriš da se verzija nije promijenila, npr. s `UPDATE ... WHERE id = 5 AND version = 23`. Ako update ne uspije, odustaje se od transakcije i daje korisniku da ponovno napravi izmjene. Koristi se kada je preskupo držati lock ili kad očekuješ da će se konflikt rijetko događati.
 
 **Pessimistic locking** je strategija u kojoj ekskluzivno zaključaš redak dok ne napraviš izmjene na njemu. Ima veći integritet od optimističnog lockanja, ali moraš biti pažljiv da ne upadneš u deadlock.
 
@@ -190,6 +204,14 @@ Connection pool sadrži listu već uspostavljenih konekcija koje aplikacija mož
 Ako imaš više od 100 konekcija otvorenih, treba ti nešto robusnije kao `PG Bouncer`, standalone pooler.
 
 Ako baza potroši sve dostupne konekcije, bacit će `max_connect_errors`. Ako se neki klijent pokuša spojiti previše puta, bit će blokiran s errorom `host_name blocked`. Da bi se host cache očistio pozovi `FLUSH HOSTS`.
+
+## Multiple Databases
+
+**Horizonal sharding** je dijeljenje sadržaja tablica u više baza, kako bi bilo manje redova za selektiranje i indeksiranje.
+
+**Functional partitioning** je dijeljenje tablica u različite baze prema njihovoj upotrebi. Na taj način odvajanje tablice u koju se često piše neće degradirati performance ostalih tablica.
+
+**Read replicas** mogu ići samostalno, ili u kombinaciji s gornjim podjelama. Replike smanjuju pritisak na writing bazu i obavljaju select upite.
 
 ## Common performance problems
 

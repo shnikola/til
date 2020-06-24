@@ -1,5 +1,11 @@
 # Social
 
+## Poziv iz banke
+
+https://krebsonsecurity.com/2020/04/when-in-doubt-hang-up-look-up-call-back/
+
+Ako dobiješ poziv iz banke ili nekog drugog operatera usluge, ne daj im nikakve informacije o sebi. Umjesto toga, prekini poziv, nazovi banku i traži da te prespoje s osobom koja te zvala.
+
 ## How to hack a friend
 
 https://defaultnamehere.tumblr.com/post/163734466355/operation-luigi-how-i-hacked-my-friend-without

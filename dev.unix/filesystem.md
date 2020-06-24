@@ -12,12 +12,15 @@
 `mktemp` stvara privremeni file (`-d` za direktorij) s unikatnim imenom.
 
 `cp <src> <dest>` radi kopiju filea i sprema ga kao `<dest>`.
-  * ako je `<dest>` directory (s *trailing slashom*), kopira file u njega.
-  * `-a` kopira rekurzivno i sačuva ownership, permissione, linkove itd. Dobro za backup.
+`cp file directory/` kopira file u directory. Moraš dodati trailing slash.
+`cp -a dir dir_copy` kopira rekurzivno i sačuva ownership, permissione, linkove itd. Korisno za backup.
+`cp really_long_filename{,.orig}` je shorthand ako ti se ne da pisati.
+
 `mv <src> <dest>` radi isto kao i `cp`, samo briše `<src>` nakon.
+
 `rm <files>` briše fileove.
-  * `-r` briše directory rekurzivno.
-  * `-f` briše bez prompta.
+`rm -r <dir>` briše directory rekurzivno.
+`rm -f <file>` briše bez prompta.
 
 `file <file>` koristeći *magic numbers*, ispisuje tip podataka u fileu. `--mime-type` za MIME.
 
@@ -33,6 +36,7 @@
 * `-exec <cmd> {} +` poziva `<cmd>` za *batch* pronađenih fileova, `{}` substituira imenom svih fileova.
 
 `locate <filename>` je brži od `find`, ali koristi svoju bazu koja se updatea svakih 24h, pa ne pronalazi tek dodane fileove.
+
 `which <cmd>` vraća path gdje je naredba definirana.
 
 ## Permissions

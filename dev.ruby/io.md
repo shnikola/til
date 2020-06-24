@@ -32,7 +32,7 @@ Pisanje u stream
 `io.flush` gura buffer u stream. `io.sync = true` flusha nakon svakog zapisa.
 Za random access koristi `io.pos`, `io.eof?`, `io.seek` i `io.rewind`.
 
-`IO.copy_stream(src, dest)` kopira sadržaj jednog IO streama u drugi, bez da učita cijeli sadržaj u memoriju, što je korisno pri kopiranju velike količine podataka.
+`IO.copy_stream(src, dest)` kopira sadržaj jednog IO streama u drugi, bez da učita cijeli sadržaj u memoriju, što je korisno pri kopiranju velike količine podataka. Npr. za downloada u file, `IO.copy_stream(open(url), "~/local_file.txt")`
 
 ## File < IO
 

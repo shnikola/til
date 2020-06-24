@@ -93,7 +93,7 @@ Za Rails verzije prije 6, koristi `activerecord-import` gem.
 
 ## Callbacks
 
-Ako želiš u callbacku gurati stvari u background job (što ionako ne bi trebao), nemoj koristiti `after_save` nego `after_commit`. `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
+Ako želiš u callbacku gurati stvari u background job (što ionako ne bi trebao), umjesto `after_save` koristi `after_commit`. `after_save` se poziva prije nego se transakcija commitala, pa background job možda neće pronaći record u bazi.
 
 ## Only
 
@@ -115,9 +115,19 @@ Jednom kad se objekt iz baze učita u memoriju, vrijednosti atributa se cachiraj
 
 Sam `validates_uniqueness_of` neće te zaštiti od dvostrukih vrijednosti u tablici, jer je moguće da se dva unosa istovremeno provjere i onda dodaju u tablicu. Uvijek ga koristi u kombinaciji s pravim unique indexom na tablici, i napravi `rescue ActiveRecord::RecordNotUnique`.
 
-## Rails 5 Attribute API
+## Text search
 
-http://edgeapi.rubyonrails.org/classes/ActiveRecord/Attributes/ClassMethods.html
+Ako matchaš samo početak teksta, koristi `where("title LIKE ?", "#{q}%")`.
+
+Ako želiš fulltext search, koristi `pg_search` gem za postgres fulltext. Na modelu se definira `pg_search_scope :search_title, against: :title` koji možeš pozvati kao `Book.search_title("Ruby")`.
+
+Search scope može pretraživati više columni `against: [:title, :description]`, i s weighing scores `against: { title: 'A', description: 'B' }`.
+
+Za normaliziranje querija dodaj `using: { tsearch: { dictionary: 'english' }}`.
+
+Fulltext queriji će biti spori jer se tsvector generira svaki put iznova, pa treba generirati index.
+
+## Rails 5 Attribute API
 
 Za definiranje typa za neki column, umjesto da se koristi šugavi serialize.
 `attribute :column_name, :integer, array: true`
@@ -132,7 +142,7 @@ Veličina poola se definira s `pool: 5` u `database.yml`. To ne znači da će se
 
 Ako pokušaš iz poola dohvatiti konekciju dok su sve zauzete, ActiveRecord će blokirati upit i čekati dok se jedna ne oslobodi. Ako ne uspije dobiti konekciju u nekom roku (podesivo s `checkout_timeout: 5`), bacit će `ConnectionTimeoutError`.
 
-U slučaju da sam stvaraš threadove unutar requesta, svaki thread će zauzeti dodatnu konekciju, pa pripazi da pool bude dovoljno velik. Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` metode konekcija će mu biti dodijeljena. Nakon što se response pošalje, Rails poziva `ActiveRecord::Base.clear_active_connections!` koja oslobađa sve konekcije trenutnog threada.
+U slučaju da sam stvaraš threadove unutar requesta, svaki thread će zauzeti dodatnu konekciju, pa pripazi da pool bude dovoljno velik. Ako thread eksplicitno ne traži konekciju, pri prvom pozivu `ActiveRecord` metode konekcija će mu biti dodijeljena. Nakon što se response pošalje, Rails poziva `ActiveRecord::Base.clear_active_connections!` koja oslobađa sve konekcije trenutnog threada, ali za svaki slučaj pozovi ga i ti u `ensure` bloku.
 
 ## Migracije
 

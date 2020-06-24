@@ -107,13 +107,13 @@ Continuation objekt sadrži snapshot stack framea.
 
 `callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
 
-## GIL
+## GVL
 
-MRI (standardna Ruby implementacija) ima *global interpreter lock* (GIL). On ne dopušta da se više threadova istog Ruby procesa izvršava istovremeno. To znači da će Ruby proces u jednom trenutku moći koristiti samo jednu jezgru procesora.
+CRuby (standardna Ruby implementacija poznata kao i MRI) ima *global VM lock* (GVL, poznat kao i GIL). On ne dopušta da se više threadova istog Ruby procesa izvršava istovremeno. To znači da Ruby proces ne može koristiti više jezgri procesora u istom trenutku.
 
-GIL se koristi kako bi se izbjegli race conditioni MRI internog koda, ali on *ne garantira* da je sav tvoj Ruby code thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
+GVL se koristi jer Ruby VM internalsi nisu thread-safe (teško je napisati dobar thread-safe VM - i Python i JS imaju isti problem i koriste neku vrstu globalnog locka). GVL osigurava da se VM izvršava u thread-safe kontekstu, ali **ne garantira** da će i tvoj aplikacijski Ruby kod biti thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
 
-Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GILa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO (HTTPS request, DB query, čitanje i pisanje na disk), MRI će se prebaciti na drugi thread koji nije blokiran.
+Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GVLa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO (HTTPS request, DB query, čitanje i pisanje na disk), MRI će se prebaciti na drugi thread koji nije blokiran.
 
 ## Signals
 
@@ -181,5 +181,5 @@ Posebna struktura za dijeljenje mutable objekata - potrebni lockovi, ali to kori
 
 # Literatura
 
-* http://www.jstorimer.com/blogs/workingwithcode/8085491-nobody-understands-the-gil
+* https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html
 * https://engineering.universe.com/introduction-to-concurrency-models-with-ruby-part-i-550d0dbb970

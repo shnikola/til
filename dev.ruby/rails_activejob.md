@@ -16,7 +16,7 @@ Sidekiq dolazi s ugrađenim dashboardom gdje možeš vidjeti stanje svih jobova.
 
 ## SuckerPunch
 
-Zapisuje jobove u memoriju aplikacije. Svaki job ima svoj queue s poolom threadova koji će ih obrađivati. Ne zahtjeva nikakav dodatan dependency, ali je i najnesigurniji - bilo kakvo gašenje procesa će obrisati sve jobove. Zato ga koristi samo za non-mission-critical zadaće.
+Zapisuje jobove u memoriju aplikacije. Svaki job ima svoj queue s poolom threadova koji će ih obrađivati. Ne zahtjeva nikakav dodatan dependency, ali je i najnesigurniji - bilo kakvo gašenje procesa će obrisati sve jobove. Zato ga ne možeš koristiti u rake i scheduled taskovima. Koristi ga samo za non-mission-critical zadaće.
 
 ## Savjeti
 

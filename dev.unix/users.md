@@ -51,3 +51,10 @@ Password flag je prazan ako user nema password, `x` ako ima, `*` ako user nema l
 `/etc/shadow` sadrži enkriptirane korisničke passworde i podatke o tome kada i ako ističu.
 
 `/etc/group` sadrži listu svih grupa i usera koji im pripadaju.
+
+## Gdje stoje programi
+
+`/bin` - ključni programi tipa `sh`. `/sbin` isto tako, samo za system management programe koje normalni user ne koristi
+`/usr/bin` - normalni programi distribucije.
+`/usr/local/bin` - programi koje si sam downlodao ili buildao. Prednost stavljanja programa ovdje je što ih system update *neće* overwriteati, pa će sve custom promjene ostati. Pri buildanju koristi `prefix=/usr/local`, a u `$PATH` dodaj `/usr/local/bin` i `/usr/local/sbin`
+`/opt` - third party monolitski paketi (tipa Oracle)

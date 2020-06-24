@@ -2,10 +2,41 @@
 
 ## Kako prepoznati svježu ribu
 
-Miris svježe ribe je vrlo ugodan i neutralan. Oči u živih i svježih riba su bistre i pune, a u pokvarenih su mutne i potpuno upale. Koža živih i svježih riba mora biti vlažna, neoštećena i prirodne boje metalnoga sjaja. Ljuske
-moraju biti čvrsto priljubljene uz tijelo. Površina zdravih, svježih riba mora biti glatka, tako da riba „izmiče“ iz ruku.
+Oči i koža su sjajni, ljuske su čvrsto priljubljene uz tijelo, površina glatka tako da riba „izmiče“ iz ruku.
 
-Meso je u svježih riba čvrsto, karakteristične konzistencije i izgleda. Pritiskom palca brzo se izravnava i nestaje udubljenje.
+Meso je čvrsto, pritiskom palca brzo se izravnava i nestaje udubljenje.
+
+## Kuhanje ribe
+
+**Lešada** je najjednostavniji način kuhanja ribe. Svježu ribu se stavi u lonac s malo vode, par češanja češnjaka, listom lovora, par zrna papra, malo soli, peršina i ulja.
+
+**Gregada** je kuhana riba s krumpirom. U lonac s malo ulja slažu se kolutići kapule, na njih ploške krumpira i riba i začini. Doda se vina i vode toliko da pokrije ribu i kuha uz povremeno protresanje. Najpoznatija je hvarska gregada.
+
+**Popara** ima i pome, ali ne velike i mesnate, nego male okrugle s tankom kožicom. Pored kapule može se dodati poriluka i luka. Sastojci se opet slažu po slojevima, počevši s kapulom i povrćem, pa ploškama krumpira i na kraju ribom.
+
+**Brudet** ima dosta pome, i uključuje dinstanje kapule (a negdje i ribe). Dinstanu kapula i rajčice se prokuhaju na tihoj vatri i zaliju vinom koje treba da ispari prije nego se dodaju komadi ribe. Ako se šug ne prokuha prije dodavanja ribe, da bi riba izdržala duže kuhanje a da se ne raspadne, doda se u juhu žlica kvasine.
+
+Za gregade, popare i brudete koriste se ribe "od kamena": ugor, škarpina, kokot, grdobina, i cipal. Gregada se tradicionalno kuha od sitnije ribe, a krupnija riba se reže na komade. Riba za poparu ne mora se komadati ukoliko nije veća od posude za kuhanje. Za podebljati obrok brudet se može poslužiti preliven preko palente, ili s kuhanom tjesteninom.
+
+Talijani imaju mnogo različitih varijanti brudeta (brodetto ili **zuppa di pesce**), jušastiji su od naših brudeta i često sadrže školjke. Francuski **bouillabaisse** koristi ratličite začine: šafran, koromač, narančinu koru. Španjolci imaju **zarturele** i **suquet de peix** s umakom od badema.
+
+## Riba
+
+**Srdela** je najmnogobrojnija riba na Jadranu i bila je osnovna hrana svih ribarskih obitelji. **Inćuni** su vitkiji i nešto kraći od srdela, a **gavuni (girice)** su još sitniji. Osim prženja, lokalci ih lešaju: stave se u tećicu s malo soli, papra, češnjakom i peršinom, pa se polije vodom da taman prekrije ribu i kuha 5-10 minuta nakon što proključa.
+
+**Kokot (lastavica)** je crvene boje, s bodljikavom perajom i kljunastom glavom. Često je usputni ulov. Zbog mekanog mesa priprema se na lešo ili brudet.
+
+Brancin
+Škarpina
+Grdobina
+Komarča / Orada
+Bukva
+Zastava / Zlatac / Knez
+Skuša
+Trlja - crvena, slatko meso.
+Salpa i Ušata
+Arbun - crvenkasti
+Kanjac
 
 ## Hobotnica
 

@@ -10,6 +10,8 @@ Procesi imaju deafultna ograničenja o količini resursa koje mogu koristiti (np
 
 Svaki proces sadrži key-value set environment varijabli. Varijable postavljene u parent procesu nasljeđuju svi child procesi, npr. `RAILS_ENV=production rails s`. Drugi način prosljeđivanja parametara je kroz argumente koji se zapisuju u `$@` varijablu.
 
+Svaki proces sadrži barem jedan thread. Thread je zadužen za samo izvršavanje koda. Threadovi sadrže malu količinu resursa: thread-local varijable i stack s pointerom na liniju koda koju izvršavaju. Zato se mogu brzo stvarati i gasiti.
+
 ## /proc
 
 Svi procesi nalaze se u `/proc` directoriju (zapravo virtualni filesystem čiji deskriptori pokazaju na memoriju, a ne na disk).

@@ -100,42 +100,26 @@ koristi `find -print0` i `xargs -0`.
 
 ## vim
 
-`hjkl` ili kursori za kretanje.
-`0` vraća na početak linije.
-`2w` pozicionira na početak 2. riječi od kursora.
-`3e` pozicionira na kraj 3. riječi od kursora.
-`G` pozicionira na početak filea, `gg` na kraj.
-`ctrl+G` ispisuje trenutnu liniju. `12G` pozicionira na 12. liniju.
-
-`i` ulazi u insert mod za pisanje.
-`A` ulazi u append mod za pisanje.
-`ESC` vraća u normalni mod i cancela nedovršenu naredbu.
-
-`x` briše znak na mjestu kursora.
-`dw` briše riječ na mjestu kursora. `d2w` briše dvije riječi.
-`d$` briše do kraja reda.
-`dd` briše cijelu liniju. `2dd` briše dvije linije.
-
-`p` stavlja zadnji obrisani tekst u liniju ispod kursora.
-`r<znak>` replacea znak na mjestu kursora sa `<znak>`
-
-`u` radi undo zadnje naredbe. `U` radi undo svih naredbi na liniji.
-`ctrl+R` radi redo.
-
 `:q!` izlazi i discarda promjene, `:wq` izlazi i savea.
-
-`vimtutor` za kratki pregled naredbi.
 
 ## Regex
 
 Za detektirati ponavljanja u regexu koristi `(something)\1`
-
 
 ## echo vs printf
 
 Nemoj koristiti `echo` za ispisivanje nepoznatih varijabli (nekonzistentno ponašanje za `\n` i `-n`).
 
 Umjesto njega koristi `printf`.
+
+## Hacking
+
+`strings <files>` ispisuje printabilne stringove u binarnom fileu.
+`-n 10` definira minimalnu duljinu stringa (defaultno `4`).
+
+`cat file.exe | hexdump -C` ispisuje file u hex obliku i sidebarom s formatiranim tekstom.
+
+`strace -o <file> <cmd>` ispisuje sve systemske pozive koje izvršena naredba radi.
 
 # Examples
 

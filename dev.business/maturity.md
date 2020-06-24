@@ -1,11 +1,8 @@
 # Maturity
 
-## Jednostavna pravila
-
-1. Ne deployaš popodne.
-2. Ne deployaš petkom.
-
 ## Working with Code
+
+Ne deployaj ako nećeš biti za računalom idućih sat vremena (npr. na kraju radnog dana ili nedajbože petkom).
 
 Kompetentan programer zna kako nešto napraviti, stručan programer zna *zašto* i *kada* nešto napraviti. Par savjeta kako ići u tom smjeru:
 
@@ -30,10 +27,6 @@ Svaki dan prošetaj sat vremena, sam ili u društvu, razmišljaj ili razgovaraj 
 Očekuj manje programiranja, ali zadrži vlasništvo nad par komponenti na 1/3 svog vremena. Tako ostaješ u toku s featurima i bugovima.
 
 ## Working with People
-
-Kad netko zajebe, nemoj ga napadati nego mu pomozi da to popravi, pobrini se da shvati u čemu je pogriješio te da nauči iz te pogreške. Ako je potrebno, promijeni procedure u firmi da se ta pogreška ne može ponoviti.
-
-Kad ti zajebeš, prvo javi menadžmentu (uvijek je bolje da saznaju od tebe, a ne od klijenta ili šefa). Reci im koji je problem i da radiš na rješenju. Postavi se kao vlasnik problema i da timeline u kojem ćeš ga riješiti, ili moći dati više informacija.
 
 Ne budi seronja: neka ljudima bude ugodno raditi s tobom. Kada kritiziraš, komentiraj kod, a ne osobu.
 

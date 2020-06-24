@@ -14,6 +14,14 @@ Ludi kabalaši su primjetili da kada Tetragramaton (Božje ime) zapišeš vertik
 
 Rabini interpretiraju ovo pričom o Lilith, koju je Bog stvorio od zemlje kao i Adama. Ali Adam i Lilith se nisu složili jer je on želio leći na nju, a ona na njega, pa je na kraju pobjegla od njega. Drugi rabini interpretiraju ovaj citat time da je Adam stvoren s muškim i ženskim licem, kao hermafroditno biće, muško i žensko spojeno na leđima. Ali Bog je uočio da im je tako teško hodati i razgovarati, pa ih je razdvojio.
 
+## Kainovo prokletstvo
+
+Nakon što je Kain ubio Abela, Bog ga proklinje dvostruko: zemlja koja se natopila Abelovom krvlju mu neće davati ploda, te će morati provesti život lutajući po svijetu. Kain se pobunio da je kazna preteška, pa je Bog na njega stavio **znak** i objavio da će tko god ubije Kaina otrpiti sedmerostruku osvetu. Kain je potom otišao i dobio sina Henoka, i osnovao grad Henok (toliko od lutanja).
+
+Ne zna se o kakvom se znaku radi: jedan rabin smatra da mu se ocrtalo slovo tetragramatona na čelu, drugi da mu je narastao rog, a treći da je dobio psa. Sirijci i Armenci smatraju da mu je lice pocrnilo. Franjevac Simon Semeonis u 14. stoljeću smatrao je da su Romi Kainovi potomci. Protestanti, pogotovo Baptisti, Kainovu kletvu su koristili kao opravdanje ropstva i zabranu zaređivanja crnih svećenika sve do 1960-ih.
+
+Slična, još blesavija priča je o proklestvu Noinog sina Hama. `Postanak 9:20`Noa se napio i zaspao gol u svom šatoru. Ham ga je vidio golog, i rekao za to drugoj braći, koja su Nou pokrila (bez da su ga gledala). Kad se Noa probudio, shvatio je što je Ham učinio i zato je prokleo njegovog sina Kanaana da bude sluga njegovom drugom sinu, Shemu. Ova se priča koristila da objasni podređenost Kaananitima Izraelcima, koji su potomci Shema; i to su kasnije preuzeli kao opravdanje ropstva, iako se Kanaanova boja kože nigdje ne spominje.
+
 ## Čudovišta
 
 Behemot i Levijatan se usputno spomenu u `Jobu 40:15-24` gdje Bog nabraja zvjeri koje je stvorio i samo ih on može uloviti. U nekim prijevodima Behemot je nilski konj ili slon, a Levijatan krokodil.
@@ -30,5 +38,20 @@ Kit koji je pojeo Jonu je zamalo izbjegao da ga pojede Levijatan. Levijatan ina�
 
 ## Izgubljene generacije
 
-U Psalmu 105:8 piše: "On se uvijek sjeća svojega Saveza, riječi koju dade tisući naraštaja". Ovo zvuči kao da Tora ima rok trajanja. Srednjovjekovni rabin Shlomo Yitzchaki (Rashi), tvrdi je Tora zapravo dana *tisućitoj* generaciji. Problem je što je Mojsije 26. generacija od postanka svijeta. Postavlja se pitanje - gdje je nestalo ostalih 974 generacija? Neke teorije tvrde da naš svijet nije prvi stvoren, već da su prije njega postojali drugi svijetovi koje je Bog stvorio i uništio.
+U Psalmu 105:8 piše: "On se uvijek sjeća svojega Saveza, riječi koju dade tisući naraštaja", što zvuči kao da Tora ima rok trajanja.
 
+Srednjovjekovni rabin Shlomo Yitzchaki (Rashi), tvrdi je Tora zapravo dana *tisućitoj* generaciji. Problem je što je Mojsije 26. generacija od postanka svijeta. Postavlja se pitanje - gdje je nestalo ostalih 974 generacija? Neke teorije tvrde da naš svijet nije prvi stvoren, već da su prije njega postojali drugi svijetovi koje je Bog stvorio i uništio.
+
+## Jakov
+
+Abrahamov unuk i Izakov sin, Jakov se rodio par trenutaka nakon brata Ezava. Ezav je trebao biti nasljednik, ali se Jakob na nagovor majke Rebeke prerušio u Ezava stavivši krzno na ruke (ostavljajući pitanje koliko je dlakav Ezav bio). Tako je dobio blagoslov od slijepog Izaka, pa je pobjegao kod strica Labana jer mu je brat priprijetio da će ga ubiti.
+
+Na putu do strica, Jakov dobije viziju stepeništa koje vodi prema nebesima i anđele kako se penju i spuštaju njime. Čuo je Božji glas koji mu je slao blagoslove s vrha. Ujutro se probudio i nazvao to mjesto `Bethel` - Božja kuća. Nikome baš nije jasno što to stubište (**Jakob's ladder**) predstavlja - židovski midrash smatra da predstavlja egzile koje će židovski narod prolaziti prije dolaska mesije; Ivanovo evanđelje preuzima stubište kao simbol Isusa `Ivan 1:51`; muslimani smatraju da predstavlja ispravan put Islama, od zemlje do neba. Staroslavenski zbornik `Tolkovaja Paleja` sadrži prošireni narativ o stubištu, s metaforama o budućnosti dolasku Mesije.
+
+Jakov stiže kod strica i radi kao pastir. Zaljubljuje se u stričevu mlađu kćer, Rakel. Jakovu je 77 godina, Rakeli je 14. Stric mu dopušta da se oženi za nju pod uvjetom da radi 7 godina kod njega; nakon ispoštovanog dogovora prevari ga i podvali mu svoju stariju kćer Leu na vjenčanju (jer ne može udati mlađu bez da prvo uda stariju). Jakov ga je izmoli da se odmah oženi i za Rakel, pod uvjetom da odradi još dodatnih 7 godina. Biblijski likovi su uglavnom jako strpljivi jer imaju vremena na bacanje.
+
+U sljedećih 7 godina, Jakov je dobio 12 djece - prvo 4 sina od Lee, pa 2 od Rakeline služavke (Rakela je bila neplodna), pa 2 od Leine služavke (Lea je bila ljubomorna), pa opet 3 od Lee. Bog se onda konačno sjetio Rakele, pa je ona rodila Josipa i Benjamina, jedinu djecu do koje Jakovu bilo zapravo stalo. Nakon Josipovog rođenja, Jakov se zaputio nazad roditeljima, u nadi da su još živi i da ga Ezav neće ubiti kad ga vidi.
+
+Vraćajući se nazad, saznao je da Ezav čeka s vojskom od 400 ljudi, pa se Jakov počeo moliti Bogu i slati darove Ezavu. Noć prije susreta otpremio je svoju obitelj preko rijeke, kad ga je posjetio misteriozni čovjek/bog/anđeo i njih dvojica su se hrvali do jutra. Kada je biće shvatilo da ne može pobijediti Jakova, dotaklo je njegovo bedro i od tada je Jakov šepao. Zato židovi ne jedu išijasni živac, nego ga uklanjaju (`nikkur`).
+
+Jakov je neznanca zatražio blagoslov, a on mu je rekao da će od sada zvati **Izrael** (Yisra'el, "borio se s bogom" ili "pobjedio boga" ili "vidio boga" ili "vladat će kao bog"). Tako su Izraelci, koji su potekli od Jakovljevih sinova, dobili ime. Nikad nije saznao tko je bilo to biće, ali nazvao je mjesto gdje se hrvanje odvijalo `Penuel` - Božje lice.

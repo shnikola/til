@@ -15,9 +15,15 @@ Rails 5.1. oba zamjenjuje s metodom `form_with` u dvije varijante: `form_with ur
 
 ## Form Inputs
 
+`options_for_select` trebaš koristiti samo za `select_tag`. Za ostale slučajeve koristi `f.select(:city, ["Zagreb", "Morocco", "Paris"])` ili `f.collection_select :user_id, User.all, :id, :name`.
+
 Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. `Post has_many :categories`) koristi:
 * `f.collection_select :category_id, Category.all, :id, :name` za `has_one`
 * `f.collection_check_boxes :category_ids, Category.all, :id, :name` za `has_many`. Koristi blok za definiranje kako će se label, checkbox, i dodatni elementi generirati.
+
+## Rendering partials
+
+Ako renderiraš velik broj partiala u loopu, koristi `render @products` jer je brži od `render product` u loopu (ne mora raditi lookup svaki put iznova).
 
 ## Helperi s blokovima
 

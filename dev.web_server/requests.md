@@ -93,7 +93,10 @@ Use caseovi u kojima su websocketi opravdani: gaming i SSH preko weba.
 
 ## WebRTC
 
-WebRTC omogućuje peer-to-peer dijeljenje audia, videa ili podataka između browsera. Browser omogućuje različite APIje: `MediaStream` za dohvaćanje video i audio streamova, `RTCPeerConnection` za dijeljenjea audio i video podataka, `RTCDataChannel` za dijeljenje aplikacijskih podataka.
+Web Real-Time Communication (RTC) omogućuje peer-to-peer dijeljenje zvuka, videa ili podataka između browsera. Browser omogućuje različite APIje:
+* `MediaStream` za dohvaćanje video i audio streamova,
+* `RTCPeerConnection` za dijeljenje audio i video podataka,
+* `RTCDataChannel` za dijeljenje aplikacijskih podataka.
 
 Browser se automatski brine za voice i video engine, uključujući noise reduction, echo cancellation, encodiranje i sinkronizaciju. Aplikacija preko `navigator.getUserMedia` direktno dobija optimizirani media stream kojeg prosljeđuje preko WebRTCa.
 

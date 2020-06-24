@@ -1,4 +1,4 @@
-# Renesansa
+# 15. i 16.st: Renesansa
 
 Europa 15. i 16. stoljeće, prelazak s religijskog objašnjenja svijeta na znanstveni. Centri renesansne umjestnosti su Italija i današnja Belgija. Osnovne karakteristike renesansnog slikarstva su **realističnost** (analizira se okolina, anatomija, trodimenzionalnost predmeta u prostoru), i **vraćanje antičkim uzorima** (otud i ime, "ponovno rođenje"). Kako antičko slikarsktvo nije sačuvano, slikari koriste motive antičkog kiparstva i arhitekture, te opise iz enciklopedije "Naturalis Historiae" Plinija Starijeg. Umjetnici iz cijele Europe putuju u Italiju u potrazi za antičkim spomenicima.
 
@@ -48,17 +48,39 @@ U istoj kapeli je 20 godina kasnije oslikao zid iza oltara s prizorima posljednj
 
 Michelangelo često koristi *contrapposto*, poziciju u kojem dijelovi tjela gledaju u različitim smjerovima, stvarajući dojam dinamike.
 
-## Rana Flamanska
+**Rafael** je nešto mlađi od Leonarda i Michelangela, i njihov utjecaj se vidi na njegovom radu. Iz Perugie došao u Firenzu kao dvadesetogodišnjak. Papa ga `1508` poziva u Rim, gdje postaje arhitekt bazilike svetog petra, i nadglednik antičkih spomenika po gradu. Umire rano s 37 godina, ali je bio iznimno produktivan i ostavio hrpu radova iza sebe.
 
-Rana Flamanska se odnosi na područje današnje Nizozemske i Belgije, posevno gradove Brugge, Ghent, Brussel i Leven. Flamanci su također htjeli biti realistični, ali su umjesto linearne perspektive koristili detalje, poput refleksija na predmetima. Ali i dalje je tu skriven simbolizam (npr. Virgin of Chancellor Rolin, gdje su u pejzažu vinogradu jer je subjekt bio bogati veleposjednik).
+*Madonna s djetetom*jposjeduje određenu smirenost, melankoliju i eleganciju koja se dodatno naglašava uravnotoženešću kompozicije, kako piramidalnim rasporedom likova, kako simetrijom (jedna glava nagnuta na jednu, druga na drugu stranu; jedna viša, pokraj druge viša pozadina).
 
-**Jan van Eycke** sredina 15. stoljeća, where he was court painter to the Dukes of Burgundy, rulers of The Netherlands, and one of the most wealthy and powerful families in Europe.
+*Disputa* je mural u papinskoj knjižnici Vatikanske palače. Prikazuje raspravu o svetosti euharistije, simetrične kompozicije i zlatnih diskova koji se smanjuju od Boga, preko Krista i Duha Svetog, sve do hostije. Linearna perspektiva također konvergira u oltaru s hostijom, kako bi se naglasila centralnost teme. Rafael je bio fantastičan crtač i skice za ovu fresku (uvijek su se radile detaljne studije prije slikanja) izgledaju genijalno.
+
+**Tizian**, rođen 1490., za razliku od gornje trojice karijeru je ostvario u Veneciji. Iznimno uspješan kao portretist, radio je za neke od najmoćnijih ljudi svog vremena.
+
+Pred kraj života počinje slikati potpuno različito od renesansnog mainstreama. Koristi grube, gotovo impresionističke poteze kista. Taj stil je utjecao na umjetnike poput Rubensa i Velazqueza, oslobađajući ih potrebe da skrivaju metodu slikanja od promatrača.
+
+**El Greco**, rođen 1541. na Kreti, gdje učio grčkom koji je bliži srednjem vijeku nego renesansi. S 26 godina stiže u Veneciju gdje dolazi pod utjecaj Tiziana i Tintoretta; 2 godine kasnije odlazi u Rim, ali ne postiže reputaciju kojoj se nadao, pa seli u grad Toledo u Španjolskoj, gdje ostaje do kraja života.
+
+Ima vrlo specifičan i moderan stil, s žarkim bojama i izduženim formama i vidljivim potezima kista. Izgleda kao neki moderan europski strip. Svako je platno prvo bojao crveno-smeđom bojom, kako bi slici dao toplinu (a ne bi izgledalo loše ako bi preko toga neke dijelove ostavio neobojane).
+
+Otkriven je tek u 19. stoljeću i utjecao je na Picassa, Polocka i druge majstore 20. stoljeća. Danas ga se vidi kao prethodnika modernog slikarstva.
+
+## Njemačka
+
+**Dürer**, kraj 15. stoljeća. Putovao po Italiji, Nizozemskoj i Njemačkoj. Prvi sjevernoeuropski umjetnik koji se detaljno upoznao s talijanskom renesansom. Napravio je puno svojih portreta (ne samo kao slikara nego kao i gospodina s fensi odjećom), pa čak i aktova. Ljepotu nalazi u individualnosti, a ne u idealiziranju.
+
+Najpoznatiji je po grafikama (drvorezima i limorezima). Prvi je umjetnik čije se grafike kupuju zbog umjetničke vrijednosti. Toliko je popularan da se ilegalno kopiraju, pa stavlja svoje inicijale da ih zaštiti. Grafike su mu stvarno fantastične (npr. *Sv. Jeronim*), nevjerojatni detalji.
+
+# Rana Flamanska
+
+Rana Flamanska se odnosi na područje današnje Nizozemske i Belgije, posebno gradove Brugge, Ghent, Brussel i Leven. Flamanci su također htjeli biti realistični, ali su umjesto linearne perspektive koristili detalje, poput refleksija na predmetima. Ali i dalje je tu skriven simbolizam (npr. Virgin of Chancellor Rolin, gdje su u pejzažu vinogradu jer je subjekt bio bogati veleposjednik).
+
+**Jan van Eycke** sredina 15. stoljeća, gdje je bio dvorski slikar vojvoda od Burgundije, koji su vladali Nizozemskom kao jedna od najmoćnijih europskih obitelji.
 
 *Arnolfini portret*, uključuje promatrača u sliku kroz refleksiju.
 
 *The Crucifixion and The Last Judgment* je minijaturni diptih s mnoštvom detalja (planine u pozadini, netko dodaje Isusu spužvu natopljenu kvasinom, konji se boje gužve, refleksije na štitovima). Marija i Isusovi pratitelji su ispod raspela, u boli. Flamancima je bitniji intenzitet emocija nego ljepota. Poruke su slične kao i kršćanskoj srednjovjekovnoj umjestnosti, ali u modernoj, realističnoj formi. S druge strane, razne muke koje čekaju grešnike.
 
-**Rogier van der Weyden** sredina 15. stoljeća, Belgija. Najpoznatija slika *Skidanje Krista s križa*, hiperrealistični prikaz likova, skoro poput skulptura. Isus s jednodevnom bradicom, čak mu se i stidne dlake naziru, krv mijenja smijer kako ga skidaju. Tkanine su opet beskonačno naborane. Točke dodira: Kristov nožni prst i bijela marama, kristova ruka i crna marama: tako povezuje scenu.
+**Rogier van der Weyden** sredina 15. stoljeća, Belgija. Najpoznatija slika *Skidanje Krista s križa*, hiperrealistični prikaz likova, skoro poput skulptura. Isus s jednodnevnom bradicom, čak mu se i stidne dlake naziru, krv mijenja smijer kako ga skidaju. Tkanine su opet beskonačno naborane. Točke dodira: Kristov nožni prst i bijela marama, kristova ruka i crna marama: tako povezuje scenu.
 
 **Hieronymus Bosch** kraj 15. stoljeća, Nizozemska. Teško ga je svrstati u renesansu ili bilo gdje, jer ima vrlo jedinstven, outsider stil, koji imao dosta utjecaja na nadrealizam. Zanimljivo da nije bio marginalac, bogato se oženio i djela su mu bila dovoljno popularna da ih je krajem 16. stoljeća kralj Španjolske većinu otkupio (zato danas vise u Pradu). Najpoznatiji je po triptisima kao što je *Vrt zemaljske naslade* (triptisi se inače može zatvoriti, ovaj prikazuje zemaljsku sferu kad je zatvoren). Bio je opsjednut životima svetaca i grešnim ljudskim rodom koji završi u paklenim mukama. Najviše je mrzio muziku jer uvijek likovi koji plešu i sviraju nastradaju, pa im guraju frule u guzice.
 
@@ -67,4 +89,3 @@ Rana Flamanska se odnosi na područje današnje Nizozemske i Belgije, posevno gr
 **Patinir**, početak 16. stoljeća, Antwerp. Patinir je izumio slikanje pejzaža koji su glavna tema, a ne samo pozadina. tj. Prvi se specijalizirao za pejzaže. Slika misteriozne pejzaže (npr. *Pejzaž sa sv. Jeronimom*) koji imaju priču, ali naglasak je na pejzaže. Stijene kakve su na jugu belgije, gdje je rođen. Visoki horizont (da se vidi više pejzaža) duboke zelene i plave boje.
 
 **Pieter Bruegel Stariji**, sredina 16. stoljeća, Antwerp. Najznačajniji slikar flamanske renesanse. Slika pejzaže u stilu Patinira, s temama iz popularne kulture i folklora. Scene svakodnevnog života na selu u različitim mjesecima su se dotad radile kao male ilustracije, ali Bruegel ih po prvi put stavlja na velika platna sa skupim uljanim bojama. Sjajan ciklus *Mjeseci* posjeti u bečkom Kunsthistorisches muzeju. Također radi i masivne biblijske scene po uzoru na Boscha. Bio je i odličan grafičar, i neke njegovi limorezi su se prodavali kao Boschevi.
-

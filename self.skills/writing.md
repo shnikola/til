@@ -1,5 +1,9 @@
 # Writing
 
+## Prvi draft
+
+Ne troši vremena u prvu verziju teksta kojeg pišeš. Svaki tekst prolazi kroz desetke verzija prije nego ćeš konačno biti zadovoljan, pa je bolje ne gubiti vrijeme pokušavajući pogoditi pravu riječ iz prve.
+
 ## Konkretnost
 
 Kada želiš prenijeti nešto univerzalno, koristi konkretne, a ne općenite ideje. Općenitost ne rezonira ni s kim. Što si konkretniji, to se lakše povezati s tobom. Život je u detaljima.

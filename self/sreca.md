@@ -12,9 +12,13 @@ Okruži se kvalitetnim ljudima. Kada provodiš vrijeme s nekim, posveti mu 100% 
 
 Ukloni izvore nesreće iz svog života. Ne troši vrijeme na stvari koje ne voliš.
 
+Mržnja je prokletstvo koje ne utječe na objekt mržnje, samo na onog koji mrzi.
+
 Ne vezuj se za materijalne stvari. Živimo u svijetu obilja, što znači da imaš privilegiju posjedovati manje, a ne više.
 
 U životu ne treba težiti da budeš ništa osim zdraviji i obzirniji.
+
+Optimiziraj život za velikodušnost. Nitko na samrti nije požalio što je previše dijelo.
 
 ## Ako se osjećaš loše
 
@@ -39,6 +43,10 @@ Preuzimanje odgovornosti ne znači da kriviš sebe za svaku poteškoću na koju 
 ## Bogatstvo
 
 Zarađuješ li prosječnu hrvatsku plaću (6000 kuna mjesečno), nalaziš se među **8% najbogatijih ljudi na svijetu**.
+
+Stvarno bogatstvo je imati slobodu odabira kako da koristiš svoje vrijeme.
+
+Izračunaj koliko sat tvog vremena vrijedi. Ponekad je problem bolje riješiti novcem nego vlastitim vremenom, ako je ono vrijednije.
 
 ## Stresne situacije
 

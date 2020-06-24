@@ -44,3 +44,8 @@ Kad kvasac (bilo svježi bilo suhi) miješaš s mlakom vodom ili mlijekom, najbo
 * Svaku lopticu laaagano razvaljaj (možeš i samo rukom). Ostavi ih mrvicu deblje da ne presuše.
 * Peci u pećnici oko 3 minute na `230`.
 
+## Quiche
+
+* U **200g brašna** dodaj **125g hladnog maslaca**, **1 jaje** i **malo soli**. Izmiješaj rukom. Ako se previše mrvi, samo malo smoči ruku.
+* Kuglu stavi u frižider da se ohladi, pa razvaljaj i utisni u kalup, izbodi vilicom i stavi u zamrzivač na 10 minuta.
+* Peci 10 minuta u pećnici na `180`, pa izvadi i dodaj punjenje, pa vrati u pećnicu na još pola sata ili koliko već bude trebalo.

@@ -24,6 +24,8 @@ Postoje varijacije u računanju prioriteta, kao **D'Hondt** `P / (r + 1)` i **We
 
 **Quick sort** odabere pivot (npr. medijan, ili jednostavno zadnji element), pa stavi manje elemente od pivota lijevo, a veće desno (`O(n)`). Zatim rekurzivno poziva quick sort na lijevoj i desnoj strani. Najčešće je `O(nlogn)`, ali u najgorem slučaju (kad je array već sortiran) je `O(n^2)`. Ipak, u praksi je brži od ostalih sortiranja jer se može učinkovito implementirati na većini arhitektura.
 
+**Sleep sort** generira worker za svaki broj koji spava linearno s veličinom broja, a zatim vrati broj mainu. Brojevi će se vratiti sortiranim redoslijedom.
+
 ## Quine
 
 Quine je program koji, kada se pokrene, ispisuje svoj source. Ograničenja su da ne smije koristiti I/O (tj. čitati vlastiti file) i ne smije biti prazan.

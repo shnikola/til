@@ -2,7 +2,7 @@
 
 ## Kompleksnost
 
-Temeljni problem u računarskoj znanosti je problem dekompozicije: kako kompleksan zadatak podijeliti na manje zadatke koji se mogu neovisno riješiti.
+Temeljni problem u programiranju je problem dekompozicije: kako kompleksan zadatak podijeliti na manje zadatke koji se mogu neovisno riješiti.
 
 Kompleksnost je najveći neprijatelj programera. Dva su načina borbe protiv kompleksnosti: pojednostavljivanje koda (npr. eliminiranje posebnih slučajeva, dobro imenovanje varijabli) ili enkapsuliranje (skrivanje kompleksnosti u modulu).
 
@@ -26,13 +26,15 @@ Suprotno čestom mišljenju, glavna dužnost profesionalnog programera nije natj
 
 Svejedno, kao developeru zadatak ti je da budeš sanity check. Prije dodavanja featurea dobro razmisli hoće li se koristiti (npr. je li stvarno potreban CMS ili OAuth login).
 
+## Duplikacija vs apstrakcija
+
+Duplikacija je naporna i čest izvor bugova. Ali ako duplikaciju zamijeniš pogrešnom apstrakcijom, uvođenje promjena i novih featurea će postati puno teže. A promjene i novi feature su neizbježni u ranim fazama razvoja.
+
+Zato uvijek počni od duplikacije. Duplikacija je mnogo jeftinija od pogrešne apstrakcije.
+
 ## Refactoring
 
-Jedini razlog refaktoriranja koda je kako bi ga se lakše mijenjalo u budućnosti.
-
-Počni od duplikacije pa pojednostavni. Duplikacija je jeftinija od pogrešne apstrakcije.
-
-Refactoring treba biti "safe and boring" - puno testova koje nakon svake pojedine promjene pokrećeš.
+Jedini razlog refaktoriranja koda je kako bi ga se lakše mijenjalo u budućnosti. Refactoring treba biti "safe and boring" - puno testova koje nakon svake pojedine promjene pokrećeš.
 
 Napiši najbolji mogući kod sada, ali budi spreman da ga obrišeš sutra.
 

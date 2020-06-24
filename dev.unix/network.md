@@ -15,6 +15,12 @@ Kao `curl`, samo fino formatiran, lijepo obojen i pristojnog apija.
 
 `traceroute google.com` ispisuje put kojim paket putuje od tvog računala do servera. Interno radi tako da šalje ICMP echo inkrementirajući TTL dok ne dobije odgovor
 
+## ngrok
+
+Ako imaš lokalno pokrenut server i želiš se spojiti na njega s vanjskim uređajem, koristi ngrok.
+
+`ngrok http 3000` pokreće proxy i vraća url tipa `https://83832de1.ngrok.io`.
+
 ## portovi
 
 `cat /etc/services` popis servisa i portova koje koriste.
@@ -75,7 +81,3 @@ Slično kao `tcpdump`, ali ima i podršku za regexe (kao grep).
 Za load testing.
 `siege -c20 www.google.com -t30s` stvara 20 concurrent konekcija idućih 30 sekunda.
 `-f urls.txt` uzima urlove iz filea. Dobro za replay prometa iz logova.
-
-## ngrok
-
-Za testiranje lokalnog servera s vanjskog stroja. Samo pokreni `ngrok http 3000` i dobit ćeš url tipa `https://83832de1.ngrok.io`.

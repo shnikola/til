@@ -1,4 +1,4 @@
-# Žitarice
+# Riža
 
 # Recepti
 

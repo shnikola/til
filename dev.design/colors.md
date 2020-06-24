@@ -18,7 +18,9 @@ Boja u ekranima nastaje od svijetla, te se miješa *aditivno* - što više boja 
 
 `RGB` je defacto standard za digitalne medije, jer uređaji koriste RGB lampice za prikaz. Problem s RGB-om je što nije prirodan način za ljudsko opisivanje boja. Kako RGB boju učiniti življom, ili svijetlijom?
 
-`HSL` je prostor prilagođen ljudskoj intuiciji. *Hue* predstavlja boju, *Chroma* živost, *Lightness* svjetlinu. Problem je što način na koji HSL računa lightness ne uzima u obzir da ljudsko oko doživljava različite boje različito svijetlima (npr. žuta i plava iste lightness vrijednosti, žuta će se opet činiti svijetlija).
+`HSL` je prostor prilagođen ljudskoj intuiciji. *Hue* predstavlja boju (koje valne duljine objekt reflektira), *Saturation* živost (intenzitet valnih duljina koje reflektira), *Lightness* svjetlinu (intenzitet ukupnog svijetla koje reflektira).
+
+Problem je što način na koji HSL računa lightness ne uzima u obzir da ljudsko oko doživljava različite boje različito svijetlima (npr. žuta i plava iste lightness vrijednosti, žuta će se opet činiti svijetlija).
 
 Percepcijski uniformni prostori, (npr. `CIELAB`)  uzimaju u obzir ljudsku percepciju i koriste transformacije kako bi boje s istim dimenzijama bile jednako percipirane.
 
@@ -44,9 +46,14 @@ Formula za transformaciju je `V_en = V_lin^(1/γ)`, gdje su `V` vrijednosti inte
 
 Problem je što većina algoritama za obradu slike krivo pretpostavlja da radi s netransformiranim bojama, pa razne operacije daju krive rezultate. Takvu grešku rade CSS i Photoshop gradijenti, color i alpha blending, image resizing i antialising. Loše handlanje gamme je također glavni razlog što CGI animacija izgleda fake i plastično.
 
+## Smeđa boja
+
+Smeđa boja je zapravo tamna narančasta. Svijetla smeđa ne postoji bez konteksta - na tamnoj pozadini ćemo je uvijek prepoznati kao narančastu, tek ako je okružena svijetlom je interpretiramo kao "smeđu".
+
 # Literatura
 
 * http://blog.johnnovak.net/2016/09/21/what-every-coder-should-know-about-gamma
 * https://webkit.org/blog/6682/improving-color-on-the-web
 * https://stripe.com/blog/accessible-color-systems
+* https://www.youtube.com/watch?v=wh4aWZRtTwU
 

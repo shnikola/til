@@ -20,11 +20,11 @@ Koristi `Origin` i `Referer` headere za provjeru dolazi li request s iste domene
 
 Server treba generirati CSRF token s velikom random vrijednosti koji se dodaje u svaku formu kao hidden input i svaki ajax. Request se odbija ako token nije validan.
 
-*Same site cookies* su feature u novim browserima koji se šalju samo sa same-origin requestovima.
+*Same site cookies* je feature u novim browserima. Cookiji sa `SameSite=strict` će se slati samo u same-site requestovima. Site je nešto kao origin, samo opuštenije (npr. `www.google.com` i `static.google.com` su isti site, ali `a.github.io` i `b.github.io` nisu; popis je na https://publicsuffix.org).
 
 ## Same-origin policy and CORS
 
-Bitna stavka u obrani od CSRF je *same-origin policy*. Browseri dopuštaju da se neki resursi na stranici dohvaćaju s drugog origina: slike, stylesheetovi, skripte, iframeovi i video sadržaj. Dopušta se i slanje POST forme na različiti origin. Origin se definira kao `schema + host + port`, npr. `https://www.gmail.com:80`.
+Bitna stavka u obrani od CSRF je **same-origin policy**. Browseri dopuštaju da se neki resursi na stranici dohvaćaju s drugog origina: slike, stylesheetovi, skripte, iframeovi i video sadržaj. Dopušta se i slanje POST forme na različiti origin. Origin se definira kao `schema + host + port`, npr. `https://www.gmail.com:80`.
 
 Ali browser neće dopustiti da skripta AJAXom dohvati ili pošalje podatke na drugi origin. Zahvaljujući tome, skripta s `evil.com` ne može dohvatiti tvoje mailove s `gmail.com` APIja koristeći tvoje cookije.
 

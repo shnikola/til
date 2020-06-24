@@ -1,14 +1,28 @@
 # Kreativnost
 
-## Nije dovoljno dobro
+## Početnički ukus
 
-Kada stvaraš (crtaš, pišeš) postoje dvije verzije tvog rada: jedna u tvojoj glavi i druga koja završi na papiru. Pošto vidiš obje verzije, možeš ih usporediti i bit ćeš frustriran što ova na papiru nije jednako dobra. Ali svi ostali vide samo tu verziju, i sudit će samo o njoj.
+Kada si početnik u kreativnoj branši, često imaš dobar ukus, ali ne i sposobnost. Zato te vlastiti rad razočarava i teško se motivirati da ustraješ i napreduješ. Ali ako ne odustaneš i nastaviš raditi usprkos nezadovoljstvu, postajat ćeš sve bolji i možda biti malo manje nesretan.
 
-Ako rad ne ispadne kako si ga zamislio, ne očajavaj. Nauči nešto iz njega, pokušaj idućeg napraviti bolje. Idealno, odustani od pojma kvalitete i uživaj u samom procesu stvaranja.
+Zato je lako učiti dok si dijete - nemaš ukusa koji ti smeta u učenju. Samo stvaraš bez predrasuda. Kao odrasla osoba možeš simulirati ovu prednost tako da se okušaš u aktivnostima o kojima ne znaš ništa, ili koja su dovoljno nova da ne postoje uvriježeni standardi kvalitete.
 
-## 100:10:1 Method
+## Izvor kreativnosti
 
-Ako si paraliziran s velikim brojem ideja koje imaš, ili ne znaš kojim bi se projektom bavio: Napiši 100 random, makar glupavih ideja. Od njih, odaberi 10 koje ćeš malo bolje razraditi. Najperspektivniju od tih 10 dovedi do kraja.
+Djelo koje stvaraš ne dolazi iz tebe, nego iz tvoje okoline.
+
+"I never feel like I have a book in me. I always feel like there’s a book around me. It’s like I’m a planet and there’s all this space junk orbiting me, and all the junk starts smashing together and forming book chapters. My job is to grab that stuff around me and shape it into something." - Austin Kleon
+
+"My advice to you is to change your basic relationship to songwriting. You are not the ‘Great Creator’ of your songs, you are simply their servant, and the songs will come to you when you have adequately prepared yourself to receive them. They are not inside you, unable to get out; rather, they are outside of you, unable to get in." - Nick Cave
+
+## Kreativna blokada
+
+Do kreativne blokade dolazi zbog konflikta između cilja ("želim napisati nešto kvalitetno") i straha ("ispast će loše"). S obzirom da strah ne možeš kontrolirati, jedino što možeš je promijeniti cilj i odlučiti pisati loše. Jednom kad imaš nešto napisano, preuzmi ulogu sitničavog kritičara i popravljaj dok ne dobiješ nešto s čim si zadovoljan.
+
+## Produktivnost
+
+Pravila o rutini i rasporedu vrijede i za kreativne struke. Većina kreativaca ne radi najbolje "kada su inspirirani", nego po striktnom rasporedu.
+
+Nemoj odgađati početak rada čekajući motivaciju, jer ona neće doći sama. Prisili se da započneš raditi (da, neugodno je), rad će potaknuti insipiraciju, koja će izazvati motivaciju za daljnji rad. Bitno je da sve počinje akcijom (makar i prisilnom).
 
 ## Pronalaženje scene
 
@@ -21,8 +35,6 @@ Ako se želiš baviti umjetnošću, stvoriti nešto svoje što se ne uklapa u po
 Da bi mogao živjeti kao autor (fotograf, glazbenik ili poduzetnik) ne treba ti milijunska publika. Treba ti samo `1000` istinskih fanova koji će kupiti sve što proizvedeš. Ako ti svaki fan godišnje plati `$100`, možeš dobro živjeti. Sve što moraš je proizvoditi.
 
 ## Bret Victor - Inventing on Principle
-
-https://vimeo.com/36579366
 
 Inspirativan video. Princip u kojem govori je: stvaraoci moraju imati neposrednu vezu s onim što stvaraju. Pronalazi primjere gdje je taj princip zapostavljen poput programiranja ili animacije, i pokazuje načine na koji možemo učiniti proces stvaranja izravnijim i otvorenijim za eksperimentiranje.
 

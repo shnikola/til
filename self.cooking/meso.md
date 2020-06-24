@@ -1,7 +1,5 @@
 # Meso
 
-## Kemijski sastav
-
 Meso je izvor animalnog proteina (sve potrebne aminokiseline), željeza i vitamina. Meso riba, peradi i puževa sadrži manje zasićenih masnoća i kolesterola pa je kao zdravije. Meso starijih životinja sadrži manje vode pa se teže probavlja.
 
 ## Mariniranje
@@ -72,7 +70,7 @@ Janjetina gubi 35% mase pečenjem.
 * Izvadi i pusti 5-10 minuta da se odmori.
 
 Prijedlozi umaka:
-* Na tavu u kojoj se pekao stavi **maslac**, sitno isjeckani **luk ili ljutiku**, **2 režnja češnjaka**, i **4-5 zanko narezanih gljiva**. Kad su gljive gotove, deglaziraj tavu s **50ml crnog vina ili prošeka**, i dodaj **žlicu koncetrata od rajčice**. Miješaj na jačoj vatri do željene gustoće.
+* Na tavu u kojoj se pekao stavi **maslac**, sitno isjeckani **luk ili ljutiku**, **2 režnja češnjaka**, i **4-5 tanko narezanih gljiva**. Kad su gljive gotove, deglaziraj tavu s **50ml crnog vina ili prošeka**, i dodaj **žlicu koncetrata od rajčice**. Miješaj na jačoj vatri do željene gustoće.
 
 ## Pečenka
 

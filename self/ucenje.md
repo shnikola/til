@@ -32,9 +32,21 @@ Najbolji način za učenje je, umjesto čitanja puno teorije, baciti se u praksu
 
 Fizička vježba (npr. trčanje) također pojačava stvaranje neurona i poboljšava pamćenje. Štoviše, učinkovitije je za tvoj mozak nego ijedan postojeći lijek.
 
+Istraživanja su pokazala da vrhunski glazbenici vježbaju jednako dugo koliko i prosječni glazbenici, ali s dvije bitne razlike:
+
+1) Promišljeno i metodički vježbaju one djelove koji im najgore idu. Na taj način pomiču svoje granice. Ovo je jako teško, jer ti se čini kao da većinu vremena failaš. Ali zapravo, ako ti je grozno - to znači da napreduješ.
+
+2) Ne vježbaju kroz cijeli dan, nego fokusirano u 2 bloka, jednom ujutro i jednom popodne.
+
 ## Učenje jezika
 
 Djeca ne uče bolje jer su im mozgovi bolji, nego zato što se ne srame napraviti pogrešku. Ali jezici su upravo savršeni za učenje s pogreškama, jer će te svatko razumjeti koliko god loše pričao.
+
+## Rješavanje problema
+
+Najbolji način za rješavanje problema je staviti ga na papir. Koliko god ti se čini da dobro poznaješ problem, emociju ili stav koji imaš, tek kad ga pretočiš u riječi postat će ti jasno što zapravo znaš, a što ne.
+
+Jedna od posljedica ove pojave je i rubber duck debugging, gdje je samo objašnjavanje problema drugoj osobi često dovoljno da sam dođeš do rješenja.
 
 ## Prokrastinacija
 

@@ -1,10 +1,12 @@
 # Ruby
 
-## Integer
+## Brojevi
 
 `123.digits` vraća znamenke (`[3, 2, 1]`). Radi i u drugim bazama, npr. `123.digits(16)`.
 
 `round`, `ceil`, `floor` primaju precision argument
+
+Ako trebaš pretvoriti input u cente, koristi `(amount.to_d * 100).to_i`, umjesto `to_f`. Zbog floating aritmetike `4.85 * 100` je `484.99999999999994`.
 
 ## Hash
 
@@ -23,12 +25,13 @@ Ako je key mutable, ili napravi `freeze` ili koristi `hash.rehash` kada se promj
 
 ## Array
 
-`Array(e)` pretvara objekt u array ako on to već nije.
+`Array(obj)` pretvara objekt u array ako on to već nije.
+Iznimka je `Array({a: 1, b: 2})` koji će vratiti `[[:a, 1], [:b, 2]]`. Za taj slučaj koristi `Array.wrap(obj)` iz ActiveSupporta.
 
 `[1, 2, 3].sum` vraća sumu svih elemenata.
 `[1, 2, 3].minmax` vraća min i max arraya.
 `[1, 2, 3, 4].partition(&:odd?)` dijeli u dva arraya.
-`[1, 2, 3].zip(["a", "b", "c"])` spaja dva arraya u parove (`[1, "a"], [2, "b"], [3, "c"]`). Korisno za povati `to_h`
+`[1, 2, 3].zip(["a", "b", "c"])` spaja dva arraya u parove (`[1, "a"], [2, "b"], [3, "c"]`). Korisno za pozvati `to_h`
 `['a', 'b', 'a'].tally` broji elemente (`{'a' => 2, 'b' => 1}`)
 
 ## Regex

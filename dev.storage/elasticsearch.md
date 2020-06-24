@@ -1,4 +1,20 @@
-# Elastic Search
+# Elasticsearch
+
+## Arhitektura
+
+Za search dio Elasticsearcha zadužen je Apache Lucene, search engine napisan u Javi. Sam ES je framework za deployment Lucena kao distribuirane web aplikacije.
+
+**Node** je jedna instanca Elasticsearcha (server ili proces na serveru). Node može imati različite uloge: data (rad s podatcima), master (upravljanje clusterom), client (održavanje konekcije s klijentima).
+
+**Index** je ekvivalent databaseu u SQL bazama. Podatci se zapravo spremaju i dohvaćaju iz **shardova** koji se brinu za redundanciju. Postoje `primary` i `replica` shardovi, primary shard jedini prima podatke a ostali kopiraju do njega. Svaki shard pripada samo jednom nodeu i indexu.
+
+Sami podaci se zapisuju u **segmentima**, immutable fileovima na disku. Svaki novi dokument stvorit će novi file. U pozadini, Lucene konstantno merga segmente spajajući te podatke u jedan file.
+
+## Distribuiranost
+
+Da bi se omogućila distribuiranost sustava, nodeovi se mogu međusobno spojiti u **cluster**. Jedan node će biti odabran za `master` i on je zadužen za održavanje clustera i donošenje konačnih odluka. Master može postati svaki node koji u konfiguraciji ima `node.master: true`, samo pripazi da ih ima neparan broj da izbjegneš split-brain situaciju.
+
+Cluster radi tako da request možeš poslati bilo kojem nodeu i odgovor će biti isti. Ako radiš `search`, node će broadcastati request svim shardovima u indeksu, i onaj koji sadrži dokument će ga vratiti. Ako radiš `insert`, node će odabrati nasumični primary shard i zapisati ga u njega (i u njegove replike).
 
 ## Complex fields
 

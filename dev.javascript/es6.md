@@ -6,10 +6,6 @@ Umjesto `var x` koja je globalna koristi:
 * `let x` za promjenjive vrijednosti, lexically scoped
 * `const x` za vrijednosti koje jednom postaviš, lexically scoped
 
-## String templates
-
-Koristi backtikove za interpolaciju varijable unutar stringa: ``My name is ${name}``.
-
 ## Destructuring
 
 Postavljanje varijabli iz arraya ili objekta:
@@ -37,6 +33,17 @@ Shorthand način za pisanje funkcija:
 * `function sum(...vals)` za proizvoljan broj parametara koji su dostupni kao array.
 * `function sum({a = 1, b = 2} = {})` za named parametre.
 
+## Array methods
+
+* `[1, 2, 3].find(x => x > 1)` vraća prvi element koji ispunjava uvijet.
+* `[1, 2, 3].findIndex(x => x > 1)` vraća index prvog elementa.
+
+## Strings
+
+Koristi backtikove za interpolaciju varijable unutar stringa: ``My name is ${name}``.
+
+Metode za provjeru sadržaja stringa: `str.startsWith("abc")`, `str.endsWith("abc")`, `str.includes('abc')`.
+
 ## Classes
 
 Klase su syntax sugar oko prototype modela: `class Cat { ... }`
@@ -51,21 +58,6 @@ Klase su syntax sugar oko prototype modela: `class Cat { ... }`
 
 * `new Map([["a", 1], ["b", 2]])` pravi hash table.
 * `new Set([1, 2, 2, 3, 3, 4, 5])` drži samo unique elemente.
-
-## Modules
-
-Prije nego što je JS dobio podršku za module, koristilo se nekoliko sistema.
-
-Node koristi `module.exports = { sum: sum }` za exportanje i `const math = require("./math.js")` za importanje.
-
-AMD dozvoljava asinkrono loadanje modula. Koristi se `define('math', ['dependecy'], function (dependency}) { ... return { sum: sum } }) ` za exportanje, i `require('math', function(module) { // callback })` za import.
-
-U ES6, svaki file je zaseban module, a dijele feature preko `export` i `import`
-* `export function sum() { ... }` i `export var pi = 3.14` u `lib/math.js`
-* `import * as math from 'lib/math'` dopušta korištenje `math.sum` i `math.pi`
-* `import {sum, pi} from 'lib/math'` dopušta korištenje `sum` i `pi`
-
-Postoji podrška i za asyncroni load: `System.import('lib/math').then(...)`
 
 # Literatura
 

@@ -10,7 +10,7 @@
 
 **Tater tots**: skuhaj oguljeni krumpir, naribaj ga, pomiješaj sa soli i škrobom za spajanje, formiraj u pločicu, i onda prži u ulju.
 
-**Hash browns**: naribaj krumpir i ostavi u vodi preko noći. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
+**Hash browns**: naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
 
 **Duchess potato**: Pire krumpir i malo jaja stavi u tuljac za šlag i na papir za pečenje napravi male hrpice, i stavi u pećnicu na 220, 15 minuta.
 

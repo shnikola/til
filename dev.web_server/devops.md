@@ -30,7 +30,7 @@ Ulogiraj se kao `deploy`, i dodaj public key u `~/.ssh/authorized_keys`.
 `last reboot` ispisuje system rebootove.
 
 `netstat -lnp` ispisuje procese koje imaju otvorene sockete.
-Pomoću `lsof -i TCP:3000` možeš vidjeti tko je sve pokrenut na portu `3000`.
+`lsof -i tcp:3000` ispisuje procese na portu `3000`.
 
 `lsof` (list open files) ispusuje sve fileove koje su trenutno otvoreni i procese koji ih koriste. Korisno ako se npr. USB ne želi ejectati, a ne znaš tko ga koristi.
 `lsof <file>` ispuje tko sve koristi zadani file.

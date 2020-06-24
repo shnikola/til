@@ -10,6 +10,8 @@ Umjesto da hintaš, uvijek direktno izrazi svoju potrebu.
 
 Pričaj pozitivno o ljudima iza njihovih leđa.
 
+Počastiti nekoga večerom je jednostavan i moćan način za stvaranje novih i održavanje starih prijateljstva.
+
 ## Rješavanje razmirica
 
 Kada se uloviš u svađi, podsjeti se da ste u istom timu, i da želite zajedno riješiti problem. Jako je lako upasti u "ona je protiv mene" mentalitet.
@@ -20,11 +22,17 @@ Dr. John Gottman je radio istraživanje nad hrpom parova, i otkrio je uzorak oni
 1. Fokusiraju se na srž problema, a ne na simptome koji se manifestiraju (npr. kako se osjećaju).
 2. Razgovaraju s poštovanjem i ne spuštaju se na osobne napade koji nemaju veze s trenutnim problemom.
 
+Koliko god da si u pravu, nećeš postići ništa omalovažavajući sugovornika. Teže je biti suosjećajan nego pametan.
+
 ## Račvanje puteva
 
 Studij je zadnje razdoblje života kada svi vršnjaci koje poznaješ rade iste stvari i prolaze kroz iste životne prepreke. Nakon toga, svačiji životni put je različit, i to je ok.
 
 Neki će se oženiti i imati djecu, neki neće. Karijere i poslovi će biti u mnogo čemu različiti. Prestaješ hodati u korak sa svojim prijateljima, i zato se pomalo razilazite.
+
+# Različitost iskustva
+
+Neki ljudi nemaju unutarnji dijalog (neki se tako rode, neki ga izgube tijekom života, npr. meditacijom). Neki ljudi ne mogu vizualizirati stvari. Neki ljudi ne doživljavaju emocije, neki ih doživljavaju vrlo intenzivno.
 
 ## Jezik ljubavi
 

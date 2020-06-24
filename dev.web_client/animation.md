@@ -54,7 +54,7 @@ Da bi ubrzao izračunavanje layouta, izbjegavaj animirati `height`, `width` ili 
 
 U slučaju da se layout ne mijenja, browser će odvojiti animirani dio u zasebni layer, i uzimati screenshote dok repozicionira jedan iznad drugog (*compositing*). GPU je jako dobar u tome, pa će se sve brže računati. Usto, `transform` i `opacity` se mogu direktno proslijediti u GPU.
 
-Međutim, browser ponekad ne zna da treba stvoriti novi layer dok ne bude prekasno i animacija treba početi, što rezultira trzanjem na početku animacije. U tom slučaju, pokušaj dodati `will-change` property koji će ga unaprijed obavijestiti o propertijima koji će se mijenjati.
+Međutim, browser ponekad ne zna da treba stvoriti novi layer dok ne bude prekasno i animacija treba početi, što rezultira trzanjem na početku animacije. U tom slučaju, pokušaj dodati `will-change: transform` property koji će ga unaprijed obavijestiti o propertijima koji će se mijenjati.
 
 Također, izbjegavaj animirati previše stvari odjednom. 2 do 3 elementa se mogu istovremeno glatko animirati. Koristi `transition-delay` kako bi stvorio koreografiju.
 

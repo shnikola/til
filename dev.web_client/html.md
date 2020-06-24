@@ -116,11 +116,13 @@ Za geolokaciju, koristi:
 ### Text inputs
 
 `<input type="text">` za generični tekst.
-`<input type="number">` za unos brojeva. Browser prikaže strelice za inkrement/dekrement, a mobilni uređaji posebnu tipkovnicu.
+
+`<input type="number">` za unos brojeva. Browser prikaže strelice za inkrement/dekrement, a mobilni uređaji posebnu tipkovnicu. Za brojeve koji su zapravo stringovi (npr. OIB) koristi `<input type="text" inputmode="numeric" pattern="[0-9]*">`.
+
 `<input type="password">` korisnikov unos se prikazuje zvijezdicama.
-`<input type="email">`,
-`<input type="url">`,
-`<input type="tel">` automatski validiraju unos, a na mobilnim uređajima prikazuju prilagođenu tipkovnicu (npr. `@` za email).
+
+`<input type="email">`, `<input type="url">`, `<input type="tel">` automatski validiraju unos, a na mobilnim uređajima prikazuju prilagođenu tipkovnicu (npr. `@` za email).
+
 `<input type="search">` je isti kao `text` osim što nekad prikaže malu search ikonicu i keyboard enter preimenuje u "Search".
 
 `<textarea>` za dulji unos teksta. `cols` i `rows` za definiranje broja stupaca i redova.
