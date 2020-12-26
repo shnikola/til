@@ -1,65 +1,57 @@
-# Relations
-
-## Dobri savjeti
-
-Tri najbitnije stvari koje trebaš naučiti reći su "**Neću**" (izraziti neslaganje), "**Ne znam**" (priznati neznanje), i "**Bio sam u krivu**" (priznati pogrešku).
-
-Ako se dvoumiš da li pitati nekoga, pitaj. Najgore što mogu je reći ne.
-
-Umjesto da hintaš, uvijek direktno izrazi svoju potrebu.
-
-Pričaj pozitivno o ljudima iza njihovih leđa.
-
-Počastiti nekoga večerom je jednostavan i moćan način za stvaranje novih i održavanje starih prijateljstva.
-
-## Rješavanje razmirica
-
-Kada se uloviš u svađi, podsjeti se da ste u istom timu, i da želite zajedno riješiti problem. Jako je lako upasti u "ona je protiv mene" mentalitet.
-
-Ako se u raspravi uloviš da postaješ uzrujan, to je dobar pokazatelj da si možda u krivu.
-
-Dr. John Gottman je radio istraživanje nad hrpom parova, i otkrio je uzorak onih koji ostaju zajedno:
-1. Fokusiraju se na srž problema, a ne na simptome koji se manifestiraju (npr. kako se osjećaju).
-2. Razgovaraju s poštovanjem i ne spuštaju se na osobne napade koji nemaju veze s trenutnim problemom.
-
-Koliko god da si u pravu, nećeš postići ništa omalovažavajući sugovornika. Teže je biti suosjećajan nego pametan.
-
-## Račvanje puteva
-
-Studij je zadnje razdoblje života kada svi vršnjaci koje poznaješ rade iste stvari i prolaze kroz iste životne prepreke. Nakon toga, svačiji životni put je različit, i to je ok.
-
-Neki će se oženiti i imati djecu, neki neće. Karijere i poslovi će biti u mnogo čemu različiti. Prestaješ hodati u korak sa svojim prijateljima, i zato se pomalo razilazite.
-
-# Različitost iskustva
-
-Neki ljudi nemaju unutarnji dijalog (neki se tako rode, neki ga izgube tijekom života, npr. meditacijom). Neki ljudi ne mogu vizualizirati stvari. Neki ljudi ne doživljavaju emocije, neki ih doživljavaju vrlo intenzivno.
+# Odnosi
 
 ## Jezik ljubavi
 
-Svatko ima različit način iskazivanja ljubavi, i na različit način očekuje da mu se ljubav iskaže. Ovo su neki od načina:
-* Afirmativnim riječima
-* Uslužnošću
-* Davanjem i primanjem poklona
-* Kvalitetno provedenim vremenom
-* Fizičkim dodirom
+Svatko ima različit način iskazivanja ljubavi, i na različit način očekuje da mu se ljubav iskaže. Neki od načina iskazivanja su:
+* Afirmativne riječi
+* Uslužnost
+* Davanje poklona
+* Proveđenje zajedničkog vremena
+* Fizički dodir
 
-Bitno je poznavati način koji tebi odgovara i način koji odgovara tom partneru.
+Bitno je poznavati način koji tebi odgovara i način koji odgovara tom partneru. Zato uvijek jasno izrazi svoje potrebe i ne očekuj da će ti itko čitati misli.
 
-## Green Flags when Dating
+## Održavanje dobrog odnosa
 
-Spominjanje nečeg o čemu je sugovornik pričao prošli put. Tako pokazuješ da slušaš.
+Slušaj partnera i spominji stvari o kojima je ranije pričao.
 
-Ako nešto sjebeš da priznaš to i ispričaš se.
+Budi pozitivan. Govori o stvarima koje voliš umjesto o stvarima koje mrziš.
 
-Pozitivnost - da govoriš o stvarima o koje voliš umjesto o stvarima koje mrziš.
+Stresnim situacijama i propalim planovima pristupi s humorom i bez optuživanja.
 
-Da si pristojan prema strancima (npr. konobarima). "You can easily judge the character of a man by how he treats those who can do nothing for him".
+Budi spreman reći ne, ali i prihvatiti tuđe odbijanje.
 
-Handlanje stresnih situacija i propalih planova s humorom i bez optuživanja.
+Kad shvatiš da si u krivu, priznaj i ispričaj se.
 
-## How to Fend Off A Jerk
+## Svađe
+
+Prilikom svađe s partnerom, lako je upasti u "ona je protiv mene" mentalitet. Podsjeti se da ste u **istom timu**, i da želite zajedno riješiti problem.
+
+Fokusiraj se na srž problema, a ne na simptome koji se manifestiraju (npr. kako se osjećaš).
+
+Koliko god da si u pravu, nećeš postići ništa omalovažavajući sugovornika. Teže je biti suosjećajan nego pametan.
+
+Ako tijekom rasprave postaješ sve uzrujaniji, to je dobar pokazatelj da si možda u krivu. Uzmi pauzu, prošetaj i ohladi glavu.
+
+## Zahvalnost
+
+Ako je netko imao pozitivan utjecaj na tvoj život, daj im do znanja i zahvali im se. Ovo vrijedi za male, svakodnevne stvari (teta na šalteru koja ti je pomogla s papirima), ali i za situacije koje su se dogodile prije mnogo godina (profesor koji te usmjerio na struku kojom se baviš).
+
+Čak i ako se radi o ljudima koje ne poznaješ (npr. autor knjige koju jako voliš), iznenadit ćeš se koliko je lako nekome uljepšati dan.
+
+## Razilaženje
+
+Fakultet je zadnje razdoblje života kada svi vršnjaci koje poznaješ rade iste stvari i prolaze kroz iste životne prepreke. Nakon toga, svačiji životni put je različit, i to je ok.
+
+Neki će se oženiti i imati djecu, neki neće. Karijere i poslovi će biti u mnogo čemu različiti. Prestaješ hodati u korak sa svojim prijateljima, i zato se pomalo razilazite.
+
+## Bezobraznost
 
 Kad se netko prema tebi ponaša kao seronja, pravi se sretan. Što su gori prema tebi, ti budi sretniji. To će ih jako isfrustrirati, a tebi će popraviti raspoloženje.
+
+## Hrana
+
+Hrana je univerzalni medij za održavanje odnosa. Npr. zajednička večera je mjesto stvaranja novih i obnavljanja starih prijateljstava.
 
 # Literatura
 

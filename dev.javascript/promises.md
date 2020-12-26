@@ -21,11 +21,9 @@ Ljepši način pisanja je `promise.then(success).catch(fail)`. On ima malo druga
 Funkcija `then` vraća novi promise pa se može chainati za sekvencijaranje asinkronih poziva koji ovise jedan o drugome:
 `fetch('story.json').then(JSON.parse).catch(errorHappened).then(finished)`. Ako koji korak faila, pozvat će se `errorHappened`, a u svakom slučaju će se pozvati `finished`.
 
-
 ## jQuery
 
-jQuery promisei su suptilno drugačiji, ali možeš ih castati u nativni promise koristeći `Promise.resolve($.ajax('/whatever.json'))`.
-
+jQuery promises su suptilno drugačiji, ali možeš ih castati u nativni promise koristeći `Promise.resolve($.ajax('/whatever.json'))`.
 
 ## Async Functions _Chrome, Edge (flag)_
 
@@ -33,6 +31,9 @@ Alternativan način pisanja promisea je `async func() { ... }`. Funkcija definir
 
 `await` će pauzirati funkciju dok ne dobije odgovor, bez da blokira glavni thread. Asinkrone naredbe tako možeš pisati sekvencijalno, a ne se gnjaviti s promisima.
 
+## Event Loop
+
+Event loop će uvijek dopustiti da se funkcija izvrši do kraja prije nego pozove iduću. Samo ako koristiš `await` u funkciji, pauzirat će se izvršavanje i prebaciti na iduću funkciju u queueu.
 
 # Literatura
 

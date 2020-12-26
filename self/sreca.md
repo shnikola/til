@@ -52,6 +52,10 @@ Izračunaj koliko sat tvog vremena vrijedi. Ponekad je problem bolje riješiti n
 
 Ako te čeka važan poslovni sastanak, strašan liječnički pregled ili težak razgovor s nekim - podsjeti se da će **do 7 navečer problem proći** i više neće biti bitan. Ako nije bitan nakon X vremena, vjerojatno nije bitan ni sada.
 
+## Mudrost
+
+Mudrost koja dolazi s godinama ne dolazi od prosvijetljenja, nego većinom od činjenice da si preumoran da bi te bilo briga što drugi misle.
+
 # Literatura
 
 * How to be miserable: https://www.youtube.com/watch?v=LO1mTELoj6o

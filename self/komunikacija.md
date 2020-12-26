@@ -45,6 +45,10 @@ Inspiracija se događa kada nešto što kažeš potakne sugovornika da poželi n
 
 Invitacija daje strukturu i smjer razgovoru, a insipiracija daje bliskost i fleksibilnost. Uvijek započinji razgovore s invitacijom (pokazuješ da želiš znati više o svom sugovorniku), a kasnije pređi na inspiraciju (otvaramo se jedno drugome).
 
+## Pauze
+
+Savjet koji svi reporteri i odvjetnici znaju: pusti da pauze traju, i prepusti sugovorniku da prekine tišinu. Ovo funkcionira u vođenju intervjua, ispitivanju svjedoka ili pregovaranju ugovora.
+
 ## Internetska rasprava
 
 Ispravljanje nečijeg pravopisa u raspravi je dno dna.

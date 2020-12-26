@@ -1,5 +1,11 @@
 # Judaizam
 
+## Monoteizam
+
+Monoteizam je danas mainstream, ali nekad je bio vrlo neobična ideja. Većina stanovnika Rimskog Carstva bili su politeisti. Židovi (5-7% stanovnika) su jedini vjerovali u jednoga Boga, ili barem jednoga kojeg treba štovati. Prema judaizmu, taj bog je stvorio svijet i u jednom trenutku odabrao Izraelce kao svoj narod. S njima je sklopio **savez** (nešto kao mirovni ugovor) - oni će ga štovati, on će ih čuvati i braniti.
+
+Taj savez je srž starog judaizma. Bog je spasio Izraelce iz Egipta, a zauzvrat su dobili Mojsijev zakon: 10 zapovjedi plus ostalih 613 zakona Tore. Oni govore o tome kako štovati Boga i kako se ponašati u zajednici. Zakon pritom nije način da se dođe do spasenja (već si spašen jer si dio saveza), zakon je način da se zahvališ za spasenje koje ti je obećano.
+
 ## Sveto pismo
 
 Hebrejska biblija je ono što je kod kršćana Stari Zavjet. Nazivaju je *Tannakh*, što je akronim naziva tri dijela: *Torah* (zakoni), *Nevi'im* (proroci) i *Ketuvim* (ostalo). Izvorno je napisan na klasičnom hebrejskom.

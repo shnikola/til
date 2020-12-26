@@ -21,6 +21,15 @@ Leland Stanford, guverner Kalifornije, 1872. se kladio da konj u punom galopu u 
 
 Hollywood je nastao u Los Angelesu jer su nezavisni filmaši htjeli pobjeći od monopola Edisonovog Studija. U slučaju da se zakonske bitke zakompliciraju, LA je bio dovoljno blizu Meksika da mogu pobjeći iz zemlje.
 
+## B-filmovi
+
+B-filmovi su nastali kao druga polovica "double feature" projekcija u američkim kinima, ali su vrlo brzo postali nešto fundamentalno drugačije od mainstream filmova. Zbog svog niskog budžeta i činjenice da su nastali na granicama studijskog sustava, bili su izloženi puno manjem nadzoru,
+te su postali utočište za transgresivne ideje. Pomicali su granice nasilja i seksa kojima se veliki studijski filmovi ne bi usudili približiti, ali su pomicali i granice onoga što film može reći. Najbolji od njih, poput "Body Snatchers" i "Dawn of the Dead" koristi li su jeftina uzbuđenja da privuku publiku, istovremeno komentirajući društvo kojem je publika pripadala.
+
+B-filmovi su različiti od onog što danas zovemo nezavisnim filmom. Oboje su snimani s niskim budžetom, izvan velikih studija, ali B-filmovi nisu bili usmjereni na arthouse publiku. Snimani su za prosječnog gledatelja. Njihovi autori su iskreno voljeli visokobudžetne filmove, i sami su htjeli snimati visokobudžetne filmove. Ali većina ih nisu bili iskusni filmaši, pa nisu znali što nije dopušteno. Kršili su holivudske tabue i time mijenjali što je mainstream smatrao prihvatljivim.
+
+Zahvaljujući B-filmovima, Hays code se počeo gasiti. Seks i nasilje koje je bilo šokantno publici 50-ih je postalo općeprihvaćeno. Teme koje su smatrane previše političkim ili osjetljivim (npr. holokaust, pitanje nuklearnog naoružanja) su postale prihvatljive.
+
 ## Građanin Kane
 
 William Randolph Hearst je bio uvjeren da se film radi o njemu, pa je povukao veze da se oteža njegova projekcija. Iako su kritike bile dobre, nije polučio komercijalni uspjeh dok nije ponovno prikazivan 1950.

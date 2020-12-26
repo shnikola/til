@@ -1,4 +1,13 @@
-# Responzivnost
+# Layout
+
+Centriranje elementa usred parenta:
+`.parent { display: grid; place-items: center; }`
+
+Sidebar ograničenih veličina:
+`.parent { display: grid; grid-template-columns: minmax(150px, 25%) 1fr; }`
+
+Fiksni header i footer:
+`.parent { display: grid; grid-template-rows: auto 1fr auto; }`
 
 ## Responsive Images
 

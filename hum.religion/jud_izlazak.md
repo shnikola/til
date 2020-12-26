@@ -44,3 +44,7 @@ Zapovijed se inače nastavlja u vrlo specifičnom tonu: **Jer ja, Gospod, Bog tv
 
 Rabini, koji uvijek traže strukturu u svemu, imaju teoriju kako je prvih 5 zapovjedi povezano s drugih 5, od donekle smislenih ("Nemaj drugih bogova uz mene" je ekvivalentno "Ne čini preljub") do zbilja navučenih ("Svetkuj šabat" je isto kao i "Ne svjedoči lažno", jer onaj koji ne odmara na sedmi zapravo laže da Bog nije u 6 dana stvorio svijet.)
 
+## Pi
+
+U `Prvoj Knjizi o kraljevima` opisuje se okruglo pojilište u Jeruzalemskom hramu širine 10 laktova a opsega 10 laktova, što znači da je vrijednost pi-a u bibliji 3. Neki rabini tvrde da je se pi ionako može izračunati samo aproksimativno, pa je 3 dovoljno dobro za religijske potrebe. Drugi su primjetili da se mjerna linija na tom mjestu piše kao KAVEH (111), dok je u ostatku teksta KAV (106). `3*111/106 = 3.141509433` što je precizno u 4 decimale.
+

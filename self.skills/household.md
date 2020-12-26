@@ -51,8 +51,3 @@ Za pranje koristi **JAR Platinum tablete** (probaj naći da budu ispod kunu po t
 ### Bojleri
 
 Bojleri s otvorenim plamenom su zeznuti. Za svaki kW snage, trebao bi imati kubik zraka u prostoriji. Pazi da ih ne staviš u male i slabo prozračene prostorije (npr. s PVC stolarijom), jer može doći do trovanja monksidom.
-
-## Vrt
-
-Usmjeri karijolu u smjeru kojem želiš ići prije nego je napuniš.
-

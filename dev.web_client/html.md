@@ -220,7 +220,7 @@ Input se mogu grupirati pomoću `<fieldset>`, a svaka grupa može imati svoj `<l
 `<mark>` je tekst relevantan za usera, npr. hightlight search termova.
 `<small>` sadržaj manje važnosti, npr. copyright u footeru.
 
-`<wbr>` je word break opportunity, odnosno oznaka browseru gdje je u redu da prelomi riječ.
+`<wbr>` je word break opportunity, prijedlog browseru gdje je u redu da prelomi riječ.
 
 `<q>` je kratki inline citation.
 `<blockquote>` je duži citirani komad teksta. Njegov `cite` atribut koristi za URL resourca odakle je preuzet, a `<cite>` element unutar njega za ime autora ili djela.

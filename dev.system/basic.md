@@ -63,4 +63,5 @@ Raid 10 kombinira Raid 0 i Raid 1, tako da imaš i striping i redundanciju. Zaht
 # Literatura
 
 * https://github.com/donnemartin/system-design-primer
+* https://robertheaton.com/2020/04/06/systems-design-for-advanced-beginners
 * https://www.youtube.com/watch?v=-W9F__D3oY4

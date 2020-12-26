@@ -207,7 +207,7 @@ Ako baza potroši sve dostupne konekcije, bacit će `max_connect_errors`. Ako se
 
 ## Multiple Databases
 
-**Horizonal sharding** je dijeljenje sadržaja tablica u više baza, kako bi bilo manje redova za selektiranje i indeksiranje.
+**Horizonal sharding** je dijeljenje sadržaja tablica u više baza, kako bi bilo manje redova za selektiranje i indeksiranje. Za metodu shardinga može biti zadužena aplikacija (prednost: ne treba dodavati nove komponente) ili database router (prednost: ako treba mijenjati, na jednom je mjestu).
 
 **Functional partitioning** je dijeljenje tablica u različite baze prema njihovoj upotrebi. Na taj način odvajanje tablice u koju se često piše neće degradirati performance ostalih tablica.
 
@@ -239,7 +239,6 @@ Za nalaženje sporih i često pozivanih querija:
 # Literatura
 
 * SQL Antipatterns by Bill Karwin
- https://sqlbolt.com/ - interaktivni tutorial, super za učenje
 * http://use-the-index-luke.com - sve o indeksima
 * https://layerci.com/blog/postgres-is-the-answer
 * https://www.slideshare.net/kigster/from-obvious-to-ingenius-incrementally-scaling-web-apps-on-postgresql

@@ -92,6 +92,7 @@ Ako se osjećaš fancy, za dekoricaiju možeš isjeckati krumpir na tanke štapi
 
 ## Chili con Carne
 
+* Ako ćeš koristiti **slaninu**, sitno je isjeckaj i prvu poprži na tavi 4 minute dok ne posmeđi.
 * **2 srednje kapule** isjeckaj sitno i zažuti u tavi.
 * Nasjeckaj i dodaj **3 režnja češnjaka**, **1 crvenu papriku**
 * Ubaci začine i prži ih dok ne zamirišu: **kumin**, **mljevenu papriku**, **kajenska paprika**, **goruščicu**, **origano**.

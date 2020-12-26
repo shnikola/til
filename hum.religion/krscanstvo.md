@@ -30,11 +30,13 @@ Riječi kršćanskog Vjerovanja započele su kao izjava pri krštenju, a poslije
 
 Treba napomenuti da se u Vjerovanju nigdje ne spominje Biblija.
 
-## Progoni
+## Simboli
 
-Car Konstantin u bitci za Milvijski most dobija viziju (tako bar priča kaže), te nalaže vojnicima da napišu Kristovo ime na štitove, i pobjeđuje. Nakon toga se preobraćuje na Kršćanstvo, i Milanskim ediktom `313.` ukida vjerske progone, pa se broj Kršćana u carstvu penje na 50%.
+**Labarum** (`☧`), kristogram koji se sastoji od prva dva slova grčke riječi za Krista (ΧΡΙΣΤΟΣ): `XP` (Chi-Rho). Car Konstantin je navodno u bitci za Milvijski most imao viziju nakon koje je napisao ovaj znak na štitove svoje vojske i pobijedio.
 
-Što s onima koji su tijekom progona popustili i javno se odrekli svoje vjere? Mogu li takvi biti vjernici, ili čak i svećenici? Rimska crkva je bila na strani oprosta grijeha, ali nisu se svi slagali. Jedan od "traditora" (izdajnika) bio je Cecilijan, izabran za biskupa u Kartagi (sj. Afrika), čemu se zajednica jako protivila i odabrala svog biskupa, Donata. Donat je vršio tu dužnost bez službene dozvole, zbog čega mu je Crkva htjela suditi. On je potražio pomoć od cara Konstantina, (napravivši presedan u miješanju vladara u crkvene odluke), ali nakon više sudskih procesa Crkva ga je i dalje osuđivala, a caru se više nije dalo baviti time. **Donatisti** su postali frakcija koja je dijelila sj. Afriku još stoljećima, i bit će veliki problem za Rimsko carstvo.
+**Riba** se koristi jer je grčka riječ `Ihtus` itovremeno i akronim za "Isus Krist, božji sin, spasitelj"
+
+**Križ** u 2. i 3. stoljeću nije bio zastupljen kao simbol kršćanstva, jer je imao negativne konotacije. Umjesto toga, Isus je prikazivan kao pastir. Tek u 4. stoljeću kreće prikazivanje križa u umjetnosti.
 
 ## Ruska pravoslavna Crkva
 
@@ -63,7 +65,7 @@ Zbog razjedinjenog slavljenja Uskrsa i općenito nezgodnog računanja, u 20. sto
 ## Sveti red
 
 Tri razine svetog reda: đakonat, prezbiterstvo, i biskupstvo.
-Sveti red se prenosi s osobe na osobu, počevši od 12 aposotla - to se zove apostolsko nasljeđe.
+Sveti red se prenosi s osobe na osobu, počevši od 12 aposotla - to se zove **apostolsko nasljeđe**.
 
 Samo biskupi smiju dijeliti sveti red, i to za sve tri razine. Dodatno, da bi zaredio drugog biskupa, mora imati nalog od pape. U principu on može zarediti drugog biskupa, i sakrament je valjan (ovaj drugi će postati biskup), ali je bez dozvole najstrože zabranjen i kažnjava se izopćenjem za obojicu.
 

@@ -53,3 +53,10 @@ Drugi način je korištenjem ticketing sustava kao Zendesk, Kayako i WHMC koji d
 Na Slacku developeri često na javnim kanalima shareaju tajne podatke poput passworda ili informacija o klijentima, što napadač može iskoristiti za daljnje napade.
 
 **Pouka:** ne dopuštaj korinicima pristup Slacku bez invitea. Ako nije opcija, neka se automatizirani mailovi šalju s različite poddomene, npr. `@reply.company.hr`. Izbjegavaj autentifikaciju samo na račun email domene.
+
+## Hacking Apple
+
+https://samcurry.net/hacking-apple
+
+Apple ima preko 7000 domena i 25000 servera, trebalo je samo pronaći neki zaboravljeni s dovoljno velikom sigurnosnom rupom da se uđe u ostatak sustava. Primjerice, opskurni program za edukatore je koristio Jive forum integriran s Appleovim authom, pri čemu je registracija svim korisnicima postvljala isti password. Iteracijom su našli račun s 3 slova i ulogirali se, ali je `/admin` page je imao IP provjeru; ali `/admin;` nije bio zaštićen.
+

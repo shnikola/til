@@ -35,9 +35,9 @@
 * **2 mrkve**
 * **korijen celera**
 * **4-5 režnja češnjaka**
-* sve gore i **list lovora**, **sol**, **papar u zrnu** stavi u ekspres lonac
-* napuni do 2/3 vodom, poklopiti i 15 minuta kuhaj
-* ubaci **oslić bez glave i repa** pa kuhaj još 15 minuta
+* sve gore i **list lovora**, **sol**, **papar u zrnu** stavi u lonac
+* napuni do 2/3 vodom, poklopiti i kuhaj dok površe ne smekša
+* ubaci **oslić bez glave** pa kuhaj još 15 minuta
 * procijedi juhu, odvoji ribu i očisti
 * izvadi kapulu, ostatak povrća izblendaj
 * u velikom loncu zagrij maslinovo i nasjeckaj čenjaka i peršina, pa dodaj izblendano povrće, pa nakon par minuta bistru juhu i ribu.
@@ -65,7 +65,7 @@
 ## Francuski krumpir
 
 * **5-6 krumpira srednjih**, skuhaj cijele dok ne omekšaju. Ohladi krumpir u hladnoj vodi pa oguli (crveni su bolji jer se ne raspadnu).
-* **3 jaja** tvrdo kuhaj i oguli
+* **3 jaja** kuhaj 8 minuta i oguli
 * **pola kobasice** nasjeckaj.
 * U nauljenu šerpu nasjeckaj pola krumpira, posoli, preko toga nasjeckaj jaja i kobasicu, pa ostatak krumpira i posoli
 * Prelij s **4dl domaćeg vrhnja**
@@ -92,10 +92,10 @@ Za 4 srednje (ili 3 velike) porcije
 ## Sarma Betine Bake
 
 * Nasjeckaj **1 luk i jednaku količinu masnije slanine** i zažuti u loncu.
-* Dodaj **1 nasjeckani režanj češnjaka**, miješaj minutu.
 * Od **1kg mljevenog mesa** (2/3 svinjetina, 1/3 junetina), dvije trećine stavi u lonac i promješaj da posivi.
 * Nasjeckaj **250g mesnatije slanine** i **jedan krak domaće kobasice**, pa umiješaj u lonac s ostatkom mesa. Miješaj par minuta pa skini s vatre.
 * Malu šalicu **riže** isperi i umiješaj u lonac.
+* Zamuti **3 jaja** i umiješaj u lonac.
 * Dodaj **2 velike žlice slatke paprike** i **1 žlicu ljute paprike**, i promiješaj.
 * Rastavi **glavicu kiselog kupusa**, odsijeci deblje dijelove. Ako je preslana, isperi listove.
 * Stavi list na dlan (pazi da je udubljen kao tanjur) s korijenom prema ruci. Stavi meso okomito na os ruke, pa presavij desnu stranu do skoro polovice. Zatim savijaj od korijena prema gore, pa uguraj vršak lijeve strane u rupu. Pripazi da ostaviš dovoljno mjesta jer riža i meso nabubre.
@@ -120,6 +120,6 @@ Prereži biskvit napola, malo naprskaj limunovim sokom da bude vlažan. U kalup 
 
 ## Knedle Betine Bake
 
-Zamrznute knedle samo malo odmrzni. Stavi dosta vode u veliki lonac da dobro proključa i onda ubaci knedle unutra. Kad isplivaju, kuhaj još 4-5 minuta. Izvadi da se malo da se ohlade.
+Zamrznute knedle samo malo odmrzni. Stavi dosta vode u veliki lonac da dobro proključa i onda ubaci knedle unutra. Kad isplivaju, kuhaj još 4-5 minuta. Izvadi da se malo ohlade.
 
 Posebno isprži na ulju prezle da budu smeđe, na kraju stavi šećer. Sve prezle gurni na jednu stranu, i uvaljaj jednu knedlu po knedlu.

@@ -1,5 +1,17 @@
 # Hrana
 
+## Povrće
+
+Plodovi postoje kako bi privukli životinje da ih pojedu i rašire sjemenke. Pritom hranjivi dio ploda nije morao biti velik, ali ljudi su kroz stoljeća križanjem stvorili sorte koje su većinom plod, a minimalni dio sjeme.
+
+Npr. najraširenija sorta banane danas, Cavendish, gotovo uopće nema sjemenja, dok je *Musa Acuminata*, predak banane, ima goleme crne sjemenke i sasvim malo mesa, ili *Musa balbisiana* koja je poput škrobastog kiwana.
+
+Prve lubenice uzgajane u Egiptu 3000 godina pr.ne. bile su veličine teniske loptice, tvrdog i gorkog mesa. Još su krajem 17. stoljeća lubenice izgledale mnogo drugačije nego današnje, o čemu svjedoče ulja na platnu poput one Giovanni Stanchija.
+
+Brokula, cvjetača, prokulice, kupus, raštika i kelj su sve kultivari divljeg kupusa (*Brassica oleracea*). Od nje je kultiviran kelj, a zatim i ostale sorte, svaka od nabrijavanja određenog dijela biljke (lista, vršnih ili stabljičnih pupoljaka).
+
+Preteča kukuruza, *Teosinte*, je imao tek 5-12 sjemenki obloženih čvrstom ljuskom koju je trebalo kuhati. Čini se čudno da je to netko išao kultivirati, ali zapravo je većina današnjih žitarica sličnije Teosintu nego kukuruzu.
+
 ## Kečap
 
 3. st. pr.ne., Jugoistočna Azija. U sušnim razdobljima jezera i rijeke presuše, i javlja se potreba ze prezerviranjem ribe. Metoda koju koriste je da ribu pokriju rižom i solju, stave je u košaru i pristinu velikim kamenom. Nakon 3 mjeseca, laktofermentacija ukiseli ribu i sačuva je. Riža se od kiseline rastopi, pa se sastruže i baci, a riba ima okus kao današnja šunka.

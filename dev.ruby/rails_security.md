@@ -10,7 +10,7 @@
 
 https://github.com/kickstarter/rack-attack
 
-Ograničava requeste koji dolaze na server, prekidajući ih u middlewareu i vraćajući `419 Too Many Requests`.
+Ograničava requeste koji dolaze na server, prekidajući ih u middlewareu i vraćajući `429 Too Many Requests`.
 
 Podržava različite uvjete:
 * `safelist` requestovi uvijek prolaze

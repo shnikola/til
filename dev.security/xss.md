@@ -22,6 +22,11 @@ Ovaj napad zloupotrebljava korisnikovo povjerenje u site na kojem se nalazi.
 
 `<a href=javascript:evil()>` ako dopuštamo da korisnik odabere URL linka.
 
+Email aplikacije često urlove automatski pretvaraju u linkove, pa ih se tu da zbuniti, poput: `https://www.domain.com/abc#<script></script>https://domain.com/abc`
+
+Aplikacije koje sanitiziraju HTML se daju zbuniti s polovičnim tagovima poput:
+`<style></sty</style> <style>le><script>alert(1)</script></style>`
+
 ## Obrana
 
 Browseri imaju ugrađene XSS filtere (npr. prepoznaju ako je source skripte u URLu) i automatski ga blokiraju. Ako si lud, možeš disablati to ponašanje s `X-XSS-Protection: 0` headerom.
@@ -29,6 +34,8 @@ Browseri imaju ugrađene XSS filtere (npr. prepoznaju ako je source skripte u UR
 Za sve ostalo, escapeaj korisničke podatke pri renderiranju. Pripazi da različito escapaš ako se ubacuje u HTML element, atribut, `<style>` ili `<script>` tag.
 
 Ako koristiš URL od korisnika, provjeri da počinje s `http`, a ne s `javascript:` ili `data:`.
+
+Nemoj koristiti nikakve korisničke podatke za internu pohranu (npr. S3 file nameove) - uvijek generiraj UUID.
 
 ## Content Security Policy
 

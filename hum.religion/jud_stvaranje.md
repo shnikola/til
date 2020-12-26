@@ -10,9 +10,13 @@ Ludi kabalaši su primjetili da kada Tetragramaton (Božje ime) zapišeš vertik
 
 ## Lilith
 
-`Postanak 1:27` "Na svoju sliku stvori Bog čovjeka, na sliku Božju on ga stvori, muško i žensko stvori ih." Ovo se dogodilo prije nego je Bog stvorio Evu od rebra. Otkud onda spominjanje žene?
+`Postanak 1:27` "Na svoju sliku stvori Bog čovjeka, na sliku Božju on ga stvori, muško i žensko stvori ih." Tek kasnije, Bog stvara Evu od Adamovog rebra. Tko je onda žena koju je Bog stvorio s čovjekom?
 
-Rabini interpretiraju ovo pričom o Lilith, koju je Bog stvorio od zemlje kao i Adama. Ali Adam i Lilith se nisu složili jer je on želio leći na nju, a ona na njega, pa je na kraju pobjegla od njega. Drugi rabini interpretiraju ovaj citat time da je Adam stvoren s muškim i ženskim licem, kao hermafroditno biće, muško i žensko spojeno na leđima. Ali Bog je uočio da im je tako teško hodati i razgovarati, pa ih je razdvojio.
+Rabini interpretiraju ovo pričom o Lilith, koju je Bog stvorio da bude jednaka Adamu, od zemlje. Ali Adam i Lilith se nisu složili jer je on želio leći s njom, a ona nije htjela (ili je htjela biti gore). Drugi rabini interpretiraju ovaj citat time da je Adam stvoren s muškim i ženskim licem, kao hermafroditno biće, muško i žensko spojeno na leđima. Ali Bog je primjetio da im je tako teško hodati i razgovarati, pa ih je razdvojio.
+
+U svakom slučaju, Lilith je pobjegla, i Bog joj je dao moć nad novorođenčadi, pogotovo izvanbračnom. Tako je postala majkom svih demona, Lilima, koji su nastali protiv božje volje.
+
+Lilith se u Bibliji imenom spominje samo jednom, u `Knjizi proroka Izaije`: “Ondje će se sretat divlje mačke s hijenama, jarci će dozivati jedan drugoga; ondje će se odmarati Lilit našav počivalište.”
 
 ## Kainovo prokletstvo
 

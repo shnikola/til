@@ -17,7 +17,7 @@ Od altenativnih librarija postoje wrapperi oko `Net:HTTP` s ljepšim API-jem (`R
 
 `Faraday` je adapter koji podržava različite HTTP librarije u backendu, pružajući isti API za korištenje svakog (nešto kao Rack).
 
-`http.rb` je pure ruby `HTTP klijent koji je odličan u svojoj jednostavnosti:
+`http.rb` je pure ruby HTTP klijent koji je odličan u svojoj jednostavnosti:
 
 `HTTP.post("https://example.com/path", form: params)` šalje request.
 
@@ -44,4 +44,3 @@ Streaming upload radi automatski za IO objekte, npr:
 Streaming download response bodyja je također moguć:
 `response.body.readpartial` čita chunk odgovora.
 `response.body.each { |chunk| ...}` dohvaća chunk po chunk.
-

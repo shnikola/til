@@ -42,13 +42,15 @@ Napiši najbolji mogući kod sada, ali budi spreman da ga obrišeš sutra.
 
 Izbjegavaj riječi poput `Manager`, `Processor`, `Data`, i `Info` u imenima klasa.
 
-Koristi jednu riječ za koncept: zbunjujuće je imati `fetch`, `retrieve`, i `get` kao ekvivalentne metode u različitim klasama, ili `controller`, `manager` i `driver` kao različite klase. Postoji li naročita azlika između `DeviceManager` i `ProtocolController`?
+Odluči se za jednu riječ po konceptu: zbunjujuće je imati `fetch`, `retrieve`, i `get` kao ekvivalentne metode u različitim klasama, ili `controller`, `manager` i `driver` kao različite klase.
 
 ## Metode
 
 Miješanje razina apstrakcije zbunjuje. Čitatelju neće biti jasno je li određeni izraz esencijalni koncept ili samo detalj. Svaka metoda bi se trebala baviti samo jednom razinom apstrakcije: high level odluka da li dodati meta tag u html i low-level zapisivanje `\n` u string ne bi smjeli biti u istoj metodi.
 
 Što više argumenata metoda prima, to ju je teže razumjeti. Izbjegavaj metode s više od 3 argumenta. Više povezanih argumenata zamijeni objektom.
+
+Izbjegavaj defenzivno kodiranje, tj. provjeravanje argumenata koje si primio. Argumenti bi se trebali provjeravati na jednom mjestu, kada ulaze u sistem. Ostatak koda bi trebao raditi pod pretpostavkom da su argumenti valjani.
 
 Izbjegavaj output argumente, tj. metode koje mijenjaju stanje argumenata. Umjesto `appendFooter(report)` radije koristi jasniji `report.appendFooter()`.
 

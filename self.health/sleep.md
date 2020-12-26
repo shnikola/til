@@ -1,4 +1,4 @@
-# Sleep
+# Spavanje
 
 Spavanje je iznimno bitno za intelektualni i kreativni rad. Osnovno pravilo je: kad ti se spava, idi spavati i spavaj dok se prirodno ne probudiš.
 

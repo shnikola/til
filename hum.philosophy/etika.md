@@ -1,5 +1,15 @@
 # Etika
 
+## Društveni ugovor
+
+**Thomas Hobbes** je prvi moderni filozof koji se detaljno bavio društvenim ugovorom. Prema njemu, život u "prirodnom stanju", prije društva, je bio grozan. Društveni ugovor je pojava u kojoj su individualci odustali od dijela svojih prava kako bi drugi odustali od svojih. To je rezultiralo nastajanjem države koja stvara zakone i regulira socijalnim interakcijama. Ljudima je potreban "teror neke Moći" kako bi poštovali zakon recipročnosti.
+
+Problem je što su nastale države dobile individualnost koji su ljudi u prirodnom stanju imali, i donose odluke iz vlastitog interesa u međusobnom sukobu. To će se događati dok ih neka veća sila ne prisili u neku vrstu društvenog ugovora.
+
+## Kantova etika
+
+Ako želiš biti moralan, radi ono što da svi to rade bi sve bilo ok.
+
 ## Utilitarizam
 
 Utilitarizam polazi od pretpostavke da je etički ispravno djelovanje koje čini svijet boljim. Ali što znači činiti svijet boljim?

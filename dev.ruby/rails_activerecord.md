@@ -23,7 +23,7 @@ Kada se assigna `has_one` ili `has_many` asocijacija, (npr. `post.comments = com
 
 `post.comments << comment` (ili `post.comments.push`) dodaje novi child objekt i automatski ga perzistira.
 
-Za dodavanje asocijacija bez automatskog saveanja, koristi `post.comments.build`.
+Za dodavanje asocijacija bez automatskog saveanja, koristi `post.comments.build`. Ali pripazi jer se i u tom slučaju novi komentar persista ako se napravi `post.save`.
 
 ## Bi-direction associations i inverse_of
 
@@ -58,9 +58,14 @@ U slučaju da se u `where` koristi sql string umjesto hasha, s `references` se n
 
 Kad se koristi `includes`, `distinct` nije potreban.
 
-## has_many i delete
+## has_many i delete_all
 
-`user.posts.delete_all` po defaultu neće obrisati sve postove, samo će im postaviti `user_id` na NULL. Da bi brisanje radilo, potrebno je postaviti `has_many :posts, dependent: :delete_all`.
+`delete_all` na has_many asocijaciji, npr. `user.posts.delete_all` neće nužno brisati, nego će koristiti opciju `dependent` iz `has_many`. Po defaultu će raditi `nullify`, što uglavnom ne želiš.
+
+Bolje opcije su:
+- `Post.where(id: user.post_ids).delete_all` ako ne želiš loadati recorde
+- `user.posts.destroy_all` ako želiš loadati i odraditi callbacke
+- `has_many :posts, dependent: :delete_all`, ali to je lako previdjeti
 
 ## Brojanje i postojanje
 
@@ -74,6 +79,12 @@ Koristi `size`. Jedino ako trebaš broj taman prije nego ćeš loadati sve recor
 `exists?` uvijek radi count query
 
 Umjesto `User.count > 0` koristi `User.exists?` da db ne mora napraviti full table scan. Umjesto `User.count > 1` koristi `User.limit(2).count > 1`.
+
+## Subqueries
+
+`User.where('salary > :avg', avg: User.average(:salary))` će napraviti dva upita u bazu. Umjesto toga možeš koristiti `select`:
+
+`User.where('salary > (:avg)', avg: User.select('avg(salary)'))`
 
 ## Batches
 

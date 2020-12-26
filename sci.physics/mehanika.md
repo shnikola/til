@@ -26,3 +26,18 @@ Suho trenje nastaje zbog zapinjanja površina na mikroskopskoj razini, ili čak 
 - Trenje statičkih objekata je veće nego kod klizećih (`μs > μk`)
 
 Trenje ne ovisi o veličini površine u kojoj se materijali dodiruju. Na trenje ne utječe ni brzina klizanja predmeta.
+
+## Momentum
+
+Momentum (kod nas: *količina gibanja*) je umnožak brzine i mase tijela. Prilikom sudara tijela, ukupna količina momentuma je u svakom trenutku ista: `m1*v1 + m2*v2 = m1*u1 + m2*u2`.
+
+Ako se pri sudaru dva tijela spoje, to je **savršeno neelastični sudar**: `m1*v1 + m2*v2 = (m1+m2)*u`.
+
+Impuls sile je umnožak sile i vremena tijekom kojeg se primjenjuje. Što je veći impuls, veća je promjena momentuma: `F*Δt = Δp`.
+
+## Let
+
+Avioni lete jer su krila oblikovana tako da odguruju zrak ispod sebe, što im zbog očuvanja momentuma (zj. 3. Newtonovom zakonu) daje potisak prema gore.
+
+Teorija da "zrak putuje brže iznad krila zbog zakrivljenosti" nije u potpunosti točna, jer avioni s ravnim krilima mogu letjeti, samo malo manje optimalno.
+

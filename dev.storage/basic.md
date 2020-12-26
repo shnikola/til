@@ -72,4 +72,5 @@ Ukoliko se ijedan blok promijeni, morat će se promijeniti i njegov hash, a sami
 # Literatura
 
 * https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying
-* https://anders.com/blockchain
+* https://www.brianstorti.com/replication/
+

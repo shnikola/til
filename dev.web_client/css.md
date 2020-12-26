@@ -24,6 +24,14 @@ Primjeri korištenja:
 
 Izbjegavaj korištenje `em` i `rem`. Gotovo nikad nećeš htjeti da se promjenom fonta na jednom mjestu automatski promijene dimenzije elemenata po cijelom siteu. Redizajn je ipak malo kompleksniji od toga.
 
+## Postotci
+
+Vrijednosti `height: 10%`, `top: 10%` i `bottom: 10%` se računaju u odnosu na **height parenta**; za `width`, `left` i `right` u odnosu na **width parenta**.
+
+Vrijednosti `padding: 10%` i `margin: 10%` se računaju u odnosu na **width parenta**, čak i za `margin-top` i `padding-bottom` propertije. To je dosta čudno i nisam siguran čemu služi.
+
+Vrijednosti `transform: translate(50%, 0%);` se računaju u odnosu na **width i height samog elementa** koji se translatira.
+
 ## Attribute selectors _IE 7+_
 
 * `[href]` elementi koji imaju atribut (pa makar i prazan)
@@ -143,8 +151,6 @@ Kod `box-sizing: border-box`, `width` i `height` definiraju veličinu cijelog el
 `height: auto` i `width: auto` prilagođavaju veličinu sadržaju.
 
 `margin: 0 auto` horizontalno centrira element, ako je manji od parenta.
-
-Vrijednosti u postotcima za `padding` i `margin` (npr. `padding-top: 10%`) se uvijek računaju u odnosu na **width** elementa, čak i za `-top` i `-bottom` propertije.
 
 Margine se u nekim slučajevima spajaju u jednu (*margin collapse*):
 * unutar praznog elementa, njegov `margin-top` i `margin-bottom`.

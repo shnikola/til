@@ -34,7 +34,6 @@ Ali ako su i bebini roditelji jeli samo ljudsko mjesto, onda, eh, neznam, onda t
 
 Ukratko, ako te pojede kanibal koji se seksa s drugim kanibalom i dio tvog tijela se pretvori u sjeme koje napravi kanibal bebu, žao mi je, ne dobijaš taj dio nazad na Sudnjem Danu. Ali Bog će ti dati zamjenu.
 
-
 ## Soteriologija
 
 Bavi se spasenjem. Kako netko može doći do dobrog odnosa s bogom.

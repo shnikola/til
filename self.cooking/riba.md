@@ -54,3 +54,8 @@ Muzgavci (mrkači) su jeftinija alternativa hobotnici.
 * Pusti da se krčka 3 sata, s povremenim dolijevanjem vode.
 * Skuhaj špagete ili linguine, pomiješaj ih s raguom, pospi sjeckanim peršinom.
 
+## Losos u pećnici
+
+* Zagrij pećnicu na `200`.
+* U vatrostalnu posudu stavi **2 odreska lososa**, posoli i popapri ih, prelij maslinovim uljem ili maslacem (ili oboje). Stavi **kriške limuna** i **svježi ružmarin** preko.
+* Ubaci **desetak cijelih režnjeva češnjaka**, pa poklopi i stavi u pećnicu. Gotovo je nakon 25 minuta.

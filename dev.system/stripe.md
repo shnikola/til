@@ -1,5 +1,19 @@
 # Stripe
 
+## Push vs Pull
+
+Spremljena kreditna kartica ili bankovni račun su pull metode: plaćanja se izvršavaju tako da Stripe povlači novce iz njih.
+
+Wire i bank transfers su push metode: customer mora poslati novce u Stripe.
+
+## Vrste plaćanja
+
+**Credit card** radi instantno - čim dobiješ podatke možeš napraviti charge ili platiti subscription invoice.
+
+**ACH** je način bankovnog plaćenja za US. Korisnik šalje podatke o svom bankovnom računu (account number, routing number, ime vlasnika), i onda obavlja verifikaciju: to može instantno obaviti Plaid (vanjski servis koji se plaća), ili Stripe uplaćuje dva iznosa na korisnikov račun (problem je što to može trajati i par dana), pa korisnik mora unijeti koji su to iznosi u tvoju formu, što šalješ Stripeu. Stripe zatim uzima novac s korisnikovog računa, i to opet može trajati do 7 dana.
+
+**ACH Credit Transfer** je jednostavniji - Stripe korisniku prikaže podatke za bankovnu uplatu, korisnik to obavi (npr. sa stranice svoje banke), i onda se novci dodaju u `Source` koji si prethodno stvorio. Taj `Source` objekt možeš koristiti za charge ili subscription. Koristiš `source.chargeable` event za prepoznati kad su novci stigli.
+
 ## Versioning
 
 Stripe ima verziju API-ja koja se podešava u dashboardu (ili konfiguraciji gema), a zasebno ima i verziju gema.

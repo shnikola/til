@@ -1,28 +1,20 @@
 # Povrće
 
-## Krumpir
+## Gomoljače
 
-**Kuhani krumpir**: stavi ga u hladnu vodu pa diži do ključanja - tako će se ravnomjernije skuhati.
+`Kuhani krumpir`: stavi ga u hladnu vodu pa diži do ključanja - tako će se ravnomjernije skuhati. Gotov je kada klizne s noža nakon što ga probodeš. Nakon kuhanja možeš ga staviti `zapeći` u pećnici na 220 stupnjeva.
 
-**Kuhano pečeni krumpir**: oguli i skuhaj u slanoj vodi, pa stavi u pećnicu na 220 stupnjeva.
+`Pire krumpir` se napravi kremastijim dodavanjem mlijeka, maslaca ili kiselog vrhnja. Od pirea se mogu napraviti `kroketi`: dodaj brašno i poprži; `duchess potato`: stavi u tuljac za šlag s malo jaja, napravi male loptice i ispeci ih 15 minuta na 220.
 
-**Scalloped**: oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnjem
+`Scalloped krumpir`  oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnje
 
-**Tater tots**: skuhaj oguljeni krumpir, naribaj ga, pomiješaj sa soli i škrobom za spajanje, formiraj u pločicu, i onda prži u ulju.
+`Hash browns` naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
 
-**Hash browns**: naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
+**Batat** je daleki rođak krumpira. Pri kuhanju povlači puno vode, pa ako radiš pire bolje ga je staviti u pećnicu.
 
-**Duchess potato**: Pire krumpir i malo jaja stavi u tuljac za šlag i na papir za pečenje napravi male hrpice, i stavi u pećnicu na 220, 15 minuta.
+## Lukovice
 
-## Batat
-
-Ako radiš pire od batata, stavi ga peći, a ne kuhati. On povlači puno vode, pa pire bude prerijedak.
-
-## Poriluk
-
-Blažeg okusa i mirisa od luka i češnjaka, ne nadvladava ostale namirnice u jelu. Plus ga je lakše sjeckati jer je duguljast.
-
-Poriluk se razvija probijajući kroz zemlju, pa unutar listova ima dosta prljavštine. Da bi ga očistio, odreži mu korijen, te prereži dio gdje postaje zelen. Bijeli dio onda prereži popola i ubaci sve u zdjelu s vodom - zemlja će potonuti na dno.
+**Poriluk** je blaži od luka i češnjaka, pa ne nadvladava ostale namirnice u jelu. Plus ga je lakše sjeckati jer je duguljast. Jedino je pun zemlje, pa ga treba detailjno očistiti (prepolovi, pa ubaci u zdjelu s vodom da zemlja potone). Karakteristična jela: `Vichyssoise krem juha`, `Dinstani poriluk s vrhnjem`.
 
 ## Pastrnjak
 
@@ -30,11 +22,16 @@ Najbolji za juhe (npr. s kruškom) i piree, ima finu prirodnu slatkoću.
 
 ## Grahorice
 
-Priprema grahorica poput graha, leće ili slanutka može zahtjevati mnogo vremena. Da bi se kuhanje skratilo zrna se mogu namakati u vodi nekoliko sati prije kuhanja (voda se od namakanja se baci), ili kuhati u pretis loncu.
+Grahorice su najisplativije povrće po omjeru cijene, hranjivosti i raznolikosti primjene. Sušene grahorice mogu trajati praktički vječno - dovoljno ih je namočiti i staviti u hladnjak večer prije kuhanja kako bi omekšale. Odličan su izvor proteina, vlakana, vitamina B i željeza, što ih čini zasitnima.
 
-Ako želiš izbjeći dodavanje previše ulja, soli ili suhog mesa da bi pojačao okus, umjesto njih koristi luk, češnjak i začine: lovor, peršin, vlasac, papar i korijander. Kuhanje grahorica s mrkvom i mahunama također popravlja okus i boju jela.
+Arapska i afrička kuhinja imaju sjajnih recepata za grahorice: humus, falafeli, slanutak u šakšuku, curry od leće.
 
-Grahorice su dobar izvor proteina, vlakana, vitamina B, te minerala: kalcija, cinka, i željeza. Velika količina vlakana i umjerena kalorična vrijednost čine ih zasitnim i sprječavaju prejedanje.
+## Zelenjava
+
+**Ošmugalj** (agretti, morska šparoga) je samonikla biljka koja raste uz more. Izgleda kao mekani ružmarin, slano-kiselog okusa i hrskave teksture. Ako je stariji zna biti drvenstiji, pripazi da odvojiš žilavije stabljike. Rijetko se nađe na tržnicama, pa se možeš praviti važan s njim. Ideje za pripremu:
+* Nakratko blanširaj, pa zalij maslinovim uljem i nasjeckanim češnjakom (kao blitvu).
+* Sotiraj na ulju, prelij jajima, kozjim sirom i slaninom.
+* Uz ribu: pirjaj ljutiku dok ne postane staklasta. Dobro ocijedi ulje, pa je izblendaj. Nakratko sotiraj ošmugalj, pa pomiješaj s kremom od ljutike.
 
 # Recepti
 

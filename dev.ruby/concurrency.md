@@ -26,31 +26,15 @@ Procesi komuniciraju streamovima preko *pipea* ili porukama preko *socketa*.
 
 ## Pozivanje vanjskih procesa
 
-``ls`` ili `%x{ls}` forka novi proces i izvršava ga.
-* vraća `stdout` novog procesa kao string. Status možeš dohvatiti iz `$?.success?` (bleh)
-* blokira dok se proces ne završi.
-* exceptioni se prosljeđuju masteru.
+`exec("ls")` ako želiš prekinuti trenutni Ruby proces i zamjeniti ga zadanom naredbom.
 
-`system("ls")` isto forka novi proces i izvršava ga.
-* vraća `true` ili `false` prema exit statusu. Output printa na `stdout`.
-* blokira dok se proces ne završi.
-* exceptioni *ne* dolaze do mastera.
+``ls`` ili `%x{ls}` pokreće novi proces i blokira postojeći dok se ovaj ne dovrši. Vraćaju `stdout` vanjskog procesa kao rezultat, a status možeš dohvatiti iz `$CHILD_STATUS.success?`. Exceptioni se prosljeđuju u Ruby proces.
 
-`exec("ls")` prekida Ruby proces s `exit` i zamjenjuje ga danom naredbom. Ništa se ne vraća jer više nismo u Rubyju.
+`system("ls")` pokreće novi proces i blokira postojeći. Vraća exit status (`true` ili `false`) kao rezultat, a output se printa na `stdout`. **Exceptioni ne dolaze** do Ruby procesa.
 
-`Process.spawn("ls")` pokreće proces u subshellu i odmah vraća PID. Ne blokira.
+`Open3.popen3('grep nikola') do |stdin, stdout, stderr, wait_thr|` pokreće neblokirajući proces. U bloku koristi `stdin`, `stdout`, `stderr` io objekte za streamanje inputa i outputa u vanjski proces. Exit status dobiješ iz `wait_thr.value`.
 
-`IO.popen("ls", "r+")` pokreće danu naredbu kao podproces čiji su input i output povezani na IO objekt kojeg metoda vraća. Korisno za proslijeđivanje podataka, ali ne hvata `stderr`.
-
-## Open3 (TODO)
-
-`Open3` je dio standardnog librarija koji omogućava detaljniji pristup vanjskim procesima.
-
-* `Open3.capture2('ls', options)` vraća `stdout` i `status`.
-* `Open3.capture3('ls', options)` vraća `stdout`, `stderr` i `status`.
-* `Open3.pipeline('sort', 'uniq -c', in: 'file.txt', out: 'count.txt')` za pipeline.
-* `Open3.popen3('grep foo') do |stdin, stdout, stderr, wait_thr|` čini dostupnima input, output i error IO stream.
-* `:stdin_data` opciju koristi za slanje stdina.
+`Open3.pipeline('sort', 'uniq -c', in: 'file.txt', out: 'count.txt')` omogućuje ulančavanje više vanjskih procesa s pipelinima.
 
 ## Threads
 

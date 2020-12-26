@@ -1,5 +1,21 @@
 # Politika
 
+## Problem ekstremizma
+
+C.S. Lewis u knjizi "Mere Christianity" piše:
+
+Zamisli da u novinama pročitaš članak o grozotama koje je netko koga ne voliš počinio. Zatim zamisli da se ispostavi da se ta priča pokaže neistinitom. Hoćeš li tvoja prva reakcija biti "Bogu hvala, čak ni oni nisu toliko loši."; ili ćeš se osjetiti razočaranim, čak odlučnim da se držiš prve priče u želji da su tvoji neprijatelji što gori? Ovaj osjećaj je onaj zbog kojeg želimo da crno bude malo crnije, pa da sivo bude crno, pa i da bijelo bude crno; zbog njega ćemo početi vjerovati da je sve loše: društvo, naši bližnji pa i mi sami. Postat ćemo zarobljeni u svijetu čiste mržnje.
+
+## Klasni sustav
+
+Društvena klasa nije isto što i ekonomska klasa, tj. koliko novaca osoba zarađuje. Društvena klasa je kompleksnija i uključuje poštovanje, obrazovanje i obitelj iz koje dolaziš. Radnik u tvornici može zarađivati više od učitelja u školi, ali učitelj će imati pristup višim društvenim krugovima.
+
+Svaka klasa je posebna kultura. Pripadnici određene klase imaju svoje načine govora, oblačenja i ponašanja, imaju specifične ideje i vrijednosti. Pripadnici nižih klasa mogu naučiti pravila više klase, ali to je težak i cijeloživotni projekt za koji moraš imati resurse više klase. Ljudi uglavnom razumiju svoju klasu, i klasu iznad ili ispod svoje, ali nakon toga imaju tek mutne stereotipe. Ovo ograničava društvenu mobilnost - ne možeš se pridružiti onome što ne razumiješ.
+
+Klasne predrasude su kombinacija praktičnih prednosti više klase (imati više novaca i bolje prilike) i vrlo upitnog stava da je kultura više klase superiornija, ili da kultura niže klase pokušava oponašati višu klasu i ne uspjeva. Ali pripadnici niže klase vole svoje kulturu i u pravilu se ne žele prilagođavati kulturi više klase, osim u mjeri u kojoj je potrebno da napreduju.
+
+Povezano s time, Donald Trump je popularan kod mnogih jer unatoč svom bogatstvu šalje signale radničke klase (voli wrestling, dio je reality televizije). Iako je čitav život bio milijarder, za američku radničku klasu on je "lokalni dečko koji je uspio".
+
 ## Libertarijanizam
 
 Libertarijanizam je nastao kao pojam nakon što se "liberalizam" počeo koristi izvan svog izvornog značenja. U teoriji bi trebali biti ekvivalentni, ali postoje razlike. Oba se zalažu za prava na slobodne i pravedne izbore, građanska prava, slobodu tiska, religije, i trgovine.

@@ -1,4 +1,4 @@
-# Managemenet
+# Management
 
 ## Povjerenje
 

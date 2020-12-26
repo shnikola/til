@@ -1,4 +1,16 @@
-# Riža
+# Žitarice
+
+## Riža
+
+Riža je s razlogom jedna od najpopularnijih žitarica. Iznimno je zasitna i, čuvana na suhom mjestu, traje zauvijek.
+
+Riža je čisti ugljikohidrat, pa je potrebno dodati proteine i druge nutrijente za kompletan obrok.
+
+Riža dugog zrna je najbolja za univerzalni prilog ili kao baza za fried rice. Kratkozrna riža je malo teža za pripremanje i slabije trpi hlađenje i podgrijavanje.
+
+## Ječam
+
+Ječam ima visok udio proteina i željeza, pa za malo cijenu može povećati nutritivnost jela. Koristi ga u juhama, varivima ili u kombinaciji s rižom.
 
 # Recepti
 

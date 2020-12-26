@@ -6,6 +6,14 @@ Disclaimer prije svakog savjeta o odgoju: postoji golema varijanca među djecom,
 
 To treba imati na umu i kad uspoređuješ sebe s drugim roditeljima. Neki roditelji imaju sreću da dobiju lako dijete, i onda se čude zašto jednostavno ne radiš isto što i oni, jer oni su očito fantastični roditelji, a tebi ide grozno.
 
+## Trud
+
+Nikada nemoj pohvaliti dijete zato što je pametno, nego zato što se trudilo.
+
+## Čitanje
+
+Jedan od velikih faktora u akademskom uspjehu djece je da roditelji redovno, i od rane dobi čitaju djetetu i čitaju s djetetom.
+
 ## Svijet je okrutan
 
 Omogući djetetu dosljedno i sigurno okruženje, ali nauči ga da svijet *nije* pošten, da on nije uvijek najbolji ili najpametniji u prostoriji (i da ne bi ni trebao biti), i da je drugim ljudima stalo mnogo više do njih samih nego do njega.

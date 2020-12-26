@@ -49,3 +49,6 @@ Kad kvasac (bilo svježi bilo suhi) miješaš s mlakom vodom ili mlijekom, najbo
 * U **200g brašna** dodaj **125g hladnog maslaca**, **1 jaje** i **malo soli**. Izmiješaj rukom. Ako se previše mrvi, samo malo smoči ruku.
 * Kuglu stavi u frižider da se ohladi, pa razvaljaj i utisni u kalup, izbodi vilicom i stavi u zamrzivač na 10 minuta.
 * Peci 10 minuta u pećnici na `180`, pa izvadi i dodaj punjenje, pa vrati u pećnicu na još pola sata ili koliko već bude trebalo.
+
+Punjenja:
+* **100g slanine** i **2 porulika** nasjeckaj, izdinistaj, pa pomiješaj s **3 jaja** i **100g naribanog sira** i **100ml vrhnja**. Ukrasi pomicama.

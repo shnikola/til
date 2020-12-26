@@ -23,7 +23,7 @@ Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. 
 
 ## Rendering partials
 
-Ako renderiraš velik broj partiala u loopu, koristi `render @products` jer je brži od `render product` u loopu (ne mora raditi lookup svaki put iznova).
+Ako renderiraš velik broj partiala u loopu, koristi `render @products` jer je brži od `render product` u loopu (ne mora raditi lookup svaki put iznova). Ako trebaš nestandardni template, koristi `render partial: "product", collection: @products, as: :product_item`.
 
 ## Helperi s blokovima
 

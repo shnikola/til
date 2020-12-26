@@ -60,6 +60,7 @@ Metode za traženje mogu se pozvati nad `document` (za sve) ili `el` (za djecu e
 `el.parentNode` za parent element. `el.nextSibling` i `el.previousSibling` za iteraciju po djeci svog parenta.
 `el.childNodes` *live* collection djece. Uključuje text nodeove (čak i sa samo whitespaceom) i comment nodove.
 `el.children` *live* collection djece, vraća samo elemente (bez teksta i komentara) _IE9+_
+`el.closest(".name)` nalazi najbliži parent (uključujući `el`) koji odgovara zadanom queriju.
 
 `el.innerHTML` vraća string HTMLa sve djece elementa.
 `el.textContent` vraća spojen tekst sve djece elementa (bez tagova). _IE9+_
@@ -165,7 +166,8 @@ Pozicija elementa:
 `window.scroll(x, y)` scrolla dokument do danih koordinata.
 `window.scrollBy(x, y)` scrolla dokument za danu količinu piksela.
 `el.scrollTop = ` scrolla element do danih koordinata.
-`el.scrollIntoView()` scrolla dokument dok element nije cijeli vidljiv. _IE 8+_
+`el.scrollIntoView()` scrolla dokument dok element nije cijeli vidljiv.
+`el.scrollIntoView({behavior: 'smooth', block: 'center'})` scrolla smoothly dok element nije centriran.
 
 `window.addEventListener('scroll', ...)` osluškuje scroll cijelog dokumenta. Često uz `scroll`, želiš slušati i `resize`. Kao i kod njega, treba throttlati callback.
 
@@ -309,6 +311,23 @@ Svaki pointer event ima `pointerType`: `mouse`, `touch`, `pen`, blank ako browse
 
 Može se dogoditi da korisnik klikne na element, ali pusti button izvan elementa, što neće triggerati `mouseup` na elementu. Pointer eventi dopuštaju `el.setPointerCapture(e.pointerId)`, što će na elementu triggerirati sve buduće evente tog pointera.
 
+## Drag and Drop API
+
+Element označi `draggable` atributom i definiraj listener:
+`element.addEventListener("dragstart", handler)`
+
+U handleru definiraj podatke koji se dragaju, npr.
+`e.dataTransfer.setData("text/plain", e.target.id)`
+`e.dataTransfer.setData("text/plain", e.target.innerText)`
+`e.dataTransfer.setData("text/html", e.target.outerHTML)`
+
+`ev.dataTransfer.dropEffect = 'copy'` definira kako će se prikazati korisnički kursor. Može biti `copy`, `move`, `link`.
+
+Drop zonu definiraj s `dragover`, `dragenter`, `dragleave` i `drop` listenerima:
+`e.target.appendChild(e.dataTransfer.getData("text/html"))`
+
+Svakako dodaj `e.preventDefault()` u drop zone listenere da izbjegneš koliziju s drugim touch i pointer eventima.
+
 ## Editable Content
 
 `contenteditable="true"` (`true` je obavezan) atribut na elementu učinit će taj element editabilnim u browseru, čak i ako se radi o `div` ili `label` elementu. Sva djeca elementa će također naslijediti vrijednost atributa.
@@ -343,17 +362,21 @@ Za deselektiranje: `selection.removeAllRanges()`.
 `selectionstart` event se triggerira kad user počne selektirati.
 `selectionchange` kada se selekcija promijeni.
 
-## Copy Paste
+## Clipboard API
 
-Za copy u clipboard iz koda, `document.execCommand('copy')` kopira trenutnu selekciju čak i izvan `contenteditable`. Firefox zbog sigurnosti zahtjeva da je unutar callbacka na korisnikovu akciju.
+`navigator.clipboard.writeText(copyText)` kopira text u clipboard.
+`navigator.clipboard.write(data)` omogućuje kopiranje drugog tipa sadržaja, npr. Blob za kopiranje slika. `data` je oblika `[new ClipboardItem({ [blob.type]: blob })]`
 
-Za prepoznavanje copy eventa, bilo od korisničkog kopiranja s CTRL+C, bilo od `execCommand`, koristi `document.addEventListener('copy', e => ...)`.
+Programsko dodavanje podataka u clipboard omogućuje pastejacking, pa budi oprezan kada pasteaš u kritična mjesta (npr. u terminal). Čitanje iz clipboarda će tražiti userovo dopuštenje, ali ne vidim razlog da se ikad koristi.
 
-Event callback može dodati vrijednost u korisnikov clipboard pomoću `e.clipboardData.setData('text/plain', 'Hello')`. Pristup clipboardu pomoću `getData` nije dozvoljen.
+## Fullscreen
 
-Programsko dodavanje podataka u clipboard omogućuje pastejacking, pa treba biti oprezan sa stvarima koje kopiraš s neta.
+`document.fullscreenEnabled` provjerava može li se ići u fullscreen.
+`element.requestFullscreen()` će prikazati element u fullscreenu.
+`document.fullscreenElement` element koji je trenutno u fullscreenu (ili null).
+`document.exitFullscreen()` izlazi iz fullscreena.
 
-## Geolocation _IE 9+_
+## Geolocation
 
 `position = navigator.geolocation.getCurrentPosition()` vraća podatke o trenutnoj lokaciji uređaja.
 
@@ -400,6 +423,11 @@ Omogućuje korištenje ulaznih uređaja poput kamere i mikrofona.
 
 `constraint` je oblika `{audio: true, video: true}`. Za korištenje prednje kamere `{video: {facingMode: {exact: "user"}}}`.
 
+Možemo izvuči frameove iz video streama pomoću:
+`imageCapture = new ImageCapture(mediaStream.getVideoTracks()[0])`
+`imageCapture.grabFrame().then(imageBitmap => ...)` vraća ImageBitmap.
+`imageCapture.takePhoto().then(blob => ...)` vraća Blob.
+
 `navigator.mediaDevices.addEventListener('devicechange', ...)` za prepoznavanje ako se novi input uređaj spoji na računalo.
 
 ## Media Session API
@@ -430,17 +458,11 @@ Kada se pušta `audio` ili `video` na mobilnom browseru, u notification panelu p
 
 ## Vibration API
 
-`navigator.vibrate(200)` - vibriraj 200ms
-`navigator.vibrate([200, 100, 200])` - vibriraj 200ms, pauza 100ms, vibriraj 200ms
-`navigator.vibrate(0)` - prekini trenutnu vibraciju
+Browser može reći mobitelu da vibrira.
 
-## Battery Status API
-
-`navigator.getBattery()` - vraća promise s BatteryManager objektom
-`BatteryManager.charging` puni li se trenutno. Event: `chargingchange`
-`BatteryManager.chargingTime` vrijeme u sekundama dok se ne napuni. Event: `chargingtimechange`
-`BatteryManager.dischargingTime` vrijeme u sekundama dok se ne isprazni. Event: `dischargingtimechange`
-`BatteryManager.level` napunjenost baterije između 0.0 i 1.0. Event: `levelchange`
+`navigator.vibrate(200)` vibrira 200ms.
+`navigator.vibrate([200, 100, 200])` vibrira 200ms, pauza 100ms, vibrira 200ms.
+`navigator.vibrate(0)` prekida trenutnu vibraciju.
 
 ## Timing API
 
