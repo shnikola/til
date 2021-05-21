@@ -28,6 +28,12 @@
 
 "It is apparent that the mere knowledge that a man was either a camp guard or a prisoner tells us almost nothing. Human kindness can be found in all groups, even those which as a whole it would be easy to condemn. The boundaries between groups overlapped and we must not try to simplify matters by saying that these men were angels and those were devils." - Viktor E. Frankl
 
+"A child free from the guilt of ownership and the burden of economic competition will grow up with the will to do what needs doing and the capacity for joy in doing it. It is useless work that darkens the heart. The delight of the nursing mother, of the scholar, of the successful hunter, of the good cook, of the skillful maker, of anyone doing needed work and doing it well – this durable joy is perhaps the deepest source of human affection and of sociability as a whole." - Ursula K. LeGuin
+
+"We live in capitalism, its power seems inescapable – but then, so did the divine right of kings. Any human power can be resisted and changed by human beings. Resistance and change often begin in art." - Ursula K. LeGuin
+
+"I am not trying to say that I was happy, during those weeks of hauling a sledge across an ice-sheet in the dead of winter. I was hungry, overstrained, and often anxious, and it all got worse the longer it went on. I certainly wasn't happy. Happiness has to do with reason, and only reason earns it. What I was given was the thing you can't earn, and can't keep, and often don't even recognize at the time; I mean joy." - Ursula K. LeGuin
+
 "...The best leaders are those the people hardly know exist.
 The next best is a leader who is loved and praised.
 Next comes the one who is feared.

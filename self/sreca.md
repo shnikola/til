@@ -8,6 +8,8 @@ Dovršavaj započete projekte. Vodi evidenciju stvar koje si napravio ili nauči
 
 Budi dio većih stvari. Tako ćeš osjetiti da vrijediš.
 
+Uvijek pokušaj. Zaboravit ćeš stvari koje si pokušao i ne uspio, ali ćeš uvijek žaliti za onim što nisi ni probao.
+
 Okruži se kvalitetnim ljudima. Kada provodiš vrijeme s nekim, posveti mu 100% svoje pažnje.
 
 Ukloni izvore nesreće iz svog života. Ne troši vrijeme na stvari koje ne voliš.
@@ -51,6 +53,7 @@ Izračunaj koliko sat tvog vremena vrijedi. Ponekad je problem bolje riješiti n
 ## Stresne situacije
 
 Ako te čeka važan poslovni sastanak, strašan liječnički pregled ili težak razgovor s nekim - podsjeti se da će **do 7 navečer problem proći** i više neće biti bitan. Ako nije bitan nakon X vremena, vjerojatno nije bitan ni sada.
+
 
 ## Mudrost
 

@@ -12,35 +12,33 @@ https://html.spec.whatwg.org/multipage/introduction.html#design-notes
 
 ## <head>
 
-Must-have tagovi koji idu na sam početak heada:
-* `<meta charset="utf-8">` definira encoding dokumenta koji slijedi.
-* `<meta name="viewport" content="width=device-width, initial-scale=1">` prilagođava viewport za mobilne uređaje.
-* `<meta http-equiv="x-ua-compatible" content="ie=edge">` ako želiš podržavati stare IE, ovo ih tjera da se ponašaju što modernije mogu.
+`<meta charset="utf-8">` se stavlja na sam početak i definira encoding dokumenta.
 
-`<title> Page Title </title>` je naslov stranice koji se prikazuje u tabu i na search rezultatima.
+`<meta name="viewport" content="width=device-width, initial-scale=1">` omogućuje responzivnost. Postavlja širinu viewport na širinu devicea. `initial-scale` možda više nije potreban.
 
-`<meta name="description" content="A description of the page">` opis stranice do 150 znakova. Možda se prikaže kod search resulta (Google to odlučuje).
+`<title> Page Title </title>` naziv koji se prikazuje u tabu, ključan je za SEO. Za custom sharing title, koristi `og:title`.
 
-`<base href="https://example.com/admin/">` postavlja bazu na koju idu svi relativni pathovi u dokumentu. Nažalost, to vrijedi i za `href='#id'` linkove, što može biti problematično, pa ga izbjegavaj.
-`<base target="_blank">` postavlja defaultni `target` za sve linkove.
+`<meta name="description" content="About this page.">` opis stranice do 160 znakova. Možda se prikaže kod search resulta (Google to odlučuje). Za custom sharing description, koristi `og:description`.
 
-## <link>
+`<meta property="og:image" content="image.jpg">` slika koja će se prikazivati uz share preview. Po mogućnosti kvadrat, ali da se može cropati kao 2:1 pravokutnik.
 
-`<link rel="canonical" href="https://example.com/how-to-dance.html">` koristi u slučaju objavljivanja stranice pod različitim URLovima, pa crawleri neće misliti da imaš duplicirani sadržaj.
+`<link rel="canonical" href="https://www.mywebsite.com/page">` ako ista stranica ima više URL-ova, kako crawleri ne bi mislili da imaš duplicirani sadržaj.
 
-`<link rel="alternate" hreflang="es" href="http://es.example.com/">` za stranicu na drugom jeziku.
+`<link type="application/atom+xml" rel="alternate" href="/feed.xml" title="My Blog">` linka na RSS feed.
 
-`<link rel="manifest" href="/manifest.webmanifest">` manifest za web aplikacije.
+`<meta name="format-detection" content="telephone=no">` isključuje automatsku detekciju i formatiranje telefonskih brojeva.
 
-`<link rel="author" href="humans.txt">` podatci o autorima stranice.
+## Favicons
 
-Za seriju dokumenata koristi `<link rel="first">`, `rel="prev"`, `rel="next"`, `rel="last"`. `rel="index"` za sadržaj.
+`<meta name="theme-color" content="#ffffff">` definira boju UI-a na Android uređajima.
+`<link rel="icon" href="/favicon.ico">` fallback za stare browsere. To je skup slika dimenzija 16x16, 32x32 i 48x48.
+`<link rel="icon" href="/favicon.svg">` većina novih browsera podržava SVG favicon.
 
-`<link rel="icon">` služi za postavljanje favicona. Treba ih više nego što misliš. Koristi https://realfavicongenerator.net
+Za homepage ikone na mobilnim uređajima koristi:
+* `<link rel="apple-touch-icon" href="apple-touch-icon.png">` za Apple,
+* `<link rel="manifest" href="manifest.json">` za Android.
 
-## <meta>
-
-`<meta http-equiv="Header-Name" content="Header value">` se može koristiti kao ekvivalent nekih HTTP headera u slučaju da nemaš pristup nad konfiguracijom servera. Npr. `<meta http-equiv="Content-Security-Policy" content="default-src 'self'">`.
+## SEO
 
 Indeksiranje search enginea je po defaultu uključeno, ali može se isključiti s `<meta name="robots" content="noindex">`:
 * `noindex` neće indexirati stranicu.
@@ -52,13 +50,16 @@ Indeksiranje search enginea je po defaultu uključeno, ali može se isključiti 
 `<meta name="google" content="nositelinkssearchbox">` u rezultatima searcha neće prikazivati linkove na druge stranice tvog sitea.
 `<meta name="google" content="notranslate">` neće ponuditi prijevod ove stranice.
 
-`<meta name="format-detection" content="telephone=no">` isključuje automatsku detekciju i formatiranje telefonskih brojeva.
-
-Za geolokaciju, koristi:
+Za stranice vezane uz lokaciju možeš dodati geopodatke:
 * `<meta name="ICBM" content="50.167958, -97.133185">`
 * `<meta name="geo.position" content="50.167958;-97.133185">`
 * `<meta name="geo.placename" content="Rockwood Municipality, Manitoba, Canada">`
 * `<meta name="geo.region" content="ca-mb">`
+
+## Headers
+
+Ako želiš poslati HTTP header, a nemaš pristup konfiguraciji servera, možeš ga postaviti kroz HTML pomoću `<meta http-equiv>`.
+Npr: `<meta http-equiv="Content-Security-Policy" content="default-src self">`
 
 ## <a>
 
@@ -263,6 +264,10 @@ Input se mogu grupirati pomoću `<fieldset>`, a svaka grupa može imati svoj `<l
 
 `alt` je obavezan atribut, pa makar i prazan. Ako slika ima ikakvo značenje, stavi njen tekstualni opis.
 
+`width` i `height` ako unaprijed znaš veličinu slike, kako bi izbjegao content shift.
+
+`loading="lazy"` će odgoditi učitavanje slika dok se ne približe viewportu. Defaultno je `eager`.
+
 `ismap` označava da je slika karta. Ako je slika u `<a>` elementu, klik na nju će poslati na server i koordinate klika. Alternativno, `usemap="#world"` može referencirati `<map name="world">` element s `<area>` linkovima.
 
 Ako želiš imati responzivan image, koristi `srcset` s listom urlova s različitim veličinama. Browser će odlučiti koju da upotrijebi. Za fallback koristi `src` atribut.
@@ -296,7 +301,7 @@ Koristi iste atribute kao i `<audio>`, i još neke dodatne.
 
 `<object>` može u sebi imati više `<param>` za prosljeđivanje parametara.
 
-## data-uri _IE8+_
+## data-uri
 
 URI koji sadrži inline data. Koriste se kako bi se uštedio request.
 Format je `data:[<media type>][;base64],<data>`. (npr. `data:image/png;base64,iVBORw0KGgoAA...`)

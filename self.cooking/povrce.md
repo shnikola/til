@@ -6,9 +6,9 @@
 
 `Pire krumpir` se napravi kremastijim dodavanjem mlijeka, maslaca ili kiselog vrhnja. Od pirea se mogu napraviti `kroketi`: dodaj brašno i poprži; `duchess potato`: stavi u tuljac za šlag s malo jaja, napravi male loptice i ispeci ih 15 minuta na 220.
 
-`Scalloped krumpir`  oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnje
+`Scalloped krumpir`  oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnjem.
 
-`Hash browns` naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom.
+`Hash browns` naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Pomiješaj s nasjeckanim lukom i jajetom. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom ili vrhnjem.
 
 **Batat** je daleki rođak krumpira. Pri kuhanju povlači puno vode, pa ako radiš pire bolje ga je staviti u pećnicu.
 
@@ -57,4 +57,3 @@ Arapska i afrička kuhinja imaju sjajnih recepata za grahorice: humus, falafeli,
 * Pazi da luk ne ostane na rubu tave jer će se osušiti. Ako dno izgleda suho, dodaj još ulja.
 * Nakon 15-ak minuta sav luk bi trebao biti lijep smeđi, stavi ga na jako slabu vatru (miješaj češće dok se tava ne ohladi) miješajući svakih 5-8 minuta. Luk će sad početi puštati tekućinu i kupiti one lijepe smeđe komade s dna tave.
 * Kuhaj 20-40 minuta, ovisno koliko želiš da budu karamelizirani. Na kraju posoli po potrebi ili dodaj malo **balzamičnog octa** za kiselost.
-

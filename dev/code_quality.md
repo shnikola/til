@@ -32,6 +32,8 @@ Duplikacija je naporna i čest izvor bugova. Ali ako duplikaciju zamijeniš pogr
 
 Zato uvijek počni od duplikacije. Duplikacija je mnogo jeftinija od pogrešne apstrakcije.
 
+Treba naglasiti da se DRY koncept ne odnosi na proceduralni kod, nego na znanje. Da li će negdje dvaput pisati `if` je nebitno. Bitno je da se business logika ne duplicira, jer se često mijenja i njena duplikacija često dovodi do bugova.
+
 ## Refactoring
 
 Jedini razlog refaktoriranja koda je kako bi ga se lakše mijenjalo u budućnosti. Refactoring treba biti "safe and boring" - puno testova koje nakon svake pojedine promjene pokrećeš.

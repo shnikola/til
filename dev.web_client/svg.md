@@ -72,6 +72,11 @@ Izgled SVG elemenata se može definirati na više načina:
 
 * `d: path("M2,2 Q8,2 8,8")` za mijenjanje patha
 
+## Darkmode
+
+`@media (prefers-color-scheme: dark) { path { fill: white; } }` mijenja boju ovisno light/dark modu. Posebno korisno za tamne favicone.
+
+
 ## Savjeti
 
 * definiraj oblike po funkciji, ne po izgledu. kasnije ćeš ih stilizirati.

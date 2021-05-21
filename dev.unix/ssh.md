@@ -2,23 +2,24 @@
 
 `ssh <user>@<host>` otvara shell na remote stroju. Ali može i još mnogo drugih stvari!
 
-*Local port forwarding* (`-L <local>:<remote>`) šalje *lokalni* promet SSH tunelom do *remote* hosta. Korisno za spajanje na serverov DB.
+**Local port forwarding** (`-L <local>:<remote>`) šalje **lokalni** promet SSH tunelom do **remote** hosta. Korisno za spajanje na serverov DB.
 Primjer: `-L 9000:localhost:5432` promet lokalnog porta `9000` šalje na SSH server koji ga prosljeđuje svom localhostu na port `5432` (gdje se nalazi DB).
 
-*Remote port forwarding* (`-R <remote>:<local>`) šalje promet s *remote* hosta SSH tunelom na *lokalni* stroj. Korisno za spajanje izvana na tvoj lokalni stroj dok developaš.
+**Remote port forwarding** (`-R <remote>:<local>`) šalje promet s **remote** hosta SSH tunelom na **lokalni** stroj. Korisno za učiniti development stroj dostupnim javnoj mreži.
 Primjer: `-R 9000:localhost:3000` promet `<host>:9000` prosljeđuje se tvom lokalnom računalu na port `3000`.
 
-*Dynamic port forwarding* (`-D <port>`) koristi lokalni port kao SOCKS proxy, pa *sav* promet možeš tunelirati preko SSH.
+**Dynamic port forwarding** (`-D <port>`) koristi lokalni port kao SOCKS proxy, pa **sav** promet možeš tunelirati preko SSH.
 Primjer: `ssh -D 5555 server`, i u browseru ili curlu možeš podesiti proxy na `localhost:5555`.
 
-*Agent Forwarding* (`-A`) prosljeđuje tvoje lokalne private keyeve SSH serveru, pa možeš pullati s Githuba bez da dodaješ deployment keyeve. Moraš turbo vjerovati serveru da bi ovo koristio.
+**Agent Forwarding** (`-A`) prosljeđuje tvoje lokalne private keyeve SSH serveru, pa možeš pullati s Githuba bez da dodaješ deployment keyeve. Moraš turbo vjerovati serveru da bi ovo koristio.
 
-*Command execution* (`ssh <user>@<host> <cmd>`) izvodi naredbu na remote stroju, a rezultat možeš normalni pipeati lokalno. U `.ssh/authorized_keys` mogu se dodati naredbe (`command=...`) koje se obavezno izvode prije otvaranja shella. Tako rade Github i Heroku protokoli, koji interno koriste SSH, ali whitelistaju samo dio naredbi, dok otvaranje shella ne dopuštaju.
+**Command execution** (`ssh <user>@<host> <cmd>`) izvodi naredbu na remote stroju, a rezultat možeš normalni pipeati lokalno. U `.ssh/authorized_keys` mogu se dodati naredbe (`command=...`) koje se obavezno izvode prije otvaranja shella. Tako rade Github i Heroku protokoli, koji interno koriste SSH, ali whitelistaju samo dio naredbi, dok otvaranje shella ne dopuštaju.
 
 Neke kul opcije:
 * `~C` dok si u shellu otvara SSH konzolu, gdje možeš dodati opcije kao `-L` i `-R`.
-* `~?` za popis svih escape sekvenci.
-* `-fNn` za tuneliranje bez da se otvori remote terminal.
+* `-fNnT` stvara tunel u backgroundu bez da otvori remote terminal.
+
+## Authentication
 
 Obavezno koristi passwordless authentifikaciju.
 
@@ -44,3 +45,6 @@ Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/confi
 
 `rsync -nv` koristi za probu, ne kopira ništa nego ispisuje što bi se sve kopiralo.
 
+# Literatura
+
+* https://robotmoon.com/ssh-tunnels

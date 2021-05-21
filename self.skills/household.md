@@ -18,6 +18,10 @@ Mjesečno:
 
 Kada ideš na put duži od 5 dana, očisti stan. Najbolja stvar je vratiti se u pospremljenu kuću.
 
+## Bacanje
+
+Ako se uloviš da tražiš onaj dobar nož u ladici, to znači da imaš X loših noževa. Baci ih.
+
 ## Uređaji
 
 Koji god uređaj da uzimaš, uzmi ga na minimalno 5 godina garancije.

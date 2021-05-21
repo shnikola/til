@@ -3,7 +3,7 @@
 Poštivanje semantičkih struktura riješit će 90% accessibility problema.
 Standarde poput `WAI-ARIA` koristi samo u krajnjoj nuždi.
 
-## <img alt=...>
+## Images
 
 Uvijek dodaj `alt` atribut na `<img>`, `<svg>` i `<picture>`. Uvijek!
 * Za value stavi opis onog što je na slici (ali nemoj pisati "image of...").

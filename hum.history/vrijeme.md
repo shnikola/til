@@ -22,6 +22,8 @@ Kina, iako rasprostranjena kroz 4 vremenska pojasa, ima samo jednu vremensku zon
 
 Samoa je preskočila 30. prosinac 2011. Nalazi se istočno od datumske granice, ali pošto su joj trgovački partneri Kina, Australija i Novi Zeland s druge strane, pa su 2011. odlučili preći datumsku granicu kako bi olakšali ekonomske transakcije. Američka Samoa koja je udaljena samo 100 km je ostala u staroj vremenskoj zoni i sada je vremenski 24 sata iza Samoe. Ista stvar se dogodila 4. srpnja 1892., samo u suprotnom smjeru, kada je Samoa prešla na stranu Amerike koja je tad bila partner. Te godine su u kalendaru imali dan nezavisnosti dvaput.
 
+U rujnu 2013. Palestinci na Zapadnoj obali su se nesporazumom prebacili na zimsko računanje vremena mjesec dana prije Izraelaca, pa je Zapadna obala postalo jedino mjesto na svijetu gdje je vremenska zona definirana etnički, a ne geografski.
+
 ## Daylight Savings Time
 
 Benjamin Franklin je 1784. poslao pismo pariškim novinama i preporučio da Parižani ne ustaju po satu, nego sa suncem kako bi štedili svijeće. Ali nije predložio DST, jer se tad ljudi nisu baš držali striktnog rasporeda. Preciznije mjerenje vremena došlo je tek s industrijalizacijom i željeznicom.

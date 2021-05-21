@@ -18,15 +18,20 @@ Serviraj uz sweet chili sauce. U chili možeš joj dodati mljevenih kikirikija i
 
 Rolice možeš puniti klicama, jajem, ili suhim gljivama. Bitno da su sastojci suhi, zbog prženja.
 
-## Tom Yum
+## Tom Yam Kung
 
-* **250ml pilećeg temeljca** zakuhaj i unutra ubaci **10g galangala** (nasjeckaj), **1 stabljiku lemongrasa** (istuci i nasjeckaj ili zaveži u čvor) i **4-5 listova limete** (odvoji srednju venu). Ništa od ovog se ne jede, ali daje sjajan miris.
-* Kad provrije, dodaj **80g šampinjonja ili bukovača** (prepolovljenih ili raščetvorenih) i **žličicu soli**. Ako radiš pileći tom yum, dodaj **150g narezane piletine**.
-* Kad provrije, dodaj **1 pomu narezanu na kriške**, za kiselost. Kuhaj par minuta dok se kora ne počne guliti.
-* Ako radiš s kozicama, sad dodaj **7-8 kozica**. Njima treba svega par minuta da budu gotove. Dodaj **par žličica čili paste**, **par žličica oyster sosa**, **par žličica soja sosa** i **pola žličice šećera**.
-* Iscijedi **1 limetu** (koliko već kiselo voliš) i po želji dodaj **100ml kokosovog mlijeka**. Pospi nasjeckanim korijanderom.
+* **1.5l pilećeg temeljca** zakuhaj i unutra ubaci **50g galangala** (nareži na ploške), **4 stabljike lemongrasa** (istuci i nareži na krupnije komade ili zaveži u čvor) i **10ak listova limete** (odvoji srednju venu). Ništa od ovog se ne jede, ali daje sjajan miris.
+* Kad provrije, dodaj **200g gljiva** (šampinjoni, bukovače, shitake) i **žličicu soli**.
+* Kad provrije, dodaj **3 pome narezane na kriške**, za kiselost. Kuhaj par minuta dok se kora ne počne guliti.
+* Dodaj **15ak kozica**. Njima treba svega par minuta da budu gotove. Dodaj **par žličica čili paste**, **par žličica oyster sosa**, **par žličica soja sosa** i **žličicu šećera**.
+* Iscijedi **1 limetu** (koliko već kiselo voliš) i pospij sjeckanim korijandrom.
 
 Tom yum se jede kao glavno jelo, uz rižu.
+
+Varijante:
+- `Tom yam kathi` umiješaj **kokosovo mlijeko** nakon kuhanja.
+- `Tom yam pla` dodaj komade ribe umjesto kozica.
+- `Tom yam gai` dodaj narezanu piletinu kad dodaješ gljive.
 
 ## Pileći wok s oraščićima
 

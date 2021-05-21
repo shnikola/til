@@ -52,3 +52,4 @@ Kad kvasac (bilo svježi bilo suhi) miješaš s mlakom vodom ili mlijekom, najbo
 
 Punjenja:
 * **100g slanine** i **2 porulika** nasjeckaj, izdinistaj, pa pomiješaj s **3 jaja** i **100g naribanog sira** i **100ml vrhnja**. Ukrasi pomicama.
+* **100g dimljenog lososa** s dinstanim porilukom i skutom

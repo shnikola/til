@@ -34,7 +34,7 @@ Dok je Isus propovjedao, sljedbenici se vjerovali da je on mesija. Kad je umro, 
 
 Glavno pitanje je kako usuglasiti Isusovo božanstvo s judaističkim učenjem da postoji samo jedan Bog.
 
-**Adapcionisti** (ili Teodicijanci, po začetniku koji je prilikom progona zanijekao Krista pa je izgradio teoriju da se opravda) su smatrali da je Isus obični čovjek kojeg je Bog odabrao da bude mesija. Prilikom krštenja u Isusovo tijelo ušlo je božansko biće, Krist, u obliku golubice. Krist je napustio ljudsko tijelo dok je umiralo na križu, jer božansko ne može patiti. Zato je Isus zavapio: "Oče, zašto si me ostavio?".
+**Adapcionisti** su smatrali da je Isus obični čovjek kojeg je zbog pravednosti Bog odabrao da bude mesija. Prilikom krštenja u Isusovo tijelo ušlo je božansko biće, Krist, u obliku golubice. Krist je napustio ljudsko tijelo dok je umiralo na križu, jer božansko ne može patiti. Zato je Isus zavapio: "Oče, zašto si me ostavio?". Adapcionizam je moderni naziv koji pokriva više grupa: Ebionite, židove koji su smatrali Isusa samo mesijom i nastavili slijediti Mojsijev zakon o samo jednom bogu; Teodicijance, po začetniku koji je prilikom progona zanijekao Krista pa je izgradio teoriju da se opravda.
 
 **Doketisti** (grč. *doceto*, činiti se) su smatrali da je Krist bio isključivo božansko biće, a da je njegova ljudska strana (rođenje, tijelo, smrt) bila iluzija. Postojale su razne struje pod utjecajem gnostika (tijelo je zlo) i manihejaca (borba dobra i zla). Problem je što je istom logikom Isusova patnja i žrtva za čovječanstvo također iluzija, što se objašnjavalo "mističnom fikcijom križa" ili time da je Bog poslao anđela da pati na križu umjesto Krista.
 
@@ -101,6 +101,10 @@ U gnostičkom **Filipovom evanđelju** iz 3. stoljeća (pronađenog u pećini 19
 Postoji evanđelje koje povezuje Isusa, Mariju Magdalenu i seks, ali ne na način na koji bi čovjek pomislio. O njemu piše **Epifanije Salaminski**, ne baš pretjerano pouzdan hereziolog, u svojoj knjizi *Panarion* gdje predstavlja 80 različitih hereza. Među njima su Fibioniti i njihova knjiga "Velika pitanja Marijina" (The Greater Questions of Mary) iz koje daje samo jedan citat: Isus dovodi Mariju Magdalenu na vrh planine, iza leđa izvuče ženu i počne se seksati s njom. Kada dođe do klimaksa, vadi ga van, sakupi sjeme u ruke, pojede ga i kaže: "Ovo moraš raditi ako želiš život vječni." Marija Magdalena se onesvijesti.
 
 Epifanije, stari voajer, tvrdio je da ovo evanđelje replicira njihove rituale: oni bi se nalazili po noći, rukovali, a pravi članovi bi se poškakljali po zapešću da se prepoznaju. Kad bi ostali otišli, insideri bi imali veliku gozbu, napili se, pa razmijenjivali supružnike i išli se seksati. Kad bi muškarci svršili, izvadili bi ga, pojeli sjeme i rekli "Ovo je tijelo kristovo", a ako bi žena ima mensturaciju, pojeli bi i to govoreći "Ovo je krv kristova".
+
+## Čavli
+
+**Triklavianisti** vjeruju da su Isusa razapeli s **tri čavla**, a ne četiri kako se obično prikazuje. Papa Inokent III. je navodno ovo vjerovanje proglasio herezom, ali nema izvora koji to potvrđuju. Glavni argument za četiri čavla je stigmata Sv. Frane Asiškog, kojem su se na oba stopala ukazali utisci u obliku glave čavla.
 
 # Literatura
 

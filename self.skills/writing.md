@@ -1,5 +1,17 @@
 # Writing
 
+## Plain English
+
+Koristi **aktivne glagole** umjesto pasivnih - pasivni oblik često zvuči nespretnije i birokratskije. Npr. umjesto `This matter will be considered by us shortly` koristi `We will consider this matter shortly`.
+
+Pasiv koristi iznimno ako želiš ublažiti naredbu ili optužbu, npr. umjesto `You have not paid this bill` koristi `This bill has not been paid`.
+
+Umjesto **glagolskih imenica** koristi glagole. Npr. umjesto `We had a discussion about the matter` koristi `We discussed the matter`.
+
+**Obraćaj se čitatelju s "you"**, a ne s njegovom ulogom. Umjesto `Customers must send us...` koristi `You must send us...`; umjesto `Advice is available from` koristi `You can get advice from`. Slično, za vlastitu organizaciju koristi "We".
+
+Ne izbjegavaj **davati upute**. Umjesto `The packet should be removed from the box`, koristi `Remove the packet from the box.`.
+
 ## Prvi draft
 
 Ne troši vremena u prvu verziju teksta kojeg pišeš. Svaki tekst prolazi kroz desetke verzija prije nego ćeš konačno biti zadovoljan, pa je bolje ne gubiti vrijeme pokušavajući pogoditi pravu riječ iz prve.
@@ -31,3 +43,4 @@ Establiraj da se može umrijeti u filmu kako bi povećao napetost (npr. Moonrise
 # Literatura
 
 * https://en.wikisource.org/wiki/Boil_it_down_(1924)
+* http://www.plainenglish.co.uk/how-to-write-in-plain-english.html

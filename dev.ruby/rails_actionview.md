@@ -46,6 +46,10 @@ Umjesto da koristiš `strftime` u viewovima, definiraj formate u `config/initial
 
 I onda ih koristi u viewu s `date.to_s(:stamp)`.
 
+## Highlight
+
+`highlight(text, string)` će označiti string unutar teksta s `<mark>` tagovima.
+
 ## Asset Host
 
 Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi radi. S3 je ok, ali je napravljen za storage, a ne za delivery. Rješenje je cloudfront - daš mu origin domenu, i samo postaviš
@@ -53,9 +57,7 @@ Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi 
 
 Prvi request na asset cloudfront će proslijediti na origin domenu (naš server), a svi ostali će biti cachirani. Samo pripazi da fileovi imaju hash u imenu kako ne bi bili stale.
 
-## Ne pozivaj html_safe u viewu
+## html_safe
 
-https://bibwild.wordpress.com/2013/12/19/you-never-want-to-call-html_safe-in-a-rails-template/
-
-Samo onaj koji generira string (helper, decorator) treba pozivati `html_safe`! Nitko drugi!
+Samo onaj koji generira string (helper, decorator) treba pozivati `html_safe`. Nemoj ga pozivati u viewu.
 

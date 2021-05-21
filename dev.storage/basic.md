@@ -14,7 +14,7 @@ Pri odabiru vrste spremišta, uzmi u obzir tip aplikacije:
 * Online Transaction Processing: veliki broj korisnika, istovremeno izvršavaju puno malih transakcija. Trebaju biti brze što ostvaruju cachiranjem "live" podataka.
 * Analytics: mali broj korisnika izvršavaju spore querije kroz cijele data setove
 
-Za većinu aplikacija **RDB** isprva nude sve potrebne funkcionalnosti. Druge tehnologije počni uvoditi tek kada se javi potreba za skaliranjem  .
+Za većinu aplikacija **RDB** isprva nude sve potrebne funkcionalnosti. Druge tehnologije počni uvoditi tek kada se javi potreba za skaliranjem.
 
 Event logovi (npr. praćenje korisničkih eventova) često počnu kao append only tablice u relacijskoj bazi. Ali ubrzo postanu problematične jer generiraju velik broj writeova (milijune dnevno) i opterećuju hardware. Ako ne postoji dobar razlog za držanje tih podataka u RDB-u, prebaci ih u specijalizirani storage, npr. AWS Redshift.
 

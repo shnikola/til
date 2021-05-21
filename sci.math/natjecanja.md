@@ -18,6 +18,8 @@ Za naći `x² + y² = 91` raspiši sve kvadrate manje od 91, pa vidi čiji zbroj
 
 Za naći `√(x) + √(y) = √(48)`, prebaci `x` na desnu stranu, pa kvadriraj: `y = 48 - √(48x) + x`, pa vidi kada je `48x` kvadrat za `x <= 48`.
 
+Za naći `x⁴+x³+x²+x+1 = y²`, pretvori polinom s lijeve strane u kvadrat (pomoži jednadžbu s 4 da bude lakše). `(2x²+x)² = 4x⁴+4x³+x²` je premal, `(2x²+x+2)² = 4x⁴+4x³+9x²+4x+4` je prevelik, pa desna strana mora biti `(2x²+x+1)²`.
+
 ### Apsolutne vrijednosti ||
 
 `|komplicirani razlomak| < 1` napiši kao presjek dvije nejednadžbe, `r > -1` i `r < 1`
@@ -30,7 +32,7 @@ Za naći `√(x) + √(y) = √(48)`, prebaci `x` na desnu stranu, pa kvadriraj:
 ### Floor ⌊⌋
 
 `⌊x⌋ = x - x'`, gdje je `x' < 1` (decimalni dio broja `x`)
-`⌊2x⌋ = ⌊2⌊x⌋ + 2x'⌋ = 2⌊x⌋ + ⌊2x'⌋`x
+`⌊2x⌋ = ⌊2⌊x⌋ + 2x'⌋ = 2⌊x⌋ + ⌊2x'⌋`
 `⌊x+y⌋ = ⌊x⌋ + ⌊y⌋ + ⌊x' + y'⌋`
 
 ### Jednadžbe
@@ -113,16 +115,16 @@ Vjerojatno ćeš nešto petljati s apsolutnim vrijednostima i konjugacijom. Ako 
 
 Ako je `|z| = 1`, to znači da je `z = 1/z̄`. Usto, možeš množiti sve s `z*z̄`.
 
-Ako nemaš zadane brojeve, i želiš se riješiti apsolutne vrijednosti, koristi `|z|^2 = z*z̄`.
+Ako nemaš zadane brojeve, i želiš se riješiti apsolutne vrijednosti, koristi `|z|² = z*z̄`.
 
 Konjugacija je super jer se distribuira po zbrajanju, množenju i djeljenju. Ako ti smeta, možeš je se riješiti pod apsolutnom vrijednosti:
 `|z̄| = |z|`, čak i `|z̄ + w̄| = |z + w|`.
 
+`z + z̄ = 2*Re(z)`
+
 Ako imaš potenciju, izbaci je van: `|z²| = |z|²`.
 
-Polinom `P(z)` s korijenima `a, b, c, ...` se može napisati kao `P(z) = (z-a)(z-b)(z-c)`.
-
-U raspisanom obliku to je `z³ + z²(z₁ + z₂ + z₃) + z(z₁z₂ + z₂z₃ + z₁z₃) + z₁z₂z₃`, što je korisno ako imaš zadano jedan od tih koeficijenata.
+Polinom `P(z)` s korijenima `a, b, c, ...` se može napisati kao `P(z) = (z-a)(z-b)(z-c)`. U raspisanom obliku to je `z³ + z²(z₁ + z₂ + z₃) + z(z₁z₂ + z₂z₃ + z₁z₃) + z₁z₂z₃`, što je korisno ako imaš zadano jedan od tih koeficijenata.
 
 Ako imaš zadano jedno rješenje polinoma, podijeli polinom s `z-z₁` da si olakšaš traženje ostalih.
 
@@ -130,14 +132,17 @@ Ako imaš zadano jedno rješenje polinoma, podijeli polinom s `z-z₁` da si ola
 
 ### Znamenke
 
-Ako su ti zadane **rotacije znamenaka** `abc`, `bca`, itd:
-- probaj `10*abc - bca = 999a` (`999 = 3³*37`)
+Broj `A` ima `log(A) + c` znamenaka, gdje je `c ϵ <0, 1]`.
+Vrijedi `A = log(A) + 1` samo ako je `A = 10ⁿ`.
 
-Broj `A` ima `log(A) + c` znamenaka, gdje je `0 < c <= 1` (jednakost je samo ako je `A = 10ⁿ`).
-
-Broj `111...1` s `n` znamenki se može napisati kao `(10ⁿ - 1)/9`
+Kada radiš operacije s brojevima gdje su ti bitne znamenke, probaj ih svesti na dijeljenje/množenje s `10`:
+- Množenje s 9 je `10n - n`.
+- Rotiranje znamenki (`abc -> bca`) vrijedi `10*abc - bca = 999a`.
+- Ponavljanje n znamenki (`111...1`) se može napisati kao `(10ⁿ - 1)/9`.
 
 ### Djeljivost
+
+Za dokazati da je broj **cijeli**, prvo dokaži da je racionalan, tj. da se može zapisati kao `p/q`, a onda dokaži da `q` mora biti `1` (npr. kontradikcijom).
 
 Za dokazati da je izraz **paran ili neparan**:
 - `a-b` i `a+b` su iste parnosti.
@@ -158,7 +163,7 @@ Za pronaći **zajednički djeljitelj brojeva** brojeva `a` i `b` (ili, češće,
 - `nzd(a, b) = nzd(a, b - ka)`
 - ako je `p` prost broj, `nzd(a, p)` je ili `p` ili `1`.
 
-Broj `n = p₁^a * p₂^b * ...` ima `(a+1)(b+1)...` djelitelja: eksponent na `p₁` može biti `0, 1, ..., a`, itd. To je ujedno i broj načina na koji se može rastaviti na 2 faktora.
+Broj `n = p₁^a * p₂^b * ...` ima `(a+1)(b+1)...` pozitivnih djelitelja: eksponent na `p₁` može biti `0, 1, ..., a`, itd. To je ujedno i broj načina na koji se može rastaviti na 2 faktora. Ako brojiš i negativne djelitelje, pomnoži s 2.
 
 Složeni brojevi manji od `100` imaju proste faktore manje od `√(100) < 10`: `2, 3, 5, 7`.
 
@@ -171,6 +176,8 @@ Prvo gledamo djeljivost s 5 tako da napišemo uzastopne brojeve kao `(5l)²`, `(
 ## Kombinatorika
 
 Šahovski turnir (1 bod za pobjedu, 0.5 za izjednačenje, 0 za poraz), traži se broj igrača s nekim zadanim uvjetom (npr. svaki igrač je dobio pola bodova u partijama za zadnjom trojicom u krajnjem poretku). Ključno je primjetiti da je broj podijeljenih bodova jednak broju odigranih partija.
+
+Ako imaš neki proces koji mijenja početne brojeve, npr. `(a, b, c) => (3a-b, 3b-c, 3c-a)` i treba dokazati da se ne može doći do neke trojke, tražiš nešto što ostaje isto prilikom transformacije. Provjeri kako se mijenja zbroj, ili parnost tih brojeva, i da li je to kontradiktorno traženoj trojci.
 
 20 ljudi šalje po 10 poruka ostalima, koliko će biti obostranih poruka? Ukupno poruka je `20*10 = 200`, a ukupno "kanala" `20*19/2 = 190`. To znači da će 10 poruka morati ići istim kanalima, tj. biti obostrane.
 

@@ -128,6 +128,14 @@ Unutar callback funkcije:
 
 Sve ovo navedeno je _IE9+_. Starije verzije _IE_ koriste sasvim drugi API, `attachEvent`, `event.srcElement` itd.
 
+## DOM Changes
+
+Za praćenje bilo kakvih promjena na DOM-u, koristi se MutationObserver.
+
+`observer = new MutationObserver(callback)` stvara novog observera, callback funkcija će se pozvati za svaku detektiranu promjenu.
+
+`observer.observe(el, options)` postavlja što se prati: `childList` (dodavanje djece), `attributes` (promjenu vrijednosti atributa), `characterData` (promjenu teksta).
+
 ## CSSOM
 
 `document.styleSheets` vraća listu svih stylesheetova u dokumentu. Svaki stylesheet ima property `href` ako je remote i `media` ako je definiran atributom. Može se disablati s `document.styleSheets[i].disabled = true`.
@@ -214,35 +222,37 @@ Promjena lokacije je dozvoljena *samo ako* skripta koja je izvršava ima isti `o
 
 `window.history.scrollRestoration` ponašanje scrolla. `auto` daje browseru da odluči, `manual` postavlja na vrh stranice. _Chrome i FF_
 
-## window.frames
+## Windows & Iframes
 
-`window.frames` vraća array windowa embeddanih u trenutnom prozoru.
-`window.parent` ukoliko je prozor embeddan, vraća parenta. Inače vraća samog sebe.
-`window.top` ukoliko je prozor embeddan, vraća top parenta. Inače vraća samog sebe.
+`window.open(url)` otvara url u novom browsing contextu, kao `target=_blank`.
 
-`window.frameElement` vraća `<iframe>` element parent windowa u kojem je embeddan.
-`iframe.contentWindow` (poziva se na `<iframe>` elementu) vraća window koji se nalazi u njemu.
+`window.open(url, name)` otvara url u postojećem browsing contextu (prozor, tab ili iframe) s danim imenom. Ako context pod tim imenom ne postoji, stvorit će novi, najčešće u novom tabu.
 
-Svaki embeddani frame ima pristup svojim parentima, i svaki parent ima pristup frameovima. Ako parent i frame imaju isti origin, mogu jedno drugome pristupati varijablama i funkcijam a u `window` objektu. Ako nemaju isti origin, pristup tuđem `window` je ograničen na `top`, `parent`, `frames`, `opener`, `blur()`, `focus()`, `close()`, `location.replace()`, i `postMessage()`.
-
-## window.open()
-
-`window.open(url)` otvara url u novom browing contextu (kao `target=_blank`).
-`window.open(url, name)` otvara url u postojećem browsing contextu (prozor, tab ili iframe) s danim imenom. Ako context pod tim imenom ne postoji, stvorit će novi.
-`window.open(url, name, options)` definira postavke prozora: `width`, `height`, `top`, `left`, `titlebar=0` (traka s naslovom), `menubar=0`, `location=0` (traka s adresom), `personalbar=0` (bookmark traka). Bez postavki, otvara se s postavkama trenutnog prozora (najčešće to znači u novom tabu).
-
-`child = window.open(...)` vraća window objekt novostvorenog prozora. Možeš pristupati njegovim propertijima i funkcijama kako Same-Origin policy dopušta.
-Otvoreni window može pristupiti svom otvaraču pomoću `window.opener`. Taj property imaju i tabovi koji su se otvorili preko linka s `target=_blank`.
-
-`child.focus()` vraća prozor u fokus ako je minimiziran ili u pozadini.
-
-Otvarač može zatvoriti prozor koji je otvorio s `child.close()`. `child.closed` provjerava je li prozor već zatvoren. Prozor može i zatvoriti i sam sebe s `window.close()`.
+`window.open(url, name, options)` definira postavke prozora.
+`width`, `height`, `top`, `left` otvaraju prozor kao popup.
+`titlebar`, `menubar`, `location`. `personalbar` za trake s naslovom, menijem, adresom i bookmarcima.
 
 Moderni browseri imaju ugrađenu zaštitu protiv popupa, i dopuštaju `window.open` samo ako je nastao zbog korisničke interkacije (klika ili tipke).
 
+`child = window.open(...)` vraća window objekt novostvorenog prozora.
+`window.opener` iz childa vraća window koji ga je otvorio. Ovaj property imaju i tabovi koji su se otvorili preko `<a target=_blank>`.
+
+`child.focus()` vraća prozor u fokus ako je minimiziran ili u pozadini.
+
+Za iframeove i parente:
+`window.frames` vraća nested window objekte u trenutnom prozoru.
+`window.parent` i `window.top` vraćaju parent i root window u kojem si embeddan. Ako nisi embeddan, vraćaju tvoj `window`.
+`iframe.contentWindow` vraća window unutar `<iframe>` elementa.
+
+Ako window objekti imaju **isti origin** (host, port, i protokol), mogu raditi što hoće jedan s drugim: pristupati varijablama i funcijama u `window` objektu, mijenjati propertije itd.
+
+Ako windowi objekti imaju **istu second-level domenu** (`a.site.com` i `b.site.com`), postavi `document.domain = 'site.com'` na oboje i možeš ih koristiti kao da imaju isti origin.
+
+U svim ostalim slučajevima, pristup ti je ograničen na `blur()`, `focus()`, `close()`, `location.replace()`, i `postMessage()`. Iframe koji ima `sandbox` atribut će također biti ovako ograničen, čak i ako su na istom originu.
+
 ## window.postMessage()
 
-`postMessage` omogućuje komunikaciju između dvaju prozora koji mogu biti i cross-origin. Dovoljno je da prozor koji šalje poruku ima referencu na `window` objekt primatelja, npr. od `window.open()`, `window.parent` ili `window.frames[i].contentWindow`.
+`postMessage` omogućuje komunikaciju između dvaju prozora koji mogu biti i cross-origin. Dovoljno je da prozor koji šalje poruku ima referencu na `window` objekt primatelja, npr. od `window.open()`, `window.parent` ili `iframe.contentWindow`.
 
 `child.postMessage({a: 1}, "http://receiver.com")` šalje objekt `child` prozoru. Drugi argument je origin kojeg primatelj mora imati da bi poruka bila poslana. To služi kao osiguranje da se poruka ne pošalje na zlonamjerni site na koji je `child` prozor redirectan. Ako ti je u redu slati bilo kome, možeš koristiti `child.postMessage({a: 1}, "*")`.
 

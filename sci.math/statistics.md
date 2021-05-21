@@ -28,6 +28,15 @@ Varijancina vrijednost je nekakav glupi kvadrat, pa se umjesto toga koristi **st
 
 **Koeficijent korelacije (r)** određuje mjeru povezanosti dvaju varijabli, u vrijednosti od `-1` do `1`. **r^2** od `0` do `1` mjeri koliko precizno možeš predviđati vrijednost jedne varijable pomoću druge.
 
+## Efikasnost i Robusnost
+
+**Efikasnost** je mjera kvalitete estimatora. Što je estimator efikasniji, to je manje mjerenja potrebno za dobijanje rezultata željene kvalitete.
+**Robusnost** je mjera koliko je estimator otporan na pogrešku u mjerenju. Pri odabiru estimatora biraš između efikasnosti i robusnosti.
+
+Npr. ako želiš izmjeriti `mean` populacije, najefiksaniji način je uzeti `mean` uzorka. Ali ako podaci sadrže pogrešku, točniji rezultat ćemo dobiti s robustnim estimatorom, npr. `trimmed mean` koji odbacuje `N%` najnižih i najviših vrijednosti.
+
+`Trimmed mean` je manje efikasan jer će, u slučaju da su svi podaci ispravni, odbaciti dio uzorka i dati manje precizan rezultat. Ali je robusniji jer ostaje precizan čak i ako je dio podataka neispravan.
+
 ## Eksperimentalna Istraživanja
 
 **Single blind study** je kada ispitanici ne znaju koji treatment dobijaju (jer imaš dobar placebo), a ispitivači znaju. **Double blind study** je kada ni ispitivači ne znaju tko prima tretman, kako be bi mogli podsvjesno utjecati na rezultate.

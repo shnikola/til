@@ -91,13 +91,13 @@ https://en.wikipedia.org/wiki/Cottage_cheese
 
 # Recepti
 
-## Baked Camembert
+## Zapečeni Camembert
 
 * ugrij pećnicu na **180**
 * **kolut camembera** zareži po vrhu i u njega umetni sitno nasjeckani **režanj češnjaka**, **ružmarin** ili **timijan**.
 * poprskaj maslinovim uljem i stavi u pećnicu na 15 minuta.
 
-Kao prilog poprženi kruh, brusnice i orašasti plodovi.
+Kao prilog poprženi kruh, džem od brusnica i orašasti plodovi.
 
 ## Welsh Rarebit
 

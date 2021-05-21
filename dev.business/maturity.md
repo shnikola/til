@@ -1,94 +1,61 @@
 # Maturity
 
-## Working with Code
+Važan korak prema programerskoj zrelosti je shvatiti da se neki poslovni problemi ne riješavaju programiranjem. Programiranje je samo jedan od alata, često efikasno samo za banalne zadatke.
+
+Općenitije: nije dovoljno znati kako nešto napraviti, treba znati *zašto* i *kada* to napraviti.
+
+## Rad na kodu
+
+Svaki kod je grozan osim onog kojeg si sam upravo napisao. Nauči stisnuti zube i pretrpjeti početni osjećaj odbojnosti prema nepoznatom kodu.
+
+Pokušaj se upuštati u zadatke koji su na rubu tvojih sposobnosti. Udobnost poznatog je ugodna, ali osjećaj nelagode znači da napreduješ.
 
 Ne deployaj ako nećeš biti za računalom idućih sat vremena (npr. na kraju radnog dana ili nedajbože petkom).
 
-Kompetentan programer zna kako nešto napraviti, stručan programer zna *zašto* i *kada* nešto napraviti. Par savjeta kako ići u tom smjeru:
+Dosadna i provjerena tehnologija je dosadna jer funkcionira. Omogućuje ti da budeš produktivan i rješavaš stvarne probleme. Nove neisprobane tehnologije se čine privlačnijima samo jer ih još nisi upoznao i zamrzio.
 
-Razmotri zašto nešto radiš na određeni način. Navedi prednosti i nedostatke tog pristupa u konkretnoj situaciji.
+Koristi najjednostavniju arhitekturu dok god to situacija dopušta. Ne treba ti kubernetes samo jer to google koristi.
 
-Pitaj druge da ti objasne zašto rade stvari na određeni način.
+Neki programeri su univerzalisti (znaju svega pomalo), neki su specijalizanti (znaju mnogo o uskoj temi). Koja god vrsta bio, sjeti se uzeti u obzir širu sliku onoga što radiš.
 
-Preferiraj učenje iz iskustva umjesto čitanja tuđih priča i prateći cargo cult. Npr. kad ti jedan server ne bude mogao podnijeti load, prouči HAProxy; kad ti site bude imao puno više db readova od writeova, prouči master-slave replication; kad ti baza postane prespora, prouči Memcached; kad ne budeš htio da requestovi dolaze do app servera, prouči Varnish. Dotad, neka stvari budu jednostavne koliko god mogu biti.
+Većina koda kojeg napišeš će jedan dan biti obrisana. Budi sretan zbog toga.
 
-Uvijek radi na rubu svojih sposobnosti - to je najbolji način da napreduješ.
+## Vođenje projekta
 
-Prouči primarne izvore umjesto prepričanih članaka. Inspiracija stiže od originalnih ideja.
+Svaki će projekt, koliko god savršen bio, imati slabih točaka (corner cutting, technical debt). Umjesto da kukaš i proklinješ druge jednom kad dođu na naplatu, osvijesti ih čim se pojave, prihvati i dokumentiraj za vrijeme kada ćeš ih moći popraviti.
 
-Odaberi nekoliko specifičnih vještina i postani što kompetentniji u njima.
+Ne tuži se ni na što ako nemaš prijedlog riješenja.
 
-Prvo gledaj "big picture", onda radi na detaljima, ali svako malo se vrati na "big picture".
+Ne odgađaj *donošenje odluka*. Jednom kad se nakupe, morat ćeš ih donijeti na brzinu (ili još gore, izignorirati). Umjesto "Hajdemo razmisliti o tome." reci "Hajdemo odlučiti." Ne čekaj savršeno rješenje - odluči i idi dalje.
 
-Sjeti se da će većina koda kojeg napišeš jedan dan biti izbrisana, i pomiri se s tim.
+Vježbaj davati *procjene vremena*: da, nitko to ne voli raditi, nitko nije dobar u tome, ali to je bitna informacija za planiranje projekta.
 
-Svaki dan prošetaj sat vremena, sam ili u društvu, razmišljaj ili razgovaraj o projektu.
+Svaki će projekt imati napornih dijelova: budi prvi koji će to preuzeti na sebe, a ostavi svojim kolegama zabavne stvari.
 
-Očekuj manje programiranja, ali zadrži vlasništvo nad par komponenti na 1/3 svog vremena. Tako ostaješ u toku s featurima i bugovima.
+Preuzmi *odgovornost*. Odgovornost znači obvezati se da će se nešto napraviti ispravno, makar nemaš apsolutnu kontrolu nad time. Ako nešto pođe po krivu, ne smišljaj isprike nego ponudi opcije.
 
-## Working with People
+Budi skroman. Pohvale proslijedi timu, kritike preuzmi na sebe.
 
-Ne budi seronja: neka ljudima bude ugodno raditi s tobom. Kada kritiziraš, komentiraj kod, a ne osobu.
+## Rad s timom
 
-Traži konstruktivnu kritiku svojih ideja: sve što radiš utječe na druge. Zajednička rasprava uvijek dovodi do boljih odluka.
+Prije svega, neka ljudima bude ugodno raditi s tobom. Budi otvoren za raspravu i preispitivanje vlastitih ideja. Zajednička rasprava uvijek dovodi do boljih odluka.
 
-Ako netko predloži pristup za koji misliš da je kriv, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad. Koliko misliš da će ti vremena trebati da proučiš taj pristup?"
-
-Ne odgađaj donošenje odluka, jer kad se nakupe, donosit ćeš ih na brzinu ili izignorirati, pa će problemi opet ostati neriješeni. Umjesto "Hajmo razmisliti o tome" reci "Hajmo odlučiti". Ne čekaj savršeno rješenje - odluči i idi dalje.
-
-Ako te netko želi pitati nešto, budi dostupan i pravi se kako te uopće ne smeta što te prekida u nečemu. Ako ti želiš nekog pitati nešto, uvijek provjeri odgovara li im sada i ponudi se doći kasnije ako su usred nečega.
+Njeguj kulturu postavljanja pitanja. Od nikoga se ne očekuje da sve zna.
 
 Ako ne znaš odgovor na netko pitanje, reci: "Ne znam, ali saznat ću i javiti vam do tad-i-tad." Ne troši sugovornikovo vrijeme na isprike ili nesigurne informacije samo da ne bi priznao da nešto ne znaš.
 
-Ne izbjegavaj davati *procjene vremena*: nitko ih ne voli, pa vježbaj da postaneš bolji u njima.
+Budi obziran s tuđim vremenom. Ako trebaš nekoga, uvijek prvo provjeri da ih ne prekidaš. "Is this a good time to talk about...?"
 
-Znaj da će svaki projekt imati dosadnih dijelova: budi prvi koji će te dijelove preuzeti na sebe.
+Ne shvaćaj kritiku svog koda osobno. Vrijedi i obrnuto: komentiraj tuđi kod, ne osobu.
 
-Svaki će projekt, koliko god savršen bio, imati slabih točaka (corner cutting, technical debt). Umjesto da kukaš i proklinješ druge jednom kad dođu na naplatu, osvijesti ih čim se pojave, prihvati i dokumentiraj za vrijeme kada ih budeš mogao popraviti.
+Ako netko predloži pristup za koji misliš da je kriv, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad. Koliko misliš da će ti vremena trebati da proučiš taj pristup?"
 
-Ne prakticiraj *cover your ass engineering* tipa "Ja sam to napravio kako treba, njihova je krivica što ne radi po specifikaciji." Uvijek izađi drugima u susret.
-
-Nauči druge umjesto da rješavaš probleme za njih.
-
-Ne tuži se ni na što ako nemaš barem jedan prijedlog riješenja.
-
-Budi skroman. Proslijedi pohvale na tim, preuzmi kritike na sebe.
-
-## Kako odabrati tehnologiju
-
-Nova tehnologija se uvijek čini privlačnijom - jer je još nisi upoznao i zamrzio. Svaka tehnologija prolazi kroz prirodni *Hype Cycle*:
-
-1. *Technology Trigger*: launch uz velika obećanja i nekoliko early adoptera. Za Rails, "Build a Blog in 15 minutes" video. Hacker News blow upa i svi su jako uživljeni.
-2. *Peak of Inflated Expectations*: svi pričaju o tehnologiji kao da će ispuniti mokre snove svih programera. DHH na naslovnici Linux časopisa posvećenom Rubyju.
-3. *Trough of Disillusionment*: tehnologija ne ispunjava nemoguća očekivanja. Ljudi glasno odlaze i kukaju kako je najgore na svijetu. Članci poput "Rails is a Ghetto".
-4. *Slope of Enlightenment*: ako tehnologija preživi, počinje nazirati svijetlo na kraju tunela. Izlaze verzije 2.0, 3.0. Alati i materijali za učenje postaju sve bolji.
-5. *Plateau of Productivity*: dio ljudi koji su ostali postaju produktivni i ne vide potrebu da pretjerano pričaju o tome. MySQL već godinama nije nikome seksi, jer se nalazi ovdje.
-
-Svaki programer spada u jednu od kategorija. Svaka kategorija je nužna da bi tehnologija napredovala
-* *Pioneers*: eksperimentiraju i stvaraju sliku kako bi stvari mogle izgledati.
-* *Settlers*: spajaju to sa stvarnim problemima.
-* *Town Planners*: skaliraju da dođe do velikog broja ljudi. Dosadno održavanje.
-
-Bitno je znati u kojem se trenutku priključiti tehnologiji. Ja sam settler/planner, pa mi najbolje odgovara 4. korak.
-
-Tehnologija koju koristiš neće umrijeti. Rails 2 aplikacije se danas vrte u produkciji i rješavaju probleme za puno ljudi.
-
-Ako te strah da te vrijeme ne pregazi: na poslu koristi jednu stabilnu tehnologiju, a na side projectu jednu iz znatiželje.
-
-Dosta s Java-shamingom! Nitko se ne bi smio sramiti što voli i koristi neku tehnologiju.
-
-Obećanje nove tehnologije nije da ćeš magično postati 10x programer. Obećanje je da ćeš doći do Plateaua. Tamo ćeš biti dovoljno produktivan da se fokusiraš i sagledaš sliku iz krupnije perspektive.
-
-Predavanja:
-* Surviving the Framework Hype Cycle (https://www.youtube.com/watch?v=9zc4DSTRGeM)
-* The Silver Bullet Syndrome (https://www.youtube.com/watch?v=3wyd6J3yjcs)
+Prošetaj svaki dan, sam ili u društvu.
 
 ## Literatura
 
-* https://monicalent.com/blog/2019/06/03/absolute-truths-unlearned-as-junior-developer/
-* https://stackoverflow.blog/2019/08/07/what-every-developer-should-learn-early-on/
+* https://www.briangilham.com/2016/09/26/be-kind.html
 * https://www.oreilly.com/ideas/the-traits-of-a-proficient-programmer
-* https://www.briangilham.com/blog/2016/10/10/be-kind
 * http://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer
 * https://queue.acm.org/detail.cfm?id=3308563
-* https://www.youtube.com/watch?v=yYihop9gHj4 (Endurance by Yehuda Katz)
+* https://monicalent.com/blog/2019/06/03/absolute-truths-unlearned-as-junior-developer/

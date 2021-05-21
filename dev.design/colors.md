@@ -46,6 +46,16 @@ Formula za transformaciju je `V_en = V_lin^(1/γ)`, gdje su `V` vrijednosti inte
 
 Problem je što većina algoritama za obradu slike krivo pretpostavlja da radi s netransformiranim bojama, pa razne operacije daju krive rezultate. Takvu grešku rade CSS i Photoshop gradijenti, color i alpha blending, image resizing i antialising. Loše handlanje gamme je također glavni razlog što CGI animacija izgleda fake i plastično.
 
+## Dithering
+
+U vremenima kada se na ekranima mogao prikazati mali broj boja (npr. 2 ili 16), nijanse su se stvarale isprepletanjem piksela različite boje. Proces mapiranja danih vrijednosti (npr. pixela fotografije u boji) u manji skup (npr. u monokromne pixele `0` i `1`) zove se **kvantizacija**. Jednostavna metoda kvantizacije bila bi `brightness < 0.5 ? 0 : 1`.
+
+Svaka kvantizacija sa sobom nosi i kvantizacijsku pogrešku, tj. razliku između zadane i dobivene vrijednosti. **Dithering** smanjuje pogrešku tako da dodaje namjerni "šum", npr. `brightness - rand() < 0 ? 0 : 1`. Ovo se može promatrati i kao korištenje nasumičnog "thresholda", `brightness < rand() ? 0 : 1`. Pri tome se `rand()` za svaki pixel može izračunati unaprijed i spremiti u "threshold mapu". **Ordered dithering** metode koriste mape koje su proceduralno izgenerirane po nekom pravilu.
+
+**Bayer dithering** koristi 2x2 matricu `[<0,3> <2,1>]` koja se normalizira i primjenjuje na sliku kao tileovi. Za veći pattern mogu se rekurzivno generirati veći tileovi. Dithering izgleda smooth i repetetivno.
+
+**Blue noise** je adaptacija white noisea koji sprječava slučajno nakupljanje bijelih ili crnih clustera. Ima svojstvo da se wrapa, pa se također može izgenerirati i primjeniti na sliku kao tile (npr. 64x64). Dithering izgleda organski i nasumično.
+
 ## Smeđa boja
 
 Smeđa boja je zapravo tamna narančasta. Svijetla smeđa ne postoji bez konteksta - na tamnoj pozadini ćemo je uvijek prepoznati kao narančastu, tek ako je okružena svijetlom je interpretiramo kao "smeđu".

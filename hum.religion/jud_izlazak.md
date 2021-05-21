@@ -46,5 +46,8 @@ Rabini, koji uvijek traže strukturu u svemu, imaju teoriju kako je prvih 5 zapo
 
 ## Pi
 
-U `Prvoj Knjizi o kraljevima` opisuje se okruglo pojilište u Jeruzalemskom hramu širine 10 laktova a opsega 10 laktova, što znači da je vrijednost pi-a u bibliji 3. Neki rabini tvrde da je se pi ionako može izračunati samo aproksimativno, pa je 3 dovoljno dobro za religijske potrebe. Drugi su primjetili da se mjerna linija na tom mjestu piše kao KAVEH (111), dok je u ostatku teksta KAV (106). `3*111/106 = 3.141509433` što je precizno u 4 decimale.
+U `Prvoj Knjizi o kraljevima` opisane su dimenzije okruglog pojilišta u Jeruzalemskom hramu. Širina mu je 10 laktova, a opseg 30 laktova, što znači da je po Bibliji π jednak `3`.
 
+Rabini objašnjavaju da se π ionako može izračunati samo aproksimativno, pa je aproksimacija `π = 3` dovoljno dobra za religijske potrebe.
+
+Kabalisti uočavaju da se mjerna linija na tom mjestu naziva *kaveh* (`111`), a u ostatku teksta *kav* (`106`). `3 * 111 / 106 = 3.141509433` što je točno u 4 decimale.

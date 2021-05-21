@@ -1,12 +1,5 @@
 # Bash
 
-## Keyboard controls
-
-`tab` autocomplete.
-`CTRL + R` započinje search history. Utipkaj što tražiš, `CTRL + R` cycla kroz rezultate, `enter` izvršava naredbu, a desna strelica je stavlja u command line za editiranje.
-`CTRL + U` delete do početka linije, `CTRL + K` delete do kraja linije. `CTRL + W` deleta prethodnu riječ.
-`CTRL + L` clear screen.
-
 ## Globbing
 
 Bash određene patterne zamijeni listom filenameova u trenutnom directoriju.

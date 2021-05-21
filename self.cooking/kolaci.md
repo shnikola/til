@@ -6,7 +6,7 @@ Tijesto premazuj mješavinom žumanjka i slatkog vrhnja (omjer 1:2) - to se zove
 
 ## Tijesto za tart
 
-* Pomiješaj **150g šećera**, **240g brašna**, i **pola vrećice praška za pecivo** u posudi.
+* Pomiješaj **150g šećera**, **240g brašna**, i **pola vrećice praška za pecivo** u posudi. Dio brašna možeš zamijeniti mljevenim bademima.
 * Umuti **1 jaje** i **2 žlice mlijeka**, nasjeckaj **60g maslaca na sitne komadiće**, pa pomiješaj sa suhim sastojcima. Rukom zamijesi u meko tijesto.
 * Dobro pobrašni podlogu i izvaljaj u krug veličine kalupa za tart. Kalup premaži maslacem, pa prebaci tijesta u njega. Višak odreži (dodaj u dno ako gdje fali), možeš ga iskoristiti za staviti trakice preko.
 * Izbodi dno i strane vilicom, pa stavi u zamrzivač na 15-20 minuta. Dotad uključi pećnicu na `180`.

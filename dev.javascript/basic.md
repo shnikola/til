@@ -1,52 +1,107 @@
 # Javascript
 
-## this
+## Varijable
 
-`this` je referenca na kontekst u kojem se trenutna funkcija izvršava.
+`let x` koristi za promjenjive vrijednosti. Poštuje leksički (block) scope, što znači da ako ga definiraš u `if` bloku, neće biti vidljiv izvan njega.
 
-Za `function f() { return this; }`:
-* `f()` će vratiti `window`
-* `a = { method: f }; a.method()` će vratiti `a`.
+`const x` koristi za vrijednosti koje jednom postaviš. Poštuje leksički scope.
 
-`f.call(context, args)` poziva funkciju i postavlja joj `this` u zadanu vrijenost, npr. `t.call(a)` je ekvivalentno `a.t()`
+`var x` se više ne koristi. Ne poznaje block scope, nego je scopan na trenutnu funkciju. Zato se koristio IIFE da ga se ograniči. Dopušta da se deklarira dvaput, pa ga se može slučajno prebrisati.
 
-`f.bind(context)` vraća novu funkciju s postavljenim `this`, bez da je pozove.
+## Data Types
 
-## Array Functions
+Javascript ima 7 primitivnih tipova podataka koji su **immutable**:
+* `number` za brojeve.
+* `bigint` za brojeve veće od `2^53-1`, formata `10n`.
+* `string` za tekst.
+* `boolean` za true i false.
+* `null` za nedostatak vrijednosti.
+* `undefined` defaultna vrijednost nepostavljenih varijabli.
+* `symbol` identifikatori.
 
-Callback uvijek dobija argumente redom: item, index, list.
+Osmi tip je `object`, i on jedini **mutable** tip.
 
-`array.find(x => x > 0)` vraća prvi element koji ispunjava uvjet.
-`array.findIndex(x => x > 0)` vraća index prvog elementa koji ispunjava uvjet.
+Tip varijable možeš dobiti operatorom `typeof` (uz napomenu da `typeof null` vraća `object`, što je greška u jeziku).
 
-`array.every(x => x > 0)` vraća `true` ako svi elementi koji ispunjavaju uvjet.
-`array.some(x => x > 0)` vraća `true` ako postoje elementi koji ispunjavaju uvjet.
+Funkcije su zapravo tipa `object`, ali `typeof f` vraća `function` da bude zgodnije.
 
-`array.filter(x => x > 0)` vraća subarray elemenata koji odgovaraju uvjetu.
-`array.map(x => x.name)` vraća array s rezultatima operacije.
-`array.sort((a, b) => a > b ? -1 : 1`) vraća sortirani array.
-`array.reduce((sum, current) => sum + current, 0)` agregira array u prvu vrijednost.
+Primitivni tipovi su napravljeni da budu lightweight, ali i dalje podržavaju pozivanje metoda poput `str.toUpperCase()`. Pri takvom pozivu, primitiv se privremeno wrapa u object `String` koji ima sve dodatne propertije i metode.
 
-`...array` je spread operator za rastavljanje arraya na argumente, kao ruby splash (`*`) operator, npr. `[...arr, 1, 2, 3]`.
+## Conversions
 
-## Date
+Operatori i funkcije će automatski konvertirati vrijednosti u type koji koriste. Npr. `alert(5)` će `5` konvertirati u string.
 
-`new Date()` vraća Date objekt s metodama za dohvaćanje dijelova datuma: `date.getFullYear`, `date.getMonth`, `date.getDate`, `date.getHours`, `date.getMinutes`, `date.getSeconds`.
-`Date.now()` vraća timestamp u milisekundama. _IE 9+_
+Matematički operatori konvertiraju sve u brojeve, npr. `'6' / '3'` je `2`.
+`'6' + '3'` je `'63'` jer string ima definiran operator `+`.
 
-## Regex
+`Boolean(value)` eksplicitno pretvara u boolean.
+Falsey vrijednosti su `0`, `""`, `null`, `undefined` i `NaN`. Sve ostalo je true.
 
-Za matchanje koristi `str.match(/a/g)`. Nemoj koristiti `re.test('ab')` jer je regex objekt iz nekog bleasavog razloga stateful.
+`String(value)` eksplicitno pretvara u string.
+`String(null) = "null"`, što je malo blesavo.
 
-## Debounce i Throttle
+`Number(str)` (skraćeno: `+str`) eksplicitno pretvara u broj. String mora biti točno broj (jedino uklanja whitespace s početka i kraja), ili vraća `NaN`.
+`Number(null) = 0`, ali `Number(undefined) = NaN`.
 
-Na eventove koji se triggeriraju mnogo puta u sekundi (npr. `scroll` ili `mousemove`) nikad nemoj attachati funkciju direktno na njih. Umjesto toga, koristi:
-* `debounce(400)` dok god se event događa, funkcija neće biti izvršena, tek *nakon* `400ms` u kojima se event ne dogodi izvršit će funkciju. Korisno za prepoznati kad je korisnik prestao tipkati ili dovršio `resize`.
-* `throttle(400)` doke god se event događa, izvršavat će funkciju *maksimalno jednom* u `400ms`. Korisni za praćenje kontinuiranih eventova, npr. infinite scrolling.
-* `requestAnimationFrame` kao throttle, ali radi nativno i cilja na izvršavanje svakih `16ms` (za 60fps). Korisno za funkcije koje crtaju ili animiraju.
+`parseInt(str)` i `parseFloat(str)` čitaju string po redu i konvertiraju koliko mogu. To je korisno za CSS propertije poput `100px` ili `12rem`.
+
+## Comparisons
+
+Kad se uspoređuju varijable različitog tipa, konvertiraju se u brojeve. Npr. `'02' > true` će uspoređivati `2 > 1`.
+
+To ne vrijedi za `null` i `undefined`. Oni imaju dosta nelogična pravila, pa samo izbjegavaj raditi `<` i `>` s njima.
+
+## Numbers
+
+Operacije s brojevima su uvijek safe - nikad ne možeš dobiti exception, samo `NaN` kao rezultat.
+
+Koristi `isNaN(x)` za provjeru da li je nešto `NaN`. `x === NaN` uvijek vraća `false`.
+
+## Globalni objekt
+
+U globalnom objektu se nalaze varijable i funkcije koje su dostupne svugdje, npr. `alert()` ili `Array()`.
+
+U browseru se taj objekt zove `window`, u Node.jsu `global`. Stadardizirani način za pristupanje u svim environmentima je `globalThis`.
+
+## setTimeout & setInterval
+
+`setTimeout(f, 300)` će pozvati funkciju `f` za 300ms.
+`setInterval(f, 300)` će pozivati funkciju svakih 300ms.
+
+Možeš definirati i argumente s kojima će se pozvati funkcija pomoću
+`setTimeout(f, 300, "a", "b")`.
+
+Obje funckije vraćaju timer id kojeg možeš koristiti za cancelanje `clearTimeout(id)` i `clearInterval(id)`.
+
+`setTimeout(func, 0)` znači da se funkcija poziva što je prije moguće, čim trenutna skripta završi izvođenje.
+
+Scheduling ne garantira preciznost delaya i može ovisiti o mnogim parametrima (zauzeću CPU-a, je li tab u backgroundu...).
+
+Funkcije koje `setTimeout` poziva će imati postavljen `this = window`, pa pripazi ako pozivaš funkcije iz objekata `setTimeout(user.say)`. Pozovi s wrapper funkcijom ili s `setTimeout(user.say.bind(user), 300)`
+
+## Nullish operator
+
+Za defaultanje vrijednosti možeš koristiti `fullName || userName || "Guest"`. Ovo će preskočiti svaku falsey vrijednost, uključujući i `0` i `""`.
+
+Ako želiš da preskoči samo `null` i `undefined`, koristi `fullName ?? userName ?? "Guest"`.
+
+## Optional chaining
+
+`user?.name` je kao `user && user.name`.
+`user?.[key]` ako je key u varijabli.
+`user.method?.()` ako nisi siguran postoji li metoda.
+
+## Try Catch
+
+`try {} catch(err) {}` će u slučaju errora izvršiti catch block. `err` je objekt s propertijima `message`, `name` i `stack` (nije standard, ali svi ga podržavaju).
+
+Errori koji nisu uhvaćeni će završiti u globalnom handleru `window.onerror`.
+
+## asm.js
+
+`emscripten` je alat koji kompajlira C/C++ kod u `asm.js`, podskup javascripta napravljen da se izvodi jako brzo. Neke od optimizacija su: koristi samo brojeve (nema stringova, booleana i objekata); svi podatci drže se u jednom velikom arrayu, heapu (nema globalnih varijabli, closurea i data structurea). `asm.js` se može izvršavati na svakom browseru, ali određeni browseri su toliko optimizirani da ga izvršavaju tek 2x sporije od nativnog C/C++ koda.
 
 # Literatura
 
-* https://github.com/airbnb/javascript style guide
-* http://bonsaiden.github.io/JavaScript-Garden quirks
+* https://javascript.info/
 * https://medium.com/the-node-js-collection/modern-javascript-explained-for-dinosaurs-f695e9747b70

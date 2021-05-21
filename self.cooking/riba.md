@@ -16,7 +16,7 @@ Meso je čvrsto, pritiskom palca brzo se izravnava i nestaje udubljenje.
 
 **Brudet** ima dosta pome, i uključuje dinstanje kapule (a negdje i ribe). Dinstanu kapula i rajčice se prokuhaju na tihoj vatri i zaliju vinom koje treba da ispari prije nego se dodaju komadi ribe. Ako se šug ne prokuha prije dodavanja ribe, da bi riba izdržala duže kuhanje a da se ne raspadne, doda se u juhu žlica kvasine.
 
-Za gregade, popare i brudete koriste se ribe "od kamena": ugor, škarpina, kokot, grdobina, i cipal. Gregada se tradicionalno kuha od sitnije ribe, a krupnija riba se reže na komade. Riba za poparu ne mora se komadati ukoliko nije veća od posude za kuhanje. Za podebljati obrok brudet se može poslužiti preliven preko palente, ili s kuhanom tjesteninom.
+Za gregade, popare i brudete koriste se ribe "od kamena": ugor, škarpina, kokot, grdobina, i cipal. Gregada se tradicionalno kuha od sitnije ribe, a krupnija riba se reže na komade. Riba za poparu ne mora se komadati ako nije veća od posude za kuhanje. Za podebljati obrok brudet se može poslužiti preliven preko palente, ili s kuhanom tjesteninom.
 
 Talijani imaju mnogo različitih varijanti brudeta (brodetto ili **zuppa di pesce**), jušastiji su od naših brudeta i često sadrže školjke. Francuski **bouillabaisse** koristi ratličite začine: šafran, koromač, narančinu koru. Španjolci imaju **zarturele** i **suquet de peix** s umakom od badema.
 
@@ -59,3 +59,10 @@ Muzgavci (mrkači) su jeftinija alternativa hobotnici.
 * Zagrij pećnicu na `200`.
 * U vatrostalnu posudu stavi **2 odreska lososa**, posoli i popapri ih, prelij maslinovim uljem ili maslacem (ili oboje). Stavi **kriške limuna** i **svježi ružmarin** preko.
 * Ubaci **desetak cijelih režnjeva češnjaka**, pa poklopi i stavi u pećnicu. Gotovo je nakon 25 minuta.
+
+## Carpaccio of tune
+
+* **250g svježe tune** zamrzni, pa nareži na tanke šnite.
+* Posoli, popapri, polij limunovim sokom i maslinovim uljem.
+
+Možeš dodati kapare, masline i motar. Serviraj uz prepečeni kruh ili focacciu.

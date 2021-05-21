@@ -1,12 +1,24 @@
 # Juhe
 
-## Savjeti
+Recepti za juhe su većinom slični.
+1) Na masnoći (ulju, maslacu, slanini) zažuti aromatike (luk, češnjak).
+2) Dodaj glavni sastojak juhe (povrće, meso) da se karamelizira.
+3) Prelij s tekućinom (temeljcem, pivom, vinom, mlijekom) i pusti da se lagano krčka.
 
-Svakoj juhi je dobro dodati 2-3 režnja češnjaka jer naglašava okuse i mirise ostalih sastojaka. Đumbir je dobar dodatak u pilećim i povrtnim juhama, dodaje slatkoću i aromatičnost.
+Ako radiš krem verziju, izblendaj pa dodaj i nakratko zakuhaj.
 
-Da juha ne reducira previše, treba se krčkat na jako jako niskoj temperaturi. Mjehurić po minuti da izađe. Plin je vjerojatno prejak pa mi zato juha previše reducira. Ako želiš snažniju juhu s više okusa, ostavi lonac otklopljen, jer će se tako isparavanje povećati.
+Glavni sastojak možeš ispeći i u pećnici ako želiš da bude posebno karameliziran, npr. tikvu, kosti ili korjenasto povrće.
 
-U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
+Na većinu bistrih povrtnih juha i variva možeš naribati parmezan.
+
+## Kombinacije
+
+* Brokula, špinat, vrhnje, kozice
+* Cvjetača, krumpir, kim, vrhnje
+* Grašak, menta, vrhnje, kozice
+* Batat, mrkva, cimet, vrhnje
+* Mrkva, kokos, med, chili
+* Piletina, đumbir
 
 # Recepti
 
@@ -16,8 +28,9 @@ U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
 * Ubaci **800g pelata iz konzerve** i ugrubo ih izgnječi.
 * Ubaci **2 šnite kruha** bez korice. Kruh se dodaje zbrog škroba i pšeničnih proteina koji će pomoći da se stvori emulzija i juha bude kremastija.
 * Dodaj **400ml vode**, uzavri pa krčkaj 5 minuta. Pome iz konzerve su već kuhane pa im ne treba dugo.
-* Štapnim mikserom usitni juhu, dodaj vode do željene gustoće. Malo po malo dodaji **100ml maslinovog ulja** kako bi se stvorila emulzija. Posoli i popapri po ukusu.
-* Ukrasi popočenim kockicama kruha ili feta sirom.
+* Štapnim mikserom usitni juhu, dodaj vode do željene gustoće. Malo po malo dodaji **50ml maslinovog ulja** kako bi se stvorila emulzija. Posoli i popapri po ukusu.
+
+Ukrasi popečenim **kockicama kruha** i **feta sirom**.
 
 ## Krem Juha od Gljiva
 
@@ -29,7 +42,8 @@ U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
 * Ulij **250ml bijelog vina ili šerija**, sastruži smeđe dijelove s dna lonca. Čekaj da pola vina reducira.
 * Ulij **250ml mlijeka** i **1.2l pilećeg temeljca**. Ubaci **timijan** i **lovor**. Pojačaj vatru do ključanja pa ostavi da lagano krčka 20 minuta.
 * Štapnim mikserom izmiskaj juhu. Posoli i popapri po potrebi, iscijedi malo limuna po želji.
-* Ukrasi sjeckanim travama i maslinovim uljem.
+
+Ukrasi sjeckanim travama i maslinovim uljem.
 
 ## Krem Juha od Bundeve
 
@@ -38,19 +52,8 @@ U juhe na bazi mrkve dodaj žlicu meda za slatkoću.
 * Kad je tikva gotova, ubaci je u lonac s lukom i polij s **1l pilećeg temeljca**.
 * Ubaci **timijan** i **lovor**. Pojačaj vatru do ključanja pa ostavi da se lagano krčka 10 minuta.
 * Štapnim mikserom izmiskaj juhu, posoli i razrijedi po potrebi.
-* Istuci **180ml vrhnja za šlag**, pomiješaj s **60ml kiselog vrhnja**, prstohvatom **cimeta** i **muškatnog oraščića**. Serviraj juhu s žlicom takvog vrhnja.
-* Opcionalno poprži listove svježe kadulje na maslacu 15ak sekundi, posuši na papirnatom ručniku i dodaj u tanjur.
 
-## Krem Juha od Sira i Brokule
-
-http://www.seriouseats.com/2016/10/food-lab-broccoli-cheddar-cheese-soup.html
-
-* **1 glavu brokule** operi, razdvoji stabljike i krošnjice. Stabljike ugrubo nasjeckaj, krošnjice neka budu veličine da stanu na žlicu. Pripazi da krošnjice imaju što manje stabljika na sebi jer se one neće kuhati.
-* u veći lonac stavi malo ulja na jaku vatru, pa ubaci krošnjice. Nemoj miješati nego čekaj 1 minutu da se zapeku s jedne strane (tako je bolji okus), pa promiješaj, dobro posoli i popapri i ponavljaj dok nisu dobro zapečeni s nekoliko strana. Kad su gotove izvadi ih sa strane da se ohlade.
-* Smanji vatru na srednje, u lonac dodaj malo maslaca, i nasjeckano povrće: stabljike, **1 mrkvu**, **1 kapulu**, sol i papar, pa miješaj 5 minuta dok ne omekša. Nasjeckaj **3 režnja češnjaka** i miješaj 30 sekunda dok ne zamiriše.
-* U lonac ulij **500ml pilećeg temeljca**, **700ml mlijeka** i nasjeckaj **1 manji krumpir** za gustoću. Pojačaj vatru do ključanja pa krčkaj 30ak minuta, dok brokula i krumpir nisu potpuno meki.
-* Naribaj **400g sira** - ja sam koristio varaždinec i trapist, mislim da bi i gouda bila dobra.
-* Štapnim mikserom izmiksaj juhu i pomalo dodaji sir dok sve ne postane kao jedan veliki nachos dip. Posoli i popapri, dodaj malo ljutog umaka ako želiš. Ubaci zapečene krošnjice i samo malo ih mikserom usitni.
+Ukrasi žlicom **tučenog slatkog vrhnja**, **cimetom**, **poprženim listovima kadulje**.
 
 ## Krem Juha od Poriluka
 
@@ -60,7 +63,7 @@ http://www.seriouseats.com/2016/10/food-lab-broccoli-cheddar-cheese-soup.html
 * Prelij s **500ml pilećeg temeljca** i ostavi da se krčka 30 minuta dok poriluk i krumpiri nisu skroz mekani.
 * Štapnim mikserom izmiksaj juhu, pa vrati na laganu vatru i ulij **200ml 20% vrhnja**. Posoli i popapri po ukusu. Začini **svježim vlascem** i **muškatnim oraščićem**.
 
-Ako se osjećaš fancy, za dekoricaiju možeš isjeckati krumpir na tanke štapiće, pa ga ispržiti u ulju, i servirati zajedno sa **svježim peršinom i ružmarinom**, isprženim u ulju na 15 sekundi.
+Ukrasi poprženim **štapićima od krumpira** i kratko isprženim (15s) **svježim peršinom i ružmarinom**.
 
 ## Juha od leće
 

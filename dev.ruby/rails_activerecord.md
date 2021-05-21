@@ -27,9 +27,13 @@ Za dodavanje asocijacija bez automatskog saveanja, koristi `post.comments.build`
 
 ## Bi-direction associations i inverse_of
 
+Uvijek dodaj `inverse_of` opciju na asocijaciju ako koristiš `foreign_key`, `class_name`, custom scope.
+
 `post` i `post.comments.first.post` bi trebali biti isti objekt. Kada se `post.name` promijeni, to bi trebalo biti vidljivo i u `comment.post.name`.
 
-Rails (od verzije 4) automatski povezuje ovakve asocijacije gdjegod može. Ipak, u slučajevima kad se koriste opcije `foreign_key`, `primary_key` ili `class_name` potrebno je pomoći i dodati `inverse_of` opciju, npr. `belongs_to :post, inverse_of: :comments`.
+Također, kada radiš `post.comments.build` želiš da se ispravno postavi `comments.post`.
+
+Rails (od verzije 4) automatski povezuje ovakve asocijacije gdjegod može, ali u gore navedenim slučajevima moraš to napraviti ručno.
 
 ## Preloading
 

@@ -20,6 +20,14 @@ Početak igre je najbitniji za uvlačenje igrača, pa najčešće nemamo vremena
 
 Backstory se može ubaciti tijekom igre kroz gomilu teksta, ali bolji način je učiniti to suptilno kroz mehaniku igre. Npr. imati statse koji se vezuju uz tvoj prošli život, starac koji je slijep na jedno oko, unique predmet koji ima povijesnu priču.
 
+## Story and Gameplay Loop
+
+Kada osmišljaš narativ igre, razmišljaj o načinu na koji će igrači provoditi većinu svog vremena. Idealno, želiš da **core gameplay loop** reflektira priču i iskustvo koje želiš prenijeti.
+
+U ranim verzijama D&D-a, ubijanje čudovišta i lootanje je bilo najlakši način za napredovanja. Čak i ako bi pokušao povesti igru u drugom smjeru, core loop je uvijek tjerao igračo nazad na ubijanje.
+
+Ako želiš izbjeći uobičajeni RPG loop, pokušaj ukloniti novac i experience iz mehanike, pa će se inicijativa igrača usmjeriti na stvaranje zanimljive priče.
+
 ## Questovi
 
 "Ubij 10 čudovišta levela 3" nije quest, nego recept za skupljanje nagrade. "Učini Vražji tjesnac sigurnim za putnik" je quest, čak i ako je najlakši način za riješiti ga ubiti 10 čudovišta levela 3.

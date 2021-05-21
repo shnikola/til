@@ -1,5 +1,7 @@
 # Priča
 
+Mnoge stvari se mogu naučiti podučavanjem. Ali neke stvari možemo naučiti samo da ih iskusimo sami, ili posredno pripovijedanjem. Pripovijedanje je najmoćniji alat za prenošenje mudrosti idućoj generaciji.
+
 ## Struktura priče
 
 Klasična narativna struktura dijeli priču na 3 dijela:

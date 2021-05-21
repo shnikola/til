@@ -1,5 +1,13 @@
 # Stvaranje svijeta
 
+Narativ stvaranja u Bibliji sastoji se od **2 različite priče**.
+
+U prvoj priči, **Elohim** (opći židovski naziv za Boga) kroz šest dana stvara nebesa, Zemlju, ljude, te sedmog dana odmara. Format je repetitivne strukture, a narativ se fokusira na stvaranje kozmosa i prirode. Bog je svemoćan stvoritelj, a ljudi stvoreni na njegovu sliku.
+
+U drugoj priči Bog, sada osobnim imenom **Jahve**, u jednom danu stvara Adama od prašine, postavlja ga u Eden i daje mu vlast nad životinjama. Format je linearan, a narativ se fokusira na čovjeka kao kultivatora svoje okoline. Bog nije nepogrešiv, a ljudi su kažnjeni jer pokušavaju biti sličniji Bogu.
+
+Čak se i redoslijed stvaranja razlikuje: u prvoj priči, muškarci i žene su stvoreni nakon životinja; u drugoj priči prvo je stvoren muškarac, pa životinje, pa žena.
+
 ## Na svoju sliku
 
 `Postanak 1:27` kaže: "Na svoju sliku stvori Bog čovjeka". Ali kako je moguće da ga je stvorio na svoju sliku ako nema fizičku formu? Prema Tomi Akvinskom, čovjek je stvoren na sliku Božju ne u fizičkoj formi, nego po intelektu i sposobnosti razmišljanja.
@@ -45,6 +53,10 @@ Kit koji je pojeo Jonu je zamalo izbjegao da ga pojede Levijatan. Levijatan ina�
 U Psalmu 105:8 piše: "On se uvijek sjeća svojega Saveza, riječi koju dade tisući naraštaja", što zvuči kao da Tora ima rok trajanja.
 
 Srednjovjekovni rabin Shlomo Yitzchaki (Rashi), tvrdi je Tora zapravo dana *tisućitoj* generaciji. Problem je što je Mojsije 26. generacija od postanka svijeta. Postavlja se pitanje - gdje je nestalo ostalih 974 generacija? Neke teorije tvrde da naš svijet nije prvi stvoren, već da su prije njega postojali drugi svijetovi koje je Bog stvorio i uništio.
+
+## Vegetarijanstvo
+
+Pri stvaranju svijeta Bog kaže životinjama i ljudima da ima daje "zelene biljke za hranu" - božja stvorenja trebaju biti vegetarijanci. Tek kasnije, nakon potopa, ljudima je dozvoljeno da jedu meso.
 
 ## Jakov
 

@@ -1,16 +1,22 @@
 # Judaizam
 
-## Monoteizam
+Judaizam je imao mnoge uobičajene karakteristike religija Rimskog carstva:  štovali su božanstvo kroz žrtve životinja i hrane; vjerovali su da postoji određeno mjesto u kojem božanstvo obitava na zemlji; prenosili priče o njemu i molili se za pomoć sebi i zajednici.
 
-Monoteizam je danas mainstream, ali nekad je bio vrlo neobična ideja. Većina stanovnika Rimskog Carstva bili su politeisti. Židovi (5-7% stanovnika) su jedini vjerovali u jednoga Boga, ili barem jednoga kojeg treba štovati. Prema judaizmu, taj bog je stvorio svijet i u jednom trenutku odabrao Izraelce kao svoj narod. S njima je sklopio **savez** (nešto kao mirovni ugovor) - oni će ga štovati, on će ih čuvati i braniti.
+Ono što je činilo Judaizam jedinstvenim je **monoteizam**. Dok je većina carstva štovala božanstva raznih vrsta i funkcija, židovi (oko 6% stanovnika) su imali samo jednog Boga. Prema njihovom vjerovanju, taj Bog je stvorio svijet i u jednom trenutku odabrao Izraelce za svoj narod, sklopivši s njima **savez**: oni će ga štovati, on će ih čuvati i braniti.
 
-Taj savez je srž starog judaizma. Bog je spasio Izraelce iz Egipta, a zauzvrat su dobili Mojsijev zakon: 10 zapovjedi plus ostalih 613 zakona Tore. Oni govore o tome kako štovati Boga i kako se ponašati u zajednici. Zakon pritom nije način da se dođe do spasenja (već si spašen jer si dio saveza), zakon je način da se zahvališ za spasenje koje ti je obećano.
+Još neobičnije, sva pravila koja je Bog naložio i sve priče iz tradicionalne predaje **zapisane su u svete knjige**. Druge politeističke religije nisu imale ništa slično, a pogotovo se nisu zamarale etičkim zakonima i vjerskim doktrinama. Time su se bavili filozofi.
 
 ## Sveto pismo
 
-Hebrejska biblija je ono što je kod kršćana Stari Zavjet. Nazivaju je *Tannakh*, što je akronim naziva tri dijela: *Torah* (zakoni), *Nevi'im* (proroci) i *Ketuvim* (ostalo). Izvorno je napisan na klasičnom hebrejskom.
+Savez je srž starog judaizma. Bog je spasio Izraelce iz Egipta, a zauzvrat su dobili **Mojsijev zakon**: 10 zapovjedi plus ostalih 613 zakona Tore. Oni govore o tome kako štovati Boga i kako se ponašati u zajednici. Zakon nije način da se dođe do spasenja (već si spašen jer si dio saveza), zakon je način da se zahvališ za spasenje koje ti je obećano.
 
-*Tora* (u prijevodu uputa, učenje ili zakon) može označavati prvih 5 knjiga Tannakha, narativ cijelog Tannakha, ili općenito judaističko učenje, kulturu i praksu. Prema židovskoj tradiciji, Mojsije je na Sinaju, uz 10 zapovijedi dobio i Pisanu Toru (koja se kasnije prepisivala kroz generacije) i Oralnu Toru (koja se prenosila usmenim putem, a danas je zapisana u Mishni i Talmudu).
+Hebrejsko sveto pismo je skup tekstova na klasičnom hebrejskom. Nazivaju ha **Tannakh**, što je akronim naziva tri dijela: **Torah** (zakoni), **Nevi'im** (proroci) i **Ketuvim** (ostalo). Kod Kršćana, ovo je Stari Zavjet.
+
+**Torah** (u prijevodu uputa, učenje ili zakon) može označavati prvih 5 knjiga Tannakha, ili općenito judaističko učenje, kulturu i praksu. Prema židovskoj tradiciji, njen autor je Mojsije koji je na Sinaju uz 10 zapovijedi dobio Pisanu Toru (koja se kasnije prepisivala kroz generacije) i Usmenu Toru (koja se prenosila usmenim putem, a danas je zapisana u Mishni i Talmudu).
+
+## Hram
+
+Pošto postoji samo jedan Bog, postojao je i samo jedan Hram (u Jeruzalemu) gdje su se ispunjavale dužnosti žrtvovanja (za razliku od npr. Zeusa koji ima hram u svakom gradu).
 
 ## Zakoni
 
@@ -29,6 +35,12 @@ Hebrejska biblija je ono što je kod kršćana Stari Zavjet. Nazivaju je *Tannak
 Paljenje i gašenje vatre je zabranjeno na šabat, što mnogi ortodksni židovi interpretiraju kao i zabranu korištenja električne energije. To znači da subotom ne smiju paliti i gasiti svijetla. Da bi tome pribjegli, koriste se timeri, Sabath lampe koje uvijek gore ali se mogu prekriti, ili kosher prekidači koji kao "možda" neće upaliti svijetlo, pa to ne krši zakon (iako neki kažu da krši). Mnogi uređaji imaju šabat mod rada, npr. šabat liftovi staju na svakom katu kako korisnici ne bi morali stiskati dugme.
 
 Postoji zona oko datumske granice (169°W–177°E) u kojoj nije baš skroz jasno kada je halakha subota (gleda li se po lokalnom vremenu ili prema Jeruzalemu). Židovski autoriteti predlažu izbjegavanju putovanja u taj dio svijeta oko vikenda.
+
+### Eruv
+
+Jedno od pravila Šabata je da vjernik ne smije nositi nikakav predmet izvan vlastite kuće. To uključuje ama baš sve: ključeve, lijekove, molitveni šal, naočale. Guranje stvari je također zabranjeno, što znači da su mala djeca i nepokretni u kolicima zarobljeni u kući, i ne mogu ispuniti religijske dužnosti u sinagogi.
+
+Kako bi tomu doskočili, određene židovske zajednice definiraju Eruv - zajednički privatni prostor unutar kojeg vrijede pravila kućanstva. Eruv mora biti omeđen sa svih strana: zidom, cestom, prugom, ili jednostavno žicom podignutom na motke. Takva granica pretvara područje s više individualnih židovskih kućanstava u jedan veliki dom, unutar kojeg se svi mogu slobodno kretati.
 
 ### Brak
 
@@ -66,9 +78,21 @@ Kada su se nastanili u Kanaanu, Izraelci su pashalnu večeru spojili sa sedmodne
 
 Beskvasni kruh ima više značenja: povijesno, predstavlja izlazak iz Egipta kada su Izraelci pobjegli u žurbi pa nisu mogli čekati da im se tijesto digne, pa je kruh koji su ispekli bio beskvasan; simbolički, on je podsjetnik da budemo skromni i ne zaboravimo život u ropstvu.
 
+Kod pripreme za pashalnu večeru, cijelo kućanstvo se mora očistiti od tragova kvasnog kruha, što traje i do mjesec dana. Nakon čišćenja, kuhinjske površine koje su dirale kvasac prekrivaju se posebno pripremljenim pločama, ili aluminijskom folijom. To uključuje i pećnicu, pa se za pashu često koristi posebna pećnica.
+
 ## Talmud
 
 Talmud je zbornik židovskih zakona i teoloških misli. Najčešće se referira na Talmud Bavli (Babilonski Talmud), iako postoji stara kolekcija zvana Talmud Yerushalmi (Jeruzalemski Talmud). Sastoji se od dva dijela: *Mishnah* je zbornik "usmene Tore", odnosno svih zakona koji nisu zapisani u "pisanoj Tori"; *Gemara* je zbornik objašnjenja i interpretacija Mishne te rasprava o čitavoj Hebrejskoj Bibliji. Talmud je preko 6200 stranica dug i sadrži tekstove tisuće rabina u rasponu od 1. do 6.st.
+
+## Elisha ben Abuyah
+
+Elisha je bio iznimno talentiran rabin iz `1.st` koji je postao heretikom i trudio se kršiti sve židovske zakone, ali i dalje propovjedajući. Talmud ga ne spominje imenom, nego ga naziva **Acher**, "onaj drugi".
+
+Legenda kaže da je postao heretik kad je vidio dijete koje je poginulo u padu sa stabla dok je skidalo gnijezdo. Time je ispunjavalo dva zakona Tore - poštovanje oca i majke, te tjeranje majke ptice - koja obećavaju dugi život. S druge strane, čovjek koji je prekršio oba zakona je prošao nekažnjeno. Nakon toga Elisha prestaje poštivati zakon, i surađuje s Rimljanima kako bi onemgućio druge židove da ga poštuju.
+
+Druga legenda priča o tome kako je jahao konja i propovjedao na Šabat, dok ga je rabin Meir pratio i slušao. U jednom trenu ga Meir zamoli da stane i da se vrati, jer je prešao udaljenost koju smije na Šabat. Ali Elisha mu odgovara da se ne može vratiti - jednom je jahao pokraj najsvetijeg mjesta na Yom Kippur, i čuo glas kako govori: "Pokajte se i vratite, izgubljena djeca, svi osim Elishe ben Abuyaha."
+
+Židovska vjera se zasniva na tome da se svatko može iskupiti, čak i ako je cijeli život odbacivao boga. Dovoljno je da se u zadnjem trenutku svog života pokaje. A Elisha je čuo glas koji, ne samo da ga ne moli da se pokaje, nego mu eksplicitno kaže da za njega jedinoga ta milost ne vrijedi.
 
 ## Kabbalah
 

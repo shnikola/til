@@ -8,6 +8,20 @@ Teži dio producentskog posla, pogotovo ako dolaziš iz developerske ili dizajne
 
 Producentov posao je osigurati da sav uloženi trud dođe do publike, da se igra objavi i da studio preživi. Dok su svi u timu emocionalno investirani u samu igru, producent mora biti protuteža koja će se boriti da igra bude dovršena, koliko god se ostali ne slagali s time.
 
+## Prva igra
+
+Za prvi projekt odaberi ideju koju možeš realizirati unutar **1 mjeseca**. Sa svakom igrom koju napraviš ćeš postajati sve bolji, i prvi projekt je često onaj na kojem ćeš mnogo naučiti, ali i htjeti baciti u smeće i početi od početka. Zato je dobro da to bude ideja malog scopea koja se može završiti u razumnom roku.
+
+Naravno, trebat će ti duže od 1 mjeseca, jer nemoguće je od prve procijeniti zahtjevnost projekta. Ali ako se počneš približavati **3 mjeseca** rada, vjerojatno si odabrao preopširan zadatak.
+
+Ne brini se oko dizajna ili koncepta - samo dovrši igru što prije. Za prvi pokušaj, iskustvo rada je puno važnije nego sam rezultat.
+
+Postavi si **milestone za svaki tjedan**. Svaki od milestona podijeli na manje taskove. Ako task traje duže od tjedna, treba ga razbiti na sitnije zadatke.
+
+**Vodi dnevnik** na početku svakog tjedna, bilježeći planirani posao; i na kraju tjedna da rezimiraš učinjeno. To je dobar način za osigurati se da ne zaostaješ za rasporedom.
+
+Konačno, daj ljudima da igraju igru. Iako nećeš biti zadovoljan s rezultatom, najbitniji feedback je onaj kojeg ćeš dobiti od igrača.
+
 ## Prototip
 
 Development uvijek počni s prototipom, i osiguraj da je prototip zabavan prije nego ga počneš razvijati dalje. Ono što nikako ne želiš je složiti veliki popis želja koje ćeš godinama pokušavati ugurati u jednu igru.

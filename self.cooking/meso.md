@@ -29,15 +29,15 @@ Junetina su goveda 6-30 mjeseci. Svijetlocrvene boje, masno tkivo je krem bijelo
 Govedina su goveda starija od 30 mjeseca. Tamnocrvene boje, masno tkivo je žuto.
 
 Dijelovi:
+* **Vrat** je žilav. Za juhe, rague. Za mljeveno meso, jeftiniji je od buta.
+* **Plećka** dobra za gulaše, a jeftinija od buta.
+* **Lopatica** gulaš, kuhano, pečena u komadu.
+* **Koljenica** (ossobuco - "šuplja kost") za gulaše i juhe. Povećava volumen kuhanjem.
 * **Biftek** (pisana pečenica) duguljasti tanki komad unutar hrpta. Meso izvan kategorije, za naglo ili roštilj. Sirov za tatarski biftek. Cijeli biftek se može peći u pećnici.
 * **Hrbat** (roastbeef) se nalazi između buta i pržolice. Meso 1. kategorije, za na naglo ili roštilj. Duguljasti komad koji se reže na više dijelova: početni dio s rebrima (Cote de beuf/Prime Rib), Club Steak, T-Bone Steak i Porterhouse Steak.
 * **Pržolica** (ramstek, Rib Eye Steak) isto kvalitetno. Prošarano finim nitima masnoće i vrlo saftno. Narezan za odležanje pa tavu ili roštilj. Cijeli u pećnici.
 * **Ruža** mekši dio buta. Sastoji se od oraha (okrugliji) i hiftl (plosnatiji). Nakon lakšeg udaranja batom i mariniranja može se ispeći na tavi ili roštilju. Ali dobra je i za umake, pašticadu.
 * **Frikando** (butni valjak, lažni biftek) žilaviji dio buta, ali liči na biftek pa se lako zabuniti. Dijeli se na crnu i bijelu pečenicu. Ne koristi se za odreske, nego za gulaše, umake, pašticadu, kuhanje, špikanje.
-* **Koljenica** (ossobuco - "šuplja kost") za gulaše i juhe. Povećava volumen kuhanjem.
-* **Vrat** je žilav. Za juhe, rague. Za mljeveno meso, jeftiniji je od buta.
-* **Plećka** dobra za gulaše, a jeftinija od buta.
-* **Lopatica** gulaš, kuhano, pečena u komadu.
 * **Rep** je posebna delikatesa, pogodna za juhe. Zamoli mesara da ti ga izreže.
 
 Za odreske: hrbat, da bude mramorirano (prošarano masti) i odležano.
@@ -48,9 +48,16 @@ Za juhe: potrbušina; vrat; prsa; flam; rep
 ## Svinjetina
 
 Djelovi:
-* **Vrat** odresci za roštilj, ili osušen i kuhan s kiselim zeljem.
-* **Lopatica** pirjanje i gulaš.
-* **Lungić** (svinjski biftek) najcjenjeniji komad mesa. Za medaljone ili pečenje u pećnici.
+* **Vrat** u odrescima za roštilj (5-10 min), u komadu kao pečenka (1-2 sata). Dimljenjem se dobija budžola.
+* **Lopatica** (plećka) za gulaše u kockicama (1 sat) ili pečenje u komadu s dosta tekućine (do 3 sata).
+* **Kare** (leđa) može se narezati na kotlete (krmenadle) za pečenje na naglo. Dimljenjem u komadu dobija se pečenica (laks kare, ombolo).
+* **File** (lungić, pisanica) najcjenjeniji komad mesa. Za medaljone ili pečenje u pećnici. Treba mu kratka termička obrada i ako se prepepeče postane suh.
+* **Rebra** se kod nas najčešće dime i koriste u varivima i grahu. Mogu se i peći u komadu, marinirana (1-2 sata).
+* **Carsko meso** (potrbušina) za naglo na roštilj ili sporo pečeno u pećnici.
+* **But** sastoji se od 4 dijela, od mekšeg prema tvrđem: **ruža**, **šol** (odresci i pohanje, 5-10 min), **orah** (mekan, ali treba očistiti od žila), **frikando** (najtvrđi, za pirjanje i gulaše - presuh kao pečenje).
+* **Buncek** (stražnja koljenica) za duže kuhanje ili pečenje (2-3 sata).
+
+Uz svinjetinu idu jabuke, šljive, kruške.
 
 ## Janjetina
 
@@ -58,6 +65,10 @@ Mlada janjetina 3 tjedna do 3 mjeseca. Janjetina 3-9 mjeseci. Ovčetina starija 
 
 Za ražanj 12-13kg, za peku 7-8 kg.
 Janjetina gubi 35% mase pečenjem.
+
+## Perad
+
+Uz perad idu naranča, limun, jabuke.
 
 # Recepti
 
@@ -74,11 +85,14 @@ Prijedlozi umaka:
 
 ## Pečenka
 
+Za pečenku odaberi **lopaticu**, **svinjski vrat** ili **rebra**.
+
 * Meso dobro posoli, začini (npr. timijan, paprika, korijander) i stavi da odleži pola sata.
 * Oguli i nasjeckaj **2 kapule**, **1 glavicu češnjaka** samo oguli od vanjske opne i odreži vrhove. Nasjeckaj **mrkve**, **mladih krumpira**.
-* Ubaci sve zajedno u posudu za pečenje, pomiješaj s par žlica ulja. Ulij **150ml vina**.
-* Peci na 180 stupnje, `60 minuta pokriveno` (na pola puta ga promiješaj), onda u lončić izlij sokove i peci `30 minuta otkriveno` da se zapeče.
-* Sokove reduciraj u umak.
+* Ubaci sve zajedno u posudu za pečenje, pomiješaj s par žlica ulja.
+* Ulij **150ml vina**.
+* Peci pokriveno, `1h po kilogramu` na `180` stupnjeva. Povremeno možeš podlijevati **pivom, vinom ili temeljcem**, ali ne previše da se meso ne bi kuhalo.
+* Zatim otkrij i peci `30 minuta otkriveno`. Sokove možeš prije toga odliti i reducirati u umak.
 
 ## Pulled Pork
 

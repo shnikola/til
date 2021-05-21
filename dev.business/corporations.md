@@ -20,7 +20,7 @@ Najveći problem pri rastu korporacija je kognitivno opterećenje zaposlenika (*
 
 Kognitivno opterećenje dolazi iz tehničkih zahtjeva, ali i iz društvenih: kolega s kojim je teško komunicirati, nepouzdan menadžment, nedefiniran smjer firme i sl. Vodstvu je zadatak da ukloni ove smetnje kako bi zaposlenici mogli raditi bez dodatnih opterećenja.
 
-Sustavi prirodno postaju kompleksniji ukoliko ne postoji mehanizam koji će ih u tome spriječiti. Nijedan zaposlenik ni menadžer neće reći: projekt na kojem radim je prejednostavan, nije potrebno toliko ljudi u mom timu. Zadatak dobrog menadžmenta je da se bori protiv te prirodne kompleksnosti.
+Sustavi prirodno postaju kompleksniji ako ne postoji mehanizam koji će ih u tome spriječiti. Nijedan zaposlenik ni menadžer neće reći: projekt na kojem radim je prejednostavan, nije potrebno toliko ljudi u mom timu. Zadatak dobrog menadžmenta je da se bori protiv te prirodne kompleksnosti.
 
 ## Radoholizam u startupima
 

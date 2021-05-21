@@ -57,6 +57,13 @@ Tradicionalno se radi gnječem u mužaru, a može se raditi i štapnim mikserom.
 * Dodaj naribanih **50g parmezana** i **30g pekorina**, uključi blender zadnji put.
 * Po želji ocijedi malko limuna unutra.
 
+## Gremolata
+
+Gremolata je talijanski umak koji se servira uz meso (pogotovo ossobuco), ili juhe i variva, ali je općenito svestran.
+
+* Nasjeckaj **žlicu svježeg peršina**, **režanj češnjaka**, pa pomiješaj s naribanom **koricom 1 limuna**.
+* Polij s malo maslinovog ulja da bude taman mokro.
+
 ## Vinaigrette
 
 Emulzija ulja, kiseline (octa ili limunovog soka) i začina. Ulje i kiseline u omjeru 3:1 (probaj i 4:1).

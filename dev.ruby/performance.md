@@ -30,7 +30,9 @@ Napravi svoj benchmark da možeš vidjeti kako promjene u kodu utječu na perfor
 `obj.method(:foo).parameters` lista argumenata koje metoda prima.
 `obj.method(:foo).source_location` file i linija gdje je metoda definirana.
 `obj.method(:foo).super_method.source_location` file i linija gdje je `super` definiran.
+
 `caller` unutar metode, vraća backtrace poziva.
+`caller_locations` vraća stacktrace s linijama koda.
 
 `ruby -d foo.rb` ispisuje sve exceptione, čak i one rescuane.
 `bundle exec ruby -d script/rails runner foo.rb` za Rails.

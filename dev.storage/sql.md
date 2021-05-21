@@ -2,7 +2,7 @@
 
 ## Column types
 
-`INT` podržava veličine do 2^32 (ako je `UNSIGNED`). Length (npr. `INT(11)`) određuje samo koliko će se nula prikazivati ako se ispisuje sa `ZEROFILL`.
+`INT` podržava veličine do 2^32 (ako je `UNSIGNED`). Length atribut (npr. `INT(11)`) je potpuno nebitan, određuje samo koliko će se nula prikazivati ako se ispisuje sa `ZEROFILL`.
 
 Koristi  `NUMERICAL` ili `DECIMAL` (imaju isto ponašanje) umjesto `FLOAT` i `DOUBLE` kako bi izbjegao pogreške zbog zaokruživanja.
 
@@ -12,9 +12,9 @@ Postgres podržava `UUID` type, s `DEFAULT uuid_generate_v4()`.
 
 ## Encoding
 
-MySQLov `utf8` zapravo ne podržava cijeli Unicode, nego samo 3 od 4 byta. Za pravi UTF-8, koristi `utf8mb4`.
+MySQLov `utf8` zapravo ne podržava cijeli Unicode, nego samo 3 od 4 bytea. Za pravi UTF-8, koristi `utf8mb4`.
 
-Neke minor verzije MySqla imaju problem s insertanjem većih JSON-a (> 5MB), što se može zaobići koristeći `SET CHARSET binary` prije i `SET CHARSET default` poslije inserta.
+Neke minor MySQL verzije imaju problem s insertanjem većih JSON-a (> 5MB), što se može zaobići koristeći `SET CHARSET binary` prije i `SET CHARSET default` poslije inserta.
 
 ## Null
 
@@ -27,22 +27,6 @@ Neke minor verzije MySqla imaju problem s insertanjem većih JSON-a (> 5MB), št
 Postgres: `INSERT INTO users (id, name) VALUES (1, 'Nikola') ON CONFLICT DO UPDATE SET name=excluded.name`
 
 Mysql: `INSERT INTO users (id, name) VALUES (1, 'Nikola') ON DUPLICATE KEY UPDATE name=name`
-
-## Indeksi
-
-Indeksi su korisni samo za querije koji dohvaćaju mali broj rezultata; ili za izbjegavanje sortiranja. Engine neće koristiti indeks ako procjeni da je sekvencijalni scan brži (npr. ako ima previše rezultata). Ako je engine glup, prisili ga da koristi indeks s `FORCE INDEX index_name`.
-
-Kada testiraš indekse, ne radi to na development mašini. Hoće li se indeks iskoristiti i kako ovisi o konfiguraciji db servera koji je vjerojatno drugačiji kod tebe.
-
-`B-Tree` (balanced tree) je defaultni tip indeksa koji radi dobro za sve tipove podataka. `GIN` (inverted index) korisni kad indeksiraš više vrijednosti na jedan row (npr. array stupce ili full-text search). `GiST` (search tree) korisni za geometrijske tipove ili full-text search.
-
-**Partial index** omogućava indeksiranje samo nekih redova u tablici, pa je indeks manji i brži za scaniranje: `CREATE INDEX i ON articles(created_at) WHERE flagged IS TRUE`
-
-**Expression index** omogućava indeksiranje modificarnih podatka, ako često radiš querije koji koriste funkcije, npr. `CREATE INDEX i ON users(lower(name))` ako često radiš query s `WHERE lower(email)` ili `CREATE INDEX i ON articles(date(published_at))` ako pretavaraš `datetime` u `date`.
-
-Stvaranje novog indeksa locka cijelu tablicu za pisanje. `CREATE INDEX CONCURRENTLY` radi sporije, ali bez lockanja.
-
-Indeksi se s vremenom fragmentiraju zbog obrisanih i updateanih redova. Korisno je napraviti `REINDEX`, ali i on dugo traje i locka cijelu tablicu. Zato je bolje stvoriti isti indeks pod drugim imenom `CONCURRENTLY`, i onda obrisati stari.
 
 ## Foreign Keys
 
@@ -77,7 +61,7 @@ Više je načina za implementiranje stablaste hijerarhije (npr. comment threada)
 
 `parent_id` stupac omogućava lako dodavanje novih nodeova i dohvaćanje neposredne djece, ali dohvaćanje cijelog podstabla zahtjeva rekurzivne upite. Moguće je učitati sve nodeove (`WHERE post_id = ?`) u memoriju aplikacije i tamo izgraditi stablo, ali to može biti memorijski skupo.
 
-`path` stupac (`1/3/12`) sadrži string sa svim ancestorima nodea. Svi potomci nodea se dohvaćaju s `c.path LIKE '1/3/12/%'`. Jedino je šugavo držati takve podatke u stringu.
+`path` stupac (`1/3/12`) sadrži string sa svim ancestorima nodea. Svi potomci nodea se dohvaćaju s `c.path LIKE '1/3/12/%'`. Nedostatak držanja id-a u stringu je ograničena dužina i nemogućnost korištenja     foreign keyeva.
 
 Closure table koristi dodatnu tablicu s `ancestor` i `decendant` stupcima u kojima su zapisani svi međusobni odnosi nodeova. Dohvaćanje podstabla je jednostavno, a dozvoljava i da se node nalazi u više stabala. Jedino se za svaki node mora dodavati više redova u tablicu, što može biti memorijski zahtjevno za velika stabla.
 
@@ -99,7 +83,7 @@ Oblik tablice koji svakako izbjegavaj je **Entity-Attribute-Value**: generička 
 
 Postgres podržava hrpu operacija za geometrijske podatke, tako da ti PostGIS ne treba.
 
-Ako trebaš samo točku, dodaj stupce `longitude` i `latitude` tipa `NUMERIC(8, 5)`. Ako trebaš linije i poligone, koristi `Geometry` tip stupca.
+Ako trebaš samo točku, dodaj stupce `longitude` i `latitude` tipa `NUMERIC(8, 5)`. Ako trebaš linije i poligone, koristi `line` i `polygon` tipove stupca.
 
 Za provjeru sadrži li shape nešto koristi operator `@>`.
 Za računanje udaljenosti `earth_distance` funkciju iz `earthdistance` modula (konvertiraj koordinate s `ll_to_earth(lat, long)`.
@@ -141,12 +125,6 @@ Neke baze imaju ugrađene metode za sampling tablice. Postgres ima `SELECT * FRO
 Dump: `pg_dump production_db_name -h db-host.rds.amazonaws.com --verbose > dump.sql`
 Restore `psql development_dbn_ame < dump.sql`
 
-## Data Import
-
-Ako trebaš importati veliki CSV file u bazu, overhead aplikacijskog frameworka može biti preskup. Umjesto toga, koristi direktno učitavanje fileova u tablicu:
-* Postgres `COPY posts FROM 'tmp/new_posts.csv' CSV HEADER`
-* MySQL `LOAD DATA INFILE '/tmp/posts.txt' INTO TABLE posts IGNORE 1 LINES`
-
 ## Locking
 
 **Optimistic locking** je strategija u kojoj svaki red ima broj verzije. Kada ga želiš promijeniti, zapišeš trenutnu verziju, i prilikom zapisivanja provjeriš da se verzija nije promijenila, npr. s `UPDATE ... WHERE id = 5 AND version = 23`. Ako update ne uspije, odustaje se od transakcije i daje korisniku da ponovno napravi izmjene. Koristi se kada je preskupo držati lock ili kad očekuješ da će se konflikt rijetko događati.
@@ -169,6 +147,15 @@ Izolacija transakcije je tradeoff između peformansa (može li se query izvršav
 `REPEATABLE READ` garantira da će dva `SELECT`-a unutar iste transakcije vratiti jednake redove (ali možda dođu neki novi ako su se insertali umeđuvremenu).
 
 `SERIALIZABLE` garantira da će dva `SELECT`-a unutar iste transakcije vratiti identičan rezultat. Sve ostale transakcije (pisanje, brisanje) su blokirane dok se transakcija ne dovrši.
+
+## Row-level security
+
+Ponekad želiš ograničiti vidljive redove na razini DB-a, a ne aplikacije:
+`CREATE POLICY user_policy ON users FOR all TO public USING (company_id=current_setting('rls.company_id'));`
+`ALTER TABLE users ENABLE ROW LEVEL SECURITY;`
+
+Ovaj policy će automatski dodati filter koristeći session varijablu
+`set rls.company_id = '...'`.
 
 ## Job queue
 
@@ -194,47 +181,6 @@ UPDATE jobs SET status='initializing' WHERE id = (
     ORDER BY id FOR UPDATE SKIP LOCKED LIMIT 1
 )
 ```
-
-## Connection pooling
-
-Connection pool sadrži listu već uspostavljenih konekcija koje aplikacija može koristiti kako bi izbjegla overhead spajanja.
-*Framework Pooling*: kada se aplikacija pokreće, sama stvara pool konekcija. Dio mnogih frameworka (Sequel gem, Rails).
-*Persistent Connections*: aplikacija održava konekciju po requestu. Nedostatak je što si ograničen samo na jednu po requestu.
-
-Ako imaš više od 100 konekcija otvorenih, treba ti nešto robusnije kao `PG Bouncer`, standalone pooler.
-
-Ako baza potroši sve dostupne konekcije, bacit će `max_connect_errors`. Ako se neki klijent pokuša spojiti previše puta, bit će blokiran s errorom `host_name blocked`. Da bi se host cache očistio pozovi `FLUSH HOSTS`.
-
-## Multiple Databases
-
-**Horizonal sharding** je dijeljenje sadržaja tablica u više baza, kako bi bilo manje redova za selektiranje i indeksiranje. Za metodu shardinga može biti zadužena aplikacija (prednost: ne treba dodavati nove komponente) ili database router (prednost: ako treba mijenjati, na jednom je mjestu).
-
-**Functional partitioning** je dijeljenje tablica u različite baze prema njihovoj upotrebi. Na taj način odvajanje tablice u koju se često piše neće degradirati performance ostalih tablica.
-
-**Read replicas** mogu ići samostalno, ili u kombinaciji s gornjim podjelama. Replike smanjuju pritisak na writing bazu i obavljaju select upite.
-
-## Common performance problems
-
-Za spore querije koristi `EXPLAIN` da vidiš detalje upita. Stupac `rows` (Mysql), odnosno `Plan Rows` (Postgres) govore kroz koliko će redova upit morati proći u najgorem slučaju. Ako je vrijednost `1`, upit će se dobro skalirati. Ako je vrijednost jednaka ukupnom broju redova u tablici, upit zahtjeva *full table scan* što nije skalabilno.
-
-`SELECT COUNT(*)` zahtjeva full page scan, pa ga izbjegavaj za velike tablice.
-* cachiraj vrijednost, bilo kao stupac u tablici, ili u memoriji.
-* ne prikazuj ukupan broj gdje nije potrebno (npr. kod paginacije).
-* umjesto točnog broja napiši npr. "of Thousands".
-
-Pri paginaciji s `OFFSET(1000)`, skenira se i svih 1000 prethodnih redova. Upit za zadnju stranicu će efektivno morati proći kroz cijelu tablicu. Usto, dodavanje novih redova tijekom paginacije će dovesti do prikaza istih redova na različitim stranicama.
-* Izbaci direktna skakanja na N-tu stranicu, prikažu samo "Next" i "Prev".
-* Koristi `WHERE id < 1000 ORDER BY id DESC` umjesto `OFFSET` kad možeš.
-* U slučaju sortiranja po drugom stupcu, koristi u kombinaciji s `id`, npr. `WHERE created_at < ? AND id < 20 ORDER BY created_at DESC, id DESC`
-
-Provjeri cache hit rate s:
-`SELECT sum(heap_blks_read) as heap_read, sum(heap_blks_hit) as heap_hit, sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) as ratio FROM pg_statio_user_tables`. Ako je ratio manji od 99%, povećaj cache.
-
-Korištenje indeksa provjeri s
-`SELECT relname, 100 * idx_scan / (seq_scan + idx_scan) percent_usage, n_live_tup rows_in_table FROM pg_stat_user_tables WHERE seq_scan + idx_scan > 0 ORDER BY rows_in_table DESC`. Sve tablice s preko 10,000 rowova bi trebale imati indeks.
-
-Za nalaženje sporih i često pozivanih querija:
-`SELECT (total_time / 1000 / 60) as total_minutes, (total_time/calls) as average_time, query FROM pg_stat_statements ORDER BY total_minutes DESC LIMIT 100`
 
 # Literatura
 

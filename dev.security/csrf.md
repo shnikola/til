@@ -66,14 +66,14 @@ Serveri vrlo često greškom dopuštaju `null` origin (u specifikaciji predviđe
 
 ## Clickjacking
 
-*Clickjacking* je kad napadač na svojoj stranici stavi nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove. Odlično mjesto za clickjacking je cookie consent poruka na koju su svi navikli da klikaju bez razmišljanja.
+Napadač na svojoj stranici stavlja nevidiljivi `iframe` na tvoju stranicu, te prevarom natjera da klikneš na njega i npr. obrišeš sve mailove. Odlično mjesto za clickjacking je cookie consent poruka na koju su svi navikli da klikaju bez razmišljanja.
 
 Da bi se obranio, koristi se `X-Frame-Options` header koji će browseru zabraniti da prikazuje tvoju stranicu unutar `iframe`a.
 * `X-Frame-Options: deny` ne prikazuje se nikad
 * `X-Frame-Options: sameorigin` samo embeddan na stranicama istog origina
 * `X-Frame-Options: allow-from: www.example.com` samo embeddan na stranicama dane domene. Nažalost, ne podržava više domena odjednom.
 
-Modernija alternativa je `Content-Security-Policy: frame-ancestors 'self' example.com *.example.net` _IE 10+_.
+Modernija alternativa je `Content-Security-Policy: frame-ancestors 'self' example.com *.example.net`.
 
 ## JSON Hijacking
 

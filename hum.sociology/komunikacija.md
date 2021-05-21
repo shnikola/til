@@ -66,6 +66,10 @@ All games are defined by a set of rules which in practice allow the playing of a
 
 Games thus appear to have a disjunctive effect: the end in the establishment of a difference between individual players or teams where originally there was no indication of inequality. At the end of the game, they are distinguished into winners and losers. Rituals, on the other hand, is the exact inverse: it conjoins, for it brings about a union, or in any case an organic relation between two initially separate groups.
 
+## Grupe
+
+Ako je grupa definirana željom članova da je napuste (npr. support grupe), s vremenom će članovi ostati samo oni koji grupu ne mogu napustiti. Zbog toga mnoge takve zajednice postanu toksične s vremenom.
+
 # Literatura
 
 * http://slatestarcodex.com/2014/12/17/the-toxoplasma-of-rage/

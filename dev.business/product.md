@@ -1,5 +1,7 @@
 # Proizvod
 
+Oduševi mušterije i sve će biti lakše. Jeftiniji/brži/kvalitetniji proizvod je dobar, ali ako im uspiješ izazvati emociju, zapamtit će te. Pokušaj proizvod povezati s idealom, s nečim što mušterije žele postati.
+
 ## Ispitivanje tržišta
 
 Prvo prodaj proizvod, onda ga napravi. Najveća pogreška u pokretanju vlastitog biznisa je trošenje godina na stvaranju proizvoda za koji nisi uopće provjerio ima li zainteresiranih kupaca.
@@ -12,15 +14,23 @@ Umjesto da u focus grupama pitaš ljude što žele, moraš im ponuditi nešto. L
 
 Odustani od univerzalnog rješenja i prihvati raznovrsnost potreba i ukusa svojih mušterija.
 
-## Planiranje
-
-Budućnost se ne može planirati. Planove radije zovi "nagađanja" (*guesses*), jer će te to podsjetiti da ništa nije uklesano u kamen.
-
 ## In a Gun Craze, Be the Arms Dealer
 
 Kad god se pojavi fenomen na tržištu s niskim pragom ulaska i velikim brojem sudionika, najbolja strategija je zarađivati na njima. Kad je zlatna groznica, prodaji lopate. Umjesto restorana, napravi kompaniju koja snabdjeva restorane. Umjesto vina, prodaji bačve.
 
+## Distribucija
+
+Sjajan proizvod će propasti ako nitko ne čuje za njega. Eksperimentiraj s različitim pristupima distribucije. Najčešće ćeš se htjeti fokusirati na onaj koji uspije i ignorirati ostale.
+
+## Operacije
+
+Fokusiraj se na jednu po jednu stvar. Utvrdi bottleneck i eliminiraj ga.
+
+Kako razvijaš procese, kodificiraj ih. Zapiši ih i proslijedi ostalima, te im objasni da rade isto.
+
 ## Financijska stabilnost
+
+Debt vs equity: Financiraj se kreditima kada je zarada predvidljiva i rizik nizak; financiraj se udjelima kada je zarada neizvjesna.
 
 Na početku postojanja, bitna je samo količina na računu. Ona plaća zaposlenike, servere i režije. Količinu na računu podijeliš s prosječnom mjesečnom potrošnjom da dobiješ koliko ti je mjeseci ostalo dok ne ostaneš bez novaca. Mjesečni troškovi (umanjeni za mjesečne prihode) nazivaju se **Monthly Burn Rate**.
 

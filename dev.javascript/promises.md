@@ -16,24 +16,29 @@ Promise objekt stvaraš pomoću `new Promise(function(resolve, reject) { ... })`
 
 Osnovni način zvanja je `promise.then(success, fail)`, pri čemu će biti pozvana ili `success` ili `fail` funkcija, nikad oboje.
 
-Ljepši način pisanja je `promise.then(success).catch(fail)`. On ima malo drugačije ponašanje jer handla i slučaj da promise prođe, `success` se izvodi i ne uspije, što će onda `catch` uloviti.
+Ljepši način pisanja je `promise.then(success).catch(fail)`. On ima malo drugačije ponašanje jer handla i slučaj ako se error dogodi u `success` callbacku, što će onda `catch` uloviti.
 
-Funkcija `then` vraća novi promise pa se može chainati za sekvencijaranje asinkronih poziva koji ovise jedan o drugome:
+Funkcija `then` vraća novi promise pa se može koristiti za chainanje asinkronih poziva koji ovise jedan o drugome:
 `fetch('story.json').then(JSON.parse).catch(errorHappened).then(finished)`. Ako koji korak faila, pozvat će se `errorHappened`, a u svakom slučaju će se pozvati `finished`.
 
 ## jQuery
 
 jQuery promises su suptilno drugačiji, ali možeš ih castati u nativni promise koristeći `Promise.resolve($.ajax('/whatever.json'))`.
 
-## Async Functions _Chrome, Edge (flag)_
-
-Alternativan način pisanja promisea je `async func() { ... }`. Funkcija definirana s `async` omogućava da koristiš `await promise` unutar nje, npr. `await fetch(url)`.
-
-`await` će pauzirati funkciju dok ne dobije odgovor, bez da blokira glavni thread. Asinkrone naredbe tako možeš pisati sekvencijalno, a ne se gnjaviti s promisima.
-
 ## Event Loop
 
-Event loop će uvijek dopustiti da se funkcija izvrši do kraja prije nego pozove iduću. Samo ako koristiš `await` u funkciji, pauzirat će se izvršavanje i prebaciti na iduću funkciju u queueu.
+Event loop će uvijek čekaati da se funkcija izvrši do kraja prije nego pozove iduću. Zato će se `.then/catch` handleri pozvati tek nakon što je trenutni kod izvršen.
+
+## Async Functions
+
+Promise možeš stvoriti i posebnom sintaksom `async function f() { }`. Svaki return funkcije pritom možeš koristiti kao obični promise, npr. `f().then()`.
+
+Unutar `async` funkcije možeš koristiti `await <promise>`, npr.
+`result = await fetch(url)`. Ako je promise uspješan, vratit će rezultat; ako je error, dogodit će se `throw(error)` koji možeš uhvatiti s `f().catch()` vanjske funkcije.
+
+`await` će pauzirati funkciju dok ne dobije odgovor, bez da blokira glavni thread (to je jedini slučaj kada će event loop dopustiti prekidanje trenutne funkcije).
+
+Kombinacijom `async` i `await` možeš pisati asinkroni kod sekvencijalno, pa nema potrebe za korištenjem promise chaininga.
 
 # Literatura
 

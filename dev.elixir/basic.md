@@ -33,7 +33,7 @@ case {1, 2, 3} do
   {1, x, 3} ->
     "Binda x = 2 i izvršava ovaj kod"
   {1, x, 3} when x > 0 ->
-    "Ukoliko je guard true, binda i izvršava"
+    "Ako je guard true, binda i izvršava"
   _ ->
     "Ako se ništa nije matchalo, raisea se error. S ovim hvatamo sve else."
 end
