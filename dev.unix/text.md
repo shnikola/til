@@ -104,6 +104,8 @@ koristi `find -print0` i `xargs -0`.
 
 ## Regex
 
+`<tag>.*?</tag>` za lazy evaluaciju (do prvog `</tag>`).
+
 Za detektirati ponavljanja u regexu koristi `(something)\1`
 
 ## echo vs printf

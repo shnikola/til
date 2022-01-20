@@ -2,9 +2,9 @@
 
 ## Brian Eno
 
-"Što god ti se čini čudno, ružno, neugodno ili gadno vezano za novi medij, je upravo ono što će postati njegova oznaka. CD distorzija, titranje digitalnog vida, šugavi zvuk 8-bitnih zvučnih kartica - sve to će biti obožavano i oponašano čim se bude moglo izbjeći.
+"Što god se u novom mediju čini čudno, neugodno ili ružno, to je upravo ono što će postati njegova oznaka. CD distorzija, titranje digitalnog vida, šugavi zvuk 8-bitnih zvučnih kartica - sve to će biti obožavano i oponašano čim se bude moglo izbjeći.
 
-To je zvuk neuspjeha. Velik dio moderne umjenosti je zvuk stvari na izmaku kontrole, medija koji se tjeraju do granica i tamo raspadaju. Distorzija gitare je zvuk nečega preglasnog za medij koji ga treba prenijeti. Pucanje glasa pjevača bluesa je zvuk emocije presnažne za grlo koje ga ispušta. Zrnatost crno-bijelog filma je uzbuđenje svjedočenja događajima preznačajnim za medij koji ih pokušava snimiti."
+To je zvuk neuspjeha. Velik dio moderne umjenosti je zvuk stvari na izmaku kontrole, medija koji se tjera do granica i tamo raspada. Distorzija gitare je zvuk nečega preglasnog za medij koji ga treba prenijeti. Pucanje glasa pjevača bluesa je zvuk emocije presnažne za grlo koje ga ispušta. Zrnatost crno-bijelog filma je uzbuđenje svjedočenja događajima preznačajnim za medij koji ih pokušava snimiti."
 
 ## McLuhan
 

@@ -4,6 +4,14 @@
 
 API key je najjednostavniji oblik API authenticationa. Preporuča se slati u headeru `Authorization: Apikey 1234567890abcdef`.
 
+API key se može koristiti kada ne postoji prijetnja od XSS-a i nema potrebe za revokanjem, npr. za skripte i serverske requeste koji se rade izvan browsera.
+
+## API Token
+
+API token se izdaje za određenog usera i posjeduje određeno trajanje ili mehanizam za revokanje.
+
+Ako se koristi u browseru, nije ga dobro čuvati u local storageu jer postoji rizik da ga XSS dohvati (ali su otporni na CSRF, za razliku od cookija).
+
 ## OAuth 2.0
 
 OAuth je protokol preko koje jedna aplikacija (**klijent**) može dobiti dopuštenje da koristi korisnikov račun druge aplikacije (**resource server**). Pritom korisnik klijentu ne mora dati svoj password ili ikakvu tajnu informaciju. Autentifikaciju radi **authorization server** koji je najčešće isti kao resource server.
@@ -44,3 +52,6 @@ Malo je čudno da se prvo vraća **auth code** a ne **access token**, ali ideja 
 
 Access token je napravljen da traje kratko (defaultno 10 minuta), pa ako ga netko ukrade, neće ga moći dugo koristiti. Jednom kad access token istekne, server koristi **refresh token** da bi dohvatio novi access token. Refresh token isto može isteći, ali to baš nije precizno definirano, i dosta providera ga ne expiraju. Ako netko ukrade refresh token, beskorisan je jer mu treba i **client secret** za dobijanje accessa.
 
+# Literatura
+
+* http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/

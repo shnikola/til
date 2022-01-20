@@ -4,7 +4,7 @@
 
 Investiranje je davanje novca kompaniji kako bi mogla rasti i razvijati svoje poslovne planove. To radiš zato što vjeruješ u njihovi poslovni plan, razumiješ se u sektor i vjeruješ da će kompanija vrijediti više nego što vrijedi sada. S njima si tu na duge staze.
 
-Špekulacija je kupovanje dionica s nadom da ćeš ih moći skuplje prodati i tako zaraditi. Pritom ne znaš niti te briga o tome što kupuješ. Drugim riječima, kockanje. Špekulacija nije nužno loša - ona povećava likvidnost burze dionica, tj. čini prodaju, kupnju i zamjenu dionica lakšom. Da nema špekulanata, ne bi imao kome prodati svoje dionice ako bi poželio.
+Špekulacija je kupovanje dionica s nadom da ćeš ih moći skuplje prodati i tako zaraditi. Pritom ne znaš niti te briga o tome što kupuješ. Drugim riječima, kockanje. Špekulacija nije nužno loša - ona povećava likvidnost burze dionica, tj. čini prodaju, kupnju i zamjenu dionica lakšom. Da nema špekulanata, ne bi imao kome prodati svoje dionice kad poželiš.
 
 ## Obveznice vs Dionice
 
@@ -16,7 +16,7 @@ Povlaštene dionice (*preferred stock*) su nešto između obveznica i dionica. N
 
 Obične dionice (*common stock*) su najriskantinije. Vrijednost im može neograničeno rasti, ali i padati. U slučaju likvidacije, dioničari su zadnji koje se isplaćuje, i najčešće dobijaju tek mali dio uloženog.
 
-Korporacija može definirati i sebi specifične vrste dionica s posebnim pravilima (npr. s većim brojem glasova po dionici). Takve dionice u imenu imaju prefiks, npr. `BRK.A`, `BRK.B`.
+Korporacija može definirati i sebi specifične vrste dionica s posebnim pravilima (npr. s većim brojem glasova po dionici). Takve dionice u imenu imaju sufiks, npr. `BRK.A`, `BRK.B`.
 
 ## Prava dioničara
 
@@ -32,6 +32,18 @@ Drugim riječima, vlasnici dionica nisu vlasnici korporacije niti njene imovine.
 Kada se kompanija osnuje, njeni jedini dioničari su osnivači i rani ulagači. Kako se kompanija razvija, potreban joj je dodatni kapital, pa može izdavati dodatne dionice novim ulagačima, umanjujući udio koji imaju osnivači. U ovom periodu, dionice kompanije smatraju se privatnima, ne može se lako trgovati njima i broj dioničara je mali.
 
 U jednom trenutku ulagači žele unovčiti dionice koje posjeduju, a kompanija treba kapital veći nego što ga mala grupa ulagača može ponuditi. U tom slučaju se kompanija može odlučiti na *initial public offering* (IPO), i ponuditi svoje dionice široj javnosti.
+
+## Otkup
+
+Kompanija može odlučiti da otkupi dionice (*stock buyback*) od dioničara. To radi u aukciji obrnutoj od IPO-a. Na ovaj se način smanjuje broj dionica u opticaju, pa se preostalim dionicama diže vrijednost (ovo je posebno privlačno rukovoditeljima koji sami posjeduju dionice, pa često dovodi do sukoba interesa.)
+
+U teoriji, kompanija je potrošila novce na isplatu dioničarima, pa bi joj vrijednost trebala pasti, i cijena dionica ostati ista. U praksi, cijene dionica se ne kreću racionalno već ovisno o raspoloženju tržišta.
+
+## Value investing
+
+*Value investing* je strategija ulaganja u dionice koje su podcijenjene u odnisu na njihovu stvarnu vrijednost. Value investori smatraju da tržište pretjerano reagira na dobre ili loše vijesti, pa cijene dionica ne odgovaraju dugoročnim vrijednostima kompanija.
+
+Za određivanje realne vrijednosti kompanije koriste se metrike kao *price-to-book* (vrijednost asseta), *price-to-earnings* (zarada) i *free cash flow* (gotovina preostala nakon oduzimanja operativnih troškova).
 
 ## Indeksi
 
@@ -52,7 +64,7 @@ Svaki order ima i rok trajanja. Može biti *immediate-or-cancel* koji se povlač
 
 ## Hedging
 
-Hedging omogućuje smanjenje rizika u slučaju da cijene dionica počnu padati. Poput osiguranja, istovremeno se kladiš u suprotnu opciju, pri čemu u boljem slučaju izgubiš mali dio uložen u osiguranje, ali u gorem slučaju nećeš izgubiti sve.
+Hedging je smanjivanje rizika u slučaju da cijene dionica počnu padati. Poput osiguranja, istovremeno se kladiš u suprotnu opciju, pri čemu u boljem slučaju izgubiš mali dio uložen u osiguranje, ali u gorem slučaju nećeš izgubiti sve.
 
 Najjednostavniji oblik hedginga je divezifikacija dionica. Ako želiš ulagati u dionice proizvođača luksuznih dobara, dobro je dio ulaganja odvojiti na industriju duhana ili komunalija. U slučaju da ekonomija raste, luksuzi će biti na većoj cijeni i zaradit ćeš, ali u slučaju da dođe recesija, komunalije će i dalje ostati stabilne.
 
@@ -66,7 +78,9 @@ Options su kao futures, samo nisu obvezne. Daju pravo da se u nekom roku dionico
 
 Posudiš dionice od nekoga (npr. brokerske kuće), prodaš ih, čekaš da cijene padnu, kupiš ih po nižoj cijeni i vratiš. Za razliku od standardnog ulaganja, tu se kladiš da će cijene pasti, a ne rasti.
 
-Velik problem sa short sellingom je rizik da izgubiš neograničeno mnogo novca. Cijena, umjesto da padne, može skočiti u nebo, i onda moraš platiti mnogo više kako bi mogao vratiti dionice nazad. Da bi se zaštitio, koristi hedging s opcijom da prodaš po kupljenoj nabavnoj cijeni.
+Velik problem sa short sellingom je rizik da izgubiš neograničeno mnogo novca. Cijena, umjesto da padne, može skočiti u nebo, i onda moraš platiti mnogo više kako bi mogao vratiti dionice nazad.
+
+Od velikih gubitaka se možeš zaštiti koristeći limit order za kupovinu (staviti limit na 10% veću cijenu nego onu po kojoj si posudio).
 
 ## Funds
 

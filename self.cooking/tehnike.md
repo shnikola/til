@@ -17,3 +17,11 @@ Kuha se dugo i lagano na temperaturi ispod 100 stupnjeva, u pećnici ili na šte
 Toplina, vrijeme i tekućina razbijaju kolagenska tkiva koja čine meso žilavim, pa je ova metoda idealna za žilave komade mesa. Mnoga pirjana jela (npr. coq au vin) su nastala od pokušaja da se neukusno meso učini jestivim.
 
 Dinstanje je sinonim, iako često označava da se ne stavlja dodatna tekućina.
+
+## Cast Iron
+
+Prednost posuđa od lijevanog željeza je što jako dobro zadržava toplinu - jednom kad se zagrije, ostat će zagrijan jako dugo. Ovo je sjajno za prženje, bilo mesa (searing) bilo u ulju (frying).
+
+Prije prvog korištenja, tavu treba "seasonati" - dobro je zagrijati i premazati tankim slojem ulja. Time se stvara polimerski sloj od kojeg će se tava manje lijepiti. Površina ne smije biti sjajna i masna - dovoljno je samo malo ulja da željezo ne bude suho.
+
+Ako se tava koristi relativno često, čak je nije ni potrebno reseasonati nakon korištenja - dovoljno je

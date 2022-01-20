@@ -4,7 +4,7 @@
 
 `var f = function() { ... }` je function expression. Korisna je u slučaju da želiš kondicionalno stvoriti funkciju, npr. `f = check ? function() {...} : function() {...}`.
 
-`var f = (n) => n + 1` je arrow function, skraćeni oblik pisanja expressiona `function(n) { return n + 1; }`. Za ignoriranje parametara koristi `() => ...`. Za više linija koristi `{ body }`` i `return`.
+`var f = (n) => n + 1` je arrow function, skraćeni oblik pisanja expressiona `function(n) { return n + 1; }`. Za ignoriranje parametara koristi `() => ...`. Za više linija koristi `{ body }` i `return`.
 
 Arrow funkcije ne stavaraju novi function scope, što znači da ne moraš koristi `bind(this)` ili `var that = this`.
 

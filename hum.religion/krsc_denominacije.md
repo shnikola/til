@@ -31,3 +31,11 @@ Unitarijanci su nastali neovisno sredinom 16. stoljeća u Poljskoj i Transilvani
 **Arijanski unitarijanizam** smatra da je Isus prije svog ljudskog života postojao kao *Logos*, biće koje je stvorio Bog, i koje je s njim obitavao na nebu. Opet, postoje nijanse: neki vjeruju da je Isus božanski duh iste prirode kao i Bog, a neki vjeruju da je anđeo ili neko niže božansko biće različite prirode od Boga.
 
 Do kraja 19. stoljeća, dio Unitarijanaca se udaljio od kršćanskih korijena i počeo primati nekršćane i neteističke crkve i pojednice u zajednicu. Tako se Unitarijanizam razvio u liberalni religijski pokret **Unitarijanski Univerzalizam** koji nema zajedničko vjerovanje, već okuplja članove u "slobodnoj i odgovornoj potrazi za istinom i značenjem".
+
+## Pentakostalci
+
+Pentekostalsko kršćanstvo je protestantski pokret nastao u Los Angelesu `1906`, kroz Azusa Street Revival projekt. Pokret je vodio afroamerički pastor William Seymour, poznat po svojim živopisnim i višesatnim propovjedima, u kojima bi pričao i pjevao "u jezicima", pod utjecajem duha svetog.
+
+Protestanska doktrina *cezacionizma* smatra da je Bog povukao nadnaravne darove koje je udijelio apostolima - danas za njih nema potrebe, pa moći puput predskazanja i liječenja polaganjem ruku više ne postoje. Pentakostalci u potpunosti odbacuju tu doktrinu. Oni vjeruju da pri krštenju na vjernika silazi Duh Sveti, pri čemu ga može podariti jednakim moćima koje su imali članovi rane crkve.
+
+Pentakostalna crkva je od nekoliko stotina vjernika, do današnjeg dana narasla na pola milijarde članova.

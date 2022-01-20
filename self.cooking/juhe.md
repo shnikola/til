@@ -14,6 +14,7 @@ Na većinu bistrih povrtnih juha i variva možeš naribati parmezan.
 ## Kombinacije
 
 * Brokula, špinat, vrhnje, kozice
+* Cvjetača, lješnjaci, slanina
 * Cvjetača, krumpir, kim, vrhnje
 * Grašak, menta, vrhnje, kozice
 * Batat, mrkva, cimet, vrhnje

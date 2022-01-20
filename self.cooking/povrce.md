@@ -6,7 +6,7 @@
 
 `Pire krumpir` se napravi kremastijim dodavanjem mlijeka, maslaca ili kiselog vrhnja. Od pirea se mogu napraviti `kroketi`: dodaj brašno i poprži; `duchess potato`: stavi u tuljac za šlag s malo jaja, napravi male loptice i ispeci ih 15 minuta na 220.
 
-`Scalloped krumpir`  oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnjem.
+`Scalloped krumpir` oguli, nareži na tanke plohe, posloži ih u zdjelu i zalij vrhnjem.
 
 `Hash browns` naribaj krumpir po osobi i dobro ga isperi dok voda ne bude bistra. Stavi u ručnik i procijedi što više vode možeš. Pomiješaj s nasjeckanim lukom i jajetom. Stavi u tavu s biljnim uljem, okreni kao palačinku. U kombinaciji s jajetom i ljutim umakom ili vrhnjem.
 
@@ -14,7 +14,7 @@
 
 ## Lukovice
 
-**Poriluk** je blaži od luka i češnjaka, pa ne nadvladava ostale namirnice u jelu. Plus ga je lakše sjeckati jer je duguljast. Jedino je pun zemlje, pa ga treba detailjno očistiti (prepolovi, pa ubaci u zdjelu s vodom da zemlja potone). Karakteristična jela: `Vichyssoise krem juha`, `Dinstani poriluk s vrhnjem`.
+**Poriluk** je blaži od luka i češnjaka, pa ne nadvladava ostale namirnice u jelu. Plus ga je lakše sjeckati jer je duguljast. Jedino je pun zemlje, pa ga treba detaljno očistiti (prepolovi, pa ubaci u zdjelu s vodom da zemlja potone). Karakteristična jela: `Vichyssoise krem juha`, `Dinstani poriluk s vrhnjem`.
 
 ## Pastrnjak
 
@@ -38,7 +38,7 @@ Arapska i afrička kuhinja imaju sjajnih recepata za grahorice: humus, falafeli,
 ## Polpete od tikvica
 
 * Naribaj **2 srednje tikvice**, posoli i pomiješaj, pa ostavi u cijedilu 20 minuta. Nakon toga istisni što više tekućine iz njih.
-* Pomiješaj s **100g feta sira**, **2 jaja**, **žličicom praška za pecivo** i **50g krušnih mrvica**. Posoli i popari.
+* Pomiješaj s **100g feta sira**, **2 jaja**, **mladim lukom** i **50g krušnih mrvica**. Posoli i popari.
 * Formiraj polpetice (ako je premokro, dodaj još mrvica) i stavi ih na papir za pečenje.
 * Peci 20ak minuta na **180 stupnjeva**.
 

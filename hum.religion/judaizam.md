@@ -12,8 +12,6 @@ Savez je srž starog judaizma. Bog je spasio Izraelce iz Egipta, a zauzvrat su d
 
 Hebrejsko sveto pismo je skup tekstova na klasičnom hebrejskom. Nazivaju ha **Tannakh**, što je akronim naziva tri dijela: **Torah** (zakoni), **Nevi'im** (proroci) i **Ketuvim** (ostalo). Kod Kršćana, ovo je Stari Zavjet.
 
-**Torah** (u prijevodu uputa, učenje ili zakon) može označavati prvih 5 knjiga Tannakha, ili općenito judaističko učenje, kulturu i praksu. Prema židovskoj tradiciji, njen autor je Mojsije koji je na Sinaju uz 10 zapovijedi dobio Pisanu Toru (koja se kasnije prepisivala kroz generacije) i Usmenu Toru (koja se prenosila usmenim putem, a danas je zapisana u Mishni i Talmudu).
-
 ## Hram
 
 Pošto postoji samo jedan Bog, postojao je i samo jedan Hram (u Jeruzalemu) gdje su se ispunjavale dužnosti žrtvovanja (za razliku od npr. Zeusa koji ima hram u svakom gradu).

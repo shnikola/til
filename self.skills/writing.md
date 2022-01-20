@@ -10,7 +10,13 @@ Umjesto **glagolskih imenica** koristi glagole. Npr. umjesto `We had a discussio
 
 **Obraćaj se čitatelju s "you"**, a ne s njegovom ulogom. Umjesto `Customers must send us...` koristi `You must send us...`; umjesto `Advice is available from` koristi `You can get advice from`. Slično, za vlastitu organizaciju koristi "We".
 
-Ne izbjegavaj **davati upute**. Umjesto `The packet should be removed from the box`, koristi `Remove the packet from the box.`.
+Koristi **imperative u uputama**. Umjesto `The packet should be removed from the box`, koristi `Remove the packet from the box.`.
+
+## Strukturiranje teksta
+
+Prva rečenica iznosi ideju, iduće je pojašnjavaju i razvijaju. Npr. `The predictions sounded like promises: in the future, working hours would be short and vacations long.` je uvodna rečenica članka koja savršeno opisuje o čemu će članak govoriti.
+
+Ako želiš uvjeriti čitatelja koristeći primjere, navedi sve primjere u jednom paragrafu. Ako ih raspršiš po cijelom tekstu stvarat će dojam slabog argumenta.
 
 ## Prvi draft
 
@@ -44,3 +50,4 @@ Establiraj da se može umrijeti u filmu kako bi povećao napetost (npr. Moonrise
 
 * https://en.wikisource.org/wiki/Boil_it_down_(1924)
 * http://www.plainenglish.co.uk/how-to-write-in-plain-english.html
+* https://builtbywords.substack.com/p/writing-tools-i-learned-from-the

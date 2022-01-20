@@ -88,6 +88,10 @@ Nemoj se nikad prestrojavati na križanjima ili ispred semafora. Veća je šansa
 
 ## Pretjecanje
 
+Pri preticanju u dvosmjernoj cesti, želiš što manje vremena provesti u lijevoj traci. Zato uzmi dovoljan zalet u desnoj traci da skupiš dovoljno ubrzanja; prebaci u nižu brzinu i stisni gas da dođeš na što više okretaja, gdje se nalazi najviše snage.
+
+Nikad ne pretječi pri lošim vremenskim uvjetima: kiši, snijegu ili mokrom kolniku.
+
 Dok pretječeš auto ili kamion na autocesti, gledaj u njegov retrovizor. Ako ne vidiš vozačevo lice, ne vidi ni on tvoje vozilo. Promatraj i kotače, po tome najbolje vidiš hoće li promijeniti smjer ili traku.
 
 Kada si ga pretekao, čekaj da vidiš oba svjetla pretjecanog auta prije nego skreneš ispred njega.
@@ -137,6 +141,12 @@ kad je poledica - nema kočenja, samo spuštaš u 1.
 5. Digni ručnu kočnicu.
 
 Ako si na nizbrdici, još okreni kotače tako da auto ide prema rubu ceste ako nedajbože krene nizbrdo.
+
+## Pucanje gume
+
+Ako ti pukna guma pri većoj brzini, nikako nemoj pritiskati kočnicu ili raditi nagle pokrete volanom!
+
+Umjesto toga, otpusti gas, uključi sva četiri žmigavca, i pod blagim kutom se prebaci u zaustavnu traku. Tek kad ti brzina padne na oko 10 km/h možeš stisnuti kočnicu.
 
 ## Dutch Reach
 

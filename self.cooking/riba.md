@@ -66,3 +66,10 @@ Muzgavci (mrkači) su jeftinija alternativa hobotnici.
 * Posoli, popapri, polij limunovim sokom i maslinovim uljem.
 
 Možeš dodati kapare, masline i motar. Serviraj uz prepečeni kruh ili focacciu.
+
+## Pita od oslića
+
+* Poprži **500g fileta oslića** na ulju. Stavi sastrane da se ohladi, pa očisti od kostiju i isjeci na kockice.
+* Nasjeckaj **1 luk**, **2 režnja češnjaka** i **1 komorač** pa prodinstsaj na ulju dok ne omekšaju. Za kraj dodaj sitno nasjeckani zeleni dio komorača.
+* Izvaljaj **2 lisnata tijesta**, izbodi ih vilicom. Na donju koru rasporedi ribu i komorač, pa pospi s **150g feta sira**. Prekri gornjom korom i premaži je jajetom.
+* Peci na `210` 15 minuta.

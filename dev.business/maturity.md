@@ -36,7 +36,7 @@ Preuzmi *odgovornost*. Odgovornost znači obvezati se da će se nešto napraviti
 
 Budi skroman. Pohvale proslijedi timu, kritike preuzmi na sebe.
 
-## Rad s timom
+## Rad u timu
 
 Prije svega, neka ljudima bude ugodno raditi s tobom. Budi otvoren za raspravu i preispitivanje vlastitih ideja. Zajednička rasprava uvijek dovodi do boljih odluka.
 
@@ -48,7 +48,7 @@ Budi obziran s tuđim vremenom. Ako trebaš nekoga, uvijek prvo provjeri da ih n
 
 Ne shvaćaj kritiku svog koda osobno. Vrijedi i obrnuto: komentiraj tuđi kod, ne osobu.
 
-Ako netko predloži pristup za koji misliš da je kriv, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad. Koliko misliš da će ti vremena trebati da proučiš taj pristup?"
+Ako se ne slažeš s nečijom idejom, reci: "Nisam siguran da je to pravi pristup zbog X, Y i Z. Ali bio sam već u krivu, pa sam možda i sad." Ako nakon rasprave inzistiraju da bude po njihovom: "Ok, napravimo to po tvome. I dalje mislim da to nije najbolji način, ali to sam već obrazložio, a moramo ići dalje."
 
 Prošetaj svaki dan, sam ili u društvu.
 

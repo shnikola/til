@@ -12,7 +12,7 @@ All caps mogu biti teški za čitanje, koristi `letter-spacing: 1.4` da mu daš 
 
 Serifi su bolji za body text, ali se lošije skaliraju. Neki dobri: `Equity`, `Franziska`, `Leitura News`, `Merriweather`, `Miller`, `PT Serif`, `Tisa`.
 
-Sans-serifi se bolje skaliraju. Neki dobri: `Atlas Grotesk`, `Futura`, `Lato`, `Maison Neue`, `Real Text`, `Roboto`, `Suisse Int’l`.
+Sans-serifi se bolje skaliraju. Neki dobri: `Atlas Grotesk`, `Futura`, `Lato`,  `Work Sans`,  `Metropolis`, `Maison Neue`, `Real Text`, `Roboto`, `Suisse Int’l`.
 
 ## Drop caps
 

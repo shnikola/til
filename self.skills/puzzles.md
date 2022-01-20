@@ -14,7 +14,6 @@ Ukloni sve **nepotrebne informacije**. Rješavači će pokušavati naći uzorke 
 
 Igrači se frustiraju kada ne uspjevaju postići nikakav napredak. Najčešće je to jer ne znaju što iduće napraviti, ili nakon što su napravili puno posla bez razumljivog rezultata. Laka zagonetka je bolja od frustirajuće zagonetke. Zato griješi uvijek na stranu ostavljanja dodatnih clueova.
 
-
 ## Rješavanje
 
 Obrati pozornost na čudne riječi ili nespretne fraze u tekstu zagonetke. Velika je vjerojatnost da su ključne za riješavanje.
@@ -25,6 +24,8 @@ Traži uzorke. Izbroj elemente i probaj naći isti broj na nekom drugom mjestu.
 * skrivena riječ, anagramiranje, slovo viška
 * abecede: braille, morse, pigpen, semaphore
 * šifre: A1Z26, rot-13, caesar, substitution
+
+Ako imaš po 5 nečega s da-ne vrijednostima, pretvori u binarni broj pa u slovo (npr. 10010 = 18 = R). Ako imaš 6, probaj s brailleom.
 
 ## Spreadsheets
 

@@ -1,41 +1,5 @@
 # Concurrency
 
-## Procesi
-
-`fork { ... }` stvara novi `ruby` proces koji će izvoditi naredbe unutar bloka, dok će parent nastaviti izvoditi naredbe nakon `fork`. Vraća `pid` stvorenog subprocesa. Ruby 2.0+ podržava copy on write.
-
-`if pid = fork ... else  ...` stvara novi proces koji će vratiti `nil` i izvoditi `else` dio izraza, dok će parent vratiti `pid` i izvoditi gornji `if` dio.
-
-`exit(code)` prekida proces i vraća status `code`. Poziva se `at_exit` handler.
-`exit!(code)` prekida proces, vraća `code`, ali ne poziva `at_exit`.
-
-`Process.wait(pid)` blokira trenutni proces dok se proces `pid` ne završi.
-`Process.wait` blokira dok se bilokoji subproces ne završi, vraća njegov `pid`.
-`Process.wait2` vraća `pid` i `exit_code` završenog subprocesa.
-`Process.waitall` blokira dok svi subprocesi ne završe.
-
-Ukoliko se subproces završi prije nego parent pozove `wait`, kernel će tu informaciju queuati i bit će dostupna kada parent konačno pozove `wait`. Tako se izbjegavaju bilo kakvi race conditioni.
-
-Ukoliko parent ne čeka svoj subproces da završi, njegov exit status će ostati queuean i zauzimati resurse - postat će zombie proces. Stoga, ako ne koristiš `Process.wait(pid)`, koristi `Process.detach(pid)` koji interno stvara novi thread čiji je jedini zadatak da čeka child process i pokupi njegov exit status.
-
-Procesi komuniciraju streamovima preko *pipea* ili porukama preko *socketa*.
-
-`reader, writer = IO.pipe` stvara pipe za jednosmjernu komunikaciju. Proces koji piše učinit će `reader.close` i `writer.write`, a proces koji čita `writer.close` i `reader.read`.
-
-`child, parent = Socket.pair(:UNIX, :DGRAM, 0)` stvara par Unix socketa za dvosmjernu komunikaciju. Child proces koji piše učinit će `parent.close`, primati poruke s `child.recv(maxlen)` i slati ih s `child.send(msg, 0)`. Parent radi isto, samo radi `child.close` i komunicira s `parent` socketom.
-
-## Pozivanje vanjskih procesa
-
-`exec("ls")` ako želiš prekinuti trenutni Ruby proces i zamjeniti ga zadanom naredbom.
-
-``ls`` ili `%x{ls}` pokreće novi proces i blokira postojeći dok se ovaj ne dovrši. Vraćaju `stdout` vanjskog procesa kao rezultat, a status možeš dohvatiti iz `$CHILD_STATUS.success?`. Exceptioni se prosljeđuju u Ruby proces.
-
-`system("ls")` pokreće novi proces i blokira postojeći. Vraća exit status (`true` ili `false`) kao rezultat, a output se printa na `stdout`. **Exceptioni ne dolaze** do Ruby procesa.
-
-`Open3.popen3('grep nikola') do |stdin, stdout, stderr, wait_thr|` pokreće neblokirajući proces. U bloku koristi `stdin`, `stdout`, `stderr` io objekte za streamanje inputa i outputa u vanjski proces. Exit status dobiješ iz `wait_thr.value`.
-
-`Open3.pipeline('sort', 'uniq -c', in: 'file.txt', out: 'count.txt')` omogućuje ulančavanje više vanjskih procesa s pipelinima.
-
 ## Threads
 
 Svaki Ruby proces ima barem jedan thread: main thread. `Thread.main` ga vraća.
@@ -82,14 +46,16 @@ Fiberi se time mogu kao threadovi izvoditi neovisno od toka programa, samo threa
 
 `Enumerator` zapravo interno koristi fibere, pri čemu se fiber pauzira dok ne dohvatiš idući element.
 
-## Continuations
+## Async
 
-Continuation omogućuje skok na neko prijašnje mjesto u kodu. Da, kao `goto`.
-Continuation objekt sadrži snapshot stack framea.
+`Async` je gem koji omogućava asinkrono izvođenje metoda korištenjem fibera. Fiberi su mnogo više lightweight od threadova (može ih se stvoriti na tisuće u jednom threadu), a od `Ruby 3.0` postoji i ugrađen fiber scheduler napravljen upravo za integraciju s `async` gemom. Koristi se *cooperative scheduling*, gdje se fiber yielda kad se pozove određena metoda.
 
-`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
+    Async do |task|
+      task.async { URI.open("https://httpbin.org/delay/1.6") }
+      task.async { URI.open("https://httpbin.org/delay/1.6") }
+    end
 
-`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
+Blokirajuće metode kao što su `sleep`, `read`, i `write` yieldat će fiber dok se operacije ne završi. Na taj način se može više sporih IO operacija obaviti istovremeno. Zahvaljujući novom fiber scheduleru, blokirajuće metode se automatski pretvaraju u neblokirajuće, bez da se mora pisati poseban kod.
 
 ## GVL
 
@@ -98,21 +64,6 @@ CRuby (standardna Ruby implementacija poznata kao i MRI) ima *global VM lock* (G
 GVL se koristi jer Ruby VM internalsi nisu thread-safe (teško je napisati dobar thread-safe VM - i Python i JS imaju isti problem i koriste neku vrstu globalnog locka). GVL osigurava da se VM izvršava u thread-safe kontekstu, ali **ne garantira** da će i tvoj aplikacijski Ruby kod biti thread-safe. Thread scheduler i dalje može pauzirati thread u bilo kojem trenutku, i aktivirati drugi thread koji će npr. prepisati zajedničku varijablu.
 
 Drugi Ruby interpreteri (JRuby, Rubinius) nemaju ovo ograničenje (umjesto GVLa imaju mnogo malih internih lockova), te će se kod njih multi-threaded programi izvršavati paralelno. Ali koristiti multi-threaded programe ima smisla i za MRI: ako thread mora čekati na IO (HTTPS request, DB query, čitanje i pisanje na disk), MRI će se prebaciti na drugi thread koji nije blokiran.
-
-## Signals
-
-U slučaju da se multithreaded procesu pošalje signal, kernel će nasumično odabrati jedan thread kojem će prenijeti taj signal. Kako bi izbjegao probleme koje to može izazvati, MRI (i druge Ruby implementacije) pri pokretanju stvaraju poseban thread koji je zadužen za handlanje signala i pipeom ih šalje main threadu.
-
-`Process.kill("INT", pid)` šalje signal procesu s danim `pid`. `INT` će uzrokovati isti signal kao da si stisnuo `CTRL+C` u terminalu.
-
-`Signal.trap("INT") do ... end` definira globalno handlanje signala u
-trenutnom procesu. Moguće je definirati samo jedan handler po signalu, pa pripazi da ne overridaš handler koji je neki gem dodao.
-
-`Signal.trap("INT", "IGNORE")` definira ignoriranje `INT` signala u trenutnom procesu.
-
-Neuhvaćeni i neignorirani signali podižu `SignalException`, pa ako želiš handlati signal samo u određenom dijelu koda možeš koristiti `rescue`. Npr. `rescue Interrupt` za handlanje `INT` signala.
-
-Imaj na umu da je dojava signala nepouzdana. Npr. ako proces handla `INT` signal dok mu se šalje drugi `INT` signal, ovaj drugi signal možda neće ni primiti.
 
 ## Timeout i thread.raise
 
@@ -126,29 +77,15 @@ Ovo nije problem specifičan za Ruby - to je problem koncepta timeouta koji će 
 
 `Rack::Timeout` je i dalje bolja opcija nego dopuštati jako duge requeste koji će stvoriti zastoj na serveru. Samo treba biti svjestan da svaki `Timeout::Error` koji se pozove može izazvati probleme.
 
-## Rails Thread safety
+## Thread safety
 
-Rails framework code je thread-safe. Ako se svaki request obrađuje u svom threadu, defaultno nema zajedničkih varijabli koje bi mogle izazvati problem. Ipak, u našem kodu možemo nešto slučajno podijeliti kroz:
-* globalne varijable
-* class varijable (koje su principu isto što i globalne)
-* class instance varijable (opet, klase se dijele, pa tako i njihove instance varijable)
-* konstante (ako ih nedajbože mijenjaš u kodu)
+Rails framework code je thread-safe. Isprva se koristio `Rack::Lock` kao mutex oko svakog requesta kako bi se osigurao thread safety, ali po cijenu toga da se requesti nisu mogli istovremeno izvršavati.
 
-Jedan neobičan thread-unsafe slučaj je memoizacija instance varijabli. Ako radiš `@attr ||= super.merge(...)`, pripazi da koristiš različito ime `@attr` od onog koje se koristi u `super` metodi. (https://github.com/rails/rails/pull/9789/files)
+Od `4.0` lock je uklonjen što je omogućilo razvoj thread-based servera poput Pume. Ipak, pri pisanju aplikacijskog koda treba paziti na varijable koje se dijele između threadova: *globalne*, *class*, *class instance* i *konstante*.
 
-## Kamo je nestao config.threadsafe?
+Čak i memoizacija takvih dijeljenih varijabli može dovesti to race-conditiona. Ako se mijenja i memoizira vrijednost `@attr ||= super.merge(...)`, pazi da se u `super` ne memoizira variabla s istim nazivom, npr. `@attr ||= {}`. Ovo je bio uzrok dugo traženog buga pri inicijalizaciji Railsa [https://github.com/rails/rails/pull/9789].
 
-http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html
-
-Prije Rails 4.0 postojao je flag `config.threadsafe!` koji je sad po defaultu enablan. On radi dvije stvari: preloada framework i developer code pri bootu, te uklanja `Rack::Lock` middleware.
-
-Preloading je, za razliku od lazy loadanja pomoću `autoload` metode, thread-safe. Kada je uključen, nema nikakve razlike za *multi-process* i *multi-threaded* sustave. Jedino će preload frameworka zauzeti nešto više memorije jer učitava cijeli framework, a ne samo dijelove koji se koriste. (Nadajmo se da će Rails biti malo pametniji s tim u budućnosti.)
-
-`Rack::Lock` mutexom oko requesta brani različitim threadovima da u isto vrijeme izvršavaju kod. U *multi-process* sustavu (npr. Unicorn) nije potreban, jer svaki proces ima svoju memoriju i čak ni thread-unsafe kod neće imati problema. U *multi-threaded* sustavu (npr. Puma) mutex sprečava thread-unsafe situacije, što je super, ali istovremeno i ne dopušta da se threadovi istovremeno vrte, što je poanta *multi-threadanja*. Zato su odlučili ukloniti ga, i svima koji koriste *multi-threaded* servere reći: "Pazite da vam je kod thread-safe."
-
-## Ruby 3 Guild Proposal
-
-http://www.atdot.net/~ko1/activities/2016_rubykaigi.pdf
+## Guilds
 
 Želimo omogućiti paralelizam, ali da ne moramo razmišljati o lockovima.
 *Guild* je nova apstrakcija.
@@ -165,5 +102,5 @@ Posebna struktura za dijeljenje mutable objekata - potrebni lockovi, ali to kori
 
 # Literatura
 
-* https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html
-* https://engineering.universe.com/introduction-to-concurrency-models-with-ruby-part-i-550d0dbb970
+* [https://www.speedshop.co/2020/05/11/the-ruby-gvl-and-scaling.html]
+* [https://engineering.universe.com/introduction-to-concurrency-models-with-ruby-part-i-550d0dbb970]

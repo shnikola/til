@@ -16,15 +16,27 @@ Ako su mean i median jednaki, to znači da je distribucija simetrična: sa svake
 
 ## Spread
 
-**Range** je razlika između najviše i najniže vrijednosti (`max-min`). To nam ne govori puno o vrijednostima između, pa možemo koristiti **Interquartile Range** (IQR) koji uzima u obzir srednjih 50% vrijednosti i tako zanemaruje ekstreme. Ali i dalje se koriste samo dvije vrijednosti za računanje raspona, pa ne saznajemo puno o vrijednostima između.
+**Raspon** (*range*) je razlika između najviše i najniže vrijednosti (`max-min`). Ako želiš zanemariti ekstreme možep koristiti **Interquartile Range** (IQR) koji uzima u obzir srednjih 50% vrijednosti. Raspon nam daje predodžbu o rubnim vrijednostima, ali ne i o raspodjeli.
 
 **Varijanca** (*variance*) uzima u obzir sve vrijednosti. Za svaku vrijednost se računa **devijacija** (*deviation*), razlika od prosjeka (`x[i] - m`), devijacije se kvadriraju i računa im se prosjek (`∑(x[i] - m)^2 / N`).
 
 Problem s varijancom je što ako uzimamo uzorak populacije (`n`), varijanca će biti **pristrana** (*biased*), tj. biti će konzistentno manja od stvarne varijance nad cijelom populacijom (to se da matematički pokazati). Zato se procjena varijance iz uzorka računa kao (`∑(x[i] - m)^2 / n-1`). Za dovoljno veliki `n`, razlika se ne primjeti.
 
-Varijancina vrijednost je nekakav glupi kvadrat, pa se umjesto toga koristi **standardna devijacija** koja je korijen varijance, pa se može uspoređivati s vrijednostima populacije. Standardna devijacija je prosječna razlika između neke vrijednosti u populaciji i prosjeka populacije.
+Vrijednost varijance je nekakav glupi kvadrat koji ne možeš uspoređivati sa samim mjerenim vrijednostima. Umjesto toga se koristi **standardna devijacija** koja je korijen varijance. Standardna devijacija je zapravo prosječna razlika između neke vrijednosti u populaciji i prosjeka populacije.
+
+## Razdioba
+
+central limit theorem
+if you have independant identically distributed random variables (wit finite vriance), then distribution of the average of these variables converges to the normal distribution
+
+drugim rječima, averigi su aproximatelz normallz distributed.
+bell shaped curve works as well s it does because so many things that we measure are avereges (sum of may effects)
 
 ## Korelacija
+
+**Kovarijanca** `∑(x - mx)(y - my) / n` mjeri povezanost dvije varijable
+
+Korelacija je skalirana kovarijanca. cov(x,y)/(sxsy)
 
 **Koeficijent korelacije (r)** određuje mjeru povezanosti dvaju varijabli, u vrijednosti od `-1` do `1`. **r^2** od `0` do `1` mjeri koliko precizno možeš predviđati vrijednost jedne varijable pomoću druge.
 

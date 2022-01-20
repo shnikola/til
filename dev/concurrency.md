@@ -15,19 +15,27 @@ Concurrency je način strukturiranja programa kako bi se mogao (ali ne i nužno 
 
 Ukratko: threadovi su jeftiniji, ali moraš biti puno oprezniji s njima. Procesi su skuplji, ali daju ti sigurnost.
 
-## Preemptive i Cooperative Scheduling
-
-U cooperative schedulingu, procesi odlučuju kada su gotovi i predaju kontrolu OS-u. To je problematično jer se proces može zablokirati i onda svi čekaju.
-
-U preemptive schedulingu, OS odlučuje koji se proces izvršava i kada će izvršavanje prebaciti na idućeg.
-
-Mnogi jezici implementiraju svoj scheduling. Javascript implementira cooperative scheduling - ako se u async event loopu stavi `sleep`, cijeli će browser morati čekati na njega.
-
 ## Thread Pooling
 
 Ako imaš jako puno malih zadataka koje želiš obavljati istovremeno, overhead stvaranja novog threada za svaki može biti velik. Usto, threadovi jesu jeftini, ali nisu besplatni. Ako kreiraš 1000 threadova odjednom, ostat ćeš bez resourca.
 
 Da bi se to izbjeglo, koristi *thread pooling*. Pool ima određenu veličinu koja određuje koliko će threadova unaprijed stvoriti (ili u slučaju lazy poola, koji je maksimum koji će stvoriti). Pool zadatke koje dobije prosljeđuje trenutno idle threadu.
+
+## Preemptive i Cooperative Scheduling
+
+U *cooperative* schedulingu, procesi odlučuju kada su gotovi i predaju kontrolu OS-u. To je problematično jer se proces može zablokirati i onda svi čekaju.
+
+U *preemptive* schedulingu, OS odlučuje koji se proces izvršava i kada će izvršavanje prebaciti na idućeg.
+
+Mnogi jezici implementiraju svoj scheduling. Javascript implementira cooperative scheduling - ako se u async event loopu stavi `sleep`, cijeli će browser morati čekati na njega.
+
+## Async Functions
+
+Async funkcije su dosta nezgodnije od sync funkcija: pošto ne vraćaju rezultat direktno, moraju se pozivati s *callback* funkcijom. Stanje prije async poziva sprema se u closure callback funkcije, i jednom kad je async operacija gotova, callback se izvršava.
+
+Jedan način lakšeg rada s async funkcijama je `promise`, koji je syntactic sugar oko callbacka. Još bolji je `await` koji u compileru razbija funkciju na dva dijela i dio ispod awaita stavlja u callback.
+
+Drugi pristup je korištenje `threadova`. Ovdje će poziv async funkcije će  pauzirati izvršavanje trenutnog threada i prebaciti se na neki drugi (thread pritom ne mora biti nativni OS thread, može biti *green thread* ili *fiber*). Prednost ovog je da programer ne mora posebno handlati asinkroni kod: sinkrone i asinkrone funkcija se jednako koriste, a OS / event loop se pobrinu za scheduling.
 
 ## Concurrency models
 

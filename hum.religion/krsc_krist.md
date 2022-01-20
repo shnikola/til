@@ -8,6 +8,10 @@ Neki su vjerovali da će mesija biti velika politička figura koji će postaviti
 
 S takvim očekivanjima, ideja da je Isus mesija je prilično neočekivana. Da, Isus je prema Mateju i Luki Davidov potomak (iako se razilaze u genealogijama već od Josipovog oca). Ali Isus nije pobijedio neprijatelja, već je izdan i umro na ponižavajuć način. Židovi nisu mogli prihvatiti da je to njihov mesija, jer su i nakon njegove smrti nastavili biti dio Rimskog carstva. Kršćani su se pozivali na "Za naše grijehe probodoše njega, za opačine naše njega satriješe. Na njega pade kazna - radi našeg mira, njegove nas rane iscijeliše." (`Izaija 53`), ali su židovi inzistirali da Izaija ne spominje Mesiju u tim stihovima.
 
+## Rođenje
+
+**Tri kralja** (ili tri mudraca) su u originalnom grčkom *magoi*, tj. magi. Ne zna se mnogo o magima, ali prema nekim babilonski tekstovima vjeruje se da su bili perzijski svećenici, ali mnogi su bili politički aktivni ili čak vođe. Grci su ih smatrali stručnjacima u astrologiji i čitanju budućnosti, što objašnjava zašto u priči o Isusovom rođenju slijede nebeske znakove. Rano kršćanstvo je preuzelo njihove likove i često ih koristilo za rituale i zaštitne amulete.
+
 ## Silazak nad pakao
 
 Isus je umro u petak, a uskrsnuo u nedjelju - što je radio ta 3 dana? I što je s ljudima koji su umrli prije Isusovog iskupljenja? Jesu li i oni spašeni ili samo nisu imali sreće što su se rodili prerano? Iz ova dva pitanja nastale su legende o tome kako se Isus spustio u pakao (*harrowing of hell*) i tamo razglasio vijest o svom uskrsnuću. Neki kažu da sa sobom u raj poveo samo svetce, neki kažu da je poveo sve.

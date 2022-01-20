@@ -6,6 +6,18 @@ Animacija se uglavnom uzima kao negativna stvar jer dodaje još stvari koje se b
 * Ljudi ne vole stvari koje dolijeću (npr. popupi i modali), koristi stvari koje se morphaju (npr. button koji se pretvori u modal)
 * Koristi custom loadere, ljudi će duplo duže zadržati pažnju.
 
+## Error messaging
+
+Kada u aplikaciji nešto pođe po zlu, ima smisla prikazivati pogrešku samo ako korisnik može napraviti nešto po tom pitanju. U suprotnom, bolje je problem samo zapisati u log i poslati na server.
+
+Dobar error message treba:
+1) Ispričati se zbog pogreške (ako je problem u aplikaciji)
+2) Jednostavnim riječnikom objasniti što je pošlo po zlu
+3) Predložiti što korisnik može napraviti.
+
+Umjesto: `We are currently unable to check for updates.`, mnogo bolje je:
+`For security reasons, we couldn’t check if an update is available. This can happen when your phone’s time and date isn’t correct. Check your time and date settings and try again.`
+
 ## Validacija formi
 
 Ne želiš da error iskoči čim user počne tipkati - validiraj nakon što user napusti field, ili kad unese zadanu veličinu teksta (npr. za kreditnu karticu).

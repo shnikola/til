@@ -6,7 +6,20 @@
 
 `round`, `ceil`, `floor` primaju precision argument
 
-Ako trebaš pretvoriti input u cente, koristi `(amount.to_d * 100).to_i`, umjesto `to_f`. Zbog floating aritmetike `4.85 * 100` je `484.99999999999994`.
+Za rad s novcima uvijek koristi `int`.
+Ako trebaš parsirati korisnički decimalni input, koristi:
+`BigDecimal("4.85", 2) * 100` ili `"(4.85".to_d) * 100`. Obični float neće biti precizan: `4.85 * 100` je `484.99999999999994`.
+
+## Strings
+
+`str.delete_prefix('ab')` briše početak stringa.
+
+`str.sub('ab', 'c')` mijenja prvo pojavljivanje stringa.
+`str.tr('ab', '12')` mijenja `a -> 1, b -> 2`.
+
+## Symbols
+
+Simboli su brojevi s pripadajućim identifikatorom (nizom znakova). Interno, simboli su type `ID` i koriste se za referenciranje varijabli, konstanti i imena metoda.
 
 ## Hash
 
@@ -75,7 +88,9 @@ Ruby će od `==` sam stvoriti `!=`.
 
 ## Struct
 
-`Point = Struct.new(:x, :y)` stvara jednostavnu klasu s accessor atributima, kao alternativu hashevima.
+`Point = Struct.new(:x, :y)` stvara jednostavnu klasu s accessor atributima, kao alternativu hashevima. `Point.new(1, 2)` instancira struct.
+
+`Point = Struct.new(:x, :y, keyword_init: true)` ako želiš instancirati s `Point.new(x: 1, y: 2)`
 
 Struct ima definirane `==`, `eql?` i `each` po atributima, i može se koristiti kao hash key.
 
@@ -179,7 +194,7 @@ Unicodeu dopušta da se isti znakovi mogu stvoriti na različite načine, npr. `
 * `:nfkc` Compatibility Compose dodatno pojednostavlju posebne znakove, npr. `¼` u `1/4`, non-breaking space u obični space.
 * `:nfkd` Compatibility Decompose radi isto kao i prethodni, ali uz decompose.
 
-## Splat (*)
+## Splat (\*)
 
 `def max(a, *b)` u definiciji metode `*` pretvara listu argumenata u array `b`.
 `max(*[1, 2, 3])` u izrazu `*` pretvara array u listu argumenata metode.
@@ -294,6 +309,15 @@ Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš pe
 `C` vraća unsigned int za svaki byte.
 `S` vraća unsigned int za svaka 2 bytea.
 
+## Continuations
+
+Continuation omogućuje skok na neko prijašnje mjesto u kodu (da, kao `goto`).
+Continuation objekt sadrži snapshot stack framea.
+
+`callcc { |cc| $label = cc } ...` postavlja da svaki vanjski `$label.call` vrati izvođenje na kraj cc bloka.
+
+`callcc { |cc| ... cc.call ...}` postavlja izvođenje na kraj bloka, tj. iskače iz bloka.
+
 ## ruby -n
 
 `-n` radi loop nad svakom linijom STDIN-a i stavlja ga u $_
@@ -306,8 +330,6 @@ Jednostavni key value store koji se zapisuje na disk. Dobra opcija ako moraš pe
 ## Optimizacije
 
 `reverse_each` je brži od `reverse.each`
-`str.sub` je brži od `str.gsub` (ako treba samo prva izmjena)
-`str.tr` je brži od `str.gsub` (ako se mijenja jedno slovo)
 `('a'..'z').cover?('x')` uspoređuje samo s rubovima rangea, dok `('a'..'z').include?` pretvara cijeli range u array.
 
 `@user ||= User.find(id) if id.present?` je loše, jer će izvoditi `if` čak i ako je `@user` postavljen.

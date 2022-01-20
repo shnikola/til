@@ -8,6 +8,12 @@
 
 "Never go to sea with two chronometers; take one or three."
 
+"I've been lucky with gambling - I've never won."
+
+"For a language to become immortal, it has to die."
+
+"Only imperfect beings can make art because art begins in what is broken."
+
 "Doing the master is to understand that you don't know anything. Doing your doctorate is to learn the others know nothing as well."
 
 "A fit body, a calm mind, a house full of love. These things cannot be bought - they must be earned."
@@ -23,6 +29,8 @@
 "Imate li jasnu viziju kako bi vam ljubavni trud trebao biti uzvraćen, izgledno je da će biti uzaludan." - Darko Macan
 
 "We must always take sides. Neutrality helps the oppressor, never the victim. Silence encourages the tormentor, never the tormented." - Ellie Wiesel, Nobel acceptance speech.
+
+"The “Simpsons Prediction” thing always seemed to me to be less about the genius of the Simpsons and more about the absurdity of reality. Any show that gently understands the sweet dumbness of human nature and the evil dumbness of power structures will always seem prescient." - Alex Hirsch
 
 "To laugh often and much; to win the respect of intelligent people and the affection of children; to earn the appreciation of honest critics and endure the betrayal of false friends; to appreciate beauty; to find the best in others; the leave the world a little better, whether by a healthy child, a garden patch, or a redeemed social condition; to know even one life has breathed easier because you lived. This is to be successful." - Ralph Waldo Emerson
 

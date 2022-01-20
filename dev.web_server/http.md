@@ -95,23 +95,22 @@ Poseban slučaj je `304 Not Modified` koji "redirecta" na lokalnu kopiju u brows
 
 ## Cookies
 
-`Set-Cookie`(s) daje upute za postavljanje jednog key-value para (npr. `Set-Cookie: user_id=2`), u korisnikov cookie jar. Server može postaviti više cookija tako da za šalje više `Set-Cookie` headera.
+`Set-Cookie`(s) daje upute za postavljanje jednog key-value para (npr. `Set-Cookie: user_id=2`), u korisnikov cookie jar. Server može postaviti više cookija tako da pošalje više `Set-Cookie` headera.
+
+Nakon postavljanja cookija, browser će u svakom requestu slati `Cookie` header sa svim cookijima koje smije slati na tu domenu.
 
 Uz postavljanje vrijednosti, mogu se postaviti i atributi (npr. `Set-Cookie: user_id=2; Secure; HttpOnly`) koji definiraju gdje i kako se cookie smije koristiti.
 
-`Max-Age=2600000` je vrijeme u sekundama koliko cookie smije trajati prije nego ga browser izbriše. Ako trebaš podržavati stare browsere, koristi `Expires=Thu, 01-Jan-1970 00:00:01 GMT` koji prima timestamp.
+`Max-Age=2600000` je vrijeme u sekundama koliko cookie smije trajati prije nego ga browser izbriše. Stari browseri koriste `Expires=Thu, 01-Jan-1970 00:00:01 GMT`. Ako nije definirano, postavlja se session cookie koji traje dok je browser window otvoren.
 
-`Domain=google.com` definira na koje domene će browser slati cookie. Automatski će se slati i na sve poddomene (npr. `www.google.com`).
+`Domain=google.com` definira na koje domene browser smije slati cookie, uključujući i subdomene, npr. `www.google.com`. Ako nije definirano, browser će cookie spremiti pod domenu s koje je napravio request, bez subdomena. Slanje se može ograničiti i na razini patha s `Path=/user`, ali to se rijetko koristi.
 
-`Path=/` definira na koje pathove će browser slati cookie. To se rijetko mijenja.
+`Secure` znači da će browser slati cookie samo u HTTPS requestovima. Najbolje koristi uvijek kako bi izbjegao Man-in-the-middle napade.
 
-`Secure` znači da će browser slati cookie samo u HTTPS requestovima.
-
-`HttpOnly` znači da cookie neće biti vidljiv skriptama, niti će ga skripte moći mijenjati. Browser će ga samo slati u requestovima.
+`HttpOnly` znači da cookie neće biti vidljiv skriptama, niti će ga skripte moći mijenjati. Defaultno, javascript može pristupiti cookijima domene u kojoj se skripta izvršava.
 
 `SameSite` definira hoće li se cookiji slati ako se korisnik nalazi na drugom siteu (npr. otvoren je `a.com` a radi request na `b.com`; `www.google.com` i `api.google.com` se broje kao isti site). `SameSite=Strict` će slati cookie samo ako se request radi sa istog sitea na kojem je postavljen cookie. Ovo je malo prestrogo, jer neće slati cookie ni za inicijalni GET request kada klikneš na link s tuđe domene, gdje najčešće ipak želiš cookie da možeš prepoznati use. `SameSite=Lax` je uglavnom ono što želiš, jer dopušta cookije u tom inicijalnom requestu, ali ne i za ostale stvari. `SameSite=None` ne stavlja nikakve restrikcije na siteove, koristi ga ako
 
-Browser u svakom requestu headeru `Cookie`(c) šalje skup cookija koji ispunjavaju zadane uvjete.
 
 ## Basic Authentication
 

@@ -28,6 +28,7 @@ Web Server serijalizira rack array u HTTP response string i šalje ga nazad klij
 * `path: 'admin'` dodaje na path,
 * `module: 'admin'` dodaje na foldere,
 * `as: 'admin'` dodaje na helpere.
+* `controller: 'user'` definira controller.
 
 ## Rails Gems
 

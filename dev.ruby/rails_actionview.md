@@ -13,9 +13,17 @@ Rails 5.1. oba zamjenjuje s metodom `form_with` u dvije varijante: `form_with ur
 
 `form_tag` bez bloka samo otvara form tag, što zna poremetiti sve sljedeće forme. Koristi `form_tag do; end` za praznu formu.
 
-## Form Inputs
+## Select
 
-`options_for_select` trebaš koristiti samo za `select_tag`. Za ostale slučajeve koristi `f.select(:city, ["Zagreb", "Morocco", "Paris"])` ili `f.collection_select :user_id, User.all, :id, :name`.
+`options_for_select` treba se koristiti samo za `select_tag`. Ako ga želiš izbjeći možeš koristiti
+`select(nil, :city, ["A", "B", "C"])` ako imaš array ili
+`collection_select(nil, :user_id, User.all, :id, :name)` ako imaš objekte.
+
+Za slučaj arraya, dodatne atribute na option možeš dodati s
+`['name', 'value', 'data-extra' => '...']`.
+
+Ako nisi vezan za `f.object`, vrijednost predselektiraj s
+`select(nil, :city, options, { prompt: '...', selected: 'id' })`
 
 Za asocijacije koje su unaprijed stavljene u bazu (samo ih treba povezati, npr. `Post has_many :categories`) koristi:
 * `f.collection_select :category_id, Category.all, :id, :name` za `has_one`
@@ -29,7 +37,7 @@ Ako renderiraš velik broj partiala u loopu, koristi `render @products` jer je b
 
 Za spajanje više elemenata u helper metodi, koristi: `concat hidden_field_tag :field`.
 
-Ako trebaš primiti i korisnikov blok, koristi: `concat capture(&block) if block_given?`, ili `capture(f, &block)` ako prosljeđuješ argument u blok.
+Ako trebaš primiti i blok, nemoj koristit `yield` jer će on uvijek dodati html u body. Umjesto toga koristi: `capture(&block) if block_given?`, ili `capture(f, &block)` ako u blok prosljeđuješ argument.
 
 ## Friendly URLs
 
@@ -52,10 +60,9 @@ I onda ih koristi u viewu s `date.to_s(:stamp)`.
 
 ## Asset Host
 
-Serviranje static asseta bezveze umara naše servere, želimo da to netko drugi radi. S3 je ok, ali je napravljen za storage, a ne za delivery. Rješenje je cloudfront - daš mu origin domenu, i samo postaviš
-`config.action_controller.asset_host = "9e1nf93n.cloudfront.net"`
+`config.asset_host = 'blah.cloudfront.net'` postavlja host za sve assete koji se serviraju iz aplikacije.
 
-Prvi request na asset cloudfront će proslijediti na origin domenu (naš server), a svi ostali će biti cachirani. Samo pripazi da fileovi imaju hash u imenu kako ne bi bili stale.
+Ako želiš u mailovima koristiti slike iz `assets` foldera, mora biti definiran `config.asset_host` ili `config.action_mailer.asset_host`. Alternativno, možeš servirati diretkno s clouda, npr. `image_tag 'https://assets.s3.com/image.png'`.
 
 ## html_safe
 

@@ -1,13 +1,5 @@
 # Management
 
-## Povjerenje
-
-Učinkoviti timovi trebaju povjerenje. Manjak povjerenja nadoknađuje se birokracijom (npr. code reviewima, tjednim izvještajima, detaljnim praćenjem potrošenog vremena). Što više povjerenja i međusobne odgovornosti tim posjeduje, to će biti manje birokracije i tim će biti efikasniji.
-
-Povjerenje se gradi vremenom i kontaktom. Suradnja s remote timovima ili pojedincima je zato nezgodna, jer zbog manjka stvarnog kontakta tehničke nesuglasice interpretiramo kao neznanje, lijenost ili zlonamjernost. Zato uvijek organiziraj osobno upoznavanje timova koji će surađivati na daljinu, bilo suradnicima bilo klijentima.
-
-Druga stavka povjerenja je redovita komunikacija. U ljudskoj prirodi je pretpostaviti najgore kada se druga strana ne javlja. Zato se potrudi da šalješ redovne reportove o obavljenom poslu, a ne čekaš da ih druga strana zatraži.
-
 ## Procesi
 
 **Waterfall model** je ekstremni primjer sekvencijalnog modela razvoja, gdje se projekt dijeli u odvojene faze: definicija zahtjeva, kodiranje, testiranje, održavanje. Kad jedna faza završi, iduća započinje. Često u svakoj fazi rade različiti ljudi.
@@ -48,6 +40,12 @@ Stil dokumentacije mora biti precizan i potpun. Korisnik će često čitati samo
 
 Kad god možeš izbjegavaj zamjenice. Bolje je ponoviti imenicu, nego ostati nejasan (npr. umjesto "Izmjenili smo token u APIju jer je prošli imao bug." napiši "Izmjenili smo token u APIju jer je prošli token imao bug.")
 
+## Efikasnost i Otpornost
+
+Efikasnost je obrnuto proporcionalna otpornosti na promjene. Ovo vrijedi za poslovne, ali i za sve ostale društvene i ekonomske procese.
+
+Efikasnost daje brzinu po cijenu manje otpornosti na nepredviđene događaje. Jednom kad se sustav počne optimizirati za efikasnost, postaje podložniji katastrofalnim problemima ako se početni uvjeti promjene.
+
 ## Komunikacija i veličina tima
 
 Najbolji timovi su mali, s jednim tehničkim direktorom (bavi se dizajnom sustava) i jednim producentom (osigurava resurse i komunicira s vanjskim svijetom). Nekad to može biti ista osoba, ali uglavnom je dobro da su dvije. Nažalost, mali timovi su prespori za razvoj velikih projekata. Ali veliki tim možeš podijeliti na više samostalnih malih timova.
@@ -57,6 +55,14 @@ Ako `n` ljudi radi na projektu, postoje potencijalnih `O(n^2)` komunikacijskih k
 Jedan od popularnih oblika komunikacije je **standup**. Cilj standup sastanka je omogućiti da svi započnu radni dan s maksimalno informacija relevantnih za njihove zadatke. Standup nije mjesto za donošenje odluka o arhitekturi i rješavanje sistemskih problema.
 
 Voditelj projekta mora znati prepoznati koje informacije zahtjevaju akciju, a koje ne. Ako može staloženo čitati izvještaj statusa bez panike i ishitrenih reakcija, onda je svima u interesu da budu iskreni kad ih pišu. U suprotnom, svi će maskirati stvarno stanje jer ne žele još jednu dodatnu brigu. Stoga je korisno jasno razlikovati **status-review sastanke** i **problem-action sastanke**.
+
+## Povjerenje
+
+Učinkoviti timovi trebaju povjerenje. Manjak povjerenja nadoknađuje se birokracijom (npr. code reviewima, tjednim izvještajima, detaljnim praćenjem potrošenog vremena). Što više povjerenja i međusobne odgovornosti tim posjeduje, to će biti manje birokracije i tim će biti efikasniji.
+
+Povjerenje se gradi vremenom i kontaktom. Suradnja s remote timovima ili pojedincima je zato nezgodna, jer zbog manjka stvarnog kontakta tehničke nesuglasice interpretiramo kao neznanje, lijenost ili zlonamjernost. Ulaži što više vremena u aktivnosti u kojima će se članovi povezati: team buildings, 1-na-1 razgovori, kolaborativne rasprave i sl.
+
+Druga stavka povjerenja je redovita komunikacija. U ljudskoj prirodi je pretpostaviti najgore kada se druga strana ne javlja. Zato se potrudi da šalješ redovne reportove o obavljenom poslu, a ne čekaš da ih druga strana zatraži.
 
 ## Delegiranje
 
@@ -85,5 +91,6 @@ Ako je osoba neiskusna, daj joj do znanja da je griješiti normalno, i da se dog
 
 # Literatura
 
-* https://academia.stackexchange.com/a/103331
-* https://github.com/basecamp/handbook
+* [https://komoroske.com/slime-mold]
+* [https://academia.stackexchange.com/a/103331]
+* [https://github.com/basecamp/handbook]

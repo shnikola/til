@@ -4,6 +4,8 @@
 
 Radi stvari u kojima si loš. Učenje novih vještina ti daje samopouzdanje.
 
+Ne ograničavaj se pretjeranim definiranjem vlastitog ideniteta. "Nisam osoba koja radi takve stvari." je način za propustiti mnogo zabavnih iskustava.
+
 Dovršavaj započete projekte. Vodi evidenciju stvar koje si napravio ili naučio. Bit će ti drago kad ih budeš listao u budućnosti.
 
 Budi dio većih stvari. Tako ćeš osjetiti da vrijediš.
@@ -20,7 +22,7 @@ Ne vezuj se za materijalne stvari. Živimo u svijetu obilja, što znači da ima�
 
 U životu ne treba težiti da budeš ništa osim zdraviji i obzirniji.
 
-Optimiziraj život za velikodušnost. Nitko na samrti nije požalio što je previše dijelo.
+Optimiziraj život za velikodušnost. Nitko na samrti nije požalio što je previše dijelio.
 
 ## Ako se osjećaš loše
 
@@ -42,6 +44,20 @@ Osvijesti koje su prednosti koje dobijaš preuzimajući ulogu žrtve (npr. ako n
 
 Preuzimanje odgovornosti ne znači da kriviš sebe za svaku poteškoću na koju naiđeš. Sve što ti se događa je dio procesa učenja, i svaka odluka koju donosiš je najbolja koju u tom trenutku možeš donijeti. Možda si ponekad izazoveš nesreću, ali to nije razlog da se ljutiš na sebe.
 
+## Žaljenje
+
+Patronažna sestra Bronnie Ware u svojoj knjizi *Top five regrets of the dying* navodi 5 najčešćih stvari za kojima ljudi žale na kraju života:
+
+1. Previše sam radio.
+2. Nisam ostao u kontaktu s prijateljima.
+3. Nisam imao hrabrosti da živim kako sam htio, a ne kako se očekivalo od mene.
+4. Nisam imao hrabrosti izraziti svoje osjećaje.
+5. Nisam si dozvolio da budem sretniji.
+
+## Sofisticiranost
+
+Neke vrste "sofisticiranosti" ti neće dati da uživaš više, nego manje. Npr. vinski snobovi ne uživaju u vinu više nego neznalice, samo su svjesniji kada vino nije dovoljno dobro. Izbjegavaj takvu vrstu znanja.
+
 ## Bogatstvo
 
 Zarađuješ li prosječnu hrvatsku plaću (6000 kuna mjesečno), nalaziš se među **8% najbogatijih ljudi na svijetu**.
@@ -53,7 +69,6 @@ Izračunaj koliko sat tvog vremena vrijedi. Ponekad je problem bolje riješiti n
 ## Stresne situacije
 
 Ako te čeka važan poslovni sastanak, strašan liječnički pregled ili težak razgovor s nekim - podsjeti se da će **do 7 navečer problem proći** i više neće biti bitan. Ako nije bitan nakon X vremena, vjerojatno nije bitan ni sada.
-
 
 ## Mudrost
 

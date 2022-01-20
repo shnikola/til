@@ -1,5 +1,7 @@
 # Synths
 
+Klasični syth voice sastoji se od serije oscilator -> filter -> pojačalo.
+
 ## ADSR
 
 Attack time: od nule do vrhunca

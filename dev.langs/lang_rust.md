@@ -26,6 +26,16 @@ Da sam prisiljen raditi u C-u, Rust bi mi se činio kao moderna, neizmjerno bolj
 
 `impl User { fn search() { ... } }` je statička metoda (associated function) koju pozivaš s `User::search()`.
 
+## Matching
+
+`match a { ... }` ide po zadanim izrazima i vraća prvi koji se slaže uz x.
+
+`1 | 2 => ...` za kombiniranje slučajeva.
+`3..=6 => ...` za range.
+`Point { x, y: 1 } => ...` za destruct s provjerom vrijednosti.
+`Point { x, y } if x > 2 => ...` dodatni uvjet.
+`_ => ...` wildcard patter, koristi za "else" izraz.
+
 ## Enums
 
 Enum omogućuje da definiraš type tako da nabrojiš njegove moguće vrijednosti, npr. `enum Encoding { Utf8, Ascii }`. Pojedina vrijednost se koristi kao `Encoding::Utf8`.
@@ -33,7 +43,7 @@ Enum omogućuje da definiraš type tako da nabrojiš njegove moguće vrijednosti
 Enum može imati dodatne podatke vezane uz svoje varijante, npr.
 `enum IpAddr { V4(u8, u8, u8, u8), V6(String) }`. Pojedinu IP adresu možemo instancirati kao `IpAddr::V4(127, 0, 0, 1)`. Na taj način se dobija varijanta "subclassa" koje imaju isti type, pa ih možemo slati u iste funkcije.
 
-Enumi se super slažu s matchanjem:
+Enumi se dobro slažu s matchanjem:
 ```
     match ip {
         IpAddr::V4 => "legacy",
@@ -196,6 +206,7 @@ Za ručno pozivanje `next()` potrebno je da `iter` bude mutable jer mijenjamo nj
 `v.into_iter()` preuzima ownership i vraća owned elemente.
 
 Iterator adaptors su metode koje vraćaju novi iterator:
+* `v.iter().enumerate()` vraća tuple (element, index).
 * `v.iter().map(|x| x + 1)`
 * `v.iter().filter(|x| x > 5)`
 
@@ -237,4 +248,4 @@ Ako postoji `src/lib.rs`, buildat će **library crate**.
 
 # Literature
 
-* https://doc.rust-lang.org/book
+* [https://doc.rust-lang.org/book]

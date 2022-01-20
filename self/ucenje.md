@@ -67,6 +67,13 @@ Zadatak koji ti je najmrži radi prvi ujutro, pa makar i samo jedan pomodoro.
 
 Planiraj kad završavaš (npr. u 17.00) i drži se toga. To je jako bitno!
 
+## Ekspertiza
+
+Stručnjak si za nešto tek kad znaš kada to ne treba koristiti.
+
+*Tech entuzijasti:* čitava kuća mi je povezana smart uređajima
+*Tech stručnjaci:* jedini komad tehnologije u kući mi je printer, i kraj njega držim čekić, u slučaju da napravi zvuk koji ne prepoznajem.
+
 # Literatura
 
 * https://www.coursera.org/learn/learning-how-to-learn

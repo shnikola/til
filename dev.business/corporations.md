@@ -10,9 +10,15 @@ Razlog je sljedeći: developeri koji rade na istom kodu moraju moći međusobno 
 
 Isprva je teško shvatljivo da tvrtka poput Ubera zapošljava 8000 inženjera. Neki od razloga su tehničke naravi: globalno popularne stranice moraju mnogo više uložiti u performanse; isplati se razvijati nove feature (većinu kojih nećeš ni primjetiti) dok god donose novce; što je firma većeg profila, više mora uložiti u security.
 
-Ali osnovni razlog je organizacijski. U velikoj korporaciji produktivna jedinica nije zaposlenik nego tim od ~8 članova. I za svaku stvar koju korporacija radi, potreban je barem jedan tim.
+Ali osnovni razlog je organizacijski. U velikoj korporaciji produktivna jedinica nije zaposlenik nego tim od `~8` članova. I za svaku stvar koju korporacija radi, potreban je barem jedan tim.
 
 Cijena jednog takvog tima je red veličine `$1M` godišnje. Imaj to na umu ako prodaješ uslugu koja korporaciji može uštedjeti jedan tim.
+
+## Zašto aplikacije postaju sve gore
+
+Svaka velika kompanija ima zaposelene *Project managere* čiji je zadatak da u suradnji s korisnicima, menadžmentom i developmentom definiraju što bi proizvod trebao raditi. Nijedan PM u povijesti nije rekao "Čini se da aplikacija radi prilično dobro, ostavimo sve kako je." Ako im je stalo do napredovanja, moraju neprestano raditi promjene.
+
+Drugi razlog je kratak prosječan vijek zaposlenja u jednoj kompaniji. Dok se proječni PM ili dizajner zadržavaju na jednom poslu oko 3 godine, mnoge aplikacije na tržištu su dulje od desetljeća. To znači da korisnici koriste aplikaciju mnogo duže i poznaju je mnogo bolje nego ljudi koji na njoj rade.
 
 ## Skaliranje organizacije
 
@@ -34,4 +40,4 @@ Iz toga slijedi da će s vremenom na svakoj poziciji u organizaciji biti zaposle
 
 # Literatura
 
-https://m.signalvnoise.com/trickle-down-workaholism-in-startups-a90ceac76426
+* [https://m.signalvnoise.com/trickle-down-workaholism-in-startups/]

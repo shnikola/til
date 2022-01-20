@@ -14,6 +14,12 @@ Cenzura je loša jer stvara crno tržište. Poput prohibicije alkohola i droga, 
 
 Cenzura je cilj svih kultova ličnosti, jer im pruža moć da nameću svoje mišljenje nad drugima bez mjesta za diskusiju.
 
+## Kaskada respektabilnosti
+
+Recimo da postoji stav koji je relativno prihvaćen (npr. gay odnosi trebaju imati jednaka prava), ali nitko ne želi javno priznati jer ne žele biti osuđeni od društva. Na početku, jedini koji će govoriti o tome otvoreno biti će slojevi društva koji nemaju ništa za izgubiti i kojima nije stalo da budu odbaćeni. Zbog toga ih svi napadaju, ali nakon što prežive, njihova otvorenost će potaknuti malo zatvorenije ljude da učine isto.
+
+Tako se stav polako širi iz margina društva i od tabua prelazi u mainstream, i svatko može pričati o njemu s najmanjom stigmom. Ovo je proces kroz koji su prošli mnogi danas prihvaćeni stavovi poput jednakosti žena, ateizma do gay prava.
+
 ## Trans zamjenice
 
 Jordan Peterson tvrdi da nema ništa protiv korištenja zamjenice koju sugovornik preferira, dok god je taj dogovor postignut u dobroj volji između njih dvoje. Ono čemu se protivi je da zakon propisuje kako se kome treba obraćati, pogotovo ako se radi o nedavno stvorenim zamjenicama ("xe" i "xer") koje tek mali dio trans populacije koristi. Prema njemu, dizanje frke oko zamjenica su političke igre moći koje samo koriste trans pokret kako bi ostvarili druge ciljeve.
@@ -39,6 +45,8 @@ Zato je lako ignorirati email, jer je njegova percipirana cijena minimalna. Digi
 Signaliziranje svoje pozicije tako što ćeš činiti suprotno od onog što bi tvoj status nalagao, kako bi se distancirao od statusa neposredno ispod svoga. Npr. dok novi bogataši kupuju kičaste luksuzne predmete, stara aristokracija ih ne kupuje, jer time pokazuje da su toliko bogati da ne moraju uvjeravati ljude o svom statusu.
 
 Općenito, odbacivanje standardnih statusnih signala je signaliziranje moći, odnosno demonstracije hendikepa. Npt. gitarist u bendu ne mora imati dobre higijenske navike, što signalizira da je toliko seksi zbog sviranja girare da se ne mora truditi ispunjavati konvencije.
+
+Čini mi se da se može dobro zaraditi ako uspiješ bogatoj klasi plasirati nešto što je do tada bio signal siromašne klase (npr. jedenje jastoga, ili fotošopiranje digitalne odjeće). Samo je potrebno svoj proizvod prikazati kao nešto autentično i jedinstveno.
 
 ## Avoiding regret
 

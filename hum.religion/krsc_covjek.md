@@ -18,6 +18,12 @@ Katolička i pravoslavna crkva se uglavnom slažu s Augustinom, ali malo ublaža
 
 **Adventisti** ne vjeruju u doktrinu izvornog grijeha. Ljudi imaju božju narav, i potencijal da napredujemo da postanemo slični Bogu. Adamov pad je donio mogućnost grijeha, ali ne prenosi grijeh na njegovo potomstvo. Djeca mlađa od 8 godina se smatraju bezgrešnima i ne zatjevaju krštenje.
 
+## Žene
+
+`1. Timoteju 2` sadrži često citiran odjeljak o poziciji žena. Danas se smatra da ga nije napisao Pavao, nego ga je dodao neki od njegovih sljedbenika.
+
+U odjeljku se navodi kako žene ne mogu propovjedati muškarcima jer su stvorene inferiorne, kako je Bog naložio u Zakon; Bog je stvorio Evu drugu po redu, za muškarca. A znamo što se dogodilo zadnji put kad žena uzela ulogu učitelja: Sotona ju je prevario i povela je muškarca na krivi put. Zbog toga je uloga žene da ostane kod kuće i održava vrline prikladne ženi - rađanje djece i čuvanje skromnosti.
+
 ## Nekrštena djeca
 
 Čini mi se da je cijela priča o izvornom grijehu nastala samo jer je sv. Augustin silno htio da roditelji krste djecu, pa je tražio razlog zašto bi dijete koje očito ništa nije zgriješilo, trebalo biti "oprano od grijeha". Nažalost, njegova doktrina također znači da djeca koja, npr. umru pri porodu, idu u pakao, što... mislim, stvarno.

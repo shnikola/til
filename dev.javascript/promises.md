@@ -27,7 +27,7 @@ jQuery promises su suptilno drugačiji, ali možeš ih castati u nativni promise
 
 ## Event Loop
 
-Event loop će uvijek čekaati da se funkcija izvrši do kraja prije nego pozove iduću. Zato će se `.then/catch` handleri pozvati tek nakon što je trenutni kod izvršen.
+Event loop će uvijek čekati da se funkcija izvrši do kraja prije nego pozove iduću. Zato će se `.then/catch` handleri pozvati tek nakon što je trenutni kod izvršen.
 
 ## Async Functions
 

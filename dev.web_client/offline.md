@@ -49,13 +49,12 @@ Za URL addressable resurse, koristi `Cache API` (dio service workera).
 
 Za sve ostalo, koristi `IndexedDB`. Ako želiš wrapper za promise, koristi neki library kao `localForage` ili `idb-keyval`.
 
-## Detekcija (todo)
+## Detekcija
 
-`navigator.onLine`
-window.applicationCache.addEventListener("error")
+`navigator.onLine` vraća je li browser online ili ne.
+Za evente koristi `online` i `offline` na `window` objektu.
 
-http://www.html5rocks.com/en/mobile/workingoffthegrid/
-
+Samo pripazi jer ovdje `online` znači da browser ima konekciju, ali ne i da konekcija ima pristup internetu. Tj. ako je `offline`, sigurno je offline, ali ako je `online` i dalje može failati.
 
 # Literatura
 

@@ -1,5 +1,14 @@
 # Performance
 
+Optimizacija komunikacije između klijenta i servera zasniva se na dvije stvari:
+*smanjenju latencije* i *smanjenju bytova* koji se šalju.
+
+Smanji broj resursa, DNS lookupa, requestova, i redirectova.
+
+Komprimiraj resurse koje šalješ. Za HTML, CSS i JS koristi GZIP. Slike optimiziraj i smanji ih na veličinu u kojoj se prikazuju. Koristi `Cache-Control` za lokalni caching te `Last-Modified` i `ETag` za validaciju.
+
+Paraleliziraj obradu requesta i responsea. Ako HTTP/2 nije opcija, koristi više TCP konekcija da omogućiš paralelne requeste. Pripazi na blokirajuće resource na klijentu (CSS i JS).
+
 ## Hijerarhija Latencija
 
 * CPU cycle: `0.25 ns`
@@ -142,22 +151,6 @@ Latencija i bandwith mobilnih mreža su stabilni u intervalima od maksimalno sek
 
 U aplikacijama koje rade s velikom količinom podataka, koristi WiFi konekciju kad god je moguće. Promptaj usera da pređe na WiFi kako bi poboljšao performanse i smanjio cijenu prijenosa.
 
-## Optimizing HTTP
-
-Evergreen performance savjeti se zasnivaju na dvije stvari: smanji nepotrebnu latenciju i smanji broj bytova koji se šalju. Konkretnije:
-* smanji broj DNS lookupa
-* resusaj TCP konekcije
-* smanji broj redirectova i requestova
-* koristi CDN da smanjiš roundtrip time
-
-Cachiraj resource na klijentu. Koristi `Cache-Control` za lokalni caching te `Last-Modified` i `ETag` za validaciju. Trebaju ti oboje, a ne samo jedan.
-
-Komprimiraj resurse koje šalješ. Za HTML, CSS i JS koristi GZIP. Slike optimiziraj i smanji ih na veličinu u kojoj se prikazuju.
-
-Pripazi na nepotrebne bytove u requestu. Izbaci headere koje ne trebaš, i pogotovo pazi na veličinu Cookija. U HTTP/1.X koristi "cookie-free" origin gdje ćeš hostati resurse za koje ti ne trebaju cookiji (npr. slike).
-
-Paraleliziraj obradu requesta i responsea. Ako HTTP/2 nije opcija, koristi više TCP konekcija da omogućiš paralelne requeste. Pripazi na blokirajuće resource na klijentu (CSS i JS).
-
 ### HTTP/1.X
 
 Najveće ograničenje HTTP/1.X je request queueing, odnosno limit od jednog istovremenog requesta po konekciji. Pošto multipleksiranje konekcija nije podržano, browseri otvaraju više paralelnih konekcija kako ne bi morali slijedno dohvaćati podatke. Ovo zauzima dodatne resurse na klijentima i serveru.
@@ -179,6 +172,11 @@ Domain sharding nije potreban. HTTP/2 je najoptimalniji kada ima jednu konekciju
 Bundling nije potreban. Multipleksiranje dopušta skidanje više resursa bez overheada, a nema nedostatke poput skidanja nepotrebnih podataka i invalidacije cijelog bundlea.
 
 Umjesto inlininga koristi server push. Pošto podržava cachiranje, možeš ga koristiti za resurse svih veličina. Najbolji kandidati su blokirajući resursi (CSS i JS).
+
+## Routing optimzation
+
+Cloudflare `Argo` koristi DNS kako bi izbjegao zastoje u mreži.
+AWS nudi `Global Accelerator` slično rješenje koje koristi njihovu privatnu mrežu.
 
 # Literatura
 

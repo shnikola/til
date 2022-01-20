@@ -26,7 +26,7 @@ U lambda calculusu sve su funkcije **unarne**.
 `f a b` je zapravo `(f a) b`, jer je apliciranje lijevo asocijativno.
 `f (a b)` znači da se prvo aplicira `a b`, a onda njihov rezultat na `f`.
 
-`λa.b x` je zapravo `λx.(b x)`, jer se body greedy evaulira.
+`λa.b x` je zapravo `λa.(b x)`, jer se body greedy evaulira.
 `(λa.b) x` stvara anonimnu funkciju i poziva je s inputom `x`.
 
 ## Beta reduction

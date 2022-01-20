@@ -63,12 +63,6 @@ Skaliranje i optimiziranje loga (ipak ne možemo čuvati svaki živi event zauvi
 * Za event data (tracking), čuvati samo window, stare evente brisati.
 * Za keyed data (db), brisati recorde čije novije verzije imamo u logu.
 
-## Blockchain
-
-Blockchain je distribuirana baza koja se sastoji od blokova. Svaki blok je potpisan hashem i sadrži podatke o eventu (npr. novčanoj transakciji), timestamp, i hash prethodnog bloka.
-
-Ukoliko se ijedan blok promijeni, morat će se promijeniti i njegov hash, a samim time i hashevi svih blokova koji slijede nakon njega. Block chainovi su distribuirani (nalaze se kod više klijenata), pa je dovoljno usporediti posljednje blokove da se provjeri je li neki od blokova tampered. Ispravan block chain odabire se decentraliziranim koncenzusom.
-
 # Literatura
 
 * https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying

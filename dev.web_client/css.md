@@ -417,6 +417,13 @@ Moguće je selektirati vrstu uređaja po pointeru: _Chrome, Edge_
 * `@media (pointer: fine)` precizni upravljanje (miš, touchpad, tablet stilus)
 * `@media (hover: none)` primarni input ne podržava hover.
 
+## Scrolling
+
+`scroll-behavior: smooth` na `html` elementu će omogućiti fluidno skrolanje do anchored elemenata.
+
+`scroll-snap-type: x mandatory` na parentu uključuje scroll snapping.
+`scroll-snap-align: start` na child parentu koji snap point.
+
 ## Lists
 
 `list-style-type: none` skriva marker liste.

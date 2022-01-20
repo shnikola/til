@@ -301,6 +301,16 @@ Koristi iste atribute kao i `<audio>`, i još neke dodatne.
 
 `<object>` može u sebi imati više `<param>` za prosljeđivanje parametara.
 
+## Attributes
+
+`title="..."` predstavlja dodatne informacije o elementu, pojavi se kao tooltip kad hoveraš.
+
+`contenteditable` dopušta da user editira element.
+`draggable` dopušta da user drag&dropa element.
+`spellcheck` uključuje/isključuje spellchecking na elementu.
+
+`hidden` skriva element (slično kao `display: none`, ali radi i za `<option>` elemente).
+
 ## data-uri
 
 URI koji sadrži inline data. Koriste se kako bi se uštedio request.

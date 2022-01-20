@@ -1,14 +1,4 @@
-# Algoritmi
-
-## Pretraživanje
-
-Ako nemaš sortiranu listu, moraš koristiti **linearno pretraživanje**, koje u najgorem slučaju radi `O(n)`.
-
-Trik za malu optimizaciju je na kraj liste dodati element koji se traži (**sentinel**). Onda ne moraš u svakom koraku provjeravati `i < n`, nego samo `list[i] == el`. Kad pronađeš element, provjeriš je li njegov `i < n` (nalazi se u listi) ili nije.
-
-Ako je lista sortirana, **binarno pretraživanje** je `O(log n)`.
-
-Binarno pretraživanje nije pogodno ako je dohvaćanje pojedine vrijednosti sporo (npr. ako se čita s diska s glavom, ili dohvaća s neta). U tom slučaju je bolje podijeliti `N` elemenata u blokove veličine `sqrt(N)`, pretraživati slijedno početni element bloka, pa onda slijedno unutar bloka.
+# Sorting
 
 ## Raspoređivanje
 
@@ -26,18 +16,6 @@ Postoje varijacije u računanju prioriteta, kao **D'Hondt** `P / (r + 1)` i **We
 
 **Sleep sort** generira worker za svaki broj koji spava linearno s veličinom broja, a zatim vrati broj mainu. Brojevi će se vratiti sortiranim redoslijedom.
 
-## Quine
-
-Quine je program koji, kada se pokrene, ispisuje svoj source. Ograničenja su da ne smije koristiti I/O (tj. čitati vlastiti file) i ne smije biti prazan.
-
-Quine se uobičajeno sastoji od dva dijela: data koji sadrži code, i code koji ispisuje data. Format je:
-```
-data = "..."
-puts "data = " + data.inspect + data
-```
-
-Data se složi da sadrži kod ispod prve linije: `"\nputs \"data = \" + data.inspect + data"`
-
 # Literatura
 
-* http://jeffe.cs.illinois.edu/teaching/algorithms
+* [http://jeffe.cs.illinois.edu/teaching/algorithms]

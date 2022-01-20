@@ -30,6 +30,8 @@ Output randomness je dobar za simuliranje nesigurnosti kod igara u kojima je bor
 
 Naš mozak jako loše procjenjuje vjerojatnosti. Ako u igri nudiš oružje koje pogađa 50% vremena, igrač će biti frustriran ako promaši 5 puta zaredom, koliko god to vjerojatno bilo. Zato sve događaje s igraču vidljivom vjerojatnosti modeliraj tako da se čine poštene, iako možda uopće nisu nasumične.
 
+Jedan način je za svaki neuspjeh povećavati šansu da se uspjeh idući put dogodi.
+
 ## Alati nasumičnosti
 
 Ljudi ne vole hladne brojeve, ali vole konkretne alate nasumičnosti poput kocki i karata. Kocke predstavljaju nezavisnu nasumičnost (svako bacanje je za sebe), a karte zavisnu (ako izađe karta, mijenjaju se vjerojatnosti ostalih)

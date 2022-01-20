@@ -187,7 +187,7 @@ Koliko ima uređenih parova cijelih brojeva (m,n) za koje vrijedi `|m| + |n| < 2
 Recimo da crvenih ima više, barem 11. Zatim podijeli na slučaj kada postoji stupac s 3 crvene (mora biti još jedan s 2 crvene), i kad ne postoji (moraju biti dva ista rasporeda s 2 crvene).
 
 U kvadrat stranice 10 ucrtavamo 100 točaka. Dokaži da postoji trokut kojima su vrhovi točke (ili vrhovi kvadrata) čija je površina manja od 1/2.
-Prva točka koju ucrtamo dijeli kvadrat na 4 trokuta. Svaka iduća je unutar nekog trokuta, i dijeli ga na 3 trokuta, tj. dodaje 2 nova trokuta. Nakon 100 točaka, kvadrat će biti podijeljen na 4 + 99*2 = 202 trokuta. Ako je svakom površina `>= 1/2`, ukupna površina kvadrata bi bila `> 100`.
+Prva točka koju ucrtamo dijeli kvadrat na 4 trokuta. Svaka iduća je unutar nekog trokuta, i dijeli ga na 3 trokuta, tj. dodaje 2 nova trokuta. Nakon 100 točaka, kvadrat će biti podijeljen na `4 + 99*2 = 202` trokuta. Ako je svakom površina `>= 1/2`, ukupna površina kvadrata bi bila `> 100`.
 
 Ako su različiti brojevi poredani u krug i promatramo sume po 3 broja, suma ne može biti ista 2 puta za redom (jer bi to znači da je isti broj dvaput u krugu).
 

@@ -15,6 +15,15 @@ Rotacija kamere: **pan** lijevo-desno, **tilt** gore-dole.
 
 ## Povijest
 
+Prvi fotoaparat je *camera obscura*, tamna komora s malom rupom na jednom zidu - svjetlost koja prolazi kroz rupu ocrtava na suprotnom zidu, stvarajući naopaku sliku. Zbog sitne veličine rupe, slika je jednako oštra od `2mm` nadalje. Prvi zapisi o cameri obscuri potječu iz Kine `-4.st`, detaljno ju je proučavao arapski fizičar Ibn al-Haytham, a Leonardo da Vinci ju je koristio za crtanje krokija portreta.
+
+Nicephore Niepce `1826.` stvara prvu ustaljenu fotografiju: *Pogled kroz prozor na Le Gras*, za koji je trebalo 8 sati ekspozicije. Jacques Louis Daguerre otkriva da posrebrena ploča tretirana živinim parama postaje fotoosjetljiva. Dagerotipi se ne mogu umnažati - svaka slika je jedinstveni primjerak. Fox Talbot u isto vrijeme razvija kalotipiju gdje pomoću negativa može stvarati kopije - ista metoda se koristi i dan danas.
+
+Kodak `1888.` na tržište stavlja prvi ručni aparat. To je drvena kutija napunjena filmom. Kad se film potroši, cijela kutija se odnose u radnju na razvijanje. Fotografije po prvi put postaje dostupna amaterima.
+
+Oskar Barnack `1925.` izbacuje *Leicu I*. Aparati dotad koriste veliki format filma, Barnack ga smanjuje na `24x36mm` (a s tim i kvalitetu). Aparati postaju kompaktni i dostupni novinarima - žurnalizam.
+
+
 Leland Stanford, guverner Kalifornije, 1872. se kladio da konj u punom galopu u nekom trenutku ne dira tlo. Zato je zaposlio fotografa **Eadwearda Muybridgea** koji je postavio 12 fotoaparata sa žičanim okidačem na putu i tako napravio 12 fotogragija konja u pokretu. To je pokrenulo ciklus studija pokreta raznih životinja. (Usput, konj zaista u jednom trenutku ne dira tlo).
 
 **Etienne-Jules Marey** je za snimanje pokreta ptica izumio **kronofotografsku pušku** (koja izgleda genijalno) i umjesto listova fotogragskog papira počeo koristiti role, kako bi mogao slikati i do 12 fotografija u sekundi.

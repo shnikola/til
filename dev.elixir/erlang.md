@@ -1,9 +1,9 @@
 # Erlang
 
-## Actor model
+## Procesi
 
-Actor model nije implementiran s nativnim procesima, nego VM simulira preemptive scheduling OS-a. OS procesi se sporo kreiraju i troše puno memorije, actori u Erlangu se stvaraju jako brzo i troše minimalno memorije.
+BEAM je virtualna mašina (runtime layer) kojeg koriste Erlan, Elixir i srodni jezici. BEAM omogućava visoku razinu concurrencija koristeći actore koji se stvaraju brzo i troše minimalno memorije.
 
-# Literatura
+Centralni koncept BEAMa je **proces**, jedinica koja izvršava neki dani kod. Svaki proces je zaseban program: ima svoj execution flow, stack i heap, garbage collection. Proces nije nativni OS proces niti nativni OS thread, implementiran je mnogo optimalnije unutar samog VM-a, pa BEAM program može imati i milijune procesa.
 
-* https://www.youtube.com/watch?v=rX6tC5K_XaI
+Cijeli sustav se izvodi u jednom OS procesu BEAM VM-a. Za scheduling su zaduženi scheduler threadovi (najčešće ih ima koliko i CPU jezgri).

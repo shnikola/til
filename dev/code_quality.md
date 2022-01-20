@@ -1,5 +1,7 @@
 # Code Quality
 
+Pisanje software nije građevina, nego vrtlarstvo - mnogo je više organsko nego druge inženjerske grane.
+
 ## Kompleksnost
 
 Temeljni problem u programiranju je problem dekompozicije: kako kompleksan zadatak podijeliti na manje zadatke koji se mogu neovisno riješiti.
@@ -28,9 +30,9 @@ Svejedno, kao developeru zadatak ti je da budeš sanity check. Prije dodavanja f
 
 ## Duplikacija vs apstrakcija
 
-Duplikacija je naporna i čest izvor bugova. Ali ako duplikaciju zamijeniš pogrešnom apstrakcijom, uvođenje promjena i novih featurea će postati puno teže. A promjene i novi feature su neizbježni u ranim fazama razvoja.
+Duplikacija je naporna i čest izvor bugova. Ali ako duplikaciju zamijeniš pogrešnom apstrakcijom, uvođenje promjena i novih featurea će postati puno teže. Ekstrakciju zajedničkog koda radi samo ako će taj kod sada i zauvijek ostati nepromijenjen.
 
-Zato uvijek počni od duplikacije. Duplikacija je mnogo jeftinija od pogrešne apstrakcije.
+U ranim fazama razvoja, cijeli projekt je u stalnoj promjeni. Zato uvijek na kreni s duplikacijom. Duplikacija je mnogo jeftinija od pogrešne apstrakcije.
 
 Treba naglasiti da se DRY koncept ne odnosi na proceduralni kod, nego na znanje. Da li će negdje dvaput pisati `if` je nebitno. Bitno je da se business logika ne duplicira, jer se često mijenja i njena duplikacija često dovodi do bugova.
 

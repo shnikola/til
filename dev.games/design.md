@@ -17,6 +17,18 @@ Većina igara odaberu dvije ili tri estetike na koje će se fokusirati. Neke ima
 
 U svim ostalim umjetnostima, žanrovi se definiraju prema estetikama, tj. osjećajima koje izazivaju kod gledatelja. Samo u igrama se žanrovi definiraju prema mehanici, tj. načinu interkacije. Zato developeri često zanemare estetiku u odnosu na mehaniku, iako je estetika glavni način na koji se igrač povezuje s igrom.
 
+### Discovery
+
+Zadovoljstvo otkrivanja se može stvoriti na različite načine:
+
+**Otkrivanje sadržaja** se zasniva na pronalaženju novih mjesta ili predmeta. Koriste ga open world igre tipa Elder Scrolls i WOW. Najskuplji je po pitanju uloženog developmenta.
+
+**Otkrivanje mehanika** se zasniva na pronalaženju novih mehanika i elemenata igre. Koriste ga taktične igre tipa Dark Souls i Starcraft. Najjeftiniji, ali najteže ga je dobro izvesti.
+
+**Otkrivanje narativa** se zasniva na pronalaženju backstorija o svijetu, kao što je lutanje po ruševinama da pronađeš neki novi dio mitologije. Koriste ga narativne igre tipa Fallout.
+
+Ako se igra želi fokusirati na discovery estetiku, od samog početka mora nagrađivati igračevo istraživanje i dati mu alate kojima se može slobodno vraćati na mjesta na kojima je bio. Linearnost uništava otkrivanje.
+
 ## Depth vs Complexity
 
 Dubina (*depth*) predstavlja broj odluka koje se mogu donijeti unutar skupa pravila. Bitno je da se dubina odnosi samo na odluke kojih su igrači svjesni.
@@ -79,6 +91,14 @@ Dobar dio dizajna igara svodi se na stvaranje iluzija. Manipuliranjem ljudske ps
 
 Naši mozgovi su programirani da traže zadovoljstvo, stimulaciju i pohvalu. Zadatak dizajnera je da zaokupi i zabavi igrača, i da ih ponekad odvede putovima za koje nisu znali da žele.
 
-Primjerice, najbolji trenutci akcijske igre su oni u kojima nam se čini da smo preživjeli za dlaku, s crticom healtha i zadnjih par metaka. Na dizajneru je da omogući ovakve situacije: zadnja crtica je možda zapravo četvrtina healtha; zadnjih par metaka možda rade puno više damagea; fatalni udarac te možda šalje na 1 health i daje imunost na kratko vrijeme umjesto da te instantno ubije.
+Primjerice, najbolji trenutci akcijske igre su oni u kojima nam se čini da smo preživjeli za dlaku, s crticom healtha i zadnjih par metaka. Na dizajneru je da omogući ovakve situacije: zadnja crtica je možda zapravo četvrtina healtha (Doom, Assasin's Creed); zadnjih par metaka možda rade puno više damagea; fatalni udarac te možda šalje na 1 health i daje imunost na kratko vrijeme umjesto da te instantno ubije.
 
-Neke igre imaju mehaniku da neprijatelji uvijek promaše kada prvi put zapucaju na igrača, dajući priliku da se regrupira bez osjećaja zasjede.
+Neke od skrivenih mehanika:
+* neprijatelji uvijek promaše kada prvi put zapucaju na igrača, dajući priliku da se regrupira bez osjećaja zasjede. (*Bioshock*)
+* range neprijatelji imaju hit/miss vjerojatnosti. Ako je miss, projektilima se stavlja offset i makne collision (za svaki slučaj). Tako se stvara osjećaj da si pod baražom paljbe, ali i dalje imaš priliku preživjeti. (*Lego*)
+* neprijatelji izvan ekrana se uspore i zaustave napad, kako bi se spriječili nepošteni udarci iz mrtvog kuta.
+* eksplozivni objekti privlače metke, a litice privlače tijela neprijatelja, da bi se stvorile zabavnije situacije. (*Half Life 2*)
+* dozvoljavanje margine pogreške pri skakanju s rubova.
+* prijetnja permadeatha kako bi se stvorio strah od posljedica. (*Hellblade*)
+* collsion radius bonusa je 2x veći od njihove vizualne veličine, pa se čini lakše i zabavnije ih skupljati. Kod neprijatelja je obrnuto. (*N++*)
+* rubberbanding u utrkama: automobili iza tebe se kreću brže kako bi utrka bila napetija.

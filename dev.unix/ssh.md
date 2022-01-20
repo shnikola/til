@@ -35,7 +35,7 @@ Sistemska konfiguracija stoji u `/etc/ssh/ssh_config`, a lokalna u `~/.ssh/confi
 * `Port` definira custom port za spajanje
 * `LocalForward` za definiranje tunela.
 * `Compression yes` korisno za spore servere.
-* `ServerAliveInterval 15`, `ServerAliveCountMax 6` šalji keep alive svakih 15 sekundi, do 6 puta. Ako server krepne, veza će se disconnectati nakon 15*6=90 sekundi.
+* `ServerAliveInterval 15`, `ServerAliveCountMax 6` šalji keep alive svakih 15 sekundi, do 6 puta. Ako server krepne, veza će se disconnectati nakon `15*6=90` sekundi.
 
 ## File transfer
 

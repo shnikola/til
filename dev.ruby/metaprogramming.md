@@ -40,6 +40,8 @@ Možeš čak i izvesti kod u kontekstu tog bindinga s `binding.eval("print x")`.
 
 `user.instance_exec(1, 2) do |i, j| ... end` (`class_exec` i `module_exec`) su isti kao i `_eval`, samo dopuštaju prosljeđivanje argumenta. To je korisno ako želiš proslijediti `@var` definiran izvan bloka, jer unutar bloka više neće biti vidljiv (`self` se promjenio). Proslijeđivanjem lokalnih varijabli također izbjegavaš stvaranje closurea.
 
+`instance_eval` i `instance_exec` se mogu koristiti za stvaranje DSLa poput: `tag(:p) { concat("Hello") }`. Metoda `concat` se napravi dostupnom tako što se u `tag` blok poziva s `Tag.new.instance_exec(&block)`, gdje je `concat` metoda instance `Tag`.
+
 ## Varijable i konstante
 
 `global_variables` vraća listu globalnih varijabli.

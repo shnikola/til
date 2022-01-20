@@ -17,7 +17,8 @@ Ulogiraj se kao `deploy`, i dodaj public key u `~/.ssh/authorized_keys`.
 
 `sudo service ssh restart` da se primjeni nova konfiguracija.
 
-`apt-get install fail2ban`, dobro je iskonfiguriran out of the box.
+`apt-get install fail2ban` dobro je iskonfiguriran out of the box.
+`apt-get install logrotate` za rotaciju logova.
 
 ## Monitoring
 
@@ -29,7 +30,7 @@ Ulogiraj se kao `deploy`, i dodaj public key u `~/.ssh/authorized_keys`.
 `history` ispisuje sve prethodnih naredbi.
 `last reboot` ispisuje system rebootove.
 
-`netstat -lnp` ispisuje procese koje imaju otvorene sockete.
+`netstat -tulnp` ispisuje procese koje imaju otvorene sockete. Pokreni kao root inače se pid/program name neće prikazati.
 `lsof -i tcp:3000` ispisuje procese na portu `3000`.
 
 `lsof` (list open files) ispusuje sve fileove koje su trenutno otvoreni i procese koji ih koriste. Korisno ako se npr. USB ne želi ejectati, a ne znaš tko ga koristi.
@@ -44,7 +45,11 @@ Load se računa kao prosječni broj procesa koji čekaju na CPU. Ako ti je load 
 
 `free -m` ispisuje slobodnu radnu memorija u MB.
 
+`df -ah` ispisuje sve file sisteme i slobodno mjesto na svakom.
 `du -h /home` za ispis koliko zauzima koji file u direktoriju. Nepregledno kad je puno fileova. Umjesto toga, koristi `ncdu` kao mini file browser.
+
+`ifconfig` ispisuje sve network interfacea i njihove IP adrese.
+`ip addr show eth0` za prikaz samo jednog interfacea.
 
 ## cronjob
 
